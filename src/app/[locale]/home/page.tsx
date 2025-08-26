@@ -1,9 +1,8 @@
 'use client';
-
 import {Box} from '@mui/material';
-
 import Hero from '@/components/home/Hero';
 import Navbar from '@/components/navbar/Navbar';
+import Footer from '@/components/Footer';
 
 export default function HomePage() {
   return (
@@ -26,6 +25,7 @@ export default function HomePage() {
         <Box sx={{marginTop: '82px'}}>
           <Hero />
         </Box>
+        <Footer />
       </Box>
     </>
   );

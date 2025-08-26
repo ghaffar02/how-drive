@@ -1,23 +1,23 @@
-"use client";
+'use client';
 
-import { Box, Typography } from "@mui/material";
+import {Box, Typography} from '@mui/material';
 
 export default function Hero() {
-  const text = "Der Weg zum Führerschein";
+  const text = 'Der Weg zum Führerschein';
 
   const splitText = (str: string) =>
-    str.split("").map((char, i) => (
+    str.split('').map((char, i) => (
       <span
         key={i}
         style={{
-          display: "inline-block",
+          display: 'inline-block',
           opacity: 0,
-          transform: "rotateY(90deg) translateY(10px)",
+          transform: 'rotateY(90deg) translateY(10px)',
           animation: `flipIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards`,
-          animationDelay: `${i * 0.05}s`, // stagger like Framer
+          animationDelay: `${i * 0.05}s` // stagger like Framer
         }}
       >
-        {char === " " ? "\u00A0" : char}
+        {char === ' ' ? '\u00A0' : char}
       </span>
     ));
 
@@ -25,20 +25,20 @@ export default function Hero() {
     <>
       <Box
         sx={{
-          height: "100vh",
-          backgroundImage: "url(/HeroBG.svg)",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-          backgroundSize: "cover",
+          height: '100vh',
+          backgroundImage: 'url(/HeroBG.svg)',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          backgroundSize: 'cover'
         }}
       >
         {/* 760px */}
         <Box
           sx={{
-            maxWidth: "760px",
-            margin: "auto",
-            textAlign: "center",
-            paddingTop: "80px",
+            maxWidth: '760px',
+            margin: 'auto',
+            textAlign: 'center',
+            paddingTop: '80px'
           }}
         >
           <>
@@ -58,12 +58,12 @@ export default function Hero() {
             </style>
             <Typography
               sx={{
-                color: "#000",
-                fontSize: "56px",
-                fontWeight: "800 !important",
-                paddingBottom: "24px",
-                perspective: "1000px",
-                fontFamily: "Satoshi600 !important",
+                color: '#000',
+                fontSize: '56px',
+                fontWeight: '800 !important',
+                paddingBottom: '24px',
+                perspective: '1000px',
+                fontFamily: 'Satoshi600 !important'
               }}
             >
               {splitText(text)}
