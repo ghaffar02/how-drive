@@ -45,7 +45,8 @@ export default function Footer() {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              gap: '6px'
+              gap: '6px',
+              cursor: 'pointer'
             }}
           >
             <Image src={Logo} alt="logo" height={50} width={50} />
@@ -142,7 +143,12 @@ export default function Footer() {
                         index !== section.items.length - 1 ? '10px' : 0,
                       wordBreak: 'break-word',
                       whiteSpace: 'normal',
-                      overflowWrap: 'break-word'
+                      overflowWrap: 'break-word',
+                      cursor: 'pointer',
+                      transition: 'all 0.4s ease-in-out',
+                      '&:hover': {
+                        color: '#4616F5'
+                      }
                     }}
                   >
                     {item}
