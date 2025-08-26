@@ -5,6 +5,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Satoshi";
   src: url("/fonts/Satoshi-Regular.otf") format("opentype");
@@ -12,6 +13,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Satoshi500";
   src: url("/fonts/Satoshi-Medium.otf") format("opentype");
@@ -27,6 +29,15 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Satoshi700";
+  src: url("/fonts/Satoshi-Black.otf") format("opentype");
+  font-weight: 800 !important;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 * {
   box-sizing: border-box;

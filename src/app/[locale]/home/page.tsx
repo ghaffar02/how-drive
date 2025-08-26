@@ -1,5 +1,7 @@
 'use client';
+
 import {Box} from '@mui/material';
+
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/home/Hero';
 
@@ -23,7 +25,6 @@ export default function HomePage() {
         </Box>
         <Box sx={{marginTop: '82px'}}>
           <Hero />
-          <Box height={'100vh'} bgcolor={'black'}></Box>
         </Box>
       </Box>
     </>
