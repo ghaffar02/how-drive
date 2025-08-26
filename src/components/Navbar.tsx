@@ -10,9 +10,11 @@ import MobileMenu from './MobileMenu';
 import Logo from '@/assets/pngs/logo.png';
 import profile from '@/assets/svgs/profile.svg';
 import hamburger from '@/assets/svgs/hamburger.svg';
+import {useTranslations} from 'next-intl';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const t = useTranslations('Navbar');
 
   return (
     <>
@@ -72,8 +74,22 @@ export default function Navbar() {
           open={open}
           onClose={() => setOpen(false)}
           sections={[
-            {title: 'Mobile Menu 1', items: ['Example A', 'Example Item B']},
-            {title: 'Mobile Menu 2', items: ['Example C', 'Example Item D']}
+            {
+              title: t('aboutus.text'),
+              items: [
+                t('aboutus.item1'),
+                t('aboutus.item2'),
+                t('aboutus.item3')
+              ]
+            },
+            {
+              title: t('features.text'),
+              items: [
+                t('features.item1'),
+                t('features.item2'),
+                t('features.item3')
+              ]
+            }
           ]}
         />
         <Box
@@ -86,6 +102,22 @@ export default function Navbar() {
           {/* the links,dropdowns  */}
           <Box sx={{display: 'flex', gap: '10px', alignItems: 'center'}}>
             {/* the dropdowns and testuals */}
+            <MenuDropdown
+              label={t('aboutus.text')}
+              items={[
+                t('aboutus.item1'),
+                t('aboutus.item2'),
+                t('aboutus.item3')
+              ]}
+            />
+            <MenuDropdown
+              label={t('features.text')}
+              items={[
+                t('features.item1'),
+                t('features.item2'),
+                t('features.item3')
+              ]}
+            />
             <Typography
               sx={{
                 color: '#000000',
@@ -101,16 +133,25 @@ export default function Navbar() {
                 cursor: 'pointer'
               }}
             >
-              Menu
+              {t('pricing')}
             </Typography>
-            <MenuDropdown
-              label="Menu 2"
-              items={['Example 1', 'Example Item 2']}
-            />
-            <MenuDropdown
-              label="Menu 3"
-              items={['Example 1', 'Example Item 2', 'Example Item 3']}
-            />
+            <Typography
+              sx={{
+                color: '#000000',
+                fontSize: {xs: '14px', md: '16px', lg: '18px'},
+                lineHeight: '1.6em',
+                fontWeight: '500',
+                transition: 'all 0.3s ease-in-out',
+                padding: '4px 8px',
+                borderRadius: 2,
+                '&:hover': {
+                  backgroundColor: 'rgba(88,65,212,0.12)'
+                },
+                cursor: 'pointer'
+              }}
+            >
+              {t('contact')}
+            </Typography>
           </Box>
           {/* the icons,butotn  */}
           <Box sx={{display: 'flex', gap: '24px', alignItems: 'center'}}>
@@ -141,7 +182,7 @@ export default function Navbar() {
               }}
               variant="outlined"
             >
-              Anmelden
+              {t('login')}
             </Button>
           </Box>
         </Box>

@@ -5,6 +5,7 @@ import {Box, Typography, Divider, Slide, Button} from '@mui/material';
 import MenuAccordion from './MenuAccordion';
 import LanguageDropdown from './LanguageDropdown';
 import Image from 'next/image';
+import {useTranslations} from 'next-intl';
 import profile from '@/assets/svgs/profile.svg';
 
 type Section = {title: string; items: string[]};
@@ -16,13 +17,9 @@ type MobileMenuProps = {
   title?: string;
 };
 
-export default function MobileMenu({
-  open,
-  onClose,
-  sections,
-  title = 'Mobile Menu'
-}: MobileMenuProps) {
+export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
   const [expandedKey, setExpandedKey] = React.useState<string | false>(false);
+  const t = useTranslations('Navbar');
 
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
@@ -69,12 +66,6 @@ export default function MobileMenu({
           }}
         >
           <Box>
-            <Box sx={{p: '4px 8px 14px 8px'}}>
-              <Typography sx={{fontSize: {xs: 16, sm: 18}, fontWeight: 500}}>
-                {title}
-              </Typography>
-            </Box>
-            <Divider />
             <Box>
               {sections.map((s) => (
                 <MenuAccordion
@@ -87,6 +78,30 @@ export default function MobileMenu({
                 />
               ))}
             </Box>
+            <Box sx={{p: '14px 8px 14px 8px'}}>
+              <Typography
+                sx={{
+                  fontSize: {xs: 16, sm: 18},
+                  fontWeight: 500,
+                  cursor: 'pointer'
+                }}
+              >
+                {t('pricing')}
+              </Typography>
+            </Box>
+            <Divider />
+            <Box sx={{p: '14px 8px 15px 8px'}}>
+              <Typography
+                sx={{
+                  fontSize: {xs: 16, sm: 18},
+                  fontWeight: 500,
+                  cursor: 'pointer'
+                }}
+              >
+                {t('contact')}
+              </Typography>
+            </Box>
+            <Divider />
           </Box>
           <Box>
             <Divider
@@ -135,7 +150,7 @@ export default function MobileMenu({
                   height: '43px'
                 }}
               >
-                Anmelden
+                {t('login')}n
               </Button>
               <Image src={profile} alt="profile" height={35} width={35} />
             </Box>
