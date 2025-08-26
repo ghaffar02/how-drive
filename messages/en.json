@@ -2,6 +2,9 @@
   "LocaleLayout": {
     "title": "How Drive Home"
   },
+  "Manifest": {
+    "name": "My App"
+  },
   "Navbar": {
     "aboutus": {
       "text": "About Us",
