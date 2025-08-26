@@ -2,8 +2,8 @@
 
 import {Box} from '@mui/material';
 
-import Navbar from '@/components/Navbar';
 import Hero from '@/components/home/Hero';
+import Navbar from '@/components/navbar/Navbar';
 
 export default function HomePage() {
   return (
