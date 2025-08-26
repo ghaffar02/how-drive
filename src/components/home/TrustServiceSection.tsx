@@ -1,0 +1,117 @@
+'use client';
+
+import {Box, Button, Typography} from '@mui/material';
+
+export default function TrustServiceSection() {
+  return (
+    <>
+      <Box
+        sx={{
+          padding: {
+            xs: '48px 16px',
+            sm: '48px 24px',
+            md: '48px'
+          }
+        }}
+      >
+        <Box
+          sx={{
+            background:
+              'linear-gradient(125deg, rgba(70, 17, 245, 0.75) 0%, rgba(31, 244, 255, 0.75) 46.8468%, rgba(234, 0, 255, 0.75) 100%)',
+            height: '390px',
+            width: '100%',
+            borderRadius: '25px',
+            position: 'relative',
+            overflow: 'hidden',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
+          {/* all the section content is  here  */}
+          <Box sx={{position: 'relative', zIndex: '10', textAlign: 'center'}}>
+            <Typography
+              sx={{
+                color: '#FFFFFF',
+                fontSize: {xs: '32px', md: '36px', lg: '48px'},
+                lineHeight: {xs: '1.2em', lg: '1.15em'},
+                fontWeight: '600',
+                paddingBottom: '10px'
+              }}
+            >
+              Vertaue unseres Service
+            </Typography>
+            <Typography
+              sx={{
+                color: '#FFFFFF',
+                fontSize: {xs: '16px', md: '18px', lg: '20px'},
+                lineHeight: '1.35em',
+                fontWeight: '400'
+              }}
+            >
+              Erfahre selbst, wie unseres Service funktioniert
+            </Typography>
+            <Box
+              sx={{
+                paddingTop: '48px',
+                display: 'flex',
+                gap: '24px',
+                alignItems: 'center',
+                flexDirection: {xs: 'column', sm: 'row'}
+              }}
+            >
+              <Button
+                sx={{
+                  color: '#fff',
+                  backgroundColor: '#4616F5',
+                  height: {xs: '44px', md: '46px', lg: '50px'},
+                  width: {xs: '188px', md: '210px', lg: '239px'},
+                  fontSize: {xs: '14px', md: '16px', lg: '18px'},
+                  textWrap: 'nowrap',
+                  textTransform: 'capitalize',
+                  borderRadius: '10px',
+                  '&:hover': {
+                    backgroundColor: '#300CA8'
+                  }
+                }}
+              >
+                Als Fahrschuler starten
+              </Button>
+              <Button
+                sx={{
+                  color: '#fff',
+                  backgroundColor: 'transparent',
+                  height: {xs: '44px', md: '46px', lg: '50px'},
+                  width: {xs: '188px', md: '210px', lg: '239px'},
+                  fontSize: {xs: '14px', md: '16px', lg: '18px'},
+                  textWrap: 'nowrap',
+                  textTransform: 'capitalize',
+                  borderRadius: '10px',
+                  border: '1px solid #fff',
+                  '&:hover': {
+                    backgroundColor: '#fff',
+                    color: '#000'
+                  }
+                }}
+              >
+                Als Fahrschule starten
+              </Button>
+            </Box>
+          </Box>
+          {/* the background dark overlay in here  */}
+          <Box
+            sx={{
+              backgroundColor: '#00000099',
+              height: '100%',
+              width: '100%',
+              position: 'absolute',
+              top: '0px',
+              left: '0px',
+              zIndex: '1'
+            }}
+          ></Box>
+        </Box>
+      </Box>
+    </>
+  );
+}
