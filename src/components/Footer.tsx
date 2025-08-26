@@ -153,7 +153,28 @@ export default function Footer() {
           ))}
         </Box>
       </Box>
-      <Box sx={{height: '100px', backgroundColor: 'red'}}></Box>
+      <Box>
+        <Typography
+          sx={{
+            color: '#2D3748',
+            fontSize: {xs: '14px', md: '15px', lg: '16px'},
+            lineHeight: '1.5em',
+            fontWeight: '600',
+            paddingBottom: {xs: '56px', lg: '24px'},
+            wordBreak: 'break-word',
+            whiteSpace: 'normal',
+            overflowWrap: 'break-word',
+            textAlign: 'center',
+            paddingX: {
+              xs: '16px',
+              sm: '24px',
+              md: '48px'
+            }
+          }}
+        >
+          Made in Germany with Love
+        </Typography>
+      </Box>
     </>
   );
 }
