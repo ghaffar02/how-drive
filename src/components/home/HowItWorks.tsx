@@ -1,7 +1,20 @@
+'use client';
+
 import * as React from 'react';
-import {Box, Typography, Tabs, Tab} from '@mui/material';
-import profile from '@/assets/svgs/how-it-works/profile.svg';
+import {
+  Box,
+  Typography,
+  Tabs,
+  Tab,
+  Collapse,
+  useTheme,
+  useMediaQuery
+} from '@mui/material';
 import Image from 'next/image';
+import profile from '@/assets/svgs/how-it-works/profile.svg';
+import TabMenu from '@/app/../components/home/TabMenu';
+import {Padding} from '@mui/icons-material';
+
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -10,7 +23,6 @@ interface TabPanelProps {
 
 function CustomTabPanel(props: TabPanelProps) {
   const {children, value, index, ...other} = props;
-
   return (
     <div
       role="tabpanel"
@@ -33,12 +45,13 @@ function a11yProps(index: number) {
 
 export default function HowItWorks() {
   const [value, setValue] = React.useState(0);
+  const theme = useTheme();
+  const upMd = useMediaQuery(theme.breakpoints.up('md'));
 
-  const handleChange = (event: React.SyntheticEvent, newValue: number) => {
+  const handleChange = (_e: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
-  // the tab data
   const tabsData = [
     {label: 'Fahrschüler', icon: profile},
     {label: 'Fahrschulen', icon: profile},
@@ -47,115 +60,131 @@ export default function HowItWorks() {
   ];
 
   return (
-    <>
-      <Box
-        sx={{
-          padding: {
-            xs: '64px 16px 48px 16px',
-            md: '64px 24px 48px 24px',
-            lg: '64px 48px 48px 48px'
-          },
-          backgroundColor: '#FAFAFA'
-        }}
-      >
-        <Box
+    <Box
+      sx={{
+        padding: {
+          xs: '64px 16px 48px 16px',
+          md: '64px 24px 48px 24px',
+          lg: '64px 48px 48px 48px'
+        },
+        backgroundColor: '#FAFAFA'
+      }}
+    >
+      <Box sx={{maxWidth: '1280px', m: 'auto'}}>
+        <Typography
           sx={{
-            maxWidth: '1280px',
-            margin: 'auto'
+            p: '16px',
+            color: '#000',
+            fontSize: {xs: '28px', md: '32px', lg: '36px'},
+            textAlign: 'center',
+            fontWeight: 700
           }}
         >
-          <Typography
+          So funktioniert’s
+        </Typography>
+
+        <Box
+          sx={{
+            pt: {xs: '40px', lg: '24px'},
+            '& > :not(:first-child)': {padding: '0px !important'}
+          }}
+        >
+          <Box
             sx={{
-              padding: '16px',
-              color: '#000',
-              fontSize: {xs: '28px', md: '32px', lg: '36px'},
-              textAlign: 'center',
-              fontWeight: '700'
+              backgroundColor: '#FAFAFA',
+              width: 'fit-content',
+              m: 'auto',
+              borderRadius: '999px',
+              border: '1px solid #D4D4D4',
+              boxShadow: 'rgba(0, 0, 0, 0.25) 0px 1px 2px 0px',
+              marginBottom: '24px'
             }}
           >
-            So funktioniert’s
-          </Typography>
-
-          <Box sx={{paddingTop: {xs: '40px', lg: '24px'}}}>
-            {/* ✅ Tabs Section */}
-            <Box
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              centered
+              TabIndicatorProps={{style: {display: 'none'}}}
               sx={{
-                backgroundColor: 'FAFAFA',
-                width: 'fit-content',
-                margin: 'auto',
-                borderRadius: '999px',
-                border: '1px solid #D4D4D4',
-                boxShadow: 'rgba(0, 0, 0, 0.25) 0px 1px 2px 0px'
+                '& .MuiTab-root': {
+                  textTransform: 'none',
+                  backgroundColor: 'transparent !important',
+                  minHeight: 'auto',
+                  minWidth: 'auto',
+                  color: '#2D3748',
+                  p: '8px',
+                  borderRadius: '999px',
+                  fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                  transition: 'all 0.3s ease-in-out',
+                  m: '8px',
+                  '&.Mui-selected': {
+                    color: '#2D3748 !important',
+                    backgroundColor: '#fff !important',
+                    boxShadow: '0px 2px 8px rgba(0,0,0,0.15)',
+                    p: '8px 16px'
+                  },
+                  '&:hover, &.Mui-focusVisible': {
+                    backgroundColor: '#fff !important',
+                    boxShadow: '0px 2px 8px rgba(0,0,0,0.15)'
+                  }
+                }
               }}
             >
-              <Tabs
-                value={value}
-                onChange={handleChange}
-                aria-label="how it works tabs"
-                centered
-                TabIndicatorProps={{style: {display: 'none'}}}
-                sx={{
-                  '& .MuiTab-root': {
-                    backgroundColor: 'transparent !important',
-                    minHeight: 'auto',
-                    color: '#2D3748',
-                    padding: '8px',
-                    borderRadius: '999px',
-                    fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                    '&.Mui-selected': {
-                      color: '#2D3748 !important',
-                      backgroundColor: '#fff !important',
-                      boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.15)',
-                      padding: '8px 16px'
-                    },
-                    '&:hover, &.Mui-focusVisible': {
-                      backgroundColor: '#fff !important',
-                      boxShadow: '0px 2px 8px rgba(0, 0, 0, 0.15)'
-                    },
-                    display: 'flex',
-                    flexDirection: 'row',
-                    gap: '10px',
-                    transition: 'all 0.4s ease-in-out',
-                    position: 'relative',
-                    zIndex: '100',
-                    margin: '8px'
-                  }
-                }}
-              >
-                {tabsData.map((tab, index) => (
+              {tabsData.map((tab, i) => {
+                const showText = upMd || value === i;
+                return (
                   <Tab
-                    key={index}
-                    icon={
-                      <Image
-                        src={tab.icon}
-                        alt={tab.label}
-                        width={30}
-                        height={30}
-                        style={{objectFit: 'contain', margin: '0'}}
-                      />
+                    key={i}
+                    disableRipple
+                    label={
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: {xs: showText ? '10px' : 0, md: '10px'}
+                        }}
+                      >
+                        <Image
+                          src={tab.icon}
+                          alt={tab.label}
+                          width={30}
+                          height={30}
+                          style={{objectFit: 'contain'}}
+                        />
+                        <Collapse
+                          in={showText}
+                          orientation="horizontal"
+                          timeout={200}
+                          unmountOnExit
+                        >
+                          <Box component="span" sx={{textWrap: 'nowrap'}}>
+                            {tab.label}
+                          </Box>
+                        </Collapse>
+                      </Box>
                     }
-                    label={tab.label}
-                    {...a11yProps(index)}
+                    {...a11yProps(i)}
                   />
-                ))}
-              </Tabs>
-            </Box>
-
-            <CustomTabPanel value={value} index={0}>
-              Content for Fahrschüler
-            </CustomTabPanel>
-            <CustomTabPanel value={value} index={1}>
-              Content for Fahrschulen
-            </CustomTabPanel>
-            <CustomTabPanel value={value} index={2}>
-              Content for PWA auf iOS
-            </CustomTabPanel>
-            <CustomTabPanel value={value} index={3}>
-              Content for PWA auf Android
-            </CustomTabPanel>
+                );
+              })}
+            </Tabs>
           </Box>
+
+          <CustomTabPanel value={value} index={0}>
+            <TabMenu />
+            <TabMenu />
+          </CustomTabPanel>
+          <CustomTabPanel value={value} index={1}>
+            Content for Fahrschulen
+          </CustomTabPanel>
+          <CustomTabPanel value={value} index={2}>
+            Content for PWA auf iOS
+          </CustomTabPanel>
+          <CustomTabPanel value={value} index={3}>
+            Content for PWA auf Android
+          </CustomTabPanel>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }
