@@ -4,6 +4,7 @@ import Hero from '@/components/home/Hero';
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/Footer';
 import TrustServiceSection from '@/components/home/TrustServiceSection';
+import HowItWorks from '@/components/home/HowItWorks';
 export default function HomePage() {
   return (
     <>
@@ -23,6 +24,7 @@ export default function HomePage() {
           <Navbar />
         </Box>
         <Box sx={{marginTop: '82px'}}>
+          <HowItWorks />
           <Hero />
         </Box>
         <TrustServiceSection />

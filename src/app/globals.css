@@ -1,49 +1,48 @@
 @font-face {
-  font-family: "Satoshi300";
-  src: url("/fonts/Satoshi-Light.otf") format("opentype");
+  font-family: 'Satoshi300';
+  src: url('/fonts/Satoshi-Light.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Satoshi";
-  src: url("/fonts/Satoshi-Regular.otf") format("opentype");
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Satoshi500";
-  src: url("/fonts/Satoshi-Medium.otf") format("opentype");
+  font-family: 'Satoshi500';
+  src: url('/fonts/Satoshi-Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Satoshi600";
-  src: url("/fonts/Satoshi-Bold.otf") format("opentype");
+  font-family: 'Satoshi600';
+  src: url('/fonts/Satoshi-Bold.otf') format('opentype');
   font-weight: 600 !important;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Satoshi700";
-  src: url("/fonts/Satoshi-Black.otf") format("opentype");
+  font-family: 'Satoshi700';
+  src: url('/fonts/Satoshi-Black.otf') format('opentype');
   font-weight: 800 !important;
   font-style: normal;
   font-display: swap;
 }
 
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: "Satoshi", sans-serif !important;
+  font-family: 'Satoshi', sans-serif !important;
 }
 
 html,
@@ -75,4 +74,8 @@ a {
 
 .css-64lat8-MuiPaper-root {
   box-shadow: 0 4px 12px rgba(26, 32, 44, 0.1) !important;
+}
+
+.css-1qltlow-MuiTabs-indicator {
+  display: none;
 }
