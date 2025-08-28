@@ -132,12 +132,29 @@ export default function TabMenu({
                 {description}
               </Typography>
             </Box>
-            <Box sx={{width: {md: '50%'}}}>
-              <Image
-                style={{height: '100%', width: '100%', objectFit: 'contain'}}
-                src={image}
-                alt={title}
-              />
+            <Box
+              sx={{
+                width: {md: '50%'},
+                borderRadius: '15px',
+                background:
+                  'linear-gradient(125deg, rgba(70, 17, 245, 0.15) 0%, rgba(30, 245, 255, 0.1) 50%, rgba(235, 0, 255, 0.15) 100%)',
+                padding: '8px'
+              }}
+            >
+              <Box
+                sx={{
+                  overflow: 'hidden',
+                  borderRadius: '15px',
+                  height: '100%',
+                  width: '100%'
+                }}
+              >
+                <Image
+                  style={{height: '100%', width: '100%', objectFit: 'cover'}}
+                  src={image}
+                  alt={title}
+                />
+              </Box>
             </Box>
           </Box>
         </Box>
