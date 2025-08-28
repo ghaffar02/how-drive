@@ -7,6 +7,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import {motion} from 'framer-motion';
 import User from '@/assets/svgs/user.svg';
 import Car from '@/assets/svgs/car.svg';
+import {useTranslations} from 'next-intl';
 
 const cardsData = [
   {
@@ -115,6 +116,10 @@ export default function Advantages() {
   const [value, setValue] = useState('fahrschuler');
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const t = useTranslations('Advantages');
+  const DriverData = t.raw('DriverData');
+  const SchoolsData = t.raw('SchoolsData');
+
   function tabSwitch(val: string) {
     setValue(val);
     console.log(value);
@@ -161,7 +166,7 @@ export default function Advantages() {
           mt: '48px'
         }}
       >
-        Ihre Vorteile mit WieFührerschein
+        {t('title')}
       </Typography>
       <Box
         sx={{
@@ -229,7 +234,7 @@ export default function Advantages() {
                   color: '#2d3748'
                 }}
               >
-                Fahrschüler
+                {t('driverTab')}
               </Typography>
             </Box>
             {/* Second Button */}
@@ -274,7 +279,7 @@ export default function Advantages() {
                   color: '#2d3748'
                 }}
               >
-                Fahrschulen
+                {t('schoolTab')}
               </Typography>
             </Box>
           </Box>
@@ -315,7 +320,7 @@ export default function Advantages() {
               }}
             >
               {value === 'fahrschuler'
-                ? cardsData.map((data, i) => (
+                ? DriverData.map((data: any, i: number) => (
                     <motion.div
                       key={data.title}
                       initial={{y: 80, opacity: 0}}
@@ -336,7 +341,7 @@ export default function Advantages() {
                       />
                     </motion.div>
                   ))
-                : cardsData2.map((data, i) => (
+                : SchoolsData.map((data: any, i: number) => (
                     <motion.div
                       key={data.title}
                       initial={{y: 80, opacity: 0}}

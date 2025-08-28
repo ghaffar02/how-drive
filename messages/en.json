@@ -22,6 +22,99 @@
     "contact": "Contact",
     "login": "Login"
   },
+  "Advantages": {
+    "title": "Your Advantages with WieFührerschein",
+    "driverTab": "Learners",
+    "schoolTab": "Driving Schools",
+    "DriverData": [
+      {
+        "title": "All Information in One Place",
+        "description": "Access all the information you need. Keep track of your progress, appointments, and messages clearly organized in one central location.",
+        "bgColor": "#000",
+        "color": "#fff"
+      },
+      {
+        "title": "Visualized Process Guide",
+        "description": "See exactly which steps you’ve already completed and what’s next—from first aid courses to theory lessons, driving lessons, and exams.",
+        "bgColor": "rgb(206, 210, 224)",
+        "color": "#000"
+      },
+      {
+        "title": "Intuitive and Modern Design",
+        "description": "The intuitive design combined with a modern layout makes it easy to track your learning progress and quickly find the information you need.",
+        "bgColor": "rgb(27, 0, 115)",
+        "color": "#fff"
+      },
+      {
+        "title": "Flexible Appointment Booking",
+        "description": "Whether it’s a consultation, theory class, or driving lesson – book appointments directly online with your driving school. No more time-consuming calls or waiting.",
+        "bgColor": "#000",
+        "color": "#fff"
+      },
+      {
+        "title": "Direct Communication",
+        "description": "Use the integrated chat feature to quickly and easily ask questions to your driving school. Your school also communicates with you about things like exam dates.",
+        "bgColor": "rgb(195, 225, 227)",
+        "color": "#000"
+      },
+      {
+        "title": "Reminders and Notifications",
+        "description": "Get automatic reminders for upcoming appointments, theory classes, driving lessons, or exams.",
+        "bgColor": "rgb(251, 207, 255)",
+        "color": "#000"
+      },
+      {
+        "title": "Available in Two Languages",
+        "description": "You can switch between German and English. All service functions are available in both languages.",
+        "bgColor": "#000",
+        "color": "#fff"
+      }
+    ],
+    "SchoolsData": [
+      {
+        "title": "Efficient Appointment Management",
+        "description": "Manage all theory courses and driving lessons in one place and reduce administrative work—less paperwork, more clarity.",
+        "bgColor": "#000",
+        "color": "#fff"
+      },
+      {
+        "title": "Simple Communication",
+        "description": "Send messages to individual students or entire groups to inform them about appointments, changes, or news—quick and direct.",
+        "bgColor": "rgb(215,251,252)",
+        "color": "#000"
+      },
+      {
+        "title": "Reduced Administrative Effort",
+        "description": "Cut down on calls and emails: students book appointments themselves, and all necessary information is shared through the integrated chat function.",
+        "bgColor": "rgb(230,235,255)",
+        "color": "#000"
+      },
+      {
+        "title": "Better Resource Planning",
+        "description": "Plan your vehicles and instructors efficiently. The online booking system helps optimize utilization with clear calendars and automated scheduling.",
+        "bgColor": "#000",
+        "color": "#fff"
+      },
+      {
+        "title": "Student Progress at a Glance",
+        "description": "Track each student’s learning status digitally. This allows you to create personalized learning plans and adjust lessons more effectively.",
+        "bgColor": "rgb(28, 0, 120)",
+        "color": "#fff"
+      },
+      {
+        "title": "Digital Student Records",
+        "description": "All important information and bookings per student stored in one place. All communication is securely stored and GDPR compliant.",
+        "bgColor": "rgb(251, 212, 255)",
+        "color": "#000"
+      },
+      {
+        "title": "Professional Appearance",
+        "description": "Offer your students a modern and intuitive platform—a big plus with younger audiences. It strengthens trust in your school and sets you apart from competitors.",
+        "bgColor": "#000",
+        "color": "#fff"
+      }
+    ]
+  },
   "Pricing": {
     "title": "Our prices for learners and driving schools",
     "PricingData": [
