@@ -20,6 +20,8 @@ export default function TrustServiceSection() {
               'linear-gradient(125deg, rgba(70, 17, 245, 0.75) 0%, rgba(31, 244, 255, 0.75) 46.8468%, rgba(234, 0, 255, 0.75) 100%)',
             height: '390px',
             width: '100%',
+            maxWidth: '1280px',
+            m: '0 auto',
             borderRadius: '25px',
             position: 'relative',
             overflow: 'hidden',
@@ -33,7 +35,7 @@ export default function TrustServiceSection() {
             <Typography
               sx={{
                 color: '#FFFFFF',
-                fontSize: {xs: '32px', md: '36px', lg: '48px'},
+                fontSize: {xs: '32px', sm: '36px', lg: '48px'},
                 lineHeight: {xs: '1.2em', lg: '1.15em'},
                 fontWeight: '600',
                 paddingBottom: '10px'
@@ -46,6 +48,7 @@ export default function TrustServiceSection() {
                 color: '#FFFFFF',
                 fontSize: {xs: '16px', md: '18px', lg: '20px'},
                 lineHeight: '1.35em',
+                fontFamily: '"Inter", sans-serif  !important',
                 fontWeight: '400'
               }}
             >
@@ -67,6 +70,7 @@ export default function TrustServiceSection() {
                   height: {xs: '44px', md: '46px', lg: '50px'},
                   width: {xs: '188px', md: '210px', lg: '239px'},
                   fontSize: {xs: '14px', md: '16px', lg: '18px'},
+                  fontFamily: '"Inter", sans-serif  !important',
                   textWrap: 'nowrap',
                   textTransform: 'capitalize',
                   borderRadius: '10px',
@@ -84,6 +88,7 @@ export default function TrustServiceSection() {
                   height: {xs: '44px', md: '46px', lg: '50px'},
                   width: {xs: '188px', md: '210px', lg: '239px'},
                   fontSize: {xs: '14px', md: '16px', lg: '18px'},
+                  fontFamily: '"Inter", sans-serif  !important',
                   textWrap: 'nowrap',
                   textTransform: 'capitalize',
                   borderRadius: '10px',

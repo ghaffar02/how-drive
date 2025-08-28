@@ -86,7 +86,7 @@ export default function HowItWorks() {
         <Box
           sx={{
             pt: {xs: '40px', lg: '24px'},
-            '& > :not(:first-child)': {padding: '0px !important'}
+            '& > :not(:first-of-type)': {padding: '0px !important'}
           }}
         >
           <Box

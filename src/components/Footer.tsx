@@ -30,10 +30,10 @@ export default function Footer() {
             md: '48px 48px 32px 48px'
           },
           display: 'flex',
-          alignItems: {xs: 'center', sm: 'flex-start'},
+          alignItems: {xs: 'start', sm: 'flex-start'},
           gap: {xs: '48px', sm: '10px'},
           justifyContent: 'space-between',
-          maxWidth: '1280px',
+          maxWidth: '1376px',
           margin: 'auto',
           flexDirection: {xs: 'column', sm: 'row'}
         }}
@@ -75,6 +75,7 @@ export default function Footer() {
             sx={{
               color: '#2D3748',
               fontSize: {xs: '14px', md: '15px', lg: '16px'},
+              fontFamily: '"Inter", sans-serif  !important',
               paddingTop: '10px'
             }}
           >
@@ -111,22 +112,30 @@ export default function Footer() {
             display: 'flex',
             alignItems: 'flex-start',
             gap: '10px',
-            width: {xs: '100%', sm: 'auto'},
+            width: {xs: '100%', sm: '100%'},
             justifyContent: {xs: 'space-between', sm: 'unset'},
-            maxWidth: '350px'
+            maxWidth: {lg: '540px', sm: '350px', xs: '80%'},
+            mb: {xs: '55px', sm: '40px'}
+            // bgcolor: 'red'
           }}
         >
           {Object.entries(sections).map(([key, section]) => (
-            <Box sx={{width: {sm: '80px', md: '115px', lg: '172px'}}} key={key}>
+            <Box
+              sx={{
+                width: {sm: '100px', md: '115px', lg: '172px'}
+              }}
+              key={key}
+            >
               <Typography
                 sx={{
-                  color: '#2D3748',
-                  fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                  color: '#2e3749',
+                  fontSize: {xs: '14px', md: '14px', lg: '16px'},
                   lineHeight: '1.5em',
                   fontWeight: '600',
                   paddingBottom: '10px',
                   wordBreak: 'break-word',
                   whiteSpace: 'normal',
+                  fontFamily: '"Inter", sans-serif  !important',
                   overflowWrap: 'break-word'
                 }}
               >
@@ -137,14 +146,15 @@ export default function Footer() {
                   <Typography
                     key={index}
                     sx={{
-                      color: '#2D3748',
-                      fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                      color: '#626b7b',
+                      fontSize: {xs: '12px', md: '13px', lg: '14px'},
                       paddingBottom:
                         index !== section.items.length - 1 ? '10px' : 0,
                       wordBreak: 'break-word',
                       whiteSpace: 'normal',
                       overflowWrap: 'break-word',
                       cursor: 'pointer',
+                      fontFamily: '"Inter", sans-serif  !important',
                       transition: 'all 0.4s ease-in-out',
                       '&:hover': {
                         color: '#4616F5'
@@ -162,13 +172,14 @@ export default function Footer() {
       <Box>
         <Typography
           sx={{
-            color: '#2D3748',
-            fontSize: {xs: '14px', md: '15px', lg: '16px'},
+            color: '#4a5568',
+            fontSize: {xs: '12px', md: '13px', lg: '14px'},
             lineHeight: '1.5em',
-            fontWeight: '600',
+            fontWeight: '300',
             paddingBottom: {xs: '56px', lg: '24px'},
             wordBreak: 'break-word',
             whiteSpace: 'normal',
+            fontFamily: '"Inter", sans-serif  !important',
             overflowWrap: 'break-word',
             textAlign: 'center',
             paddingX: {
