@@ -21,7 +21,7 @@ interface GenericAccordionProps {
   items: AccordionItem[];
 }
 
-const FaqAreahub: React.FC<GenericAccordionProps> = ({items}) => {
+const Faq: React.FC<GenericAccordionProps> = ({items}) => {
   const [expanded, setExpanded] = useState<number[]>([]);
 
   const handleChange =
@@ -183,4 +183,4 @@ const FaqAreahub: React.FC<GenericAccordionProps> = ({items}) => {
   );
 };
 
-export default FaqAreahub;
+export default Faq;

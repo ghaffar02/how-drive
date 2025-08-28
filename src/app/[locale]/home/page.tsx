@@ -1,12 +1,15 @@
 'use client';
 import {Box} from '@mui/material';
+
 import Hero from '@/components/home/Hero';
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/Footer';
 import TrustServiceSection from '@/components/home/TrustServiceSection';
 import HowItWorks from '@/components/home/HowItWorks';
-import FaqAreahub from '@/components/home/AccordionFragen';
+import Faq from '@/components/home/Faq';
 import Advantages from '@/components/home/Advantages';
+import Pricing from '@/components/prices/Pricing';
+
 export default function HomePage() {
   const faqData = [
     {
@@ -86,7 +89,8 @@ Auf unserer Website im Bereich Führerscheinklassen kannst du alle Klassen und i
           <HowItWorks />
         </Box>
         <Advantages />
-        <FaqAreahub items={faqData} />
+        <Pricing />
+        <Faq items={faqData} />
         <TrustServiceSection />
         <Footer />
       </Box>
