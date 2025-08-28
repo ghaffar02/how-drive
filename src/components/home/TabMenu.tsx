@@ -2,10 +2,23 @@
 
 import * as React from 'react';
 import {Box, Typography, Divider} from '@mui/material';
-import uiDesigner from '@/assets/pngs/Tab-Menu/uiDesigner.png';
-import Image from 'next/image';
+import Image, {StaticImageData} from 'next/image';
 
-export default function TabMenu() {
+interface TabMenuProps {
+  number: string;
+  title: string;
+  heading: string;
+  description: string;
+  image: StaticImageData;
+}
+
+export default function TabMenu({
+  number,
+  title,
+  heading,
+  description,
+  image
+}: TabMenuProps) {
   return (
     <Box
       sx={{
@@ -22,6 +35,7 @@ export default function TabMenu() {
           gap: '8px'
         }}
       >
+        {/* Left Number Circle */}
         <Box
           sx={{
             width: {xs: '45px', sm: '95px'},
@@ -40,9 +54,9 @@ export default function TabMenu() {
               position: 'relative',
               boxShadow: '0px 1px 8px rgba(0, 0, 0, 0.25)',
               background: `
-      linear-gradient(#FAFAFA, #FAFAFA) padding-box,
-      linear-gradient(180deg, rgba(70,17,245,0.5) 0%, rgba(235,0,255,0.5) 100%) border-box
-    `,
+                linear-gradient(#FAFAFA, #FAFAFA) padding-box,
+                linear-gradient(180deg, rgba(70,17,245,0.5) 0%, rgba(235,0,255,0.5) 100%) border-box
+              `,
               border: '1px solid transparent'
             }}
           >
@@ -56,7 +70,7 @@ export default function TabMenu() {
                 textAlign: 'center'
               }}
             >
-              1
+              {number}
             </Typography>
           </Box>
           <Divider
@@ -75,6 +89,8 @@ export default function TabMenu() {
             }}
           />
         </Box>
+
+        {/* Content */}
         <Box>
           <Typography
             sx={{
@@ -84,7 +100,7 @@ export default function TabMenu() {
               paddingTop: {xs: '4px', md: '20px'}
             }}
           >
-            Führerscheinklasse
+            {title}
           </Typography>
           <Box
             sx={{
@@ -104,7 +120,7 @@ export default function TabMenu() {
                   paddingBottom: '10px'
                 }}
               >
-                Wähle die Führerscheinklasse
+                {heading}
               </Typography>
               <Typography
                 sx={{
@@ -113,16 +129,14 @@ export default function TabMenu() {
                   fontWeight: 700
                 }}
               >
-                Welche Fahrerlaubnis benötigst du? Wähle die passende Kategorie
-                aus. Wir begleiten dich Schritt für Schritt durch den Prozess
-                des Führerscheinerwerbs.
+                {description}
               </Typography>
             </Box>
             <Box sx={{width: {md: '50%'}}}>
               <Image
                 style={{height: '100%', width: '100%', objectFit: 'contain'}}
-                src={uiDesigner}
-                alt="uiDesigner"
+                src={image}
+                alt={title}
               />
             </Box>
           </Box>
