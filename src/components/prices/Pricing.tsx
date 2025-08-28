@@ -4,7 +4,7 @@ import {useTranslations} from 'next-intl';
 
 export default function Pricing() {
   const t = useTranslations('Pricing');
-  const preiseData = t.raw('PricingData');
+  const PricingData = t.raw('PricingData');
 
   return (
     <>
@@ -50,7 +50,7 @@ export default function Pricing() {
               flexWrap: {xs: 'wrap', md: 'nowrap'}
             }}
           >
-            <PricingCards preiseData={preiseData} />
+            <PricingCards pricingData={PricingData} />
           </Box>
         </Box>
       </Box>

@@ -15,11 +15,15 @@ interface PriceData {
   button: string;
 }
 
-export default function PricingCards({preiseData}: {preiseData: PriceData[]}) {
+export default function PricingCards({
+  pricingData
+}: {
+  pricingData: PriceData[];
+}) {
   const MotionBox = motion(Box);
   return (
     <>
-      {preiseData.map((items: PriceData, index: number) => {
+      {pricingData.map((items: PriceData, index: number) => {
         return (
           <MotionBox
             key={index}
