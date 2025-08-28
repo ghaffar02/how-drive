@@ -1,5 +1,4 @@
 'use client';
-
 import * as React from 'react';
 import {
   Box,
@@ -20,6 +19,22 @@ import uiDesigner from '@/assets/pngs/Tab-Menu/uiDesigner.png';
 import webDesigner from '@/assets/pngs/Tab-Menu/webDesigner.png';
 import seoSpecialist from '@/assets/pngs/Tab-Menu/seoSpecialist.png';
 import guide from '@/assets/pngs/Tab-Menu/guide.png';
+import {motion} from 'framer-motion';
+
+const tabsMount = {
+  hidden: {opacity: 0, y: 60, scale: 0.3},
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease: 'easeInOut',
+      when: 'beforeChildren',
+      staggerChildren: 0.06
+    }
+  }
+};
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -243,81 +258,90 @@ export default function HowItWorks() {
             '& > :not(:first-of-type)': {padding: '0px !important'}
           }}
         >
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            centered
-            TabIndicatorProps={{style: {display: 'none'}}}
-            sx={{
-              backgroundColor: '#FAFAFA',
-              width: 'fit-content',
-              m: 'auto',
-              borderRadius: '999px',
-              border: '1px solid #D4D4D4',
-              boxShadow: 'rgba(0, 0, 0, 0.25) 0px 1px 2px 0px',
-              marginBottom: '24px',
-              '& .MuiTab-root': {
-                textTransform: 'none',
-                backgroundColor: 'transparent !important',
-                minHeight: 'auto',
-                minWidth: 'auto',
-                color: '#2D3748',
-                p: '8px',
+          <motion.div variants={tabsMount} initial="hidden" animate="visible">
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              centered
+              TabIndicatorProps={{style: {display: 'none'}}}
+              sx={{
+                backgroundColor: '#FAFAFA',
+                width: 'fit-content',
+                m: 'auto',
                 borderRadius: '999px',
-                fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                transition: 'all 0.3s ease-in-out',
-                m: '8px',
-                '&.Mui-selected': {
-                  color: '#2D3748 !important',
-                  backgroundColor: '#fff !important',
-                  boxShadow: '0px 2px 8px rgba(0,0,0,0.15)',
-                  p: '8px 16px'
-                },
-                '&:hover, &.Mui-focusVisible': {
-                  backgroundColor: '#fff !important',
-                  boxShadow: '0px 2px 8px rgba(0,0,0,0.15)'
-                }
-              }
-            }}
-          >
-            {tabsData.map((tab, i) => {
-              const showText = upMd || value === i;
-              return (
-                <Tab
-                  key={i}
-                  disableRipple
-                  label={
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: {xs: showText ? '10px' : 0, md: '10px'}
-                      }}
-                    >
-                      <Image
-                        src={tab.icon}
-                        alt={tab.label}
-                        width={30}
-                        height={30}
-                        style={{objectFit: 'contain'}}
-                      />
-                      <Collapse
-                        in={showText}
-                        orientation="horizontal"
-                        timeout={200}
-                        unmountOnExit
-                      >
-                        <Box component="span" sx={{textWrap: 'nowrap'}}>
-                          {tab.label}
-                        </Box>
-                      </Collapse>
-                    </Box>
+                border: '1px solid #D4D4D4',
+                boxShadow: 'rgba(0, 0, 0, 0.25) 0px 1px 2px 0px',
+                marginBottom: '24px',
+                '& .MuiTab-root': {
+                  textTransform: 'none',
+                  backgroundColor: 'transparent !important',
+                  minHeight: 'auto',
+                  minWidth: 'auto',
+                  color: '#2D3748',
+                  p: '8px',
+                  borderRadius: '999px',
+                  fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                  transition: 'all 0.3s ease-in-out',
+                  m: '8px',
+                  '&.Mui-selected': {
+                    color: '#2D3748 !important',
+                    backgroundColor: '#fff !important',
+                    boxShadow: '0px 2px 8px rgba(0,0,0,0.15)',
+                    p: '8px 16px'
+                  },
+                  '&:hover, &.Mui-focusVisible': {
+                    backgroundColor: '#fff !important',
+                    boxShadow: '0px 2px 8px rgba(0,0,0,0.15)'
                   }
-                  {...a11yProps(i)}
-                />
-              );
-            })}
-          </Tabs>
+                }
+              }}
+            >
+              {tabsData.map((tab, i) => {
+                const showText = upMd || value === i;
+                return (
+                  <Tab
+                    key={i}
+                    disableRipple
+                    label={
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: {xs: showText ? '10px' : 0, md: '10px'}
+                        }}
+                      >
+                        <Image
+                          src={tab.icon}
+                          alt={tab.label}
+                          width={30}
+                          height={30}
+                          style={{objectFit: 'contain'}}
+                        />
+                        <Collapse
+                          in={showText}
+                          orientation="horizontal"
+                          timeout={200}
+                          unmountOnExit
+                        >
+                          <Box
+                            component="span"
+                            sx={{
+                              textWrap: 'nowrap',
+                              fontFamily:
+                                '"Inter", "Inter Placeholder", sans-serif'
+                            }}
+                          >
+                            {tab.label}
+                          </Box>
+                        </Collapse>
+                      </Box>
+                    }
+                    {...a11yProps(i)}
+                  />
+                );
+              })}
+            </Tabs>
+          </motion.div>
 
           {stepsByTab.map((steps, idx) => (
             <CustomTabPanel key={idx} value={value} index={idx}>

@@ -32,7 +32,7 @@ export default function TabMenu({
           maxWidth: '1280px',
           m: 'auto',
           display: 'flex',
-          gap: '8px'
+          gap: '18px'
         }}
       >
         {/* Left Number Circle */}
@@ -97,7 +97,8 @@ export default function TabMenu({
               color: '#2D3748',
               fontSize: {xs: '14px', md: '15px', lg: '16px'},
               paddingBottom: '24px',
-              paddingTop: {xs: '4px', md: '20px'}
+              paddingTop: {xs: '4px', md: '20px'},
+              fontFamily: '"Inter", "Inter Placeholder", sans-serif !important'
             }}
           >
             {title}
@@ -106,7 +107,7 @@ export default function TabMenu({
             sx={{
               display: 'flex',
               gap: '48px',
-              flexDirection: {xs: 'column', md: 'row'},
+              flexDirection: {xs: 'column', lg: 'row'},
               paddingX: '8px'
             }}
           >
@@ -117,7 +118,8 @@ export default function TabMenu({
                   fontSize: {xs: '32px', md: '36px', lg: '48px'},
                   lineHeight: {xs: '1.2em', lg: '1.15em'},
                   fontWeight: 700,
-                  paddingBottom: '10px'
+                  paddingBottom: '10px',
+                  fontFamily: 'satoshi600 !important'
                 }}
               >
                 {heading}
@@ -134,7 +136,8 @@ export default function TabMenu({
             </Box>
             <Box
               sx={{
-                width: {md: '50%'},
+                width: {lg: '510px'},
+                height: {lg: '390px'},
                 borderRadius: '15px',
                 background:
                   'linear-gradient(125deg, rgba(70, 17, 245, 0.15) 0%, rgba(30, 245, 255, 0.1) 50%, rgba(235, 0, 255, 0.15) 100%)',
