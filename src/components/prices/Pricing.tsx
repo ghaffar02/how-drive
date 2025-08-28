@@ -1,36 +1,10 @@
 import {Box, Typography} from '@mui/material';
 import PricingCards from './PricingCards';
+import {useTranslations} from 'next-intl';
 
 export default function Pricing() {
-  const preiseData = [
-    {
-      title: 'Fahrschüler',
-      price: {amount: 'Kostenlos'},
-      features: [
-        'Alle Funktionen inklusive',
-        'Infos über benötigte Unterlagen',
-        'Zuständige Behörden',
-        'Prozessleitfaden',
-        'Terminbuchung',
-        'Nachrichten senden',
-        'Keine versteckten Kosten'
-      ],
-      button: 'Starten'
-    },
-    {
-      title: 'Fahrschulen',
-      price: {amount: '29,95 €', duration: '/Monat', note: '(inkl. MwSt.)'},
-      features: [
-        'Kostenlose Registrierung',
-        'Einen kostenlosen Probemonat',
-        'Terminverwaltung',
-        'Digitale Kommunikation',
-        'Keine Einrichtungsgebühr',
-        'Monatlich kündbar'
-      ],
-      button: 'Registrieren'
-    }
-  ];
+  const t = useTranslations('Pricing');
+  const preiseData = t.raw('PricingData');
 
   return (
     <>
@@ -63,7 +37,7 @@ export default function Pricing() {
               color: '#000'
             }}
           >
-            Unsere Preise für Fahrschüler und Fahrschulen
+            {t('title')}
           </Typography>
           <Box
             sx={{

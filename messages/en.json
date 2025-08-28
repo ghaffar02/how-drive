@@ -21,5 +21,41 @@
     "pricing": "Pricing",
     "contact": "Contact",
     "login": "Login"
+  },
+  "Pricing": {
+    "title": "Our prices for learners and driving schools",
+    "PricingData": [
+      {
+        "title": "Learners",
+        "price": {"amount": "Free"},
+        "features": [
+          "All features included",
+          "Information about required documents",
+          "Responsible authorities",
+          "Process guide",
+          "Appointment booking",
+          "Send messages",
+          "No hidden costs"
+        ],
+        "button": "Start"
+      },
+      {
+        "title": "Driving Schools",
+        "price": {
+          "amount": "€29.95",
+          "duration": "/month",
+          "note": "(incl. VAT)"
+        },
+        "features": [
+          "Free registration",
+          "One-month free trial",
+          "Appointment management",
+          "Digital communication",
+          "No setup fee",
+          "Cancelable monthly"
+        ],
+        "button": "Register"
+      }
+    ]
   }
 }
