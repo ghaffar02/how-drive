@@ -1,116 +1,15 @@
 'use client';
+
 import {Box, Button, Typography, useTheme, useMediaQuery} from '@mui/material';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import Image from 'next/image';
+import {useTranslations} from 'next-intl';
 import React, {useEffect, useRef, useState} from 'react';
 import {motion} from 'framer-motion';
+
 import User from '@/assets/svgs/user.svg';
 import Car from '@/assets/svgs/car.svg';
-import {useTranslations} from 'next-intl';
-
-const cardsData = [
-  {
-    title: 'Alle Infos gebündelt',
-    description:
-      'Greife auf alle benötigten Informationen zu. Behalte deinen Fortschritt, Termine und Nachrichten übersichtlich an einem zentralen Ort im Blick.',
-    bgColor: '#000',
-    color: '#fff'
-  },
-  {
-    title: 'Visualisierter Prozessleitfaden',
-    description:
-      'Sieh genau, welche Schritte du bereits abgeschlossen hast und was als Nächstes ansteht, vom Erste-Hilfe-Kurs bis zu den Theorie- und Fahrstunden sowie der Prüfung.',
-    bgColor: 'rgb(206, 210, 224)',
-    color: '#000'
-  },
-  {
-    title: 'Intuitiv und modernes Design',
-    description:
-      'Das intuitive Design, kombiniert mit einem optisch modernen Layout sorgt dafür, dass du deinen Lernfortschritt einfach verfolgen und die benötigten Informationen schnell finden kannst.',
-    bgColor: 'rgb(27, 0, 115)',
-    color: '#fff'
-  },
-  {
-    title: 'Flexible Terminbuchung',
-    description:
-      'Ob Beratungsgespräch, Theorie- oder Fahrstunden, buche Termine direkt online bei deiner Fahrschule. Nie wieder zeitaufwendige Anrufe oder Wartezeiten.',
-    bgColor: '#000',
-    color: '#fff'
-  },
-  {
-    title: 'Direkte Kommunikation',
-    description:
-      'Nutze die integrierte Chat-Funktion, um schnell und unkompliziert Fragen an deine Fahrschule zu stellen. Auch deine Fahrschule kommuniziert mit dir über z.B. Prüfungstermine.',
-    bgColor: 'rgb(195, 225, 227)',
-    color: '#000'
-  },
-  {
-    title: 'Erinnerungen und Benachrichtigungen',
-    description:
-      'Erhalte automatische Erinnerungen für kommende Termine, Theorie- und Fahrstunden oder Prüfungen.',
-    bgColor: 'rgb(251, 207, 255)',
-    color: '#000'
-  },
-  {
-    title: 'In zwei Sprachen verfügbar',
-    description:
-      'Du kannst zwischen Deutsch und Englisch wählen. Alle Servicefunktionen stehen dir in beiden Sprachen zur Verfügung.',
-    bgColor: '#000',
-    color: '#fff'
-  }
-];
-const cardsData2 = [
-  {
-    title: 'Effizientes Terminmanagement',
-    description:
-      'Verwalte alle Theoriekurse und Fahrstunden zentral und minimiere den Verwaltungsaufwand, weniger Papierkram, mehr Übersicht.',
-    bgColor: '#000',
-    color: '#fff'
-  },
-  {
-    title: 'Einfache Kommunikation',
-    description:
-      'Sende Nachrichten an einzelne Schüler oder ganze Gruppen, um sie über Termine, Änderungen oder Neuigkeiten zu informieren, schnell und direkt.',
-    bgColor: 'rgb(215,251,252)',
-    color: '#000'
-  },
-  {
-    title: 'Weniger Verwaltungsaufwand',
-    description:
-      'Reduziere Anrufe und E-Mails: Schüler buchen selbstständig Termine, die notwendigen Informationen werden über die integrierte Chat-Funktion mitgeteilt.',
-    bgColor: 'rgb(230,235,255)',
-    color: '#000'
-  },
-  {
-    title: 'Bessere Ressourcenplanung',
-    description:
-      'Plane deine Fahrzeuge und Fahrlehrer effizient. Das Online-Terminsystem hilft dir, die Auslastung durch übersichtliche Kalender und automatisierte Buchungen zu optimieren.',
-    bgColor: '#000',
-    color: '#fff'
-  },
-  {
-    title: 'Schülerfortschritte im Blick',
-    description:
-      'Verfolge den Lernstand jedes Schülers digital. So kannst du individuelle Lernpläne erstellen und den Unterrichtsstoff gezielter anpassen.',
-    bgColor: 'rgb(28, 0, 120)',
-    color: '#fff'
-  },
-  {
-    title: 'Digitale Schülerakte',
-    description:
-      'Alle wichtigen Infos und Buchungen pro Schüler gebündelt an einem Ort verfügbar. Die gesamte Kommunikation werden sicher und datenschutzkonform gespeichert.',
-    bgColor: 'rgb(251, 212, 255)',
-    color: '#000'
-  },
-  {
-    title: 'Professioneller Auftritt',
-    description:
-      'Biete deinen Schülern eine moderne und intuitive Plattform, ein Pluspunkt bei jungen Zielgruppen. Das stärkt das Vertrauen in deine Fahrschule und hebt dich von der Konkurrenz ab.',
-    bgColor: '#000',
-    color: '#fff'
-  }
-];
 
 export default function Advantages() {
   const [value, setValue] = useState('fahrschuler');

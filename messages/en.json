@@ -191,5 +191,11 @@
         "content": "A foreign driving license is only valid in Germany for a limited time (usually 6 months after taking up residence). Depending on the country of origin of your license, a theoretical and/or practical test may be required. There are exceptions if Germany has a recognition agreement with the issuing country. To convert your license, you must apply for conversion at the driving license office responsible for your place of residence. We guide you step by step through this process on our website."
       }
     ]
+  },
+  "Services": {
+    "title": "Trust Our Service",
+    "des": "See for yourself how our service works",
+    "btn1": "Start as a Learner",
+    "btn2": "Start as a Driving School"
   }
 }
