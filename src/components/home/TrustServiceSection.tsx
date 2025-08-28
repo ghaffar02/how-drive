@@ -1,8 +1,11 @@
 'use client';
 
 import {Box, Button, Typography} from '@mui/material';
+import {useTranslations} from 'next-intl';
 
 export default function TrustServiceSection() {
+  const t = useTranslations('Services');
+
   return (
     <>
       <Box
@@ -41,7 +44,7 @@ export default function TrustServiceSection() {
                 paddingBottom: '10px'
               }}
             >
-              Vertaue unseres Service
+              {t('title')}
             </Typography>
             <Typography
               sx={{
@@ -52,7 +55,7 @@ export default function TrustServiceSection() {
                 fontWeight: '400'
               }}
             >
-              Erfahre selbst, wie unseres Service funktioniert
+              {t('des')}
             </Typography>
             <Box
               sx={{
@@ -79,7 +82,7 @@ export default function TrustServiceSection() {
                   }
                 }}
               >
-                Als Fahrschuler starten
+                {t('btn1')}
               </Button>
               <Button
                 sx={{
@@ -99,7 +102,7 @@ export default function TrustServiceSection() {
                   }
                 }}
               >
-                Als Fahrschule starten
+                {t('btn2')}
               </Button>
             </Box>
           </Box>
