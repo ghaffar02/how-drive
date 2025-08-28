@@ -197,5 +197,20 @@
     "des": "Erfahre selbst, wie unseres Service funktioniert",
     "btn1": "Als Fahrschuler starten",
     "btn2": "Als Fahrschule starten"
+  },
+  "Footer": {
+    "description": "Wir verknüpfen Fahrschüler und Fahrschulen durch einen digitalen Service.",
+    "features": {
+      "heading": "Funktionen",
+      "items": ["Fahrschüler", "Fahrschulen", "Installation"]
+    },
+    "services": {
+      "heading": "Service",
+      "items": ["Über uns", "Preise", "Kontakt", "Hilfe"]
+    },
+    "support": {
+      "heading": "Rechtliches",
+      "items": ["Impressum", "Datenschutz", "AGB", "Cookie"]
+    }
   }
 }

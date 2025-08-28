@@ -197,5 +197,25 @@
     "des": "See for yourself how our service works",
     "btn1": "Start as a Learner",
     "btn2": "Start as a Driving School"
+  },
+  "Footer": {
+    "description": "We connect learner drivers and driving schools through a digital service.",
+    "features": {
+      "heading": "Features",
+      "items": ["Learners", "Driving Schools", "Installation"]
+    },
+    "services": {
+      "heading": "Service",
+      "items": ["About Us", "Pricing", "Contact", "Help"]
+    },
+    "support": {
+      "heading": "Legal",
+      "items": [
+        "Imprint",
+        "Privacy Policy",
+        "Terms & Conditions",
+        "Cookie Policy"
+      ]
+    }
   }
 }

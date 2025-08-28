@@ -1,25 +1,28 @@
 import {Box, Typography} from '@mui/material';
+import {useTranslations} from 'next-intl';
+
 import Logo from '@/assets/pngs/logo.png';
 import Image from 'next/image';
 import facebook from '@/assets/svgs/facebook.svg';
 import instagram from '@/assets/svgs/instagram.svg';
 import tiktok from '@/assets/svgs/tiktok.svg';
+type FooterSection = {
+  heading: string;
+  items: string[];
+};
+
+type FooterData = {
+  description: string;
+  features: FooterSection;
+  services: FooterSection;
+  support: FooterSection;
+};
 
 export default function Footer() {
-  const sections = {
-    funktionen: {
-      heading: 'Funktionen',
-      items: ['Fahrschüler', 'Fahrschulen', 'Installation']
-    },
-    services: {
-      heading: 'Service',
-      items: ['Über uns', 'Preise', 'Kontakt', 'Hilfe']
-    },
-    support: {
-      heading: 'Rechtliches',
-      items: ['Impressum', 'Datenschutz', 'AGB', 'Cookie']
-    }
-  };
+  const t = useTranslations();
+  const footerData = t.raw('Footer') as FooterData;
+  const {description, ...sections} = footerData;
+
   return (
     <>
       <Box
@@ -79,8 +82,7 @@ export default function Footer() {
               paddingTop: '10px'
             }}
           >
-            Wir verknupfen Fahrschüler und Fahrschulen durch ein digitales
-            Service.
+            {t('Footer.description')}
           </Typography>
           <Box
             sx={{
