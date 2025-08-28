@@ -8,21 +8,15 @@ import {
   Typography,
   Box
 } from '@mui/material';
-import addicon from '@/assets/svgs/plus-icon.svg';
-
+import {useTranslations} from 'next-intl';
 import Image from 'next/image';
 
-interface AccordionItem {
-  title: string;
-  content: string;
-}
+import addicon from '@/assets/svgs/plus-icon.svg';
 
-interface GenericAccordionProps {
-  items: AccordionItem[];
-}
-
-const Faq: React.FC<GenericAccordionProps> = ({items}) => {
+const Faq = () => {
   const [expanded, setExpanded] = useState<number[]>([]);
+  const t = useTranslations('Faq');
+  const PricingData = t.raw('FaqData');
 
   const handleChange =
     (panel: number) => (event: React.SyntheticEvent, isExpanded: boolean) => {
@@ -64,11 +58,11 @@ const Faq: React.FC<GenericAccordionProps> = ({items}) => {
             color: '#000'
           }}
         >
-          Häufig gestellte Fragen
+          {t('title')}
         </Typography>
 
         <Box sx={{maxWidth: '800px', padding: '8px', width: '100%'}}>
-          {items.map((item, index) => (
+          {PricingData.map((item: any, index: number) => (
             <Accordion
               key={index}
               expanded={expanded.includes(index)}

@@ -57,5 +57,46 @@
         "button": "Register"
       }
     ]
+  },
+  "Faq": {
+    "title": "Frequently Asked Questions",
+    "FaqData": [
+      {
+        "title": "What is WieFührerschein?",
+        "content": "WieFührerschein is a service that connects learners and driving schools on a central platform. Learners can track their learning progress, book appointments, and communicate with their driving school. Driving schools use our platform to manage their students, coordinate appointments, and optimize communication."
+      },
+      {
+        "title": "What do I need to apply for a driving license?",
+        "content": "To apply for a driving license, you generally need the following documents:\n• Identity card or passport\n• Biometric passport photo\n• Vision test certificate (not older than two years)\n• Proof of participation in a first aid course\n• If applicable, the registration confirmation from your driving school"
+      },
+      {
+        "title": "Where do I have to go to apply for my driving license?",
+        "content": "You submit the application to the driving license authority responsible for your place of residence. When you enter your address, we show you which authority is responsible for you. In addition, your driving school can often support you with this step."
+      },
+      {
+        "title": "Which car driving license classes are there?",
+        "content": "There are six driving license classes: A, B, C, D, L, and T. The most common car licenses are classes B and BF17.\n• Class B: Allows you to drive motor vehicles up to 3.5 tons total weight. The minimum age is 18 years.\n• Class BF17: This is 'accompanied driving from the age of 17'. The same conditions as class B apply, but you may only drive when accompanied by a registered person.\nOn our website, under the Driving License Classes section, you can see all classes and their differences."
+      },
+      {
+        "title": "How many theory lessons are required?",
+        "content": "The number of theory lessons depends on the license class. For classes A and B, 12 double lessons of basic material and 2 double lessons of class-specific instruction are required. If you are extending (e.g., if you already have a license), the total number is reduced to 8. The total for class C is 18 and for class D it is 20 lessons."
+      },
+      {
+        "title": "How many driving lessons are required?",
+        "content": "There is no minimum number of regular practice lessons – it depends on your learning progress, and your instructor decides when you are ready for the test. In addition, the following special driving lessons are legally required:\n• Class A: 12 special lessons\n• Class B: 12 special lessons\n• Class C: 10 special lessons\n• Class D: 10 special lessons"
+      },
+      {
+        "title": "How do I receive my driving license after the test?",
+        "content": "After passing the practical test, you will either receive your license directly from the examiner or a few days later by mail or collection at the driving license authority – depending on the region."
+      },
+      {
+        "title": "When does my driving license need to be exchanged?",
+        "content": "All licenses issued before January 19, 2013, must be gradually exchanged for the new EU card license. The deadlines depend on your year of birth or the date of issue of your license. In general, the new license must be renewed every 15 years, while the driving entitlement itself remains valid indefinitely."
+      },
+      {
+        "title": "How do you convert a foreign driving license?",
+        "content": "A foreign driving license is only valid in Germany for a limited time (usually 6 months after taking up residence). Depending on the country of origin of your license, a theoretical and/or practical test may be required. There are exceptions if Germany has a recognition agreement with the issuing country. To convert your license, you must apply for conversion at the driving license office responsible for your place of residence. We guide you step by step through this process on our website."
+      }
+    ]
   }
 }
