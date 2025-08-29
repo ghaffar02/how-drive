@@ -350,7 +350,7 @@ export default function HowItWorks() {
 
           {stepsByTab.map((steps, idx) => (
             <CustomTabPanel key={idx} value={value} index={idx}>
-              {steps.map((s) => (
+              {steps.map((s, i) => (
                 <TabMenu
                   key={`${idx}-${s.number}`}
                   number={s.number}
@@ -358,6 +358,7 @@ export default function HowItWorks() {
                   heading={s.heading}
                   description={s.description}
                   image={s.image}
+                  index={i}
                 />
               ))}
             </CustomTabPanel>

@@ -3,6 +3,7 @@
 import * as React from 'react';
 import {Box, Typography, Divider} from '@mui/material';
 import Image, {StaticImageData} from 'next/image';
+import {motion} from 'framer-motion';
 
 interface TabMenuProps {
   number: string;
@@ -10,6 +11,7 @@ interface TabMenuProps {
   heading: string;
   description: string;
   image: StaticImageData;
+  index: number;
 }
 
 export default function TabMenu({
@@ -17,8 +19,10 @@ export default function TabMenu({
   title,
   heading,
   description,
-  image
+  image,
+  index
 }: TabMenuProps) {
+  const MotionBox = motion(Box);
   return (
     <Box
       sx={{
@@ -134,7 +138,18 @@ export default function TabMenu({
                 {description}
               </Typography>
             </Box>
-            <Box
+            <MotionBox
+              key={index}
+              // component={motion.div}
+              initial={{x: 80, opacity: 0}}
+              whileInView={{x: 0, opacity: [0, 0.5, 1]}}
+              viewport={{once: true}}
+              transition={{
+                duration: 0.7,
+                ease: 'easeOut',
+                delay: index * 0.25,
+                times: [0, 0.5, 1]
+              }}
               sx={{
                 width: {lg: '510px'},
                 height: {lg: '390px'},
@@ -158,7 +173,7 @@ export default function TabMenu({
                   alt={title}
                 />
               </Box>
-            </Box>
+            </MotionBox>
           </Box>
         </Box>
       </Box>
