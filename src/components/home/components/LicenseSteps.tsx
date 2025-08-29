@@ -1,5 +1,7 @@
 import {Box, Typography} from '@mui/material';
 import React from 'react';
+import {useTranslations} from 'next-intl';
+
 import GridCard from './GridCard';
 import GridCardSmall from './GridCardSmall';
 
@@ -12,6 +14,7 @@ import arrow from '@/assets/svgs/lincense-steps/arrow.svg';
 import BgImage from '@/assets/svgs/lincense-steps/backgroundFeature.svg';
 
 export default function LicenseSteps() {
+  const t = useTranslations('LicenseSteps');
   return (
     <Box
       sx={{
@@ -38,14 +41,14 @@ export default function LicenseSteps() {
           marginBottom: '30px'
         }}
       >
-        Schritte für alle Führerscheinklassen
+        {t('title')}
       </Typography>
       {/* Desktop Grid */}
       <Box
         sx={{
           display: {xs: 'none', sm: 'none', lg: 'grid'},
           gridTemplateColumns: 'repeat(12, 1fr)',
-          gridAutoRows: 'calc(240px)',
+          gridAutoRows: 'calc(245px)',
           gap: 3,
           maxWidth: '1280px',
           width: '100%',
@@ -59,11 +62,7 @@ export default function LicenseSteps() {
             gridRow: {xs: 'span 2', sm: 'span 2', lg: 'span 1'}
           }}
         >
-          <GridCard
-            title="Klasse A"
-            description="Krafträder in vier Kategorien, von leichten Kleinkrafträdern (Mopeds) bis größere Motorräder."
-            img={bike}
-          />
+          <GridCard title={t('classA')} description={t('dataA')} img={bike} />
         </Box>
 
         <Box
@@ -73,8 +72,8 @@ export default function LicenseSteps() {
           }}
         >
           <GridCard
-            title="Klasse B"
-            description="Pkw und leichte Nutzfahrzeuge, ausgenommen von Krafträder."
+            title={t('classB')}
+            description={t('dataB')}
             img={car}
             flexdir={true}
           />
@@ -82,32 +81,32 @@ export default function LicenseSteps() {
 
         <Box sx={{gridColumn: 'span 4', gridRow: 'span 1'}}>
           <GridCardSmall
-            title="Klasse C"
-            description="Lkw und Kraftfahrzeuge mit einer zulässigen Gesamtmasse von mehr als 3.500 kg."
+            title={t('classC')}
+            description={t('dataC')}
             img={truck}
           />
         </Box>
 
         <Box sx={{gridColumn: 'span 4', gridRow: 'span 1'}}>
           <GridCardSmall
-            title="Klasse D"
-            description="Bus und Kraftfahrzeuge, die der Beförderung von mehr als 8 Personen dienen."
+            title={t('classD')}
+            description={t('dataD')}
             img={bus}
           />
         </Box>
 
         <Box sx={{gridColumn: 'span 4', gridRow: 'span 1'}}>
           <GridCardSmall
-            title="Klasse L und T"
-            description="L steht für Landwirtschaft und T für Traktor. Diese Klassen gelten für Zugmaschinen."
+            title={t('classL')}
+            description={t('dataL')}
             img={tractor}
           />
         </Box>
 
         <Box sx={{gridColumn: 'span 8', gridRow: 'span 1'}}>
           <GridCard
-            title="Umschreiben"
-            description="Wer aus Drittstaaten dauerhaft nach Deutschland umzieht, muss seine ausländische Fahrerlaubnis umschreiben lassen."
+            title={t('rewrite')}
+            description={t('dataRewrite')}
             img={arrow}
           />
         </Box>
@@ -117,7 +116,7 @@ export default function LicenseSteps() {
         sx={{
           display: {xs: 'none', sm: 'grid', lg: 'none'},
           gridTemplateColumns: 'repeat(12, 1fr)',
-          gridAutoRows: 'calc(83px)',
+          gridAutoRows: 'calc(85px)',
           gap: 3,
           maxWidth: '1400px',
           width: '100%',
@@ -132,8 +131,8 @@ export default function LicenseSteps() {
           }}
         >
           <GridCard
-            title="Klasse A"
-            description="Krafträder in vier Kategorien, von leichten Kleinkrafträdern (Mopeds) bis größere Motorräder."
+            title={t('classA')}
+            description={t('dataA')}
             img={bike}
             flexdir={true}
           />
@@ -146,8 +145,8 @@ export default function LicenseSteps() {
           }}
         >
           <GridCard
-            title="Klasse B"
-            description="Pkw und leichte Nutzfahrzeuge, ausgenommen von Krafträder."
+            title={t('classB')}
+            description={t('dataB')}
             img={car}
             flexdir={true}
           />
@@ -155,8 +154,8 @@ export default function LicenseSteps() {
 
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 2'}}>
           <GridCard
-            title="Umschreiben"
-            description="Wer aus Drittstaaten dauerhaft nach Deutschland umzieht, muss seine ausländische Fahrerlaubnis umschreiben lassen."
+            title={t('rewrite')}
+            description={t('dataRewrite')}
             img={arrow}
             width="720px"
           />
@@ -164,24 +163,24 @@ export default function LicenseSteps() {
 
         <Box sx={{gridColumn: 'span 6', gridRow: 'span 2'}}>
           <GridCardSmall
-            title="Klasse C"
-            description="Lkw und Kraftfahrzeuge mit einer zulässigen Gesamtmasse von mehr als 3.500 kg."
+            title={t('classC')}
+            description={t('dataC')}
             img={truck}
           />
         </Box>
 
         <Box sx={{gridColumn: 'span 6', gridRow: 'span 2'}}>
           <GridCardSmall
-            title="Klasse D"
-            description="Bus und Kraftfahrzeuge, die der Beförderung von mehr als 8 Personen dienen."
+            title={t('classD')}
+            description={t('dataD')}
             img={bus}
           />
         </Box>
 
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 2'}}>
           <GridCard
-            title="Klasse L und T"
-            description="L steht für Landwirtschaft und T für Traktor. Diese Klassen gelten für Zugmaschinen."
+            title={t('classL')}
+            description={t('dataL')}
             img={tractor}
             width="720px"
           />
@@ -192,7 +191,7 @@ export default function LicenseSteps() {
         sx={{
           display: {xs: 'grid', sm: 'none', lg: 'none'},
           gridTemplateColumns: 'repeat(12, 1fr)',
-          gridAutoRows: 'calc(88px)',
+          gridAutoRows: 'calc(89px)',
           gap: 3,
           maxWidth: '1400px',
           width: '100%',
@@ -206,47 +205,43 @@ export default function LicenseSteps() {
             gridRow: {xs: 'span 4', sm: 'span 4', lg: 'span 4'}
           }}
         >
-          <GridCard
-            title="Klasse B"
-            description="Pkw und leichte Nutzfahrzeuge, ausgenommen von Krafträder."
-            img={car}
-          />
+          <GridCard title={t('classB')} description={t('dataB')} img={car} />
         </Box>
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 4'}}>
           <GridCard
-            title="Umschreiben"
-            description="Wer aus Drittstaaten dauerhaft nach Deutschland umzieht, muss seine ausländische Fahrerlaubnis umschreiben lassen."
+            title={t('rewrite')}
+            description={t('dataRewrite')}
             img={arrow}
           />
         </Box>
 
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 2'}}>
           <GridCardSmall
-            title="Klasse A"
-            description="Krafträder in vier Kategorien, von leichten Kleinkrafträdern (Mopeds) bis größere Motorräder."
+            title={t('classA')}
+            description={t('dataA')}
             img={bike}
           />
         </Box>
 
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 2'}}>
           <GridCardSmall
-            title="Klasse C"
-            description="Lkw und Kraftfahrzeuge mit einer zulässigen Gesamtmasse von mehr als 3.500 kg."
+            title={t('classC')}
+            description={t('dataC')}
             img={truck}
           />
         </Box>
 
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 2'}}>
           <GridCardSmall
-            title="Klasse D"
-            description="Bus und Kraftfahrzeuge, die der Beförderung von mehr als 8 Personen dienen."
+            title={t('classD')}
+            description={t('dataD')}
             img={bus}
           />
         </Box>
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 2'}}>
           <GridCardSmall
-            title="Klasse L und T"
-            description="L steht für Landwirtschaft und T für Traktor. Diese Klassen gelten für Zugmaschinen."
+            title={t('classL')}
+            description={t('dataL')}
             img={tractor}
           />
         </Box>

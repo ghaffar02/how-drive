@@ -192,6 +192,21 @@
       }
     ]
   },
+  "LicenseSteps": {
+    "title": "Steps For All Driving License Classes",
+    "classA": "Class A",
+    "dataA": "Motorcycles in four categories, from light mopeds to larger motorcycles.",
+    "classB": "Class B",
+    "dataB": "Passenger cars and light commercial vehicles, excluding motorcycles.",
+    "classC": "Class C",
+    "dataC": "Trucks and motor vehicles with a maximum permissible mass of more than 3,500 kg.",
+    "classD": "Class D",
+    "dataD": "Buses and motor vehicles used to transport more than 8 people.",
+    "classL": "Class L and T",
+    "dataL": "L stands for agricultural and T for tractor. These classes apply to tractors.",
+    "rewrite": "Convert",
+    "dataRewrite": "Anyone who moves permanently to Germany from third countries must have their foreign driving license converted."
+  },
   "Services": {
     "title": "Trust Our Service",
     "des": "See for yourself how our service works",

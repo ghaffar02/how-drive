@@ -32,7 +32,7 @@ export default function GridCard({
         padding: {
           xs: '48px 32px',
           sm: '32px',
-          lg: flexdir ? '32px' : '32px 48px'
+          lg: flexdir ? '48px 32px' : '32px 48px'
         },
         position: 'relative',
         display: 'flex',

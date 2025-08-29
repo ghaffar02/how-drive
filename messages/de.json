@@ -192,6 +192,21 @@
       }
     ]
   },
+  "LicenseSteps": {
+    "title": "Schritte für alle Führerscheinklassen",
+    "classA": "Klasse A",
+    "dataA": "Krafträder in vier Kategorien, von leichten Kleinkrafträdern (Mopeds) bis größere Motorräder.",
+    "classB": "Klasse B",
+    "dataB": "Pkw und leichte Nutzfahrzeuge, ausgenommen von Krafträder.",
+    "classC": "Klasse C",
+    "dataC": "Lkw und Kraftfahrzeuge mit einer zulässigen Gesamtmasse von mehr als 3.500 kg.",
+    "classD": "Klasse D",
+    "dataD": "Bus und Kraftfahrzeuge, die der Beförderung von mehr als 8 Personen dienen.",
+    "classL": "Klasse L und T",
+    "dataL": "L steht für Landwirtschaft und T für Traktor. Diese Klassen gelten für Zugmaschinen.",
+    "rewrite": "Umschreiben",
+    "dataRewrite": "Wer aus Drittstaaten dauerhaft nach Deutschland umzieht, muss seine ausländische Fahrerlaubnis umschreiben lassen."
+  },
   "Services": {
     "title": "Vertaue unseres Service",
     "des": "Erfahre selbst, wie unseres Service funktioniert",
