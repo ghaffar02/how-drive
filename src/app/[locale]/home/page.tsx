@@ -9,6 +9,7 @@ import HowItWorks from '@/components/home/HowItWorks';
 import Faq from '@/components/home/Faq';
 import Advantages from '@/components/home/Advantages';
 import Pricing from '@/components/prices/Pricing';
+import LicenseSteps from '@/components/home/components/LicenseSteps';
 
 export default function HomePage() {
   return (
@@ -30,8 +31,9 @@ export default function HomePage() {
         </Box>
         <Box sx={{marginTop: '82px'}}>
           <Hero />
-          <HowItWorks />
         </Box>
+        <LicenseSteps />
+        <HowItWorks />
         <Advantages />
         <Pricing />
         <Faq />
