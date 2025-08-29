@@ -19,9 +19,9 @@ import uiDesigner from '@/assets/pngs/Tab-Menu/uiDesigner.png';
 import webDesigner from '@/assets/pngs/Tab-Menu/webDesigner.png';
 import seoSpecialist from '@/assets/pngs/Tab-Menu/seoSpecialist.png';
 import guide from '@/assets/pngs/Tab-Menu/guide.png';
-import {motion} from 'framer-motion';
+import {motion, Variants} from 'framer-motion';
 
-const tabsMount = {
+const tabsMount: Variants = {
   hidden: {opacity: 0, y: 60, scale: 0.3},
   visible: {
     opacity: 1,
@@ -29,7 +29,7 @@ const tabsMount = {
     scale: 1,
     transition: {
       duration: 0.5,
-      ease: 'easeInOut',
+      // ease: [0.42, 0, 0.58, 1],
       when: 'beforeChildren',
       staggerChildren: 0.06
     }
@@ -258,7 +258,12 @@ export default function HowItWorks() {
             '& > :not(:first-of-type)': {padding: '0px !important'}
           }}
         >
-          <motion.div variants={tabsMount} initial="hidden" animate="visible">
+          <motion.div
+            variants={tabsMount}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{once: true, amount: 0.25}}
+          >
             <Tabs
               value={value}
               onChange={handleChange}
