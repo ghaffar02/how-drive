@@ -57,7 +57,7 @@ export default function Pricing() {
             sx={{
               fontSize: {xs: '28px', md: '32px', lg: '36px'},
               lineHeight: {xs: '35px', md: '100%'},
-              fontFamily: 'Satoshi !important',
+              fontFamily: 'Satoshi500 !important',
               padding: '16px',
               textAlign: 'center',
               color: '#000'
