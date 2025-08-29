@@ -27,14 +27,19 @@ export default function PricingCards({
         return (
           <MotionBox
             key={index}
-            initial={{opacity: 0, y: 100}}
-            whileInView={{opacity: 1, y: 0}}
-            transition={{duration: 0.6, delay: index * 0.3}}
-            viewport={{once: true, amount: 0.2}}
+            initial={{y: 80, opacity: 0}}
+            whileInView={{y: 0, opacity: 1}}
+            viewport={{once: true}}
+            transition={{
+              duration: 0.5,
+              ease: 'easeOut',
+              delay: index * 0.25
+            }}
             sx={{
+              flexShrink: 0,
               maxWidth: '440px',
               width: '100%',
-              height: '580px',
+              height: {lg: '580px'},
               flex: '1 1 auto',
               display: 'flex',
               flexDirection: 'column',
@@ -52,7 +57,7 @@ export default function PricingCards({
             <Typography
               sx={{
                 fontSize: {xs: '18px', md: '20px', lg: '22px'},
-                fontFamily: '"Inter", sans-serif  !important',
+                // fontFamily: '"Inter", sans-serif  !important',
                 color: '#4611F5'
               }}
             >
@@ -72,9 +77,8 @@ export default function PricingCards({
               <Typography
                 sx={{
                   fontSize: {xs: '32px', md: '36px', lg: '48px'},
-                  fontFamily: 'Satoshi700 !important',
-                  fontWeight: 700,
-                  lineHeight: '100%',
+                  fontFamily: 'Satoshi600 !important',
+                  // lineHeight: {xs: '37px', md: '43px', lg: '55px'},
                   textWrap: 'nowrap',
                   color: '#000'
                 }}
@@ -124,7 +128,7 @@ export default function PricingCards({
               sx={{
                 width: '100%',
 
-                height: '262px'
+                height: {xs: '300px', lg: '262px'}
               }}
             >
               {items.features.map((feature: string, i: number) => (
@@ -145,7 +149,8 @@ export default function PricingCards({
                   <Typography
                     sx={{
                       fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                      fontFamily: '"Inter", sans-serif  !important',
+                      // fontFamily:
+                      // '"Inter", "Inter Placeholder", sans-serif !important',
 
                       color: '#2D3748'
                     }}
@@ -160,8 +165,9 @@ export default function PricingCards({
               sx={{
                 width: '100%',
                 fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                fontFamily: '"Inter", sans-serif  !important',
+                // fontFamily: '"Inter", sans-serif  !important',
                 display: 'flex',
+                lineHeight: {xs: '19px', md: '20px', lg: '22px'},
                 justifyContent: 'center',
                 alignItems: 'center',
                 padding: '8px 16px',

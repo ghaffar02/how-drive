@@ -1,6 +1,8 @@
 'use client';
 
 import React, {useState} from 'react';
+import {motion} from 'framer-motion';
+
 import {
   Accordion,
   AccordionSummary,
@@ -55,6 +57,7 @@ const Faq = () => {
             fontWeight: 400,
             padding: '16px',
             textAlign: 'center',
+            fontFamily: 'Satoshi500 !important',
             color: '#000'
           }}
         >
@@ -63,113 +66,126 @@ const Faq = () => {
 
         <Box sx={{maxWidth: '800px', padding: '8px', width: '100%'}}>
           {PricingData.map((item: any, index: number) => (
-            <Accordion
+            <motion.div
               key={index}
-              expanded={expanded.includes(index)}
-              onChange={handleChange(index)}
-              TransitionProps={{timeout: 500}}
-              sx={{
-                // zIndex: 111,
-                cursor: 'pointer',
-                marginBottom: '16px',
-                borderRadius: '15px !important',
-                boxShadow: 'box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);',
-                border: '0px solid #000000',
-                '&::before': {display: 'none'},
-                backgroundColor: '#fff',
-                '&:hover .accordion-icon img': {
-                  filter:
-                    'brightness(0) saturate(100%) invert(20%) sepia(96%) saturate(2200%) hue-rotate(210deg) brightness(90%) contrast(95%)'
-                },
-
-                '&:hover .accordion-title': {
-                  color: '#173DA6 !important'
-                }
+              initial={{y: 50, opacity: 0}}
+              whileInView={{y: 0, opacity: 1}}
+              viewport={{once: true, amount: 0.2}}
+              transition={{
+                duration: 0.2,
+                ease: 'easeOut',
+                delay: index * 0.1
+              }}
+              style={{
+                marginBottom: expanded.includes(index) ? '16px' : '16px'
               }}
             >
-              <AccordionSummary
+              <Accordion
+                expanded={expanded.includes(index)}
+                onChange={handleChange(index)}
+                TransitionProps={{timeout: 500}}
                 sx={{
-                  minHeight: {xs: '57px !important', lg: '59px !important'},
-                  padding: ' 16px 18px !important',
-                  gap: '10px !important',
-                  '& .MuiAccordionSummary-content': {
-                    margin: '0 !important'
+                  cursor: 'pointer',
+                  marginBottom: '16px',
+                  borderRadius: '15px !important',
+                  boxShadow: '0px 1px 2px rgba(0,0,0,0.25)',
+                  border: '0px solid #000000',
+                  '&::before': {display: 'none'},
+                  backgroundColor: '#ffffffff',
+                  '&:hover .accordion-icon img': {
+                    filter:
+                      'brightness(0) saturate(100%) invert(20%) sepia(96%) saturate(2200%) hue-rotate(210deg) brightness(90%) contrast(95%)'
                   },
 
-                  '& .MuiAccordionSummary-expandIconWrapper': {
-                    transition: 'transform 0.9s ease !important',
-
-                    '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-                      transform: 'rotate(10deg)'
-                    }
+                  '&:hover .accordion-title': {
+                    color: '#173DA6 !important'
                   }
                 }}
-                expandIcon={
-                  <Box
-                    className="accordion-icon"
-                    sx={{
-                      width: '25px',
-                      height: '25px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      transition: 'transform 0.3s ease',
-                      transform: expanded.includes(index)
-                        ? 'rotate(-45deg)'
-                        : 'rotate(0deg)',
-                      '& img': {
-                        width: '100%',
-                        height: '100%',
-                        transition: 'filter 0.5s ease'
+              >
+                <AccordionSummary
+                  sx={{
+                    minHeight: {xs: '57px !important', lg: '59px !important'},
+                    padding: ' 16px 18px !important',
+                    gap: '10px !important',
+                    '& .MuiAccordionSummary-content': {
+                      margin: '0 !important'
+                    },
+
+                    '& .MuiAccordionSummary-expandIconWrapper': {
+                      transition: 'transform 0.9s ease !important',
+
+                      '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
+                        transform: 'rotate(10deg)'
                       }
+                    }
+                  }}
+                  expandIcon={
+                    <Box
+                      className="accordion-icon"
+                      sx={{
+                        width: '25px',
+                        height: '25px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        transition: 'transform 0.3s ease',
+                        transform: expanded.includes(index)
+                          ? 'rotate(-45deg)'
+                          : 'rotate(0deg)',
+                        '& img': {
+                          width: '100%',
+                          height: '100%',
+                          transition: 'filter 0.5s ease'
+                        }
+                      }}
+                    >
+                      <Image src={addicon} alt="toggle-icon" />
+                    </Box>
+                  }
+                >
+                  <Typography
+                    className="accordion-title"
+                    sx={{
+                      fontFamily: 'Poppins',
+                      fontWeight: 400,
+                      fontSize: {xs: '14px', sm: '16px', lg: '18px'},
+                      lineHeight: {xs: '22px', sm: '100%'},
+                      color: '#000000',
+                      cursor: 'pointer',
+                      transition: 'color 0.3s ease'
                     }}
                   >
-                    <Image src={addicon} alt="toggle-icon" />
-                  </Box>
-                }
-              >
-                <Typography
-                  className="accordion-title"
-                  sx={{
-                    fontFamily: 'Poppins',
-                    fontWeight: 400,
-                    fontSize: {xs: '14px', sm: '16px', lg: '18px'},
-                    lineHeight: {xs: '22px', sm: '100%'},
-                    color: '#000000',
-                    cursor: 'pointer',
-                    transition: 'color 0.3s ease'
-                  }}
-                >
-                  {item.title}
-                </Typography>
-              </AccordionSummary>
+                    {item.title}
+                  </Typography>
+                </AccordionSummary>
 
-              <AccordionDetails
-                onClick={() => {
-                  setExpanded((prev) =>
-                    prev.includes(index)
-                      ? prev.filter((item) => item !== index)
-                      : [...prev, index]
-                  );
-                }}
-                sx={{
-                  transition: 'all 0.1s ease',
-                  padding: ` 8px 18px 16px`
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontSize: {xs: '14px', sm: '15px', lg: '16px'},
-                    whiteSpace: 'pre-wrap',
-                    fontWeight: '300',
-                    fontFamily: '"Inter", sans-serif  !important'
+                <AccordionDetails
+                  onClick={() => {
+                    setExpanded((prev) =>
+                      prev.includes(index)
+                        ? prev.filter((item) => item !== index)
+                        : [...prev, index]
+                    );
                   }}
-                  color="#71717A"
+                  sx={{
+                    transition: 'all 0.1s ease',
+                    padding: ` 8px 18px 16px`
+                  }}
                 >
-                  {item.content}
-                </Typography>
-              </AccordionDetails>
-            </Accordion>
+                  <Typography
+                    sx={{
+                      fontSize: {xs: '14px', sm: '15px', lg: '16px'},
+                      whiteSpace: 'pre-wrap',
+                      fontWeight: '300',
+                      fontFamily: '"Inter", sans-serif  !important'
+                    }}
+                    color="#71717A"
+                  >
+                    {item.content}
+                  </Typography>
+                </AccordionDetails>
+              </Accordion>
+            </motion.div>
           ))}
         </Box>
       </Box>
