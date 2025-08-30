@@ -44,9 +44,11 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
           left: 0,
           bottom: 0,
           right: '0',
-          bgcolor: 'rgba(0,0,0,0.6)',
+          bgcolor: 'rgba(0, 0, 0, 0.3)',
           opacity: open ? 1 : 0,
-          transition: 'opacity .2s'
+          transition: 'opacity .2s',
+          height: '100vh',
+          width: '100vw'
         }}
       />
       <Slide direction="left" in={open} mountOnEnter unmountOnExit>
@@ -57,7 +59,7 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
             right: 0,
             width: {xs: '75%', sm: '50vw'},
             height: '100vh',
-            bgcolor: '#fff',
+            bgcolor: 'rgba(255, 255, 255, 0.85)',
             boxShadow: '0 4px 12px rgba(26,32,44,0.1)',
             display: 'flex',
             flexDirection: 'column',
@@ -106,15 +108,7 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
           <Box>
             <Divider
               sx={{
-                width: '100%',
-                borderTop: '1px solid transparent',
-                borderImage:
-                  'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1'
-              }}
-            />
-            <Divider
-              sx={{
-                width: '49.5%',
+                // width: '49.5%',
                 margin: '16px auto',
                 borderTop: '1px solid transparent',
                 borderImage:
