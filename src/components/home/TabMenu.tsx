@@ -82,7 +82,7 @@ export default function TabMenu({
             flexItem
             sx={{
               border: 0,
-              width: {xs: '2px', sm: '3px'},
+              width: '4px',
               backgroundImage:
                 'linear-gradient(180deg, rgba(70, 17, 245, 0.5) 0%, rgba(235, 0, 255, 0.5) 100%)',
               borderRadius: '9999px',
