@@ -36,7 +36,7 @@ const paperProps: PaperProps = {
     p: 2,
     borderRadius: 3,
     width: 125,
-    boxShadow: '0 4px 12px rgba(26,32,44,0.1)',
+    boxShadow: '0px 0px 8px 1px rgba(0, 0, 0, 0.25)',
     height: 90
   }
 };

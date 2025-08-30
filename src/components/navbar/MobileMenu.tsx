@@ -108,7 +108,6 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
           <Box>
             <Divider
               sx={{
-                // width: '49.5%',
                 margin: '16px auto',
                 borderTop: '1px solid transparent',
                 borderImage:
