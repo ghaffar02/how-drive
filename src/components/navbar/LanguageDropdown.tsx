@@ -128,7 +128,18 @@ export default function LanguageDropdown() {
               />
             </Box>
             <ListItemText
-              primary={<Typography sx={{fontSize: 16}}>{o.label}</Typography>}
+              primary={
+                <Typography
+                  sx={{
+                    fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                    fontWeight: '300',
+                    fontFamily:
+                      '"Inter", "Inter Placeholder", sans-serif !important'
+                  }}
+                >
+                  {o.label}
+                </Typography>
+              }
             />
             {locale === o.code && (
               <CheckRounded sx={{ml: '14px', width: '20px'}} fontSize="small" />

@@ -42,7 +42,8 @@ export default function Navbar() {
             sx={{
               fontSize: '27.58px',
               lineHeight: '27.58px',
-              color: '#4611f5'
+              color: '#4611f5',
+              fontFamily: '"Inter", "Inter Placeholder", sans-serif !important'
             }}
           >
             Wie
@@ -52,7 +53,9 @@ export default function Navbar() {
                 background: 'linear-gradient(to right, #4611f5, #E501FF)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                lineHeight: '27.58px'
+                lineHeight: '27.58px',
+                fontFamily:
+                  '"Inter", "Inter Placeholder", sans-serif !important'
               }}
             >
               Führerschein
@@ -121,16 +124,18 @@ export default function Navbar() {
             <Typography
               sx={{
                 color: '#000000',
-                fontSize: {xs: '14px', md: '16px', lg: '18px'},
+                fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                fontWeight: '300',
                 lineHeight: '1.6em',
-                fontWeight: '500',
                 transition: 'all 0.3s ease-in-out',
                 padding: '4px 8px',
                 borderRadius: 2,
                 '&:hover': {
                   backgroundColor: 'rgba(88,65,212,0.12)'
                 },
-                cursor: 'pointer'
+                cursor: 'pointer',
+                fontFamily:
+                  '"Inter", "Inter Placeholder", sans-serif !important'
               }}
             >
               {t('pricing')}
@@ -138,16 +143,18 @@ export default function Navbar() {
             <Typography
               sx={{
                 color: '#000000',
-                fontSize: {xs: '14px', md: '16px', lg: '18px'},
+                fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                fontWeight: '300',
                 lineHeight: '1.6em',
-                fontWeight: '500',
                 transition: 'all 0.3s ease-in-out',
                 padding: '4px 8px',
                 borderRadius: 2,
                 '&:hover': {
                   backgroundColor: 'rgba(88,65,212,0.12)'
                 },
-                cursor: 'pointer'
+                cursor: 'pointer',
+                fontFamily:
+                  '"Inter", "Inter Placeholder", sans-serif !important'
               }}
             >
               {t('contact')}
@@ -161,9 +168,9 @@ export default function Navbar() {
               sx={{
                 backgroundColor: 'transparent',
                 color: '#000000',
-                fontSize: {xs: '14px', md: '16px', lg: '18px'},
+                fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                fontWeight: '300',
                 lineHeight: '1.6em',
-                fontWeight: '400',
                 transition: 'all 0.3s ease-in-out',
                 padding: '8px 16px',
                 borderRadius: '10px',
@@ -178,7 +185,9 @@ export default function Navbar() {
                   color: '#fff'
                 },
                 height: '44px',
-                width: '110px'
+                width: '110px',
+                fontFamily:
+                  '"Inter", "Inter Placeholder", sans-serif !important'
               }}
               variant="outlined"
             >

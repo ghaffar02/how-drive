@@ -8,9 +8,10 @@ type Props = {label: string; items: string[]};
 
 const textStyle = {
   color: '#000000',
-  fontSize: {xs: '14px', md: '16px', lg: '18px'},
-  fontWeight: '500',
-  lineHeight: '1.6em'
+  fontSize: {xs: '14px', md: '15px', lg: '16px'},
+  fontWeight: '300',
+  lineHeight: '1.6em',
+  fontFamily: '"Inter", "Inter Placeholder", sans-serif !important'
 };
 
 export default function MenuDropdown({label, items}: Props) {
