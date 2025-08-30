@@ -42,8 +42,7 @@ export default function Navbar() {
             sx={{
               fontSize: '27.58px',
               lineHeight: '27.58px',
-              color: '#4611f5',
-              fontFamily: '"Inter", "Inter Placeholder", sans-serif !important'
+              color: '#4611f5'
             }}
           >
             Wie
@@ -53,9 +52,7 @@ export default function Navbar() {
                 background: 'linear-gradient(to right, #4611f5, #E501FF)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                lineHeight: '27.58px',
-                fontFamily:
-                  '"Inter", "Inter Placeholder", sans-serif !important'
+                lineHeight: '27.58px'
               }}
             >
               Führerschein
