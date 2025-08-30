@@ -164,11 +164,16 @@ export default function TabMenu({
                   overflow: 'hidden',
                   borderRadius: '15px',
                   height: '100%',
-                  width: '100%'
+                  width: '100%',
+                  aspectRatio: '4 / 3'
                 }}
               >
                 <Image
-                  style={{height: '100%', width: '100%', objectFit: 'cover'}}
+                  style={{
+                    height: '100%',
+                    width: '100%',
+                    objectFit: 'cover'
+                  }}
                   src={image}
                   alt={title}
                 />
