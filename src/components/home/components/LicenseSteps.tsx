@@ -24,8 +24,8 @@ export default function LicenseSteps() {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         padding: {
-          xs: '56px 16px 16px 48px',
-          sm: '64px 24px 24px 48px',
+          xs: '56px 16px 48px 16px',
+          sm: '64px 24px 48px 24px',
           lg: '80px 48px 48px 48px'
         },
         overflow: 'hidden'

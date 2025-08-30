@@ -26,7 +26,7 @@ export default function GridCard({
       initial={{opacity: 0, y: 75}}
       whileInView={{opacity: 1, y: 0}}
       viewport={{once: true, amount: 0.3}}
-      transition={{duration: 0.6, ease: 'easeOut'}}
+      transition={{duration: 0.6, ease: 'easeInOut'}}
       sx={{
         height: '100%',
         padding: {
@@ -57,7 +57,7 @@ export default function GridCard({
       whileHover={{
         y: -10,
         boxShadow: 'rgba(0,0,0,0.25) 0px 0px 16px 10px',
-        transition: {duration: 0.3, ease: 'easeOut'}
+        transition: {duration: 0.3, ease: 'easeInOut'}
       }}
       whileTap={{
         scale: 0.95,
@@ -91,7 +91,7 @@ export default function GridCard({
       >
         <Typography
           sx={{
-            fontSize: '24px',
+            fontSize: {xs: '20px', sm: '22px', lg: '24px'},
             fontFamily: 'Satoshi600 !important',
             color: '#1a202c'
           }}
@@ -101,7 +101,7 @@ export default function GridCard({
         <Typography
           sx={{
             color: '#2d3748',
-            fontSize: '16px',
+            fontSize: {xs: '14px', sm: '15px', lg: '16px'},
             fontFamily: '"Inter", sans-serif !important'
           }}
         >
@@ -116,7 +116,7 @@ export default function GridCard({
           zIndex: 1,
           height: '37px',
           width: '37px',
-          backgroundColor: '#E7FAFE',
+          background: `linear-gradient(to bottom right,rgba(70, 17, 245, 0.15),rgba(31, 244, 255, 0.10),rgba(235, 0, 255, 0.15))`,
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',

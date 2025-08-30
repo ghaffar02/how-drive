@@ -55,7 +55,7 @@ export default function Advantages() {
     return () => container.removeEventListener('scroll', updateButtons);
   }, []);
   return (
-    <Box sx={{width: '100%', bgcolor: '#fff'}}>
+    <Box sx={{width: '100%', bgcolor: '#FAFAFA'}}>
       <Typography
         sx={{
           fontSize: '36px',
