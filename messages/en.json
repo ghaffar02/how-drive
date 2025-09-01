@@ -22,6 +22,11 @@
     "contact": "Contact",
     "login": "Login"
   },
+"Hero": {
+  "title": "The Path to Your Driver's License",
+  "description": "Keep track of every step and your progress, book appointments, and send messages all in one place.",
+  "button": "Start for free"
+},
   "Advantages": {
     "title": "Your Advantages with WieFührerschein",
     "driverTab": "Learners",

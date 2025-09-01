@@ -2,10 +2,16 @@
 import {motion, Variants, useScroll, useTransform} from 'framer-motion';
 import {Box, Button, Typography} from '@mui/material';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+
 import heroImage from '@/assets/pngs/heroimage.jpeg';
 
 export default function Hero() {
-  const text = 'Der Weg zum Führerschein';
+
+ const t = useTranslations('Hero');
+
+  // const text = 'Der Weg zum Führerschein';
+  const text = t('title'); 
   const {scrollY} = useScroll();
 
   const rotateX = useTransform(scrollY, [0, 150], [15, 0]);
@@ -92,8 +98,7 @@ export default function Hero() {
               fontFamily: 'Satoshi300 !important'
             }}
           >
-            Behalte jeden Schritt und deine Fortschritte immer im Blick, sowie
-            Termine buchen und Nachrichten senden, alles aus einer Hand.
+            {t('description')}
           </Typography>
           <Box
             component={motion.p}
@@ -128,7 +133,7 @@ export default function Hero() {
                 }
               }}
             >
-              Kostenlos starten
+               {t('button')}
             </Button>
           </Box>
           <Box
