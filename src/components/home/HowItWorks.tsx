@@ -9,6 +9,8 @@ import {
   useTheme,
   useMediaQuery
 } from '@mui/material';
+import {useTranslations} from 'next-intl';
+
 import Image from 'next/image';
 import profile from '@/assets/svgs/how-it-works/profile.svg';
 import car from '@/assets/svgs/how-it-works/car.svg';
@@ -61,7 +63,13 @@ function a11yProps(index: number) {
     'aria-controls': `simple-tabpanel-${index}`
   };
 }
-
+type StepFromI18n = {
+  number: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  heading:string;
+};
 type Step = {
   number: string;
   title: string;
@@ -71,6 +79,8 @@ type Step = {
 };
 
 export default function HowItWorks() {
+  const t = useTranslations('HowItWorks');
+
   const [value, setValue] = React.useState(0);
   const theme = useTheme();
   const upMd = useMediaQuery(theme.breakpoints.up('md'));
@@ -79,147 +89,48 @@ export default function HowItWorks() {
     setValue(newValue);
 
   const tabsData = [
-    {label: 'Fahrschüler', icon: profile},
-    {label: 'Fahrschulen', icon: car},
-    {label: 'PWA auf iOS', icon: apple},
-    {label: 'PWA auf Android', icon: androidLogo}
+    {label: t('label1'), icon: profile},
+    {label: t('label2'), icon: car},
+    {label: t('label3'), icon: apple},
+    {label: t('label4'), icon: androidLogo}
   ];
 
-  const learnerSteps: Step[] = [
-    {
-      number: '1',
-      title: 'Führerscheinklasse',
-      heading: 'Wähle die Führerscheinklasse',
-      description:
-        'Welche Fahrerlaubnis benötigst du? Wähle die passende Kategorie aus. Wir begleiten dich Schritt für Schritt durch den Prozess des Führerscheinerwerbs.',
-      image: uiDesigner
-    },
-    {
-      number: '2',
-      title: 'Wohnort',
-      heading: 'Trage ein, wo du wohnst',
-      description:
-        'Weder Fahrerlaubnisbehörde oder TÜV, bei Eingabe des Wohnortes werden die zu dir passenden Behörden und ihre Kontaktadressen in deinem Konto angezeigt.',
-      image: webDesigner
-    },
-    {
-      number: '3',
-      title: 'Fahrschule',
-      heading: 'Finde deine Fahrschule',
-      description:
-        'Bei Verknüpfung deiner Fahrschule kannst du Termine buchen und Nachrichten senden. Deine Fahrschule kann auch deinen Fortschritt verfolgen bzw. eingeben.',
-      image: seoSpecialist
-    },
-    {
-      number: '4',
-      title: 'Prozessleitfaden',
-      heading: 'Verfolge deinen Weg zum Führerschein',
-      description:
-        'Wir visualisieren deinen Weg zum Führerschein Schritt für Schritt und ermöglichen einen Überblick, was wann genau erforderlich ist.',
-      image: guide
-    }
-  ];
+const learnerImages = [uiDesigner, webDesigner, seoSpecialist, guide];
+const schoolImages = [uiDesigner, webDesigner, seoSpecialist, guide];
+const pwaIosImages = [uiDesigner, webDesigner, seoSpecialist, guide];
+const pwaAndroidImages = [uiDesigner, webDesigner, seoSpecialist, guide];
 
-  const schoolSteps: Step[] = [
-    {
-      number: '1',
-      title: 'Registrieren',
-      heading: 'Registriere deine Fahrschule',
-      description:
-        'Erstelle ein Benutzerkonto und melde deine Fahrschule kostenlos auf unserer Website an. Hierfür benötigst du eine gültige E-Mail-Adresse und ein sicheres Passwort.',
-      image: uiDesigner
-    },
-    {
-      number: '2',
-      title: 'Informationen',
-      heading: 'Trage Informationen über deine Fahrschule ein',
-      description:
-        'Informationen wie Name, Kontaktadresse, Öffnungszeiten, etc. helfen Fahrschülern bei der Kommunikation.',
-      image: webDesigner
-    },
-    {
-      number: '3',
-      title: 'Prozess',
-      heading: 'Gib die Reihenfolge des Prozesses ein',
-      description:
-        'Die Reihenfolge der Schritte zum Führerscheinerwerb kann bei einigen Fahrschulen unterschiedlich sein. Gib ein, wie es bei dir ist.',
-      image: seoSpecialist
-    },
-    {
-      number: '4',
-      title: 'Fahrerlaubnisbehörde',
-      heading: 'Lege die zuständigen Behörden fest',
-      description:
-        'Wähle aus der Liste, zu welcher Fahrerlaubnisbehörde und TÜV deine Fahrschüler gehen sollen.',
-      image: guide
-    }
-  ];
 
-  const pwaIosSteps: Step[] = [
-    {
-      number: '1',
-      title: 'Website',
-      heading: 'Öffne unsere Website in Safari',
-      description:
-        'Navigiere zunächst in Safari zur Website. Wenn keine Popup zum Installieren unserer Website angezeigt war, verfolge die nächsten Schritten.',
-      image: uiDesigner
-    },
-    {
-      number: '2',
-      title: 'Teilen-Symbol',
-      heading: 'Tippe auf das Teilen-Symbol',
-      description:
-        'Tippe unten in der Mitte auf das Teilen-Symbol (ein Quadrat mit einem Pfeil nach oben). Dies öffnet die Menüoptionen zum Teilen.',
-      image: webDesigner
-    },
-    {
-      number: '3',
-      title: 'Home-Bildschirm',
-      heading: 'Wähle „Zum Home-Bildschirm hinzufügen“',
-      description: `Wähle die Option "Zum Home-Bildschirm" aus dem Menü. Dies fügt die Web-App zur Liste der verfügbaren Apps hinzu.`,
-      image: seoSpecialist
-    },
-    {
-      number: '4',
-      title: 'Name',
-      heading: 'Lege den Namen fest und bestätige ihn',
-      description: `Gib der App ggf. einen Namen und bestätige den Vorgang, indem du auf "Hinzufügen" tippst. Die Website erscheint nun wie eine App auf deinem Startbildschirm.`,
-      image: guide
-    }
-  ];
+const learnerSteps = (t.raw("learner.steps") as StepFromI18n[]).map((s, i) => ({
+  number: String(s.number),
+  title: s.title,
+  heading: s.heading,
+  description: s.description,
+  image: learnerImages[i]
+}));
 
-  const pwaAndroidSteps: Step[] = [
-    {
-      number: '1',
-      title: 'Website',
-      heading: 'Öffne unsere Website in Chrome',
-      description:
-        'Navigiere zunächst in Chrome zur Website. Wenn keine Popup zum Installieren unserer Website angezeigt war, verfolge die nächsten Schritten.',
-      image: uiDesigner
-    },
-    {
-      number: '2',
-      title: 'Drei-Punkte-Symbol',
-      heading: 'Tippe auf das Drei-Punkte-Symbol',
-      description:
-        'Tippe auf das Drei-Punkte-Menü (⋮) in der oberen oder unteren rechten Ecke des Browsers. Dadurch öffnet sich das Hauptmenü von Chrome.',
-      image: webDesigner
-    },
-    {
-      number: '3',
-      title: 'Home-Bildschirm',
-      heading: 'Wähle „Zum Home-Bildschirm hinzufügen“',
-      description: `Wähle die Option "Zum Startbildschirm hinzufügen" aus dem Menü. Manchmal wird diese Option auch als "App installieren" angezeigt.`,
-      image: seoSpecialist
-    },
-    {
-      number: '4',
-      title: 'Name',
-      heading: 'Lege den Namen fest und bestätige ihn',
-      description: `Gib der App einen Namen deiner Wahl und tippe auf "Hinzufügen". Das Icon der PWA erscheint nun auf deinem Startbildschirm.`,
-      image: guide
-    }
-  ];
+const schoolSteps = (t.raw("school.steps") as StepFromI18n[]).map((s, i) => ({
+  number: String(s.number),
+  title: s.title,
+  heading: s.heading,
+  description: s.description,
+  image: schoolImages[i]
+}));
+
+const pwaIosSteps = (t.raw("pwaIos.steps") as StepFromI18n[]).map((s, i) => ({
+  number: String(s.number),
+  title: s.title,
+  heading: s.heading,
+  description: s.description,
+  image: pwaIosImages[i]
+}));
+const pwaAndroidSteps = (t.raw("pwaAndroid.steps") as StepFromI18n[]).map((s, i) => ({
+  number: String(s.number),
+  title: s.title,
+  heading: s.heading,
+  description: s.description,
+  image: pwaAndroidImages[i]
+}));
 
   const stepsByTab: Step[][] = [
     learnerSteps,
@@ -249,7 +160,7 @@ export default function HowItWorks() {
             fontWeight: 700
           }}
         >
-          So funktioniert’s
+          {t('title')}
         </Typography>
 
         <Box
@@ -301,7 +212,7 @@ export default function HowItWorks() {
                 }
               }}
             >
-              {tabsData.map((tab, i) => {
+              {tabsData.map((tab: any, i: number) => {
                 const showText = upMd || value === i;
                 return (
                   <Tab
@@ -316,11 +227,10 @@ export default function HowItWorks() {
                         }}
                       >
                         <Image
-                          src={tab.icon}
+                          src={[profile, car, apple, androidLogo][i]}
                           alt={tab.label}
                           width={30}
                           height={30}
-                          style={{objectFit: 'contain'}}
                         />
                         <Collapse
                           in={showText}
@@ -328,16 +238,7 @@ export default function HowItWorks() {
                           timeout={200}
                           unmountOnExit
                         >
-                          <Box
-                            component="span"
-                            sx={{
-                              textWrap: 'nowrap',
-                              fontFamily:
-                                '"Inter", "Inter Placeholder", sans-serif'
-                            }}
-                          >
-                            {tab.label}
-                          </Box>
+                          <Box component="span">{tab.label}</Box>
                         </Collapse>
                       </Box>
                     }
@@ -348,7 +249,7 @@ export default function HowItWorks() {
             </Tabs>
           </motion.div>
 
-          {stepsByTab.map((steps, idx) => (
+          {stepsByTab.map((steps: any[], idx: number) => (
             <CustomTabPanel key={idx} value={value} index={idx}>
               {steps.map((s, i) => (
                 <TabMenu
@@ -357,7 +258,7 @@ export default function HowItWorks() {
                   title={s.title}
                   heading={s.heading}
                   description={s.description}
-                  image={s.image}
+                  image={s.image} // ✅ use the value from your step object
                   index={i}
                 />
               ))}

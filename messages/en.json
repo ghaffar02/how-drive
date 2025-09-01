@@ -22,6 +22,11 @@
     "contact": "Contact",
     "login": "Login"
   },
+"Hero": {
+  "title": "The Path to Your Driver's License",
+  "description": "Keep track of every step and your progress, book appointments, and send messages all in one place.",
+  "button": "Start for free"
+},
   "Advantages": {
     "title": "Your Advantages with WieFührerschein",
     "driverTab": "Learners",
@@ -153,7 +158,7 @@
   },
   "Faq": {
     "title": "Frequently Asked Questions",
-    "FaqData": [
+    "FaqData":  [
       {
         "title": "What is WieFührerschein?",
         "content": "WieFührerschein is a service that connects learners and driving schools on a central platform. Learners can track their learning progress, book appointments, and communicate with their driving school. Driving schools use our platform to manage their students, coordinate appointments, and optimize communication."
@@ -213,7 +218,127 @@
     "btn1": "Start as a Learner",
     "btn2": "Start as a Driving School"
   },
-  "Footer": {
+"HowItWorks": {
+  "title": "How it works",
+  "label1": "Learner Driver",
+  "label2": "Driving schools",
+  "label3": "PWA on iOS",
+  "label4": "PWA on Android",
+  "learner": {
+    "steps": [
+      {
+        "number": 1,
+        "title": "Driving License Class",
+        "heading": "Choose your license class",
+        "description": "Which driving license do you need? Select the right category. We guide you step by step through the process of obtaining your license."
+      },
+      {
+        "number": 2,
+        "title": "Place of Residence",
+        "heading": "Enter where you live",
+        "description": "Based on your residence, we will show the appropriate authorities and their contact details in your account."
+      },
+      {
+        "number": 3,
+        "title": "Driving School",
+        "heading": "Find your driving school",
+        "description": "When you link your driving school, you can easily coordinate all steps and keep track of your progress."
+      },
+      {
+        "number": 4,
+        "title": "Process Guide",
+        "heading": "Track your journey to the license",
+        "description": "We visualize your journey to getting a license and guide you through each step until completion."
+      }
+    ]
+  },
+"school": {
+  "steps": [
+    {
+      "number": 1,
+      "title": "Register",
+      "heading": "Create a free account",
+      "description": "With an account, you have access to all features. This allows you to use many options."
+    },
+    {
+      "number": 2,
+      "title": "Information",
+      "heading": "Enter information about your driving school",
+      "description": "Information such as name, contact address, opening hours, etc. helps learner drivers communicate with you."
+    },
+    {
+      "number": 3,
+      "title": "Process",
+      "heading": "Enter the order of the process",
+      "description": "The sequence of steps to obtain a driving license can vary between driving schools. Specify how it works in your school."
+    },
+    {
+      "number": 4,
+      "title": "Licensing authority",
+      "heading": "Specify the responsible authorities",
+      "description": "Select from the list which licensing authority and TÜV your learner drivers should go to."
+    }
+  ]
+},
+"pwaIos": {
+  "steps": [
+    {
+      "number": 1,
+      "title": "Website",
+      "heading": "Open our website in Safari",
+      "description": "First, navigate to our website in Safari. If no popup appears to install our website, follow the next steps."
+    },
+    {
+      "number": 2,
+      "title": "Share icon",
+      "heading": "Tap on the share icon",
+      "description": "At the bottom center, tap on the share icon (a square with an arrow pointing upward). This opens the share menu options."
+    },
+    {
+      "number": 3,
+      "title": "Home screen",
+      "heading": "Select “Add to Home Screen”",
+      "description": "Choose the option \"Add to Home Screen\" from the menu. This adds the web app to your list of available apps."
+    },
+    {
+      "number": 4,
+      "title": "Name",
+      "heading": "Set the name and confirm it",
+      "description": "Optionally, give the app a name and confirm by tapping \"Add.\" The website will now appear like an app on your home screen."
+    }
+  ]
+},
+"pwaAndroid": {
+  "steps": [
+    {
+      "number": 1,
+      "title": "Website",
+      "heading": "Open our website in Chrome",
+      "description": "First, navigate to our website in Chrome. If no popup appears to install our website, follow the next steps."
+    },
+    {
+      "number": 2,
+      "title": "Three-dot icon",
+      "heading": "Tap on the three-dot icon",
+      "description": "Tap on the three-dot menu (⋮) at the top or bottom right corner of the browser. This opens Chrome’s main menu."
+    },
+    {
+      "number": 3,
+      "title": "Home screen",
+      "heading": "Select “Add to Home Screen”",
+      "description": "Choose the option \"Add to Home Screen\" from the menu. Sometimes this option is shown as \"Install App.\""
+    },
+    {
+      "number": 4,
+      "title": "Name",
+      "heading": "Set the name and confirm it",
+      "description": "Give the app a name of your choice and tap \"Add.\" The PWA icon will now appear on your home screen."
+    }
+  ]
+}
+
+},
+"Footer": {
     "description": "We connect learner drivers and driving schools through a digital service.",
     "features": {
       "heading": "Features",

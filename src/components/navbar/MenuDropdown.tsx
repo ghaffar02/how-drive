@@ -31,7 +31,7 @@ export default function MenuDropdown({label, items}: Props) {
           display: 'inline-flex',
           alignItems: 'center',
           padding: '4px 8px',
-          borderRadius: 2,
+          borderRadius: '6px',
           cursor: 'pointer',
           bgcolor: open ? 'rgba(88,65,212,0.12)' : 'transparent'
         }}
