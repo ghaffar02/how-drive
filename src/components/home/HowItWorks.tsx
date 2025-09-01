@@ -9,6 +9,8 @@ import {
   useTheme,
   useMediaQuery
 } from '@mui/material';
+import {useTranslations} from 'next-intl';
+
 import Image from 'next/image';
 import profile from '@/assets/svgs/how-it-works/profile.svg';
 import car from '@/assets/svgs/how-it-works/car.svg';
@@ -71,6 +73,8 @@ type Step = {
 };
 
 export default function HowItWorks() {
+  const t = useTranslations('HowItWorks');
+
   const [value, setValue] = React.useState(0);
   const theme = useTheme();
   const upMd = useMediaQuery(theme.breakpoints.up('md'));
@@ -79,10 +83,10 @@ export default function HowItWorks() {
     setValue(newValue);
 
   const tabsData = [
-    {label: 'Fahrschüler', icon: profile},
-    {label: 'Fahrschulen', icon: car},
-    {label: 'PWA auf iOS', icon: apple},
-    {label: 'PWA auf Android', icon: androidLogo}
+    {label: t('label1'), icon: profile},
+    {label: t('label2'), icon: car},
+    {label: t('label3'), icon: apple},
+    {label: t('label4'), icon: androidLogo}
   ];
 
   const learnerSteps: Step[] = [
@@ -99,7 +103,7 @@ export default function HowItWorks() {
       title: 'Wohnort',
       heading: 'Trage ein, wo du wohnst',
       description:
-        'Weder Fahrerlaubnisbehörde oder TÜV, bei Eingabe des Wohnortes werden die zu dir passenden Behörden und ihre Kontaktadressen in deinem Konto angezeigt.',
+        'Entweder Fahrerlaubnisbehörde oder TÜV, bei Eingabe des Wohnortes werden die zu dir passenden Behörden und ihre Kontaktadressen in deinem Konto angezeigt.',
       image: webDesigner
     },
     {
@@ -249,7 +253,7 @@ export default function HowItWorks() {
             fontWeight: 700
           }}
         >
-          So funktioniert’s
+          {t('title')}
         </Typography>
 
         <Box
@@ -301,7 +305,7 @@ export default function HowItWorks() {
                 }
               }}
             >
-              {tabsData.map((tab, i) => {
+              {tabsData.map((tab: any, i: number) => {
                 const showText = upMd || value === i;
                 return (
                   <Tab
@@ -316,11 +320,10 @@ export default function HowItWorks() {
                         }}
                       >
                         <Image
-                          src={tab.icon}
+                          src={[profile, car, apple, androidLogo][i]}
                           alt={tab.label}
                           width={30}
                           height={30}
-                          style={{objectFit: 'contain'}}
                         />
                         <Collapse
                           in={showText}
@@ -328,16 +331,7 @@ export default function HowItWorks() {
                           timeout={200}
                           unmountOnExit
                         >
-                          <Box
-                            component="span"
-                            sx={{
-                              textWrap: 'nowrap',
-                              fontFamily:
-                                '"Inter", "Inter Placeholder", sans-serif'
-                            }}
-                          >
-                            {tab.label}
-                          </Box>
+                          <Box component="span">{tab.label}</Box>
                         </Collapse>
                       </Box>
                     }
@@ -348,7 +342,7 @@ export default function HowItWorks() {
             </Tabs>
           </motion.div>
 
-          {stepsByTab.map((steps, idx) => (
+          {stepsByTab.map((steps: any[], idx: number) => (
             <CustomTabPanel key={idx} value={value} index={idx}>
               {steps.map((s, i) => (
                 <TabMenu
@@ -357,7 +351,7 @@ export default function HowItWorks() {
                   title={s.title}
                   heading={s.heading}
                   description={s.description}
-                  image={s.image}
+                  image={s.image} // ✅ use the value from your step object
                   index={i}
                 />
               ))}

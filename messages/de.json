@@ -171,7 +171,7 @@
         "content": "Es gibt sechs Führerscheinklassen, nämlich A, B, C, D, L und T. Die gängigsten Autoführerscheine sind die Klassen B und BF17.\n• Klasse B: Damit darfst du Kraftfahrzeuge bis 3,5 Tonnen Gesamtmasse fahren. Das Mindestalter beträgt 18 Jahre.\n• Klasse BF17: Das ist das „Begleitete Fahren ab 17“. Hier gelten die gleichen Bedingungen wie bei Klasse B, aber du darfst nur in Begleitung einer eingetragenen Person fahren.\nAuf unserer Website im Bereich Führerscheinklassen kannst du alle Klassen und ihre Unterschiede sehen."
       },
       {
-        "title": "Wie viele Theroiestunden muss man machen?",
+        "title": "Wie viele Theoriestunden muss man machen?",
         "content": "Die Anzahl der Theoriestunden hängt von der Führerscheinklasse ab. Für die Klassen A und B sind 12 Doppelstunden Grundstoff und 2 Doppelstunden klassenspezifischer Unterricht vorgeschrieben. Bei einer Erweiterung (z. B. wenn du bereits einen Führerschein hast) reduziert sich die Anzahl der Gesamtstunden auf 8. Die Gesamtstunden für die Klasse C beträgt 18 und für die Klasse D 20 Stunden."
       },
       {
@@ -208,11 +208,40 @@
     "dataRewrite": "Wer aus Drittstaaten dauerhaft nach Deutschland umzieht, muss seine ausländische Fahrerlaubnis umschreiben lassen."
   },
   "Services": {
-    "title": "Vertaue unseres Service",
+    "title": "Vertraue unseres Service",
     "des": "Erfahre selbst, wie unseres Service funktioniert",
     "btn1": "Als Fahrschuler starten",
     "btn2": "Als Fahrschule starten"
   },
+   "HowItWorks": {
+  "title": "So funktioniert’s",
+   "label1": "Fahrschüler" ,
+   "label2": "Fahrschulen" ,
+   "label3": "PWA auf iOS" ,
+   "label4": "PWA auf Android" ,
+"steps": [
+  [
+    {
+      "id": 1,
+      "title": "Wähle die Führerscheinklasse",
+      "subtitle": "Führerscheinklasse",
+      "description": "Welche Fahrerlaubnis benötigst du? Wähle die passende Kategorie aus. Wir begleiten dich Schritt für Schritt durch den Prozess des Führerscheinerwerbs.",
+      "icon": "uiux-designer",
+      "label": "UI/UX Designer"
+    }
+  ],
+  [
+    {
+      "id": 2,
+      "title": "Trage ein, wo du wohnst",
+      "subtitle": "Wohnort",
+      "description": "Entweder Fahrerlaubnisbehörde oder TÜV, bei Eingabe des Wohnortes werden die zu dir passenden Behörden und ihre Kontaktadressen in deinem Konto angezeigt.",
+      "icon": "web-designer",
+      "label": "Web Designer"
+    }
+  ]
+]
+},
   "Footer": {
     "description": "Wir verknüpfen Fahrschüler und Fahrschulen durch einen digitalen Service.",
     "features": {
