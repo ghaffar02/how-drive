@@ -26,7 +26,7 @@ export default function GridCardSmall({img, title, description}: CardProps) {
         display: 'flex',
         gap: '10px',
         borderRadius: '15px',
-        backgroundColor: '#fff',
+        backgroundColor: 'rgba(255,255,255,0.9)',
         boxShadow: 'rgba(0,0,0,0.25) 0px 0px 16px 0px'
       }}
       whileHover={{

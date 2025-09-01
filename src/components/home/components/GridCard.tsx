@@ -50,7 +50,7 @@ export default function GridCard({
           sm: flexdir || width ? '60px' : '0px',
           lg: flexdir ? '0px' : '48px'
         },
-        backgroundColor: '#fff',
+        backgroundColor: 'rgba(255,255,255,0.9)',
         borderRadius: '15px',
         boxShadow: 'rgba(0,0,0,0.25) 0px 0px 16px 0px'
       }}

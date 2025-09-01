@@ -3,7 +3,7 @@
 import * as React from 'react';
 import {Box, Typography, Divider} from '@mui/material';
 import Image, {StaticImageData} from 'next/image';
-import {motion} from 'framer-motion';
+import {motion, useScroll, useTransform} from 'framer-motion';
 
 interface TabMenuProps {
   number: string;
@@ -23,6 +23,13 @@ export default function TabMenu({
   index
 }: TabMenuProps) {
   const MotionBox = motion(Box);
+  const dividerRef = React.useRef<HTMLDivElement | null>(null);
+  const {scrollYProgress} = useScroll({
+    target: dividerRef,
+    offset: ['start end', 'end start']
+  });
+  const customProgress = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+  const bgSize = useTransform(customProgress, [0, 1], ['100% 0%', '100% 100%']);
   return (
     <Box
       sx={{
@@ -77,19 +84,20 @@ export default function TabMenu({
               {number}
             </Typography>
           </Box>
-          <Divider
-            orientation="vertical"
-            flexItem
-            sx={{
-              border: 0,
+          <motion.div
+            ref={dividerRef}
+            style={{
+              flexGrow: 1,
               width: '4px',
-              backgroundImage:
-                'linear-gradient(180deg, rgba(70, 17, 245, 0.5) 0%, rgba(235, 0, 255, 0.5) 100%)',
               borderRadius: '9999px',
-              boxShadow: 'none',
-              filter: 'drop-shadow(0px 1px 8px rgba(0,0,0,0.25))',
+              boxShadow: '0px 1px 8px rgba(0,0,0,0.25)',
               margin: 'auto',
-              flexGrow: 1
+              backgroundImage:
+                'linear-gradient(180deg, rgba(70, 17, 245, 0.9) 0%, rgba(235, 0, 255, 0.9) 100%)',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: 'top',
+              backgroundSize: bgSize,
+              minHeight: '250px'
             }}
           />
         </Box>
