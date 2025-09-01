@@ -40,8 +40,8 @@ export default function Navbar() {
           <Image src={Logo} alt="logo" height={50} width={50} />
           <Typography
             sx={{
-              fontSize: '27.58px',
-              lineHeight: '27.58px',
+              fontSize: '28px',
+              lineHeight: '28px',
               color: '#4611f5'
             }}
           >
@@ -52,7 +52,7 @@ export default function Navbar() {
                 background: 'linear-gradient(to right, #4611f5, #E501FF)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
-                lineHeight: '27.58px'
+                lineHeight: '28px'
               }}
             >
               Führerschein

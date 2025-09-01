@@ -21,6 +21,7 @@ type FooterData = {
 export default function Footer() {
   const t = useTranslations();
   const footerData = t.raw('Footer') as FooterData;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const {description, ...sections} = footerData;
 
   return (
@@ -55,8 +56,8 @@ export default function Footer() {
             <Image src={Logo} alt="logo" height={50} width={50} />
             <Typography
               sx={{
-                fontSize: '27.58px',
-                lineHeight: '27.58px',
+                fontSize: '28px',
+                lineHeight: '28px',
                 color: '#4611f5'
               }}
             >
@@ -67,7 +68,7 @@ export default function Footer() {
                   background: 'linear-gradient(to right, #4611f5, #E501FF)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
-                  lineHeight: '27.58px'
+                  lineHeight: '28px'
                 }}
               >
                 Führerschein
@@ -131,7 +132,7 @@ export default function Footer() {
               <Typography
                 sx={{
                   color: '#2e3749',
-                  fontSize: {xs: '14px', md: '14px', lg: '16px'},
+                  fontSize: {xs: '14px', md: '15px', lg: '16px'},
                   lineHeight: '1.5em',
                   fontWeight: '600',
                   paddingBottom: '10px',

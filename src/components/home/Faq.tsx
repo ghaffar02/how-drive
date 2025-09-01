@@ -146,7 +146,6 @@ const Faq = () => {
                   <Typography
                     className="accordion-title"
                     sx={{
-                      fontFamily: 'Poppins',
                       fontWeight: 400,
                       fontSize: {xs: '14px', sm: '16px', lg: '18px'},
                       lineHeight: {xs: '22px', sm: '100%'},

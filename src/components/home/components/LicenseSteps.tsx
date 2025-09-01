@@ -33,7 +33,7 @@ export default function LicenseSteps() {
     >
       <Typography
         sx={{
-          fontSize: '36px',
+          fontSize: {xs: '28px', sm: '32px', lg: '36px'},
           fontFamily: 'Satoshi500 !important',
           color: '#000',
           textAlign: 'center',

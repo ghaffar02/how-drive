@@ -58,7 +58,8 @@ export default function PricingCards({
               sx={{
                 fontSize: {xs: '18px', md: '20px', lg: '22px'},
                 // fontFamily: '"Inter", sans-serif  !important',
-                color: '#4611F5'
+                color: '#4611F5',
+                fontWeight: '400'
               }}
             >
               {items.title}
@@ -78,7 +79,6 @@ export default function PricingCards({
                 sx={{
                   fontSize: {xs: '32px', md: '36px', lg: '48px'},
                   fontFamily: 'Satoshi600 !important',
-                  // lineHeight: {xs: '37px', md: '43px', lg: '55px'},
                   textWrap: 'nowrap',
                   color: '#000'
                 }}
@@ -94,9 +94,9 @@ export default function PricingCards({
                   <Typography
                     sx={{
                       fontSize: {xs: '16px', md: '18px', lg: '20px'},
-
                       fontFamily: '"Inter", sans-serif  !important',
-                      color: '#000'
+                      color: '#000',
+                      fontWeight: '400'
                     }}
                   >
                     {items.price.duration}
@@ -105,7 +105,8 @@ export default function PricingCards({
                     sx={{
                       fontSize: {xs: '12px', md: '13px', lg: '14px'},
                       fontFamily: '"Inter", sans-serif  !important',
-                      color: '#000'
+                      color: '#000',
+                      fontWeight: '400'
                     }}
                   >
                     {items.price.note}
@@ -149,9 +150,6 @@ export default function PricingCards({
                   <Typography
                     sx={{
                       fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                      // fontFamily:
-                      // '"Inter", "Inter Placeholder", sans-serif !important',
-
                       color: '#2D3748'
                     }}
                   >
@@ -165,7 +163,8 @@ export default function PricingCards({
               sx={{
                 width: '100%',
                 fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                // fontFamily: '"Inter", sans-serif  !important',
+                fontFamily: '"Inter", sans-serif  !important',
+                fontWeight: '400',
                 display: 'flex',
                 lineHeight: {xs: '19px', md: '20px', lg: '22px'},
                 justifyContent: 'center',

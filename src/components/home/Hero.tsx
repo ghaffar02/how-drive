@@ -27,7 +27,6 @@ export default function Hero() {
     <>
       <Box
         sx={{
-          // height: '100vh',
           backgroundImage: 'url(/HeroBG.svg)',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
@@ -36,7 +35,6 @@ export default function Hero() {
       >
         <Box
           sx={{
-            // bgcolor: '#ccc',
             width: '100%',
             maxWidth: '1280px',
             p: {xs: '72px 16px 0', md: '80px 24px 0'},
@@ -114,7 +112,7 @@ export default function Hero() {
                 maxWidth: '186px',
                 fontSize: {xs: '14px', md: '16px', lg: '18px'},
                 lineHeight: {xs: '21px', md: '20px', lg: '23px'},
-                // fontFamily: '"Inter", sans-serif  !important',
+                fontWeight: '400',
                 cursor: 'pointer',
                 marginTop: '48px',
                 padding: '12px 16px',
