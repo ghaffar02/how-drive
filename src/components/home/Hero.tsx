@@ -2,16 +2,12 @@
 import {motion, Variants, useScroll, useTransform} from 'framer-motion';
 import {Box, Button, Typography} from '@mui/material';
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
-
+import {useTranslations} from 'next-intl';
 import heroImage from '@/assets/pngs/heroimage.jpeg';
 
 export default function Hero() {
-
- const t = useTranslations('Hero');
-
-  // const text = 'Der Weg zum Führerschein';
-  const text = t('title'); 
+  const t = useTranslations('Hero');
+  const text = t('title');
   const {scrollY} = useScroll();
 
   const rotateX = useTransform(scrollY, [0, 150], [15, 0]);
@@ -57,7 +53,6 @@ export default function Hero() {
             <Typography
               sx={{
                 width: '100%',
-                maxWidth: {xs: '330px', sm: '780px'},
                 lineHeight: {xs: '58px', md: '100%'},
                 color: '#000',
                 fontSize: {xs: '48px', md: '56px', lg: '64px'},
@@ -95,7 +90,8 @@ export default function Hero() {
               maxWidth: {sm: '780px'},
               color: '#000',
               fontSize: {xs: '18px', md: '20px', lg: '22px'},
-              fontFamily: 'Satoshi300 !important'
+              fontFamily: '"Inter", sans-serif  !important',
+              fontWeight: '300'
             }}
           >
             {t('description')}
@@ -133,7 +129,7 @@ export default function Hero() {
                 }
               }}
             >
-               {t('button')}
+              {t('button')}
             </Button>
           </Box>
           <Box
@@ -147,7 +143,6 @@ export default function Hero() {
               maxWidth: {xs: '865px', md: '1025px', lg: '1400px'},
               minWidth: '665px',
               mx: 'auto',
-              // margin: '0 70%',
               padding: '0 30px',
               width: '100%'
             }}
