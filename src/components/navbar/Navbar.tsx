@@ -126,7 +126,7 @@ export default function Navbar() {
                 lineHeight: '1.6em',
                 transition: 'all 0.3s ease-in-out',
                 padding: '4px 8px',
-                borderRadius: 2,
+                borderRadius: '5px',
                 '&:hover': {
                   backgroundColor: 'rgba(88,65,212,0.12)'
                 },
@@ -145,7 +145,7 @@ export default function Navbar() {
                 lineHeight: '1.6em',
                 transition: 'all 0.3s ease-in-out',
                 padding: '4px 8px',
-                borderRadius: 2,
+                borderRadius: '5px',
                 '&:hover': {
                   backgroundColor: 'rgba(88,65,212,0.12)'
                 },
