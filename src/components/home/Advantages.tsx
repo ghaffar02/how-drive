@@ -58,11 +58,11 @@ export default function Advantages() {
     <Box sx={{width: '100%', bgcolor: '#FAFAFA'}}>
       <Typography
         sx={{
-          fontSize: '36px',
+          fontSize: {xs: '28px', md: '32px', lg: '36px'},
           fontFamily: 'Satoshi500 !important',
           textAlign: 'center',
           color: '#000',
-          mt: '48px'
+          pt: '48px'
         }}
       >
         {t('title')}
@@ -128,7 +128,7 @@ export default function Advantages() {
               </Box>
               <Typography
                 sx={{
-                  fontSize: '16px',
+                  fontSize: {xs: '14px', md: '15px', lg: '16px'},
                   fontFamily: 'Inter, sans-serif !important',
                   color: '#2d3748'
                 }}
@@ -173,7 +173,7 @@ export default function Advantages() {
               </Box>
               <Typography
                 sx={{
-                  fontSize: '16px',
+                  fontSize: {xs: '14px', md: '15px', lg: '16px'},
                   fontFamily: 'Inter, sans-serif !important',
                   color: '#2d3748'
                 }}
@@ -310,7 +310,7 @@ function CardComponent({bgColor, title, description, color}: CardProps) {
         <Box sx={{padding: '8px'}}>
           <Typography
             sx={{
-              fontSize: '24px',
+              fontSize: {xs: '20px', md: '22px', lg: '24px'},
               marginBottom: '20px',
               color: color,
               fontFamily: 'Satoshi500 !important'
@@ -320,7 +320,7 @@ function CardComponent({bgColor, title, description, color}: CardProps) {
           </Typography>
           <Typography
             sx={{
-              fontSize: '16px',
+              fontSize: {xs: '14px', md: '15px', lg: '16px'},
               color: color,
               fontFamily: '"Inter", sans-serif  !important',
               fontWeight: '300'
