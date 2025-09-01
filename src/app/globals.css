@@ -57,6 +57,11 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  overflow-y: auto; /* allow scrolling */
+  
 }
 
 a {
@@ -90,3 +95,5 @@ a {
 .css-19kzrtu {
   padding: 0px !important;
 }
+
+
