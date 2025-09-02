@@ -14,7 +14,8 @@ export default function TrustServiceSection() {
             xs: '48px 16px',
             sm: '48px 24px',
             md: '48px'
-          }
+          },
+          background: '#FAFAFA'
         }}
       >
         <Box
@@ -23,7 +24,7 @@ export default function TrustServiceSection() {
               'linear-gradient(125deg, rgba(70, 17, 245, 0.75) 0%, rgba(31, 244, 255, 0.75) 46.8468%, rgba(234, 0, 255, 0.75) 100%)',
             height: '390px',
             width: '100%',
-            maxWidth: '1280px',
+            maxWidth: '1400px',
             m: '0 auto',
             borderRadius: '25px',
             position: 'relative',

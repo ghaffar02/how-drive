@@ -68,7 +68,7 @@ type StepFromI18n = {
   title: string;
   subtitle: string;
   description: string;
-  heading:string;
+  heading: string;
 };
 type Step = {
   number: string;
@@ -95,42 +95,45 @@ export default function HowItWorks() {
     {label: t('label4'), icon: androidLogo}
   ];
 
-const learnerImages = [uiDesigner, webDesigner, seoSpecialist, guide];
-const schoolImages = [uiDesigner, webDesigner, seoSpecialist, guide];
-const pwaIosImages = [uiDesigner, webDesigner, seoSpecialist, guide];
-const pwaAndroidImages = [uiDesigner, webDesigner, seoSpecialist, guide];
+  const learnerImages = [uiDesigner, webDesigner, seoSpecialist, guide];
+  const schoolImages = [uiDesigner, webDesigner, seoSpecialist, guide];
+  const pwaIosImages = [uiDesigner, webDesigner, seoSpecialist, guide];
+  const pwaAndroidImages = [uiDesigner, webDesigner, seoSpecialist, guide];
 
+  const learnerSteps = (t.raw('learner.steps') as StepFromI18n[]).map(
+    (s, i) => ({
+      number: String(s.number),
+      title: s.title,
+      heading: s.heading,
+      description: s.description,
+      image: learnerImages[i]
+    })
+  );
 
-const learnerSteps = (t.raw("learner.steps") as StepFromI18n[]).map((s, i) => ({
-  number: String(s.number),
-  title: s.title,
-  heading: s.heading,
-  description: s.description,
-  image: learnerImages[i]
-}));
+  const schoolSteps = (t.raw('school.steps') as StepFromI18n[]).map((s, i) => ({
+    number: String(s.number),
+    title: s.title,
+    heading: s.heading,
+    description: s.description,
+    image: schoolImages[i]
+  }));
 
-const schoolSteps = (t.raw("school.steps") as StepFromI18n[]).map((s, i) => ({
-  number: String(s.number),
-  title: s.title,
-  heading: s.heading,
-  description: s.description,
-  image: schoolImages[i]
-}));
-
-const pwaIosSteps = (t.raw("pwaIos.steps") as StepFromI18n[]).map((s, i) => ({
-  number: String(s.number),
-  title: s.title,
-  heading: s.heading,
-  description: s.description,
-  image: pwaIosImages[i]
-}));
-const pwaAndroidSteps = (t.raw("pwaAndroid.steps") as StepFromI18n[]).map((s, i) => ({
-  number: String(s.number),
-  title: s.title,
-  heading: s.heading,
-  description: s.description,
-  image: pwaAndroidImages[i]
-}));
+  const pwaIosSteps = (t.raw('pwaIos.steps') as StepFromI18n[]).map((s, i) => ({
+    number: String(s.number),
+    title: s.title,
+    heading: s.heading,
+    description: s.description,
+    image: pwaIosImages[i]
+  }));
+  const pwaAndroidSteps = (t.raw('pwaAndroid.steps') as StepFromI18n[]).map(
+    (s, i) => ({
+      number: String(s.number),
+      title: s.title,
+      heading: s.heading,
+      description: s.description,
+      image: pwaAndroidImages[i]
+    })
+  );
 
   const stepsByTab: Step[][] = [
     learnerSteps,
@@ -150,7 +153,7 @@ const pwaAndroidSteps = (t.raw("pwaAndroid.steps") as StepFromI18n[]).map((s, i)
         backgroundColor: '#FAFAFA'
       }}
     >
-      <Box sx={{maxWidth: '1280px', m: 'auto'}}>
+      <Box sx={{maxWidth: '1400px', m: 'auto'}}>
         <Typography
           sx={{
             p: '16px',
@@ -258,7 +261,7 @@ const pwaAndroidSteps = (t.raw("pwaAndroid.steps") as StepFromI18n[]).map((s, i)
                   title={s.title}
                   heading={s.heading}
                   description={s.description}
-                  image={s.image} // ✅ use the value from your step object
+                  image={s.image}
                   index={i}
                 />
               ))}

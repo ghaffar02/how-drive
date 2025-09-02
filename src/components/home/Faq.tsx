@@ -33,14 +33,13 @@ const Faq = () => {
     <Box
       sx={{
         bgcolor: '#FAFAFA',
-        boxSizing: 'border-box'
+        p: {xs: '48px 16px', sm: '48px 24px', lg: '48px'}
       }}
     >
       <Box
         sx={{
-          maxWidth: '1280px',
+          maxWidth: '1440px',
           width: '100%',
-          p: {xs: '48px 16px', sm: '48px 24px', lg: '48px'},
           margin: 'auto',
           display: 'flex',
           flexDirection: 'column',

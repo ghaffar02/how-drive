@@ -40,7 +40,7 @@ export default function TabMenu({
     >
       <Box
         sx={{
-          maxWidth: '1280px',
+          maxWidth: '1400px',
           m: 'auto',
           display: 'flex',
           gap: '18px'

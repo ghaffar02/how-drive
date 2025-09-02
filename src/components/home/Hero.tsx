@@ -32,14 +32,14 @@ export default function Hero() {
           backgroundImage: 'url(/HeroBG.svg)',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          backgroundSize: 'cover'
+          backgroundSize: 'cover',
+          p: {xs: '72px 16px 0', md: '80px 24px 0'}
         }}
       >
         <Box
           sx={{
             width: '100%',
-            maxWidth: '1280px',
-            p: {xs: '72px 16px 0', md: '80px 24px 0'},
+            maxWidth: '1400px',
             margin: 'auto',
             textAlign: 'center',
             paddingTop: '80px',

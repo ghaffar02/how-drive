@@ -50,7 +50,7 @@ export default function LicenseSteps() {
           gridTemplateColumns: 'repeat(12, 1fr)',
           gridAutoRows: 'calc(245px)',
           gap: 3,
-          maxWidth: '1280px',
+          maxWidth: '1400px',
           width: '100%',
           margin: 'auto',
           padding: '8px'

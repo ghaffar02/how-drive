@@ -69,7 +69,6 @@ export default function Advantages() {
       </Typography>
       <Box
         sx={{
-          width: '100%',
           padding: {
             xs: '48px 8px 48px 6px',
             sm: '48px 8px 48px 14px',
@@ -77,209 +76,217 @@ export default function Advantages() {
           }
         }}
       >
-        <Box sx={{padding: '8px'}}>
-          <Box
-            sx={{
-              maxWidth: '336px',
-              width: '100%',
-              border: '1px solid rgb(212,212,212)',
-              padding: '8px',
-              backgroundColor: '#FAFAFA',
-              borderRadius: '99px',
-              boxShadow: 'rgba(0,0,0,0.25) 0px 1px 2px 0px',
-              display: 'flex',
-              gap: '16px',
-              marginBottom: '24px'
-            }}
-          >
+        <Box
+          sx={{
+            width: '100%',
+            maxWidth: '1400px',
+            margin: 'auto'
+          }}
+        >
+          <Box sx={{padding: '8px'}}>
             <Box
-              onClick={() => tabSwitch('fahrschuler')}
               sx={{
-                maxWidth: value === 'fahrschuler' ? '158px' : '145px',
+                maxWidth: '336px',
                 width: '100%',
+                border: '1px solid rgb(212,212,212)',
+                padding: '8px',
+                backgroundColor: '#FAFAFA',
+                borderRadius: '99px',
+                boxShadow: 'rgba(0,0,0,0.25) 0px 1px 2px 0px',
                 display: 'flex',
-                alignItems: 'center',
-                gap: '10px',
-                padding: value === 'fahrschuler' ? '8px 16px' : '8px',
-                backgroundColor:
-                  value === 'fahrschuler' ? '#fff' : 'transparent',
-                borderRadius: value === 'fahrschuler' ? '99px' : 'none',
-                boxShadow:
-                  value === 'fahrschuler'
-                    ? 'rgba(0,0,0,0.15) 0px 2px 8px 0px'
-                    : 'none',
-                transition: 'all 0.3s ease-in-out',
-                cursor: 'pointer',
-                ...(value !== 'fahrschuler' && {
-                  '&:hover': {
-                    backgroundColor: 'rgb(250,250,250)',
-                    borderRadius: '99px',
-                    boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.25)'
-                  }
-                })
+                gap: '16px',
+                marginBottom: '24px'
               }}
             >
-              <Box sx={{width: '30px', height: '30px'}}>
-                <Image
-                  src={User}
-                  alt="image"
-                  style={{height: '100%', width: '100%'}}
-                />
-              </Box>
-              <Typography
+              <Box
+                onClick={() => tabSwitch('fahrschuler')}
                 sx={{
-                  fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                  fontFamily: 'Inter, sans-serif !important',
-                  color: '#2d3748'
+                  maxWidth: value === 'fahrschuler' ? '158px' : '145px',
+                  width: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  padding: value === 'fahrschuler' ? '8px 16px' : '8px',
+                  backgroundColor:
+                    value === 'fahrschuler' ? '#fff' : 'transparent',
+                  borderRadius: value === 'fahrschuler' ? '99px' : 'none',
+                  boxShadow:
+                    value === 'fahrschuler'
+                      ? 'rgba(0,0,0,0.15) 0px 2px 8px 0px'
+                      : 'none',
+                  transition: 'all 0.3s ease-in-out',
+                  cursor: 'pointer',
+                  ...(value !== 'fahrschuler' && {
+                    '&:hover': {
+                      backgroundColor: 'rgb(250,250,250)',
+                      borderRadius: '99px',
+                      boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.25)'
+                    }
+                  })
                 }}
               >
-                {t('driverTab')}
-              </Typography>
+                <Box sx={{width: '30px', height: '30px'}}>
+                  <Image
+                    src={User}
+                    alt="image"
+                    style={{height: '100%', width: '100%'}}
+                  />
+                </Box>
+                <Typography
+                  sx={{
+                    fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                    fontFamily: 'Inter, sans-serif !important',
+                    color: '#2d3748'
+                  }}
+                >
+                  {t('driverTab')}
+                </Typography>
+              </Box>
+              {/* Second Button */}
+              <Box
+                onClick={() => tabSwitch('fahrschulen')}
+                sx={{
+                  maxWidth: value === 'fahrschulen' ? '158px' : '145px',
+                  width: '100%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  padding: value === 'fahrschulen' ? '8px 16px' : '8px',
+                  backgroundColor:
+                    value === 'fahrschulen' ? '#fff' : 'transparent',
+                  borderRadius: value === 'fahrschulen' ? '99px' : 'none',
+                  boxShadow:
+                    value === 'fahrschulen'
+                      ? 'rgba(0,0,0,0.15) 0px 2px 8px 0px'
+                      : 'none',
+                  transition: 'all 0.3s ease-in-out',
+                  cursor: 'pointer',
+                  ...(value !== 'fahrschulen' && {
+                    '&:hover': {
+                      backgroundColor: 'rgb(250,250,250)',
+                      borderRadius: '99px',
+                      boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.25)'
+                    }
+                  })
+                }}
+              >
+                <Box sx={{width: '30px', height: '30px'}}>
+                  <Image
+                    src={Car}
+                    alt="image"
+                    style={{height: '100%', width: '100%'}}
+                  />
+                </Box>
+                <Typography
+                  sx={{
+                    fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                    fontFamily: 'Inter, sans-serif !important',
+                    color: '#2d3748'
+                  }}
+                >
+                  {t('schoolTab')}
+                </Typography>
+              </Box>
             </Box>
-            {/* Second Button */}
-            <Box
-              onClick={() => tabSwitch('fahrschulen')}
-              sx={{
-                maxWidth: value === 'fahrschulen' ? '158px' : '145px',
-                width: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '10px',
-                padding: value === 'fahrschulen' ? '8px 16px' : '8px',
-                backgroundColor:
-                  value === 'fahrschulen' ? '#fff' : 'transparent',
-                borderRadius: value === 'fahrschulen' ? '99px' : 'none',
-                boxShadow:
-                  value === 'fahrschulen'
-                    ? 'rgba(0,0,0,0.15) 0px 2px 8px 0px'
-                    : 'none',
-                transition: 'all 0.3s ease-in-out',
-                cursor: 'pointer',
-                ...(value !== 'fahrschulen' && {
-                  '&:hover': {
-                    backgroundColor: 'rgb(250,250,250)',
-                    borderRadius: '99px',
-                    boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.25)'
+            <Box sx={{position: 'relative', width: '100%'}}>
+              {showLeft && (
+                <Button
+                  onClick={() => scroll('left')}
+                  sx={{
+                    position: 'absolute',
+                    left: 0,
+                    top: '50%',
+                    transform: 'translateY(-50%)',
+                    zIndex: 10,
+                    minWidth: '40px',
+                    height: '40px',
+                    borderRadius: '50%',
+                    bgcolor: 'rgba(0,0,0,0.2)',
+                    boxShadow: 2
+                  }}
+                >
+                  <ChevronLeftIcon sx={{color: 'white'}} />
+                </Button>
+              )}
+
+              <Box
+                ref={scrollRef}
+                sx={{
+                  display: 'flex',
+                  gap: '28px',
+                  padding: '10px 10px 10px 0',
+                  overflowX: 'auto',
+                  overflowY: 'hidden',
+                  scrollbarWidth: 'none',
+                  msOverflowStyle: 'none',
+                  '&::-webkit-scrollbar': {
+                    display: 'none'
                   }
-                })
-              }}
-            >
-              <Box sx={{width: '30px', height: '30px'}}>
-                <Image
-                  src={Car}
-                  alt="image"
-                  style={{height: '100%', width: '100%'}}
-                />
-              </Box>
-              <Typography
-                sx={{
-                  fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                  fontFamily: 'Inter, sans-serif !important',
-                  color: '#2d3748'
                 }}
               >
-                {t('schoolTab')}
-              </Typography>
-            </Box>
-          </Box>
-          <Box sx={{position: 'relative', width: '100%'}}>
-            {showLeft && (
+                {value === 'fahrschuler'
+                  ? DriverData.map((data: any, i: number) => (
+                      <motion.div
+                        key={data.title}
+                        initial={{y: 80, opacity: 0}}
+                        whileInView={{y: 0, opacity: 1}}
+                        viewport={{once: true}}
+                        transition={{
+                          duration: 0.5,
+                          ease: 'easeOut',
+                          delay: i * 0.25
+                        }}
+                        style={{flexShrink: 0}}
+                      >
+                        <CardComponent
+                          bgColor={data.bgColor}
+                          color={data.color}
+                          title={data.title}
+                          description={data.description}
+                        />
+                      </motion.div>
+                    ))
+                  : SchoolsData.map((data: any, i: number) => (
+                      <motion.div
+                        key={data.title}
+                        initial={{y: 80, opacity: 0}}
+                        whileInView={{y: 0, opacity: [0, 0.5, 1]}}
+                        viewport={{once: true}}
+                        transition={{
+                          duration: 0.5,
+                          ease: 'easeOut',
+                          delay: i * 0.25,
+                          times: [0, 0.5, 1]
+                        }}
+                        style={{flexShrink: 0}}
+                      >
+                        <CardComponent
+                          bgColor={data.bgColor}
+                          color={data.color}
+                          title={data.title}
+                          description={data.description}
+                        />
+                      </motion.div>
+                    ))}
+              </Box>
               <Button
-                onClick={() => scroll('left')}
+                onClick={() => scroll('right')}
                 sx={{
                   position: 'absolute',
-                  left: 0,
+                  right: 0,
                   top: '50%',
                   transform: 'translateY(-50%)',
+                  height: '40px',
                   zIndex: 10,
                   minWidth: '40px',
-                  height: '40px',
                   borderRadius: '50%',
                   bgcolor: 'rgba(0,0,0,0.2)',
                   boxShadow: 2
                 }}
               >
-                <ChevronLeftIcon sx={{color: 'white'}} />
+                <ChevronRightIcon sx={{color: 'white'}} />
               </Button>
-            )}
-
-            <Box
-              ref={scrollRef}
-              sx={{
-                display: 'flex',
-                gap: '28px',
-                padding: '10px 10px 10px 0',
-                overflowX: 'auto',
-                overflowY: 'hidden',
-                scrollbarWidth: 'none',
-                msOverflowStyle: 'none',
-                '&::-webkit-scrollbar': {
-                  display: 'none'
-                }
-              }}
-            >
-              {value === 'fahrschuler'
-                ? DriverData.map((data: any, i: number) => (
-                    <motion.div
-                      key={data.title}
-                      initial={{y: 80, opacity: 0}}
-                      whileInView={{y: 0, opacity: 1}}
-                      viewport={{once: true}}
-                      transition={{
-                        duration: 0.5,
-                        ease: 'easeOut',
-                        delay: i * 0.25
-                      }}
-                      style={{flexShrink: 0}}
-                    >
-                      <CardComponent
-                        bgColor={data.bgColor}
-                        color={data.color}
-                        title={data.title}
-                        description={data.description}
-                      />
-                    </motion.div>
-                  ))
-                : SchoolsData.map((data: any, i: number) => (
-                    <motion.div
-                      key={data.title}
-                      initial={{y: 80, opacity: 0}}
-                      whileInView={{y: 0, opacity: [0, 0.5, 1]}}
-                      viewport={{once: true}}
-                      transition={{
-                        duration: 0.5,
-                        ease: 'easeOut',
-                        delay: i * 0.25,
-                        times: [0, 0.5, 1]
-                      }}
-                      style={{flexShrink: 0}}
-                    >
-                      <CardComponent
-                        bgColor={data.bgColor}
-                        color={data.color}
-                        title={data.title}
-                        description={data.description}
-                      />
-                    </motion.div>
-                  ))}
             </Box>
-            <Button
-              onClick={() => scroll('right')}
-              sx={{
-                position: 'absolute',
-                right: 0,
-                top: '50%',
-                transform: 'translateY(-50%)',
-                height: '40px',
-                zIndex: 10,
-                minWidth: '40px',
-                borderRadius: '50%',
-                bgcolor: 'rgba(0,0,0,0.2)',
-                boxShadow: 2
-              }}
-            >
-              <ChevronRightIcon sx={{color: 'white'}} />
-            </Button>
           </Box>
         </Box>
       </Box>
