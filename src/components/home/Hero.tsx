@@ -91,7 +91,8 @@ export default function Hero() {
               color: '#000',
               fontSize: {xs: '18px', md: '20px', lg: '22px'},
               fontFamily: '"Inter", sans-serif  !important',
-              fontWeight: '300'
+              fontWeight: '300',
+              lineHeight: '1.35em'
             }}
           >
             {t('description')}

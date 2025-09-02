@@ -1,8 +1,6 @@
 'use client';
-
 import React, {useState} from 'react';
 import {motion} from 'framer-motion';
-
 import {
   Accordion,
   AccordionSummary,
@@ -12,7 +10,6 @@ import {
 } from '@mui/material';
 import {useTranslations} from 'next-intl';
 import Image from 'next/image';
-
 import addicon from '@/assets/svgs/plus-icon.svg';
 
 const Faq = () => {
@@ -175,7 +172,8 @@ const Faq = () => {
                       fontSize: {xs: '14px', sm: '15px', lg: '16px'},
                       whiteSpace: 'pre-wrap',
                       fontWeight: '300',
-                      fontFamily: '"Inter", sans-serif  !important'
+                      fontFamily: '"Inter", sans-serif  !important',
+                      lineHeight: '1.5em'
                     }}
                     color="#71717A"
                   >

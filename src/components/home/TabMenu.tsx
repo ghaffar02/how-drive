@@ -140,7 +140,8 @@ export default function TabMenu({
                 sx={{
                   color: '#1a202c',
                   fontSize: {xs: '14px', md: '16px', lg: '18px'},
-                  fontWeight: 700
+                  fontWeight: 700,
+                  lineHeight: '1.5em'
                 }}
               >
                 {description}

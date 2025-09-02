@@ -84,7 +84,8 @@ export default function Footer() {
                 color: '#2D3748',
                 fontSize: {xs: '14px', md: '15px', lg: '16px'},
                 fontFamily: '"Inter", sans-serif  !important',
-                paddingTop: '10px'
+                paddingTop: '10px',
+                lineHeight: '1.5em'
               }}
             >
               {t('Footer.description')}

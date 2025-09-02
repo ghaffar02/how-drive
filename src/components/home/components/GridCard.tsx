@@ -102,7 +102,8 @@ export default function GridCard({
           sx={{
             color: '#2d3748',
             fontSize: {xs: '14px', sm: '15px', lg: '16px'},
-            fontFamily: '"Inter", sans-serif !important'
+            fontFamily: '"Inter", sans-serif !important',
+            lineHeight: '1.5em'
           }}
         >
           {description}

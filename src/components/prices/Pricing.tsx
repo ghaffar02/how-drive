@@ -34,7 +34,8 @@ export default function Pricing() {
               fontFamily: 'Satoshi500 !important',
               padding: '16px',
               textAlign: 'center',
-              color: '#000'
+              color: '#000',
+              fontWeight: '700'
             }}
           >
             {t('title')}
