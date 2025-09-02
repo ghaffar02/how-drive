@@ -108,6 +108,7 @@ export default function Hero() {
             }}
           >
             <Button
+              disableRipple
               sx={{
                 width: '100%',
                 maxWidth: '186px',
@@ -125,6 +126,10 @@ export default function Hero() {
                 transition: 'background-color 0.3s ease',
                 '&:hover': {
                   backgroundColor: '#300ca8',
+                  color: '#fff'
+                },
+                '&:active': {
+                  backgroundColor: '#1A065C !important',
                   color: '#fff'
                 }
               }}

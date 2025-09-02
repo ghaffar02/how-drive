@@ -68,6 +68,7 @@ export default function TrustServiceSection() {
               }}
             >
               <Button
+                disableRipple
                 sx={{
                   color: '#fff',
                   backgroundColor: '#4616F5',
@@ -80,12 +81,18 @@ export default function TrustServiceSection() {
                   borderRadius: '10px',
                   '&:hover': {
                     backgroundColor: '#300CA8'
-                  }
+                  },
+                  '&:active': {
+                    backgroundColor: '#2b1087 !important',
+                    color: '#fff'
+                  },
+                  transition: 'all 0.4s ease-in-out'
                 }}
               >
                 {t('btn1')}
               </Button>
               <Button
+                disableRipple
                 sx={{
                   color: '#fff',
                   backgroundColor: 'transparent',
@@ -100,7 +107,12 @@ export default function TrustServiceSection() {
                   '&:hover': {
                     backgroundColor: '#fff',
                     color: '#000'
-                  }
+                  },
+                  '&:active': {
+                    backgroundColor: '#EDEDED !important',
+                    color: '#000000'
+                  },
+                  transition: 'all 0.4s ease-in-out'
                 }}
               >
                 {t('btn2')}

@@ -146,8 +146,7 @@ export default function Advantages() {
               <Box
                 onClick={() => tabSwitch('fahrschulen')}
                 sx={{
-                  maxWidth: value === 'fahrschulen' ? '158px' : '145px',
-                  width: '100%',
+                  width: 'fit-content',
                   display: 'flex',
                   alignItems: 'center',
                   gap: '10px',
@@ -181,7 +180,8 @@ export default function Advantages() {
                   sx={{
                     fontSize: {xs: '14px', md: '15px', lg: '16px'},
                     fontFamily: 'Inter, sans-serif !important',
-                    color: '#2d3748'
+                    color: '#2d3748',
+                    textWrap: 'nowrap'
                   }}
                 >
                   {t('schoolTab')}

@@ -124,6 +124,7 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
             >
               <LanguageDropdown />
               <Button
+                disableRipple
                 sx={{
                   WebkitTapHighlightColor: 'transparent',
                   backgroundColor: '#4610F5',
@@ -137,6 +138,10 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
                   textTransform: 'capitalize',
                   '&:hover': {
                     backgroundColor: '#4610F5',
+                    color: '#fff'
+                  },
+                  '&:active': {
+                    backgroundColor: '#1A065C !important',
                     color: '#fff'
                   },
                   width: '100%',

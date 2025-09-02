@@ -166,6 +166,7 @@ export default function Navbar() {
               <LanguageDropdown />
               <Image src={profile} alt="profile" height={35} width={35} />
               <Button
+                disableRipple
                 sx={{
                   backgroundColor: 'transparent',
                   color: '#000000',
@@ -182,7 +183,7 @@ export default function Navbar() {
                     color: '#fff'
                   },
                   '&:active': {
-                    backgroundColor: '#2b1087 !important',
+                    backgroundColor: '#1A065C !important',
                     color: '#fff'
                   },
                   height: '44px',
