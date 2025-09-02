@@ -78,7 +78,7 @@ export default function PricingCards({
               <Typography
                 sx={{
                   fontSize: {xs: '32px', md: '36px', lg: '48px'},
-                  fontFamily: 'Satoshi600 !important',
+                  fontFamily: 'Satoshi700 !important',
                   textWrap: 'nowrap',
                   color: '#000'
                 }}

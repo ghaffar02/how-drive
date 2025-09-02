@@ -131,7 +131,7 @@ export default function TabMenu({
                   lineHeight: {xs: '1.2em', lg: '1.15em'},
                   fontWeight: 700,
                   paddingBottom: '10px',
-                  fontFamily: 'satoshi600 !important'
+                  fontFamily: 'Satoshi700 !important'
                 }}
               >
                 {heading}

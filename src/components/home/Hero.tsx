@@ -60,7 +60,7 @@ export default function Hero() {
                 fontWeight: '600 !important',
                 paddingBottom: '32px',
                 perspective: '1000px',
-                fontFamily: 'Satoshi600 !important'
+                fontFamily: 'Satoshi700 !important'
               }}
             >
               {text.split('').map((char, i) => (

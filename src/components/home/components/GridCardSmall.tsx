@@ -52,7 +52,7 @@ export default function GridCardSmall({img, title, description}: CardProps) {
           sx={{
             fontSize: {xs: '20px', sm: '22px', lg: '24px'},
             color: '#1a202c',
-            fontFamily: 'Satoshi600 !important'
+            fontFamily: 'Satoshi700 !important'
           }}
         >
           {title}

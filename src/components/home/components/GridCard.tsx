@@ -92,7 +92,7 @@ export default function GridCard({
         <Typography
           sx={{
             fontSize: {xs: '20px', sm: '22px', lg: '24px'},
-            fontFamily: 'Satoshi600 !important',
+            fontFamily: 'Satoshi700 !important',
             color: '#1a202c'
           }}
         >
