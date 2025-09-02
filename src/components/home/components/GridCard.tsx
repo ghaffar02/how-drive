@@ -103,7 +103,8 @@ export default function GridCard({
             color: '#2d3748',
             fontSize: {xs: '14px', sm: '15px', lg: '16px'},
             fontFamily: '"Inter", sans-serif !important',
-            lineHeight: '1.5em'
+            lineHeight: '1.5em',
+            fontWeight: '300'
           }}
         >
           {description}

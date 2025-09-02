@@ -57,7 +57,6 @@ export default function Hero() {
                 color: '#000',
                 fontSize: {xs: '48px', md: '56px', lg: '64px'},
                 textWrap: {md: 'nowrap'},
-                fontWeight: '600 !important',
                 paddingBottom: '32px',
                 perspective: '1000px',
                 fontFamily: 'Satoshi700 !important'
@@ -72,7 +71,8 @@ export default function Hero() {
                   custom={i}
                   style={{
                     display: 'inline-block',
-                    whiteSpace: char === ' ' ? 'pre' : 'nowrap'
+                    whiteSpace: char === ' ' ? 'pre' : 'nowrap',
+                    fontFamily: 'Satoshi700 !important'
                   }}
                 >
                   {char}

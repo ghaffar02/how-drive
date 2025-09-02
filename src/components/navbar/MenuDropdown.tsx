@@ -97,7 +97,11 @@ export default function MenuDropdown({label, items}: Props) {
                   <Typography
                     sx={{
                       ...textStyle,
-                      transition: 'all 0.24s ease-in-out'
+                      transition: 'all 0.24s ease-in-out',
+                      '&:hover': {
+                        color: '#4611F5'
+                      },
+                      fontWeight: '400'
                     }}
                   >
                     {text}

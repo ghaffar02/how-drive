@@ -241,7 +241,9 @@ export default function HowItWorks() {
                           timeout={200}
                           unmountOnExit
                         >
-                          <Box component="span">{tab.label}</Box>
+                          <Box sx={{fontWeight: '500'}} component="span">
+                            {tab.label}
+                          </Box>
                         </Collapse>
                       </Box>
                     }

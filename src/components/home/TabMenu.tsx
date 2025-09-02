@@ -110,7 +110,8 @@ export default function TabMenu({
               fontSize: {xs: '14px', md: '15px', lg: '16px'},
               paddingBottom: '24px',
               paddingTop: {xs: '4px', md: '20px'},
-              fontFamily: '"Inter", "Inter Placeholder", sans-serif !important'
+              fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
+              fontWeight: '500'
             }}
           >
             {title}
@@ -126,7 +127,7 @@ export default function TabMenu({
             <Box sx={{width: {md: '50%'}}}>
               <Typography
                 sx={{
-                  color: '#1a202c',
+                  color: '#000',
                   fontSize: {xs: '32px', md: '36px', lg: '48px'},
                   lineHeight: {xs: '1.2em', lg: '1.15em'},
                   fontWeight: 700,
@@ -140,8 +141,10 @@ export default function TabMenu({
                 sx={{
                   color: '#1a202c',
                   fontSize: {xs: '14px', md: '16px', lg: '18px'},
-                  fontWeight: 700,
-                  lineHeight: '1.5em'
+                  lineHeight: '1.5em',
+                  fontFamily:
+                    '"Inter", "Inter Placeholder", sans-serif !important',
+                  fontWeight: '400'
                 }}
               >
                 {description}
