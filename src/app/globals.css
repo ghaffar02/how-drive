@@ -3,7 +3,6 @@
   src: url('/fonts/Satoshi-Light.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
@@ -11,7 +10,6 @@
   src: url('/fonts/Satoshi-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
@@ -19,31 +17,20 @@
   src: url('/fonts/Satoshi-Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Satoshi600';
-  src: url('/fonts/Satoshi-Bold.otf') format('opentype');
-  font-weight: 600 !important;
-  font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
   font-family: 'Satoshi700';
-  src: url('/fonts/Satoshi-Black.otf') format('opentype');
+  src: url('/fonts/Satoshi-Bold.otf') format('opentype');
   font-weight: 700 !important;
   font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
-  font-family: 'Satoshi800';
+  font-family: 'Satoshi900';
   src: url('/fonts/Satoshi-Black.otf') format('opentype');
-  font-weight: 800 !important;
+  font-weight: 900 !important;
   font-style: normal;
-  font-display: swap;
 }
 
 * {
@@ -61,7 +48,6 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-y: auto; /* allow scrolling */
-  
 }
 
 a {
@@ -95,5 +81,3 @@ a {
 .css-19kzrtu {
   padding: 0px !important;
 }
-
-

@@ -78,7 +78,7 @@ export default function PricingCards({
               <Typography
                 sx={{
                   fontSize: {xs: '32px', md: '36px', lg: '48px'},
-                  fontFamily: 'Satoshi600 !important',
+                  fontFamily: 'Satoshi700 !important',
                   textWrap: 'nowrap',
                   color: '#000'
                 }}
@@ -160,6 +160,7 @@ export default function PricingCards({
             </Box>
 
             <Button
+              disableRipple
               sx={{
                 width: '100%',
                 fontSize: {xs: '14px', md: '15px', lg: '16px'},
@@ -179,6 +180,10 @@ export default function PricingCards({
                 transition: 'background-color 0.3s ease',
                 '&:hover': {
                   backgroundColor: '#300ca8',
+                  color: '#fff'
+                },
+                '&:active': {
+                  backgroundColor: '#1A065C !important',
                   color: '#fff'
                 }
               }}

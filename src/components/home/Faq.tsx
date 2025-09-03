@@ -1,8 +1,6 @@
 'use client';
-
 import React, {useState} from 'react';
 import {motion} from 'framer-motion';
-
 import {
   Accordion,
   AccordionSummary,
@@ -12,7 +10,6 @@ import {
 } from '@mui/material';
 import {useTranslations} from 'next-intl';
 import Image from 'next/image';
-
 import addicon from '@/assets/svgs/plus-icon.svg';
 
 const Faq = () => {
@@ -33,14 +30,13 @@ const Faq = () => {
     <Box
       sx={{
         bgcolor: '#FAFAFA',
-        boxSizing: 'border-box'
+        p: {xs: '48px 16px', sm: '48px 24px', lg: '48px'}
       }}
     >
       <Box
         sx={{
-          maxWidth: '1280px',
+          maxWidth: '1440px',
           width: '100%',
-          p: {xs: '48px 16px', sm: '48px 24px', lg: '48px'},
           margin: 'auto',
           display: 'flex',
           flexDirection: 'column',
@@ -176,7 +172,8 @@ const Faq = () => {
                       fontSize: {xs: '14px', sm: '15px', lg: '16px'},
                       whiteSpace: 'pre-wrap',
                       fontWeight: '300',
-                      fontFamily: '"Inter", sans-serif  !important'
+                      fontFamily: '"Inter", sans-serif  !important',
+                      lineHeight: '1.5em'
                     }}
                     color="#71717A"
                   >

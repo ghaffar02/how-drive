@@ -32,14 +32,14 @@ export default function Hero() {
           backgroundImage: 'url(/HeroBG.svg)',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          backgroundSize: 'cover'
+          backgroundSize: 'cover',
+          p: {xs: '72px 16px 0', md: '80px 24px 0'}
         }}
       >
         <Box
           sx={{
             width: '100%',
-            maxWidth: '1280px',
-            p: {xs: '72px 16px 0', md: '80px 24px 0'},
+            maxWidth: '1400px',
             margin: 'auto',
             textAlign: 'center',
             paddingTop: '80px',
@@ -57,10 +57,9 @@ export default function Hero() {
                 color: '#000',
                 fontSize: {xs: '48px', md: '56px', lg: '64px'},
                 textWrap: {md: 'nowrap'},
-                fontWeight: '600 !important',
                 paddingBottom: '32px',
                 perspective: '1000px',
-                fontFamily: 'Satoshi600 !important'
+                fontFamily: 'Satoshi700 !important'
               }}
             >
               {text.split('').map((char, i) => (
@@ -72,7 +71,8 @@ export default function Hero() {
                   custom={i}
                   style={{
                     display: 'inline-block',
-                    whiteSpace: char === ' ' ? 'pre' : 'nowrap'
+                    whiteSpace: char === ' ' ? 'pre' : 'nowrap',
+                    fontFamily: 'Satoshi700 !important'
                   }}
                 >
                   {char}
@@ -91,7 +91,8 @@ export default function Hero() {
               color: '#000',
               fontSize: {xs: '18px', md: '20px', lg: '22px'},
               fontFamily: '"Inter", sans-serif  !important',
-              fontWeight: '300'
+              fontWeight: '300',
+              lineHeight: '1.35em'
             }}
           >
             {t('description')}
@@ -108,6 +109,7 @@ export default function Hero() {
             }}
           >
             <Button
+              disableRipple
               sx={{
                 width: '100%',
                 maxWidth: '186px',
@@ -125,6 +127,10 @@ export default function Hero() {
                 transition: 'background-color 0.3s ease',
                 '&:hover': {
                   backgroundColor: '#300ca8',
+                  color: '#fff'
+                },
+                '&:active': {
+                  backgroundColor: '#1A065C !important',
                   color: '#fff'
                 }
               }}

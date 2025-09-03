@@ -11,14 +11,14 @@ export default function Pricing() {
       <Box
         sx={{
           bgcolor: '#FAFAFA',
-          boxSizing: 'border-box'
+          boxSizing: 'border-box',
+          p: {xs: '48px 16px', md: '48px 24px', lg: '48px'}
         }}
       >
         <Box
           sx={{
-            maxWidth: '1280px',
+            maxWidth: '1440px',
             width: '100%',
-            p: {xs: '48px 16px', md: '48px 24px', lg: '48px'},
             margin: 'auto',
             display: 'flex',
             flexDirection: 'column',
@@ -34,7 +34,8 @@ export default function Pricing() {
               fontFamily: 'Satoshi500 !important',
               padding: '16px',
               textAlign: 'center',
-              color: '#000'
+              color: '#000',
+              fontWeight: '700'
             }}
           >
             {t('title')}
