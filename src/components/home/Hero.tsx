@@ -1,5 +1,5 @@
 'use client';
-import {motion, Variants, useScroll, useTransform} from 'framer-motion';
+import {motion, useScroll, useTransform} from 'framer-motion';
 import {Box, Button, Typography} from '@mui/material';
 import Image from 'next/image';
 import {useTranslations} from 'next-intl';
@@ -8,23 +8,31 @@ import heroImage from '@/assets/pngs/heroimage.jpeg';
 export default function Hero() {
   const t = useTranslations('Hero');
   const text = t('title');
+
+  // const text = 'Der Weg zum Führerschein';
+
+  const splitText = (str: string) =>
+    str.split('').map((char, i) => (
+      <span
+        key={i}
+        style={{
+          display: 'inline-block',
+          opacity: 0,
+          transform: 'rotateY(90deg) translateY(10px)',
+          fontFamily: 'Satoshi700 !important',
+          animation: `flipIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards`,
+          animationDelay: `${i * 0.05}s` // stagger like Framer
+        }}
+      >
+        {char === ' ' ? '\u00A0' : char}
+      </span>
+    ));
+
   const {scrollY} = useScroll();
 
   const rotateX = useTransform(scrollY, [0, 150], [15, 0]);
   const y = useTransform(scrollY, [0, 150], [20, 0]);
-  const letterAnimation = {
-    hidden: {opacity: 0, rotateY: 90, y: 10},
-    visible: (i: number) => ({
-      opacity: 1,
-      rotateY: 0,
-      y: 0,
-      transition: {
-        delay: i * 0.05,
-        duration: 0.4,
-        ease: [0.22, 1, 0.36, 1]
-      }
-    })
-  } as Variants;
+
   return (
     <>
       <Box
@@ -42,7 +50,6 @@ export default function Hero() {
             maxWidth: '1400px',
             margin: 'auto',
             textAlign: 'center',
-            // paddingTop: '80px',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
@@ -50,36 +57,36 @@ export default function Hero() {
           }}
         >
           <>
+            <style>
+              {`
+          @keyframes flipIn {
+            0% {
+              opacity: 0;
+              transform: rotateY(90deg) translateY(10px);
+            }
+            100% {
+              opacity: 1;
+              transform: rotateY(0deg) translateY(0);
+            }
+          }
+        `}
+            </style>
             <Typography
               sx={{
-                width: '100%',
-                lineHeight: {xs: '58px', md: '100%'},
                 color: '#000',
                 fontSize: {xs: '48px', md: '56px', lg: '64px'},
-                textWrap: {md: 'nowrap'},
+                fontWeight: '700 !important',
                 paddingBottom: '32px',
+                lineHeight: {xs: '58px', md: '100%'},
                 perspective: '1000px',
                 fontFamily: 'Satoshi700 !important'
               }}
             >
-              {text.split('').map((char, i) => (
-                <motion.span
-                  key={i}
-                  variants={letterAnimation}
-                  initial="hidden"
-                  animate="visible"
-                  custom={i}
-                  style={{
-                    display: 'inline-block',
-                    whiteSpace: char === ' ' ? 'pre' : 'nowrap',
-                    fontFamily: 'Satoshi700 !important'
-                  }}
-                >
-                  {char}
-                </motion.span>
-              ))}
+              {splitText(text)}
             </Typography>
           </>
+          {/* </Box> */}
+
           <Typography
             component={motion.p}
             initial={{opacity: 0, scale: 0.92}}
