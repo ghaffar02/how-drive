@@ -13,64 +13,64 @@
       "item3": "What We Offer"
     },
     "features": {
-      "text": "Features",
-      "item1": "For Driving Students",
-      "item2": "For Driving Schools",
-      "item3": "Install on Mobile"
+      "text": "Function",
+      "item1": "For Students",
+      "item2": "For Schools",
+      "item3": "Install on phone"
     },
     "pricing": "Pricing",
     "contact": "Contact",
     "login": "Login"
   },
   "Hero": {
-    "title": "The Path to Your Driver's License",
-    "description": "Keep track of every step and your progress, book appointments, and send messages all in one place.",
+    "title": "The way to get your driving license",
+    "description": "Keep track of your every step and progress, as well as book appointments and send messages, all in one place.",
     "button": "Start for free"
   },
   "Advantages": {
     "title": "Your Advantages with WieFührerschein",
-    "driverTab": "Learners",
-    "schoolTab": "Driving Schools",
+    "driverTab": "Students",
+    "schoolTab": "Schools",
     "DriverData": [
       {
         "title": "All Information in One Place",
-        "description": "Access all the information you need. Keep track of your progress, appointments, and messages clearly organized in one central location.",
+        "description": "Access all the information you need. Keep track of your progress, appointments, and messages in one central location.",
         "bgColor": "#000",
         "color": "#fff"
       },
       {
         "title": "Visualized Process Guide",
-        "description": "See exactly which steps you’ve already completed and what’s next—from first aid courses to theory lessons, driving lessons, and exams.",
+        "description": "See exactly which steps you have already completed and what's next, from the first aid course to the theory and driving lessons and the final exam.",
         "bgColor": "rgb(206, 210, 224)",
         "color": "#000"
       },
       {
-        "title": "Intuitive and Modern Design",
-        "description": "The intuitive design combined with a modern layout makes it easy to track your learning progress and quickly find the information you need.",
+        "title": "Intuitive and modern design",
+        "description": "The intuitive design, combined with a visually modern layout, ensures that you can easily track your learning progress and quickly find the information you need.",
         "bgColor": "rgb(27, 0, 115)",
         "color": "#fff"
       },
       {
         "title": "Flexible Appointment Booking",
-        "description": "Whether it’s a consultation, theory class, or driving lesson – book appointments directly online with your driving school. No more time-consuming calls or waiting.",
+        "description": "Whether it’s a consultation, theory lesson, or driving lesson—book your appointments directly online with your driving school. No more time-consuming calls or waiting.",
         "bgColor": "#000",
         "color": "#fff"
       },
       {
         "title": "Direct Communication",
-        "description": "Use the integrated chat feature to quickly and easily ask questions to your driving school. Your school also communicates with you about things like exam dates.",
+        "description": "Use the integrated chat function to quickly and easily ask your driving school questions. Your driving school will also communicate with you about things like exam dates.",
         "bgColor": "rgb(195, 225, 227)",
         "color": "#000"
       },
       {
         "title": "Reminders and Notifications",
-        "description": "Get automatic reminders for upcoming appointments, theory classes, driving lessons, or exams.",
+        "description": "Receive automatic reminders for upcoming appointments, theory and driving lessons, or exams.",
         "bgColor": "rgb(251, 207, 255)",
         "color": "#000"
       },
       {
         "title": "Available in Two Languages",
-        "description": "You can switch between German and English. All service functions are available in both languages.",
+        "description": "You can choose between German and English. All service functions are available in both languages.",
         "bgColor": "#000",
         "color": "#fff"
       }
@@ -121,7 +121,7 @@
     ]
   },
   "Pricing": {
-    "title": "Our prices for learners and driving schools",
+    "title": "Our prices for driving students and schools",
     "PricingData": [
       {
         "title": "Learners",
@@ -137,7 +137,7 @@
           "Send messages",
           "No hidden costs"
         ],
-        "button": "Start"
+        "button": "Start for free"
       },
       {
         "title": "Driving Schools",
@@ -148,13 +148,13 @@
         },
         "features": [
           "Free registration",
-          "One-month free trial",
+          "A free trial mouth",
           "Appointment management",
           "Digital communication",
           "No setup fee",
           "Cancelable monthly"
         ],
-        "button": "Register"
+        "button": "Register for free"
       }
     ]
   },
@@ -163,39 +163,39 @@
     "FaqData": [
       {
         "title": "What is WieFührerschein?",
-        "content": "WieFührerschein is a service that connects learners and driving schools on a central platform. Learners can track their learning progress, book appointments, and communicate with their driving school. Driving schools use our platform to manage their students, coordinate appointments, and optimize communication."
+        "content": "WieFührerschein is a service that connects driving students and driving schools on a central platform. Students can track their learning progress, book appointments, and communicate with their driving school. Driving schools use our platform to manage their students, coordinate appointments, and optimize their communication."
       },
       {
-        "title": "What do I need to apply for a driving license?",
-        "content": "To apply for a driving license, you generally need the following documents:\n• Identity card or passport\n• Biometric passport photo\n• Vision test certificate (not older than two years)\n• Proof of participation in a first aid course\n• If applicable, the registration confirmation from your driving school"
+        "title": "What do I need to apply for a driver's license?",
+        "content": "To apply for a driver's license, you will generally need the following documents:\n• Identity card or passport\n• Biometric passport photo\n• Eye test certificate (not older than two years)\n• Proof of participation in a first aid course\n• If applicable, registration confirmation from your driving school"
       },
       {
         "title": "Where do I have to go to apply for my driving license?",
-        "content": "You submit the application to the driving license authority responsible for your place of residence. When you enter your address, we show you which authority is responsible for you. In addition, your driving school can often support you with this step."
+        "content": "You submit the application to the driver's license authority responsible for your place of residence. When you enter your place of residence, we will show you which authority is responsible for you. Your driving school can often also assist you with this step."
       },
       {
-        "title": "Which car driving license classes are there?",
+        "title": "What driving license classes are there?",
         "content": "There are six driving license classes: A, B, C, D, L, and T. The most common car licenses are classes B and BF17.\n• Class B: Allows you to drive motor vehicles up to 3.5 tons total weight. The minimum age is 18 years.\n• Class BF17: This is 'accompanied driving from the age of 17'. The same conditions as class B apply, but you may only drive when accompanied by a registered person.\nOn our website, under the Driving License Classes section, you can see all classes and their differences."
       },
       {
-        "title": "How many theory lessons are required?",
-        "content": "The number of theory lessons depends on the license class. For classes A and B, 12 double lessons of basic material and 2 double lessons of class-specific instruction are required. If you are extending (e.g., if you already have a license), the total number is reduced to 8. The total for class C is 18 and for class D it is 20 lessons."
+        "title": "How many theory lessons do you have to take?",
+        "content": "The number of theory lessons depends on the driver's license class. For classes A and B, 12 double lessons of basic theory and two double lessons of class-specific instruction are required. If you extend your license (e.g., if you already have a driver's license), the total number of lessons is reduced to 8. The total number of lessons for class C is 18, and for class D, 20."
       },
       {
-        "title": "How many driving lessons are required?",
-        "content": "There is no minimum number of regular practice lessons – it depends on your learning progress, and your instructor decides when you are ready for the test. In addition, the following special driving lessons are legally required:\n• Class A: 12 special lessons\n• Class B: 12 special lessons\n• Class C: 10 special lessons\n• Class D: 10 special lessons"
+        "title": "How many driving lessons do you have to take?",
+        "content": "There is no minimum number of regular practice lessons – it depends on your learning progress, and your instructor decides when you are ready for the test. In addition, the following special driving lessons are legally required:\n• Class A: 12 special driving lessons\n• Class B: 12 special driving lessons\n• Class C: 10 special driving lessons\n• Class D: 10 special driving lessons"
       },
       {
-        "title": "How do I receive my driving license after the test?",
+        "title": "How do I get my driver's license after the test?",
         "content": "After passing the practical test, you will either receive your license directly from the examiner or a few days later by mail or collection at the driving license authority – depending on the region."
       },
       {
-        "title": "When does my driving license need to be exchanged?",
-        "content": "All licenses issued before January 19, 2013, must be gradually exchanged for the new EU card license. The deadlines depend on your year of birth or the date of issue of your license. In general, the new license must be renewed every 15 years, while the driving entitlement itself remains valid indefinitely."
+        "title": "When does my driver's license need to be exchanged?",
+        "content": "All driving licenses issued before January 19, 2013, must be gradually exchanged for the new EU card-based driving license. The deadlines are staggered according to your year of birth or the date the driving license was issued. As a general rule, the new driving license must be renewed every 15 years, although the driving license itself remains valid for an unlimited period."
       },
       {
-        "title": "How do you convert a foreign driving license?",
-        "content": "A foreign driving license is only valid in Germany for a limited time (usually 6 months after taking up residence). Depending on the country of origin of your license, a theoretical and/or practical test may be required. There are exceptions if Germany has a recognition agreement with the issuing country. To convert your license, you must apply for conversion at the driving license office responsible for your place of residence. We guide you step by step through this process on our website."
+        "title": "How do you convert a driver's license?",
+        "content": "A foreign driver's license is only valid in Germany for a limited time (usually 6 months after taking up residence). Depending on the country where your license was issued, a theoretical and/or practical test may be required. There are exceptions if there is an agreement on mutual recognition between Germany and the issuing country. To convert your license, you must apply for conversion at the responsible driver's license authority in your place of residence. We will guide you step by step through this process when you register on our website."
       }
     ]
   },
@@ -215,10 +215,10 @@
     "dataRewrite": "Anyone who moves permanently to Germany from third countries must have their foreign driving license converted."
   },
   "Services": {
-    "title": "Trust Our Service",
-    "des": "See for yourself how our service works",
-    "btn1": "Start as a Learner",
-    "btn2": "Start as a Driving School"
+    "title": "Start now. It's free!",
+    "des": "Find out for yourself how our service works",
+    "btn1": "Start as Driving Learner",
+    "btn2": "Start as Driving School"
   },
   "HowItWorks": {
     "title": "How it works",
@@ -293,20 +293,20 @@
         {
           "number": 2,
           "title": "Share icon",
-          "heading": "Tap on the share icon",
+          "heading": "Tap  the share icon",
           "description": "Tap the share icon (a square with an up arrow) in the bottom center. This opens the sharing menu options."
         },
         {
           "number": 3,
           "title": "Home screen",
           "heading": "Select “Add to Home Screen”",
-          "description": "Choose the option \"Add to Home Screen\" from the menu. This adds the web app to your list of available apps."
+          "description": "Select the \"Add to Home Screen\" option from the menu. This adds the web app to the list of available apps."
         },
         {
           "number": 4,
           "title": "Name",
           "heading": "Set the name and confirm it",
-          "description": "Optionally, give the app a name and confirm by tapping \"Add.\" The website will now appear like an app on your home screen."
+          "description": "Give the app a name if necessary and confirm the process by tapping \"Add.\" The website will now appear like an app on your home screen."
         }
       ]
     },
@@ -316,13 +316,13 @@
           "number": 1,
           "title": "Website",
           "heading": "Open our website in Chrome",
-          "description": "First, navigate to our website in Chrome. If no popup appears to install our website, follow the next steps."
+          "description": "First, navigate to the website in Chrome. If you didn't see a popup asking you to install our website, follow the next steps."
         },
         {
           "number": 2,
           "title": "Three-dot icon",
           "heading": "Tap on the three-dot icon",
-          "description": "Tap on the three-dot menu (⋮) at the top or bottom right corner of the browser. This opens Chrome’s main menu."
+          "description": "Tap the three-dot menu (⋮) in the top or bottom right corner of the browser. This will open Chrome's main menu."
         },
         {
           "number": 3,
@@ -342,10 +342,10 @@
   "Footer": {
     "description": "We connect learner drivers and driving schools through a digital service.",
     "features": {
-      "heading": "Features",
+      "heading": "Function",
       "items": [
-        "Learners",
-        "Driving Schools",
+        "Students",
+        "Schools",
         "Installation"
       ]
     },
@@ -363,8 +363,8 @@
       "items": [
         "Imprint",
         "Privacy Policy",
-        "Terms & Conditions",
-        "Cookie Policy"
+        "Terms",
+        "Cookie"
       ]
     }
   }

@@ -231,26 +231,26 @@
         {
           "number": 1,
           "title": "Führerscheinklasse",
-          "heading": "Wählen Sie Ihre Führerscheinklasse",
-          "description": "Welchen Führerschein benötigen Sie? Wählen Sie die passende Kategorie. Wir führen Sie Schritt für Schritt durch den Prozess zum Erwerb Ihres Führerscheins."
+          "heading": "Wählen die Führerscheinklasse",
+          "description": "Welche Fahrerlaubnis benötigst du? Wähle die passende Kategorie aus. Wir begleiten dich Schritt für Schritt durch den Prozess des Führerscheinerwerbs."
         },
         {
           "number": 2,
           "title": "Wohnort",
-          "heading": "Geben Sie Ihren Wohnort ein",
-          "description": "Ob Führerscheinbehörde oder TÜV – wenn Sie Ihren Wohnort eingeben, werden Ihnen die zuständigen Behörden und deren Kontaktdaten in Ihrem Konto angezeigt."
+          "heading": "Trage ein, wo du wohnst",
+          "description": "Weder Fahrerlaubnisbehörde oder TÜV, bei Eingabe des Wohnortes werden die zu dir passenden Behörden und ihre Kontaktadressen in deinem Konto angezeigt."
         },
         {
           "number": 3,
           "title": "Fahrschule",
-          "heading": "Finden Sie Ihre Fahrschule",
-          "description": "Durch die Verbindung mit Ihrer Fahrschule können Sie Termine buchen und Nachrichten senden. Ihre Fahrschule kann außerdem Ihren Fortschritt verfolgen und anpassen."
+          "heading": "Finde deine Fahrschule",
+          "description": "Bei Verknüpfung deiner Fahrschule kannst du Termine buchen und Nachrichten senden. Deine Fahrschule kann auch deinen Fortschritt verfolgen bzw. eingeben."
         },
         {
           "number": 4,
           "title": "Prozessübersicht",
-          "heading": "Folgen Sie dem Weg zu Ihrem Führerschein",
-          "description": "Wir visualisieren Ihren Weg zum Führerschein Schritt für Schritt und geben Ihnen einen Überblick darüber, was genau wann erforderlich ist."
+          "heading": "Verfolge deinen Weg zum Führerschein",
+          "description": "Wir visualisieren deinen Weg zum Führerschein Schritt für Schritt und ermöglichen einen Überblick, was wann genau erforderlich ist."
         }
       ]
     },
@@ -259,26 +259,26 @@
         {
           "number": 1,
           "title": "Registrieren",
-          "heading": "Registrieren Sie Ihre Fahrschule",
-          "description": "Erstellen Sie ein Benutzerkonto und registrieren Sie Ihre Fahrschule kostenlos auf unserer Website. Sie benötigen eine gültige E-Mail-Adresse und ein sicheres Passwort."
+          "heading": "Registriere deine Fahrschule",
+          "description": "Erstelle ein Benutzerkonto und melde deine Fahrschule kostenlos auf unserer Website an. Hierfür benötigst du eine gültige E-Mail-Adresse und ein sicheres Passwort."
         },
         {
           "number": 2,
           "title": "Informationen",
-          "heading": "Geben Sie Informationen zu Ihrer Fahrschule ein",
-          "description": "Informationen wie Name, Kontaktadresse, Öffnungszeiten usw. helfen Fahrschülern, mit Ihnen zu kommunizieren."
+          "heading": "Trage Informationen über deine Fahrschule ein",
+          "description": "Informationen wie Name, Kontaktadresse, Öffnungszeiten, etc. helfen Fahrschülern bei der Kommunikation."
         },
         {
           "number": 3,
           "title": "Prozess",
-          "heading": "Geben Sie den Ablauf des Prozesses ein",
-          "description": "Der Ablauf zum Erwerb eines Führerscheins kann in verschiedenen Fahrschulen variieren. Geben Sie Ihren an."
+          "heading": "Gib die Reihenfolge des Prozesses ein",
+          "description": "Die Reihenfolge der Schritte zum Führerscheinerwerb kann bei einigen Fahrschulen unterschiedlich sein. Gib ein, wie es bei dir ist."
         },
         {
           "number": 4,
           "title": "Führerscheinbehörde",
-          "heading": "Identifizieren Sie die zuständigen Behörden",
-          "description": "Wählen Sie aus der Liste, welche Führerscheinbehörde und welcher TÜV für Ihre Schüler zuständig sind."
+          "heading": "Lege die zuständigen Behörden fest",
+          "description": "Wähle aus der Liste, zu welcher Fahrerlaubnisbehörde und TÜV deine Fahrschüler gehen sollen."
         }
       ]
     },
