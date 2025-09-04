@@ -22,7 +22,7 @@
     "contact": "Kontakt",
     "login": "Anmelden"
   },
-    "Hero": {
+  "Hero": {
     "title": "Der Weg zum Führerschein",
     "description": "Behalte jeden Schritt und deine Fortschritte immer im Blick, sowie Termine buchen und Nachrichten senden, alles aus einer Hand.",
     "button": "Kostenlos starten"
@@ -125,7 +125,9 @@
     "PricingData": [
       {
         "title": "Fahrschüler",
-        "price": {"amount": "Kostenlos"},
+        "price": {
+          "amount": "Kostenlos"
+        },
         "features": [
           "Alle Funktionen inklusive",
           "Infos über benötigte Unterlagen",
@@ -220,35 +222,35 @@
   },
   "HowItWorks": {
     "title": "So funktioniert’s",
-    "label1": "Für Fahrschüler",
-    "label2": "Für Fahrschulen",
+    "label1": "Fahrschüler",
+    "label2": "Fahrschulen",
     "label3": "PWA auf iOS",
     "label4": "PWA auf Android",
     "learner": {
       "steps": [
         {
           "number": 1,
-          "title": "Register",
-          "heading": "Erstelle kostenlos einen Konto",
-          "description": "Mit einem Konto hast du Zugang zu allen Möglichkeiten. So kannst du viele Optionen benutzen."
+          "title": "Führerscheinklasse",
+          "heading": "Wählen Sie Ihre Führerscheinklasse",
+          "description": "Welchen Führerschein benötigen Sie? Wählen Sie die passende Kategorie. Wir führen Sie Schritt für Schritt durch den Prozess zum Erwerb Ihres Führerscheins."
         },
         {
           "number": 2,
           "title": "Wohnort",
-          "heading": "Trage ein, wo du wohnst",
-          "description": "Entweder Fahrerlaubnisbehörde oder TÜV, bei Eingabe des Wohnortes werden die zu dir passenden Behörden und ihre Kontaktadressen in deinem Konto angezeigt."
+          "heading": "Geben Sie Ihren Wohnort ein",
+          "description": "Ob Führerscheinbehörde oder TÜV – wenn Sie Ihren Wohnort eingeben, werden Ihnen die zuständigen Behörden und deren Kontaktdaten in Ihrem Konto angezeigt."
         },
         {
           "number": 3,
           "title": "Fahrschule",
-          "heading": "Finde deine Fahrschule",
-          "description": "Bei Verknüpfung deiner Fahrschule kannst du Termine buchen und Nachrichten senden. Deine Fahrschule kann auch deinen Fortschritt verfolgen bzw. eingeben."
+          "heading": "Finden Sie Ihre Fahrschule",
+          "description": "Durch die Verbindung mit Ihrer Fahrschule können Sie Termine buchen und Nachrichten senden. Ihre Fahrschule kann außerdem Ihren Fortschritt verfolgen und anpassen."
         },
         {
           "number": 4,
-          "title": "Prozessleitfaden",
-          "heading": "Verfolge deinen Weg zum Führerschein",
-          "description": "Wir visualisieren deinen Weg zum Führerschein Schritt für Schritt und ermöglichen einen Überblick, was wann genau erforderlich ist."
+          "title": "Prozessübersicht",
+          "heading": "Folgen Sie dem Weg zu Ihrem Führerschein",
+          "description": "Wir visualisieren Ihren Weg zum Führerschein Schritt für Schritt und geben Ihnen einen Überblick darüber, was genau wann erforderlich ist."
         }
       ]
     },
@@ -256,27 +258,27 @@
       "steps": [
         {
           "number": 1,
-          "title": "Register",
-          "heading": "Erstelle kostenlos einen Konto",
-          "description": "Mit einem Konto hast du Zugang zu allen Möglichkeiten. So kannst du viele Optionen benutzen."
+          "title": "Registrieren",
+          "heading": "Registrieren Sie Ihre Fahrschule",
+          "description": "Erstellen Sie ein Benutzerkonto und registrieren Sie Ihre Fahrschule kostenlos auf unserer Website. Sie benötigen eine gültige E-Mail-Adresse und ein sicheres Passwort."
         },
         {
           "number": 2,
           "title": "Informationen",
-          "heading": "Trage Informationen über deine Fahrschule ein",
-          "description": "Informationen wie Name, Kontaktadresse, Öffnungszeiten, etc. helfen Fahrschülern bei der Kommunikation."
+          "heading": "Geben Sie Informationen zu Ihrer Fahrschule ein",
+          "description": "Informationen wie Name, Kontaktadresse, Öffnungszeiten usw. helfen Fahrschülern, mit Ihnen zu kommunizieren."
         },
         {
           "number": 3,
           "title": "Prozess",
-          "heading": "Gib die Reihenfolge des Prozesses ein",
-          "description": "Die Reihenfolge der Schritte zum Führerscheinerwerb kann bei einigen Fahrschulen unterschiedlich sein. Gib ein, wie es bei dir ist."
+          "heading": "Geben Sie den Ablauf des Prozesses ein",
+          "description": "Der Ablauf zum Erwerb eines Führerscheins kann in verschiedenen Fahrschulen variieren. Geben Sie Ihren an."
         },
         {
           "number": 4,
-          "title": "Fahrerlaubnisbehörde",
-          "heading": "Lege die zuständigen Behörden fest",
-          "description": "Wähle aus der Liste, zu welcher Fahrerlaubnisbehörde und TÜV deine Fahrschüler gehen sollen."
+          "title": "Führerscheinbehörde",
+          "heading": "Identifizieren Sie die zuständigen Behörden",
+          "description": "Wählen Sie aus der Liste, welche Führerscheinbehörde und welcher TÜV für Ihre Schüler zuständig sind."
         }
       ]
     },
@@ -341,15 +343,29 @@
     "description": "Wir verknüpfen Fahrschüler und Fahrschulen durch einen digitalen Service.",
     "features": {
       "heading": "Funktionen",
-      "items": ["Fahrschüler", "Fahrschulen", "Installation"]
+      "items": [
+        "Fahrschüler",
+        "Fahrschulen",
+        "Installation"
+      ]
     },
     "services": {
       "heading": "Service",
-      "items": ["Über uns", "Preise", "Kontakt", "Hilfe"]
+      "items": [
+        "Über uns",
+        "Preise",
+        "Kontakt",
+        "Hilfe"
+      ]
     },
     "support": {
       "heading": "Rechtliches",
-      "items": ["Impressum", "Datenschutz", "AGB", "Cookie"]
+      "items": [
+        "Impressum",
+        "Datenschutz",
+        "AGB",
+        "Cookie"
+      ]
     }
   }
 }
