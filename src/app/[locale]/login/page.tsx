@@ -2,8 +2,31 @@
 import {Box, Button, TextField, Typography} from '@mui/material';
 import Logo from '@/assets/pngs/logo.png';
 import Image from 'next/image';
+import {useForm, Controller} from 'react-hook-form';
+
+interface FormValues {
+  email: string;
+  password: string;
+}
 
 export default function LoginPage() {
+  const {
+    control,
+    handleSubmit,
+    reset,
+    formState: {errors}
+  } = useForm<FormValues>({
+    defaultValues: {
+      email: '',
+      password: ''
+    }
+  });
+
+  const onSubmit = (data: FormValues) => {
+    console.log('Form values:', data);
+    reset();
+  };
+
   return (
     <Box sx={{width: '100%', display: 'flex'}}>
       {/* Left Side */}
@@ -42,8 +65,11 @@ export default function LoginPage() {
             Willkommen zurück!
           </Typography>
         </Box>
+
         {/* Input Fields Box */}
         <Box
+          component="form"
+          onSubmit={handleSubmit(onSubmit)}
           sx={{
             maxWidth: '360px',
             width: '100%',
@@ -53,45 +79,78 @@ export default function LoginPage() {
             gap: '25px'
           }}
         >
-          <TextField
-            label="E-Mail"
-            type="email"
-            sx={{
-              '& .MuiOutlinedInput-root': {
-                background: '#F8FAFC',
-                borderRadius: '10px',
-                '& .MuiOutlinedInput-input': {
-                  padding: '14px 12px',
-                  fontSize: '14px',
-                  fontFamily: '"Inter", sans-serif !important'
-                }
-              },
-              '& .MuiInputLabel-root': {
-                fontSize: '14px',
-                fontFamily: '"Inter", sans-serif !important'
-              }
-            }}
+          {/* Email */}
+          <Controller
+            name="email"
+            control={control}
+            rules={{required: 'E-Mail ist erforderlich'}}
+            render={({field}) => (
+              <TextField
+                {...field}
+                label="E-Mail"
+                type="email"
+                error={!!errors.email}
+                helperText={errors.email?.message}
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    background: '#F8FAFC',
+                    borderRadius: '10px',
+                    '& .MuiOutlinedInput-input': {
+                      padding: '14px 12px',
+                      fontSize: '14px',
+                      fontFamily: '"Inter", sans-serif !important'
+                    }
+                  },
+                  '& .MuiInputLabel-root': {
+                    fontSize: '14px',
+                    fontFamily: '"Inter", sans-serif !important'
+                  }
+                }}
+              />
+            )}
           />
 
-          <TextField
-            label="Passwort"
-            type="password"
-            sx={{
-              '& .MuiOutlinedInput-root': {
-                background: '#F8FAFC',
-                borderRadius: '10px',
-                '& .MuiOutlinedInput-input': {
-                  padding: '14px 12px',
-                  fontSize: '14px',
-                  fontFamily: '"Inter", sans-serif !important'
-                }
+          {/* Password */}
+          <Controller
+            name="password"
+            control={control}
+            rules={{
+              required: 'Passwort ist erforderlich',
+              minLength: {
+                value: 8,
+                message: 'Passwort muss mindestens 8 Zeichen lang sein'
               },
-              '& .MuiInputLabel-root': {
-                fontSize: '14px',
-                fontFamily: '"Inter", sans-serif !important'
+              pattern: {
+                value: /^(?=.*\d).{8,}$/,
+                message: 'Passwort muss mindestens eine Zahl enthalten'
               }
             }}
+            render={({field}) => (
+              <TextField
+                {...field}
+                label="Passwort"
+                type="password"
+                error={!!errors.password}
+                helperText={errors.password?.message}
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                    background: '#F8FAFC',
+                    borderRadius: '10px',
+                    '& .MuiOutlinedInput-input': {
+                      padding: '14px 12px',
+                      fontSize: '14px',
+                      fontFamily: '"Inter", sans-serif !important'
+                    }
+                  },
+                  '& .MuiInputLabel-root': {
+                    fontSize: '14px',
+                    fontFamily: '"Inter", sans-serif !important'
+                  }
+                }}
+              />
+            )}
           />
+
           <Typography
             sx={{
               color: '#1270ff',
@@ -104,7 +163,9 @@ export default function LoginPage() {
           >
             Passwort vergessen?
           </Typography>
+
           <Button
+            type="submit"
             variant="contained"
             sx={{
               width: '100%',
@@ -120,6 +181,7 @@ export default function LoginPage() {
             Anmelden
           </Button>
         </Box>
+
         <Typography
           sx={{
             fontSize: '14px',
@@ -143,6 +205,7 @@ export default function LoginPage() {
           </span>
         </Typography>
       </Box>
+
       {/* Right Side */}
       <Box
         sx={{
