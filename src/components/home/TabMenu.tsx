@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import {Box, Typography, Divider} from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import Image, {StaticImageData} from 'next/image';
 import {motion, useScroll, useTransform} from 'framer-motion';
 
@@ -103,6 +103,7 @@ export default function TabMenu({
         </Box>
 
         {/* Content */}
+
         <Box>
           <Typography
             sx={{
@@ -120,8 +121,8 @@ export default function TabMenu({
             sx={{
               display: 'flex',
               gap: '48px',
-              flexDirection: {xs: 'column', lg: 'row'},
-              paddingX: '8px'
+              justifyContent: 'space-between',
+              flexDirection: {xs: 'column', lg: 'row'}
             }}
           >
             <Box sx={{width: {md: '50%'}}}>
