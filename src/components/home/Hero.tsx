@@ -42,7 +42,7 @@ export default function Hero() {
             maxWidth: '1400px',
             margin: 'auto',
             textAlign: 'center',
-            paddingTop: '80px',
+            // paddingTop: '80px',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
