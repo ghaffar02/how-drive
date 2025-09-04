@@ -3,7 +3,7 @@ import {Box, Button, TextField, Typography} from '@mui/material';
 import Logo from '@/assets/pngs/logo.png';
 import Image from 'next/image';
 
-export default function LoginPage() {
+export default function PasswordResetPage() {
   return (
     <Box sx={{width: '100%', display: 'flex'}}>
       {/* Left Side */}
@@ -39,7 +39,23 @@ export default function LoginPage() {
               lineHeight: '1.3em'
             }}
           >
-            Willkommen zurück!
+            Passwort vergessen?
+          </Typography>
+          <Typography
+            sx={{
+              maxWidth: '380px',
+              width: '100%',
+              color: '#2d3748',
+              fontSize: {xs: '14px', sm: '15px', md: '16px'},
+              fontFamily: '"Inter", sans-serif !important',
+              marginTop: '10px !important',
+              textAlign: 'center',
+              letterSpacing: '0.01em',
+              lineHeight: '1.5em'
+            }}
+          >
+            Bitte gebe deine E-Mail-Adresse ein, um fortzufahren. Wir senden dir
+            Anweisungen zum Zurücksetzen deines Passworts.
           </Typography>
         </Box>
         {/* Input Fields Box */}
@@ -73,37 +89,6 @@ export default function LoginPage() {
             }}
           />
 
-          <TextField
-            label="Passwort"
-            type="password"
-            sx={{
-              '& .MuiOutlinedInput-root': {
-                background: '#F8FAFC',
-                borderRadius: '10px',
-                '& .MuiOutlinedInput-input': {
-                  padding: '14px 12px',
-                  fontSize: '14px',
-                  fontFamily: '"Inter", sans-serif !important'
-                }
-              },
-              '& .MuiInputLabel-root': {
-                fontSize: '14px',
-                fontFamily: '"Inter", sans-serif !important'
-              }
-            }}
-          />
-          <Typography
-            sx={{
-              color: '#1270ff',
-              fontSize: '14px',
-              textAlign: 'right',
-              cursor: 'pointer',
-              fontFamily: '"Inter", sans-serif !important',
-              fontWeight: 500
-            }}
-          >
-            Passwort vergessen?
-          </Typography>
           <Button
             variant="contained"
             sx={{
@@ -117,7 +102,7 @@ export default function LoginPage() {
               fontWeight: '600'
             }}
           >
-            Anmelden
+            Weiter
           </Button>
         </Box>
         <Typography
@@ -129,7 +114,7 @@ export default function LoginPage() {
             textAlign: 'center'
           }}
         >
-          Noch keinen Account?{' '}
+          Wieder an das Passwort erinnert?{' '}
           <span
             style={{
               cursor: 'pointer',
@@ -139,7 +124,7 @@ export default function LoginPage() {
               fontWeight: '500'
             }}
           >
-            Registrieren
+            Anmelden
           </span>
         </Typography>
       </Box>
