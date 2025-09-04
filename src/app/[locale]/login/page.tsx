@@ -55,6 +55,7 @@ export default function LoginPage() {
             label="E-Mail"
             sx={{
               '& .MuiOutlinedInput-root': {
+                background: '#F8FAFC',
                 borderRadius: '10px',
                 '& .MuiOutlinedInput-input': {
                   padding: '14px 12px',
@@ -68,10 +69,12 @@ export default function LoginPage() {
               }
             }}
           />
+
           <TextField
             label="Passwort"
             sx={{
               '& .MuiOutlinedInput-root': {
+                background: '#F8FAFC',
                 borderRadius: '10px',
                 '& .MuiOutlinedInput-input': {
                   padding: '14px 12px',
