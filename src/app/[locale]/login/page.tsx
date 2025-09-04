@@ -53,6 +53,7 @@ export default function LoginPage() {
         >
           <TextField
             label="E-Mail"
+            type="email"
             sx={{
               '& .MuiOutlinedInput-root': {
                 background: '#F8FAFC',
@@ -72,6 +73,7 @@ export default function LoginPage() {
 
           <TextField
             label="Passwort"
+            type="password"
             sx={{
               '& .MuiOutlinedInput-root': {
                 background: '#F8FAFC',
