@@ -47,10 +47,12 @@ export default function RegisterPage() {
           <Typography
             sx={{
               color: '#1a202c',
-              fontSize: '24px',
+              fontSize: {xs: '20px', sm: '22px', md: '24px'},
               fontFamily: 'Satoshi700 !important',
               marginTop: '30px !important',
-              textAlign: 'center'
+              textAlign: 'center',
+              letterSpacing: '0.03em',
+              lineHeight: '1.3em'
             }}
           >
             Konto erstellen als:
