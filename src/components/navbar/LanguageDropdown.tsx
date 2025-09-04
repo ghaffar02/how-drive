@@ -91,6 +91,7 @@ export default function LanguageDropdown() {
       <Menu
         anchorEl={anchorEl}
         open={open}
+        disableScrollLock={true}
         onClose={() => setAnchorEl(null)}
         anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
         transformOrigin={{vertical: 'top', horizontal: 'center'}}
