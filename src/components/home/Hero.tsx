@@ -21,7 +21,7 @@ export default function Hero() {
           transform: 'rotateY(90deg) translateY(10px)',
           fontFamily: 'Satoshi700 !important',
           animation: `flipIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards`,
-          animationDelay: `${i * 0.05}s` // stagger like Framer
+          animationDelay: `${i * 0.05}s`
         }}
       >
         {char === ' ' ? '\u00A0' : char}
