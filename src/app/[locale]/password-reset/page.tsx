@@ -110,7 +110,8 @@ export default function PasswordResetPage() {
             fontSize: '14px',
             color: '#808080',
             fontFamily: '"Inter", sans-serif !important',
-            lineHeight: '1.2em'
+            lineHeight: '1.2em',
+            textAlign: 'center'
           }}
         >
           Wieder an das Passwort erinnert?{' '}

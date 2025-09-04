@@ -128,7 +128,7 @@ export default function RegisterPage() {
             sx={{
               maxWidth: '360px',
               width: '100%',
-              padding: '20px',
+              padding: '20px 0px',
               display: 'flex',
               flexDirection: 'column',
               gap: '20px',
@@ -337,7 +337,9 @@ export default function RegisterPage() {
           sx={{
             fontSize: '14px',
             color: '#808080',
-            fontFamily: '"Inter", sans-serif !important !important'
+            fontFamily: '"Inter", sans-serif !important !important',
+            lineHeight: '1.2em',
+            textAlign: 'center'
           }}
         >
           Bereits einen Account haben?{' '}

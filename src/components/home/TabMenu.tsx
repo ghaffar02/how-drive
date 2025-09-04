@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import {Box, Typography, Divider} from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import Image, {StaticImageData} from 'next/image';
 import {motion, useScroll, useTransform} from 'framer-motion';
 
@@ -28,7 +28,7 @@ export default function TabMenu({
     target: dividerRef,
     offset: ['start end', 'end start']
   });
-  const customProgress = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
+  const customProgress = useTransform(scrollYProgress, [0.3, 0.7], [0, 1]);
   const bgSize = useTransform(customProgress, [0, 1], ['100% 0%', '100% 100%']);
   return (
     <Box
@@ -93,7 +93,7 @@ export default function TabMenu({
               boxShadow: '0px 1px 8px rgba(0,0,0,0.25)',
               margin: 'auto',
               backgroundImage:
-                'linear-gradient(180deg, rgba(70, 17, 245, 0.9) 0%, rgba(235, 0, 255, 0.9) 100%)',
+                'linear-gradient(180deg, rgba(70, 17, 245, 0.5) 0%, rgba(235, 0, 255, 0.5) 100%)',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'top',
               backgroundSize: bgSize,
@@ -103,6 +103,7 @@ export default function TabMenu({
         </Box>
 
         {/* Content */}
+
         <Box>
           <Typography
             sx={{
@@ -120,8 +121,8 @@ export default function TabMenu({
             sx={{
               display: 'flex',
               gap: '48px',
-              flexDirection: {xs: 'column', lg: 'row'},
-              paddingX: '8px'
+              justifyContent: 'space-between',
+              flexDirection: {xs: 'column', lg: 'row'}
             }}
           >
             <Box sx={{width: {md: '50%'}}}>
