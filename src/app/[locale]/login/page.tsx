@@ -125,7 +125,8 @@ export default function LoginPage() {
             fontSize: '14px',
             color: '#808080',
             fontFamily: '"Inter", sans-serif !important',
-            lineHeight: '1.2em'
+            lineHeight: '1.2em',
+            textAlign: 'center'
           }}
         >
           Noch keinen Account?{' '}
