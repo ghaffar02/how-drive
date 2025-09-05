@@ -22,8 +22,27 @@ export default function LoginPage() {
     }
   });
 
-  const onSubmit = (data: FormValues) => {
-    console.log('Form values:', data);
+  const onSubmit = async (data: FormValues) => {
+    try {
+      const res = await fetch('https://dummyjson.com/auth/login', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          username: data.email,
+          password: data.password
+        })
+      });
+
+      if (res.ok) {
+        const data1 = await res.json();
+        console.log('This is the data after api: ', data1);
+      } else {
+        console.log('We got an error:', res.status, res.statusText);
+      }
+    } catch (err) {
+      console.error('Error during login:', err);
+    }
+
     reset();
   };
 
@@ -88,7 +107,7 @@ export default function LoginPage() {
               <TextField
                 {...field}
                 label="E-Mail"
-                type="email"
+                type="text"
                 error={!!errors.email}
                 helperText={errors.email?.message}
                 sx={{
