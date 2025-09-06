@@ -157,7 +157,7 @@ export default function Hero() {
                 // wordWrap: 'nowrap',
                 marginTop: '48px',
                 padding: '12px 16px',
-                textTransform: 'capitalize',
+                textTransform: 'none',
                 borderRadius: '10px',
                 border: '1px solid #4611f5',
                 bgcolor: '#4611F5',
