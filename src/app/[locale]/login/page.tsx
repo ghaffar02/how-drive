@@ -3,6 +3,7 @@ import {Box, Button, TextField, Typography} from '@mui/material';
 import Logo from '@/assets/pngs/logo.png';
 import Image from 'next/image';
 import {useForm, Controller} from 'react-hook-form';
+import Link from 'next/link';
 
 interface FormValues {
   email: string;
@@ -177,7 +178,7 @@ export default function LoginPage() {
               textAlign: 'right',
               cursor: 'pointer',
               fontFamily: '"Inter", sans-serif !important',
-              fontWeight: 500
+              fontWeight: 600
             }}
           >
             Passwort vergessen?
@@ -211,17 +212,19 @@ export default function LoginPage() {
           }}
         >
           Noch keinen Account?{' '}
-          <span
+          <Link
+            href="#"
             style={{
               cursor: 'pointer',
               color: '#1270ff',
               fontSize: '14px',
               fontFamily: '"Inter", sans-serif !important',
-              fontWeight: '500'
+              fontWeight: '600',
+              textDecoration: 'none'
             }}
           >
             Registrieren
-          </span>
+          </Link>
         </Typography>
       </Box>
 

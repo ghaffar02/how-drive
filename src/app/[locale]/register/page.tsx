@@ -97,7 +97,9 @@ export default function RegisterPage() {
                 fontWeight: 500,
                 fontFamily: '"Inter", sans-serif !important',
                 '&:hover': {
-                  background: tabValue === 0 ? '#000' : '#fff'
+                  background: tabValue === 0 ? '#000' : '#fff',
+                  boxShadow:
+                    '0px 0px 0px 1px rgba(26, 32, 44, 0.1), 0px 1px 0px 0px rgba(26, 32, 44, 0.2), 0px 2px 4px 0px rgba(26, 32, 44, 0.5)'
                 }
               }}
             >
@@ -116,7 +118,9 @@ export default function RegisterPage() {
                 fontWeight: 500,
                 fontFamily: '"Inter", sans-serif !important',
                 '&:hover': {
-                  background: tabValue === 1 ? '#000' : '#fff'
+                  background: tabValue === 1 ? '#000' : '#fff',
+                  boxShadow:
+                    '0px 0px 0px 1px rgba(26, 32, 44, 0.1), 0px 1px 0px 0px rgba(26, 32, 44, 0.2), 0px 2px 4px 0px rgba(26, 32, 44, 0.5)'
                 }
               }}
             >
@@ -155,8 +159,11 @@ export default function RegisterPage() {
                       opacity: 1
                     }
                   },
-                  '& .MuiOutlinedInput-notchedOutline': {
-                    border: 'none'
+                  '& fieldset': {
+                    borderColor: '#E2E8F0'
+                  },
+                  '&:hover fieldset': {
+                    borderColor: '#1976d2'
                   }
                 }
               }}
@@ -189,8 +196,11 @@ export default function RegisterPage() {
                             opacity: 1
                           }
                         },
-                        '& .MuiOutlinedInput-notchedOutline': {
-                          border: 'none'
+                        '& fieldset': {
+                          borderColor: '#E2E8F0'
+                        },
+                        '&:hover fieldset': {
+                          borderColor: '#1976d2'
                         }
                       }
                     }}
@@ -218,8 +228,11 @@ export default function RegisterPage() {
                       opacity: 1
                     }
                   },
-                  '& .MuiOutlinedInput-notchedOutline': {
-                    border: 'none'
+                  '& fieldset': {
+                    borderColor: '#E2E8F0'
+                  },
+                  '&:hover fieldset': {
+                    borderColor: '#1976d2'
                   }
                 }
               }}
@@ -245,8 +258,11 @@ export default function RegisterPage() {
                       opacity: 1
                     }
                   },
-                  '& .MuiOutlinedInput-notchedOutline': {
-                    border: 'none'
+                  '& fieldset': {
+                    borderColor: '#E2E8F0'
+                  },
+                  '&:hover fieldset': {
+                    borderColor: '#1976d2'
                   }
                 }
               }}
@@ -283,10 +299,7 @@ export default function RegisterPage() {
                     href="#"
                     sx={{
                       color: '#1270ff',
-                      textDecoration: 'none',
-                      '&:hover': {
-                        textDecoration: 'underline'
-                      }
+                      textDecoration: 'none'
                     }}
                   >
                     Datenschutzerklärung
