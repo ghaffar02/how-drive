@@ -33,7 +33,7 @@ export default function MenuDropdown({label, items}: Props) {
           padding: '4px 8px',
           borderRadius: '6px',
           cursor: 'pointer',
-          bgcolor: open ? 'rgba(88,65,212,0.12)' : 'transparent'
+          bgcolor: open ? 'rgba(48, 88, 255, 0.1)' : 'transparent'
         }}
       >
         <Typography variant="h6" sx={{...textStyle}}>
@@ -86,7 +86,7 @@ export default function MenuDropdown({label, items}: Props) {
                     transition: 'all 0.3s ease-in-out',
                     py: '4px',
                     '&:hover': {
-                      backgroundColor: '#e9eeff',
+                      backgroundColor: 'rgba(48, 88, 255, 0.1)',
                       '& > :first-of-type': {
                         paddingLeft: '8px'
                       }

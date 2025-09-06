@@ -132,7 +132,7 @@ export default function Navbar() {
                   padding: '4px 8px',
                   borderRadius: '5px',
                   '&:hover': {
-                    backgroundColor: 'rgba(88,65,212,0.12)'
+                    backgroundColor: 'rgba(48, 88, 255, 0.1)'
                   },
                   cursor: 'pointer',
                   fontFamily:
@@ -151,7 +151,7 @@ export default function Navbar() {
                   padding: '4px 8px',
                   borderRadius: '5px',
                   '&:hover': {
-                    backgroundColor: 'rgba(88,65,212,0.12)'
+                    backgroundColor: 'rgba(48, 88, 255, 0.1)'
                   },
                   cursor: 'pointer',
                   fontFamily:
