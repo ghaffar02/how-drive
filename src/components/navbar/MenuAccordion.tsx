@@ -55,7 +55,14 @@ export default function MenuAccordion({
         }}
         expandIcon={<ExpandMoreRounded />}
       >
-        <Typography sx={{fontSize: {xs: 16, sm: 18}, fontWeight: 500}}>
+        <Typography
+          sx={{
+            fontSize: {xs: 16, sm: 18},
+            fontWeight: '300',
+            color: '#000',
+            fontFamily: '"Inter", sans-serif !important'
+          }}
+        >
           {title}
         </Typography>
       </AccordionSummary>
@@ -83,10 +90,14 @@ export default function MenuAccordion({
               sx={{
                 transition: 'all 0.3s ease-in-out',
                 px: '0',
+                color: '#000',
+                fontFamily: '"Inter", sans-serif !important',
+                fontWeight: '400',
                 '&:hover': {
                   paddingLeft: '8px',
                   bgcolor: 'rgba(48, 88, 255, 0.1)',
-                  borderRadius: '5px'
+                  borderRadius: '5px',
+                  color: '#4611F5'
                 }
               }}
             >

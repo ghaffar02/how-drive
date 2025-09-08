@@ -84,8 +84,9 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
               <Typography
                 sx={{
                   fontSize: {xs: 16, sm: 18},
-                  fontWeight: 500,
-                  cursor: 'pointer'
+                  fontWeight: 300,
+                  cursor: 'pointer',
+                  fontFamily: '"Inter", sans-serif !important'
                 }}
               >
                 {t('pricing')}
@@ -96,8 +97,9 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
               <Typography
                 sx={{
                   fontSize: {xs: 16, sm: 18},
-                  fontWeight: 500,
-                  cursor: 'pointer'
+                  fontWeight: 300,
+                  cursor: 'pointer',
+                  fontFamily: '"Inter", sans-serif !important'
                 }}
               >
                 {t('contact')}
