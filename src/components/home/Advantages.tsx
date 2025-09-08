@@ -320,7 +320,7 @@ function CardComponent({bgColor, title, description, color}: CardProps) {
               fontSize: {xs: '20px', md: '22px', lg: '24px'},
               marginBottom: '20px',
               color: color,
-              fontFamily: 'Satoshi500 !important',
+              fontFamily: 'Satoshi700 !important',
               lineHeight: '1.3em'
             }}
           >

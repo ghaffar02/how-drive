@@ -57,7 +57,7 @@ export default function PricingCards({
             <Typography
               sx={{
                 fontSize: {xs: '18px', md: '20px', lg: '22px'},
-                // fontFamily: '"Inter", sans-serif  !important',
+                fontFamily: '"Inter", sans-serif  !important',
                 color: '#4611F5',
                 fontWeight: '400'
               }}

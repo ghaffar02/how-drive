@@ -42,7 +42,8 @@ export default function TrustServiceSection() {
                 fontSize: {xs: '32px', sm: '36px', lg: '48px'},
                 lineHeight: {xs: '1.2em', lg: '1.15em'},
                 fontWeight: '600',
-                paddingBottom: '10px'
+                paddingBottom: '10px',
+                fontFamily: 'Satoshi700 !important'
               }}
             >
               {t('title')}
