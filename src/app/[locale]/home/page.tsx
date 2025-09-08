@@ -20,7 +20,7 @@ export default function HomePage() {
             position: 'fixed',
             left: 0,
             width: '100%',
-            backgroundColor: 'rgba(255, 255, 255, 0.8)',
+            backgroundColor: 'rgba(255, 255, 255, 0.85)',
             backdropFilter: 'blur(15px)',
             WebkitBackdropFilter: 'blur(15px)',
             top: 0,
