@@ -125,7 +125,7 @@ export default function Hero() {
             transition={{duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1}}
             sx={{
               maxWidth: {sm: '780px'},
-              color: '#000',
+              color: '#1A202C',
               fontSize: {xs: '18px', md: '20px', lg: '22px'},
               fontFamily: '"Inter", sans-serif  !important',
               fontWeight: '300',
@@ -163,6 +163,7 @@ export default function Hero() {
                 bgcolor: '#4611F5',
                 color: '#fff',
                 transition: 'background-color 0.3s ease',
+                fontFamily: '"Inter", sans-serif !important',
                 '&:hover': {
                   backgroundColor: '#300ca8',
                   color: '#fff'
