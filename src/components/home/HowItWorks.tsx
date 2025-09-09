@@ -184,7 +184,6 @@ export default function HowItWorks() {
               centered
               TabIndicatorProps={{style: {display: 'none'}}}
               sx={{
-                backgroundColor: '#FAFAFA',
                 width: 'fit-content',
                 m: 'auto',
                 borderRadius: '999px',
@@ -241,7 +240,10 @@ export default function HowItWorks() {
                           timeout={200}
                           unmountOnExit
                         >
-                          <Box sx={{fontWeight: '500'}} component="span">
+                          <Box
+                            sx={{fontWeight: '500', textWrap: 'nowrap'}}
+                            component="span"
+                          >
                             {tab.label}
                           </Box>
                         </Collapse>
