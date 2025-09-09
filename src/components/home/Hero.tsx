@@ -149,12 +149,11 @@ export default function Hero() {
               disableRipple
               sx={{
                 width: '100%',
-                maxWidth: '186px',
+                maxWidth: {xs: '152px', sm: '186px'},
                 fontSize: {xs: '14px', md: '16px', lg: '18px'},
                 lineHeight: {xs: '21px', md: '20px', lg: '23px'},
                 fontWeight: '400',
                 cursor: 'pointer',
-                // wordWrap: 'nowrap',
                 marginTop: '48px',
                 padding: '12px 16px',
                 textTransform: 'none',

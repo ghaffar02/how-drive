@@ -124,7 +124,7 @@
     "title": "Our prices for driving students and schools",
     "PricingData": [
       {
-        "title": "Learners",
+        "title": "Students",
         "price": {
           "amount": "Free"
         },
@@ -140,7 +140,7 @@
         "button": "Start for free"
       },
       {
-        "title": "Driving Schools",
+        "title": "Schools",
         "price": {
           "amount": "€29.95",
           "duration": "/month",
@@ -217,8 +217,8 @@
   "Services": {
     "title": "Start now. It's free!",
     "des": "Find out for yourself how our service works",
-    "btn1": "Start as Driving Learner",
-    "btn2": "Start as Driving School"
+    "btn1": "Start as driving student",
+    "btn2": "Start as driving school"
   },
   "HowItWorks": {
     "title": "How it works",

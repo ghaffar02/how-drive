@@ -78,7 +78,7 @@ export default function TrustServiceSection() {
                   fontSize: {xs: '14px', md: '16px', lg: '18px'},
                   fontFamily: '"Inter", sans-serif  !important',
                   textWrap: 'nowrap',
-                  textTransform: 'capitalize',
+                  textTransform: 'none',
                   borderRadius: '10px',
                   '&:hover': {
                     backgroundColor: '#300CA8'
@@ -87,7 +87,8 @@ export default function TrustServiceSection() {
                     backgroundColor: '#2b1087 !important',
                     color: '#fff'
                   },
-                  transition: 'all 0.4s ease-in-out'
+                  transition: 'all 0.4s ease-in-out',
+                  fontWeight: '400'
                 }}
               >
                 {t('btn1')}
@@ -102,7 +103,7 @@ export default function TrustServiceSection() {
                   fontSize: {xs: '14px', md: '16px', lg: '18px'},
                   fontFamily: '"Inter", sans-serif  !important',
                   textWrap: 'nowrap',
-                  textTransform: 'capitalize',
+                  textTransform: 'none',
                   borderRadius: '10px',
                   border: '1px solid #fff',
                   '&:hover': {
@@ -113,7 +114,8 @@ export default function TrustServiceSection() {
                     backgroundColor: '#EDEDED !important',
                     color: '#000000'
                   },
-                  transition: 'all 0.4s ease-in-out'
+                  transition: 'all 0.4s ease-in-out',
+                  fontWeight: '400'
                 }}
               >
                 {t('btn2')}

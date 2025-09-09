@@ -86,8 +86,7 @@ export default function Advantages() {
           <Box sx={{padding: '8px'}}>
             <Box
               sx={{
-                maxWidth: '336px',
-                width: '100%',
+                width: 'fit-content',
                 border: '1px solid rgb(212,212,212)',
                 padding: '8px',
                 backgroundColor: '#FAFAFA',

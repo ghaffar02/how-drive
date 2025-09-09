@@ -47,7 +47,7 @@ export default function PricingCards({
 
               gap: '32px',
               p: '32px',
-              bgcolor: '#ffffffff',
+              bgcolor: '#fff',
               borderRadius: '15px',
 
               boxShadow:
@@ -171,7 +171,7 @@ export default function PricingCards({
                 justifyContent: 'center',
                 alignItems: 'center',
                 padding: '8px 16px',
-                textTransform: 'capitalize',
+                textTransform: 'none',
                 alignContent: 'center',
                 borderRadius: '10px',
                 border: '1px solid #4611f5',
