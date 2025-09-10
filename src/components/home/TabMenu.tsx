@@ -164,8 +164,10 @@ export default function TabMenu({
                 times: [0, 0.5, 1]
               }}
               sx={{
-                width: {lg: '510px'},
-                height: {lg: '390px'},
+                width: {lg: '50%'},
+                height: 'fit-content',
+                // width: '50%',
+                // height: '50%',
                 borderRadius: '15px',
                 background:
                   'linear-gradient(125deg, rgba(70, 17, 245, 0.15) 0%, rgba(30, 245, 255, 0.1) 50%, rgba(235, 0, 255, 0.15) 100%)',
