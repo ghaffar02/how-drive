@@ -9,7 +9,6 @@ import {useTranslations} from 'next-intl';
 import profile from '@/assets/svgs/profile.svg';
 
 type Section = {title: string; items: string[]};
-
 type MobileMenuProps = {
   open: boolean;
   onClose: () => void;
@@ -20,7 +19,6 @@ type MobileMenuProps = {
 export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
   const [expandedKey, setExpandedKey] = React.useState<string | false>(false);
   const t = useTranslations('Navbar');
-
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
     window.addEventListener('keydown', onKey);
@@ -98,7 +96,7 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
                 {t('pricing')}
               </Typography>
             </Box>
-            <Divider />
+            <Divider sx={{borderColor: '#c7c7c7'}} />
             <Box sx={{p: '14px 8px 15px 8px'}}>
               <Typography
                 sx={{
@@ -111,7 +109,7 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
                 {t('contact')}
               </Typography>
             </Box>
-            <Divider />
+            <Divider sx={{borderColor: '#c7c7c7'}} />
           </Box>
           <Box>
             <Divider

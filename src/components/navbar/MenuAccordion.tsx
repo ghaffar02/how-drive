@@ -34,7 +34,7 @@ export default function MenuAccordion({
       onChange={(_, v) => onChange(v)}
       sx={{
         padding: '14px 8px',
-        borderBottom: '1px solid #E5E7EB',
+        borderBottom: '1px solid #c7c7c7',
         margin: '0px !important',
         bgcolor: 'transparent !important',
 

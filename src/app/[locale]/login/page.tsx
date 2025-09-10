@@ -178,7 +178,7 @@ export default function LoginPage() {
               textAlign: 'right',
               cursor: 'pointer',
               fontFamily: '"Inter", sans-serif !important',
-              fontWeight: 600
+              fontWeight: 400
             }}
           >
             Passwort vergessen?

@@ -54,7 +54,8 @@ const Faq = () => {
             padding: '16px',
             textAlign: 'center',
             fontFamily: 'Satoshi500 !important',
-            color: '#000'
+            color: '#000',
+            textTransform: 'none'
           }}
         >
           {t('title')}

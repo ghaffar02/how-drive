@@ -238,6 +238,7 @@ export default function Hero() {
                     src={heroImage}
                     alt="heroImage"
                     style={{width: '100%', height: '100%'}}
+                    quality={85}
                   />
                 </Box>
               </Box>

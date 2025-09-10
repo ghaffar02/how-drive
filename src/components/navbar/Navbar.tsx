@@ -3,7 +3,6 @@
 import {useState} from 'react';
 import {Box, Typography, Button} from '@mui/material';
 import Image from 'next/image';
-
 import MenuDropdown from './MenuDropdown';
 import LanguageDropdown from './LanguageDropdown';
 import MobileMenu from './MobileMenu';
@@ -20,7 +19,12 @@ export default function Navbar() {
     <>
       <Box
         sx={{
-          padding: '16px'
+          padding: '16px',
+          boxShadow:
+            'rgba(0, 0, 0, 0.05) 0px 0.796192px 2.38858px -0.625px, ' +
+            'rgba(0, 0, 0, 0.05) 0px 2.41451px 7.24352px -1.25px, ' +
+            'rgba(0, 0, 0, 0.05) 0px 6.38265px 19.148px -1.875px, ' +
+            'rgba(0, 0, 0, 0.05) 0px 20px 60px -2.5px'
         }}
       >
         <Box
