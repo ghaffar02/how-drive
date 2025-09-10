@@ -1,6 +1,6 @@
 'use client';
 
-import React, {useMemo, useState} from 'react';
+import React, {Suspense, useMemo, useState} from 'react';
 import Image, {StaticImageData} from 'next/image';
 import {
   Box,
@@ -41,10 +41,25 @@ const paperProps: PaperProps = {
   }
 };
 
+// ----- Outer wrapper: provides Suspense for hooks that need it -----
 export default function LanguageDropdown() {
+  return (
+    <Suspense
+      fallback={
+        <Box
+          sx={{width: 25, height: 25, borderRadius: '50%', bgcolor: 'grey.200'}}
+        />
+      }
+    >
+      <LanguageDropdownInner />
+    </Suspense>
+  );
+}
+
+function LanguageDropdownInner() {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const searchParams = useSearchParams(); // now safely inside Suspense
 
   const {locale, segs} = useMemo(() => {
     const parts = (pathname || '/').split('/');
@@ -60,9 +75,11 @@ export default function LanguageDropdown() {
   const select = (code: Lang) => {
     setAnchorEl(null);
     if (code === locale) return;
+
     const parts = [...segs];
     if (LOCALES.includes(parts[1] as Lang)) parts[1] = code;
     else parts.splice(1, 0, code);
+
     let next = parts.join('/') || '/';
     const qs = searchParams?.toString();
     if (qs) next += `?${qs}`;
@@ -91,7 +108,7 @@ export default function LanguageDropdown() {
       <Menu
         anchorEl={anchorEl}
         open={open}
-        disableScrollLock={true}
+        disableScrollLock
         onClose={() => setAnchorEl(null)}
         anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
         transformOrigin={{vertical: 'top', horizontal: 'center'}}
