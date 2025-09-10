@@ -154,7 +154,7 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
                   height: '43px'
                 }}
               >
-                {t('login')}n
+                {t('login')}
               </Button>
               <Image src={profile} alt="profile" height={35} width={35} />
             </Box>
