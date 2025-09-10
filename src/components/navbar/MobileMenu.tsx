@@ -60,11 +60,17 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
             width: {xs: '75%', sm: '50vw'},
             height: '100vh',
             bgcolor: 'rgba(255, 255, 255, 0.85)',
-            boxShadow: '0 4px 12px rgba(26,32,44,0.1)',
             display: 'flex',
             flexDirection: 'column',
             p: '16px',
-            justifyContent: 'space-between'
+            justifyContent: 'space-between',
+            backdropFilter: 'blur(15px)',
+            WebkitBackdropFilter: 'blur(15px)',
+            boxShadow:
+              'rgba(0, 0, 0, 0.13) 0px 0.796192px 2.38858px -0.625px, ' +
+              'rgba(0, 0, 0, 0.13) 0px 2.41451px 7.24352px -1.25px, ' +
+              'rgba(0, 0, 0, 0.13) 0px 6.38265px 19.148px -1.875px, ' +
+              'rgba(0, 0, 0, 0.13) 0px 20px 60px -2.5px'
           }}
         >
           <Box>
@@ -84,8 +90,9 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
               <Typography
                 sx={{
                   fontSize: {xs: 16, sm: 18},
-                  fontWeight: 500,
-                  cursor: 'pointer'
+                  fontWeight: 300,
+                  cursor: 'pointer',
+                  fontFamily: '"Inter", sans-serif !important'
                 }}
               >
                 {t('pricing')}
@@ -96,8 +103,9 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
               <Typography
                 sx={{
                   fontSize: {xs: 16, sm: 18},
-                  fontWeight: 500,
-                  cursor: 'pointer'
+                  fontWeight: 300,
+                  cursor: 'pointer',
+                  fontFamily: '"Inter", sans-serif !important'
                 }}
               >
                 {t('contact')}

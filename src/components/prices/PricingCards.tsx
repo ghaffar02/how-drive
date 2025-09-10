@@ -47,7 +47,7 @@ export default function PricingCards({
 
               gap: '32px',
               p: '32px',
-              bgcolor: '#ffffffff',
+              bgcolor: '#fff',
               borderRadius: '15px',
 
               boxShadow:
@@ -57,7 +57,7 @@ export default function PricingCards({
             <Typography
               sx={{
                 fontSize: {xs: '18px', md: '20px', lg: '22px'},
-                // fontFamily: '"Inter", sans-serif  !important',
+                fontFamily: '"Inter", sans-serif  !important',
                 color: '#4611F5',
                 fontWeight: '400'
               }}
@@ -171,7 +171,7 @@ export default function PricingCards({
                 justifyContent: 'center',
                 alignItems: 'center',
                 padding: '8px 16px',
-                textTransform: 'capitalize',
+                textTransform: 'none',
                 alignContent: 'center',
                 borderRadius: '10px',
                 border: '1px solid #4611f5',

@@ -3,6 +3,7 @@ import {Box, Button, TextField, Typography} from '@mui/material';
 import Logo from '@/assets/pngs/logo.png';
 import Image from 'next/image';
 import {useForm, Controller} from 'react-hook-form';
+import Link from 'next/link';
 
 interface FormValues {
   email: string;
@@ -22,8 +23,27 @@ export default function LoginPage() {
     }
   });
 
-  const onSubmit = (data: FormValues) => {
-    console.log('Form values:', data);
+  const onSubmit = async (data: FormValues) => {
+    try {
+      const res = await fetch('https://dummyjson.com/auth/login', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          username: data.email,
+          password: data.password
+        })
+      });
+
+      if (res.ok) {
+        const data1 = await res.json();
+        console.log('This is the data after api: ', data1);
+      } else {
+        console.log('We got an error:', res.status, res.statusText);
+      }
+    } catch (err) {
+      console.error('Error during login:', err);
+    }
+
     reset();
   };
 
@@ -88,7 +108,7 @@ export default function LoginPage() {
               <TextField
                 {...field}
                 label="E-Mail"
-                type="email"
+                type="text"
                 error={!!errors.email}
                 helperText={errors.email?.message}
                 sx={{
@@ -158,7 +178,7 @@ export default function LoginPage() {
               textAlign: 'right',
               cursor: 'pointer',
               fontFamily: '"Inter", sans-serif !important',
-              fontWeight: 500
+              fontWeight: 600
             }}
           >
             Passwort vergessen?
@@ -192,17 +212,19 @@ export default function LoginPage() {
           }}
         >
           Noch keinen Account?{' '}
-          <span
+          <Link
+            href="#"
             style={{
               cursor: 'pointer',
               color: '#1270ff',
               fontSize: '14px',
               fontFamily: '"Inter", sans-serif !important',
-              fontWeight: '500'
+              fontWeight: '600',
+              textDecoration: 'none'
             }}
           >
             Registrieren
-          </span>
+          </Link>
         </Typography>
       </Box>
 

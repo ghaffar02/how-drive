@@ -11,20 +11,48 @@ export default function Hero() {
 
   // const text = 'Der Weg zum Führerschein';
 
+  // const splitText = (str: string) =>
+  //   str.split('').map((char, i) => (
+  //     <span
+  //       key={i}
+  //       style={{
+  //         display: 'inline-block',
+  //         opacity: 0,
+  //         transform: 'rotateY(90deg) translateY(10px)',
+  //         fontFamily: 'Satoshi700 !important',
+  //         animation: `flipIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards`,
+  //         animationDelay: `${i * 0.05}s`
+  //       }}
+  //     >
+  //       {char === ' ' ? '\u00A0' : char}
+  //     </span>
+  //   ));
+
   const splitText = (str: string) =>
-    str.split('').map((char, i) => (
+    str.split(' ').map((word, wordIndex) => (
       <span
-        key={i}
+        key={wordIndex}
         style={{
           display: 'inline-block',
-          opacity: 0,
-          transform: 'rotateY(90deg) translateY(10px)',
-          fontFamily: 'Satoshi700 !important',
-          animation: `flipIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards`,
-          animationDelay: `${i * 0.05}s`
+          marginRight: '10px',
+          whiteSpace: 'nowrap'
         }}
       >
-        {char === ' ' ? '\u00A0' : char}
+        {word.split('').map((char, charIndex) => (
+          <span
+            key={charIndex}
+            style={{
+              display: 'inline-block',
+              opacity: 0,
+              transform: 'rotateY(90deg) translateY(10px)',
+              fontFamily: 'Satoshi700 !important',
+              animation: `flipIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards`,
+              animationDelay: `${wordIndex * 0.3 + charIndex * 0.05}s`
+            }}
+          >
+            {char}
+          </span>
+        ))}
       </span>
     ));
 
@@ -73,6 +101,8 @@ export default function Hero() {
             </style>
             <Typography
               sx={{
+                display: 'inline-block',
+                whiteSpace: 'pre-wrap',
                 color: '#000',
                 fontSize: {xs: '48px', md: '56px', lg: '64px'},
                 fontWeight: '700 !important',
@@ -92,10 +122,10 @@ export default function Hero() {
             initial={{opacity: 0, scale: 0.92}}
             whileInView={{opacity: 1, scale: 1}}
             viewport={{once: true, amount: 0.6}}
-            transition={{duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.2}}
+            transition={{duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1}}
             sx={{
               maxWidth: {sm: '780px'},
-              color: '#000',
+              color: '#1A202C',
               fontSize: {xs: '18px', md: '20px', lg: '22px'},
               fontFamily: '"Inter", sans-serif  !important',
               fontWeight: '300',
@@ -119,19 +149,20 @@ export default function Hero() {
               disableRipple
               sx={{
                 width: '100%',
-                maxWidth: '186px',
+                maxWidth: {xs: '152px', sm: '186px'},
                 fontSize: {xs: '14px', md: '16px', lg: '18px'},
                 lineHeight: {xs: '21px', md: '20px', lg: '23px'},
                 fontWeight: '400',
                 cursor: 'pointer',
                 marginTop: '48px',
                 padding: '12px 16px',
-                textTransform: 'capitalize',
+                textTransform: 'none',
                 borderRadius: '10px',
                 border: '1px solid #4611f5',
                 bgcolor: '#4611F5',
                 color: '#fff',
                 transition: 'background-color 0.3s ease',
+                fontFamily: '"Inter", sans-serif !important',
                 '&:hover': {
                   backgroundColor: '#300ca8',
                   color: '#fff'
@@ -144,6 +175,7 @@ export default function Hero() {
             >
               {t('button')}
             </Button>
+            {/* </Box> */}
           </Box>
           <Box
             component={motion.div}
@@ -156,6 +188,7 @@ export default function Hero() {
               maxWidth: {xs: '865px', md: '1025px', lg: '1400px'},
               minWidth: '665px',
               mx: 'auto',
+              overflow: 'hidden',
               padding: '0 30px',
               width: '100%'
             }}
@@ -183,7 +216,7 @@ export default function Hero() {
                   borderRadius: '15px',
                   border: '1px solid #ffffff',
                   maxWidth: {xs: '865px', md: '1025px', lg: '1400px'},
-                  minWidth: '665px',
+                  // minWidth: '665px',
                   mx: 'auto',
                   width: '100%',
                   mt: '80px',
@@ -196,7 +229,7 @@ export default function Hero() {
                 <Box
                   sx={{
                     maxWidth: {xs: '865px', md: '1025px', lg: '1400px'},
-                    minWidth: '665px',
+                    // minWidth: '665px',
                     mx: 'auto',
                     width: '100%'
                   }}

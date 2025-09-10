@@ -86,8 +86,7 @@ export default function Advantages() {
           <Box sx={{padding: '8px'}}>
             <Box
               sx={{
-                maxWidth: '336px',
-                width: '100%',
+                width: 'fit-content',
                 border: '1px solid rgb(212,212,212)',
                 padding: '8px',
                 backgroundColor: '#FAFAFA',
@@ -118,7 +117,7 @@ export default function Advantages() {
                   cursor: 'pointer',
                   ...(value !== 'fahrschuler' && {
                     '&:hover': {
-                      backgroundColor: 'rgb(250,250,250)',
+                      backgroundColor: '#fff',
                       borderRadius: '99px',
                       boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.25)'
                     }
@@ -162,7 +161,7 @@ export default function Advantages() {
                   cursor: 'pointer',
                   ...(value !== 'fahrschulen' && {
                     '&:hover': {
-                      backgroundColor: 'rgb(250,250,250)',
+                      backgroundColor: '#fff',
                       borderRadius: '99px',
                       boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.25)'
                     }
@@ -320,7 +319,7 @@ function CardComponent({bgColor, title, description, color}: CardProps) {
               fontSize: {xs: '20px', md: '22px', lg: '24px'},
               marginBottom: '20px',
               color: color,
-              fontFamily: 'Satoshi500 !important',
+              fontFamily: 'Satoshi700 !important',
               lineHeight: '1.3em'
             }}
           >

@@ -65,7 +65,7 @@ export default function TabMenu({
               position: 'relative',
               boxShadow: '0px 1px 8px rgba(0, 0, 0, 0.25)',
               background: `
-                linear-gradient(#FAFAFA, #FAFAFA) padding-box,
+                linear-gradient(#fff, #fff) padding-box,
                 linear-gradient(180deg, rgba(70,17,245,0.5) 0%, rgba(235,0,255,0.5) 100%) border-box
               `,
               border: '1px solid transparent'
