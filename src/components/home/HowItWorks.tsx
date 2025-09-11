@@ -190,12 +190,17 @@ export default function HowItWorks() {
                 border: '1px solid #D4D4D4',
                 boxShadow: 'rgba(0, 0, 0, 0.25) 0px 1px 2px 0px',
                 marginBottom: '24px',
+                fontFamily: '"Inter", sans-serif !important',
+                '& .MuiTab-root, & .MuiTab-root span': {
+                  fontFamily: '"Inter", sans-serif !important',
+                  fontWeight: '400'
+                },
                 '& .MuiTab-root': {
+                  fontFamily: '"Inter", sans-serif !important',
                   textTransform: 'none',
                   backgroundColor: 'transparent !important',
                   minHeight: 'auto',
                   minWidth: 'auto',
-                  color: '#2D3748',
                   p: '8px',
                   borderRadius: '999px',
                   fontSize: {xs: '14px', md: '15px', lg: '16px'},
@@ -205,11 +210,14 @@ export default function HowItWorks() {
                     color: '#2D3748 !important',
                     backgroundColor: '#fff !important',
                     boxShadow: '0px 2px 8px rgba(0,0,0,0.15)',
-                    p: '8px 16px'
+                    p: '8px 16px',
+                    fontFamily: '"Inter", sans-serif !important',
+                    fontWeight: '500 !important'
                   },
                   '&:hover, &.Mui-focusVisible': {
                     backgroundColor: '#fff !important',
-                    boxShadow: '0px 2px 8px rgba(0,0,0,0.15)'
+                    boxShadow: '0px 2px 8px rgba(0,0,0,0.15)',
+                    ontWeight: '500 !important'
                   }
                 }
               }}

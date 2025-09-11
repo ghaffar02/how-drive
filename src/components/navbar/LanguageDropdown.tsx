@@ -116,7 +116,10 @@ function LanguageDropdownInner() {
         sx={{
           mt: {xs: '-60px', lg: '30px'},
           '& .MuiMenuItem-root': {p: 0},
-          '& .MuiMenuItem-root:not(:last-of-type)': {pb: '10px'}
+          '& .MuiMenuItem-root:not(:last-of-type)': {pb: '10px'},
+          '& .css-wb4adv-MuiButtonBase-root-MuiMenuItem-root': {
+            minHeight: {xs: 'auto !important', sm: 'unset'}
+          }
         }}
       >
         {options.map((o) => (

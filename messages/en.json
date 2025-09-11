@@ -33,13 +33,13 @@
     "schoolTab": "Schools",
     "DriverData": [
       {
-        "title": "All Information in One Place",
+        "title": "All information in one place",
         "description": "Access all the information you need. Keep track of your progress, appointments, and messages in one central location.",
         "bgColor": "#000",
         "color": "#fff"
       },
       {
-        "title": "Visualized Process Guide",
+        "title": "Visualized process guide",
         "description": "See exactly which steps you have already completed and what's next, from the first aid course to the theory and driving lessons and the final exam.",
         "bgColor": "rgb(206, 210, 224)",
         "color": "#000"
@@ -51,25 +51,25 @@
         "color": "#fff"
       },
       {
-        "title": "Flexible Appointment Booking",
+        "title": "Flexible appointment booking",
         "description": "Whether it’s a consultation, theory lesson, or driving lesson—book your appointments directly online with your driving school. No more time-consuming calls or waiting.",
         "bgColor": "#000",
         "color": "#fff"
       },
       {
-        "title": "Direct Communication",
+        "title": "Direct communication",
         "description": "Use the integrated chat function to quickly and easily ask your driving school questions. Your driving school will also communicate with you about things like exam dates.",
         "bgColor": "rgb(195, 225, 227)",
         "color": "#000"
       },
       {
-        "title": "Reminders and Notifications",
+        "title": "Reminders and notifications",
         "description": "Receive automatic reminders for upcoming appointments, theory and driving lessons, or exams.",
         "bgColor": "rgb(251, 207, 255)",
         "color": "#000"
       },
       {
-        "title": "Available in Two Languages",
+        "title": "Available in two languages",
         "description": "You can choose between German and English. All service functions are available in both languages.",
         "bgColor": "#000",
         "color": "#fff"
@@ -142,7 +142,7 @@
       {
         "title": "Schools",
         "price": {
-          "amount": "€29.95",
+          "amount": "29.95 €",
           "duration": "/month",
           "note": "(incl. VAT)"
         },

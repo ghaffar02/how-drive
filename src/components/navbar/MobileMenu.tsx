@@ -143,7 +143,7 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
                   borderRadius: '10px',
                   textTransform: 'capitalize',
                   '&:hover': {
-                    backgroundColor: '#4610F5',
+                    backgroundColor: '#300ca8',
                     color: '#fff'
                   },
                   '&:active': {

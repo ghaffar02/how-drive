@@ -49,7 +49,7 @@ export default function TabMenu({
         {/* Left Number Circle */}
         <Box
           sx={{
-            width: {xs: '45px', sm: '95px'},
+            width: {xs: '45px !important', sm: '77px !important'},
             display: 'flex',
             flexDirection: 'column',
             justifyContent: 'center',
@@ -125,7 +125,7 @@ export default function TabMenu({
               flexDirection: {xs: 'column', lg: 'row'}
             }}
           >
-            <Box sx={{width: {md: '50%'}}}>
+            <Box sx={{width: {lg: '50%'}}}>
               <Typography
                 sx={{
                   color: '#000',
@@ -143,8 +143,6 @@ export default function TabMenu({
                   color: '#1a202c',
                   fontSize: {xs: '14px', md: '16px', lg: '18px'},
                   lineHeight: '1.5em',
-                  fontFamily:
-                    '"Inter", "Inter Placeholder", sans-serif !important',
                   fontWeight: '400'
                 }}
               >
