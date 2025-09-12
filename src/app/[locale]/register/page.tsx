@@ -12,6 +12,7 @@ import {
 import Logo from '@/assets/pngs/logo.png';
 import Image from 'next/image';
 import {AnimatePresence, motion} from 'framer-motion';
+import loginImage from '@/assets/svgs/loginImage.svg';
 
 export default function RegisterPage() {
   const [tabValue, setTabValue] = useState(0);
@@ -374,11 +375,21 @@ export default function RegisterPage() {
         sx={{
           display: {xs: 'none', sm: 'block'},
           width: '50%',
-          background: '#4611f5',
           margin: '20px 0px',
-          borderRadius: '40px 0px 0px 40px'
+          borderRadius: '40px 0px 0px 40px',
+          overflow: 'hidden'
         }}
-      ></Box>
+      >
+        <Image
+          style={{
+            height: '100%',
+            width: '100%',
+            objectFit: 'cover'
+          }}
+          src={loginImage}
+          alt="loginImage"
+        />
+      </Box>
     </Box>
   );
 }
