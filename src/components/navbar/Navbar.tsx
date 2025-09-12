@@ -177,19 +177,17 @@ export default function Navbar() {
                   fontSize: {xs: '14px', md: '15px', lg: '16px'},
                   fontWeight: '300',
                   lineHeight: '1.6em',
-                  transition: 'all 0.2s ease',
+                  transition: 'all 0.3s ease-in-out',
                   padding: '8px 16px',
                   borderRadius: '10px',
                   border: '1px solid #300CA8',
                   textTransform: 'capitalize',
                   '&:hover': {
                     backgroundColor: '#300CA8',
-                    color: '#fff',
-                    border: '1px solid #4611f5'
+                    color: '#fff'
                   },
                   '&:active': {
                     backgroundColor: '#1A065C !important',
-                    border: '1px solid #4611F5',
                     color: '#fff'
                   },
                   height: '44px',
