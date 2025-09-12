@@ -44,10 +44,6 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  /* overflow-y: scroll; */
-  /* -ms-overflow-style: none; */
-  /* scrollbar-width: none; */
-  /* overflow-y: auto; */
 }
 
 a {
@@ -84,4 +80,9 @@ a {
 
 .css-1ozpxjl-MuiButtonBase-root-MuiAccordionSummary-root {
   min-height: unset !important;
+}
+
+/* class for tab font weight */
+.css-1usuzwp-MuiButtonBase-root-MuiTab-root {
+  font-weight: unset !important;
 }

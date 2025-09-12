@@ -31,7 +31,6 @@ const tabsMount: Variants = {
     scale: 1,
     transition: {
       duration: 0.5,
-      // ease: [0.42, 0, 0.58, 1],
       when: 'beforeChildren',
       staggerChildren: 0.06
     }
@@ -192,8 +191,7 @@ export default function HowItWorks() {
                 marginBottom: '24px',
                 fontFamily: '"Inter", sans-serif !important',
                 '& .MuiTab-root, & .MuiTab-root span': {
-                  fontFamily: '"Inter", sans-serif !important',
-                  fontWeight: '400'
+                  fontFamily: '"Inter", sans-serif !important'
                 },
                 '& .MuiTab-root': {
                   fontFamily: '"Inter", sans-serif !important',
@@ -211,19 +209,19 @@ export default function HowItWorks() {
                     backgroundColor: '#fff !important',
                     boxShadow: '0px 2px 8px rgba(0,0,0,0.15)',
                     p: '8px 16px',
-                    fontFamily: '"Inter", sans-serif !important',
-                    fontWeight: '500 !important'
+                    fontFamily: '"Inter", sans-serif !important'
                   },
                   '&:hover, &.Mui-focusVisible': {
                     backgroundColor: '#fff !important',
-                    boxShadow: '0px 2px 8px rgba(0,0,0,0.15)',
-                    ontWeight: '500 !important'
+                    boxShadow: '0px 2px 8px rgba(0,0,0,0.15)'
                   }
                 }
               }}
             >
               {tabsData.map((tab: any, i: number) => {
                 const showText = upMd || value === i;
+                const isSelected = value === i;
+
                 return (
                   <Tab
                     key={i}
@@ -249,8 +247,13 @@ export default function HowItWorks() {
                           unmountOnExit
                         >
                           <Box
-                            sx={{fontWeight: '500', textWrap: 'nowrap'}}
                             component="span"
+                            sx={{
+                              fontWeight: isSelected
+                                ? '500 !important'
+                                : '400 !important',
+                              textWrap: 'nowrap'
+                            }}
                           >
                             {tab.label}
                           </Box>

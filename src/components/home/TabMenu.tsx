@@ -27,7 +27,7 @@ export default function TabMenu({
   const dividerRef = React.useRef<HTMLDivElement | null>(null);
   const {scrollYProgress} = useScroll({
     target: dividerRef,
-    offset: ['start 95vh', 'end 95vh']
+    offset: ['start 50vh', 'end 50vh']
   });
   const clamped = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const bgSize = useTransform(
@@ -38,7 +38,7 @@ export default function TabMenu({
   const circleRef = React.useRef<HTMLDivElement | null>(null);
   const circleProgress = useScroll({
     target: circleRef,
-    offset: ['start 95vh', 'end 100vh']
+    offset: ['start 90vh', 'end 0vh']
   }).scrollYProgress;
   const rawAlpha = useTransform(circleProgress, [0.48, 0.5], [0, 1]);
   const smoothAlpha = useSpring(rawAlpha, {
