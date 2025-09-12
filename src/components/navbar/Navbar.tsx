@@ -19,12 +19,12 @@ export default function Navbar() {
     <>
       <Box
         sx={{
-          padding: '16px',
-          boxShadow:
-            'rgba(0, 0, 0, 0.05) 0px 0.796192px 2.38858px -0.625px, ' +
-            'rgba(0, 0, 0, 0.05) 0px 2.41451px 7.24352px -1.25px, ' +
-            'rgba(0, 0, 0, 0.05) 0px 6.38265px 19.148px -1.875px, ' +
-            'rgba(0, 0, 0, 0.05) 0px 20px 60px -2.5px'
+          padding: '16px'
+          // boxShadow:
+          //   'rgba(0, 0, 0, 0.05) 0px 0.796192px 2.38858px -0.625px, ' +
+          //   'rgba(0, 0, 0, 0.05) 0px 2.41451px 7.24352px -1.25px, ' +
+          //   'rgba(0, 0, 0, 0.05) 0px 6.38265px 19.148px -1.875px, ' +
+          //   'rgba(0, 0, 0, 0.05) 0px 20px 60px -2.5px'
         }}
       >
         <Box
@@ -177,17 +177,19 @@ export default function Navbar() {
                   fontSize: {xs: '14px', md: '15px', lg: '16px'},
                   fontWeight: '300',
                   lineHeight: '1.6em',
-                  transition: 'all 0.3s ease-in-out',
+                  transition: 'all 0.2s ease',
                   padding: '8px 16px',
                   borderRadius: '10px',
                   border: '1px solid #300CA8',
                   textTransform: 'capitalize',
                   '&:hover': {
                     backgroundColor: '#300CA8',
-                    color: '#fff'
+                    color: '#fff',
+                    border: '1px solid #4611f5'
                   },
                   '&:active': {
                     backgroundColor: '#1A065C !important',
+                    border: '1px solid #4611F5',
                     color: '#fff'
                   },
                   height: '44px',

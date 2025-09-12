@@ -161,14 +161,16 @@ export default function Hero() {
                 border: '1px solid #4611f5',
                 bgcolor: '#4611F5',
                 color: '#fff',
-                transition: 'background-color 0.3s ease',
+                transition: 'all 0.2s ease',
                 fontFamily: '"Inter", sans-serif !important',
                 '&:hover': {
-                  backgroundColor: '#300ca8',
-                  color: '#fff'
+                  backgroundColor: '#300CA8',
+                  color: '#fff',
+                  border: '1px solid #4611f5'
                 },
                 '&:active': {
                   backgroundColor: '#1A065C !important',
+                  border: '1px solid #4611F5',
                   color: '#fff'
                 }
               }}
