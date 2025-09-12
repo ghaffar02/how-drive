@@ -3,7 +3,7 @@
 import * as React from 'react';
 import {Box, Typography} from '@mui/material';
 import Image, {StaticImageData} from 'next/image';
-import {motion, useScroll, useTransform} from 'framer-motion';
+import {motion, useScroll, useSpring, useTransform} from 'framer-motion';
 
 interface TabMenuProps {
   number: string;
@@ -23,30 +23,33 @@ export default function TabMenu({
   index
 }: TabMenuProps) {
   const MotionBox = motion(Box);
+
   const dividerRef = React.useRef<HTMLDivElement | null>(null);
   const {scrollYProgress} = useScroll({
     target: dividerRef,
-    offset: ['start end', 'end start']
+    offset: ['start 95vh', 'end 95vh']
   });
-  const customProgress = useTransform(scrollYProgress, [0.3, 0.7], [0, 1]);
-  const bgSize = useTransform(customProgress, [0, 1], ['100% 0%', '100% 100%']);
+  const clamped = useTransform(scrollYProgress, [0, 1], [0, 1]);
+  const bgSize = useTransform(
+    clamped,
+    (v) => `100% ${Math.max(0, Math.min(1, v)) * 100}%`
+  );
+
+  const circleRef = React.useRef<HTMLDivElement | null>(null);
+  const circleProgress = useScroll({
+    target: circleRef,
+    offset: ['start 95vh', 'end 100vh']
+  }).scrollYProgress;
+  const rawAlpha = useTransform(circleProgress, [0.48, 0.5], [0, 1]);
+  const smoothAlpha = useSpring(rawAlpha, {
+    stiffness: 180,
+    damping: 24,
+    mass: 0.3
+  });
+
   return (
-    <Box
-      sx={{
-        paddingX: '8px',
-        backgroundColor: '#FAFAFA',
-        paddingTop: '16px'
-      }}
-    >
-      <Box
-        sx={{
-          maxWidth: '1400px',
-          m: 'auto',
-          display: 'flex',
-          gap: '18px'
-        }}
-      >
-        {/* Left Number Circle */}
+    <Box sx={{paddingX: '8px', backgroundColor: '#FAFAFA', paddingTop: '16px'}}>
+      <Box sx={{maxWidth: '1400px', m: 'auto', display: 'flex', gap: '18px'}}>
         <Box
           sx={{
             width: {xs: '45px !important', sm: '77px !important'},
@@ -58,17 +61,19 @@ export default function TabMenu({
           }}
         >
           <Box
+            component={motion.div}
+            ref={circleRef}
+            style={{['--a' as any]: smoothAlpha as unknown as number}}
             sx={{
               width: {xs: '30px', sm: '77px'},
               height: {xs: '30px', sm: '77px'},
               borderRadius: '50%',
               position: 'relative',
               boxShadow: '0px 1px 8px rgba(0, 0, 0, 0.25)',
-              background: `
-                linear-gradient(#fff, #fff) padding-box,
-                linear-gradient(180deg, rgba(70,17,245,0.5) 0%, rgba(235,0,255,0.5) 100%) border-box
-              `,
-              border: '1px solid transparent'
+              background:
+                'linear-gradient(#fff, #fff) padding-box, linear-gradient(180deg, rgba(70,17,245,var(--a)) 0%, rgba(235,0,255,var(--a)) 100%) border-box',
+              border: '1px solid transparent',
+              willChange: 'background'
             }}
           >
             <Typography
@@ -84,6 +89,7 @@ export default function TabMenu({
               {number}
             </Typography>
           </Box>
+
           <motion.div
             ref={dividerRef}
             style={{
@@ -102,8 +108,6 @@ export default function TabMenu({
           />
         </Box>
 
-        {/* Content */}
-
         <Box>
           <Typography
             sx={{
@@ -117,6 +121,7 @@ export default function TabMenu({
           >
             {title}
           </Typography>
+
           <Box
             sx={{
               display: 'flex',
@@ -149,9 +154,9 @@ export default function TabMenu({
                 {description}
               </Typography>
             </Box>
+
             <MotionBox
               key={index}
-              // component={motion.div}
               initial={{x: 80, opacity: 0}}
               whileInView={{x: 0, opacity: [0, 0.5, 1]}}
               viewport={{once: true}}
@@ -164,8 +169,6 @@ export default function TabMenu({
               sx={{
                 width: {lg: '50%'},
                 height: 'fit-content',
-                // width: '50%',
-                // height: '50%',
                 borderRadius: '15px',
                 background:
                   'linear-gradient(125deg, rgba(70, 17, 245, 0.15) 0%, rgba(30, 245, 255, 0.1) 50%, rgba(235, 0, 255, 0.15) 100%)',
@@ -182,11 +185,7 @@ export default function TabMenu({
                 }}
               >
                 <Image
-                  style={{
-                    height: '100%',
-                    width: '100%',
-                    objectFit: 'cover'
-                  }}
+                  style={{height: '100%', width: '100%', objectFit: 'cover'}}
                   src={image}
                   alt={title}
                 />
