@@ -11,6 +11,7 @@ import Advantages from '@/components/home/Advantages';
 import Pricing from '@/components/prices/Pricing';
 import LicenseSteps from '@/components/home/components/LicenseSteps';
 import HeroClasses from '@/components/driving-license/HeroClasses';
+import ClassAGrid from '@/components/driving-license/ClassAGrid';
 
 export default function Page() {
   return (
@@ -33,6 +34,7 @@ export default function Page() {
         <HeroClasses />
 
         <TrustServiceSection />
+        <ClassAGrid />
         <Footer />
       </Box>
     </>
