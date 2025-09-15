@@ -2,8 +2,11 @@
 import {Box, Button, TextField, Typography} from '@mui/material';
 import Logo from '@/assets/pngs/logo.png';
 import Image from 'next/image';
+import registerImage from '@/assets/svgs/registerImage.svg';
+import {useTranslations} from 'next-intl';
 
 export default function PasswordResetPage() {
+  const t = useTranslations('passwordPage');
   return (
     <Box sx={{width: '100%', display: 'flex'}}>
       {/* Left Side */}
@@ -39,7 +42,7 @@ export default function PasswordResetPage() {
               lineHeight: '1.3em'
             }}
           >
-            Passwort vergessen?
+            {t('heading')}
           </Typography>
           <Typography
             sx={{
@@ -51,11 +54,11 @@ export default function PasswordResetPage() {
               marginTop: '10px !important',
               textAlign: 'center',
               letterSpacing: '0.01em',
-              lineHeight: '1.5em'
+              lineHeight: '1.5em',
+              fontWeight: '300'
             }}
           >
-            Bitte gebe deine E-Mail-Adresse ein, um fortzufahren. Wir senden dir
-            Anweisungen zum Zurücksetzen deines Passworts.
+            {t('description')}
           </Typography>
         </Box>
         {/* Input Fields Box */}
@@ -70,27 +73,36 @@ export default function PasswordResetPage() {
           }}
         >
           <TextField
-            label="E-Mail"
+            label={t('email')}
             type="email"
             sx={{
               '& .MuiOutlinedInput-root': {
                 background: '#F8FAFC',
-                borderRadius: '10px',
+                borderRadius: '8px',
+                border: '1px solid #E2E8F0',
                 '& .MuiOutlinedInput-input': {
                   padding: '14px 12px',
                   fontSize: '14px',
-                  fontFamily: '"Inter", sans-serif !important'
+                  fontFamily: '"Inter", sans-serif !important',
+                  color: '#000',
+                  '&::placeholder': {
+                    color: '#94A3B8',
+                    opacity: 1
+                  }
+                },
+                '& fieldset': {
+                  borderColor: '#E2E8F0'
+                },
+                '&:hover fieldset': {
+                  borderColor: '#1976d2'
                 }
-              },
-              '& .MuiInputLabel-root': {
-                fontSize: '14px',
-                fontFamily: '"Inter", sans-serif !important'
               }
             }}
           />
 
           <Button
             variant="contained"
+            disableRipple
             sx={{
               width: '100%',
               background: '#4611f5',
@@ -99,10 +111,16 @@ export default function PasswordResetPage() {
               fontSize: '16px',
               borderRadius: '12px',
               fontFamily: '"Inter", sans-serif !important',
-              fontWeight: '600'
+              fontWeight: '500',
+              '&:hover': {
+                background: '#300ca8'
+              },
+              '&:active': {
+                background: '#1A065C'
+              }
             }}
           >
-            Weiter
+            {t('button')}
           </Button>
         </Box>
         <Typography
@@ -114,7 +132,7 @@ export default function PasswordResetPage() {
             textAlign: 'center'
           }}
         >
-          Wieder an das Passwort erinnert?{' '}
+          {t('remember')}{' '}
           <span
             style={{
               cursor: 'pointer',
@@ -124,7 +142,7 @@ export default function PasswordResetPage() {
               fontWeight: '500'
             }}
           >
-            Anmelden
+            {t('login')}
           </span>
         </Typography>
       </Box>
@@ -133,11 +151,21 @@ export default function PasswordResetPage() {
         sx={{
           display: {xs: 'none', sm: 'block'},
           width: '50%',
-          background: '#4611f5',
           margin: '20px 0px',
-          borderRadius: '40px 0px 0px 40px'
+          borderRadius: '40px 0px 0px 40px',
+          overflow: 'hidden'
         }}
-      ></Box>
+      >
+        <Image
+          style={{
+            height: '100%',
+            width: '100%',
+            objectFit: 'cover'
+          }}
+          src={registerImage}
+          alt="registerImage"
+        />
+      </Box>
     </Box>
   );
 }
