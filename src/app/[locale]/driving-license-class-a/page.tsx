@@ -10,6 +10,7 @@ import Faq from '@/components/home/Faq';
 import Advantages from '@/components/home/Advantages';
 import Pricing from '@/components/prices/Pricing';
 import LicenseSteps from '@/components/home/components/LicenseSteps';
+import HeroClasses from '@/components/driving-license/HeroClasses';
 
 export default function Page() {
   return (
@@ -29,6 +30,7 @@ export default function Page() {
         >
           <Navbar />
         </Box>
+        <HeroClasses />
 
         <TrustServiceSection />
         <Footer />
