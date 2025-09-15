@@ -77,43 +77,43 @@
     ],
     "SchoolsData": [
       {
-        "title": "Efficient Appointment Management",
+        "title": "Efficient appointment management",
         "description": "Manage all theory courses and driving lessons in one place and reduce administrative work—less paperwork, more clarity.",
         "bgColor": "#000",
         "color": "#fff"
       },
       {
-        "title": "Simple Communication",
+        "title": "Simple communication",
         "description": "Send messages to individual students or entire groups to inform them about appointments, changes, or news—quick and direct.",
         "bgColor": "rgb(215,251,252)",
         "color": "#000"
       },
       {
-        "title": "Reduced Administrative Effort",
+        "title": "Reduced administrative effort",
         "description": "Cut down on calls and emails: students book appointments themselves, and all necessary information is shared through the integrated chat function.",
         "bgColor": "rgb(230,235,255)",
         "color": "#000"
       },
       {
-        "title": "Better Resource Planning",
+        "title": "Better resource planning",
         "description": "Plan your vehicles and instructors efficiently. The online booking system helps optimize utilization with clear calendars and automated scheduling.",
         "bgColor": "#000",
         "color": "#fff"
       },
       {
-        "title": "Student Progress at a Glance",
+        "title": "Student progress at a glance",
         "description": "Track each student’s learning status digitally. This allows you to create personalized learning plans and adjust lessons more effectively.",
         "bgColor": "rgb(28, 0, 120)",
         "color": "#fff"
       },
       {
-        "title": "Digital Student Records",
+        "title": "Digital student records",
         "description": "All important information and bookings per student stored in one place. All communication is securely stored and GDPR compliant.",
         "bgColor": "rgb(251, 212, 255)",
         "color": "#000"
       },
       {
-        "title": "Professional Appearance",
+        "title": "Professional appearance",
         "description": "Offer your students a modern and intuitive platform—a big plus with younger audiences. It strengthens trust in your school and sets you apart from competitors.",
         "bgColor": "#000",
         "color": "#fff"
@@ -343,29 +343,59 @@
     "description": "We connect learner drivers and driving schools through a digital service.",
     "features": {
       "heading": "Function",
-      "items": [
-        "Students",
-        "Schools",
-        "Installation"
-      ]
+      "items": ["Students", "Schools", "Installation"]
     },
     "services": {
       "heading": "Service",
-      "items": [
-        "About Us",
-        "Pricing",
-        "Contact",
-        "Help"
-      ]
+      "items": ["About Us", "Pricing", "Contact", "Help"]
     },
     "support": {
       "heading": "Legal",
-      "items": [
-        "Imprint",
-        "Privacy Policy",
-        "Terms",
-        "Cookie"
-      ]
+      "items": ["Imprint", "Privacy Policy", "Terms", "Cookie"]
     }
+  },
+  "loginPage": {
+    "heading": "Welcome back!",
+    "email": "Email",
+    "password": "Password",
+    "forgetPassword": "Forgot password?",
+    "button": "Login",
+    "alreadyUser": "Don’t have an account? ",
+    "register": "Register",
+    "emailError": "E-Mail is required",
+    "passwordError": "Passwort is required",
+    "passMin": "Password must be at least 8 characters long",
+    "passChar": "Password must contain at least one number"
+  },
+  "registerPage": {
+    "heading": "Create an account as:",
+    "tabValue1": "Student",
+    "tabValue2": "Driving School",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "password": "Password",
+    "policy": "I agree to the ",
+    "policy2": "Privacy Policy.",
+    "policy3": "",
+    "button": "Register",
+    "school": "Name of the Driving School",
+    "alreadyExist": "Already have an account?",
+    "signin": "Login",
+    "error1": "This field is required",
+    "error2": "Last name is required",
+    "error3": "Email is required",
+    "error4": "Password is required",
+    "invalidEmail": "Invalid Email",
+    "passMin": "Password must be at least 8 characters long",
+    "passChar": "Password must contain at least one number"
+  },
+  "passwordPage": {
+    "heading": "Forgot Password?",
+    "description": "Please enter your email address to continue. We will send you instructions to reset your password.",
+    "email": "Email",
+    "button": "Continue",
+    "remember": "Remembered your password?",
+    "login": "Login"
   }
 }

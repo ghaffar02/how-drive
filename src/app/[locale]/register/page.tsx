@@ -1,5 +1,6 @@
 'use client';
 import React, {useState} from 'react';
+import {useForm} from 'react-hook-form';
 import {
   Box,
   Button,
@@ -12,15 +13,40 @@ import {
 import Logo from '@/assets/pngs/logo.png';
 import Image from 'next/image';
 import {AnimatePresence, motion} from 'framer-motion';
-import loginImage from '@/assets/svgs/loginImage.svg';
+import registerImage from '@/assets/svgs/registerImage.svg';
+import {useTranslations} from 'next-intl';
 
 export default function RegisterPage() {
   const [tabValue, setTabValue] = useState(0);
   const [agreed, setAgreed] = useState(false);
+  const t = useTranslations('registerPage');
 
-  //   const handleTabChange = (event, newValue) => {
-  //     setTabValue(newValue);
-  //   };
+  type FormValues = {
+    vorname?: string;
+    nachname?: string;
+    schule?: string;
+    email: string;
+    password: string;
+  };
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: {errors}
+  } = useForm<FormValues>();
+
+  const onSubmit = (data: any) => {
+    if (tabValue === 0) {
+      const {vorname, nachname, email, password} = data;
+      console.log('Fahrschüler values:', {vorname, nachname, email, password});
+    } else {
+      const {schule, email, password} = data;
+      console.log('Fahrschule values:', {schule, email, password});
+    }
+    reset();
+  };
+
   return (
     <Box sx={{width: '100%', display: 'flex'}}>
       {/* Left Side */}
@@ -56,7 +82,7 @@ export default function RegisterPage() {
               lineHeight: '1.3em'
             }}
           >
-            Konto erstellen als:
+            {t('heading')}
           </Typography>
         </Box>
         {/* Tab + Input Fields Box */}
@@ -104,7 +130,7 @@ export default function RegisterPage() {
                 }
               }}
             >
-              Fahrschüler
+              {t('tabValue1')}
             </Button>
             <Button
               onClick={() => setTabValue(1)}
@@ -125,11 +151,13 @@ export default function RegisterPage() {
                 }
               }}
             >
-              Fahrschule
+              {t('tabValue2')}
             </Button>
           </Box>
 
           <Box
+            component="form"
+            onSubmit={handleSubmit(onSubmit)}
             sx={{
               maxWidth: '360px',
               width: '100%',
@@ -142,7 +170,8 @@ export default function RegisterPage() {
           >
             {/* Form Fields */}
             <TextField
-              label={tabValue === 0 ? 'Vorname' : 'Name der Fahrschule'}
+              key={tabValue}
+              label={tabValue === 0 ? `${t('firstName')}` : `${t('school')}`}
               variant="outlined"
               fullWidth
               sx={{
@@ -168,8 +197,15 @@ export default function RegisterPage() {
                   }
                 }
               }}
+              {...register(tabValue === 0 ? 'vorname' : 'schule', {
+                required: `${t('error1')}`
+              })}
+              error={!!errors.vorname || !!errors.schule}
+              helperText={
+                (errors.vorname?.message || errors.schule?.message) as string
+              }
             />
-            <AnimatePresence mode="wait">
+            <AnimatePresence initial={false} mode="wait">
               {tabValue === 0 && (
                 <motion.div
                   initial={{height: 0, opacity: 0}}
@@ -179,7 +215,7 @@ export default function RegisterPage() {
                   layout
                 >
                   <TextField
-                    label="Nachname"
+                    label={t('lastName')}
                     variant="outlined"
                     fullWidth
                     sx={{
@@ -205,13 +241,18 @@ export default function RegisterPage() {
                         }
                       }
                     }}
+                    {...register('nachname', {
+                      required: `${t('error2')}`
+                    })}
+                    error={!!errors.nachname}
+                    helperText={errors.nachname?.message as string}
                   />
                 </motion.div>
               )}
             </AnimatePresence>
 
             <TextField
-              label="E-Mail"
+              label={t('email')}
               variant="outlined"
               fullWidth
               sx={{
@@ -237,10 +278,16 @@ export default function RegisterPage() {
                   }
                 }
               }}
+              {...register('email', {
+                required: `${t('error3')}`,
+                pattern: {value: /^\S+@\S+$/i, message: `${t('invalidEmail')}`}
+              })}
+              error={!!errors.email}
+              helperText={errors.email?.message as string}
             />
 
             <TextField
-              label="Passwort"
+              label={t('password')}
               type="password"
               variant="outlined"
               fullWidth
@@ -267,6 +314,19 @@ export default function RegisterPage() {
                   }
                 }
               }}
+              {...register('password', {
+                required: `${t('error4')}`,
+                minLength: {
+                  value: 8,
+                  message: t('passMin')
+                },
+                pattern: {
+                  value: /^(?=.*\d).{8,}$/,
+                  message: t('passChar')
+                }
+              })}
+              error={!!errors.password}
+              helperText={errors.password?.message as string}
             />
 
             {/* Checkbox with Agreement */}
@@ -295,7 +355,7 @@ export default function RegisterPage() {
                     fontFamily: '"Inter", sans-serif !important'
                   }}
                 >
-                  Ich stimme der{' '}
+                  {t('policy')}{' '}
                   <Link
                     href="#"
                     sx={{
@@ -303,9 +363,9 @@ export default function RegisterPage() {
                       textDecoration: 'none'
                     }}
                   >
-                    Datenschutzerklärung
+                    {t('policy2')}
                   </Link>{' '}
-                  zu.
+                  {t('policy3')}
                 </Typography>
               }
               sx={{
@@ -319,8 +379,10 @@ export default function RegisterPage() {
 
             {/* Register Button */}
             <Button
+              type="submit"
               variant="contained"
               fullWidth
+              disableRipple
               disabled={!agreed}
               sx={{
                 background: agreed ? '#4611f5' : '#808080',
@@ -328,13 +390,16 @@ export default function RegisterPage() {
                 textTransform: 'none',
                 padding: '8px 16px',
                 fontSize: '16px',
-                borderRadius: '8px',
+                borderRadius: '12px',
                 fontFamily: '"Inter", sans-serif !important',
                 fontWeight: 500,
                 boxShadow: 'none',
                 '&:hover': {
-                  background: agreed ? '#4811f6' : '#E5E7EB',
+                  background: agreed ? '#300ca8' : '#E5E7EB',
                   boxShadow: 'none'
+                },
+                '&:active': {
+                  background: '#1A065C'
                 },
                 '&:disabled': {
                   background: '#808080',
@@ -342,7 +407,7 @@ export default function RegisterPage() {
                 }
               }}
             >
-              Registrieren
+              {t('button')}
             </Button>
           </Box>
         </Box>
@@ -351,22 +416,22 @@ export default function RegisterPage() {
           sx={{
             fontSize: '14px',
             color: '#808080',
-            fontFamily: '"Inter", sans-serif !important !important',
+            fontFamily: '"Inter", sans-serif !important',
             lineHeight: '1.2em',
             textAlign: 'center'
           }}
         >
-          Bereits einen Account haben?{' '}
+          {t('alreadyExist')}{' '}
           <span
             style={{
               cursor: 'pointer',
               color: '#1270ff',
               fontSize: '14px',
-              fontFamily: '"Inter", sans-serif !important !important',
+              fontFamily: '"Inter", sans-serif !important',
               fontWeight: '500'
             }}
           >
-            Anmelden
+            {t('signin')}
           </span>
         </Typography>
       </Box>
@@ -386,8 +451,8 @@ export default function RegisterPage() {
             width: '100%',
             objectFit: 'cover'
           }}
-          src={loginImage}
-          alt="loginImage"
+          src={registerImage}
+          alt="registerImage"
         />
       </Box>
     </Box>

@@ -4,7 +4,10 @@ import Logo from '@/assets/pngs/logo.png';
 import Image from 'next/image';
 import {useForm, Controller} from 'react-hook-form';
 import Link from 'next/link';
+// import loginImage from '@/assets/svgs/registerImage.svg';
 import loginImage from '@/assets/svgs/loginImage.svg';
+
+import {useTranslations} from 'next-intl';
 
 interface FormValues {
   email: string;
@@ -12,6 +15,7 @@ interface FormValues {
 }
 
 export default function LoginPage() {
+  const t = useTranslations('loginPage');
   const {
     control,
     handleSubmit,
@@ -83,7 +87,7 @@ export default function LoginPage() {
               lineHeight: '1.3em'
             }}
           >
-            Willkommen zurück!
+            {t('heading')}
           </Typography>
         </Box>
 
@@ -104,11 +108,11 @@ export default function LoginPage() {
           <Controller
             name="email"
             control={control}
-            rules={{required: 'E-Mail ist erforderlich'}}
+            rules={{required: `${t('emailError')}`}}
             render={({field}) => (
               <TextField
                 {...field}
-                label="E-Mail"
+                label={t('email')}
                 type="text"
                 error={!!errors.email}
                 helperText={errors.email?.message}
@@ -136,20 +140,20 @@ export default function LoginPage() {
             name="password"
             control={control}
             rules={{
-              required: 'Passwort ist erforderlich',
+              required: `${t('passwordError')}`,
               minLength: {
                 value: 8,
-                message: 'Passwort muss mindestens 8 Zeichen lang sein'
+                message: t('passMin')
               },
               pattern: {
                 value: /^(?=.*\d).{8,}$/,
-                message: 'Passwort muss mindestens eine Zahl enthalten'
+                message: t('passChar')
               }
             }}
             render={({field}) => (
               <TextField
                 {...field}
-                label="Passwort"
+                label={t('password')}
                 type="password"
                 error={!!errors.password}
                 helperText={errors.password?.message}
@@ -179,15 +183,16 @@ export default function LoginPage() {
               textAlign: 'right',
               cursor: 'pointer',
               fontFamily: '"Inter", sans-serif !important',
-              fontWeight: 400
+              fontWeight: 500
             }}
           >
-            Passwort vergessen?
+            {t('forgetPassword')}
           </Typography>
 
           <Button
             type="submit"
             variant="contained"
+            disableRipple
             sx={{
               width: '100%',
               background: '#4611f5',
@@ -196,10 +201,16 @@ export default function LoginPage() {
               fontSize: '16px',
               borderRadius: '12px',
               fontFamily: '"Inter", sans-serif !important',
-              fontWeight: '600'
+              fontWeight: '500',
+              '&:hover': {
+                background: '#300ca8'
+              },
+              '&:active': {
+                background: '#1A065C'
+              }
             }}
           >
-            Anmelden
+            {t('button')}
           </Button>
         </Box>
 
@@ -212,7 +223,7 @@ export default function LoginPage() {
             textAlign: 'center'
           }}
         >
-          Noch keinen Account?{' '}
+          {t('alreadyUser')}{' '}
           <Link
             href="#"
             style={{
@@ -220,11 +231,11 @@ export default function LoginPage() {
               color: '#1270ff',
               fontSize: '14px',
               fontFamily: '"Inter", sans-serif !important',
-              fontWeight: '600',
+              fontWeight: '500',
               textDecoration: 'none'
             }}
           >
-            Registrieren
+            {t('register')}
           </Link>
         </Typography>
       </Box>
