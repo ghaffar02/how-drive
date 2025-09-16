@@ -18,7 +18,7 @@ export default function TextCard({
     <Box
       sx={{
         background: '#F2F2F2',
-        maxWidth: '250px',
+        // maxWidth: '250px',
         width: '100%',
         height: {xs: '159px', sm: '164px', lg: '250px'},
         padding: '24px',

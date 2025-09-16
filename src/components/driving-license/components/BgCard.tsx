@@ -13,7 +13,7 @@ export default function BgCard({row = true, icon, bgImage, title}: CardProps) {
   return (
     <Box
       sx={{
-        maxWidth: row ? '516px' : '250px',
+        // maxWidth: row ? '516px' : '250px',
         width: '100%',
         height: row
           ? {xs: '334px', sm: '344px', lg: '250px'}
@@ -35,15 +35,15 @@ export default function BgCard({row = true, icon, bgImage, title}: CardProps) {
       </Box>
       <Box>
         <Typography
+          component="div"
           sx={{
             fontSize: {xs: '20px', sm: '22px', lg: '24px'},
             color: '#fff',
             fontWeight: '600',
             fontFamily: '"Inter", sans-serif !important'
           }}
-        >
-          Ausweis - Passbild - Sehtest - Erste - Hilfeggb. Fuhrerscheinkopie
-        </Typography>
+          dangerouslySetInnerHTML={{__html: title ?? ''}}
+        />
       </Box>
     </Box>
   );

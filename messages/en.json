@@ -397,5 +397,40 @@
     "button": "Continue",
     "remember": "Remembered your password?",
     "login": "Login"
+  },
+  "licenseA": {
+    "grid1Data": [
+      {
+        "heading": "A",
+        "sub": "from 24",
+        "des": "All motorcycles (unlimited)"
+      },
+      {
+        "heading": "A2",
+        "sub": "from 18",
+        "des": "Motorcycles up to 35 kW"
+      },
+      {
+        "heading": "A1",
+        "sub": "from 16",
+        "des": "Motorcycles up to 125 cc, max. 11 kW"
+      },
+      {
+        "heading": "AM",
+        "sub": "from 15",
+        "des": "Motorcycles up to 45 km/h and 50 cc"
+      }
+    ],
+    "fileTitle": "ID - Passport photo - Eye test - First aid<br />if applicable, driving license copy",
+    "roadTitle": "Special drives:<br />5 Rural<br />4 Highway<br />3 Night",
+    "grund": "Basic theory",
+    "grundDes": "12 lessons - double periods",
+    "gult": "Validity",
+    "gultDes": "Unlimited, renewed every 15 years",
+    "mofa": "Moped",
+    "mofasub": "from 15",
+    "mofaDes": "Bicycles with max. 25 km/h",
+    "zusa": "Additional theory",
+    "zusaDes": "2–4 lessons - double periods"
   }
 }
