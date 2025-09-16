@@ -1,7 +1,6 @@
 'use client';
 import {Box} from '@mui/material';
 
-import Hero from '@/components/home/Hero';
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/Footer';
 import TrustServiceSection from '@/components/home/TrustServiceSection';
@@ -31,7 +30,6 @@ export default function Page() {
         >
           <Navbar />
         </Box>
-        <HeroClasses />
 
         <TrustServiceSection />
         <ClassGrid license="licenseA" />
