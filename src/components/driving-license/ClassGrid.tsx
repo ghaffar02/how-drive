@@ -9,8 +9,8 @@ import road from '@/assets/svgs/driving-license-class-A/road.svg';
 
 import {useTranslations} from 'next-intl';
 
-export default function ClassAGrid() {
-  const t = useTranslations('licenseA');
+export default function ClassGrid({license}: {license: string}) {
+  const t = useTranslations(license);
 
   const licenseArr1 = t.raw('grid1Data');
   return (
