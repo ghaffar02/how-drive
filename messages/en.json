@@ -343,29 +343,15 @@
     "description": "We connect learner drivers and driving schools through a digital service.",
     "features": {
       "heading": "Function",
-      "items": [
-        "Students",
-        "Schools",
-        "Installation"
-      ]
+      "items": ["Students", "Schools", "Installation"]
     },
     "services": {
       "heading": "Service",
-      "items": [
-        "About Us",
-        "Pricing",
-        "Contact",
-        "Help"
-      ]
+      "items": ["About Us", "Pricing", "Contact", "Help"]
     },
     "support": {
       "heading": "Legal",
-      "items": [
-        "Imprint",
-        "Privacy Policy",
-        "Terms",
-        "Cookie"
-      ]
+      "items": ["Imprint", "Privacy Policy", "Terms", "Cookie"]
     }
   },
   "loginPage": {
@@ -427,25 +413,25 @@
       {
         "heading": "A1",
         "sub": "from 16",
-        "des": "Motorcycles up to 125 cc, max. 11 kW"
+        "des": "Up to 125 cm³, max. 11 kW"
       },
       {
         "heading": "AM",
         "sub": "from 15",
-        "des": "Motorcycles up to 45 km/h and 50 cc"
+        "des": "Up to 45 km/h and 50 cm³"
       }
     ],
-    "fileTitle": "ID - Passport photo - Eye test - First aid<br />if applicable, driving license copy",
-    "roadTitle": "Special drives:<br />5 Rural<br />4 Highway<br />3 Night",
-    "grund": "Basic theory",
-    "grundDes": "12 lessons - double periods",
+    "fileTitle": "ID - passport photo - eye test - first aid<br />If applicable, driver's license copy",
+    "roadTitle": "Special trips:<br />5 overland<br />4 highway<br />3 nights",
+    "grund": "Basic material",
+    "grundDes": "12 lessons - double lessons",
     "gult": "Validity",
-    "gultDes": "Unlimited, renewed every 15 years",
-    "mofa": "Moped",
+    "gultDes": "Unlimited, every 15 years renewed",
+    "mofa": "Mofa",
     "mofasub": "from 15",
-    "mofaDes": "Bicycles with max. 25 km/h",
-    "zusa": "Additional theory",
-    "zusaDes": "2–4 lessons - double periods",
+    "mofaDes": "Maximum speed up of 25 km/h",
+    "zusa": "Additive material",
+    "zusaDes": "2–4 lessons - double lessons",
     "heading1": "Important information",
     "heading2": "Cost overview",
     "drivingRules": [

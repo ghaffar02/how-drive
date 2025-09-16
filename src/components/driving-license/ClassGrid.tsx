@@ -66,6 +66,7 @@ export default function ClassGrid({license}: {license: string}) {
                 subHeading=""
                 description={t('grundDes')}
                 headingSize={false}
+                background="#edf0ff"
               />
             </Grid>
             <Grid
@@ -118,6 +119,7 @@ export default function ClassGrid({license}: {license: string}) {
                 subHeading=""
                 description={t('zusaDes')}
                 headingSize={false}
+                background="#edf0ff"
               />
             </Grid>
           </Grid>

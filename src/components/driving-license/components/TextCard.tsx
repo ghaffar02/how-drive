@@ -6,18 +6,20 @@ type CardProps = {
   subHeading?: string;
   description?: string;
   headingSize?: boolean;
+  background?: string;
 };
 
 export default function TextCard({
   heading,
   subHeading,
   description,
-  headingSize = true
+  headingSize = true,
+  background = '#f2f2f2'
 }: CardProps) {
   return (
     <Box
       sx={{
-        background: '#F2F2F2',
+        background: background,
         // maxWidth: '250px',
         width: '100%',
         height: {xs: '159px', sm: '164px', lg: '250px'},

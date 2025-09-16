@@ -343,29 +343,15 @@
     "description": "Wir verknupfen Fahrschüler und Fahrschulen durch ein digitales Service.",
     "features": {
       "heading": "Funktionen",
-      "items": [
-        "Fahrschüler",
-        "Fahrschulen",
-        "Installation"
-      ]
+      "items": ["Fahrschüler", "Fahrschulen", "Installation"]
     },
     "services": {
       "heading": "Service",
-      "items": [
-        "Über uns",
-        "Preise",
-        "Kontakt",
-        "Hilfe"
-      ]
+      "items": ["Über uns", "Preise", "Kontakt", "Hilfe"]
     },
     "support": {
       "heading": "Rechtliches",
-      "items": [
-        "Impressum",
-        "Datenschutz",
-        "AGB",
-        "Cookie"
-      ]
+      "items": ["Impressum", "Datenschutz", "AGB", "Cookie"]
     }
   },
   "loginPage": {
