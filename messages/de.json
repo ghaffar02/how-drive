@@ -343,15 +343,29 @@
     "description": "Wir verknupfen Fahrschüler und Fahrschulen durch ein digitales Service.",
     "features": {
       "heading": "Funktionen",
-      "items": ["Fahrschüler", "Fahrschulen", "Installation"]
+      "items": [
+        "Fahrschüler",
+        "Fahrschulen",
+        "Installation"
+      ]
     },
     "services": {
       "heading": "Service",
-      "items": ["Über uns", "Preise", "Kontakt", "Hilfe"]
+      "items": [
+        "Über uns",
+        "Preise",
+        "Kontakt",
+        "Hilfe"
+      ]
     },
     "support": {
       "heading": "Rechtliches",
-      "items": ["Impressum", "Datenschutz", "AGB", "Cookie"]
+      "items": [
+        "Impressum",
+        "Datenschutz",
+        "AGB",
+        "Cookie"
+      ]
     }
   },
   "loginPage": {
@@ -431,6 +445,64 @@
     "mofasub": "ab 15",
     "mofaDes": "Fahrräder mit max. 25 km/h",
     "zusa": "Zusatzstoff",
-    "zusaDes": "2-4 Unterrichte - Doppelstunden"
+    "zusaDes": "2-4 Unterrichte - Doppelstunden",
+    "heading1": "Wichtige Informationen",
+    "heading2": "Kostenübersicht",
+    "drivingRules": [
+      {
+        "title": "Stufenweiser Aufstieg",
+        "description": "Wer den Führerschein der Klasse A2 (mittelschwere Motorräder) bereits 2 Jahre besitzt, kann mit einer praktischen Prüfung direkt zur Klasse A aufsteigen, ohne erneute Theorieprüfung."
+      },
+      {
+        "title": "Fahrzeugbeschränkungen",
+        "description": "Klasse A berechtigt zum Führen aller Motorräder, unabhängig von Hubraum oder Leistung."
+      },
+      {
+        "title": "Praktische Prüfung",
+        "description": "Die praktische Prüfung dauert mindestens 60 Minuten und umfasst sowohl das Fahren im Straßenverkehr als auch das Vorführen von Grundfahraufgaben (z. B. Slalom, Bremsen, Ausweichen)."
+      },
+      {
+        "title": "AM und Mofas",
+        "description": "Die Zusatzstoffe für die Klasse AM sind auf 2 Doppelstunden beschränkt. Bei Mofas ist keine praktische Prüfung erforderlich."
+      },
+      {
+        "title": "Umschreibung",
+        "description": "Wer einen alten Führerschein der Klasse 3 (vor 1999) besitzt, hat automatisch die Klasse AM und A1 beschränkt (nur in Deutschland gültig). Für die unbeschränkte Klasse A ist eine Umschreibung und ggf. eine Prüfung nötig. Die alte Führerscheinklasse 3 muss bis spätestens 2033 in einen neuen EU-Führerschein umgetauscht werden."
+      }
+    ],
+    "drivingCosts": [
+      {
+        "title": "Sehtest",
+        "cost": "6–10 €"
+      },
+      {
+        "title": "Erste-Hilfe-Kurs",
+        "cost": "20–50 €"
+      },
+      {
+        "title": "Grundgebühr Fahrschule",
+        "cost": "500–1.000 € (je nach Region und Fahrschule)"
+      },
+      {
+        "title": "Theorieunterricht",
+        "cost": "200–400 €"
+      },
+      {
+        "title": "Fahrstunden",
+        "cost": "600–1.200 € (abhängig von der Anzahl der benötigten Stunden)"
+      },
+      {
+        "title": "TÜV-Gebühren",
+        "cost": "100–200 € (Anmeldegebühr, Theorie- und Praxisprüfung)"
+      },
+      {
+        "title": "Führerschein Ausstellung",
+        "cost": "40–60 €"
+      },
+      {
+        "title": "Gesamtkosten",
+        "cost": "1.500–3.000 € (je nach individueller Lernzeit und Region)"
+      }
+    ]
   }
 }

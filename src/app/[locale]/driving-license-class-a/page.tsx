@@ -4,15 +4,16 @@ import {Box} from '@mui/material';
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/Footer';
 import TrustServiceSection from '@/components/home/TrustServiceSection';
-import HowItWorks from '@/components/home/HowItWorks';
-import Faq from '@/components/home/Faq';
-import Advantages from '@/components/home/Advantages';
-import Pricing from '@/components/prices/Pricing';
-import LicenseSteps from '@/components/home/components/LicenseSteps';
 import HeroClasses from '@/components/driving-license/HeroClasses';
 import ClassGrid from '@/components/driving-license/ClassGrid';
+import ImportantInformation from '@/components/driving-license/ImportantInformation';
+import Costoverview from '@/components/driving-license/CostOverview';
+import {useTranslations} from 'next-intl';
 
 export default function Page() {
+  const t = useTranslations('licenseA');
+  const drivingRules = t.raw('drivingRules');
+  const drivingCosts = t.raw('drivingCosts');
   return (
     <>
       <Box>
@@ -30,9 +31,15 @@ export default function Page() {
         >
           <Navbar />
         </Box>
+        <HeroClasses />
+        <ClassGrid license="licenseA" />
+        <ImportantInformation
+          drivingRules={drivingRules}
+          heading={t('heading1')}
+        />
+        <Costoverview drivingCosts={drivingCosts} heading={t('heading2')} />
 
         <TrustServiceSection />
-        <ClassGrid license="licenseA" />
         <Footer />
       </Box>
     </>

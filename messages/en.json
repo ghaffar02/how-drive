@@ -343,15 +343,29 @@
     "description": "We connect learner drivers and driving schools through a digital service.",
     "features": {
       "heading": "Function",
-      "items": ["Students", "Schools", "Installation"]
+      "items": [
+        "Students",
+        "Schools",
+        "Installation"
+      ]
     },
     "services": {
       "heading": "Service",
-      "items": ["About Us", "Pricing", "Contact", "Help"]
+      "items": [
+        "About Us",
+        "Pricing",
+        "Contact",
+        "Help"
+      ]
     },
     "support": {
       "heading": "Legal",
-      "items": ["Imprint", "Privacy Policy", "Terms", "Cookie"]
+      "items": [
+        "Imprint",
+        "Privacy Policy",
+        "Terms",
+        "Cookie"
+      ]
     }
   },
   "loginPage": {
@@ -431,6 +445,64 @@
     "mofasub": "from 15",
     "mofaDes": "Bicycles with max. 25 km/h",
     "zusa": "Additional theory",
-    "zusaDes": "2–4 lessons - double periods"
+    "zusaDes": "2–4 lessons - double periods",
+    "heading1": "Important information",
+    "heading2": "Cost overview",
+    "drivingRules": [
+      {
+        "title": "Gradual ascent",
+        "description": "Anyone who has held a class A2 driving license (medium-weight motorcycles) for two years can upgrade directly to class A with a practical exam, without having to take another theory exam."
+      },
+      {
+        "title": "Vehicle restrictions",
+        "description": "Class A entitles you to drive all motorcycles, regardless of engine capacity or power."
+      },
+      {
+        "title": "Practical exam",
+        "description": "The practical exam lasts at least 60 minutes and includes both driving in traffic and the demonstration of basic driving tasks (e.g. slalom, braking, evasive maneuvers)."
+      },
+      {
+        "title": "AM and mopeds",
+        "description": "The additional materials for class AM are limited to 2 double lessons. No practical exam is required for mopeds."
+      },
+      {
+        "title": "Rewrite",
+        "description": "Anyone holding an old Class 3 driving license (pre-1999) automatically has the restricted Class AM and A1 (valid only in Germany). For the unrestricted Class A, a conversion and, if necessary, an exam is required. The old Class 3 driving license must be exchanged for a new EU driving license by 2033 at the latest."
+      }
+    ],
+    "drivingCosts": [
+      {
+        "title": "Eye test",
+        "cost": "6–10 €"
+      },
+      {
+        "title": "First aid course",
+        "cost": "20–50 €"
+      },
+      {
+        "title": "Basic driving school fee",
+        "cost": "500–1.000 € (depending on the region and driving school)"
+      },
+      {
+        "title": "Theory lessons",
+        "cost": "200–400 €"
+      },
+      {
+        "title": "Driving lessons",
+        "cost": "600–1.200 € (depending on the number of hours required)"
+      },
+      {
+        "title": "TÜV fees",
+        "cost": "100–200 € (registration fee, theory and practical exam)"
+      },
+      {
+        "title": "Driving license issuance",
+        "cost": "40–60 €"
+      },
+      {
+        "title": "Total costs",
+        "cost": "1.500–3.000 € (depending on individual learning time and region)"
+      }
+    ]
   }
 }
