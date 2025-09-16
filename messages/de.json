@@ -397,5 +397,40 @@
     "button": "Weiter",
     "remember": "Wieder an das Passwort erinnert?",
     "login": "Anmelden"
+  },
+  "licenseA": {
+    "grid1Data": [
+      {
+        "heading": "A",
+        "sub": "ab 24",
+        "des": "Alle Motorräder (unbegrenzt)"
+      },
+      {
+        "heading": "A2",
+        "sub": "ab 18",
+        "des": "Motorräder bis 35 kW"
+      },
+      {
+        "heading": "A1",
+        "sub": "ab 16",
+        "des": "Krafträder bis 125 cm³, max. 11 kW"
+      },
+      {
+        "heading": "AM",
+        "sub": "ab 15",
+        "des": "Krafträder bis 45 km/h und 50 cm³"
+      }
+    ],
+    "fileTitle": "Ausweis - Passbild - Sehtest - Erste-Hilfe<br />ggb. Führerscheinkopie",
+    "roadTitle": "Sonderfahrten:<br />5 Überland<br />4 Autobahn<br />3 Nacht",
+    "grund": "Grundstoff",
+    "grundDes": "12 Unterrichte - Doppelstunden",
+    "gult": "Gültigkeit",
+    "gultDes": "Unbefristet, je 15 Jahre erneut",
+    "mofa": "Mofa",
+    "mofasub": "ab 15",
+    "mofaDes": "Fahrräder mit max. 25 km/h",
+    "zusa": "Zusatzstoff",
+    "zusaDes": "2-4 Unterrichte - Doppelstunden"
   }
 }
