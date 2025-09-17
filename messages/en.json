@@ -343,15 +343,29 @@
     "description": "We connect learner drivers and driving schools through a digital service.",
     "features": {
       "heading": "Function",
-      "items": ["Students", "Schools", "Installation"]
+      "items": [
+        "Students",
+        "Schools",
+        "Installation"
+      ]
     },
     "services": {
       "heading": "Service",
-      "items": ["About Us", "Pricing", "Contact", "Help"]
+      "items": [
+        "About Us",
+        "Pricing",
+        "Contact",
+        "Help"
+      ]
     },
     "support": {
       "heading": "Legal",
-      "items": ["Imprint", "Privacy Policy", "Terms", "Cookie"]
+      "items": [
+        "Imprint",
+        "Privacy Policy",
+        "Terms",
+        "Cookie"
+      ]
     }
   },
   "loginPage": {
@@ -365,7 +379,9 @@
     "emailError": "E-Mail is required",
     "passwordError": "Passwort is required",
     "passMin": "Password must be at least 8 characters long",
-    "passChar": "Password must contain at least one number"
+    "passChar": "Password must contain at least one number",
+    "ToastSuccessful": "Login successful",
+    "ToastError": "Login failed. Please try again."
   },
   "registerPage": {
     "heading": "Create an account as:",
