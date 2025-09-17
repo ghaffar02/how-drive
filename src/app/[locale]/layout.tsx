@@ -6,6 +6,8 @@ import '../globals.css';
 
 // client provider
 import QueryProvider from '../QueryProvider';
+import {ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
@@ -40,7 +42,19 @@ export default async function LocaleLayout({
     <html lang={locale} suppressHydrationWarning>
       <body>
         <NextIntlClientProvider>
-          <QueryProvider>{children}</QueryProvider>
+          <QueryProvider>
+            {children}
+            <ToastContainer
+              position="top-right"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={true}
+              closeOnClick
+              pauseOnHover
+              draggable
+              theme="colored"
+            />
+          </QueryProvider>
         </NextIntlClientProvider>
       </body>
     </html>
