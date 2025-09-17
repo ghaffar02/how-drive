@@ -4,6 +4,7 @@ import Logo from '@/assets/pngs/logo.png';
 import Image from 'next/image';
 import registerImage from '@/assets/svgs/registerImage.svg';
 import {useTranslations} from 'next-intl';
+import Link from 'next/link';
 
 export default function PasswordResetPage() {
   const t = useTranslations('passwordPage');
@@ -133,7 +134,8 @@ export default function PasswordResetPage() {
           }}
         >
           {t('remember')}{' '}
-          <span
+          <Link
+            href={'/login'}
             style={{
               cursor: 'pointer',
               color: '#1270ff',
@@ -143,7 +145,7 @@ export default function PasswordResetPage() {
             }}
           >
             {t('login')}
-          </span>
+          </Link>
         </Typography>
       </Box>
       {/* Right Side */}
