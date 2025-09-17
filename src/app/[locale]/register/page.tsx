@@ -15,6 +15,7 @@ import Image from 'next/image';
 import {AnimatePresence, motion} from 'framer-motion';
 import registerImage from '@/assets/svgs/registerImage.svg';
 import {useTranslations} from 'next-intl';
+import {useRegister} from '@/hooks/useRegister';
 
 export default function RegisterPage() {
   const [tabValue, setTabValue] = useState(0);
@@ -36,14 +37,17 @@ export default function RegisterPage() {
     formState: {errors}
   } = useForm<FormValues>();
 
-  const onSubmit = (data: any) => {
-    if (tabValue === 0) {
-      const {vorname, nachname, email, password} = data;
-      console.log('Fahrschüler values:', {vorname, nachname, email, password});
-    } else {
-      const {schule, email, password} = data;
-      console.log('Fahrschule values:', {schule, email, password});
-    }
+  const {mutate, isPending, isError, error, data} = useRegister();
+
+  const onSubmit = async (data: FormValues) => {
+    const email = data.email;
+    const password = data.password;
+    const name =
+      tabValue === 0 ? `${data.vorname} ${data.nachname}` : `${data.schule}`;
+    const role = tabValue === 0 ? 'User' : 'SuperAdmin';
+    const address = 'any';
+    const phone = 'any';
+    mutate({email, password, name, role, address, phoneNumber: phone});
     reset();
   };
 
