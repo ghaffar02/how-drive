@@ -8,6 +8,7 @@ import Link from 'next/link';
 import loginImage from '@/assets/svgs/loginImage.svg';
 
 import {useTranslations} from 'next-intl';
+import {useLogin} from '@/hooks/useLogin';
 
 interface FormValues {
   email: string;
@@ -27,28 +28,31 @@ export default function LoginPage() {
       password: ''
     }
   });
+  const {mutate, isPending, isError, error, data} = useLogin();
 
   const onSubmit = async (data: FormValues) => {
-    try {
-      const res = await fetch('https://dummyjson.com/auth/login', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-          username: data.email,
-          password: data.password
-        })
-      });
+    // try {
+    //   const res = await fetch('https://dummyjson.com/auth/login', {
+    //     method: 'POST',
+    //     headers: {'Content-Type': 'application/json'},
+    //     body: JSON.stringify({
+    //       username: data.email,
+    //       password: data.password
+    //     })
+    //   });
 
-      if (res.ok) {
-        const data1 = await res.json();
-        console.log('This is the data after api: ', data1);
-      } else {
-        console.log('We got an error:', res.status, res.statusText);
-      }
-    } catch (err) {
-      console.error('Error during login:', err);
-    }
-
+    //   if (res.ok) {
+    //     const data1 = await res.json();
+    //     console.log('This is the data after api: ', data1);
+    //   } else {
+    //     console.log('We got an error:', res.status, res.statusText);
+    //   }
+    // } catch (err) {
+    //   console.error('Error during login:', err);
+    // }
+    const email = data.email;
+    const password = data.password;
+    mutate({email, password});
     reset();
   };
 
