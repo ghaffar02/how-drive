@@ -343,29 +343,15 @@
     "description": "We connect learner drivers and driving schools through a digital service.",
     "features": {
       "heading": "Function",
-      "items": [
-        "Students",
-        "Schools",
-        "Installation"
-      ]
+      "items": ["Students", "Schools", "Installation"]
     },
     "services": {
       "heading": "Service",
-      "items": [
-        "About Us",
-        "Pricing",
-        "Contact",
-        "Help"
-      ]
+      "items": ["About Us", "Pricing", "Contact", "Help"]
     },
     "support": {
       "heading": "Legal",
-      "items": [
-        "Imprint",
-        "Privacy Policy",
-        "Terms",
-        "Cookie"
-      ]
+      "items": ["Imprint", "Privacy Policy", "Terms", "Cookie"]
     }
   },
   "loginPage": {
@@ -575,6 +561,59 @@
       {
         "title": "Total costs",
         "cost": "1.500–3.000 € (depending on individual learning time and region)"
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "data": [
+      {
+        "heading": "1. Data Controller",
+        "html": "The entity responsible for data processing on this website is:<br /><br />Max Mustermann<br />Musterstraße 123<br />10115 Berlin<br /><br />info@wiefuererschein.de"
+      },
+      {
+        "heading": "2. General Information on Data Processing",
+        "html": "We process personal data only in accordance with the applicable legal provisions (General Data Protection Regulation (GDPR), German Federal Data Protection Act (BDSG), and German Telemedia Act (TMG). This privacy policy informs you about the nature, scope, and purpose of the collection and use of personal data."
+      },
+      {
+        "heading": "3. Collection and Storage of Personal Data",
+        "html": "<strong>a) Registration of Driving Students</strong><br /><br />When you register as a driving student on our platform, we collect the following data:<br /><br /><ul style='margin-left: 18px'><li>First and last name</li><li>Email address</li><li>Phone number (optional)</li><li>Place of residence (optional)</li><li>Username and password</li></ul><br />Registration and use of the platform is free of charge for driving students.<br /><br /><strong>b) Registration of Driving Schools</strong><br /><br />Driving schools using our platform provide the following additional data:<br /><br /><ul style='margin-left: 18px'><li>Name of the driving school</li><li>Address of the driving school</li><li>Phone number of the driving school</li><li>Email address of the driving school</li><li>Opening hours</li><li>Bank details (for processing monthly payments)</li><li>If applicable, further information about the offer (e.g., types of vehicles, language courses)</li></ul><br /><strong>c) Booking of Theory and Driving Lessons</strong><br /><br />When you book appointments, we additionally store:<br /><br /><ul style='margin-left: 18px'><li>Booked appointments</li><li>Communication data with driving schools</li></ul><br /><strong>d) Use of the Contact Form</strong><br /><br />If you contact us via the contact form or by email, we store your message and the contact details you provide in order to process your request."
+      },
+      {
+        "heading": "4. Payment Processing",
+        "html": "For driving schools using our platform for a monthly fee, we offer payment processing. For this purpose, we work with the payment service provider <strong>[Name of the payment service provider, e.g., Stripe, PayPal]</strong>. The following data is processed during payment:<br /><br /><ul style='margin-left: 18px'><li>Name of the driving school</li><li>Billing address</li><li>Bank details</li><li>Payment history</li></ul><br /><br />Data is transmitted encrypted and used solely for payment processing. For further information, please refer to the privacy policy of our payment service provider: <strong>[Link to the privacy policy of the payment service provider]</strong>."
+      },
+      {
+        "heading": "5. Newsletter",
+        "html": "If you subscribe to our newsletter, we collect your email address to regularly send you information about our platform, new features, and offers. Subscription to the newsletter is via a double opt-in procedure. After registration, you will receive an email with a confirmation link. Only after confirmation will you be added to our newsletter distribution list. You can unsubscribe from the newsletter at any time via the unsubscribe link in each email or by sending us a message."
+      },
+      {
+        "heading": "6. Use and Disclosure of Data",
+        "html": "Your data will be used exclusively for the following purposes: <br /><br /><ul style='margin-left: 18px'><li>Provision and improvement of our services</li><li>Communication with you</li><li>Processing of bookings and payments</li><li>Answering support requests</li><li>Sending the newsletter (if subscribed)</li></ul><br />Your data will only be disclosed to third parties if this is necessary for the fulfillment of the contract (e.g., to the booked driving school or the payment service provider) or if we are legally obliged to do so."
+      },
+      {
+        "heading": "7. Legal Basis for Data Processing",
+        "html": "The processing of your data is based on:<br /><br /><ul style='margin-left: 18px'><li>Art. 6(1)(a) GDPR (consent, e.g., for the newsletter)</li><li>Art. 6(1)(b) GDPR (for the performance of a contract, e.g., for bookings and payments)</li><li>Art. 6(1)(c) GDPR (legal obligation)</li><li>Art. 6(1)(f) GDPR (legitimate interest, e.g., for improving our services)</li></ul>"
+      },
+      {
+        "heading": "8. Storage Period",
+        "html": "Your data will only be stored for as long as necessary to fulfill the purposes mentioned. After termination of the user contract or at your request, your data will be deleted, unless legal retention obligations (e.g., tax or commercial law retention periods) prevent this."
+      },
+      {
+        "heading": "9. Your Rights",
+        "html": "As a user of our platform, you have the following rights:<br /><br /><ul style='margin-left: 18px'><li>Right of access (Art. 15 GDPR): You can request information about the personal data we process.</li><li>Right to rectification (Art. 16 GDPR): You can request the correction of inaccurate data.</li><li>Right to erasure (Art. 17 GDPR): You can request the deletion of your data, provided there are no legal retention obligations.</li><li>Right to restriction of processing (Art. 18 GDPR): You can request the restriction of the processing of your data.</li><li>Right to data portability (Art. 20 GDPR): You can receive your data in a machine-readable format.</li><li>Right to object (Art. 21 GDPR): You can object to the processing of your data.</li><li>Right to lodge a complaint (Art. 77 GDPR): You can lodge a complaint with a supervisory authority.</li></ul><br /> To exercise these rights, please contact: <strong>[Email Address]</strong>"
+      },
+      {
+        "heading": "10. Cookies and Tracking",
+        "html": "Our website uses cookies to make the service more user-friendly. You can disable the storage of cookies in your browser settings. Please note that this may limit the functionality of our website. We do not use third-party tracking tools that collect personal data."
+      },
+      {
+        "heading": "11. Data Security",
+        "html": "We use technical and organizational measures to protect your data from loss, manipulation, and unauthorized access."
+      },
+      {
+        "heading": "12. Changes to this Privacy Policy",
+        "html": "We reserve the right to adapt this privacy policy to changed legal situations or changes in our services. The current version can always be found on this page."
       }
     ]
   }

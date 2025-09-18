@@ -343,29 +343,15 @@
     "description": "Wir verknupfen Fahrschüler und Fahrschulen durch ein digitales Service.",
     "features": {
       "heading": "Funktionen",
-      "items": [
-        "Fahrschüler",
-        "Fahrschulen",
-        "Installation"
-      ]
+      "items": ["Fahrschüler", "Fahrschulen", "Installation"]
     },
     "services": {
       "heading": "Service",
-      "items": [
-        "Über uns",
-        "Preise",
-        "Kontakt",
-        "Hilfe"
-      ]
+      "items": ["Über uns", "Preise", "Kontakt", "Hilfe"]
     },
     "support": {
       "heading": "Rechtliches",
-      "items": [
-        "Impressum",
-        "Datenschutz",
-        "AGB",
-        "Cookie"
-      ]
+      "items": ["Impressum", "Datenschutz", "AGB", "Cookie"]
     }
   },
   "loginPage": {
@@ -456,68 +442,68 @@
     "description": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future.",
     "stepsData": [
       {
-        "title": "Driving school registration",
+        "title": "Anmeldung Fahrschule",
         "content": [
-          "Choose a certified driving school.",
-          "Sign training contract with driving school."
+          "Wähle eine zertifizierte Fahrschule.",
+          "Unterschreibe Ausbildungsvertrag bei der Fahrschule."
         ]
       },
       {
-        "title": "Prepare documents",
+        "title": "Unterlagen vorbereiten",
         "content": [
-          "Identity card or passport: proof of residence.",
-          "Biometric passport photo: standard format.",
-          "Eye test: Must not be older than 2 years.",
-          "First aid course: 9 teaching units."
+          "Personalausweis oder Reisepass: Nachweis des Wohnsitzes.",
+          "Biometrisches Passbild: Standardformat.",
+          "Sehtest: Nicht älter als 2 Jahre sein.",
+          "Erste-Hilfe-Kurs: 9 Unterrichtseinheiten."
         ]
       },
       {
-        "title": "Driving license application",
+        "title": "Führerscheinantrag",
         "content": [
-          "The application for a driving license must be submitted to your responsible driving license office.",
-          "The application is submitted either through your driving school or directly to the office."
+          "Der Antrag auf Erteilung des Führerscheins muss bei deiner zuständigen Fahrerlaubnisbehörde eingereicht werden.",
+          "Der Antrag wird entweder über deine Fahrschule oder direkt bei der Behörde eingereicht."
         ]
       },
       {
-        "title": "Theory lessons",
+        "title": "Theoriestunden",
         "content": [
-          "Raw material: 12 double lessons.",
-          "Additive material: 2 to 4 double lessons."
+          "Grundstoff: 12 Doppelstunden.",
+          "Zusatzstoff: 2 bzw. 4 Doppelstunden."
         ]
       },
       {
-        "title": "Theoretical exam",
+        "title": "Theoretische Prüfung",
         "content": [
-          "Earliest 3 months before minimum age.",
-          "Approx. 30 questions in multiple-choice format.",
-          "Max. 10 penalty points allowed.",
-          "Approved by TÜV or DEKRA."
+          "Frühestens 3 Monate vor Mindestalter.",
+          "Ca. 30 Fragen im Multiple-Choice-Format.",
+          "Max. 10 Fehlerpunkte erlaubt (aber nicht 2x 5er-Fragen falsch).",
+          "Abgenommen bei TÜV oder DEKRA."
         ]
       },
       {
-        "title": "Driving lessons",
+        "title": "Fahrstunden",
         "content": [
-          "Overland: 5 trips.",
-          "Highway: 4 trips.",
-          "Night: 3 trips.",
-          "In addition, there are normal practice runs."
+          "Überland: 5 Fahrten.",
+          "Autobahn: 4 Fahrten.",
+          "Nachtfahrt: 3 Fahrten.",
+          "Hinzu kommen normale Übungsfahrten."
         ]
       },
       {
-        "title": "Practical exam",
+        "title": "Praktische Prüfung",
         "content": [
-          "Earliest 1 month before minimum age.",
-          "Approx. 45 to 60 minutes.",
-          "Vehicle check, driving behavior in city, country and motorway traffic, reversing, parking, hazard assessment.",
-          "Failed: Retake only possible after 2 weeks."
+          "Frühestens 1 Monate vor Mindestalter.",
+          "Ca. 45 bis 60 Minuten.",
+          "Fahrzeugcheck, Fahrverhalten im Stadt-, Überland- und Autobahnverkehr, Rückwärtsfahren, Parken, Gefahreneinschätzung.",
+          "Nicht bestanden: Wiederholung erst nach 2 Wochen."
         ]
       },
       {
-        "title": "Issuing a driving license",
+        "title": "Erteilung des Führerscheins",
         "content": [
-          "The EU driving license is issued.",
-          "Get your driving license from the driver’s license office.",
-          "For BF17: Driving test certificate only, driving allowed only with registered accompanying persons."
+          "Der EU-Führerschein wird ausgestellt.",
+          "Hole dir deinen Führerschein bei der Fahrerlaubnisbehörde ab.",
+          "Bei BF17: Keinen Führerschein, sondern eine Prüfungsbescheinigung. Fahren nur mit eingetragenen Begleitpersonen erlaubt."
         ]
       }
     ],
@@ -575,6 +561,59 @@
       {
         "title": "Gesamtkosten",
         "cost": "1.500–3.000 € (je nach individueller Lernzeit und Region)"
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Datenschutz",
+    "data": [
+      {
+        "heading": "1. Verantwortliche Stelle",
+        "html": "Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br /><br />Max Mustermann<br />Musterstraße 123<br />10115 Berlin<br /><br />info@wiefuererschein.de"
+      },
+      {
+        "heading": "2. Allgemeines zur Datenverarbeitung",
+        "html": "Wir verarbeiten personenbezogene Daten nur im Rahmen der gesetzlichen Bestimmungen (Datenschutz-Grundverordnung (DSGVO), Bundesdatenschutzgesetz (BDSG) und Telemediengesetz (TMG). Mit dieser Datenschutzerklärung informieren wir Sie über Art, Umfang und Zweck der Erhebung und Verwendung personenbezogener Daten."
+      },
+      {
+        "heading": "3. Erhebung und Speicherung personenbezogener Daten",
+        "html": "<strong>a) Bei der Registrierung von Fahrschüler:innen</strong><br /><br />Wenn Sie sich als Fahrschüler:in auf unserer Plattform registrieren, erheben wir folgende Daten:<br /><br /><ul style='margin-left: 18px'><li>Vor- und Nachname</li><li>E-Mail-Adresse</li><li>Telefonnummer (freiwillig)</li><li>Wohnsitz (freiwillig)</li><li>Benutzername und Passwort</li></ul><br />Die Registrierung und Nutzung der Plattform ist für Fahrschüler:innen kostenfrei.<br /><br /><strong>b) Bei der Registrierung von Fahrschulen</strong><br /><br />Fahrschulen, die unsere Plattform nutzen, geben zusätzlich folgende Daten an:<br /><br /><ul style='margin-left: 18px'><li>Name der Fahrschule</li><li>Adresse der Fahrschule</li><li>Telefonnummer der Fahrschule</li><li>E-Mail-Adresse der Fahrschule</li><li>Öffnungszeiten</li><li>Bankverbindung (für die Abwicklung der monatlichen Zahlungen)</li><li>ggf. weitere Informationen zum Angebot (z.B. Fahrzeugtypen, Sprachkurse)</li></ul><br /><strong>c) Bei der Buchung von Theorie- und Fahrstunden</strong><br /><br />Wenn Sie Termine buchen, speichern wir zusätzlich:<br /><br /><ul style='margin-left: 18px'><li>Gebuchte Termine</li><li>Kommunikationsdaten mit Fahrschulen</li></ul><br /><strong>d) Bei der Nutzung des Kontaktformulars</strong><br /><br />Wenn Sie uns über das Kontaktformular oder per E-Mail erreichen, speichern wir Ihre Nachricht sowie die von Ihnen angegebenen Kontaktdaten, um Ihre Anfrage bearbeiten zu können."
+      },
+      {
+        "heading": "4. Zahlungsabwicklung",
+        "html": "Für Fahrschulen, die unsere Plattform gegen ein monatliches Entgelt nutzen, bieten wir die Abwicklung der Zahlungen an. Dazu arbeiten wir mit dem Zahlungsdienstleister <strong>[Name des Zahlungsdienstleisters, z.B. Stripe, PayPal]</strong> zusammen. Bei der Zahlungsabwicklung werden folgende Daten verarbeitet:<br /><br /><ul style='margin-left: 18px'><li>Name der Fahrschule</li><li>Rechnungsadresse</li><li>Bankverbindung</li><li>Zahlungshistorie</li></ul><br /><br />Die Daten werden verschlüsselt übertragen und nur für die Abwicklung der Zahlungen verwendet. Weitere Informationen finden Sie in den Datenschutzbestimmungen unseres Zahlungsdienstleisters: <strong>[Link zur Datenschutzerklärung des Zahlungsdienstleisters]</strong>."
+      },
+      {
+        "heading": "5. Newsletter",
+        "html": "Wenn Sie unseren Newsletter abonnieren, erheben wir Ihre E-Mail-Adresse, um Ihnen regelmäßig Informationen über unsere Plattform, neue Funktionen und Angebote zukommen zu lassen. Die Anmeldung zum Newsletter erfolgt über ein Double-Opt-In-Verfahren. Sie erhalten nach Ihrer Anmeldung eine E-Mail mit einem Bestätigungslink. Erst nach der Bestätigung werden Sie in unseren Newsletter-Verteiler aufgenommen. Sie können den Newsletter jederzeit über den in jeder E-Mail enthaltenen Abmeldelink oder durch eine Nachricht an uns abbestellen."
+      },
+      {
+        "heading": "6. Nutzung und Weitergabe der Daten",
+        "html": "Ihre Daten werden ausschließlich für folgende Zwecke verwendet: <br /><br /><ul style='margin-left: 18px'><li>Bereitstellung und Verbesserung unserer Dienste</li><li>Kommunikation mit Ihnen</li><li>Abwicklung von Buchungen und Zahlungen</li><li>Beantwortung von Supportanfragen</li><li>Versand des Newsletters (bei Abonnement)</li></ul><br />Eine Weitergabe Ihrer Daten an Dritte erfolgt nur, wenn dies für die Erfüllung des Vertrages erforderlich ist (z.B. an die gebuchte Fahrschule oder den Zahlungsdienstleister) oder wenn wir gesetzlich dazu verpflichtet sind."
+      },
+      {
+        "heading": "7. Rechtsgrundlagen der Datenverarbeitung",
+        "html": "Die Verarbeitung Ihrer Daten erfolgt auf Grundlage von:<br /><br /><ul style='margin-left: 18px'><li>Art. 6 Abs. 1 lit. a DSGVO (Einwilligung, z.B. bei Newsletter)</li><li>Art. 6 Abs. 1 lit. b DSGVO (zur Erfüllung eines Vertrages, z.B. bei Buchungen und Zahlungen)</li><li>Art. 6 Abs. 1 lit. c DSGVO (rechtliche Verpflichtung)</li><li>Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse, z.B. zur Verbesserung unserer Dienste)</li></ul>"
+      },
+      {
+        "heading": "8. Speicherdauer",
+        "html": "Ihre Daten werden nur so lange gespeichert, wie es für die Erfüllung der genannten Zwecke erforderlich ist. Nach Beendigung des Nutzervertrages oder auf Ihr Verlangen hin werden Ihre Daten gelöscht, sofern keine gesetzlichen Aufbewahrungspflichten (z.B. steuerrechtliche oder handelsrechtliche Aufbewahrungsfristen) entgegenstehen."
+      },
+      {
+        "heading": "9. Ihre Rechte",
+        "html": "Als Nutzer unserer Plattform haben Sie folgende Rechte:<br /><br /><ul style='margin-left: 18px'><li><strong>Auskunftsrecht</strong> (Art. 15 DSGVO): Sie können Auskunft über die von uns verarbeiteten personenbezogenen Daten verlangen.</li><li><strong>Berichtigungsrecht</strong> (Art. 16 DSGVO): Sie können die Berichtung unrichtiger Daten verlangen.</li><li><strong>Löschungsrecht</strong> (Art. 17 DSGVO): Sie können die Löschung Ihrer Daten verlangen, sofern keine gesetzlichen Aufbewahrungspflichten bestehen.</li><li><strong>Einschränkungsrecht</strong> (Art. 18 DSGVO): Sie können die Einschränkung der Verarbeitung Ihrer Daten verlangen.</li><li><strong>Datenübertragbarkeitsrecht</strong> (Art. 20 DSGVO): Sie können Ihre Daten in einem maschinell lesbaren Format erhalten.</li><li><strong>Widerspruchsrecht</strong> (Art. 21 DSGVO): Sie können der Verarbeitung Ihrer Daten widersprechen.</li><li><strong>Beschwerderecht</strong> (Art. 77 DSGVO): Sie können sich bei einer Aufsichtsbehörde beschweren.</li></ul><br /> To exercise these rights, please contact: <strong>[E-Mail-Adresse]</strong>"
+      },
+      {
+        "heading": "10. Cookies und Tracking",
+        "html": "Unsere Website nutzt Cookies, um den Service nutzerfreundlicher zu gestalten. Sie können die Speicherung von Cookies in Ihren Browsereinstellungen deaktivieren. Bitte beachten Sie, dass dies die Funktionalität unserer Website einschränken kann. Wir nutzen keine Tracking-Tools von Dritten, die personenbezogene Daten sammeln."
+      },
+      {
+        "heading": "11. Datensicherheit",
+        "html": "Wir setzen technische und organisatorische Maßnahmen ein, um Ihre Daten vor Verlust, Manipulation und unberechtigtem Zugriff zu schützen."
+      },
+      {
+        "heading": "12. Änderungen dieser Datenschutzerklärung",
+        "html": "Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie an geänderte Rechtslagen oder Änderungen unserer Dienste anzupassen. Die aktuelle Version finden Sie immer auf dieser Seite."
       }
     ]
   }
