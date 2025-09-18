@@ -6,15 +6,14 @@ import KeyboardArrowDownRounded from '@mui/icons-material/KeyboardArrowDownRound
 
 type Props = {label: string; items: string[]};
 
-const textStyle = {
-  color: '#000000',
-  fontSize: {xs: '14px', md: '15px', lg: '16px'},
-  fontWeight: '300',
-  lineHeight: '1.6em',
-  fontFamily: '"Inter", "Inter Placeholder", sans-serif !important'
-};
-
 export default function MenuDropdown({label, items}: Props) {
+  const textStyle = {
+    color: '#000000',
+    fontSize: {xs: '14px', md: '15px', lg: '16px'},
+    fontWeight: '300',
+    lineHeight: '1.6em',
+    fontFamily: '"Inter", "Inter Placeholder", sans-serif !important'
+  };
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLDivElement | null>(null);
   const enter = () => setOpen(true);
