@@ -35,7 +35,11 @@ export default function Page() {
         >
           <Navbar />
         </Box>
-        <HeroClasses />
+        <HeroClasses
+          title1={t('title1')}
+          title2={t('title2')}
+          description={t('descriptionhero')}
+        />
         <ClassGrid license="licenseA" />
         <ImportantInformation
           drivingRules={drivingRules}

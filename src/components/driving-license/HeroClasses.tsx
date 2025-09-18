@@ -2,8 +2,12 @@
 import {motion} from 'framer-motion';
 import {Box, Typography} from '@mui/material';
 import bgImage from '@/assets/pngs/DrivingLicenseClasses/textImageHero.avif';
-
-export default function HeroClass() {
+type HeroClass = {
+  title1: string;
+  title2: string;
+  description: string;
+};
+export default function HeroClass({title1, title2, description}: HeroClass) {
   return (
     <Box sx={{bgcolor: '#FAFAFA'}}>
       <Box
@@ -40,7 +44,7 @@ export default function HeroClass() {
             // height: '100%',
             width: '100%',
             '&::after': {
-              content: '"Driving license"', // same text overlay
+              content: `"${title1}"`,
               position: 'absolute',
               left: 0,
               top: 0,
@@ -56,7 +60,7 @@ export default function HeroClass() {
             }
           }}
         >
-          Driving license
+          {title1}
         </Typography>
 
         <Typography
@@ -82,7 +86,7 @@ export default function HeroClass() {
             // marginBottom: '16px'
           }}
         >
-          Class A
+          {title2}
         </Typography>
 
         {/* Description */}
@@ -109,10 +113,17 @@ export default function HeroClass() {
             mt: '32px'
           }}
         >
-          Motorcycles in four categories, from light mopeds to larger
-          motorcycles.
+          {description}
         </Typography>
       </Box>
     </Box>
   );
 }
+
+// "title1": "Driving license ",
+//   "title2": "Class A",
+//   "descriptionhero": " Motorcycles in four categories, from light mopeds to larger  motorcycles.",
+
+// "title1": "Führerschein",
+// "title2": " Klasse A",
+// "descriptionhero": "Krafträder in vier Kategorien, von leichten Kleinkrafträdern (Mopeds) bis größere Motorräder.",
