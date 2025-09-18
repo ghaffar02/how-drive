@@ -567,6 +567,372 @@
       }
     ]
   },
+  "licenseB": {
+    "stepsData": [
+      {
+        "title": "Driving school registration",
+        "content": [
+          "Choose a certified driving school.",
+          "Sign training contract with driving school."
+        ]
+      },
+      {
+        "title": "Prepare documents",
+        "content": [
+          "Identity card or passport: proof of residence.",
+          "Biometric passport photo: standard format.",
+          "Eye test: Must not be older than 2 years.",
+          "First aid course: 9 teaching units."
+        ]
+      },
+      {
+        "title": "Driving license application",
+        "content": [
+          "The application for a driving license must be submitted to your responsible driving license office.",
+          "The application is submitted either through your driving school or directly to the office."
+        ]
+      },
+      {
+        "title": "Theory lessons",
+        "content": [
+          "Raw material: 12 double lessons.",
+          "Additive material: 2 to 4 double lessons."
+        ]
+      },
+      {
+        "title": "Theoretical exam",
+        "content": [
+          "At earliest 3 months before minimum age.",
+          "Approx. 30 questions in multiple-choice format.",
+          "Max. 10 penalty points allowed.",
+          "Approved by TÜV or DEKRA."
+        ]
+      },
+      {
+        "title": "Driving lessons",
+        "content": [
+          "Overland: 5 trips.",
+          "Highway: 4 trips.",
+          "Night: 3 trips.",
+          "In addition, there are normal practice runs."
+        ]
+      },
+      {
+        "title": "Practical exam",
+        "content": [
+          "At earliest 1 month before minimum age.",
+          "Approx. 45 to 60 minutes.",
+          "Vehicle check, driving behavior in city, country and motorway traffic, reversing, parking, hazard assessment.",
+          "Failed: Retake only possible after 2 weeks."
+        ]
+      },
+      {
+        "title": "Issuing a driving license",
+        "content": [
+          "The EU driving license is issued.",
+          "Get your driving license from the driver’s license office.",
+          "For BF17: No driving license, but a driving test certificate. Driving is only permitted with registered accompanying persons."
+        ]
+      }
+    ],
+    "drivingRules": [
+      {
+        "title": "Accompanied driving from 17 (BF17)",
+        "description": "At 17, you are allowed to drive with an accompanying adult (at least 30 years old, at least five years of continuous possession of a Class B license, and a maximum of one point in Flensburg). The exam certificate is only valid in Germany."
+      },
+      {
+        "title": "Trailer regulation",
+        "description": "With class B, you can tow trailers up to 750 kg. For heavier trailers, class BE or B96 is required."
+      },
+      {
+        "title": "Automatic regulation (B197)",
+        "description": "Training partly on automatic, but driving a manual car is still permitted if at least 10 hours training on a manual plus a 15-minute exam on a manual have been completed."
+      },
+      {
+        "title": "Automatic restriction",
+        "description": "Those who take the exam in an automatic transmission will receive a driving license with the key number 78 (automatic transmission only). An additional test is required for manual transmissions."
+      },
+      {
+        "title": "Rewrite",
+        "description": "Holders of an old Class 3 driving license (before 1999) automatically have Class B. A conversion is only necessary for the new EU card driving license, not for the driving license itself."
+      }
+    ]
+  },
+  "licenseC": {
+    "stepsData": [
+      {
+        "title": "Driving school registration",
+        "content": [
+          "Choose a certified driving school.",
+          "Sign training contract with driving school."
+        ]
+      },
+      {
+        "title": "Prepare documents",
+        "content": [
+          "Identity card or passport: proof of residence.",
+          "Biometric passport photo: standard format.",
+          "Ophthalmological certificate: acuity, visual field, color vision, etc.",
+          "First aid course: 9 teaching units.",
+          "Medical examination (form: §11 FeV): family doctor or company doctor.",
+          "Copy of driving license: Class B."
+        ]
+      },
+      {
+        "title": "Driving license application",
+        "content": [
+          "The application for a driving license must be submitted to your responsible driving license office.",
+          "The application is submitted either through your driving school or directly to the office."
+        ]
+      },
+      {
+        "title": "Theory lessons",
+        "content": [
+          "Raw material: 6 double lessons.",
+          "Additive material: 4 to 10 double lessons."
+        ]
+      },
+      {
+        "title": "Theoretical exam",
+        "content": [
+          "At earliest 3 months before minimum age.",
+          "Approx. 30-40 questions in multiple-choice format.",
+          "Max. 10 penalty points allowed.",
+          "Approved by TÜV or DEKRA."
+        ]
+      },
+      {
+        "title": "Driving lessons",
+        "content": [
+          "Overland: 5 trips.",
+          "Highway: 2 trips.",
+          "Night: 3 trips.",
+          "In addition, there are normal practice runs."
+        ]
+      },
+      {
+        "title": "Practical exam",
+        "content": [
+          "At earliest 1 month before minimum age.",
+          "Approx. 75 minutes.",
+          "Vehicle check, driving behavior in city, country and motorway traffic, reversing, parking, hazard assessment.",
+          "Failed: Retake only possible after 2 weeks."
+        ]
+      },
+      {
+        "title": "Issuing a driving license",
+        "content": [
+          "The EU driving license is issued.",
+          "Get your driving license from the driver’s license office.",
+          "Validity: 5 years, then another medical and ophthalmological examination is required for extension."
+        ]
+      }
+    ]
+  },
+  "licenseD": {
+    "stepsData": [
+      {
+        "title": "Driving school registration",
+        "content": [
+          "Choose a certified driving school.",
+          "Sign training contract with driving school."
+        ]
+      },
+      {
+        "title": "Prepare documents",
+        "content": [
+          "Identity card or passport: proof of residence.",
+          "Biometric passport photo: standard format.",
+          "Ophthalmological certificate: acuity, visual field, color vision, etc.",
+          "First aid course: 9 teaching units.",
+          "Medical examination (form: §11 FeV): family doctor or company doctor.",
+          "Driving license class B, reaction test, certificate of good conduct."
+        ]
+      },
+      {
+        "title": "Driving license application",
+        "content": [
+          "The application for a driving license must be submitted to your responsible driving license office.",
+          "The application is submitted either through your driving school or directly to the office."
+        ]
+      },
+      {
+        "title": "Theory lessons",
+        "content": [
+          "Raw material: 6 double lessons.",
+          "Additive material: 8 to 18 double lessons."
+        ]
+      },
+      {
+        "title": "Theoretical exam",
+        "content": [
+          "At earliest 3 months before minimum age.",
+          "Approx. 30-40 questions in multiple-choice format.",
+          "Max. 10 penalty points allowed.",
+          "Approved by TÜV or DEKRA."
+        ]
+      },
+      {
+        "title": "Driving lessons",
+        "content": [
+          "Overland: 8-22 trips.",
+          "Highway: 4-14 trips.",
+          "Night: 3-8 trips.",
+          "In addition, there are normal practice runs."
+        ]
+      },
+      {
+        "title": "Practical exam",
+        "content": [
+          "At earliest 1 month before minimum age.",
+          "Approx. 75 minutes.",
+          "Vehicle check, driving behavior in city, country and motorway traffic, reversing, parking, hazard assessment.",
+          "Failed: Retake only possible after 2 weeks."
+        ]
+      },
+      {
+        "title": "Issuing a driving license",
+        "content": [
+          "The EU driving license is issued.",
+          "Get your driving license from the driver’s license office.",
+          "Validity: 5 years, then another medical and ophthalmological examination is required for extension."
+        ]
+      }
+    ]
+  },
+  "licenseLT": {
+    "stepsData": [
+      {
+        "title": "Driving school registration",
+        "content": [
+          "Choose a certified driving school.",
+          "Sign training contract with driving school."
+        ]
+      },
+      {
+        "title": "Prepare documents",
+        "content": [
+          "Identity card or passport: proof of residence.",
+          "Biometric passport photo: standard format.",
+          "Eye test: Must not be older than 2 years.",
+          "First aid course: 9 teaching units."
+        ]
+      },
+      {
+        "title": "Driving license application",
+        "content": [
+          "The application for a driving license must be submitted to your responsible driving license office.",
+          "The application is submitted either through your driving school or directly to the office."
+        ]
+      },
+      {
+        "title": "Theory lessons",
+        "content": [
+          "Raw material: 12 double lessons.",
+          "Additive material: 2 to 6 double lessons."
+        ]
+      },
+      {
+        "title": "Theoretical exam",
+        "content": [
+          "At earliest 3 months before minimum age.",
+          "Approx. 30 questions in multiple-choice format.",
+          "Max. 10 penalty points allowed.",
+          "Approved by TÜV or DEKRA."
+        ]
+      },
+      {
+        "title": "Driving lessons",
+        "content": [
+          "No practical exam for class L.",
+          "No prescribed number of driving lessons."
+        ]
+      },
+      {
+        "title": "Practical exam",
+        "content": [
+          "No practical exam for class L.",
+          "Approx. 45 to 60 minutes.",
+          "Vehicle check, driving behavior in city, country and motorway traffic, reversing, parking, hazard assessment.",
+          "Failed: Retake only possible after 2 weeks."
+        ]
+      },
+      {
+        "title": "Issuing a driving license",
+        "content": [
+          "The driving license is issued.",
+          "Get your driving license from the driver’s license office."
+        ]
+      }
+    ]
+  },
+  "licenseForeign": {
+    "stepsData": [
+      {
+        "title": "Driving school registration",
+        "content": [
+          "Choose a certified driving school.",
+          "Sign training contract with driving school."
+        ]
+      },
+      {
+        "title": "Prepare documents",
+        "content": [
+          "Identity card or passport: proof of residence.",
+          "Biometric passport photo: standard format.",
+          "Eye test: Must not be older than 2 years.",
+          "First aid course: 9 teaching units.",
+          "Old driving license and its translation."
+        ]
+      },
+      {
+        "title": "Driving license application",
+        "content": [
+          "The application for a driving license must be submitted to your responsible driving license office.",
+          "The application is submitted either through your driving school or directly to the office."
+        ]
+      },
+      {
+        "title": "Theory lessons",
+        "content": [
+          "Usually not required.",
+          "Optional: depending on the driving school."
+        ]
+      },
+      {
+        "title": "Theoretical exam",
+        "content": [
+          "At earliest 3 months before minimum age.",
+          "Approx. 30 questions in multiple-choice format.",
+          "Max. 10 penalty points allowed.",
+          "Approved by TÜV or DEKRA."
+        ]
+      },
+      {
+        "title": "Driving lessons",
+        "content": [
+          "No prescribed number of driving lessons.",
+          "The number of driving lessons varies from individual to individual."
+        ]
+      },
+      {
+        "title": "Practical exam",
+        "content": [
+          "No practical exam for class L.",
+          "Approx. 45 to 60 minutes.",
+          "Vehicle check, driving behavior in city, country and motorway traffic, reversing, parking, hazard assessment.",
+          "Failed: Retake only possible after 2 weeks."
+        ]
+      },
+      {
+        "title": "Issuing a driving license",
+        "content": [
+          "The driving license is issued.",
+          "Get your driving license from the driver’s license office."
+        ]
+      }
+    ]
+  },
   "privacy": {
     "title": "Privacy Policy",
     "data": [

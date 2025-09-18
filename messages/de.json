@@ -567,6 +567,372 @@
       }
     ]
   },
+  "licenseB": {
+    "stepsData": [
+      {
+        "title": "Anmeldung Fahrschule",
+        "content": [
+          "Wähle eine zertifizierte Fahrschule.",
+          "Unterschreibe Ausbildungsvertrag bei der Fahrschule."
+        ]
+      },
+      {
+        "title": "Unterlagen vorbereiten",
+        "content": [
+          "Personalausweis oder Reisepass: Nachweis des Wohnsitzes.",
+          "Biometrisches Passbild: Standardformat.",
+          "Sehtest: Nicht älter als 2 Jahre sein.",
+          "Erste-Hilfe-Kurs: 9 Unterrichtseinheiten."
+        ]
+      },
+      {
+        "title": "Führerscheinantrag",
+        "content": [
+          "Der Antrag auf Erteilung des Führerscheins muss bei deiner zuständigen Fahrerlaubnisbehörde eingereicht werden.",
+          "Der Antrag wird entweder über deine Fahrschule oder direkt bei der Behörde eingereicht."
+        ]
+      },
+      {
+        "title": "Theoriestunden",
+        "content": [
+          "Grundstoff: 12 Doppelstunden.",
+          "Zusatzstoff: 2 Doppelstunden."
+        ]
+      },
+      {
+        "title": "Theoretische Prüfung",
+        "content": [
+          "Frühestens 3 Monate vor Mindestalter.",
+          "Ca. 30 Fragen im Multiple-Choice-Format.",
+          "Max. 10 Fehlerpunkte erlaubt (aber nicht 2x 5er-Fragen falsch).",
+          "Abgenommen bei TÜV oder DEKRA."
+        ]
+      },
+      {
+        "title": "Fahrstunden",
+        "content": [
+          "Überland: 5 Fahrten.",
+          "Autobahn: 4 Fahrten.",
+          "Nachtfahrt: 3 Fahrten.",
+          "Hinzu kommen normale Übungsfahrten."
+        ]
+      },
+      {
+        "title": "Praktische Prüfung",
+        "content": [
+          "Frühestens 1 Monate vor Mindestalter.",
+          "Ca. 45 bis 60 Minuten.",
+          "Fahrzeugcheck, Fahrverhalten im Stadt-, Überland- und Autobahnverkehr, Rückwärtsfahren, Parken, Gefahreneinschätzung.",
+          "Nicht bestanden: Wiederholung erst nach 2 Wochen."
+        ]
+      },
+      {
+        "title": "Erteilung des Führerscheins",
+        "content": [
+          "Der EU-Führerschein wird ausgestellt.",
+          "Hole dir deinen Führerschein bei der Fahrerlaubnisbehörde ab.",
+          "Bei BF17: Keinen Führerschein, sondern eine Prüfungsbescheinigung. Fahren nur mit eingetragenen Begleitpersonen erlaubt."
+        ]
+      }
+    ],
+    "drivingRules": [
+      {
+        "title": "Begleitetes Fahren ab 17 (BF17)",
+        "description": "Mit 17 Jahren darf man bereits mit einer Begleitperson (mind. 30 Jahre alt, mindestens 5 Jahre ununterbrochener Besitz der Klasse B, max. 1 Punkt in Flensburg) fahren. Die Prüfbescheinigung ist nur in Deutschland gültig."
+      },
+      {
+        "title": "Anhängerregelung",
+        "description": "Mit Klasse B darf man Anhänger bis 750 kg ziehen. Für schwerere Anhänger ist die Klasse BE oder B96 nötig."
+      },
+      {
+        "title": "Automatikregelung (B197)",
+        "description": "Ausbildung teils auf Automatik, trotzdem Schaltwagen fahren erlaubt, wenn mind. 10 Std. auf Schaltung + 15-minütige Prüfung auf Schalter absolviert wurden."
+      },
+      {
+        "title": "Automatikbeschränkung",
+        "description": "Wer die Prüfung auf einem Automatikfahrzeug ablegt, erhält den Führerschein mit der Schlüsselzahl 78 (nur Automatik). Für Schaltgetriebe ist eine zusätzliche Prüfung nötig."
+      },
+      {
+        "title": "Umschreibung",
+        "description": "Besitzer eines alten Führerscheins der Klasse 3 (vor 1999) haben automatisch die Klasse B. Eine Umschreibung ist nur für den neuen EU-Kartenführerschein nötig, nicht für die Fahrerlaubnis selbst."
+      }
+    ]
+  },
+  "licenseC": {
+    "stepsData": [
+      {
+        "title": "Anmeldung Fahrschule",
+        "content": [
+          "Wähle eine zertifizierte Fahrschule.",
+          "Unterschreibe Ausbildungsvertrag bei der Fahrschule."
+        ]
+      },
+      {
+        "title": "Unterlagen vorbereiten",
+        "content": [
+          "Personalausweis oder Reisepass: Nachweis des Wohnsitzes.",
+          "Biometrisches Passbild: Standardformat.",
+          "Augenärztliches Zeugnis: Schärfe, Gesichtsfeld, Farbsehen usw.",
+          "Erste-Hilfe-Kurs: 9 Unterrichtseinheiten.",
+          "Ärztliche Untersuchung (Form: §11 FeV): Hausarzt oder Betriebsarzt.",
+          "Kopie des Führerscheins: Klasse B."
+        ]
+      },
+      {
+        "title": "Führerscheinantrag",
+        "content": [
+          "Der Antrag auf Erteilung des Führerscheins muss bei deiner zuständigen Fahrerlaubnisbehörde eingereicht werden.",
+          "Der Antrag wird entweder über deine Fahrschule oder direkt bei der Behörde eingereicht."
+        ]
+      },
+      {
+        "title": "Theoriestunden",
+        "content": [
+          "Grundstoff: 6 Doppelstunden.",
+          "Zusatzstoff: 4-10 Doppelstunden."
+        ]
+      },
+      {
+        "title": "Theoretische Prüfung",
+        "content": [
+          "Frühestens 3 Monate vor Mindestalter.",
+          "Ca. 30-40 Fragen im Multiple-Choice-Format.",
+          "Max. 10 Fehlerpunkte erlaubt (aber nicht 2x 5er-Fragen falsch).",
+          "Abgenommen bei TÜV oder DEKRA."
+        ]
+      },
+      {
+        "title": "Fahrstunden",
+        "content": [
+          "Überland: 5 Fahrten.",
+          "Autobahn: 2 Fahrten.",
+          "Nachtfahrt: 3 Fahrten.",
+          "Hinzu kommen normale Übungsfahrten."
+        ]
+      },
+      {
+        "title": "Praktische Prüfung",
+        "content": [
+          "Frühestens 1 Monate vor Mindestalter.",
+          "Ca. 75 Minuten.",
+          "Fahrzeugcheck, Fahrverhalten im Stadt-, Überland- und Autobahnverkehr, Rückwärtsfahren, Parken, Gefahreneinschätzung.",
+          "Nicht bestanden: Wiederholung erst nach 2 Wochen."
+        ]
+      },
+      {
+        "title": "Erteilung des Führerscheins",
+        "content": [
+          "Der EU-Führerschein wird ausgestellt.",
+          "Hole dir deinen Führerschein bei der Fahrerlaubnisbehörde ab.",
+          "Gültigkeit: 5 Jahre, dann erneute ärztliche und augenärztliche Untersuchung zur Verlängerung nötig."
+        ]
+      }
+    ]
+  },
+  "licenseD": {
+    "stepsData": [
+      {
+        "title": "Anmeldung Fahrschule",
+        "content": [
+          "Wähle eine zertifizierte Fahrschule.",
+          "Unterschreibe Ausbildungsvertrag bei der Fahrschule."
+        ]
+      },
+      {
+        "title": "Unterlagen vorbereiten",
+        "content": [
+          "Personalausweis oder Reisepass: Nachweis des Wohnsitzes.",
+          "Biometrisches Passbild: Standardformat.",
+          "Augenärztliches Zeugnis: Nicht älter als 2 Jahre sein.",
+          "Erste-Hilfe-Kurs: 9 Unterrichtseinheiten.",
+          "Ärztliche Untersuchung (Form: §11 FeV): Hausarzt oder Betriebsarzt.",
+          "Führerscheinklasse B, Reaktionstest und Führungszeugnis."
+        ]
+      },
+      {
+        "title": "Führerscheinantrag",
+        "content": [
+          "Der Antrag auf Erteilung des Führerscheins muss bei deiner zuständigen Fahrerlaubnisbehörde eingereicht werden.",
+          "Der Antrag wird entweder über deine Fahrschule oder direkt bei der Behörde eingereicht."
+        ]
+      },
+      {
+        "title": "Theoriestunden",
+        "content": [
+          "Grundstoff: 6 Doppelstunden.",
+          "Zusatzstoff: 8-18 Doppelstunden."
+        ]
+      },
+      {
+        "title": "Theoretische Prüfung",
+        "content": [
+          "Frühestens 3 Monate vor Mindestalter.",
+          "Ca. 30-40 Fragen im Multiple-Choice-Format.",
+          "Max. 10 Fehlerpunkte erlaubt (aber nicht 2x 5er-Fragen falsch).",
+          "Abgenommen bei TÜV oder DEKRA."
+        ]
+      },
+      {
+        "title": "Fahrstunden",
+        "content": [
+          "Überland: 8-22 Fahrten.",
+          "Autobahn: 4-14 Fahrten.",
+          "Nachtfahrt: 3-8 Fahrten.",
+          "Hinzu kommen normale Übungsfahrten."
+        ]
+      },
+      {
+        "title": "Praktische Prüfung",
+        "content": [
+          "Frühestens 1 Monate vor Mindestalter.",
+          "Ca. 75 Minuten.",
+          "Fahrzeugcheck, Fahrverhalten im Stadt-, Überland- und Autobahnverkehr, Rückwärtsfahren, Parken, Gefahreneinschätzung.",
+          "Nicht bestanden: Wiederholung erst nach 2 Wochen."
+        ]
+      },
+      {
+        "title": "Erteilung des Führerscheins",
+        "content": [
+          "Der EU-Führerschein wird ausgestellt.",
+          "Hole dir deinen Führerschein bei der Fahrerlaubnisbehörde ab.",
+          "Gültigkeit: 5 Jahre, dann erneute ärztliche und augenärztliche Untersuchung zur Verlängerung nötig."
+        ]
+      }
+    ]
+  },
+  "licenseLT": {
+    "stepsData": [
+      {
+        "title": "Anmeldung Fahrschule",
+        "content": [
+          "Wähle eine zertifizierte Fahrschule.",
+          "Unterschreibe Ausbildungsvertrag bei der Fahrschule."
+        ]
+      },
+      {
+        "title": "Unterlagen vorbereiten",
+        "content": [
+          "Personalausweis oder Reisepass: Nachweis des Wohnsitzes.",
+          "Biometrisches Passbild: Standardformat.",
+          "Sehtest: Nicht älter als 2 Jahre sein.",
+          "Erste-Hilfe-Kurs: 9 Unterrichtseinheiten."
+        ]
+      },
+      {
+        "title": "Führerscheinantrag",
+        "content": [
+          "Der Antrag auf Erteilung des Führerscheins muss bei deiner zuständigen Fahrerlaubnisbehörde eingereicht werden.",
+          "Der Antrag wird entweder über deine Fahrschule oder direkt bei der Behörde eingereicht."
+        ]
+      },
+      {
+        "title": "Theoriestunden",
+        "content": [
+          "Grundstoff: 12 Doppelstunden.",
+          "Zusatzstoff: 2-6 Doppelstunden."
+        ]
+      },
+      {
+        "title": "Theoretische Prüfung",
+        "content": [
+          "Frühestens 3 Monate vor Mindestalter.",
+          "Ca. 30 Fragen im Multiple-Choice-Format.",
+          "Max. 10 Fehlerpunkte erlaubt (aber nicht 2x 5er-Fragen falsch).",
+          "Abgenommen bei TÜV oder DEKRA."
+        ]
+      },
+      {
+        "title": "Fahrstunden",
+        "content": [
+          "Keine Praxisprüfung für Klasse L.",
+          "Keine vorgeschriebene Anzahl von Fahrstunden."
+        ]
+      },
+      {
+        "title": "Praktische Prüfung",
+        "content": [
+          "Frühestens 1 Monate vor Mindestalter.",
+          "Ca. 45 bis 60 Minuten.",
+          "Abfahrtskontrolle, das Verbinden und Trennen von Fahrzeug und Anhänger sowie Fahrten innerhalb und außerhalb geschlossener Ortschaften.",
+          "Nicht bestanden: Wiederholung erst nach 2 Wochen."
+        ]
+      },
+      {
+        "title": "Erteilung des Führerscheins",
+        "content": [
+          "Der Führerschein wird ausgestellt.",
+          "Hole dir deinen Führerschein bei der Fahrerlaubnisbehörde ab."
+        ]
+      }
+    ]
+  },
+  "licenseForeign": {
+    "stepsData": [
+      {
+        "title": "Anmeldung Fahrschule",
+        "content": [
+          "Wähle eine zertifizierte Fahrschule.",
+          "Unterschreibe Ausbildungsvertrag bei der Fahrschule."
+        ]
+      },
+      {
+        "title": "Unterlagen vorbereiten",
+        "content": [
+          "Personalausweis oder Reisepass: Nachweis des Wohnsitzes.",
+          "Biometrisches Passbild: Standardformat.",
+          "Sehtest: Nicht älter als 2 Jahre sein.",
+          "Erste-Hilfe-Kurs: 9 Unterrichtseinheiten.",
+          "Alter Führerschein und dessen Übersetzung."
+        ]
+      },
+      {
+        "title": "Führerscheinantrag",
+        "content": [
+          "Der Antrag auf Erteilung des Führerscheins muss bei deiner zuständigen Fahrerlaubnisbehörde eingereicht werden.",
+          "Der Antrag wird entweder über deine Fahrschule oder direkt bei der Behörde eingereicht."
+        ]
+      },
+      {
+        "title": "Theoriestunden",
+        "content": [
+          "Meist nicht erforderlich.",
+          "Optional: je nach Fahrschule."
+        ]
+      },
+      {
+        "title": "Theoretische Prüfung",
+        "content": [
+          "Frühestens 3 Monate vor Mindestalter.",
+          "Ca. 30 Fragen im Multiple-Choice-Format.",
+          "Max. 10 Fehlerpunkte erlaubt (aber nicht 2x 5er-Fragen falsch).",
+          "Abgenommen bei TÜV oder DEKRA."
+        ]
+      },
+      {
+        "title": "Fahrstunden",
+        "content": [
+          "Keine vorgeschriebene Anzahl von Fahrstunden.",
+          "Die Anzahl der Fahrstunden ist individuell unterschiedlich."
+        ]
+      },
+      {
+        "title": "Praktische Prüfung",
+        "content": [
+          "Frühestens 1 Monate vor Mindestalter.",
+          "Ca. 45 bis 60 Minuten.",
+          "Abfahrtskontrolle, das Verbinden und Trennen von Fahrzeug und Anhänger sowie Fahrten innerhalb und außerhalb geschlossener Ortschaften.",
+          "Nicht bestanden: Wiederholung erst nach 2 Wochen."
+        ]
+      },
+      {
+        "title": "Erteilung des Führerscheins",
+        "content": [
+          "Der Führerschein wird ausgestellt.",
+          "Hole dir deinen Führerschein bei der Fahrerlaubnisbehörde ab."
+        ]
+      }
+    ]
+  },
   "privacy": {
     "title": "Datenschutz",
     "data": [
