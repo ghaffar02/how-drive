@@ -42,7 +42,7 @@ export default function Page() {
           heading={t('heading1')}
         />
         <Costoverview drivingCosts={drivingCosts} heading={t('heading2')} />
-        <DrivingSteps steps={stepsData} heading={t('heading1')} />
+        <DrivingSteps steps={stepsData} heading={t('heading3')} />
         {/* <Notice heading={t('heading4')} description={t('description')} /> */}
         <TrustServiceSection />
         <Footer />
