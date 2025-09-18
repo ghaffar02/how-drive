@@ -371,7 +371,7 @@
   },
   "registerPage": {
     "heading": "Konto erstellen als:",
-    "tabValue1": "Fahrschüler",
+    "tabValue1": "Fahrschuler",
     "tabValue2": "Fahrschule",
     "firstName": "Vorname",
     "lastName": "Nachname",
@@ -391,7 +391,8 @@
     "invalidEmail": "Ungültige E-Mail",
     "passMin": "Passwort muss mindestens 8 Zeichen lang sein",
     "passChar": "Passwort muss mindestens eine Zahl enthalten",
-    "toastSuccess": "Registrierung erfolgreich!"
+    "toastSuccess": "Registrierung erfolgreich!",
+    "lastpoint": "Wir bieten unseres Service ausschließlich für die Führerscheinklassen A und B sowie Umschreiben der ausländischen Führerscheine dieser Klassen in deutsche an."
   },
   "passwordPage": {
     "heading": "Passwort vergessen?",

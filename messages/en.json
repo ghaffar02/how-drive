@@ -371,7 +371,7 @@
   },
   "registerPage": {
     "heading": "Create an account as:",
-    "tabValue1": "Student",
+    "tabValue1": "Driving Student",
     "tabValue2": "Driving School",
     "firstName": "First Name",
     "lastName": "Last Name",
@@ -380,7 +380,7 @@
     "policy": "I agree to the ",
     "policy2": "Privacy Policy.",
     "policy3": "",
-    "button": "Register",
+    "button": "Sign up",
     "school": "Name of the Driving School",
     "alreadyExist": "Already have an account?",
     "signin": "Login",
@@ -391,7 +391,8 @@
     "invalidEmail": "Invalid Email",
     "passMin": "Password must be at least 8 characters long",
     "passChar": "Password must contain at least one number",
-    "toastSuccess": "Registeration Successful!"
+    "toastSuccess": "Registeration Successful!",
+    "lastpoint": "We offer our service exclusively for driving license classes A and B as well as the conversion of foreign driving licenses of these classes into German ones."
   },
   "passwordPage": {
     "heading": "Forgot Password?",
