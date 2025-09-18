@@ -727,6 +727,28 @@
           "Gültigkeit: 5 Jahre, dann erneute ärztliche und augenärztliche Untersuchung zur Verlängerung nötig."
         ]
       }
+    ],
+    "drivingRules": [
+      {
+        "title": "Strenge Voraussetzungen",
+        "description": "Ärztliche und augenärztliche Untersuchung ist erforderlich. Augenärztliches Gutachten nach FeV, was strenger ist als für Klasse B."
+      },
+      {
+        "title": "Berufskraftfahrerqualifikation (BKrFQG)",
+        "description": "Wer gewerblich fahren möchte, benötigt zusätzlich eine Grundqualifikation (IHK-Prüfung) und regelmäßige Weiterbildungen (alle 5 Jahre)."
+      },
+      {
+        "title": "Beschleunigte Grundqualifikation",
+        "description": "Es gibt die Möglichkeit, die Grundqualifikation in 140 Stunden (statt 280 Stunden) zu absolvieren, wenn man eine beschleunigte Ausbildung wählt."
+      },
+      {
+        "title": "Gemeinsamer Erwerb von C-CE oder C1-C1E",
+        "description": "Bei gemeinsamem Erwerb erhöht sich die Anzahl der Zusatzstoffe sowie der Sonderfahrten."
+      },
+      {
+        "title": "Umschreibung",
+        "description": "Besitzer eines alten Führerscheins der Klasse 2 (vor 1999) haben automatisch die Klasse C. Eine Umschreibung ist nur für den neuen EU-Kartenführerschein nötig, nicht für die Fahrerlaubnis selbst."
+      }
     ]
   },
   "licenseD": {
@@ -798,6 +820,28 @@
           "Gültigkeit: 5 Jahre, dann erneute ärztliche und augenärztliche Untersuchung zur Verlängerung nötig."
         ]
       }
+    ],
+    "drivingRules": [
+      {
+        "title": "Strenge Voraussetzungen",
+        "description": "Ärztliche und augenärztliche Untersuchung ist erforderlich. Augenärztliches Gutachten nach FeV, was strenger ist als für Klasse B."
+      },
+      {
+        "title": "Berufskraftfahrerqualifikation (BKrFQG)",
+        "description": "Wer gewerblich fahren möchte, benötigt zusätzlich eine Grundqualifikation (IHK-Prüfung) und regelmäßige Weiterbildungen (alle 5 Jahre)."
+      },
+      {
+        "title": "Beschleunigte Grundqualifikation",
+        "description": "Es gibt die Möglichkeit, die Grundqualifikation in 140 Stunden (statt 280 Stunden) zu absolvieren, wenn man eine beschleunigte Ausbildung wählt."
+      },
+      {
+        "title": "Fahrgastbeförderung",
+        "description": "Die Klasse D berechtigt zur gewerblichen und nicht-gewerblichen Personenbeförderung (z. B. Linienbusse, Reisebusse, Schulbusse)."
+      },
+      {
+        "title": "Umschreibung",
+        "description": "Besitzer eines alten Führerscheins der Klasse 2 (vor 1999) haben automatisch die Klasse C. Eine Umschreibung ist nur für den neuen EU-Kartenführerschein nötig, nicht für die Fahrerlaubnis selbst."
+      }
     ]
   },
   "licenseLT": {
@@ -863,6 +907,28 @@
           "Der Führerschein wird ausgestellt.",
           "Hole dir deinen Führerschein bei der Fahrerlaubnisbehörde ab."
         ]
+      }
+    ],
+    "drivingRules": [
+      {
+        "title": "Einsatzbereich",
+        "description": "Beide Klassen sind vor allem für land- und forstwirtschaftliche Betriebe, Kommunen und den Gartenbau relevant."
+      },
+      {
+        "title": "Klasse L",
+        "description": "Berechtigt zum Führen von Zugmaschinen (z. B. Traktoren) bis 40 km/h und selbstfahrenden Arbeitsmaschinen (z. B. Mähdrescher) bis 25 km/h."
+      },
+      {
+        "title": "Klasse T",
+        "description": "Berechtigt zum Führen von Zugmaschinen bis 60 km/h (auch mit Anhänger) und selbstfahrenden Arbeitsmaschinen bis 40 km/h."
+      },
+      {
+        "title": "Vorbesitz",
+        "description": "Beim Besitz einer anderen Führerscheinklasse reduziert sich der Grundstoff auf sechs doppelstundige Unterrichte."
+      },
+      {
+        "title": "Umschreibung",
+        "description": "Besitzer eines alten Führerscheins der Klasse 3 (vor 1999) haben automatisch die Klassen L. Eine Umschreibung ist nur für den neuen EU-Kartenführerschein nötig, nicht für die Fahrerlaubnis selbst."
       }
     ]
   },
@@ -930,6 +996,28 @@
           "Der Führerschein wird ausgestellt.",
           "Hole dir deinen Führerschein bei der Fahrerlaubnisbehörde ab."
         ]
+      }
+    ],
+    "drivingRules": [
+      {
+        "title": "Fristen",
+        "description": "Führerscheine aus EU/EWR können jederzeit umgeschrieben werden. Führerscheine aus Staaten mit gegenseitigem Anerkennungsabkommen (Anlage 11 FeV) benötigen in der Regel keine Prüfung. Allerdings gibt es dabei Ausnahmen, u.a. Albanien, Moldau und einige Staaten aus den USA. Führerscheine aus sonstigen Staaten erfordern immer eine Prüfung."
+      },
+      {
+        "title": "Gültigkeit",
+        "description": "Der ausländische Führerschein bleibt in der 6-monatigen Übergangszeit gültig. Nach der Umschreibung gilt der deutsche EU-Führerschein."
+      },
+      {
+        "title": "Theoretische und praktische Prüfung",
+        "description": "Führerscheine aus Drittstaaten erfordern immer Theorie- und Praxisprüfung. Allerdings ist keine Fahrausbildung erforderlich. Es gibt keine Pflichtfahrstunden. Darüber hinaus hängt die Entscheidung, ob und wann die Prüfungen abgelegt werden sollen, vom Selbstvertrauen und der Bereitschaft der Bewerber ab."
+      },
+      {
+        "title": "Anerkennung",
+        "description": "Führerscheine aus bestimmten Ländern (z. B. USA, Schweiz, Japan) können ganz oder teilweise anerkannt werden. Führerscheine aus anderen Ländern (z. B. Türkei, Ukraine, Russland) erfordern Theorie- und Praxisprüfung. Manche Behörden verlangen einen Nachweis regelmäßiger Fahrpraxis im Ausland."
+      },
+      {
+        "title": "Alter Führerschein",
+        "description": "Der alte Führerschein muss bei Umschreibung abgegeben werden (wird einbehalten oder vermerkt)."
       }
     ]
   },

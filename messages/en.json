@@ -727,6 +727,28 @@
           "Validity: 5 years, then another medical and ophthalmological examination is required for extension."
         ]
       }
+    ],
+    "drivingRules": [
+      {
+        "title": "Strict requirements",
+        "description": "A medical and ophthalmological examination is required. An ophthalmological report is required according to the German Federal Regulations on Ophthalmology (FeV), which is more stringent than for Class B."
+      },
+      {
+        "title": "Professional driver qualification (BKrFQG)",
+        "description": "Anyone who wants to drive commercially also needs a basic qualification (IHK examination) and regular further training (every 5 years)."
+      },
+      {
+        "title": "Accelerated initial qualification",
+        "description": "It is possible to complete the basic qualification in 140 hours (instead of 280 hours) if you choose accelerated training."
+      },
+      {
+        "title": "Joint acquisition of C-CE or C1-C1E",
+        "description": "If intended to get both licenses together, the number of additives materials and special trips increases."
+      },
+      {
+        "title": "Rewrite",
+        "description": "Holders of an old Class 2 driving license (before 1999) automatically have Class C. A conversion is only necessary for the new EU card driving license, not for the driving license itself."
+      }
     ]
   },
   "licenseD": {
@@ -798,6 +820,28 @@
           "Validity: 5 years, then another medical and ophthalmological examination is required for extension."
         ]
       }
+    ],
+    "drivingRules": [
+      {
+        "title": "Strict requirements",
+        "description": "A medical and ophthalmological examination is required. An ophthalmological report is required according to the German Federal Regulations on Ophthalmology (FeV), which is more stringent than for Class B."
+      },
+      {
+        "title": "Professional driver qualification (BKrFQG)",
+        "description": "Anyone who wants to drive commercially also needs a basic qualification (IHK examination) and regular further training (every 5 years)."
+      },
+      {
+        "title": "Accelerated initial qualification",
+        "description": "It is possible to complete the basic qualification in 140 hours (instead of 280 hours) if you choose accelerated training."
+      },
+      {
+        "title": "Passenger transport",
+        "description": "Class D entitles you to commercial and non-commercial passenger transport (e.g. regular buses, coaches, school buses)."
+      },
+      {
+        "title": "Rewrite",
+        "description": "Holders of an old Class 2 driving license (before 1999) automatically have Class C. A conversion is only necessary for the new EU card driving license, not for the driving license itself."
+      }
     ]
   },
   "licenseLT": {
@@ -863,6 +907,28 @@
           "The driving license is issued.",
           "Get your driving license from the driver’s license office."
         ]
+      }
+    ],
+    "drivingRules": [
+      {
+        "title": "Area of application",
+        "description": "Both classes are particularly relevant for agricultural and forestry businesses, municipalities and horticulture."
+      },
+      {
+        "title": "Class L",
+        "description": "Authorized to drive tractors up to 40 km/h and self-propelled machines (e.g. combine harvesters) up to 25 km/h."
+      },
+      {
+        "title": "Class T",
+        "description": "Authorized to drive tractors up to 60 km/h (also with trailer) and self-propelled work machines up to 40 km/h."
+      },
+      {
+        "title": "Requirement",
+        "description": "If you hold a different driving license class, the basic material is reduced to six two-hour lessons."
+      },
+      {
+        "title": "Rewrite",
+        "description": "Holders of an old Class 3 driving license (before 1999) automatically have Class L. A conversion is only necessary for the new EU card driving license, not for the driving license itself."
       }
     ]
   },
@@ -930,6 +996,28 @@
           "The driving license is issued.",
           "Get your driving license from the driver’s license office."
         ]
+      }
+    ],
+    "drivingRules": [
+      {
+        "title": "Deadlines",
+        "description": "EU/EEA driving licenses can be converted at any time. Driving licenses from countries with a mutual recognition agreement (Annex 11 of the Driving Licence Regulations) generally do not require an exam. However, there are exceptions, including Albania, Moldova, and some US states. Driving licenses from other countries always require an examination."
+      },
+      {
+        "title": "Validity",
+        "description": "The foreign driving license remains valid during the six-month transition period. After the conversion, the German EU driving license is valid."
+      },
+      {
+        "title": "Theoretical and practical exam",
+        "description": "Driving licenses from other countries always require a theory and practical exam. However, no driver training is required. There are no mandatory driving lessons. Furthermore, the decision whether and when to take the exams depends on the applicant's confidence and willingness."
+      },
+      {
+        "title": "Recognition",
+        "description": "Driving licenses from certain countries (e.g., the USA, Switzerland, Japan) may be fully or partially recognized. Driving licenses from other countries (e.g., Turkey, Russia) require a theory and practical exam. Some authorities require proof of regular driving experience abroad."
+      },
+      {
+        "title": "Old driving license",
+        "description": "The old driving license must be handed in when the conversion is done (it will be retained or recorded)."
       }
     ]
   },
