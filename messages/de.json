@@ -442,68 +442,68 @@
     "description": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future.",
     "stepsData": [
       {
-        "title": "Driving school registration",
+        "title": "Anmeldung Fahrschule",
         "content": [
-          "Choose a certified driving school.",
-          "Sign training contract with driving school."
+          "Wähle eine zertifizierte Fahrschule.",
+          "Unterschreibe Ausbildungsvertrag bei der Fahrschule."
         ]
       },
       {
-        "title": "Prepare documents",
+        "title": "Unterlagen vorbereiten",
         "content": [
-          "Identity card or passport: proof of residence.",
-          "Biometric passport photo: standard format.",
-          "Eye test: Must not be older than 2 years.",
-          "First aid course: 9 teaching units."
+          "Personalausweis oder Reisepass: Nachweis des Wohnsitzes.",
+          "Biometrisches Passbild: Standardformat.",
+          "Sehtest: Nicht älter als 2 Jahre sein.",
+          "Erste-Hilfe-Kurs: 9 Unterrichtseinheiten."
         ]
       },
       {
-        "title": "Driving license application",
+        "title": "Führerscheinantrag",
         "content": [
-          "The application for a driving license must be submitted to your responsible driving license office.",
-          "The application is submitted either through your driving school or directly to the office."
+          "Der Antrag auf Erteilung des Führerscheins muss bei deiner zuständigen Fahrerlaubnisbehörde eingereicht werden.",
+          "Der Antrag wird entweder über deine Fahrschule oder direkt bei der Behörde eingereicht."
         ]
       },
       {
-        "title": "Theory lessons",
+        "title": "Theoriestunden",
         "content": [
-          "Raw material: 12 double lessons.",
-          "Additive material: 2 to 4 double lessons."
+          "Grundstoff: 12 Doppelstunden.",
+          "Zusatzstoff: 2 bzw. 4 Doppelstunden."
         ]
       },
       {
-        "title": "Theoretical exam",
+        "title": "Theoretische Prüfung",
         "content": [
-          "Earliest 3 months before minimum age.",
-          "Approx. 30 questions in multiple-choice format.",
-          "Max. 10 penalty points allowed.",
-          "Approved by TÜV or DEKRA."
+          "Frühestens 3 Monate vor Mindestalter.",
+          "Ca. 30 Fragen im Multiple-Choice-Format.",
+          "Max. 10 Fehlerpunkte erlaubt (aber nicht 2x 5er-Fragen falsch).",
+          "Abgenommen bei TÜV oder DEKRA."
         ]
       },
       {
-        "title": "Driving lessons",
+        "title": "Fahrstunden",
         "content": [
-          "Overland: 5 trips.",
-          "Highway: 4 trips.",
-          "Night: 3 trips.",
-          "In addition, there are normal practice runs."
+          "Überland: 5 Fahrten.",
+          "Autobahn: 4 Fahrten.",
+          "Nachtfahrt: 3 Fahrten.",
+          "Hinzu kommen normale Übungsfahrten."
         ]
       },
       {
-        "title": "Practical exam",
+        "title": "Praktische Prüfung",
         "content": [
-          "Earliest 1 month before minimum age.",
-          "Approx. 45 to 60 minutes.",
-          "Vehicle check, driving behavior in city, country and motorway traffic, reversing, parking, hazard assessment.",
-          "Failed: Retake only possible after 2 weeks."
+          "Frühestens 1 Monate vor Mindestalter.",
+          "Ca. 45 bis 60 Minuten.",
+          "Fahrzeugcheck, Fahrverhalten im Stadt-, Überland- und Autobahnverkehr, Rückwärtsfahren, Parken, Gefahreneinschätzung.",
+          "Nicht bestanden: Wiederholung erst nach 2 Wochen."
         ]
       },
       {
-        "title": "Issuing a driving license",
+        "title": "Erteilung des Führerscheins",
         "content": [
-          "The EU driving license is issued.",
-          "Get your driving license from the driver’s license office.",
-          "For BF17: Driving test certificate only, driving allowed only with registered accompanying persons."
+          "Der EU-Führerschein wird ausgestellt.",
+          "Hole dir deinen Führerschein bei der Fahrerlaubnisbehörde ab.",
+          "Bei BF17: Keinen Führerschein, sondern eine Prüfungsbescheinigung. Fahren nur mit eingetragenen Begleitpersonen erlaubt."
         ]
       }
     ],
