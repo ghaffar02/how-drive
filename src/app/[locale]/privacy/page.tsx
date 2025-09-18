@@ -48,7 +48,8 @@ export default function Page() {
                 sx={{
                   color: '#1a202c',
                   fontSize: {xs: '20px', sm: '22px', lg: '24px'},
-                  fontFamily: '"Inter", sans-serif !important'
+                  fontFamily: '"Inter", sans-serif !important',
+                  fontWeight: '600'
                 }}
               >
                 {item.heading}

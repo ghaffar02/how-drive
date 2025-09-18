@@ -621,6 +621,7 @@
     ]
   },
   "imprint": {
+    "title": "Impressum",
     "data": [
       {
         "heading": "Angaben gemäß § 5 TMG",
@@ -653,6 +654,7 @@
     ]
   },
   "cookies": {
+    "title": "Cookie-Richtlinie",
     "data": [
       {
         "heading": "",
@@ -664,7 +666,7 @@
       },
       {
         "heading": "2. Welche Arten von Cookies verwenden wir?",
-        "html": "<strong>a) Notwendige Cookies</strong><br /><br />Diese Cookies sind essenziell für den Betrieb unserer Website und ermöglichen grundlegende Funktionen wie Navigation und Zugriff auf sichere Bereiche. Ohne diese Cookies können bestimmte Teile der Website nicht ordnungsgemäß funktionieren. Dazu gehören z. B.:<br /><br /><ul style=\"margin-left: 18px\"><li>Session-Management (Login-Status, Sicherheit)</li><li>Speicherung Ihrer Cookie-Einstellungen</li></ul><br /><br />Diese Cookies können nicht deaktiviert werden.<br /><br /><strong>b) Funktionale Cookies</strong><br /><br />Diese Cookies helfen dabei, die Benutzerfreundlichkeit zu verbessern, z. B.:<br /><br /><ul style=\"margin-left: 18px\"><li>Speicherung Ihrer Spracheinstellungen</li><li>Vorausgefüllte Formulare</li></ul><br /><strong>c) Analyse-Cookies</strong><br /><br />Wir verwenden diese Cookies, um zu verstehen, wie unsere Website genutzt wird (z. B. mit Goole Analytics oder einem ähnlichen Tool).<br /><br /><ul style=\"margin-left: 18px\"><li>Erhebung anonymisierter Nutzungsdaten</li><li>Verbesserung unserer Inhalte und Funktionen</li></ul><br />Diese Cookies werden nur mit Ihrer Zustimmung gesetzt.<br /><br /><strong>d) Marketing-Cookies</strong><br /><br />Diese Cookies ermöglichen es, personalisierte Inhalte oder Werbung anzuzeigen und externe Dienste einzubinden, wie z. B.:<br /><ul style=\"margin-left: 18px\"><li>Newsletter-Tracking</li><li>Zahlungsdienstleister</li></ul><br />Kartenanbieter oder eingebettete Inhalte"
+        "html": "<strong>a) Notwendige Cookies</strong><br /><br />Diese Cookies sind essenziell für den Betrieb unserer Website und ermöglichen grundlegende Funktionen wie Navigation und Zugriff auf sichere Bereiche. Ohne diese Cookies können bestimmte Teile der Website nicht ordnungsgemäß funktionieren. Dazu gehören z. B.:<br /><br /><ul style=\"margin-left: 18px\"><li>Session-Management (Login-Status, Sicherheit)</li><li>Speicherung Ihrer Cookie-Einstellungen</li></ul><br />Diese Cookies können nicht deaktiviert werden.<br /><br /><strong>b) Funktionale Cookies</strong><br /><br />Diese Cookies helfen dabei, die Benutzerfreundlichkeit zu verbessern, z. B.:<br /><br /><ul style=\"margin-left: 18px\"><li>Speicherung Ihrer Spracheinstellungen</li><li>Vorausgefüllte Formulare</li></ul><br /><strong>c) Analyse-Cookies</strong><br /><br />Wir verwenden diese Cookies, um zu verstehen, wie unsere Website genutzt wird (z. B. mit Goole Analytics oder einem ähnlichen Tool).<br /><br /><ul style=\"margin-left: 18px\"><li>Erhebung anonymisierter Nutzungsdaten</li><li>Verbesserung unserer Inhalte und Funktionen</li></ul><br />Diese Cookies werden nur mit Ihrer Zustimmung gesetzt.<br /><br /><strong>d) Marketing-Cookies</strong><br /><br />Diese Cookies ermöglichen es, personalisierte Inhalte oder Werbung anzuzeigen und externe Dienste einzubinden, wie z. B.:<br /><ul style=\"margin-left: 18px\"><li>Newsletter-Tracking</li><li>Zahlungsdienstleister</li></ul><br />Kartenanbieter oder eingebettete Inhalte"
       },
       {
         "heading": "3. Ihre Einwilligung",
