@@ -679,5 +679,54 @@
         "html": "Die Rechtsgrundlage für den Einsatz von Cookies ist:<br /><br /><ul style=\"margin-left:18px\"><li>Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) für technisch notwendige Cookies</li><li>Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) für alle anderen Cookie-Arten</li></ul>"
       }
     ]
+  },
+  "terms": {
+    "title": "Allgemeine Geschäftsbedingungen (AGB)",
+    "data": [
+      {
+        "heading": "",
+        "html": "Stand: 01.10.2025<br /><br />Betreiber:<br />Max Mustermann<br />Musterstraße 123<br />10115 Berlin<br /><br />info@wiefuererschein.de"
+      },
+      {
+        "heading": "1. Geltungsbereich",
+        "html": "Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für die Nutzung der Plattform <strong>[Name der Plattform]</strong> durch Fahrschüler:innen und Fahrschulen. Die Plattform dient der Vermittlung von Theorie- und Fahrstunden sowie der Kommunikation zwischen Fahrschüler:innen und Fahrschulen."
+      },
+      {
+        "heading": "2. Registrierung und Nutzerkonten",
+        "html": "<strong>a) Fahrschüler:innen</strong><br /><br /><ul style=\"margin-left: 18px\"><li>Die Registrierung und Nutzung der Plattform ist für Fahrschüler:innen kostenfrei.</li><li>Bei der Registrierung müssen wahrheitsgemäße und vollständige Angaben gemacht werden.</li><li>Jede:r Nutzer:in ist für die Vertraulichkeit des Passworts verantwortlich.</li></ul><br /><br /><strong>b) Fahrschulen</strong><br /><br /><ul style=\"margin-left: 18px\"><li>Fahrschulen können sich nach erfolgreicher Prüfung durch den Betreiber registrieren.</li><li>Die Nutzung der Plattform ist für Fahrschulen im ersten Monat kostenfrei. Ab dem zweiten Monat ist die Nutzung kostenpflichtig (siehe § 3).</li><li>Fahrschulen verpflichten sich, aktuelle und korrekte Angaben zu ihrer Fahrschule (z. B. Adresse, Öffnungszeiten, Kontaktdaten) zu hinterlegen.</li></ul>"
+      },
+      {
+        "heading": "3. Kosten und Zahlungsbedingungen (nur für Fahrschulen)",
+        "html": "Folgende Bedingungen gelten:<ul style=\"margin-left: 18px\"><li>Die Nutzung der Plattform ist für Fahrschulen im ersten Monat kostenfrei. Nachdem ist die Nutzung gegen ein monatliches Entgelt möglich.</li><li>Die Zahlung erfolgt per <strong>SEPA-Lastschrift</strong> über unseren Zahlungsdienstleister <strong>[Name des Zahlungsdienstleisters]</strong>.</li><li>Die Abbuchung erfolgt monatlich im Voraus.</li><li>Fahrschulen können den Vertrag mit einer Frist von <strong>14 Tagen</strong> zum Monatsende kündigen.</li></ul>"
+      },
+      {
+        "heading": "4. Buchung von Terminen",
+        "html": "Folgende Bedingungen gelten:<ul style=\"margin-left: 18px\"><li>Fahrschüler:innen können über die Plattform Theorie- und Fahrstunden bei teilnehmenden Fahrschulen buchen.</li><li>Die Buchung ist verbindlich. Stornierungen oder Änderungen müssen direkt mit der Fahrschule vereinbart werden.</li><li>Die Plattform übernimmt keine Haftung für die Durchführung der gebuchten Termine.</li></ul>"
+      },
+      {
+        "heading": "5. Pflichten der Nutzer:innen",
+        "html": "Folgende Bedingungen gelten:<ul style=\"margin-left: 18px\"><li>Nutzer:innen verpflichten sich, die Plattform nur für den vorgesehenen Zweck zu nutzen.</li><li>Es ist verboten, falsche Angaben zu machen, die Plattform für illegale Zwecke zu nutzen oder andere Nutzer:innen zu belästigen.</li><li>Fahrschulen verpflichten sich, ihre Angebote und Preise korrekt und aktuell zu halten.</li></ul>"
+      },
+      {
+        "heading": "6. Haftung",
+        "html": "Folgende Bedingungen gelten:<ul style=\"margin-left: 18px\"><li>Der Betreiber haftet nicht für die Richtigkeit, Vollständigkeit oder Aktualität der auf der Plattform bereitgestellten Informationen.</li><li>Der Betreiber haftet nicht für Schäden, die durch die Nutzung der Plattform oder durch das Verhalten anderer Nutzer:innen entstehen.</li><li>Fahrschulen haften selbst für die Durchführung der gebuchten Termine.</li></ul>"
+      },
+      {
+        "heading": "7. Datenschutz",
+        "html": "Folgende Bedingungen gelten:<ul style=\"margin-left: 18px\"><li>Die Erhebung und Verarbeitung personenbezogener Daten erfolgt gemäß unserer Datenschutzerklärung.</li><li>Nutzer:innen erklären sich mit der Datenschutzerklärung einverstanden.</li></ul>"
+      },
+      {
+        "heading": "8. Kündigung und Sperrung",
+        "html": "Folgende Bedingungen gelten:<ul style=\"margin-left: 18px\"><li>Der Betreiber behält sich vor, Nutzerkonten zu sperren, wenn gegen diese AGB verstoßen wird.</li><li>Fahrschulen können ihren Vertrag mit einer Frist von <strong>14 Tagen</strong> kündigen.</li></ul>"
+      },
+      {
+        "heading": "9. Änderungen der AGB",
+        "html": "Folgende Bedingungen gelten:<ul style=\"margin-left: 18px\"><li>Der Betreiber behält sich vor, diese AGB zu ändern.</li><li>Nutzer:innen werden über Änderungen per E-Mail informiert.</li><li>Die Nutzung der Plattform nach einer Änderung gilt als Zustimmung zu den neuen AGB.</li></ul>"
+      },
+      {
+        "heading": "10. Schlussbestimmungen",
+        "html": "Folgende Bedingungen gelten:<ul style=\"margin-left: 18px\"><li>Sollten einzelne Bestimmungen dieser AGB unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</li><li>Es gilt das Recht der Bundesrepublik Deutschland.</li><li>Gerichtsstand ist <strong>[Ort]</strong>, sofern der:die Nutzer:in Vollkaufmann:frau ist oder keinen allgemeinen Gerichtsstand in Deutschland hat.</li></ul>"
+      }
+    ]
   }
 }
