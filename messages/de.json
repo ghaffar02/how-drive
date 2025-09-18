@@ -651,5 +651,33 @@
         "html": "Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.<br /><br />Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen."
       }
     ]
+  },
+  "cookies": {
+    "data": [
+      {
+        "heading": "",
+        "html": "Diese Cookie-Richtlinie erklärt, wie wir Cookies und ähnliche Technologien verwendet, um Ihnen eine optimale Nutzererfahrung zu bieten.<br /><br />Stand: 01.10.2025"
+      },
+      {
+        "heading": "1. Was sind Cookies?",
+        "html": "Cookies sind kleine Textdateien, die von Ihrem Browser auf Ihrem Endgerät gespeichert werden, wenn Sie unsere Website besuchen. Sie ermöglichen es, Ihr Gerät bei späteren Besuchen wiederzuerkennen und bestimmte Informationen zu speichern."
+      },
+      {
+        "heading": "2. Welche Arten von Cookies verwenden wir?",
+        "html": "<strong>a) Notwendige Cookies</strong><br /><br />Diese Cookies sind essenziell für den Betrieb unserer Website und ermöglichen grundlegende Funktionen wie Navigation und Zugriff auf sichere Bereiche. Ohne diese Cookies können bestimmte Teile der Website nicht ordnungsgemäß funktionieren. Dazu gehören z. B.:<br /><br /><ul style=\"margin-left: 18px\"><li>Session-Management (Login-Status, Sicherheit)</li><li>Speicherung Ihrer Cookie-Einstellungen</li></ul><br /><br />Diese Cookies können nicht deaktiviert werden.<br /><br /><strong>b) Funktionale Cookies</strong><br /><br />Diese Cookies helfen dabei, die Benutzerfreundlichkeit zu verbessern, z. B.:<br /><br /><ul style=\"margin-left: 18px\"><li>Speicherung Ihrer Spracheinstellungen</li><li>Vorausgefüllte Formulare</li></ul><br /><strong>c) Analyse-Cookies</strong><br /><br />Wir verwenden diese Cookies, um zu verstehen, wie unsere Website genutzt wird (z. B. mit Goole Analytics oder einem ähnlichen Tool).<br /><br /><ul style=\"margin-left: 18px\"><li>Erhebung anonymisierter Nutzungsdaten</li><li>Verbesserung unserer Inhalte und Funktionen</li></ul><br />Diese Cookies werden nur mit Ihrer Zustimmung gesetzt.<br /><br /><strong>d) Marketing-Cookies</strong><br /><br />Diese Cookies ermöglichen es, personalisierte Inhalte oder Werbung anzuzeigen und externe Dienste einzubinden, wie z. B.:<br /><ul style=\"margin-left: 18px\"><li>Newsletter-Tracking</li><li>Zahlungsdienstleister</li></ul><br />Kartenanbieter oder eingebettete Inhalte"
+      },
+      {
+        "heading": "3. Ihre Einwilligung",
+        "html": "Beim ersten Besuch unserer Website fragen wir Sie um Ihre Einwilligung für die Nutzung von Cookies, die nicht zwingend notwendig sind. Sie können Ihre Einwilligung jederzeit widerrufen oder anpassen, indem Sie die Cookie-Einstellungen aufrufen."
+      },
+      {
+        "heading": "4. Verwaltung Ihrer Cookie-Einstellungen",
+        "html": "Sie können die Verwendung von Cookies in den Einstellungen Ihres Browsers steuern oder ganz deaktivieren. Bitte beachten Sie, dass einige Funktionen unserer Website möglicherweise nicht mehr richtig funktionieren, wenn Sie Cookies deaktivieren."
+      },
+      {
+        "heading": "5. Rechtsgrundlage",
+        "html": "Die Rechtsgrundlage für den Einsatz von Cookies ist:<br /><br /><ul style=\"margin-left:18px\"><li>Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) für technisch notwendige Cookies</li><li>Art. 6 Abs. 1 lit. a DSGVO (Einwilligung) für alle anderen Cookie-Arten</li></ul>"
+      }
+    ]
   }
 }
