@@ -10,10 +10,12 @@ import Logo from '@/assets/pngs/logo.png';
 import profile from '@/assets/svgs/profile.svg';
 import hamburger from '@/assets/svgs/hamburger.svg';
 import {useTranslations} from 'next-intl';
+import {useRouter} from 'next/navigation';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const t = useTranslations('Navbar');
+  const router = useRouter();
 
   return (
     <>
@@ -196,6 +198,9 @@ export default function Navbar() {
                     '"Inter", "Inter Placeholder", sans-serif !important'
                 }}
                 variant="outlined"
+                onClick={() => {
+                  router.push('/login');
+                }}
               >
                 {t('login')}
               </Button>

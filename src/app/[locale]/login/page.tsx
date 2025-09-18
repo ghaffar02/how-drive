@@ -32,25 +32,6 @@ export default function LoginPage() {
   const {mutate, isPending, isError, error, data} = useLogin();
 
   const onSubmit = async (data: FormValues) => {
-    // try {
-    //   const res = await fetch('https://dummyjson.com/auth/login', {
-    //     method: 'POST',
-    //     headers: {'Content-Type': 'application/json'},
-    //     body: JSON.stringify({
-    //       username: data.email,
-    //       password: data.password
-    //     })
-    //   });
-
-    //   if (res.ok) {
-    //     const data1 = await res.json();
-    //     console.log('This is the data after api: ', data1);
-    //   } else {
-    //     console.log('We got an error:', res.status, res.statusText);
-    //   }
-    // } catch (err) {
-    //   console.error('Error during login:', err);
-    // }
     const email = data.email;
     const password = data.password;
     mutate({email, password});
@@ -181,19 +162,20 @@ export default function LoginPage() {
             )}
           />
 
-          <Typography
-            sx={{
-              color: '#1270ff',
-              fontSize: '14px',
-              textAlign: 'right',
-              cursor: 'pointer',
-              fontFamily: '"Inter", sans-serif !important',
-              fontWeight: 500
-            }}
-          >
-            {t('forgetPassword')}
-          </Typography>
-
+          <Link href={'/forgot-password'}>
+            <Typography
+              sx={{
+                color: '#1270ff',
+                fontSize: '14px',
+                textAlign: 'right',
+                cursor: 'pointer',
+                fontFamily: '"Inter", sans-serif !important',
+                fontWeight: 500
+              }}
+            >
+              {t('forgetPassword')}
+            </Typography>
+          </Link>
           <Button
             type="submit"
             variant="contained"
@@ -230,7 +212,7 @@ export default function LoginPage() {
         >
           {t('alreadyUser')}{' '}
           <Link
-            href="#"
+            href="/register"
             style={{
               cursor: 'pointer',
               color: '#1270ff',

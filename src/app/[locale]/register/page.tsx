@@ -426,7 +426,8 @@ export default function RegisterPage() {
           }}
         >
           {t('alreadyExist')}{' '}
-          <span
+          <Link
+            href="/login"
             style={{
               cursor: 'pointer',
               color: '#1270ff',
@@ -436,7 +437,7 @@ export default function RegisterPage() {
             }}
           >
             {t('signin')}
-          </span>
+          </Link>
         </Typography>
       </Box>
       {/* Right Side */}
