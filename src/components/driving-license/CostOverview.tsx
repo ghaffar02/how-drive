@@ -25,7 +25,7 @@ export default function Costoverview({
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'center',
-          p: {xs: '60px 16px ', md: '60px 24px '},
+          padding: {xs: '60px 16px', md: '60px 24px', lg: '60px 48px'},
           alignItems: 'center'
         }}
       >

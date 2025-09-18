@@ -30,19 +30,30 @@ export default function HeroClass() {
           viewport={{once: true, amount: 0.6}}
           transition={{duration: 0.8}}
           sx={{
-            // backgroundSize: 'center',
-            // backgroundPosition: 'end end',
-            // WebkitBackgroundClip: 'text',
-            // WebkitTextFillColor: 'transparent',
-            // backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.26)), url(${bgImage.src})`,
-            color: '#000',
-            lineHeight: {xs: '58px', md: '100%'},
+            position: 'relative',
+            display: 'inline-block',
+            color: '#000', // default text color
+            lineHeight: {xs: '58px', md: '80px'},
             fontSize: {xs: '48px', md: '56px', lg: '64px'},
-            // fontWeight: 700,
             fontFamily: 'Satoshi700, sans-serif !important',
             maxWidth: '460px',
-            width: '100%'
-            // marginBottom: '16px'
+            // height: '100%',
+            width: '100%',
+            '&::after': {
+              content: '"Driving license"', // same text overlay
+              position: 'absolute',
+              left: 0,
+              top: 0,
+              width: '100%',
+              height: '100%',
+              zIndex: '111',
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.26)), url(${bgImage.src})`,
+              backgroundSize: '100% 15%',
+              backgroundRepeat: 'no-repeat',
+              backgroundPosition: '100%  100%',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
+            }
           }}
         >
           Driving license
@@ -82,7 +93,7 @@ export default function HeroClass() {
           viewport={{once: true, amount: 0.6}}
           transition={{duration: 1, delay: 0.2}}
           sx={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.26)), url(${bgImage.src})`,
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.26)), url(${bgImage.src})`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             WebkitBackgroundClip: 'text',

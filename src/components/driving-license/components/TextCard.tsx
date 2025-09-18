@@ -42,7 +42,7 @@ export default function TextCard({
             fontSize: headingSize
               ? {xs: '32px', sm: '36px', lg: '48px'}
               : {xs: '20px', sm: '22px', lg: '24px'},
-            fontFamily: 'Satoshi600 !important',
+            fontFamily: 'Satoshi700 !important',
             color: '#2563eb'
           }}
         >
