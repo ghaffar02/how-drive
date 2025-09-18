@@ -343,15 +343,29 @@
     "description": "We connect learner drivers and driving schools through a digital service.",
     "features": {
       "heading": "Function",
-      "items": ["Students", "Schools", "Installation"]
+      "items": [
+        "Students",
+        "Schools",
+        "Installation"
+      ]
     },
     "services": {
       "heading": "Service",
-      "items": ["About Us", "Pricing", "Contact", "Help"]
+      "items": [
+        "About Us",
+        "Pricing",
+        "Contact",
+        "Help"
+      ]
     },
     "support": {
       "heading": "Legal",
-      "items": ["Imprint", "Privacy Policy", "Terms", "Cookie"]
+      "items": [
+        "Imprint",
+        "Privacy Policy",
+        "Terms",
+        "Cookie"
+      ]
     }
   },
   "loginPage": {
@@ -439,6 +453,9 @@
     "heading2": "Cost overview",
     "heading3": "Step-by-step guide to a class A driving license",
     "heading4": "Notice",
+    "title1": "Driving license ",
+    "title2": "Class A",
+    "descriptionhero": " Motorcycles in four categories, from light mopeds to larger  motorcycles.",
     "description": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future.",
     "stepsData": [
       {

@@ -343,15 +343,29 @@
     "description": "Wir verknupfen Fahrschüler und Fahrschulen durch ein digitales Service.",
     "features": {
       "heading": "Funktionen",
-      "items": ["Fahrschüler", "Fahrschulen", "Installation"]
+      "items": [
+        "Fahrschüler",
+        "Fahrschulen",
+        "Installation"
+      ]
     },
     "services": {
       "heading": "Service",
-      "items": ["Über uns", "Preise", "Kontakt", "Hilfe"]
+      "items": [
+        "Über uns",
+        "Preise",
+        "Kontakt",
+        "Hilfe"
+      ]
     },
     "support": {
       "heading": "Rechtliches",
-      "items": ["Impressum", "Datenschutz", "AGB", "Cookie"]
+      "items": [
+        "Impressum",
+        "Datenschutz",
+        "AGB",
+        "Cookie"
+      ]
     }
   },
   "loginPage": {
@@ -439,6 +453,9 @@
     "heading2": "Kostenübersicht",
     "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein der Klasse A",
     "heading4": "Notice",
+    "title1": "Führerschein",
+    "title2": " Klasse A",
+    "descriptionhero": "Krafträder in vier Kategorien, von leichten Kleinkrafträdern (Mopeds) bis größere Motorräder.",
     "description": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future.",
     "stepsData": [
       {

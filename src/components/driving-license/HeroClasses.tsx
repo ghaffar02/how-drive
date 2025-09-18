@@ -119,11 +119,3 @@ export default function HeroClass({title1, title2, description}: HeroClass) {
     </Box>
   );
 }
-
-// "title1": "Driving license ",
-//   "title2": "Class A",
-//   "descriptionhero": " Motorcycles in four categories, from light mopeds to larger  motorcycles.",
-
-// "title1": "Führerschein",
-// "title2": " Klasse A",
-// "descriptionhero": "Krafträder in vier Kategorien, von leichten Kleinkrafträdern (Mopeds) bis größere Motorräder.",
