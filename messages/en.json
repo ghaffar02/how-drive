@@ -343,15 +343,29 @@
     "description": "We connect learner drivers and driving schools through a digital service.",
     "features": {
       "heading": "Function",
-      "items": ["Students", "Schools", "Installation"]
+      "items": [
+        "Students",
+        "Schools",
+        "Installation"
+      ]
     },
     "services": {
       "heading": "Service",
-      "items": ["About Us", "Pricing", "Contact", "Help"]
+      "items": [
+        "About Us",
+        "Pricing",
+        "Contact",
+        "Help"
+      ]
     },
     "support": {
       "heading": "Legal",
-      "items": ["Imprint", "Privacy Policy", "Terms", "Cookie"]
+      "items": [
+        "Imprint",
+        "Privacy Policy",
+        "Terms",
+        "Cookie"
+      ]
     }
   },
   "loginPage": {
@@ -437,6 +451,76 @@
     "zusaDes": "2–4 lessons - double lessons",
     "heading1": "Important information",
     "heading2": "Cost overview",
+    "heading3": "Step-by-step guide to a class A driving license",
+    "heading4": "Notice",
+    "description": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future.",
+    "stepsData": [
+      {
+        "title": "Driving school registration",
+        "content": [
+          "Choose a certified driving school.",
+          "Sign training contract with driving school."
+        ]
+      },
+      {
+        "title": "Prepare documents",
+        "content": [
+          "Identity card or passport: proof of residence.",
+          "Biometric passport photo: standard format.",
+          "Eye test: Must not be older than 2 years.",
+          "First aid course: 9 teaching units."
+        ]
+      },
+      {
+        "title": "Driving license application",
+        "content": [
+          "The application for a driving license must be submitted to your responsible driving license office.",
+          "The application is submitted either through your driving school or directly to the office."
+        ]
+      },
+      {
+        "title": "Theory lessons",
+        "content": [
+          "Raw material: 12 double lessons.",
+          "Additive material: 2 to 4 double lessons."
+        ]
+      },
+      {
+        "title": "Theoretical exam",
+        "content": [
+          "Earliest 3 months before minimum age.",
+          "Approx. 30 questions in multiple-choice format.",
+          "Max. 10 penalty points allowed.",
+          "Approved by TÜV or DEKRA."
+        ]
+      },
+      {
+        "title": "Driving lessons",
+        "content": [
+          "Overland: 5 trips.",
+          "Highway: 4 trips.",
+          "Night: 3 trips.",
+          "In addition, there are normal practice runs."
+        ]
+      },
+      {
+        "title": "Practical exam",
+        "content": [
+          "Earliest 1 month before minimum age.",
+          "Approx. 45 to 60 minutes.",
+          "Vehicle check, driving behavior in city, country and motorway traffic, reversing, parking, hazard assessment.",
+          "Failed: Retake only possible after 2 weeks."
+        ]
+      },
+      {
+        "title": "Issuing a driving license",
+        "content": [
+          "The EU driving license is issued.",
+          "Get your driving license from the driver’s license office.",
+          "For BF17: Driving test certificate only, driving allowed only with registered accompanying persons."
+        ]
+      }
+    ],
     "drivingRules": [
       {
         "title": "Gradual ascent",

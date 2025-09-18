@@ -8,11 +8,6 @@ export default function HeroClass() {
     <Box sx={{bgcolor: '#FAFAFA'}}>
       <Box
         sx={{
-          backgroundImage: `url(${bgImage.src})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent',
           p: {xs: '120px 24px 60px'},
           maxWidth: '1280px',
           textAlign: 'center',
@@ -35,17 +30,48 @@ export default function HeroClass() {
           viewport={{once: true, amount: 0.6}}
           transition={{duration: 0.8}}
           sx={{
+            // backgroundSize: 'center',
+            // backgroundPosition: 'end end',
+            // WebkitBackgroundClip: 'text',
+            // WebkitTextFillColor: 'transparent',
+            // backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.26)), url(${bgImage.src})`,
             color: '#000',
             lineHeight: {xs: '58px', md: '100%'},
             fontSize: {xs: '48px', md: '56px', lg: '64px'},
-            fontWeight: '700 !important',
-            fontFamily: 'Satoshi700, sans-serif',
+            // fontWeight: 700,
+            fontFamily: 'Satoshi700, sans-serif !important',
+            maxWidth: '460px',
+            width: '100%'
+            // marginBottom: '16px'
+          }}
+        >
+          Driving license
+        </Typography>
+
+        <Typography
+          component={motion.p}
+          initial={{opacity: 0, y: 20}}
+          whileInView={{opacity: 1, y: 0}}
+          viewport={{once: true, amount: 0.6}}
+          transition={{duration: 0.8}}
+          sx={{
+            backgroundSize: 'center',
+            backgroundPosition: 'center 1900px',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.26)), url(${bgImage.src})`,
+            color: '#000',
+            lineHeight: {xs: '58px', md: '100%'},
+            fontSize: {xs: '48px', md: '56px', lg: '64px'},
+            fontWeight: 700,
+            fontFamily: 'Satoshi700, sans-serif !important',
             maxWidth: '430px',
             width: '100%'
             // marginBottom: '16px'
           }}
         >
-          Driving license Class A
+          Class A
         </Typography>
 
         {/* Description */}
@@ -56,6 +82,11 @@ export default function HeroClass() {
           viewport={{once: true, amount: 0.6}}
           transition={{duration: 1, delay: 0.2}}
           sx={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.26)), url(${bgImage.src})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
             maxWidth: '650px',
             width: '100%',
             color: '#1A202C',
