@@ -9,11 +9,15 @@ import ClassGrid from '@/components/driving-license/ClassGrid';
 import ImportantInformation from '@/components/driving-license/ImportantInformation';
 import Costoverview from '@/components/driving-license/CostOverview';
 import {useTranslations} from 'next-intl';
+import DrivingSteps from '@/components/driving-license/Tab';
+// import Notice from '@/components/driving-license/Notice';
 
 export default function Page() {
   const t = useTranslations('licenseA');
   const drivingRules = t.raw('drivingRules');
   const drivingCosts = t.raw('drivingCosts');
+  const stepsData = t.raw('stepsData');
+
   return (
     <>
       <Box>
@@ -31,14 +35,19 @@ export default function Page() {
         >
           <Navbar />
         </Box>
-        <HeroClasses />
+        <HeroClasses
+          title1={t('title1')}
+          title2={t('title2')}
+          description={t('descriptionhero')}
+        />
         <ClassGrid license="licenseA" />
         <ImportantInformation
           drivingRules={drivingRules}
           heading={t('heading1')}
         />
         <Costoverview drivingCosts={drivingCosts} heading={t('heading2')} />
-
+        <DrivingSteps steps={stepsData} heading={t('heading3')} />
+        {/* <Notice heading={t('heading4')} description={t('description')} /> */}
         <TrustServiceSection />
         <Footer />
       </Box>

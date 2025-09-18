@@ -9,3 +9,16 @@ export const loginUser = async (payload: LoginPayload) => {
   const {data} = await api.post('/auth/login', payload);
   return data; // API response
 };
+
+export interface RegisterPayload {
+  email: string;
+  password: string;
+  name: string;
+  role: string;
+  address: string;
+  phoneNumber: string;
+}
+export const registerUser = async (payload: RegisterPayload) => {
+  const {data} = await api.post('users/create', payload);
+  return data;
+};

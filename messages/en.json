@@ -343,29 +343,15 @@
     "description": "We connect learner drivers and driving schools through a digital service.",
     "features": {
       "heading": "Function",
-      "items": [
-        "Students",
-        "Schools",
-        "Installation"
-      ]
+      "items": ["Students", "Schools", "Installation"]
     },
     "services": {
       "heading": "Service",
-      "items": [
-        "About Us",
-        "Pricing",
-        "Contact",
-        "Help"
-      ]
+      "items": ["About Us", "Pricing", "Contact", "Help"]
     },
     "support": {
       "heading": "Legal",
-      "items": [
-        "Imprint",
-        "Privacy Policy",
-        "Terms",
-        "Cookie"
-      ]
+      "items": ["Imprint", "Privacy Policy", "Terms", "Cookie"]
     }
   },
   "loginPage": {
@@ -404,7 +390,8 @@
     "error4": "Password is required",
     "invalidEmail": "Invalid Email",
     "passMin": "Password must be at least 8 characters long",
-    "passChar": "Password must contain at least one number"
+    "passChar": "Password must contain at least one number",
+    "toastSuccess": "Registeration Successful!"
   },
   "passwordPage": {
     "heading": "Forgot Password?",
@@ -450,6 +437,79 @@
     "zusaDes": "2–4 lessons - double lessons",
     "heading1": "Important information",
     "heading2": "Cost overview",
+    "heading3": "Step-by-step guide to a class A driving license",
+    "heading4": "Notice",
+    "title1": "Driving license ",
+    "title2": "Class A",
+    "descriptionhero": " Motorcycles in four categories, from light mopeds to larger  motorcycles.",
+    "description": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future.",
+    "stepsData": [
+      {
+        "title": "Driving school registration",
+        "content": [
+          "Choose a certified driving school.",
+          "Sign training contract with driving school."
+        ]
+      },
+      {
+        "title": "Prepare documents",
+        "content": [
+          "Identity card or passport: proof of residence.",
+          "Biometric passport photo: standard format.",
+          "Eye test: Must not be older than 2 years.",
+          "First aid course: 9 teaching units."
+        ]
+      },
+      {
+        "title": "Driving license application",
+        "content": [
+          "The application for a driving license must be submitted to your responsible driving license office.",
+          "The application is submitted either through your driving school or directly to the office."
+        ]
+      },
+      {
+        "title": "Theory lessons",
+        "content": [
+          "Raw material: 12 double lessons.",
+          "Additive material: 2 to 4 double lessons."
+        ]
+      },
+      {
+        "title": "Theoretical exam",
+        "content": [
+          "Earliest 3 months before minimum age.",
+          "Approx. 30 questions in multiple-choice format.",
+          "Max. 10 penalty points allowed.",
+          "Approved by TÜV or DEKRA."
+        ]
+      },
+      {
+        "title": "Driving lessons",
+        "content": [
+          "Overland: 5 trips.",
+          "Highway: 4 trips.",
+          "Night: 3 trips.",
+          "In addition, there are normal practice runs."
+        ]
+      },
+      {
+        "title": "Practical exam",
+        "content": [
+          "Earliest 1 month before minimum age.",
+          "Approx. 45 to 60 minutes.",
+          "Vehicle check, driving behavior in city, country and motorway traffic, reversing, parking, hazard assessment.",
+          "Failed: Retake only possible after 2 weeks."
+        ]
+      },
+      {
+        "title": "Issuing a driving license",
+        "content": [
+          "The EU driving license is issued.",
+          "Get your driving license from the driver’s license office.",
+          "For BF17: Driving test certificate only, driving allowed only with registered accompanying persons."
+        ]
+      }
+    ],
     "drivingRules": [
       {
         "title": "Gradual ascent",
@@ -504,6 +564,170 @@
       {
         "title": "Total costs",
         "cost": "1.500–3.000 € (depending on individual learning time and region)"
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "data": [
+      {
+        "heading": "1. Data Controller",
+        "html": "The entity responsible for data processing on this website is:<br /><br />Max Mustermann<br />Musterstraße 123<br />10115 Berlin<br /><br />info@wiefuererschein.de"
+      },
+      {
+        "heading": "2. General Information on Data Processing",
+        "html": "We process personal data only in accordance with the applicable legal provisions (General Data Protection Regulation (GDPR), German Federal Data Protection Act (BDSG), and German Telemedia Act (TMG). This privacy policy informs you about the nature, scope, and purpose of the collection and use of personal data."
+      },
+      {
+        "heading": "3. Collection and Storage of Personal Data",
+        "html": "<strong>a) Registration of Driving Students</strong><br /><br />When you register as a driving student on our platform, we collect the following data:<br /><br /><ul style='margin-left: 18px'><li>First and last name</li><li>Email address</li><li>Phone number (optional)</li><li>Place of residence (optional)</li><li>Username and password</li></ul><br />Registration and use of the platform is free of charge for driving students.<br /><br /><strong>b) Registration of Driving Schools</strong><br /><br />Driving schools using our platform provide the following additional data:<br /><br /><ul style='margin-left: 18px'><li>Name of the driving school</li><li>Address of the driving school</li><li>Phone number of the driving school</li><li>Email address of the driving school</li><li>Opening hours</li><li>Bank details (for processing monthly payments)</li><li>If applicable, further information about the offer (e.g., types of vehicles, language courses)</li></ul><br /><strong>c) Booking of Theory and Driving Lessons</strong><br /><br />When you book appointments, we additionally store:<br /><br /><ul style='margin-left: 18px'><li>Booked appointments</li><li>Communication data with driving schools</li></ul><br /><strong>d) Use of the Contact Form</strong><br /><br />If you contact us via the contact form or by email, we store your message and the contact details you provide in order to process your request."
+      },
+      {
+        "heading": "4. Payment Processing",
+        "html": "For driving schools using our platform for a monthly fee, we offer payment processing. For this purpose, we work with the payment service provider <strong>[Name of the payment service provider, e.g., Stripe, PayPal]</strong>. The following data is processed during payment:<br /><br /><ul style='margin-left: 18px'><li>Name of the driving school</li><li>Billing address</li><li>Bank details</li><li>Payment history</li></ul><br /><br />Data is transmitted encrypted and used solely for payment processing. For further information, please refer to the privacy policy of our payment service provider: <strong>[Link to the privacy policy of the payment service provider]</strong>."
+      },
+      {
+        "heading": "5. Newsletter",
+        "html": "If you subscribe to our newsletter, we collect your email address to regularly send you information about our platform, new features, and offers. Subscription to the newsletter is via a double opt-in procedure. After registration, you will receive an email with a confirmation link. Only after confirmation will you be added to our newsletter distribution list. You can unsubscribe from the newsletter at any time via the unsubscribe link in each email or by sending us a message."
+      },
+      {
+        "heading": "6. Use and Disclosure of Data",
+        "html": "Your data will be used exclusively for the following purposes: <br /><br /><ul style='margin-left: 18px'><li>Provision and improvement of our services</li><li>Communication with you</li><li>Processing of bookings and payments</li><li>Answering support requests</li><li>Sending the newsletter (if subscribed)</li></ul><br />Your data will only be disclosed to third parties if this is necessary for the fulfillment of the contract (e.g., to the booked driving school or the payment service provider) or if we are legally obliged to do so."
+      },
+      {
+        "heading": "7. Legal Basis for Data Processing",
+        "html": "The processing of your data is based on:<br /><br /><ul style='margin-left: 18px'><li>Art. 6(1)(a) GDPR (consent, e.g., for the newsletter)</li><li>Art. 6(1)(b) GDPR (for the performance of a contract, e.g., for bookings and payments)</li><li>Art. 6(1)(c) GDPR (legal obligation)</li><li>Art. 6(1)(f) GDPR (legitimate interest, e.g., for improving our services)</li></ul>"
+      },
+      {
+        "heading": "8. Storage Period",
+        "html": "Your data will only be stored for as long as necessary to fulfill the purposes mentioned. After termination of the user contract or at your request, your data will be deleted, unless legal retention obligations (e.g., tax or commercial law retention periods) prevent this."
+      },
+      {
+        "heading": "9. Your Rights",
+        "html": "As a user of our platform, you have the following rights:<br /><br /><ul style='margin-left: 18px'><li>Right of access (Art. 15 GDPR): You can request information about the personal data we process.</li><li>Right to rectification (Art. 16 GDPR): You can request the correction of inaccurate data.</li><li>Right to erasure (Art. 17 GDPR): You can request the deletion of your data, provided there are no legal retention obligations.</li><li>Right to restriction of processing (Art. 18 GDPR): You can request the restriction of the processing of your data.</li><li>Right to data portability (Art. 20 GDPR): You can receive your data in a machine-readable format.</li><li>Right to object (Art. 21 GDPR): You can object to the processing of your data.</li><li>Right to lodge a complaint (Art. 77 GDPR): You can lodge a complaint with a supervisory authority.</li></ul><br /> To exercise these rights, please contact: <strong>[Email Address]</strong>"
+      },
+      {
+        "heading": "10. Cookies and Tracking",
+        "html": "Our website uses cookies to make the service more user-friendly. You can disable the storage of cookies in your browser settings. Please note that this may limit the functionality of our website. We do not use third-party tracking tools that collect personal data."
+      },
+      {
+        "heading": "11. Data Security",
+        "html": "We use technical and organizational measures to protect your data from loss, manipulation, and unauthorized access."
+      },
+      {
+        "heading": "12. Changes to this Privacy Policy",
+        "html": "We reserve the right to adapt this privacy policy to changed legal situations or changes in our services. The current version can always be found on this page."
+      }
+    ]
+  },
+  "imprint": {
+    "title": "Imprint",
+    "data": [
+      {
+        "heading": "Information according to § 5 TMG (German Telemedia Act)",
+        "html": "Max Mustermann<br />Musterstraße 123<br />10115 Berlin<br />Deutschland"
+      },
+      {
+        "heading": "Contact",
+        "html": "Telefon: +49 (0) 30 12345678<br />E-Mail: info@wiefuererschein.de<br />Website: www.wiefuererschein.de"
+      },
+      {
+        "heading": "VAT ID",
+        "html": "In accordance with § 19 UStG (German VAT Act), no VAT is charged."
+      },
+      {
+        "heading": "Person Responsible for Content according to § 55 Abs. 2 RStV",
+        "html": "Max Mustermann<br />Musterstraße 123<br />10115 Berlin"
+      },
+      {
+        "heading": "Liability for Content",
+        "html": "As a service provider, we are responsible for our own content on these pages in accordance with general laws pursuant to § 7 Abs.1 TMG. However, according to §§ 8 to 10 TMG, we are not obligated to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.<br /><br />Obligations to remove or block the use of information under general laws remain unaffected. However, liability in this regard is only possible from the moment of knowledge of a specific infringement. Upon notification of such violations, we will remove this content immediately."
+      },
+      {
+        "heading": "Liability for Links",
+        "html": "Our website contains links to external third-party websites over whose content we have no control. Therefore, we cannot assume any liability for this external content. The respective provider or operator of the linked pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal content was not recognizable at the time of linking.<br /><br />Permanent monitoring of the content of linked pages is not reasonable without concrete evidence of a violation. Upon notification of legal violations, we will remove such links immediately."
+      },
+      {
+        "heading": "Copyright",
+        "html": "The content and works created by the site operators on these pages are subject to German copyright law. Any reproduction, editing, distribution, or other use outside the limits of copyright law requires the written consent of the respective author or creator. Downloads and copies of this site are only permitted for private, non-commercial use.<br /><br />To the extent that the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is identified as such. Should you nevertheless become aware of a copyright infringement, we ask for a corresponding notice. Upon notification of violations, we will remove such content immediately."
+      }
+    ]
+  },
+  "cookies": {
+    "title": "Cookie Policy",
+    "data": [
+      {
+        "heading": "",
+        "html": "This Cookie Policy explains how we use cookies and similar technologies to provide you with an optimal user experience.<br /><br />As of: 01.10.2025"
+      },
+      {
+        "heading": "1. What Are Cookies?",
+        "html": "Cookies are small text files stored by your browser on your device when you visit our website. They allow us to recognize your device on subsequent visits and to store certain information."
+      },
+      {
+        "heading": "2. What Types of Cookies Do We Use?",
+        "html": "<strong>a) Essential Cookies</strong><br /><br />These cookies are necessary for the operation of our website and enable basic functions such as navigation and access to secure areas. Without these cookies, certain parts of the website may not function properly. These include, for example:<br /><br /><ul style=\"margin-left: 18px\"><li>Session management (login status, security)</li><li>Storage of your cookie settings</li></ul><br />These cookies cannot be disabled<br /><br /><strong>b) Functional Cookies</strong><br /><br />These cookies help improve user-friendliness, for example:<br /><br /><ul style=\"margin-left: 18px\"><li>Saving your language settings</li><li>Pre-filled forms</li></ul><br /><strong>c) Analytics Cookies</strong><br /><br />We use these cookies to understand how our website is used (e.g., with Google Analytics or a similar tool).<br /><br /><ul style=\"margin-left: 18px\"><li>Collection of anonymized usage data</li><li>Improvement of our content and features</li></ul><br />These cookies are only set with your consent.<br /><br /><strong>d) Marketing Cookies</strong><br /><br />These cookies enable the display of personalized content or advertising and the integration of external services, such as:<br /><ul style=\"margin-left: 18px\"><li>Newsletter tracking</li><li>Payment service providers</li></ul><br />Map providers or embedded content"
+      },
+      {
+        "heading": "3. Your Consent",
+        "html": "On your first visit to our website, we ask for your consent to use cookies that are not strictly necessary. You can revoke or adjust your consent at any time by accessing the cookie settings."
+      },
+      {
+        "heading": "4. Managing Your Cookie Settings",
+        "html": "You can control or completely disable the use of cookies in your browser settings. Please note that some features of our website may no longer function properly if you disable cookies."
+      },
+      {
+        "heading": "5. Legal Basis",
+        "html": "The legal basis for the use of cookies is:<br /><br /><ul style=\"margin-left:18px\"><li>Art. 6(1)(f) GDPR (legitimate interest) for technically necessary cookies</li><li>Art. 6(1)(a) GDPR (consent) for all other types of cookies</li></ul>"
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms and Conditions",
+    "data": [
+      {
+        "heading": "",
+        "html": "As of: 01.10.2025<br /><br />Betreiber:<br />Max Mustermann<br />Musterstraße 123<br />10115 Berlin<br /><br />info@wiefuererschein.de"
+      },
+      {
+        "heading": "1. Scope",
+        "html": "These Terms and Conditions apply to the use of the platform <strong>[Name of the Platform]</strong> by driving students and driving schools. The platform serves to connect theory and driving lessons and to facilitate communication between driving students and driving schools."
+      },
+      {
+        "heading": "2. Registration and User Accounts",
+        "html": "<strong>a) Driving Students</strong><br /><br /><ul style=\"margin-left: 18px\"><li>Registration and use of the platform is free of charge for driving students.</li><li>Users must provide truthful and complete information during registration.</li><li>Each user is responsible for the confidentiality of their password.</li></ul><br /><br /><strong>b) Driving Students</strong><br /><br /><ul style=\"margin-left: 18px\"><li>Driving schools may register after successful verification by the operator.</li><li>Use of the platform is free of charge for driving schools for the first month. From the second month onwards, use is subject to a fee (see § 3).</li><li>Driving schools undertake to provide current and accurate information about their driving school (e.g., address, opening hours, contact details).</li></ul>"
+      },
+      {
+        "heading": "3. Costs and Payment Terms (for Driving Schools Only)",
+        "html": "The following conditions apply:<ul style=\"margin-left: 18px\"><li>Use of the platform is free of charge for driving schools for the first month. After that, use is subject to a monthly fee.</li><li>Payment is made via <strong>[payment method, e.g., SEPA direct debit, credit card]</strong> through our payment service provider <strong>[Name of the payment service provider]</strong>.</li><li>Payment is debited monthly in advance.</li><li>Driving schools may terminate the contract with <strong>14 days’</strong> notice to the end of the month.</li></ul>"
+      },
+      {
+        "heading": "4. Booking Appointments",
+        "html": "The following conditions apply:<ul style=\"margin-left: 18px\"><li>Driving students can book theory and driving lessons with participating driving schools via the platform.</li><li>Bookings are binding. Cancellations or changes must be arranged directly with the driving school.</li><li>The platform accepts no liability for the execution of booked appointments.</li></ul>"
+      },
+      {
+        "heading": "5. User Obligations",
+        "html": "The following conditions apply:<ul style=\"margin-left: 18px\"><li>Users undertake to use the platform only for its intended purpose.</li><li>It is prohibited to provide false information, use the platform for illegal purposes, or harass other users.</li><li>Driving schools undertake to keep their offers and prices correct and up to date.</li></ul>"
+      },
+      {
+        "heading": "6. Liability",
+        "html": "The following conditions apply:<ul style=\"margin-left: 18px\"><li>The operator is not liable for the accuracy, completeness, or timeliness of the information provided on the platform.</li><li>The operator is not liable for damages arising from the use of the platform or the behavior of other users.</li><li>Driving schools are themselves liable for the execution of booked appointments.</li></ul>"
+      },
+      {
+        "heading": "7. Data Protection",
+        "html": "The following conditions apply:<ul style=\"margin-left: 18px\"><li>The collection and processing of personal data is carried out in accordance with our Privacy Policy.</li><li>Users agree to the Privacy Policy.</li></ul>"
+      },
+      {
+        "heading": "8. Termination and Blocking",
+        "html": "The following conditions apply:<ul style=\"margin-left: 18px\"><li>The operator reserves the right to block user accounts in the event of a breach of these Terms and Conditions.</li><li>Driving schools may terminate their contract with <strong>14 days’</strong> notice.</li></ul>"
+      },
+      {
+        "heading": "9. Changes to the Terms and Conditions",
+        "html": "The following conditions apply:<ul style=\"margin-left: 18px\"><li>The operator reserves the right to change these Terms and Conditions.</li><li>Users will be informed of changes by email.</li><li>Continued use of the platform after a change constitutes acceptance of the new Terms and Conditions.</li></ul>"
+      },
+      {
+        "heading": "10. Final Provisions",
+        "html": "The following conditions apply:<ul style=\"margin-left: 18px\"><li>If individual provisions of these Terms and Conditions are or become invalid, the validity of the remaining provisions shall remain unaffected.</li><li>The law of the Federal Republic of Germany shall apply.</li><li>The place of jurisdiction is <strong>[Location]</strong>, provided the user is a merchant or does not have a general place of jurisdiction in Germany.</li></ul>"
       }
     ]
   }

@@ -148,8 +148,7 @@ export default function Hero() {
             <Button
               disableRipple
               sx={{
-                width: '100%',
-                maxWidth: {xs: '152px', sm: '186px'},
+                width: 'fit-content',
                 fontSize: {xs: '14px', md: '16px', lg: '18px'},
                 lineHeight: {xs: '21px', md: '20px', lg: '23px'},
                 fontWeight: '400',
