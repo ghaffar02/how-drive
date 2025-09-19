@@ -82,7 +82,7 @@ export default function ImportantInformation({
                     sx={{
                       width: '100%',
                       color: '#2D3748',
-                      fontSize: {xs: '14px', md: '16px', lg: '18px'},
+                      fontSize: {xs: '16px', md: '17px', lg: '18px'},
                       fontWeight: 500,
                       fontFamily:
                         '"Inter", "Inter Placeholder", sans-serif !important'

@@ -364,15 +364,29 @@
     "description": "We connect learner drivers and driving schools through a digital service.",
     "features": {
       "heading": "Function",
-      "items": ["Students", "Schools", "Installation"]
+      "items": [
+        "Students",
+        "Schools",
+        "Installation"
+      ]
     },
     "services": {
       "heading": "Service",
-      "items": ["About Us", "Pricing", "Contact", "Help"]
+      "items": [
+        "About Us",
+        "Pricing",
+        "Contact",
+        "Help"
+      ]
     },
     "support": {
       "heading": "Legal",
-      "items": ["Imprint", "Privacy Policy", "Terms", "Cookie"]
+      "items": [
+        "Imprint",
+        "Privacy Policy",
+        "Terms",
+        "Cookie"
+      ]
     }
   },
   "loginPage": {
@@ -392,7 +406,7 @@
   },
   "registerPage": {
     "heading": "Create an account as:",
-    "tabValue1": "Student",
+    "tabValue1": "Driving Student",
     "tabValue2": "Driving School",
     "firstName": "First Name",
     "lastName": "Last Name",
@@ -401,7 +415,7 @@
     "policy": "I agree to the ",
     "policy2": "Privacy Policy.",
     "policy3": "",
-    "button": "Register",
+    "button": "Sign up",
     "school": "Name of the Driving School",
     "alreadyExist": "Already have an account?",
     "signin": "Login",
@@ -412,7 +426,8 @@
     "invalidEmail": "Invalid Email",
     "passMin": "Password must be at least 8 characters long",
     "passChar": "Password must contain at least one number",
-    "toastSuccess": "Registeration Successful!"
+    "toastSuccess": "Registeration Successful!",
+    "lastpoint": "We offer our service exclusively for driving license classes A and B as well as the conversion of foreign driving licenses of these classes into German ones."
   },
   "passwordPage": {
     "heading": "Forgot Password?",
@@ -584,11 +599,51 @@
       },
       {
         "title": "Total costs",
-        "cost": "1.500–3.000 € (depending on individual learning time and region)"
+        "cost": "<span style={{ fontWeight: 400 }}>1.500–3.000 €</span> (depending on individual learning time and region)"
       }
     ]
   },
   "licenseB": {
+    "grid1Data": [
+      {
+        "heading": "B",
+        "sub": "from 18",
+        "des": "Cars up to 3.5 t, max. 8 seats"
+      },
+      {
+        "heading": "B17",
+        "sub": "from 17",
+        "des": "Accompanied driving"
+      },
+      {
+        "heading": "BE",
+        "sub": "from 18",
+        "des": "Car + trailer up to 3.5 t"
+      },
+      {
+        "heading": "B96",
+        "sub": "from 18",
+        "des": "Car + trailer over 750 kg"
+      }
+    ],
+    "fileTitle": "ID - passport photo - eye test - first aid<br />If applicable, driver's license copy",
+    "roadTitle": "Special trips:<br />5 overland<br />4 highway<br />3 nights",
+    "grund": "Basic material",
+    "grundDes": "12 lessons - double lessons",
+    "gult": "Validity",
+    "gultDes": "Unlimited, every 15 years renewed",
+    "mofa": "B197",
+    "mofasub": "",
+    "mofaDes": "Training partly on automatic",
+    "zusa": "Additive material",
+    "zusaDes": "2 lessons - double lessons",
+    "heading1": "Important information",
+    "heading2": "Cost overview",
+    "heading3": "Step-by-step guide to a class B driving license",
+    "heading4": "Notice",
+    "title1": "Driving license ",
+    "title2": "Class B",
+    "descriptionhero": "Passenger cars, light commercial vehicles, motor homes and other vehicles, excluding motorcycles",
     "stepsData": [
       {
         "title": "Driving school registration",
@@ -709,11 +764,51 @@
       },
       {
         "title": "Total costs",
-        "cost": "2.000–4.000 € (depending on individual learning time and region)"
+        "cost": "<span style={{ fontWeight: 400 }}>2.000–4.000 €</span> (depending on individual learning time and region)"
       }
     ]
   },
   "licenseC": {
+    "grid1Data": [
+      {
+        "heading": "C",
+        "sub": "ab 21",
+        "des": "Trucks over 3.5 t + trailer 750 kg"
+      },
+      {
+        "heading": "CE",
+        "sub": "ab 21",
+        "des": "C + trailer over 750 kg"
+      },
+      {
+        "heading": "C1",
+        "sub": "ab 18",
+        "des": "Trucks 3.5 to 7.5 t + trailer 750 kg"
+      },
+      {
+        "heading": "C1E",
+        "sub": "ab 18",
+        "des": "C1 + trailer over 750 kg"
+      }
+    ],
+    "fileTitle": "ID - passport photo - eye test certificate - <br /> first aid - medical report - if applicable, <br/>  certificate of good conduct",
+    "roadTitle": "Special trips:<br />5 overland<br />2 highway<br />3 nights",
+    "grund": "Basic material",
+    "grundDes": "6 lessons - double lessons",
+    "gult": "Validity",
+    "gultDes": "Limited to 5 years then renewal",
+    "mofa": "Requirement",
+    "mofasub": "",
+    "mofaDes": "Driving license class B",
+    "zusa": "Additive material",
+    "zusaDes": "4-10 lessons - double lessons",
+    "heading1": "Important information",
+    "heading2": "Cost overview",
+    "heading3": "Step-by-step guide to a class B driving license",
+    "heading4": "Notice",
+    "title1": "Driving license ",
+    "title2": "Class C",
+    "descriptionhero": "Trucks and motor vehicles with a maximum permissible mass of more than 3,500 kg.",
     "stepsData": [
       {
         "title": "Driving school registration",
@@ -844,13 +939,53 @@
       },
       {
         "title": "Total costs",
-        "cost": "5.000–10.000 € (depending on individual learning time and region)"
+        "cost": "<span style={{ fontWeight: 400 }}>5.000–10.000 €</span> (depending on individual learning time and region)"
       }
     ],
     "notice": "Notice",
     "noticeDetails": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future."
   },
   "licenseD": {
+    "grid1Data": [
+      {
+        "heading": "D",
+        "sub": "from 24",
+        "des": "Buses with more than 16 people"
+      },
+      {
+        "heading": "DE",
+        "sub": "from 24",
+        "des": "D + trailer over 750 kg"
+      },
+      {
+        "heading": "D1",
+        "sub": "from 21",
+        "des": "Up to 16 people, max. 8 m length + trailer 750 kg"
+      },
+      {
+        "heading": "D1E",
+        "sub": "from 21",
+        "des": "D1 + trailer over 750 kg"
+      }
+    ],
+    "fileTitle": "ID - passport photo - eye test certificate - <br /> first aid - medical report - if applicable, <br/>  certificate of good conduct",
+    "roadTitle": "Special trips:<br />8-22 overland<br />4-14 highway<br />3-8 nights",
+    "grund": "Basic material",
+    "grundDes": "6 lessons - double lessons",
+    "gult": "Validity",
+    "gultDes": "Limited to 5 years then renewal",
+    "mofa": "Requirement",
+    "mofasub": "",
+    "mofaDes": "Driving license class B",
+    "zusa": "Additive material",
+    "zusaDes": "8-18 lessons - double lessons",
+    "heading1": "Important information",
+    "heading2": "Cost overview",
+    "heading3": "Step-by-step guide to a class D driving license",
+    "heading4": "Notice",
+    "title1": "Driving license ",
+    "title2": "Class D",
+    "descriptionhero": "Large buses designed to transport more than eight people (excluding the driver).",
     "stepsData": [
       {
         "title": "Driving school registration",
@@ -981,13 +1116,43 @@
       },
       {
         "title": "Total costs",
-        "cost": "7.000–15.000 € (depending on individual learning time and region)"
+        "cost": "<span style={{ fontWeight: 400 }}>7.000–15.000 €</span> (depending on individual learning time and region)"
       }
     ],
     "notice": "Notice",
     "noticeDetails": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future."
   },
   "licenseLT": {
+    "grid1Data": [
+      {
+        "heading": "L",
+        "sub": "from 16",
+        "des": "Agricultural tractors up to 40 km/h, with trailer up to 25 km/h"
+      },
+      {
+        "heading": "T",
+        "sub": "from 16",
+        "des": "Tractors or large agricultural machinery up to 60 km/h"
+      }
+    ],
+    "fileTitle": "ID - passport photo - eye test - first aid If applicable, driver's license copy",
+    "roadTitle": "Special trips:None, but practical training recommended",
+    "grund": "Basic material",
+    "grundDes": "12 lessons - double lessons",
+    "gult": "Validity",
+    "gultDes": "Unlimited, every 15 years renewed",
+    "mofa": "Additive material L",
+    "mofasub": "",
+    "mofaDes": "2 lessons - double lessons",
+    "zusa": "Additive material T",
+    "zusaDes": "6 lessons - double lessons",
+    "heading1": "Important information",
+    "heading2": "Cost overview class L",
+    "heading3": "Step-by-step guide to a class L and T driving license",
+    "heading4": "Cost overview class T",
+    "title1": "Driving license ",
+    "title2": "Class L and T",
+    "descriptionhero": "L stands for agricultural (Landwirtschaft) and T for tractor. These classes apply to towing vehicles.",
     "stepsData": [
       {
         "title": "Driving school registration",
@@ -1105,7 +1270,7 @@
       },
       {
         "title": "Total costs",
-        "cost": "800–2.000 € (depending on individual learning time and region)"
+        "cost": "<span style={{ fontWeight: 400 }}>800–2.000 €</span> (depending on individual learning time and region)"
       }
     ],
     "drivingCostsData2": [
@@ -1139,13 +1304,43 @@
       },
       {
         "title": "Total costs",
-        "cost": "1.200–3.000 € (depending on individual learning time and region)"
+        "cost": " <span style={{ fontWeight: 400 }}>1.200–3.000 €</span> (depending on individual learning time and region)"
       }
     ],
     "notice": "Notice",
     "noticeDetails": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future."
   },
   "licenseForeign": {
+    "grid1Data": [
+      {
+        "heading": "A",
+        "sub": "from 16",
+        "des": "Driving license classes A, A1, A2, AM"
+      },
+      {
+        "heading": "T",
+        "sub": "from 16",
+        "des": "Driving license classes B, BE, B96, B197"
+      }
+    ],
+    "fileTitle": "ID - passport photo - eye test - first aid Original driving license with translation",
+    "roadTitle": "Special trips:<br/>Depending on the country of origin",
+    "grund": "Basic material",
+    "grundDes": "No theory lessons",
+    "gult": "Validity",
+    "gultDes": "Unlimited after conversion",
+    "mofa": "Recognition",
+    "mofasub": "",
+    "mofaDes": "Depending on country groups",
+    "zusa": "Additive material T",
+    "zusaDes": "No theory lessons",
+    "heading1": "Important information",
+    "heading2": "Cost overview for Class A conversion",
+    "heading3": "Step-by-step guide to rewriting Class A and B",
+    "heading4": "Cost overview for Class B conversion",
+    "title1": "Rewrite of foreign",
+    "title2": "driving licenses",
+    "descriptionhero": "Anyone who moves permanently to Germany from not-EU countries must have their foreign driving license converted.",
     "stepsData": [
       {
         "title": "Driving school registration",
@@ -1308,7 +1503,9 @@
         "title": "Total costs",
         "cost": "800–3.000 € (depending on individual learning time and region)"
       }
-    ]
+    ],
+    "notice": "Notice",
+    "noticeDetails": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future."
   },
   "privacy": {
     "title": "Privacy Policy",
@@ -1473,5 +1670,101 @@
         "html": "The following conditions apply:<ul style=\"margin-left: 18px\"><li>If individual provisions of these Terms and Conditions are or become invalid, the validity of the remaining provisions shall remain unaffected.</li><li>The law of the Federal Republic of Germany shall apply.</li><li>The place of jurisdiction is <strong>[Location]</strong>, provided the user is a merchant or does not have a general place of jurisdiction in Germany.</li></ul>"
       }
     ]
+  },
+  "helpPage": {
+    "pageTitle": "Help Center!",
+    "pageDes": "Finde die Antwort deiner Fragen in unserem Help Center.",
+    "title1": "Starten",
+    "des1": "Lerne die Grundlagen",
+    "title2": "Konto",
+    "des2": "Lerne die Grundlagen",
+    "title3": "Rechnung",
+    "des3": "Lerne die Grundlagen",
+    "title4": "Daten",
+    "des4": "Lerne die Grundlagen",
+    "title5": "Troubleshooting",
+    "des5": "Lerne die Grundlagen",
+    "title6": "Sontiges",
+    "des6": "Lerne die Grundlagen"
+  },
+  "AboutUs": {
+    "heroTitle": "About WieFührerschein",
+    "Title": "What we offer",
+    "heroDes": "Simplify the process of obtaining a driving license for drivering students and enable more efficient administration for driving schools",
+    "contantTitle1": "Who we are",
+    "contactDes1": "We believe that getting a driver's license should be simple, transparent, and stress-free. That's precisely why we created our platform — to help driving students obtain their license and to provide driving schools with an efficient system for managing their students.",
+    "contantTitle2": "Our mission",
+    "contactDes2": "We believe that a driver's license is an important step toward independence and mobility. At the same time, we understand how challenging organization, communication, and scheduling can be for driving students and driving schools. That's why we've created a digital solution that:<br/> <br/>•   supports driving students free of charge,    <br/>•   strengthens driving schools with innovative tools and increased visibility,   <br/>•   and makes the entire process more efficient, clearer and more personal.",
+    "contantTitle3": "Why we do what we do",
+    "contactDes3": "The driving school market is often still analog — confusing, paper-heavy, and not always transparent. We want to change that and create real added value for both parties with our platform: modern tools for driving schools and a clear, simple experience for students",
+    "featuresData": [
+      {
+        "category": "For Driving Students",
+        "items": [
+          {
+            "title": "Find and compare driving schools",
+            "description": "Discover driving schools near you and find the right one for you"
+          },
+          {
+            "title": "Personal progress tracker",
+            "description": "Keep track of your completed theory and driving hours, exam dates and your learning progress"
+          },
+          {
+            "title": "Book appointments online",
+            "description": "Book theory and practical lessons conveniently via the website – without phone calls or waiting times"
+          },
+          {
+            "title": "Direct communication",
+            "description": "Chat safely and easily with your driving school, ask questions and clarify everything important"
+          },
+          {
+            "title": "Tips on necessary documents",
+            "description": "Use our tips to prepare the necessary documents for your driver's license application"
+          }
+        ]
+      },
+      {
+        "category": "For Driving Schools",
+        "items": [
+          {
+            "title": "Attracting new driving students",
+            "description": "Present your offer on our platform and reach targeted driving students in your region"
+          },
+          {
+            "title": "Appointment management",
+            "description": "Manage bookings digitally, reduce no-shows and save time"
+          },
+          {
+            "title": "Centralize communication",
+            "description": "Answer inquiries and organize exchanges with students via our secure chat function"
+          },
+          {
+            "title": "Progress documentation",
+            "description": "Record your students’ learning progress and provide them with a transparent overview"
+          },
+          {
+            "title": "Monthly subscription model",
+            "description": "Enjoy all the benefits of our platform for a fixed, predictable monthly fee – no hidden costs"
+          }
+        ]
+      }
+    ]
+  },
+  "contactPage": {
+    "pageTitle": "Contact us!",
+    "pageDes": "If you haven't found the answer to your question in our Help Center, or if you simply have questions, feel free to send us an email.",
+    "input1": "Name",
+    "input2": "Email",
+    "input3": "Topic",
+    "input3a": "General question",
+    "input3b": "Malfunction",
+    "input3c": "Other",
+    "input4": "Request details",
+    "input4a": "How can we help you?",
+    "error1": "Name is required",
+    "error2": "Email is required",
+    "error3": "Topic is required",
+    "error4": "Message is required",
+    "button": "Send"
   }
 }

@@ -3,11 +3,26 @@ import {Box, Button, TextField, Typography} from '@mui/material';
 import Logo from '@/assets/pngs/logo.png';
 import Image from 'next/image';
 import registerImage from '@/assets/svgs/registerImage.svg';
-import {useTranslations} from 'next-intl';
 import Link from 'next/link';
+import {useState} from 'react';
 
-export default function PasswordForgetPage() {
-  const t = useTranslations('passwordPage');
+export default function PasswordResetPage() {
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      setError('Please enter the same password');
+    } else {
+      setError('');
+      console.log('Password reset successful!');
+      setPassword('');
+      setConfirmPassword('');
+    }
+  };
+
   return (
     <Box sx={{width: '100%', height: '100vh', display: 'flex'}}>
       {/* Left Side */}
@@ -43,7 +58,7 @@ export default function PasswordForgetPage() {
               lineHeight: '1.3em'
             }}
           >
-            {t('heading')}
+            Reset Password
           </Typography>
           <Typography
             sx={{
@@ -59,11 +74,13 @@ export default function PasswordForgetPage() {
               fontWeight: '300'
             }}
           >
-            {t('description')}
+            Please enter a new password below to reset it.
           </Typography>
         </Box>
         {/* Input Fields Box */}
         <Box
+          component="form"
+          onSubmit={handleSubmit}
           sx={{
             maxWidth: '360px',
             width: '100%',
@@ -74,8 +91,41 @@ export default function PasswordForgetPage() {
           }}
         >
           <TextField
-            label={t('email')}
-            type="email"
+            label="New password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            sx={{
+              '& .MuiOutlinedInput-root': {
+                background: '#F8FAFC',
+                borderRadius: '8px',
+                border: '1px solid #E2E8F0',
+                '& .MuiOutlinedInput-input': {
+                  padding: '14px 12px',
+                  fontSize: '14px',
+                  fontFamily: '"Inter", sans-serif !important',
+                  color: '#000',
+                  '&::placeholder': {
+                    color: '#94A3B8',
+                    opacity: 1
+                  }
+                },
+                '& fieldset': {
+                  borderColor: '#E2E8F0'
+                },
+                '&:hover fieldset': {
+                  borderColor: '#1976d2'
+                }
+              }
+            }}
+          />
+          <TextField
+            label="Confirm new password"
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            error={!!error}
+            helperText={error}
             sx={{
               '& .MuiOutlinedInput-root': {
                 background: '#F8FAFC',
@@ -102,6 +152,7 @@ export default function PasswordForgetPage() {
           />
 
           <Button
+            type="submit"
             variant="contained"
             disableRipple
             sx={{
@@ -121,7 +172,7 @@ export default function PasswordForgetPage() {
               }
             }}
           >
-            {t('button')}
+            Reset Password
           </Button>
         </Box>
         <Typography
@@ -133,7 +184,7 @@ export default function PasswordForgetPage() {
             textAlign: 'center'
           }}
         >
-          {t('remember')}{' '}
+          Remember password?{' '}
           <Link
             href={'/login'}
             style={{
@@ -144,7 +195,7 @@ export default function PasswordForgetPage() {
               fontWeight: '500'
             }}
           >
-            {t('login')}
+            Sign in
           </Link>
         </Typography>
       </Box>

@@ -23,7 +23,9 @@ export default function BgCard({row = true, icon, bgImage, title}: CardProps) {
         justifyContent: 'space-between',
         padding: '24px',
         backgroundImage: `linear-gradient(to bottom,rgba(0, 0, 0, 0.5),rgba(23,61,166, 1)), url(${bgImage})`,
-        borderRadius: '15px'
+        borderRadius: '15px',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
       }}
     >
       <Box sx={{width: '60px', height: '60px'}}>

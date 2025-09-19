@@ -52,18 +52,18 @@ export default function RegisterPage() {
   };
 
   return (
-    <Box sx={{width: '100%', display: 'flex'}}>
+    <Box sx={{width: '100%', display: 'flex', height: '100vh'}}>
       {/* Left Side */}
       <Box
         sx={{
           maxWidth: {xs: '100%', sm: '50%'},
           width: '100%',
-          padding: '20px',
+          padding: '16px',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          gap: {xs: '30px', sm: '40px'},
+          gap: {xs: '30px', sm: '36px'},
           height: '100vh'
         }}
       >
@@ -102,14 +102,12 @@ export default function RegisterPage() {
           {/* Tab Section */}
           <Box
             sx={{
-              maxWidth: '330px',
-              width: '100%',
+              display: 'flex',
+              width: 'fit-content',
               margin: 'auto',
               background: '#F8FAFC',
               borderRadius: '10px',
               padding: '6px',
-              display: 'flex',
-              justifyContent: 'center',
               gap: '10px',
               boxShadow:
                 '0px 0px 0px 1px rgba(26, 32, 44, 0.1), 0px 1px 0px 0px rgba(26, 32, 44, 0.2), 0px 2px 4px 0px rgba(26, 32, 44, 0.5)'
@@ -123,10 +121,11 @@ export default function RegisterPage() {
                 color: tabValue === 0 ? '#fff' : '#000',
                 textTransform: 'none',
                 borderRadius: '8px',
-                padding: '8px 32px',
+                padding: '8px 30px',
                 fontSize: '16px',
                 fontWeight: 500,
                 fontFamily: '"Inter", sans-serif !important',
+                letterSpacing: '0.01em',
                 '&:hover': {
                   background: tabValue === 0 ? '#000' : '#fff',
                   boxShadow:
@@ -144,10 +143,11 @@ export default function RegisterPage() {
                 color: tabValue === 1 ? '#fff' : '#000',
                 textTransform: 'none',
                 borderRadius: '8px',
-                padding: '8px 32px',
+                padding: '8px 30px',
                 fontSize: '16px',
                 fontWeight: 500,
                 fontFamily: '"Inter", sans-serif !important',
+                letterSpacing: '0.01em',
                 '&:hover': {
                   background: tabValue === 1 ? '#000' : '#fff',
                   boxShadow:
@@ -169,7 +169,7 @@ export default function RegisterPage() {
               display: 'flex',
               flexDirection: 'column',
               gap: '20px',
-              margin: '20px auto 0px'
+              margin: '16px auto 0px'
             }}
           >
             {/* Form Fields */}
@@ -433,11 +433,26 @@ export default function RegisterPage() {
               color: '#1270ff',
               fontSize: '14px',
               fontFamily: '"Inter", sans-serif !important',
-              fontWeight: '500'
+              fontWeight: '500',
+              textDecoration: 'none'
             }}
           >
             {t('signin')}
           </Link>
+        </Typography>
+        <Typography
+          sx={{
+            maxWidth: '410px',
+            width: '100%',
+            margin: '0px auto',
+            textAlign: 'center',
+            fontSize: '14px',
+            fontFamily: '"Inter", sans-serif !important',
+            color: '#808080',
+            lineHeight: '1.2em'
+          }}
+        >
+          {t('lastpoint')}
         </Typography>
       </Box>
       {/* Right Side */}

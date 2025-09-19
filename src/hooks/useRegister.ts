@@ -12,8 +12,8 @@ export const useRegister = () => {
       toast.success(t('toastSuccess'));
     },
     onError: (error: any) => {
-      console.log(error.message);
-      toast.error(error.message);
+      console.log(error);
+      toast.error(error.response.data.message);
     }
   });
 };
