@@ -3,7 +3,7 @@ import PricingCards from './PricingCards';
 import {useTranslations} from 'next-intl';
 
 type Pricing = {
-  title: boolean;
+  title?: boolean;
 };
 export default function Pricing({title = true}: Pricing) {
   const t = useTranslations('Pricing');
