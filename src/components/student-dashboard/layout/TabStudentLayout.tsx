@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import {Box, Divider, Typography, Paper, Popper, Grow} from '@mui/material';
-import Image from 'next/image';
+import Image, {StaticImageData} from 'next/image';
 import logo from '@/assets/pngs/logo.png';
 // import KeyboardArrowDownRounded from '@mui/icons-material/KeyboardArrowDownRounded';
 
@@ -19,6 +19,20 @@ import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
 import setting from '@/assets/svgs/dashboard-student/setting.svg';
 import email from '@/assets/svgs/dashboard-student/email.svg';
 import login from '@/assets/svgs/dashboard-student/login.svg';
+
+// name spliting function
+function getInitials(fullName: string): string {
+  if (!fullName) return '';
+
+  const words = fullName.trim().split(' ').filter(Boolean);
+  let initials = words[0]?.[0] || '';
+
+  if (words.length > 1) {
+    initials += words[1][0];
+  }
+
+  return initials.toUpperCase();
+}
 
 type Props = {
   activeKey: string;
@@ -71,6 +85,8 @@ export default function TabStudentLayout({
       iconHover: message_blue
     }
   ];
+  const name = 'aohn zoe example';
+  const initials = getInitials(name);
 
   return (
     <>
@@ -125,9 +141,6 @@ export default function TabStudentLayout({
           {navItems.map((item) => {
             const isActive = activeKey === item.key;
             const isHover = hoverKey === item.key;
-
-            // ✅ if active → always blue
-            // ✅ if not active → black by default, blue on hover
             const iconSrc = isActive
               ? item.iconBlue
               : isHover
@@ -147,11 +160,6 @@ export default function TabStudentLayout({
                     ? 'rgba(48, 88, 255, 0.10)'
                     : 'transparent',
                   cursor: 'pointer'
-                  // '&:hover': {
-                  //   backgroundColor: isActive
-                  //     ? 'rgba(48, 88, 255, 0.10)'
-                  //     : 'rgba(48, 88, 255, 0.06)'
-                  // }
                 }}
               >
                 <Image
@@ -210,31 +218,17 @@ export default function TabStudentLayout({
               },
               transition: 'all 0.1s ease-in',
               position: 'relative'
-              // text details
             }}
           >
-            <Typography
-              sx={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                transform: 'translate(-50%, -50%)',
-                color: '#2D3748',
-                fontWeight: '500',
-                fontFamily: '"Inter", sans-serif  !important',
-                fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                textTransform: 'capitalize'
-              }}
-            >
-              AZ
-            </Typography>
+            {/* user name profile */}
             <MenuDropdown
-              label="AZ"
+              label={initials}
               items={[
                 {label: 'Einstellungen', menuIcon: setting},
                 {label: 'Support', menuIcon: email},
                 {label: 'Abmelden', menuIcon: login}
               ]}
+              // profileIcon={profileIcon}
             />
           </Box>
         </Box>
@@ -244,7 +238,7 @@ export default function TabStudentLayout({
   );
 }
 
-// the dropdwn
+// the dropdown
 type DropdownItem = {
   label: string;
   menuIcon: string;
@@ -253,9 +247,10 @@ type DropdownItem = {
 type PropsDropdown = {
   label: string;
   items: DropdownItem[];
+  profileIcon?: StaticImageData;
 };
 
-export function MenuDropdown({label, items}: PropsDropdown) {
+export function MenuDropdown({label, items, profileIcon}: PropsDropdown) {
   const textStyle = {
     color: '#000000',
     fontSize: '14px',
@@ -288,24 +283,34 @@ export function MenuDropdown({label, items}: PropsDropdown) {
           '&:active': {
             backgroundColor: '#B9C2EB'
           },
-          transition: 'all 0.1s ease-in'
+          transition: 'all 0.1s ease-in',
+          overflow: 'hidden'
         }}
       >
-        <Typography
-          sx={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            color: '#2D3748',
-            fontWeight: '500',
-            fontFamily: '"Inter", sans-serif  !important',
-            fontSize: {xs: '14px', md: '15px', lg: '16px'},
-            textTransform: 'capitalize'
-          }}
-        >
-          {label}
-        </Typography>
+        {profileIcon && (
+          <Image
+            style={{height: '100%', width: '100%', objectFit: 'cover'}}
+            src={profileIcon}
+            alt="profile icon"
+          />
+        )}
+        {!profileIcon && (
+          <Typography
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              color: '#2D3748',
+              fontWeight: '500',
+              fontFamily: '"Inter", sans-serif  !important',
+              fontSize: {xs: '14px', md: '15px', lg: '16px'},
+              textTransform: 'capitalize'
+            }}
+          >
+            {label}
+          </Typography>
+        )}
       </Box>
 
       <Popper
