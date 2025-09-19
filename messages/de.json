@@ -5,6 +5,27 @@
   "Manifest": {
     "name": "My App"
   },
+  "pageRoutes": {
+    "login": "/anmelden",
+    "signup": "/registrieren",
+    "forgotPassword": "/passwort-vergessen",
+    "resetPassword": "/passwort-zuruecksetzen",
+    "aboutUs": "/ueber-uns",
+    "pricing": "/preis",
+    "contact": "/kontakt",
+    "drivingLicenseClassA": "/fuehrerscheinklasse-a",
+    "drivingLicenseClassB": "/fuehrerscheinklasse-b",
+    "drivingLicenseClassC": "/fuehrerscheinklasse-c",
+    "drivingLicenseClassD": "/fuehrerscheinklasse-d",
+    "drivingLicenseClassLAndT": "/fuehrerscheinklasse-l-und-t",
+    "rewriteOfDrivingLicenses": "/umschreiben-der-fuehrerscheine",
+    "help": "/hilfe",
+    "imprint": "/impressum",
+    "privacy": "/datenschutz",
+    "terms": "/agb",
+    "cookies": "/cookies",
+    "notFound": "/404"
+  },
   "Navbar": {
     "aboutus": {
       "text": "Über uns",

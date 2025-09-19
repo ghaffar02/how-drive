@@ -5,6 +5,27 @@
   "Manifest": {
     "name": "My App"
   },
+  "pageRoutes": {
+    "login": "/en/login",
+    "signup": "/en/signup",
+    "forgotPassword": "/en/forgot-password",
+    "resetPassword": "/en/reset-password",
+    "aboutUs": "/en/about-us",
+    "pricing": "/en/pricing",
+    "contact": "/en/contact",
+    "drivingLicenseClassA": "/en/driving-license-class-a",
+    "drivingLicenseClassB": "/en/driving-license-class-b",
+    "drivingLicenseClassC": "/en/driving-license-class-c",
+    "drivingLicenseClassD": "/en/driving-license-class-d",
+    "drivingLicenseClassLAndT": "/en/driving-license-class-l-and-t",
+    "rewriteOfDrivingLicenses": "/en/rewrite-of-driving-licenses",
+    "help": "/en/help",
+    "imprint": "/en/imprint",
+    "privacy": "/en/privacy",
+    "terms": "/en/terms",
+    "cookies": "/en/cookies",
+    "notFound": "/en/404"
+  },
   "Navbar": {
     "aboutus": {
       "text": "About Us",
