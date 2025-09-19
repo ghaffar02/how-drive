@@ -106,7 +106,7 @@ export default function TabStudentLayout({
               height: '50px',
               width: '50px',
               margin: 'auto',
-              marginBottom: '50px',
+              marginBottom: {xs: '24px', md: '50px'},
               cursor: 'pointer'
             }}
           >
@@ -130,7 +130,8 @@ export default function TabStudentLayout({
           sx={{
             '& > :not(:last-child)': {
               marginBottom: '16px'
-            }
+            },
+            paddingY: '24px'
           }}
         >
           {navItems.map((item) => {
@@ -194,7 +195,7 @@ export default function TabStudentLayout({
               borderTop: '1px solid transparent',
               borderImage:
                 'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1',
-              marginBottom: '50px'
+              marginBottom: {xs: '24px', md: '50px'}
             }}
           />
           <Box
