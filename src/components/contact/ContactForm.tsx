@@ -57,7 +57,7 @@ export default function ContactForm() {
             <Box
               component="label"
               htmlFor="name"
-              sx={{...localFont.p8, color: '#4a5568'}}
+              sx={{...localFont.inter14, color: '#4a5568'}}
             >
               {t('input1')}
             </Box>
@@ -89,7 +89,7 @@ export default function ContactForm() {
             <Box
               component="label"
               htmlFor="email"
-              sx={{...localFont.p8, color: '#4a5568'}}
+              sx={{...localFont.inter14, color: '#4a5568'}}
             >
               {t('input2')}
             </Box>
@@ -127,7 +127,7 @@ export default function ContactForm() {
             <Box
               component="label"
               htmlFor="topic"
-              sx={{...localFont.p8, color: '#4a5568'}}
+              sx={{...localFont.inter14, color: '#4a5568'}}
             >
               {t('input3')}
             </Box>
@@ -164,7 +164,7 @@ export default function ContactForm() {
             <Box
               component="label"
               htmlFor="message"
-              sx={{...localFont.p8, color: '#4a5568'}}
+              sx={{...localFont.inter14, color: '#4a5568'}}
             >
               {t('input4')}
             </Box>
