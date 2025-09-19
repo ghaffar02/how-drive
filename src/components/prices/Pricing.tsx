@@ -2,7 +2,10 @@ import {Box, Typography} from '@mui/material';
 import PricingCards from './PricingCards';
 import {useTranslations} from 'next-intl';
 
-export default function Pricing() {
+type Pricing = {
+  title: boolean;
+};
+export default function Pricing({title = true}: Pricing) {
   const t = useTranslations('Pricing');
   const PricingData = t.raw('PricingData');
 
@@ -27,19 +30,22 @@ export default function Pricing() {
             gap: {xs: '24px'}
           }}
         >
-          <Typography
-            sx={{
-              fontSize: {xs: '28px', md: '32px', lg: '36px'},
-              lineHeight: {xs: '35px', md: '100%'},
-              fontFamily: 'Satoshi500 !important',
-              padding: '16px',
-              textAlign: 'center',
-              color: '#000',
-              fontWeight: '700'
-            }}
-          >
-            {t('title')}
-          </Typography>
+          {title && (
+            <Typography
+              sx={{
+                fontSize: {xs: '28px', md: '32px', lg: '36px'},
+                lineHeight: {xs: '35px', md: '100%'},
+                fontFamily: 'Satoshi500 !important',
+                padding: '16px',
+                textAlign: 'center',
+                color: '#000',
+                fontWeight: '700'
+              }}
+            >
+              {t('title')}
+            </Typography>
+          )}
+
           <Box
             sx={{
               padding: '8px',

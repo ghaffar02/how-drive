@@ -343,15 +343,29 @@
     "description": "Wir verknupfen Fahrschüler und Fahrschulen durch ein digitales Service.",
     "features": {
       "heading": "Funktionen",
-      "items": ["Fahrschüler", "Fahrschulen", "Installation"]
+      "items": [
+        "Fahrschüler",
+        "Fahrschulen",
+        "Installation"
+      ]
     },
     "services": {
       "heading": "Service",
-      "items": ["Über uns", "Preise", "Kontakt", "Hilfe"]
+      "items": [
+        "Über uns",
+        "Preise",
+        "Kontakt",
+        "Hilfe"
+      ]
     },
     "support": {
       "heading": "Rechtliches",
-      "items": ["Impressum", "Datenschutz", "AGB", "Cookie"]
+      "items": [
+        "Impressum",
+        "Datenschutz",
+        "AGB",
+        "Cookie"
+      ]
     }
   },
   "loginPage": {
@@ -438,7 +452,7 @@
     "zusaDes": "2-4 Unterrichte - Doppelstunden",
     "heading1": "Wichtige Informationen",
     "heading2": "Kostenübersicht",
-    "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein der Klasse A",
+    "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein Klasse A",
     "heading4": "Notice",
     "title1": "Führerschein",
     "title2": " Klasse A",
@@ -564,7 +578,7 @@
       },
       {
         "title": "Gesamtkosten",
-        "cost": "1.500–3.000 € (je nach individueller Lernzeit und Region)"
+        "cost": " <span style={{ fontWeight: 400 }}>1.500–3.000 €</span>(je nach individueller Lernzeit und Region)"
       }
     ]
   },

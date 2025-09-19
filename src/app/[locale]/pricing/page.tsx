@@ -36,7 +36,7 @@ export default function Page() {
           title="Our prices"
           description="Using our platform is free for driving students. Driving schools have the opportunity to try the platform for free for the first month."
         />
-        <Pricing />
+        <Pricing title={false} />
         <Footer />
       </Box>
     </>
