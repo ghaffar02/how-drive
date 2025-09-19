@@ -1317,11 +1317,68 @@
     "heading2": "Kostenübersicht Umschreibung Klasse A",
     "heading3": "Schritt-für-Schritt-Anleitung zum Umschreiben Klasse A und B",
     "heading4": "Kostenübersicht Umschreibung Klasse B",
+    "heading5": "Umschreibung abhängig von Ländergruppen",
     "title1": "Umschreiben ausländischer ",
     "title2": "Führerscheine",
     "descriptionhero": "Wer aus Drittstaaten dauerhaft nach Deutschland umzieht, muss seine ausländische Fahrerlaubnis umschreiben lassen.",
+    "descost1": "Diese Tabelle gilt für Nicht-EU-/Nicht-EWR-Führerscheine (z. B. aus USA, Türkei, Ukraine, Indien, Russland etc.), da EU-/EWR-Führerscheine sind grundsätzlich in Deutschland gültig.",
+    "descost2": "Diese Tabelle gilt für Nicht-EU-/Nicht-EWR-Führerscheine (z. B. aus USA, Türkei, Ukraine, Indien, Russland etc.), da EU-/EWR-Führerscheine sind grundsätzlich in Deutschland gültig.",
+    "descost3": "Diese Tabelle gilt für die Umschreibung ausländischer Führerscheinklassen A und B.",
     "notice": "Hinweis",
     "noticeDetails": "Wir bieten unseres Service ausschließlich für die Führerscheinklassen A und B sowie Umschreiben (Umschreibung ausländischer Führerscheine dieser Klassen in deutsche) an. Aufgrund der geringen Anzahl an Fahrschulen, die die Fahrklassen C, D, L und T anbieten, ist es uns derzeit nicht möglich, diese Klassen zu unterstützen. Wir hoffen, dass wir in Zukunft diese Klassen auch unterstützen können.",
+    "drivingLicenseRules": [
+      {
+        "heading": "EU-/EWR-Staaten",
+        "items": [
+          {
+            "title": "Theorieprüfung",
+            "cost": "nein"
+          },
+          {
+            "title": "Praxisprüfung",
+            "cost": "nein"
+          },
+          {
+            "title": "Bemerkung",
+            "cost": "Umschreibung nicht nötig, aber Umtausch in EU-Kartenführerschein erforderlich."
+          }
+        ]
+      },
+      {
+        "heading": "Staaten mit gegenseitigem Anerkennungsabkommen (z. B. Schweiz, Japan, USA, UK, Australien, Neuseeland)",
+        "items": [
+          {
+            "title": "Theorieprüfung",
+            "cost": "nein"
+          },
+          {
+            "title": "Praxisprüfung",
+            "cost": "nein"
+          },
+          {
+            "title": "Bemerkung",
+            "cost": "Umschreibung ohne Prüfung möglich. Ausnahme: Praxisprüfung erforderlich bei Alberta und Manitoba."
+          }
+        ]
+      },
+      {
+        "heading": "Sonstige Staaten",
+        "items": [
+          {
+            "title": "Theorieprüfung",
+            "cost": "ja"
+          },
+          {
+            "title": "Praxisprüfung",
+            "cost": "ja"
+          },
+          {
+            "title": "Bemerkung",
+            "cost": "Umschreibung nur mit Theorie- und Praxisprüfung möglich, jedoch keine Fahrschulausbildung erforderlich."
+          }
+        ]
+      }
+    ],
     "stepsData": [
       {
         "title": "Anmeldung Fahrschule",
@@ -1444,7 +1501,7 @@
       },
       {
         "title": "Gesamtkosten",
-        "cost": "700–2.000 € (je nach individueller Lernzeit und Region)"
+        "cost": " <span style={{ fontWeight: 400 }}>700–2.000 €</span>(je nach individueller Lernzeit und Region)"
       }
     ],
     "drivingCostsData2": [
@@ -1482,7 +1539,7 @@
       },
       {
         "title": "Gesamtkosten",
-        "cost": "800–3.000 € (je nach individueller Lernzeit und Region)"
+        "cost": "<span style={{ fontWeight: 400 }}>800–3.000 €</span>  (je nach individueller Lernzeit und Region)"
       }
     ]
   },
