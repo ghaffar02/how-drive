@@ -583,6 +583,45 @@
     ]
   },
   "licenseB": {
+    "grid1Data": [
+      {
+        "heading": "B",
+        "sub": "ab 18",
+        "des": "Pkw bis 3,5 t, max. 8 Sitzplätze"
+      },
+      {
+        "heading": "B17",
+        "sub": "ab 17",
+        "des": "Begleitetes Fahren"
+      },
+      {
+        "heading": "BE",
+        "sub": "ab 18",
+        "des": "Pkw + Anhänger bis 3,5 t"
+      },
+      {
+        "heading": "B96",
+        "sub": "ab 18",
+        "des": "Pkw + Anhänger über 750 kg"
+      }
+    ],
+    "fileTitle": "Ausweis - Passbild - Sehtest - Erste-Hilfe<br />ggb. Führerscheinkopie",
+    "roadTitle": "Sonderfahrten:<br />5 Überland<br />4 Autobahn<br />3 Nacht",
+    "grund": "Grundstoff",
+    "grundDes": "12 Unterrichte - Doppelstunden",
+    "gult": "Gültigkeit",
+    "gultDes": "Unbefristet, je 15 Jahre erneut",
+    "mofa": "B197",
+    "mofaDes": "Ausbildung teils auf Automatik",
+    "zusa": "Zusatzstoff",
+    "zusaDes": "2 Unterrichte - Doppelstunden",
+    "heading1": "Wichtige Informationen",
+    "heading2": "Kostenübersicht",
+    "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein Klasse A",
+    "heading4": "Notice",
+    "title1": "Führerschein",
+    "title2": " Klasse B",
+    "descriptionhero": "Pkw, leichte Nutzfahrzeuge, Wohnmobile und andere Fahrzeuge, ausgenommen von Krafträder.",
     "stepsData": [
       {
         "title": "Anmeldung Fahrschule",
@@ -703,7 +742,7 @@
       },
       {
         "title": "Gesamtkosten",
-        "cost": "2.000–4.000 € (je nach individueller Lernzeit und Region)"
+        "cost": "<span style={{ fontWeight: 400 }}>2.000–4.000 €</span>(je nach individueller Lernzeit und Region)"
       }
     ]
   },

@@ -583,6 +583,45 @@
     ]
   },
   "licenseB": {
+    "grid1Data": [
+      {
+        "heading": "B",
+        "sub": "from 18",
+        "des": "Cars up to 3.5 t, max. 8 seats"
+      },
+      {
+        "heading": "B17",
+        "sub": "from 17",
+        "des": "Accompanied driving"
+      },
+      {
+        "heading": "BE",
+        "sub": "from 18",
+        "des": "Car + trailer up to 3.5 t"
+      },
+      {
+        "heading": "B96",
+        "sub": "from 18",
+        "des": "Car + trailer over 750 kg"
+      }
+    ],
+    "fileTitle": "ID - passport photo - eye test - first aid<br />If applicable, driver's license copy",
+    "roadTitle": "Special trips:<br />5 overland<br />4 highway<br />3 nights",
+    "grund": "Basic material",
+    "grundDes": "12 lessons - double lessons",
+    "gult": "Validity",
+    "gultDes": "Unlimited, every 15 years renewed",
+    "mofa": "B197",
+    "mofaDes": "Training partly on automatic",
+    "zusa": "Additive material",
+    "zusaDes": "2 lessons - double lessons",
+    "heading1": "Important information",
+    "heading2": "Cost overview",
+    "heading3": "Step-by-step guide to a class B driving license",
+    "heading4": "Notice",
+    "title1": "Driving license ",
+    "title2": "Class B",
+    "descriptionhero": "Passenger cars, light commercial vehicles, motor homes and other vehicles, excluding motorcycles",
     "stepsData": [
       {
         "title": "Driving school registration",
@@ -703,7 +742,7 @@
       },
       {
         "title": "Total costs",
-        "cost": "2.000–4.000 € (depending on individual learning time and region)"
+        "cost": "<span style={{ fontWeight: 400 }}>2.000–4.000 €</span> (depending on individual learning time and region)"
       }
     ]
   },
