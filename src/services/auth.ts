@@ -9,6 +9,16 @@ export const loginUser = async (payload: LoginPayload) => {
   const {data} = await api.post('/auth/login', payload);
   return data; // API response
 };
+export interface ResetPasswordPayload {
+  email?: string;
+  password: string;
+  confirmPassword: string;
+}
+
+export const resetPassword = async (payload: ResetPasswordPayload) => {
+  const {data} = await api.post('/auth/resetPassword', payload);
+  return data;
+};
 
 export interface RegisterPayload {
   email: string;

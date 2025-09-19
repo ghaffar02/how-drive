@@ -4,22 +4,68 @@ import Logo from '@/assets/pngs/logo.png';
 import Image from 'next/image';
 import registerImage from '@/assets/svgs/registerImage.svg';
 import Link from 'next/link';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
+import {toast} from 'react-toastify';
+import {useResetPassword} from '@/hooks/useResetPassword';
 
 export default function PasswordResetPage() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
+  const [email, setEmail] = useState();
+  const [authentication, setAuthentication] = useState();
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+  const {mutate} = useResetPassword();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    if (typeof window !== undefined) {
+      const queryParams = new URLSearchParams(window.location.search);
+      const tokenData64 = queryParams.get('token');
+      if (tokenData64) {
+        try {
+          const token = JSON.parse(atob(tokenData64));
+          if (token) {
+            // console.log('this is token data: ', token);
+            setEmail(token.email);
+            setAuthentication(token.authenticated);
+          }
+        } catch (error) {
+          console.log('no token found', error);
+        }
+      }
+    }
+  }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!authentication) {
+      toast.error('Email not found!');
+      return;
+    }
+
+    if (!password || !confirmPassword) {
+      setError('Password and Confirm Password are required');
+      return;
+    }
+    if (!passwordRegex.test(password)) {
+      setError(
+        'Password must be at least 8 characters and include uppercase, lowercase, and a number'
+      );
+      return;
+    }
+
     if (password !== confirmPassword) {
-      setError('Please enter the same password');
-    } else {
-      setError('');
-      console.log('Password reset successful!');
+      setError('Passwords do not match');
+      return;
+    }
+
+    try {
+      mutate({email, password, confirmPassword});
       setPassword('');
       setConfirmPassword('');
+      setError('');
+    } catch (error) {
+      console.log(error);
     }
   };
 
@@ -95,6 +141,8 @@ export default function PasswordResetPage() {
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            error={!!error}
+            helperText={error}
             sx={{
               '& .MuiOutlinedInput-root': {
                 background: '#F8FAFC',
