@@ -3,12 +3,14 @@ import {Box, Button, MenuItem, TextField} from '@mui/material';
 import React from 'react';
 import {SubmitHandler, useForm} from 'react-hook-form';
 import {useTranslations} from 'next-intl';
+import api from '@/lib/axios';
+import {toast} from 'react-toastify';
 
 type FormValues = {
   name: string;
   email: string;
-  topic: string;
-  message: string;
+  subject: string;
+  body: string;
 };
 
 export default function ContactForm() {
@@ -20,9 +22,17 @@ export default function ContactForm() {
     formState: {errors}
   } = useForm<FormValues>();
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    console.log('Form submitted:', data);
-    reset();
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    try {
+      const res = await api.post(`users/contactUs`, data);
+      if (res) {
+        reset();
+        toast.success('Form has been submitted!');
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error('An error has been occurred!');
+    }
   };
   return (
     <Box
@@ -126,19 +136,19 @@ export default function ContactForm() {
           <Box>
             <Box
               component="label"
-              htmlFor="topic"
+              htmlFor="subject"
               sx={{...localFont.inter14, color: '#4a5568'}}
             >
               {t('input3')}
             </Box>
             <TextField
-              id="topic"
+              id="subject"
               select
               defaultValue=""
               placeholder="Select..."
-              {...register('topic', {required: `${t('error3')}`})}
-              error={!!errors.topic}
-              helperText={errors.topic?.message}
+              {...register('subject', {required: `${t('error3')}`})}
+              error={!!errors.subject}
+              helperText={errors.subject?.message}
               sx={{
                 width: '100%',
                 mt: '10px',
@@ -163,20 +173,20 @@ export default function ContactForm() {
           <Box>
             <Box
               component="label"
-              htmlFor="message"
+              htmlFor="body"
               sx={{...localFont.inter14, color: '#4a5568'}}
             >
               {t('input4')}
             </Box>
             <TextField
-              id="message"
+              id="body"
               type="text"
               placeholder={t('input4a')}
               multiline
               rows={4}
-              {...register('message', {required: `${t('error4')}`})}
-              error={!!errors.message}
-              helperText={errors.message?.message}
+              {...register('body', {required: `${t('error4')}`})}
+              error={!!errors.body}
+              helperText={errors.body?.message}
               sx={{
                 width: '100%',
                 mt: '10px',
