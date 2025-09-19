@@ -7,6 +7,7 @@ type CardProps = {
   description?: string;
   headingSize?: boolean;
   background?: string;
+  isbool?: boolean;
 };
 
 export default function TextCard({
@@ -14,6 +15,7 @@ export default function TextCard({
   subHeading,
   description,
   headingSize = true,
+  isbool,
   background = '#f2f2f2'
 }: CardProps) {
   return (
@@ -22,7 +24,11 @@ export default function TextCard({
         background: background,
         // maxWidth: '250px',
         width: '100%',
-        height: {xs: '159px', sm: '164px', lg: '250px'},
+        height: {
+          xs: isbool ? '159px' : '180px',
+          sm: isbool ? '164px' : '200px',
+          lg: '250px'
+        },
         padding: '24px',
         display: 'flex',
         flexDirection: 'column',

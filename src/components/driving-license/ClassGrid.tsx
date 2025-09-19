@@ -10,7 +10,13 @@ import road from '@/assets/svgs/driving-license-class-A/road.svg';
 
 import {useTranslations} from 'next-intl';
 
-export default function ClassGrid({license}: {license: string}) {
+export default function ClassGrid({
+  license,
+  isbool = true
+}: {
+  license: string;
+  isbool?: boolean;
+}) {
   const t = useTranslations(license);
 
   const licenseArr1 = t.raw('grid1Data');
@@ -35,11 +41,20 @@ export default function ClassGrid({license}: {license: string}) {
           <Grid container spacing={2}>
             <Grid container spacing={2}>
               {licenseArr1.map((data: any, i: any) => (
-                <Grid key={i} size={{xs: 12, sm: 6, lg: 3}}>
+                <Grid
+                  key={i}
+                  size={{
+                    xs: 12,
+                    sm: isbool ? 6 : 12,
+                    md: isbool ? 6 : 6,
+                    lg: isbool ? 3 : 6
+                  }}
+                >
                   <TextCard
                     heading={data.heading}
                     subHeading={data.sub}
                     description={data.des}
+                    isbool={isbool}
                   />
                 </Grid>
               ))}
@@ -112,6 +127,7 @@ export default function ClassGrid({license}: {license: string}) {
                   subHeading={t('mofasub')}
                   description={t('mofaDes')}
                   headingSize={false}
+                  background={isbool ? '#f2f2f2' : '#EDF0FF'}
                 />
               </Grid>
               <Grid

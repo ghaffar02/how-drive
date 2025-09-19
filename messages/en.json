@@ -343,15 +343,29 @@
     "description": "We connect learner drivers and driving schools through a digital service.",
     "features": {
       "heading": "Function",
-      "items": ["Students", "Schools", "Installation"]
+      "items": [
+        "Students",
+        "Schools",
+        "Installation"
+      ]
     },
     "services": {
       "heading": "Service",
-      "items": ["About Us", "Pricing", "Contact", "Help"]
+      "items": [
+        "About Us",
+        "Pricing",
+        "Contact",
+        "Help"
+      ]
     },
     "support": {
       "heading": "Legal",
-      "items": ["Imprint", "Privacy Policy", "Terms", "Cookie"]
+      "items": [
+        "Imprint",
+        "Privacy Policy",
+        "Terms",
+        "Cookie"
+      ]
     }
   },
   "loginPage": {
@@ -1090,43 +1104,34 @@
   "licenseLT": {
     "grid1Data": [
       {
-        "heading": "B",
-        "sub": "from 18",
-        "des": "Cars up to 3.5 t, max. 8 seats"
+        "heading": "L",
+        "sub": "ab 16",
+        "des": "Agricultural tractors up to 40 km/h, with trailer up to 25 km/h"
       },
       {
-        "heading": "B17",
-        "sub": "from 17",
-        "des": "Accompanied driving"
-      },
-      {
-        "heading": "BE",
-        "sub": "from 18",
-        "des": "Car + trailer up to 3.5 t"
-      },
-      {
-        "heading": "B96",
-        "sub": "from 18",
-        "des": "Car + trailer over 750 kg"
+        "heading": "T",
+        "sub": "ab 16",
+        "des": "Tractors or large agricultural machinery up to 60 km/h"
       }
     ],
-    "fileTitle": "ID - passport photo - eye test - first aid<br />If applicable, driver's license copy",
-    "roadTitle": "Special trips:<br />5 overland<br />4 highway<br />3 nights",
+    "fileTitle": "ID - passport photo - eye test - first aid If applicable, driver's license copy",
+    "roadTitle": "Special trips:None, but practical training recommended",
     "grund": "Basic material",
     "grundDes": "12 lessons - double lessons",
     "gult": "Validity",
     "gultDes": "Unlimited, every 15 years renewed",
-    "mofa": "B197",
-    "mofaDes": "Training partly on automatic",
-    "zusa": "Additive material",
-    "zusaDes": "2 lessons - double lessons",
+    "mofa": "Additive material L",
+    "mofasub": "",
+    "mofaDes": "2 lessons - double lessons",
+    "zusa": "Additive material T",
+    "zusaDes": "6 lessons - double lessons",
     "heading1": "Important information",
-    "heading2": "Cost overview",
+    "heading2": "Cost overview class L",
     "heading3": "Step-by-step guide to a class B driving license",
-    "heading4": "Notice",
+    "heading4": "Cost overview class T",
     "title1": "Driving license ",
-    "title2": "Class B",
-    "descriptionhero": "Passenger cars, light commercial vehicles, motor homes and other vehicles, excluding motorcycles",
+    "title2": "Class L and T",
+    "descriptionhero": "L stands for agricultural (Landwirtschaft) and T for tractor. These classes apply to towing vehicles.",
     "stepsData": [
       {
         "title": "Driving school registration",
@@ -1707,6 +1712,6 @@
     "error2": "Email is required",
     "error3": "Topic is required",
     "error4": "Message is required",
-    "button":"Send"
+    "button": "Send"
   }
 }

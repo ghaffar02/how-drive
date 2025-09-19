@@ -40,7 +40,7 @@ export default function HeroClass({title1, title2, description}: HeroClass) {
             lineHeight: {xs: '58px', md: '80px'},
             fontSize: {xs: '48px', md: '56px', lg: '64px'},
             fontFamily: 'Satoshi700, sans-serif !important',
-            maxWidth: '460px',
+            maxWidth: '800px',
             // height: '100%',
             width: '100%',
             '&::after': {
@@ -81,7 +81,7 @@ export default function HeroClass({title1, title2, description}: HeroClass) {
             fontSize: {xs: '48px', md: '56px', lg: '64px'},
             fontWeight: 700,
             fontFamily: 'Satoshi700, sans-serif !important',
-            maxWidth: '430px',
+            maxWidth: '800px',
             width: '100%'
             // marginBottom: '16px'
           }}
