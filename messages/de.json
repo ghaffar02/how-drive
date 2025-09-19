@@ -5,6 +5,27 @@
   "Manifest": {
     "name": "My App"
   },
+  "pageRoutes": {
+    "login": "/anmelden",
+    "signup": "/registrieren",
+    "forgotPassword": "/passwort-vergessen",
+    "resetPassword": "/passwort-zuruecksetzen",
+    "aboutUs": "/ueber-uns",
+    "pricing": "/preis",
+    "contact": "/kontakt",
+    "drivingLicenseClassA": "/fuehrerscheinklasse-a",
+    "drivingLicenseClassB": "/fuehrerscheinklasse-b",
+    "drivingLicenseClassC": "/fuehrerscheinklasse-c",
+    "drivingLicenseClassD": "/fuehrerscheinklasse-d",
+    "drivingLicenseClassLAndT": "/fuehrerscheinklasse-l-und-t",
+    "rewriteOfDrivingLicenses": "/umschreiben-der-fuehrerscheine",
+    "help": "/hilfe",
+    "imprint": "/impressum",
+    "privacy": "/datenschutz",
+    "terms": "/agb",
+    "cookies": "/cookies",
+    "notFound": "/404"
+  },
   "Navbar": {
     "aboutus": {
       "text": "Über uns",
@@ -1104,43 +1125,34 @@
   "licenseLT": {
     "grid1Data": [
       {
-        "heading": "B",
-        "sub": "ab 18",
-        "des": "Pkw bis 3,5 t, max. 8 Sitzplätze"
+        "heading": "L",
+        "sub": "ab 16",
+        "des": "Landwirtschaftliche Zugmaschinen bis 40 km/h, mit Anhänger bis 25 km/h"
       },
       {
-        "heading": "B17",
-        "sub": "ab 17",
-        "des": "Begleitetes Fahren"
-      },
-      {
-        "heading": "BE",
-        "sub": "ab 18",
-        "des": "Pkw + Anhänger bis 3,5 t"
-      },
-      {
-        "heading": "B96",
-        "sub": "ab 18",
-        "des": "Pkw + Anhänger über 750 kg"
+        "heading": "T",
+        "sub": "ab 16",
+        "des": "Traktoren oder große landwirtschaftliche Maschinen bis 60 km/h"
       }
     ],
-    "fileTitle": "Ausweis - Passbild - augenärztliches <br /> Zeugnis - Erste-Hilfe - ärztliches <br/> Gutachten - ggb. Führungszeugnis",
-    "roadTitle": "Sonderfahrten:<br />5 Überland<br />2 Autobahn<br />3 Nacht",
+    "fileTitle": "Ausweis - Passbild - Sehtest - Erste-Hilfe ggb. Führerscheinkopie",
+    "roadTitle": "Sonderfahrten:<br/>Keine, aber Praxisausbildung empfohlen",
     "grund": "Grundstoff",
-    "grundDes": "6 Unterrichte - Doppelstunden",
+    "grundDes": "12 Unterrichte - Doppelstunden",
     "gult": "Gültigkeit",
-    "gultDes": "Befristet auf 5 Jahre",
-    "mofa": "Vorbesitz",
-    "mofaDes": "Führerschein Klasse B",
-    "zusa": "Zusatzstoff",
-    "zusaDes": "4-10 Unterrichte - Doppelstunden",
+    "gultDes": "Unbefristet, je 15 Jahre erneut",
+    "mofa": "Zusatzstoff L",
+    "mofasub": "",
+    "mofaDes": "2 Unterrichte - Doppelstunden",
+    "zusa": "Zusatzstoff T",
+    "zusaDes": "6 Unterrichte - Doppelstunden",
     "heading1": "Wichtige Informationen",
-    "heading2": "Kostenübersicht",
-    "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein Klasse A",
-    "heading4": "Notice",
+    "heading2": "Kostenübersicht Klasse L",
+    "heading4": "Kostenübersicht Klasse T",
+    "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein Klasse L und T",
     "title1": "Führerschein",
-    "title2": " Klasse C",
-    "descriptionhero": "Lkw und Kraftfahrzeuge mit einer zulässigen Gesamtmasse von mehr als 3.500 kg.",
+    "title2": " Klasse L und T",
+    "descriptionhero": "L steht für Landwirtschaft und T für Traktor. Diese Klassen gelten für Zugmaschinen.",
     "stepsData": [
       {
         "title": "Anmeldung Fahrschule",
@@ -1258,7 +1270,7 @@
       },
       {
         "title": "Gesamtkosten",
-        "cost": "800–2.000 € (je nach individueller Lernzeit und Region)"
+        "cost": "<span style={{ fontWeight: 400 }}>800–2.000 €</span>  (je nach individueller Lernzeit und Region)"
       }
     ],
     "drivingCostsData2": [
@@ -1292,13 +1304,45 @@
       },
       {
         "title": "Gesamtkosten",
-        "cost": "1.200–3.000 € (je nach individueller Lernzeit und Region)"
+        "cost": "<span style={{ fontWeight: 400 }}>1.200–3.000 €</span>  (je nach individueller Lernzeit und Region)"
       }
     ],
     "notice": "Hinweis",
     "noticeDetails": "Wir bieten unseres Service ausschließlich für die Führerscheinklassen A und B sowie Umschreiben (Umschreibung ausländischer Führerscheine dieser Klassen in deutsche) an. Aufgrund der geringen Anzahl an Fahrschulen, die die Fahrklassen C, D, L und T anbieten, ist es uns derzeit nicht möglich, diese Klassen zu unterstützen. Wir hoffen, dass wir in Zukunft diese Klassen auch unterstützen können."
   },
   "licenseForeign": {
+    "grid1Data": [
+      {
+        "heading": "A",
+        "sub": "ab 16",
+        "des": "Führerscheinklassen A, A1, A2, AM"
+      },
+      {
+        "heading": "B",
+        "sub": "ab 16",
+        "des": "Führerscheinklassen B, BE, B96, B197"
+      }
+    ],
+    "fileTitle": "Ausweis - Passbild - Sehtest - Erste-Hilfe Original-Führerschein mit Übersetzung",
+    "roadTitle": "Sonderfahrten:<br/>Abhängig vom Herkunftsland",
+    "grund": "Grundstoff",
+    "grundDes": "Keine Theoriestunden",
+    "gult": "Gültigkeit",
+    "gultDes": "Unbefristet nach Umschreibung",
+    "mofa": "Anerkennung",
+    "mofasub": "",
+    "mofaDes": "Abhängig von Ländergruppen",
+    "zusa": "Zusatzstoff",
+    "zusaDes": "Keine Theoriestunden",
+    "heading1": "Important information",
+    "heading2": "Kostenübersicht Umschreibung Klasse A",
+    "heading3": "Schritt-für-Schritt-Anleitung zum Umschreiben Klasse A und B",
+    "heading4": "Kostenübersicht Umschreibung Klasse B",
+    "title1": "Umschreiben ausländischer ",
+    "title2": "Führerscheine",
+    "descriptionhero": "Wer aus Drittstaaten dauerhaft nach Deutschland umzieht, muss seine ausländische Fahrerlaubnis umschreiben lassen.",
+    "notice": "Hinweis",
+    "noticeDetails": "Wir bieten unseres Service ausschließlich für die Führerscheinklassen A und B sowie Umschreiben (Umschreibung ausländischer Führerscheine dieser Klassen in deutsche) an. Aufgrund der geringen Anzahl an Fahrschulen, die die Fahrklassen C, D, L und T anbieten, ist es uns derzeit nicht möglich, diese Klassen zu unterstützen. Wir hoffen, dass wir in Zukunft diese Klassen auch unterstützen können.",
     "stepsData": [
       {
         "title": "Anmeldung Fahrschule",
@@ -1705,5 +1749,22 @@
         ]
       }
     ]
+  },
+  "contactPage": {
+    "pageTitle": "Kontaktiere uns!",
+    "pageDes": "Hast du die Antwort deiner Frage in unserem Help Center nicht gefunden oder hast du einfach Fragen? Schreibe uns gerne eine E-Mail.",
+    "input1": "Name",
+    "input2": "E-Mail",
+    "input3": "Thema",
+    "input3a": "Allgemeine Frage",
+    "input3b": "Fehlfunktion",
+    "input3c": "Sonstige",
+    "input4": "Anfragedetails",
+    "input4a": "Wie können wir dich helfen?",
+    "error1": "Name ist erforderlich",
+    "error2": "E-Mail ist erforderlich",
+    "error3": "Thema ist erforderlich",
+    "error4": "Nachricht ist erforderlich",
+    "button": "Schicken"
   }
 }

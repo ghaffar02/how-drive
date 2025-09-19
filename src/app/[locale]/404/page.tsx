@@ -4,17 +4,14 @@ import {Box} from '@mui/material';
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/Footer';
 import TrustServiceSection from '@/components/home/TrustServiceSection';
-import HeroAboutus from '@/components/about-us/Hero';
-import ContactForm from '@/components/contact/ContactForm';
-
 import {useTranslations} from 'next-intl';
 // import HeroClass from '@/components/driving-license/HeroClasses';
 
 // import Notice from '@/components/driving-license/Notice';
 
 export default function Page() {
-  const t = useTranslations('contactPage');
-  // const Whatweoffer = t.raw('drivingRules');
+  const t = useTranslations('AboutUs');
+  const featuresData = t.raw('featuresData');
 
   return (
     <>
@@ -33,8 +30,7 @@ export default function Page() {
         >
           <Navbar />
         </Box>
-        <HeroAboutus title={t('pageTitle')} description={t('pageDes')} />
-        <ContactForm />
+        404 data here
         <TrustServiceSection />
         <Footer />
       </Box>

@@ -5,6 +5,27 @@
   "Manifest": {
     "name": "My App"
   },
+  "pageRoutes": {
+    "login": "/en/login",
+    "signup": "/en/signup",
+    "forgotPassword": "/en/forgot-password",
+    "resetPassword": "/en/reset-password",
+    "aboutUs": "/en/about-us",
+    "pricing": "/en/pricing",
+    "contact": "/en/contact",
+    "drivingLicenseClassA": "/en/driving-license-class-a",
+    "drivingLicenseClassB": "/en/driving-license-class-b",
+    "drivingLicenseClassC": "/en/driving-license-class-c",
+    "drivingLicenseClassD": "/en/driving-license-class-d",
+    "drivingLicenseClassLAndT": "/en/driving-license-class-l-and-t",
+    "rewriteOfDrivingLicenses": "/en/rewrite-of-driving-licenses",
+    "help": "/en/help",
+    "imprint": "/en/imprint",
+    "privacy": "/en/privacy",
+    "terms": "/en/terms",
+    "cookies": "/en/cookies",
+    "notFound": "/en/404"
+  },
   "Navbar": {
     "aboutus": {
       "text": "About Us",
@@ -1104,43 +1125,34 @@
   "licenseLT": {
     "grid1Data": [
       {
-        "heading": "B",
-        "sub": "from 18",
-        "des": "Cars up to 3.5 t, max. 8 seats"
+        "heading": "L",
+        "sub": "from 16",
+        "des": "Agricultural tractors up to 40 km/h, with trailer up to 25 km/h"
       },
       {
-        "heading": "B17",
-        "sub": "from 17",
-        "des": "Accompanied driving"
-      },
-      {
-        "heading": "BE",
-        "sub": "from 18",
-        "des": "Car + trailer up to 3.5 t"
-      },
-      {
-        "heading": "B96",
-        "sub": "from 18",
-        "des": "Car + trailer over 750 kg"
+        "heading": "T",
+        "sub": "from 16",
+        "des": "Tractors or large agricultural machinery up to 60 km/h"
       }
     ],
-    "fileTitle": "ID - passport photo - eye test - first aid<br />If applicable, driver's license copy",
-    "roadTitle": "Special trips:<br />5 overland<br />4 highway<br />3 nights",
+    "fileTitle": "ID - passport photo - eye test - first aid If applicable, driver's license copy",
+    "roadTitle": "Special trips:None, but practical training recommended",
     "grund": "Basic material",
     "grundDes": "12 lessons - double lessons",
     "gult": "Validity",
     "gultDes": "Unlimited, every 15 years renewed",
-    "mofa": "B197",
-    "mofaDes": "Training partly on automatic",
-    "zusa": "Additive material",
-    "zusaDes": "2 lessons - double lessons",
+    "mofa": "Additive material L",
+    "mofasub": "",
+    "mofaDes": "2 lessons - double lessons",
+    "zusa": "Additive material T",
+    "zusaDes": "6 lessons - double lessons",
     "heading1": "Important information",
-    "heading2": "Cost overview",
-    "heading3": "Step-by-step guide to a class B driving license",
-    "heading4": "Notice",
+    "heading2": "Cost overview class L",
+    "heading3": "Step-by-step guide to a class L and T driving license",
+    "heading4": "Cost overview class T",
     "title1": "Driving license ",
-    "title2": "Class B",
-    "descriptionhero": "Passenger cars, light commercial vehicles, motor homes and other vehicles, excluding motorcycles",
+    "title2": "Class L and T",
+    "descriptionhero": "L stands for agricultural (Landwirtschaft) and T for tractor. These classes apply to towing vehicles.",
     "stepsData": [
       {
         "title": "Driving school registration",
@@ -1258,7 +1270,7 @@
       },
       {
         "title": "Total costs",
-        "cost": "800–2.000 € (depending on individual learning time and region)"
+        "cost": "<span style={{ fontWeight: 400 }}>800–2.000 €</span> (depending on individual learning time and region)"
       }
     ],
     "drivingCostsData2": [
@@ -1292,13 +1304,43 @@
       },
       {
         "title": "Total costs",
-        "cost": "1.200–3.000 € (depending on individual learning time and region)"
+        "cost": " <span style={{ fontWeight: 400 }}>1.200–3.000 €</span> (depending on individual learning time and region)"
       }
     ],
     "notice": "Notice",
     "noticeDetails": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future."
   },
   "licenseForeign": {
+    "grid1Data": [
+      {
+        "heading": "A",
+        "sub": "from 16",
+        "des": "Driving license classes A, A1, A2, AM"
+      },
+      {
+        "heading": "T",
+        "sub": "from 16",
+        "des": "Driving license classes B, BE, B96, B197"
+      }
+    ],
+    "fileTitle": "ID - passport photo - eye test - first aid Original driving license with translation",
+    "roadTitle": "Special trips:<br/>Depending on the country of origin",
+    "grund": "Basic material",
+    "grundDes": "No theory lessons",
+    "gult": "Validity",
+    "gultDes": "Unlimited after conversion",
+    "mofa": "Recognition",
+    "mofasub": "",
+    "mofaDes": "Depending on country groups",
+    "zusa": "Additive material T",
+    "zusaDes": "No theory lessons",
+    "heading1": "Important information",
+    "heading2": "Cost overview for Class A conversion",
+    "heading3": "Step-by-step guide to rewriting Class A and B",
+    "heading4": "Cost overview for Class B conversion",
+    "title1": "Rewrite of foreign",
+    "title2": "driving licenses",
+    "descriptionhero": "Anyone who moves permanently to Germany from not-EU countries must have their foreign driving license converted.",
     "stepsData": [
       {
         "title": "Driving school registration",
@@ -1461,7 +1503,9 @@
         "title": "Total costs",
         "cost": "800–3.000 € (depending on individual learning time and region)"
       }
-    ]
+    ],
+    "notice": "Notice",
+    "noticeDetails": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future."
   },
   "privacy": {
     "title": "Privacy Policy",
@@ -1705,5 +1749,22 @@
         ]
       }
     ]
+  },
+  "contactPage": {
+    "pageTitle": "Contact us!",
+    "pageDes": "If you haven't found the answer to your question in our Help Center, or if you simply have questions, feel free to send us an email.",
+    "input1": "Name",
+    "input2": "Email",
+    "input3": "Topic",
+    "input3a": "General question",
+    "input3b": "Malfunction",
+    "input3c": "Other",
+    "input4": "Request details",
+    "input4a": "How can we help you?",
+    "error1": "Name is required",
+    "error2": "Email is required",
+    "error3": "Topic is required",
+    "error4": "Message is required",
+    "button": "Send"
   }
 }
