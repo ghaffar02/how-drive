@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import {Box, Typography} from '@mui/material';
+// import { Description } from '@mui/icons-material';
 type drivingCosts = {
   title: string;
   cost: string;
@@ -9,11 +10,13 @@ type drivingCosts = {
 type CostoverviewProp = {
   drivingCosts: drivingCosts[];
   heading: string;
+  Description?: string;
 };
 
 export default function Costoverview({
   drivingCosts,
-  heading
+  heading,
+  Description
 }: CostoverviewProp) {
   return (
     <Box sx={{bgcolor: '#FAFAFA'}}>
@@ -39,6 +42,23 @@ export default function Costoverview({
             borderRadius: '24px'
           }}
         >
+          {Description && (
+            <Typography
+              sx={{
+                textAlign: 'center',
+                color: '#1A202C',
+                // lineHeight: {xs: '58px', md: '100%'},
+                fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                fontFamily:
+                  '"Inter", "Inter Placeholder", sans-serif !important',
+                fontWeight: 300,
+                width: '100%',
+                mb: '28px'
+              }}
+            >
+              {Description}
+            </Typography>
+          )}
           <Typography
             sx={{
               textAlign: 'center',

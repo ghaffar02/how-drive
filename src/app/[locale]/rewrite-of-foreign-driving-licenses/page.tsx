@@ -11,6 +11,7 @@ import Costoverview from '@/components/driving-license/CostOverview';
 import {useTranslations} from 'next-intl';
 import DrivingSteps from '@/components/driving-license/Tab';
 import Notice from '@/components/driving-license/Notice';
+import CostOverviewTwo from '@/components/driving-license/CostOverviewTwo';
 
 export default function Page() {
   const t = useTranslations('licenseForeign');
@@ -18,6 +19,9 @@ export default function Page() {
   const drivingCosts = t.raw('drivingCostsData1');
   const drivingCosts2 = t.raw('drivingCostsData2');
   const stepsData = t.raw('stepsData');
+  const drivingLicenseRules = t.raw('drivingLicenseRules');
+
+  // ✅ Data array
 
   return (
     <>
@@ -42,15 +46,29 @@ export default function Page() {
           description={t('descriptionhero')}
         />
         <ClassGrid license="licenseForeign" isbool={false} />
+        <CostOverviewTwo
+          drivingCosts={drivingLicenseRules}
+          heading={t('heading5')}
+          Description={t('descost3')}
+        />
         <ImportantInformation
           drivingRules={drivingRules}
           heading={t('heading1')}
         />
 
-        <Costoverview drivingCosts={drivingCosts} heading={t('heading2')} />
+        <Costoverview
+          drivingCosts={drivingCosts}
+          heading={t('heading2')}
+          Description={t('descost1')}
+        />
         <Box sx={{mt: '-80px'}}>
-          <Costoverview drivingCosts={drivingCosts2} heading={t('heading4')} />
+          <Costoverview
+            drivingCosts={drivingCosts2}
+            heading={t('heading4')}
+            Description={t('descost2')}
+          />
         </Box>
+
         <DrivingSteps steps={stepsData} heading={t('heading3')} />
         <Notice heading={t('notice')} description={t('noticeDetails')} />
         <TrustServiceSection />

@@ -1338,9 +1338,66 @@
     "heading2": "Cost overview for Class A conversion",
     "heading3": "Step-by-step guide to rewriting Class A and B",
     "heading4": "Cost overview for Class B conversion",
+    "heading5": "Conversion depending on country groups",
     "title1": "Rewrite of foreign",
     "title2": "driving licenses",
+    "descost1": "This table applies to non-EU/non-EEA driving licenses (e.g. from the USA, Turkey, India, Russia, etc.), since EU/EEA driving licenses are generally valid in Germany.",
+    "descost2": "This table applies to non-EU/non-EEA driving licenses (e.g. from the USA, Turkey, India, Russia, etc.), since EU/EEA driving licenses are generally valid in Germany.",
+    "descost3": "This table applies to the conversion of foreign driving licenses classes A and B.",
     "descriptionhero": "Anyone who moves permanently to Germany from not-EU countries must have their foreign driving license converted.",
+    "drivingLicenseRules": [
+      {
+        "heading": "EU/EEA countries",
+        "items": [
+          {
+            "title": "Theory exam",
+            "cost": "no"
+          },
+          {
+            "title": "Practical exam",
+            "cost": "no"
+          },
+          {
+            "title": "Remark",
+            "cost": "Conversion not necessary, but exchange for EU card driving license required."
+          }
+        ]
+      },
+      {
+        "heading": "Countries with mutual recognition agreements (e.g. Switzerland, Japan, USA, UK, Australia, New Zealand)",
+        "items": [
+          {
+            "title": "Theory exam",
+            "cost": "no"
+          },
+          {
+            "title": "Practical exam",
+            "cost": "no"
+          },
+          {
+            "title": "Remark",
+            "cost": "Conversion is possible without an exam. Exception: A practical exam is required for Albania and Moldova."
+          }
+        ]
+      },
+      {
+        "heading": "Other countries",
+        "items": [
+          {
+            "title": "Theory exam",
+            "cost": "yes"
+          },
+          {
+            "title": "Practical exam",
+            "cost": "yes"
+          },
+          {
+            "title": "Remark",
+            "cost": "Conversion is only possible with a theory and practical exam, but no driving school training is required."
+          }
+        ]
+      }
+    ],
     "stepsData": [
       {
         "title": "Driving school registration",
@@ -1463,7 +1520,7 @@
       },
       {
         "title": "Total costs",
-        "cost": "700–2.000 € (depending on individual learning time and region)"
+        "cost": "<span style={{ fontWeight: 400 }}>700–2.000 €</span> (depending on individual learning time and region)"
       }
     ],
     "drivingCostsData2": [
@@ -1501,7 +1558,7 @@
       },
       {
         "title": "Total costs",
-        "cost": "800–3.000 € (depending on individual learning time and region)"
+        "cost": "<span style={{ fontWeight: 400 }}>800–3.000 €</span> (depending on individual learning time and region)"
       }
     ],
     "notice": "Notice",

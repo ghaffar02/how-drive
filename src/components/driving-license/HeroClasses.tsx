@@ -77,7 +77,7 @@ export default function HeroClass({title1, title2, description}: HeroClass) {
 
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.26)), url(${bgImage.src})`,
             color: '#000',
-            lineHeight: {xs: '58px', md: '100%'},
+            lineHeight: {xs: '58px', md: '80px'},
             fontSize: {xs: '48px', md: '56px', lg: '64px'},
             fontWeight: 700,
             fontFamily: 'Satoshi700, sans-serif !important',
