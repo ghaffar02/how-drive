@@ -1,5 +1,6 @@
 'use client';
 import {Box, SvgIcon, Typography} from '@mui/material';
+import {motion} from 'framer-motion';
 // import {JSX} from 'react';
 type Whatweoffer = {
   category: string;
@@ -67,9 +68,15 @@ export default function Whatweoffer({Whatweoffer, heading}: WhatweofferProps) {
             }}
           >
             {Whatweoffer.map((item, index) => {
+              const isEven = index % 2 === 0;
               return (
                 <Box
                   key={index}
+                  component={motion.div}
+                  initial={{opacity: 0, x: isEven ? -50 : 50}} // left or right
+                  animate={{opacity: 1, x: 0}}
+                  exit={{opacity: 0, y: -20}}
+                  transition={{duration: 0.6}}
                   sx={{
                     bgcolor: '#E1F2F2',
                     maxWidth: '615px',

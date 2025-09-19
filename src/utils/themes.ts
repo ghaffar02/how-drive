@@ -1,168 +1,80 @@
 const localFont = {
   // all headings here
   h1: {
-    lineHeight: {xs: '58px', md: '100%'},
-    color: '#000',
     fontSize: {xs: '48px', md: '56px', lg: '64px'},
-    textWrap: {md: 'nowrap'},
+    lineHeight: {xs: '1.15em', lg: '1.1em'},
+    color: '#000000',
     fontFamily: 'Satoshi700 !important'
   },
   h2: {
-    color: '#000',
     fontSize: {xs: '32px', md: '36px', lg: '48px'},
     lineHeight: {xs: '1.2em', lg: '1.15em'},
-    fontWeight: 700,
+    color: '#000',
     fontFamily: 'Satoshi700 !important'
   },
   h3: {
     fontSize: {xs: '28px', sm: '32px', lg: '36px'},
-    lineHeight: {xs: '35px', sm: '100%'},
-    fontWeight: 400,
-    fontFamily: 'Satoshi500 !important',
+    lineHeight: {xs: '1.25em', lg: '1.2em'},
+    fontFamily: 'Satoshi700 !important',
     color: '#000'
   },
-  h4: {},
-  h5: {},
-  h6: {},
-  h7: {},
-  h8: {},
-  h9: {},
+  h4: {
+    fontSize: {xs: '20px', sm: '22px', lg: '24px'},
+    lineHeight: '1.3em',
+    fontFamily: 'Satoshi700 !important',
+    color: '#1A202C'
+  },
+  h5: {
+    fontSize: {xs: '16px', sm: '18px', lg: '20px'},
+    lineHeight: '1.35em',
+    fontFamily: 'Satoshi700 !important',
+    color: '#1A202C'
+  },
+  h6: {
+    fontSize: {xs: '15px', sm: '17px', lg: '18px'},
+    lineHeight: '1.4em',
+    fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
+    color: '#2D3748'
+  },
 
   // all paragraphs here
-
-  p1: {
-    fontSize: {xs: '28px', md: '32px', lg: '36px'},
-    color: '#000'
-  },
-  p2: {
-    color: '#1a202c',
-    fontSize: {xs: '20px', sm: '22px', md: '24px'},
-    letterSpacing: '0.03em',
-    lineHeight: '1.3em'
-  },
-  p3: {
-    color: '#000',
-    fontSize: {xs: '18px', md: '20px', lg: '22px'},
-    fontFamily: '"Inter", sans-serif  !important',
-    fontWeight: '300',
-    lineHeight: '1.35em'
-  },
-  p4: {
-    color: '#FFFFFF',
-    fontSize: {xs: '16px', md: '18px', lg: '20px'},
-    lineHeight: '1.35em',
-    fontFamily: '"Inter", sans-serif  !important',
+  inter24: {
+    fontSize: {xs: '20px', md: '22px', lg: '24px'},
+    lineHeight: '1.3em',
+    fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
+    color: '#1A202C',
     fontWeight: '400'
   },
-  p5: {
-    fontSize: {xs: '14px', sm: '16px', lg: '18px'},
-    lineHeight: {xs: '22px', sm: '100%'},
-    color: '#000000'
+  inter22: {
+    color: '#1a202c',
+    fontSize: {xs: '18px', sm: '20px', md: '22px'},
+    lineHeight: '1.35em',
+    fontWeight: '400'
   },
-  p6: {
-    color: '#2d3748',
+  inter20: {
+    color: '#2D3748',
+    fontSize: {xs: '16px', sm: '18px', md: '20px'},
+    lineHeight: '1.35em',
+    fontWeight: '400'
+  },
+  inter18: {
+    color: '#2D3748',
+    fontSize: {xs: '16px', sm: '17px', md: '18px'},
+    lineHeight: '1.35em',
+    fontWeight: '400'
+  },
+  inter16: {
+    color: '#2D3748',
     fontSize: {xs: '14px', sm: '15px', md: '16px'},
-    fontFamily: '"Inter", sans-serif !important',
-    letterSpacing: '0.01em',
-    lineHeight: '1.5em'
+    lineHeight: '1.5em',
+    fontWeight: '400'
   },
-  p7: {
-    fontSize: {xs: '14px !important', sm: '16px !important'}
-  },
-  p8: {
-    color: '#626b7b',
-    fontSize: {xs: '12px', md: '13px', lg: '14px'},
-    fontFamily: '"Inter", sans-serif  !important'
-  },
-  p9: {},
-  p10: {},
-  p11: {},
-  p12: {},
-  p13: {}
+  inter14: {
+    color: '#4A5568',
+    fontSize: {xs: '12px', sm: '13px', md: '14px'},
+    lineHeight: '1.6em',
+    fontWeight: '400'
+  }
 };
 
 export default localFont;
-
-// // import { localFont } from "@/app/utils/themes";
-// const localFont = {
-//   // headings
-//   h1: {
-//     fontSize: {xs: '28px', sm: '32px', lg: '36px'},
-//     lineHeight: {xs: '35px', sm: '100%'},
-//     fontWeight: 400,
-//     fontFamily: 'Satoshi500 !important',
-//     color: '#000'
-//   },
-//   h2: {
-//     lineHeight: {xs: '58px', md: '100%'},
-//     color: '#000',
-//     fontSize: {xs: '48px', md: '56px', lg: '64px'},
-//     textWrap: {md: 'nowrap'},
-//     fontFamily: 'Satoshi700 !important'
-//   },
-//   h3: {
-//     color: '#000',
-//     fontSize: {xs: '32px', md: '36px', lg: '48px'},
-//     lineHeight: {xs: '1.2em', lg: '1.15em'},
-//     fontWeight: 700,
-//     fontFamily: 'Satoshi700 !important'
-//   },
-//   h4: {},
-//   h5: {},
-//   h6: {},
-//   h7: {},
-//   h8: {},
-//   h9: {},
-
-//   // textual
-//   p1: {
-//     color: '#1a202c',
-//     fontSize: {xs: '20px', sm: '22px', md: '24px'},
-//     letterSpacing: '0.03em',
-//     lineHeight: '1.3em'
-//   },
-//   p2: {
-//     color: '#2d3748',
-//     fontSize: {xs: '14px', sm: '15px', md: '16px'},
-//     fontFamily: '"Inter", sans-serif !important',
-//     letterSpacing: '0.01em',
-//     lineHeight: '1.5em'
-//   },
-//   p3: {
-//     color: '#626b7b',
-//     fontSize: {xs: '12px', md: '13px', lg: '14px'},
-//     fontFamily: '"Inter", sans-serif  !important'
-//   },
-//   p4: {
-//     fontSize: {xs: '28px', md: '32px', lg: '36px'},
-//     color: '#000'
-//   },
-//   p5: {
-//     fontSize: {xs: '14px', sm: '16px', lg: '18px'},
-//     lineHeight: {xs: '22px', sm: '100%'},
-//     color: '#000000'
-//   },
-//   p6: {
-//     color: '#000',
-//     fontSize: {xs: '18px', md: '20px', lg: '22px'},
-//     fontFamily: '"Inter", sans-serif  !important',
-//     fontWeight: '300',
-//     lineHeight: '1.35em'
-//   },
-//   p7: {
-//     color: '#FFFFFF',
-//     fontSize: {xs: '16px', md: '18px', lg: '20px'},
-//     lineHeight: '1.35em',
-//     fontFamily: '"Inter", sans-serif  !important',
-//     fontWeight: '400'
-//   },
-//   p8: {
-//     fontSize: {xs: '14px !important', sm: '16px !important'}
-//   },
-//   p9: {},
-//   p10: {},
-//   p11: {},
-//   p12: {},
-//   p13: {}
-// };
-// export default localFont;

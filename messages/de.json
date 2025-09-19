@@ -343,15 +343,29 @@
     "description": "Wir verknupfen Fahrschüler und Fahrschulen durch ein digitales Service.",
     "features": {
       "heading": "Funktionen",
-      "items": ["Fahrschüler", "Fahrschulen", "Installation"]
+      "items": [
+        "Fahrschüler",
+        "Fahrschulen",
+        "Installation"
+      ]
     },
     "services": {
       "heading": "Service",
-      "items": ["Über uns", "Preise", "Kontakt", "Hilfe"]
+      "items": [
+        "Über uns",
+        "Preise",
+        "Kontakt",
+        "Hilfe"
+      ]
     },
     "support": {
       "heading": "Rechtliches",
-      "items": ["Impressum", "Datenschutz", "AGB", "Cookie"]
+      "items": [
+        "Impressum",
+        "Datenschutz",
+        "AGB",
+        "Cookie"
+      ]
     }
   },
   "loginPage": {
@@ -569,6 +583,46 @@
     ]
   },
   "licenseB": {
+    "grid1Data": [
+      {
+        "heading": "B",
+        "sub": "ab 18",
+        "des": "Pkw bis 3,5 t, max. 8 Sitzplätze"
+      },
+      {
+        "heading": "B17",
+        "sub": "ab 17",
+        "des": "Begleitetes Fahren"
+      },
+      {
+        "heading": "BE",
+        "sub": "ab 18",
+        "des": "Pkw + Anhänger bis 3,5 t"
+      },
+      {
+        "heading": "B96",
+        "sub": "ab 18",
+        "des": "Pkw + Anhänger über 750 kg"
+      }
+    ],
+    "fileTitle": "Ausweis - Passbild - Sehtest - Erste-Hilfe<br />ggb. Führerscheinkopie",
+    "roadTitle": "Sonderfahrten:<br />5 Überland<br />4 Autobahn<br />3 Nacht",
+    "grund": "Grundstoff",
+    "grundDes": "12 Unterrichte - Doppelstunden",
+    "gult": "Gültigkeit",
+    "gultDes": "Unbefristet, je 15 Jahre erneut",
+    "mofa": "B197",
+    "mofasub": "",
+    "mofaDes": "Ausbildung teils auf Automatik",
+    "zusa": "Zusatzstoff",
+    "zusaDes": "2 Unterrichte - Doppelstunden",
+    "heading1": "Wichtige Informationen",
+    "heading2": "Kostenübersicht",
+    "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein Klasse A",
+    "heading4": "Notice",
+    "title1": "Führerschein",
+    "title2": " Klasse B",
+    "descriptionhero": "Pkw, leichte Nutzfahrzeuge, Wohnmobile und andere Fahrzeuge, ausgenommen von Krafträder.",
     "stepsData": [
       {
         "title": "Anmeldung Fahrschule",
@@ -689,11 +743,51 @@
       },
       {
         "title": "Gesamtkosten",
-        "cost": "2.000–4.000 € (je nach individueller Lernzeit und Region)"
+        "cost": "<span style={{ fontWeight: 400 }}>2.000–4.000 €</span>(je nach individueller Lernzeit und Region)"
       }
     ]
   },
   "licenseC": {
+    "grid1Data": [
+      {
+        "heading": "C",
+        "sub": "ab 21",
+        "des": "Lkw über 3,5 t + Anhänger 750 kg"
+      },
+      {
+        "heading": "CE",
+        "sub": "ab 21",
+        "des": "C + Anhänger über 750 kg"
+      },
+      {
+        "heading": "C1",
+        "sub": "ab 18",
+        "des": "Lkw 3,5 bis 7,5 t + Anhänger 750 kg"
+      },
+      {
+        "heading": "C1E",
+        "sub": "ab 18",
+        "des": "C1 + Anhänger über 750 kg"
+      }
+    ],
+    "fileTitle": "Ausweis - Passbild - augenärztliches <br /> Zeugnis - Erste-Hilfe - ärztliches <br/> Gutachten - ggb. Führungszeugnis",
+    "roadTitle": "Sonderfahrten:<br />5 Überland<br />2 Autobahn<br />3 Nacht",
+    "grund": "Grundstoff",
+    "grundDes": "6 Unterrichte - Doppelstunden",
+    "gult": "Gültigkeit",
+    "gultDes": "Befristet auf 5 Jahre",
+    "mofa": "Vorbesitz",
+    "mofasub": "",
+    "mofaDes": "Führerschein Klasse B",
+    "zusa": "Zusatzstoff",
+    "zusaDes": "4-10 Unterrichte - Doppelstunden",
+    "heading1": "Wichtige Informationen",
+    "heading2": "Kostenübersicht",
+    "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein Klasse A",
+    "heading4": "Notice",
+    "title1": "Führerschein",
+    "title2": " Klasse C",
+    "descriptionhero": "Lkw und Kraftfahrzeuge mit einer zulässigen Gesamtmasse von mehr als 3.500 kg.",
     "stepsData": [
       {
         "title": "Anmeldung Fahrschule",
@@ -824,13 +918,53 @@
       },
       {
         "title": "Gesamtkosten",
-        "cost": "5.000–10.000 € (je nach individueller Lernzeit und Region)"
+        "cost": "<span style={{ fontWeight: 400 }}>5.000–10.000 €</span> (je nach individueller Lernzeit und Region)"
       }
     ],
     "notice": "Hinweis",
     "noticeDetails": "Wir bieten unseres Service ausschließlich für die Führerscheinklassen A und B sowie Umschreiben (Umschreibung ausländischer Führerscheine dieser Klassen in deutsche) an. Aufgrund der geringen Anzahl an Fahrschulen, die die Fahrklassen C, D, L und T anbieten, ist es uns derzeit nicht möglich, diese Klassen zu unterstützen. Wir hoffen, dass wir in Zukunft diese Klassen auch unterstützen können."
   },
   "licenseD": {
+    "grid1Data": [
+      {
+        "heading": "D",
+        "sub": "ab 24",
+        "des": "Busse über 16 Personen"
+      },
+      {
+        "heading": "DE",
+        "sub": "ab 24",
+        "des": "D + trailer over 750 kg"
+      },
+      {
+        "heading": "D1",
+        "sub": "ab 21",
+        "des": "Bis 16 Personen, max. 8 m Länge + Anhänger 750 kg"
+      },
+      {
+        "heading": "D1E",
+        "sub": "ab 21",
+        "des": "D1 + Anhänger über 750 kg"
+      }
+    ],
+    "fileTitle": "Ausweis - Passbild - augenärztliches Zeugnis - ärztliches Gutachten - Erste-Hilfe - Reaktionstest - Führungszeugnis",
+    "roadTitle": "Sonderfahrten:<br />8-22 Überland<br />4-14 Autobahn<br />3-8 Nacht",
+    "grund": "Grundstoff",
+    "grundDes": "6 Unterrichte - Doppelstunden",
+    "gult": "Gültigkeit",
+    "gultDes": "Befristet auf 5 Jahre",
+    "mofa": "Vorbesitz",
+    "mofasub": "",
+    "mofaDes": "Führerschein Klasse B",
+    "zusa": "Zusatzstoff",
+    "zusaDes": "8-18 Unterrichte - Doppelstunden",
+    "heading1": "Wichtige Informationen",
+    "heading2": "Kostenübersicht",
+    "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein Klasse D",
+    "heading4": "Notice",
+    "title1": "Führerschein",
+    "title2": " Klasse D",
+    "descriptionhero": "Bus und Kraftfahrzeuge, die der Beförderung von mehr als 8 Personen dienen.",
     "stepsData": [
       {
         "title": "Anmeldung Fahrschule",
@@ -961,13 +1095,52 @@
       },
       {
         "title": "Gesamtkosten",
-        "cost": "7.000–15.000 € (je nach individueller Lernzeit und Region)"
+        "cost": "<span style={{ fontWeight: 400 }}>7.000–15.000 €</span> (je nach individueller Lernzeit und Region)"
       }
     ],
     "notice": "Hinweis",
     "noticeDetails": "Wir bieten unseres Service ausschließlich für die Führerscheinklassen A und B sowie Umschreiben (Umschreibung ausländischer Führerscheine dieser Klassen in deutsche) an. Aufgrund der geringen Anzahl an Fahrschulen, die die Fahrklassen C, D, L und T anbieten, ist es uns derzeit nicht möglich, diese Klassen zu unterstützen. Wir hoffen, dass wir in Zukunft diese Klassen auch unterstützen können."
   },
   "licenseLT": {
+    "grid1Data": [
+      {
+        "heading": "B",
+        "sub": "ab 18",
+        "des": "Pkw bis 3,5 t, max. 8 Sitzplätze"
+      },
+      {
+        "heading": "B17",
+        "sub": "ab 17",
+        "des": "Begleitetes Fahren"
+      },
+      {
+        "heading": "BE",
+        "sub": "ab 18",
+        "des": "Pkw + Anhänger bis 3,5 t"
+      },
+      {
+        "heading": "B96",
+        "sub": "ab 18",
+        "des": "Pkw + Anhänger über 750 kg"
+      }
+    ],
+    "fileTitle": "Ausweis - Passbild - augenärztliches <br /> Zeugnis - Erste-Hilfe - ärztliches <br/> Gutachten - ggb. Führungszeugnis",
+    "roadTitle": "Sonderfahrten:<br />5 Überland<br />2 Autobahn<br />3 Nacht",
+    "grund": "Grundstoff",
+    "grundDes": "6 Unterrichte - Doppelstunden",
+    "gult": "Gültigkeit",
+    "gultDes": "Befristet auf 5 Jahre",
+    "mofa": "Vorbesitz",
+    "mofaDes": "Führerschein Klasse B",
+    "zusa": "Zusatzstoff",
+    "zusaDes": "4-10 Unterrichte - Doppelstunden",
+    "heading1": "Wichtige Informationen",
+    "heading2": "Kostenübersicht",
+    "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein Klasse A",
+    "heading4": "Notice",
+    "title1": "Führerschein",
+    "title2": " Klasse C",
+    "descriptionhero": "Lkw und Kraftfahrzeuge mit einer zulässigen Gesamtmasse von mehr als 3.500 kg.",
     "stepsData": [
       {
         "title": "Anmeldung Fahrschule",
@@ -1469,5 +1642,68 @@
     "des5": "Lerne die Grundlagen",
     "title6": "Sontiges",
     "des6": "Lerne die Grundlagen"
+  },
+  "AboutUs": {
+    "heroTitle": "Über WieFührerschein",
+    "Title": "Was wir bieten",
+    "heroDes": "Den Führerscheinerwerb für Fahrschüler vereinfachen und eine effizientere Verwaltung für Fahrschulen ermöglichen",
+    "contantTitle1": "Wer wir sind",
+    "contactDes1": "Wir glauben, dass der Weg zum Führerschein einfach, transparent und stressfrei sein sollte. Genau deshalb haben wir unsere Plattform ins Leben gerufen – um Fahrschüler:innen beim Führerscheinerwerb zu helfen und Fahrschulen ein effizientes System für das Management ihrer Schüler:innen anzubieten.",
+    "contantTitle2": "Unsere Mission",
+    "contactDes2": "Wir glauben, dass der Führerschein ein wichtiger Schritt in Richtung Unabhängigkeit und Mobilität ist. Gleichzeitig wissen wir, wie herausfordernd die Organisation, Kommunikation und Terminplanung für Fahrschüler:innen und Fahrschulen sein kann. Deshalb haben wir eine digitale Lösung geschaffen, die:<br/> <br/>•  Fahrschüler kostenlos unterstützt,<br/>• Fahrschulen mit innovativen Tools und mehr Sichtbarkeit stärkt,<br/>• und den gesamten Prozess effizienter, übersichtlicher und persönlicher macht.",
+    "contantTitle3": "Warum wir tun, was wir tun",
+    "contactDes3": "Der Fahrschulmarkt ist oft noch analog – unübersichtlich, papierlastig und nicht immer transparent. Wir möchten das ändern und mit unserer Plattform einen echten Mehrwert für beide Seiten schaffen: moderne Tools für Fahrschulen und eine klare, einfache Erfahrung für Fahrschüler:innen.",
+    "featuresData": [
+      {
+        "category": "Für Fahrschüler",
+        "items": [
+          {
+            "title": "Fahrschulen vergleichen",
+            "description": "Entdecke Fahrschulen in deiner Nähe und finde die passende für dich"
+          },
+          {
+            "title": "Persönlicher Fortschritts-Tracker",
+            "description": "Behalte den Überblick über deine absolvierten Stunden, Prüfungstermine und deinen Lernfortschritt"
+          },
+          {
+            "title": "Termine online buchen",
+            "description": "Buche Theorie- und Praxisstunden bequem per Website – ohne Telefonate oder Wartezeiten"
+          },
+          {
+            "title": "Direkter Austausch",
+            "description": "Chatte sicher und einfach mit deiner Fahrschule, stelle Fragen und kläre alles Wichtige"
+          },
+          {
+            "title": "Tipps über notwendigen Unterlagen",
+            "description": "Nutze unsere Tipps, um die notwendigen Unterlagen für deinen Führerscheinantrag vorzubereiten"
+          }
+        ]
+      },
+      {
+        "category": "Für Fahrschulen",
+        "items": [
+          {
+            "title": "Neue Schüler:innen gewinnen",
+            "description": "Präsentiere dein Angebot auf unserer Plattform und erreiche gezielt Fahrschüler:innen in deiner Region"
+          },
+          {
+            "title": "Terminmanagement",
+            "description": "Verwalte Buchungen digital, reduziere No-Shows und spare Zeit"
+          },
+          {
+            "title": "Kommunikation zentralisieren",
+            "description": "Beantworte Anfragen und organisiere den Austausch mit Schüler:innen über unsere sichere Chat-Funktion"
+          },
+          {
+            "title": "Fortschrittsdokumentation",
+            "description": "Halte den Lernstand deiner Schüler:innen fest und biete ihnen eine transparente Übersicht"
+          },
+          {
+            "title": "Monatliches Abo-Modell",
+            "description": "Nutze alle Vorteile unserer Plattform für eine feste, planbare monatliche Gebühr – ohne versteckte Kosten"
+          }
+        ]
+      }
+    ]
   }
 }
