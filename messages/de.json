@@ -343,15 +343,29 @@
     "description": "Wir verknupfen Fahrschüler und Fahrschulen durch ein digitales Service.",
     "features": {
       "heading": "Funktionen",
-      "items": ["Fahrschüler", "Fahrschulen", "Installation"]
+      "items": [
+        "Fahrschüler",
+        "Fahrschulen",
+        "Installation"
+      ]
     },
     "services": {
       "heading": "Service",
-      "items": ["Über uns", "Preise", "Kontakt", "Hilfe"]
+      "items": [
+        "Über uns",
+        "Preise",
+        "Kontakt",
+        "Hilfe"
+      ]
     },
     "support": {
       "heading": "Rechtliches",
-      "items": ["Impressum", "Datenschutz", "AGB", "Cookie"]
+      "items": [
+        "Impressum",
+        "Datenschutz",
+        "AGB",
+        "Cookie"
+      ]
     }
   },
   "loginPage": {
@@ -1469,5 +1483,68 @@
     "des5": "Lerne die Grundlagen",
     "title6": "Sontiges",
     "des6": "Lerne die Grundlagen"
+  },
+  "AboutUs": {
+    "heroTitle": "Über WieFührerschein",
+    "Title": "Was wir bieten",
+    "heroDes": "Den Führerscheinerwerb für Fahrschüler vereinfachen und eine effizientere Verwaltung für Fahrschulen ermöglichen",
+    "contantTitle1": "Wer wir sind",
+    "contactDes1": "Wir glauben, dass der Weg zum Führerschein einfach, transparent und stressfrei sein sollte. Genau deshalb haben wir unsere Plattform ins Leben gerufen – um Fahrschüler:innen beim Führerscheinerwerb zu helfen und Fahrschulen ein effizientes System für das Management ihrer Schüler:innen anzubieten.",
+    "contantTitle2": "Unsere Mission",
+    "contactDes2": "Wir glauben, dass der Führerschein ein wichtiger Schritt in Richtung Unabhängigkeit und Mobilität ist. Gleichzeitig wissen wir, wie herausfordernd die Organisation, Kommunikation und Terminplanung für Fahrschüler:innen und Fahrschulen sein kann. Deshalb haben wir eine digitale Lösung geschaffen, die:<br/> <br/>•  Fahrschüler kostenlos unterstützt,<br/>• Fahrschulen mit innovativen Tools und mehr Sichtbarkeit stärkt,<br/>• und den gesamten Prozess effizienter, übersichtlicher und persönlicher macht.",
+    "contantTitle3": "Warum wir tun, was wir tun",
+    "contactDes3": "Der Fahrschulmarkt ist oft noch analog – unübersichtlich, papierlastig und nicht immer transparent. Wir möchten das ändern und mit unserer Plattform einen echten Mehrwert für beide Seiten schaffen: moderne Tools für Fahrschulen und eine klare, einfache Erfahrung für Fahrschüler:innen.",
+    "featuresData": [
+      {
+        "category": "Für Fahrschüler",
+        "items": [
+          {
+            "title": "Fahrschulen vergleichen",
+            "description": "Entdecke Fahrschulen in deiner Nähe und finde die passende für dich"
+          },
+          {
+            "title": "Persönlicher Fortschritts-Tracker",
+            "description": "Behalte den Überblick über deine absolvierten Stunden, Prüfungstermine und deinen Lernfortschritt"
+          },
+          {
+            "title": "Termine online buchen",
+            "description": "Buche Theorie- und Praxisstunden bequem per Website – ohne Telefonate oder Wartezeiten"
+          },
+          {
+            "title": "Direkter Austausch",
+            "description": "Chatte sicher und einfach mit deiner Fahrschule, stelle Fragen und kläre alles Wichtige"
+          },
+          {
+            "title": "Tipps über notwendigen Unterlagen",
+            "description": "Nutze unsere Tipps, um die notwendigen Unterlagen für deinen Führerscheinantrag vorzubereiten"
+          }
+        ]
+      },
+      {
+        "category": "Für Fahrschulen",
+        "items": [
+          {
+            "title": "Neue Schüler:innen gewinnen",
+            "description": "Präsentiere dein Angebot auf unserer Plattform und erreiche gezielt Fahrschüler:innen in deiner Region"
+          },
+          {
+            "title": "Terminmanagement",
+            "description": "Verwalte Buchungen digital, reduziere No-Shows und spare Zeit"
+          },
+          {
+            "title": "Kommunikation zentralisieren",
+            "description": "Beantworte Anfragen und organisiere den Austausch mit Schüler:innen über unsere sichere Chat-Funktion"
+          },
+          {
+            "title": "Fortschrittsdokumentation",
+            "description": "Halte den Lernstand deiner Schüler:innen fest und biete ihnen eine transparente Übersicht"
+          },
+          {
+            "title": "Monatliches Abo-Modell",
+            "description": "Nutze alle Vorteile unserer Plattform für eine feste, planbare monatliche Gebühr – ohne versteckte Kosten"
+          }
+        ]
+      }
+    ]
   }
 }

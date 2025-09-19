@@ -1,7 +1,7 @@
 'use client';
 import React, {useState} from 'react';
 import {Box, Tabs, Typography, useMediaQuery, useTheme} from '@mui/material';
-import {motion, AnimatePresence} from 'framer-motion';
+import {motion} from 'framer-motion';
 
 type Step = {
   title: string;
