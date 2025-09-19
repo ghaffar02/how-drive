@@ -4,6 +4,7 @@ import TextCard from './components/TextCard';
 import BgCard from './components/BgCard';
 
 import bg1 from '@/assets/svgs/driving-license-class-A/bg1.avif';
+import bg2 from '@/assets/svgs/driving-license-class-A/bg2.avif';
 import file from '@/assets/svgs/driving-license-class-A/file.svg';
 import road from '@/assets/svgs/driving-license-class-A/road.svg';
 
@@ -78,7 +79,7 @@ export default function ClassGrid({license}: {license: string}) {
               >
                 <BgCard
                   icon={road}
-                  bgImage={bg1.src}
+                  bgImage={bg2.src}
                   row={false}
                   title={t('roadTitle')}
                 />

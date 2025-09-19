@@ -39,7 +39,7 @@ export default function LoginPage() {
   };
 
   return (
-    <Box sx={{width: '100%', display: 'flex'}}>
+    <Box sx={{width: '100%', display: 'flex', height: '100vh'}}>
       {/* Left Side */}
       <Box
         sx={{

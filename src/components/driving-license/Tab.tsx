@@ -1,6 +1,7 @@
 'use client';
 import React, {useState} from 'react';
 import {Box, Tabs, Typography, useMediaQuery, useTheme} from '@mui/material';
+import {motion, AnimatePresence} from 'framer-motion';
 
 type Step = {
   title: string;
@@ -150,15 +151,21 @@ export default function DrivingSteps({steps, heading}: DrivingStepsProps) {
               ))}
             </Tabs>
 
-            {/* Content */}
             <Box
-              maxWidth="698px"
+              key={value}
+              component={motion.div}
+              initial={{opacity: 0, y: 0}}
+              animate={{opacity: 1, x: 0}}
+              exit={{opacity: 0, y: -20}}
+              transition={{duration: 0.4}}
+              maxWidth={{xs: '780px', md: '748px'}}
               width="100%"
               p="16px"
               bgcolor="#fff"
               borderRadius="24px"
               ml={{xs: '16px', md: '24px'}}
               sx={{
+                // height: 466,
                 boxShadow: `0px 0.48px 1.63px -1.5px rgba(0, 0, 0, 0.21),0px 1.83px 6.22px -3px rgba(0, 0, 0, 0.18), 0px 8px 27.2px -4.5px rgba(0, 0, 0, 0.02)`
               }}
             >
@@ -185,7 +192,7 @@ export default function DrivingSteps({steps, heading}: DrivingStepsProps) {
                     textAlign: 'left',
                     color: '#2D3748',
                     fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                    fontWeight: 300,
+                    fontWeight: 400,
                     fontFamily:
                       '"Inter", "Inter Placeholder", sans-serif !important'
                   }}

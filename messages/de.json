@@ -371,7 +371,7 @@
   },
   "registerPage": {
     "heading": "Konto erstellen als:",
-    "tabValue1": "Fahrschüler",
+    "tabValue1": "Fahrschuler",
     "tabValue2": "Fahrschule",
     "firstName": "Vorname",
     "lastName": "Nachname",
@@ -391,7 +391,8 @@
     "invalidEmail": "Ungültige E-Mail",
     "passMin": "Passwort muss mindestens 8 Zeichen lang sein",
     "passChar": "Passwort muss mindestens eine Zahl enthalten",
-    "toastSuccess": "Registrierung erfolgreich!"
+    "toastSuccess": "Registrierung erfolgreich!",
+    "lastpoint": "Wir bieten unseres Service ausschließlich für die Führerscheinklassen A und B sowie Umschreiben der ausländischen Führerscheine dieser Klassen in deutsche an."
   },
   "passwordPage": {
     "heading": "Passwort vergessen?",
@@ -437,7 +438,7 @@
     "zusaDes": "2-4 Unterrichte - Doppelstunden",
     "heading1": "Wichtige Informationen",
     "heading2": "Kostenübersicht",
-    "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein der Klasse A",
+    "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein Klasse A",
     "heading4": "Notice",
     "title1": "Führerschein",
     "title2": " Klasse A",
@@ -563,7 +564,729 @@
       },
       {
         "title": "Gesamtkosten",
-        "cost": "1.500–3.000 € (je nach individueller Lernzeit und Region)"
+        "cost": " <span style={{ fontWeight: 400 }}>1.500–3.000 €</span>(je nach individueller Lernzeit und Region)"
+      }
+    ]
+  },
+  "licenseB": {
+    "stepsData": [
+      {
+        "title": "Anmeldung Fahrschule",
+        "content": [
+          "Wähle eine zertifizierte Fahrschule.",
+          "Unterschreibe Ausbildungsvertrag bei der Fahrschule."
+        ]
+      },
+      {
+        "title": "Unterlagen vorbereiten",
+        "content": [
+          "Personalausweis oder Reisepass: Nachweis des Wohnsitzes.",
+          "Biometrisches Passbild: Standardformat.",
+          "Sehtest: Nicht älter als 2 Jahre sein.",
+          "Erste-Hilfe-Kurs: 9 Unterrichtseinheiten."
+        ]
+      },
+      {
+        "title": "Führerscheinantrag",
+        "content": [
+          "Der Antrag auf Erteilung des Führerscheins muss bei deiner zuständigen Fahrerlaubnisbehörde eingereicht werden.",
+          "Der Antrag wird entweder über deine Fahrschule oder direkt bei der Behörde eingereicht."
+        ]
+      },
+      {
+        "title": "Theoriestunden",
+        "content": [
+          "Grundstoff: 12 Doppelstunden.",
+          "Zusatzstoff: 2 Doppelstunden."
+        ]
+      },
+      {
+        "title": "Theoretische Prüfung",
+        "content": [
+          "Frühestens 3 Monate vor Mindestalter.",
+          "Ca. 30 Fragen im Multiple-Choice-Format.",
+          "Max. 10 Fehlerpunkte erlaubt (aber nicht 2x 5er-Fragen falsch).",
+          "Abgenommen bei TÜV oder DEKRA."
+        ]
+      },
+      {
+        "title": "Fahrstunden",
+        "content": [
+          "Überland: 5 Fahrten.",
+          "Autobahn: 4 Fahrten.",
+          "Nachtfahrt: 3 Fahrten.",
+          "Hinzu kommen normale Übungsfahrten."
+        ]
+      },
+      {
+        "title": "Praktische Prüfung",
+        "content": [
+          "Frühestens 1 Monate vor Mindestalter.",
+          "Ca. 45 bis 60 Minuten.",
+          "Fahrzeugcheck, Fahrverhalten im Stadt-, Überland- und Autobahnverkehr, Rückwärtsfahren, Parken, Gefahreneinschätzung.",
+          "Nicht bestanden: Wiederholung erst nach 2 Wochen."
+        ]
+      },
+      {
+        "title": "Erteilung des Führerscheins",
+        "content": [
+          "Der EU-Führerschein wird ausgestellt.",
+          "Hole dir deinen Führerschein bei der Fahrerlaubnisbehörde ab.",
+          "Bei BF17: Keinen Führerschein, sondern eine Prüfungsbescheinigung. Fahren nur mit eingetragenen Begleitpersonen erlaubt."
+        ]
+      }
+    ],
+    "drivingRules": [
+      {
+        "title": "Begleitetes Fahren ab 17 (BF17)",
+        "description": "Mit 17 Jahren darf man bereits mit einer Begleitperson (mind. 30 Jahre alt, mindestens 5 Jahre ununterbrochener Besitz der Klasse B, max. 1 Punkt in Flensburg) fahren. Die Prüfbescheinigung ist nur in Deutschland gültig."
+      },
+      {
+        "title": "Anhängerregelung",
+        "description": "Mit Klasse B darf man Anhänger bis 750 kg ziehen. Für schwerere Anhänger ist die Klasse BE oder B96 nötig."
+      },
+      {
+        "title": "Automatikregelung (B197)",
+        "description": "Ausbildung teils auf Automatik, trotzdem Schaltwagen fahren erlaubt, wenn mind. 10 Std. auf Schaltung + 15-minütige Prüfung auf Schalter absolviert wurden."
+      },
+      {
+        "title": "Automatikbeschränkung",
+        "description": "Wer die Prüfung auf einem Automatikfahrzeug ablegt, erhält den Führerschein mit der Schlüsselzahl 78 (nur Automatik). Für Schaltgetriebe ist eine zusätzliche Prüfung nötig."
+      },
+      {
+        "title": "Umschreibung",
+        "description": "Besitzer eines alten Führerscheins der Klasse 3 (vor 1999) haben automatisch die Klasse B. Eine Umschreibung ist nur für den neuen EU-Kartenführerschein nötig, nicht für die Fahrerlaubnis selbst."
+      }
+    ],
+    "drivingCosts": [
+      {
+        "title": "Sehtest",
+        "cost": "6–10 €"
+      },
+      {
+        "title": "Erste-Hilfe-Kurs",
+        "cost": "20–50 €"
+      },
+      {
+        "title": "Grundgebühr Fahrschule",
+        "cost": "300–800 € (je nach Region und Fahrschule)"
+      },
+      {
+        "title": "Theorieunterricht",
+        "cost": "200–400 €"
+      },
+      {
+        "title": "Fahrstunden",
+        "cost": "1.200–2.000 € (abhängig von der Anzahl der benötigten Stunden)"
+      },
+      {
+        "title": "TÜV-Gebühren",
+        "cost": "200–400 € (Anmeldegebühr, Theorie- und Praxisprüfung)"
+      },
+      {
+        "title": "Führerschein Ausstellung",
+        "cost": "40–60 €"
+      },
+      {
+        "title": "Gesamtkosten",
+        "cost": "2.000–4.000 € (je nach individueller Lernzeit und Region)"
+      }
+    ]
+  },
+  "licenseC": {
+    "stepsData": [
+      {
+        "title": "Anmeldung Fahrschule",
+        "content": [
+          "Wähle eine zertifizierte Fahrschule.",
+          "Unterschreibe Ausbildungsvertrag bei der Fahrschule."
+        ]
+      },
+      {
+        "title": "Unterlagen vorbereiten",
+        "content": [
+          "Personalausweis oder Reisepass: Nachweis des Wohnsitzes.",
+          "Biometrisches Passbild: Standardformat.",
+          "Augenärztliches Zeugnis: Schärfe, Gesichtsfeld, Farbsehen usw.",
+          "Erste-Hilfe-Kurs: 9 Unterrichtseinheiten.",
+          "Ärztliche Untersuchung (Form: §11 FeV): Hausarzt oder Betriebsarzt.",
+          "Kopie des Führerscheins: Klasse B."
+        ]
+      },
+      {
+        "title": "Führerscheinantrag",
+        "content": [
+          "Der Antrag auf Erteilung des Führerscheins muss bei deiner zuständigen Fahrerlaubnisbehörde eingereicht werden.",
+          "Der Antrag wird entweder über deine Fahrschule oder direkt bei der Behörde eingereicht."
+        ]
+      },
+      {
+        "title": "Theoriestunden",
+        "content": [
+          "Grundstoff: 6 Doppelstunden.",
+          "Zusatzstoff: 4-10 Doppelstunden."
+        ]
+      },
+      {
+        "title": "Theoretische Prüfung",
+        "content": [
+          "Frühestens 3 Monate vor Mindestalter.",
+          "Ca. 30-40 Fragen im Multiple-Choice-Format.",
+          "Max. 10 Fehlerpunkte erlaubt (aber nicht 2x 5er-Fragen falsch).",
+          "Abgenommen bei TÜV oder DEKRA."
+        ]
+      },
+      {
+        "title": "Fahrstunden",
+        "content": [
+          "Überland: 5 Fahrten.",
+          "Autobahn: 2 Fahrten.",
+          "Nachtfahrt: 3 Fahrten.",
+          "Hinzu kommen normale Übungsfahrten."
+        ]
+      },
+      {
+        "title": "Praktische Prüfung",
+        "content": [
+          "Frühestens 1 Monate vor Mindestalter.",
+          "Ca. 75 Minuten.",
+          "Fahrzeugcheck, Fahrverhalten im Stadt-, Überland- und Autobahnverkehr, Rückwärtsfahren, Parken, Gefahreneinschätzung.",
+          "Nicht bestanden: Wiederholung erst nach 2 Wochen."
+        ]
+      },
+      {
+        "title": "Erteilung des Führerscheins",
+        "content": [
+          "Der EU-Führerschein wird ausgestellt.",
+          "Hole dir deinen Führerschein bei der Fahrerlaubnisbehörde ab.",
+          "Gültigkeit: 5 Jahre, dann erneute ärztliche und augenärztliche Untersuchung zur Verlängerung nötig."
+        ]
+      }
+    ],
+    "drivingRules": [
+      {
+        "title": "Strenge Voraussetzungen",
+        "description": "Ärztliche und augenärztliche Untersuchung ist erforderlich. Augenärztliches Gutachten nach FeV, was strenger ist als für Klasse B."
+      },
+      {
+        "title": "Berufskraftfahrerqualifikation (BKrFQG)",
+        "description": "Wer gewerblich fahren möchte, benötigt zusätzlich eine Grundqualifikation (IHK-Prüfung) und regelmäßige Weiterbildungen (alle 5 Jahre)."
+      },
+      {
+        "title": "Beschleunigte Grundqualifikation",
+        "description": "Es gibt die Möglichkeit, die Grundqualifikation in 140 Stunden (statt 280 Stunden) zu absolvieren, wenn man eine beschleunigte Ausbildung wählt."
+      },
+      {
+        "title": "Gemeinsamer Erwerb von C-CE oder C1-C1E",
+        "description": "Bei gemeinsamem Erwerb erhöht sich die Anzahl der Zusatzstoffe sowie der Sonderfahrten."
+      },
+      {
+        "title": "Umschreibung",
+        "description": "Besitzer eines alten Führerscheins der Klasse 2 (vor 1999) haben automatisch die Klasse C. Eine Umschreibung ist nur für den neuen EU-Kartenführerschein nötig, nicht für die Fahrerlaubnis selbst."
+      }
+    ],
+    "drivingCosts": [
+      {
+        "title": "Sehtest",
+        "cost": "6–10 €"
+      },
+      {
+        "title": "Erste-Hilfe-Kurs",
+        "cost": "20–50 €"
+      },
+      {
+        "title": "Ärztliches Gutachten",
+        "cost": "50–100 €"
+      },
+      {
+        "title": "BKrFQG",
+        "cost": "1.000–2.000 € (je nach Anbieter)"
+      },
+      {
+        "title": "Grundgebühr Fahrschule",
+        "cost": "1.000–2.000 € (je nach Region und Fahrschule)"
+      },
+      {
+        "title": "Theorieunterricht",
+        "cost": "400–800 €"
+      },
+      {
+        "title": "Fahrstunden",
+        "cost": "2.000–4.000 € (abhängig von der Anzahl der benötigten Stunden)"
+      },
+      {
+        "title": "TÜV-Gebühren",
+        "cost": "300–600 € (Anmeldegebühr, Theorie- und Praxisprüfung)"
+      },
+      {
+        "title": "Führerschein Ausstellung",
+        "cost": "40–60 €"
+      },
+      {
+        "title": "Gesamtkosten",
+        "cost": "5.000–10.000 € (je nach individueller Lernzeit und Region)"
+      }
+    ],
+    "notice": "Hinweis",
+    "noticeDetails": "Wir bieten unseres Service ausschließlich für die Führerscheinklassen A und B sowie Umschreiben (Umschreibung ausländischer Führerscheine dieser Klassen in deutsche) an. Aufgrund der geringen Anzahl an Fahrschulen, die die Fahrklassen C, D, L und T anbieten, ist es uns derzeit nicht möglich, diese Klassen zu unterstützen. Wir hoffen, dass wir in Zukunft diese Klassen auch unterstützen können."
+  },
+  "licenseD": {
+    "stepsData": [
+      {
+        "title": "Anmeldung Fahrschule",
+        "content": [
+          "Wähle eine zertifizierte Fahrschule.",
+          "Unterschreibe Ausbildungsvertrag bei der Fahrschule."
+        ]
+      },
+      {
+        "title": "Unterlagen vorbereiten",
+        "content": [
+          "Personalausweis oder Reisepass: Nachweis des Wohnsitzes.",
+          "Biometrisches Passbild: Standardformat.",
+          "Augenärztliches Zeugnis: Nicht älter als 2 Jahre sein.",
+          "Erste-Hilfe-Kurs: 9 Unterrichtseinheiten.",
+          "Ärztliche Untersuchung (Form: §11 FeV): Hausarzt oder Betriebsarzt.",
+          "Führerscheinklasse B, Reaktionstest und Führungszeugnis."
+        ]
+      },
+      {
+        "title": "Führerscheinantrag",
+        "content": [
+          "Der Antrag auf Erteilung des Führerscheins muss bei deiner zuständigen Fahrerlaubnisbehörde eingereicht werden.",
+          "Der Antrag wird entweder über deine Fahrschule oder direkt bei der Behörde eingereicht."
+        ]
+      },
+      {
+        "title": "Theoriestunden",
+        "content": [
+          "Grundstoff: 6 Doppelstunden.",
+          "Zusatzstoff: 8-18 Doppelstunden."
+        ]
+      },
+      {
+        "title": "Theoretische Prüfung",
+        "content": [
+          "Frühestens 3 Monate vor Mindestalter.",
+          "Ca. 30-40 Fragen im Multiple-Choice-Format.",
+          "Max. 10 Fehlerpunkte erlaubt (aber nicht 2x 5er-Fragen falsch).",
+          "Abgenommen bei TÜV oder DEKRA."
+        ]
+      },
+      {
+        "title": "Fahrstunden",
+        "content": [
+          "Überland: 8-22 Fahrten.",
+          "Autobahn: 4-14 Fahrten.",
+          "Nachtfahrt: 3-8 Fahrten.",
+          "Hinzu kommen normale Übungsfahrten."
+        ]
+      },
+      {
+        "title": "Praktische Prüfung",
+        "content": [
+          "Frühestens 1 Monate vor Mindestalter.",
+          "Ca. 75 Minuten.",
+          "Fahrzeugcheck, Fahrverhalten im Stadt-, Überland- und Autobahnverkehr, Rückwärtsfahren, Parken, Gefahreneinschätzung.",
+          "Nicht bestanden: Wiederholung erst nach 2 Wochen."
+        ]
+      },
+      {
+        "title": "Erteilung des Führerscheins",
+        "content": [
+          "Der EU-Führerschein wird ausgestellt.",
+          "Hole dir deinen Führerschein bei der Fahrerlaubnisbehörde ab.",
+          "Gültigkeit: 5 Jahre, dann erneute ärztliche und augenärztliche Untersuchung zur Verlängerung nötig."
+        ]
+      }
+    ],
+    "drivingRules": [
+      {
+        "title": "Strenge Voraussetzungen",
+        "description": "Ärztliche und augenärztliche Untersuchung ist erforderlich. Augenärztliches Gutachten nach FeV, was strenger ist als für Klasse B."
+      },
+      {
+        "title": "Berufskraftfahrerqualifikation (BKrFQG)",
+        "description": "Wer gewerblich fahren möchte, benötigt zusätzlich eine Grundqualifikation (IHK-Prüfung) und regelmäßige Weiterbildungen (alle 5 Jahre)."
+      },
+      {
+        "title": "Beschleunigte Grundqualifikation",
+        "description": "Es gibt die Möglichkeit, die Grundqualifikation in 140 Stunden (statt 280 Stunden) zu absolvieren, wenn man eine beschleunigte Ausbildung wählt."
+      },
+      {
+        "title": "Fahrgastbeförderung",
+        "description": "Die Klasse D berechtigt zur gewerblichen und nicht-gewerblichen Personenbeförderung (z. B. Linienbusse, Reisebusse, Schulbusse)."
+      },
+      {
+        "title": "Umschreibung",
+        "description": "Besitzer eines alten Führerscheins der Klasse 2 (vor 1999) haben automatisch die Klasse C. Eine Umschreibung ist nur für den neuen EU-Kartenführerschein nötig, nicht für die Fahrerlaubnis selbst."
+      }
+    ],
+    "drivingCosts": [
+      {
+        "title": "Sehtest",
+        "cost": "6–10 €"
+      },
+      {
+        "title": "Erste-Hilfe-Kurs",
+        "cost": "20–50 €"
+      },
+      {
+        "title": "Ärztliches Gutachten",
+        "cost": "50–100 €"
+      },
+      {
+        "title": "BKrFQG",
+        "cost": "1.000–2.000 € (je nach Anbieter)"
+      },
+      {
+        "title": "Grundgebühr Fahrschule",
+        "cost": "1.500–3.000 € (je nach Region und Fahrschule)"
+      },
+      {
+        "title": "Theorieunterricht",
+        "cost": "500–1.000 €"
+      },
+      {
+        "title": "Fahrstunden",
+        "cost": "3.000–6.000 € (abhängig von der Anzahl der benötigten Stunden)"
+      },
+      {
+        "title": "TÜV-Gebühren",
+        "cost": "400–800 € (Anmeldegebühr, Theorie- und Praxisprüfung)"
+      },
+      {
+        "title": "Führerschein Ausstellung",
+        "cost": "40–60 €"
+      },
+      {
+        "title": "Gesamtkosten",
+        "cost": "7.000–15.000 € (je nach individueller Lernzeit und Region)"
+      }
+    ],
+    "notice": "Hinweis",
+    "noticeDetails": "Wir bieten unseres Service ausschließlich für die Führerscheinklassen A und B sowie Umschreiben (Umschreibung ausländischer Führerscheine dieser Klassen in deutsche) an. Aufgrund der geringen Anzahl an Fahrschulen, die die Fahrklassen C, D, L und T anbieten, ist es uns derzeit nicht möglich, diese Klassen zu unterstützen. Wir hoffen, dass wir in Zukunft diese Klassen auch unterstützen können."
+  },
+  "licenseLT": {
+    "stepsData": [
+      {
+        "title": "Anmeldung Fahrschule",
+        "content": [
+          "Wähle eine zertifizierte Fahrschule.",
+          "Unterschreibe Ausbildungsvertrag bei der Fahrschule."
+        ]
+      },
+      {
+        "title": "Unterlagen vorbereiten",
+        "content": [
+          "Personalausweis oder Reisepass: Nachweis des Wohnsitzes.",
+          "Biometrisches Passbild: Standardformat.",
+          "Sehtest: Nicht älter als 2 Jahre sein.",
+          "Erste-Hilfe-Kurs: 9 Unterrichtseinheiten."
+        ]
+      },
+      {
+        "title": "Führerscheinantrag",
+        "content": [
+          "Der Antrag auf Erteilung des Führerscheins muss bei deiner zuständigen Fahrerlaubnisbehörde eingereicht werden.",
+          "Der Antrag wird entweder über deine Fahrschule oder direkt bei der Behörde eingereicht."
+        ]
+      },
+      {
+        "title": "Theoriestunden",
+        "content": [
+          "Grundstoff: 12 Doppelstunden.",
+          "Zusatzstoff: 2-6 Doppelstunden."
+        ]
+      },
+      {
+        "title": "Theoretische Prüfung",
+        "content": [
+          "Frühestens 3 Monate vor Mindestalter.",
+          "Ca. 30 Fragen im Multiple-Choice-Format.",
+          "Max. 10 Fehlerpunkte erlaubt (aber nicht 2x 5er-Fragen falsch).",
+          "Abgenommen bei TÜV oder DEKRA."
+        ]
+      },
+      {
+        "title": "Fahrstunden",
+        "content": [
+          "Keine Praxisprüfung für Klasse L.",
+          "Keine vorgeschriebene Anzahl von Fahrstunden."
+        ]
+      },
+      {
+        "title": "Praktische Prüfung",
+        "content": [
+          "Frühestens 1 Monate vor Mindestalter.",
+          "Ca. 45 bis 60 Minuten.",
+          "Abfahrtskontrolle, das Verbinden und Trennen von Fahrzeug und Anhänger sowie Fahrten innerhalb und außerhalb geschlossener Ortschaften.",
+          "Nicht bestanden: Wiederholung erst nach 2 Wochen."
+        ]
+      },
+      {
+        "title": "Erteilung des Führerscheins",
+        "content": [
+          "Der Führerschein wird ausgestellt.",
+          "Hole dir deinen Führerschein bei der Fahrerlaubnisbehörde ab."
+        ]
+      }
+    ],
+    "drivingRules": [
+      {
+        "title": "Einsatzbereich",
+        "description": "Beide Klassen sind vor allem für land- und forstwirtschaftliche Betriebe, Kommunen und den Gartenbau relevant."
+      },
+      {
+        "title": "Klasse L",
+        "description": "Berechtigt zum Führen von Zugmaschinen (z. B. Traktoren) bis 40 km/h und selbstfahrenden Arbeitsmaschinen (z. B. Mähdrescher) bis 25 km/h."
+      },
+      {
+        "title": "Klasse T",
+        "description": "Berechtigt zum Führen von Zugmaschinen bis 60 km/h (auch mit Anhänger) und selbstfahrenden Arbeitsmaschinen bis 40 km/h."
+      },
+      {
+        "title": "Vorbesitz",
+        "description": "Beim Besitz einer anderen Führerscheinklasse reduziert sich der Grundstoff auf sechs doppelstundige Unterrichte."
+      },
+      {
+        "title": "Umschreibung",
+        "description": "Besitzer eines alten Führerscheins der Klasse 3 (vor 1999) haben automatisch die Klassen L. Eine Umschreibung ist nur für den neuen EU-Kartenführerschein nötig, nicht für die Fahrerlaubnis selbst."
+      }
+    ],
+    "drivingCostsData1": [
+      {
+        "title": "Sehtest",
+        "cost": "6–10 €"
+      },
+      {
+        "title": "Erste-Hilfe-Kurs",
+        "cost": "20–50 €"
+      },
+      {
+        "title": "Grundgebühr Fahrschule",
+        "cost": "200–500 € (je nach Region und Fahrschule)"
+      },
+      {
+        "title": "Theorieunterricht",
+        "cost": "150–300 €"
+      },
+      {
+        "title": "Fahrstunden",
+        "cost": "300–800 € (abhängig von der Anzahl der benötigten Stunden)"
+      },
+      {
+        "title": "TÜV-Gebühren",
+        "cost": "100–200 € (Anmeldegebühr, Theorie- und Praxisprüfung)"
+      },
+      {
+        "title": "Führerschein Ausstellung",
+        "cost": "40–60 €"
+      },
+      {
+        "title": "Gesamtkosten",
+        "cost": "800–2.000 € (je nach individueller Lernzeit und Region)"
+      }
+    ],
+    "drivingCostsData2": [
+      {
+        "title": "Sehtest",
+        "cost": "6–10 €"
+      },
+      {
+        "title": "Erste-Hilfe-Kurs",
+        "cost": "20–50 €"
+      },
+      {
+        "title": "Grundgebühr Fahrschule",
+        "cost": "300–800 € (je nach Region und Fahrschule)"
+      },
+      {
+        "title": "Theorieunterricht",
+        "cost": "200–400 €"
+      },
+      {
+        "title": "Fahrstunden",
+        "cost": "500–1.200 € (abhängig von der Anzahl der benötigten Stunden)"
+      },
+      {
+        "title": "TÜV-Gebühren",
+        "cost": "150–300 € (Anmeldegebühr, Theorie- und Praxisprüfung)"
+      },
+      {
+        "title": "Führerschein Ausstellung",
+        "cost": "40–60 €"
+      },
+      {
+        "title": "Gesamtkosten",
+        "cost": "1.200–3.000 € (je nach individueller Lernzeit und Region)"
+      }
+    ],
+    "notice": "Hinweis",
+    "noticeDetails": "Wir bieten unseres Service ausschließlich für die Führerscheinklassen A und B sowie Umschreiben (Umschreibung ausländischer Führerscheine dieser Klassen in deutsche) an. Aufgrund der geringen Anzahl an Fahrschulen, die die Fahrklassen C, D, L und T anbieten, ist es uns derzeit nicht möglich, diese Klassen zu unterstützen. Wir hoffen, dass wir in Zukunft diese Klassen auch unterstützen können."
+  },
+  "licenseForeign": {
+    "stepsData": [
+      {
+        "title": "Anmeldung Fahrschule",
+        "content": [
+          "Wähle eine zertifizierte Fahrschule.",
+          "Unterschreibe Ausbildungsvertrag bei der Fahrschule."
+        ]
+      },
+      {
+        "title": "Unterlagen vorbereiten",
+        "content": [
+          "Personalausweis oder Reisepass: Nachweis des Wohnsitzes.",
+          "Biometrisches Passbild: Standardformat.",
+          "Sehtest: Nicht älter als 2 Jahre sein.",
+          "Erste-Hilfe-Kurs: 9 Unterrichtseinheiten.",
+          "Alter Führerschein und dessen Übersetzung."
+        ]
+      },
+      {
+        "title": "Führerscheinantrag",
+        "content": [
+          "Der Antrag auf Erteilung des Führerscheins muss bei deiner zuständigen Fahrerlaubnisbehörde eingereicht werden.",
+          "Der Antrag wird entweder über deine Fahrschule oder direkt bei der Behörde eingereicht."
+        ]
+      },
+      {
+        "title": "Theoriestunden",
+        "content": [
+          "Meist nicht erforderlich.",
+          "Optional: je nach Fahrschule."
+        ]
+      },
+      {
+        "title": "Theoretische Prüfung",
+        "content": [
+          "Frühestens 3 Monate vor Mindestalter.",
+          "Ca. 30 Fragen im Multiple-Choice-Format.",
+          "Max. 10 Fehlerpunkte erlaubt (aber nicht 2x 5er-Fragen falsch).",
+          "Abgenommen bei TÜV oder DEKRA."
+        ]
+      },
+      {
+        "title": "Fahrstunden",
+        "content": [
+          "Keine vorgeschriebene Anzahl von Fahrstunden.",
+          "Die Anzahl der Fahrstunden ist individuell unterschiedlich."
+        ]
+      },
+      {
+        "title": "Praktische Prüfung",
+        "content": [
+          "Frühestens 1 Monate vor Mindestalter.",
+          "Ca. 45 bis 60 Minuten.",
+          "Abfahrtskontrolle, das Verbinden und Trennen von Fahrzeug und Anhänger sowie Fahrten innerhalb und außerhalb geschlossener Ortschaften.",
+          "Nicht bestanden: Wiederholung erst nach 2 Wochen."
+        ]
+      },
+      {
+        "title": "Erteilung des Führerscheins",
+        "content": [
+          "Der Führerschein wird ausgestellt.",
+          "Hole dir deinen Führerschein bei der Fahrerlaubnisbehörde ab."
+        ]
+      }
+    ],
+    "drivingRules": [
+      {
+        "title": "Fristen",
+        "description": "Führerscheine aus EU/EWR können jederzeit umgeschrieben werden. Führerscheine aus Staaten mit gegenseitigem Anerkennungsabkommen (Anlage 11 FeV) benötigen in der Regel keine Prüfung. Allerdings gibt es dabei Ausnahmen, u.a. Albanien, Moldau und einige Staaten aus den USA. Führerscheine aus sonstigen Staaten erfordern immer eine Prüfung."
+      },
+      {
+        "title": "Gültigkeit",
+        "description": "Der ausländische Führerschein bleibt in der 6-monatigen Übergangszeit gültig. Nach der Umschreibung gilt der deutsche EU-Führerschein."
+      },
+      {
+        "title": "Theoretische und praktische Prüfung",
+        "description": "Führerscheine aus Drittstaaten erfordern immer Theorie- und Praxisprüfung. Allerdings ist keine Fahrausbildung erforderlich. Es gibt keine Pflichtfahrstunden. Darüber hinaus hängt die Entscheidung, ob und wann die Prüfungen abgelegt werden sollen, vom Selbstvertrauen und der Bereitschaft der Bewerber ab."
+      },
+      {
+        "title": "Anerkennung",
+        "description": "Führerscheine aus bestimmten Ländern (z. B. USA, Schweiz, Japan) können ganz oder teilweise anerkannt werden. Führerscheine aus anderen Ländern (z. B. Türkei, Ukraine, Russland) erfordern Theorie- und Praxisprüfung. Manche Behörden verlangen einen Nachweis regelmäßiger Fahrpraxis im Ausland."
+      },
+      {
+        "title": "Alter Führerschein",
+        "description": "Der alte Führerschein muss bei Umschreibung abgegeben werden (wird einbehalten oder vermerkt)."
+      }
+    ],
+    "drivingCostsData1": [
+      {
+        "title": "Sehtest",
+        "cost": "6–10 €"
+      },
+      {
+        "title": "Erste-Hilfe-Kurs",
+        "cost": "20–50 €"
+      },
+      {
+        "title": "Grundgebühr Fahrschule",
+        "cost": "500–1.000 € (je nach Region und Fahrschule)"
+      },
+      {
+        "title": "Theorieunterricht",
+        "cost": "0–400 € (optional, je nach Fahrschule)"
+      },
+      {
+        "title": "Fahrstunden",
+        "cost": "0–1.200 € (abhängig von der Anzahl der benötigten Stunden)"
+      },
+      {
+        "title": "TÜV-Gebühren",
+        "cost": "100–200 € (Anmeldegebühr, Theorie- und Praxisprüfung)"
+      },
+      {
+        "title": "Führerschein Ausstellung",
+        "cost": "40–60 €"
+      },
+      {
+        "title": "Übersetzung",
+        "cost": "40–80 €"
+      },
+      {
+        "title": "Gesamtkosten",
+        "cost": "700–2.000 € (je nach individueller Lernzeit und Region)"
+      }
+    ],
+    "drivingCostsData2": [
+      {
+        "title": "Sehtest",
+        "cost": "6–10 €"
+      },
+      {
+        "title": "Erste-Hilfe-Kurs",
+        "cost": "20–50 €"
+      },
+      {
+        "title": "Grundgebühr Fahrschule",
+        "cost": "300–800 € (je nach Region und Fahrschule)"
+      },
+      {
+        "title": "Theorieunterricht",
+        "cost": "0–400 € (optional, je nach Fahrschule)"
+      },
+      {
+        "title": "Fahrstunden",
+        "cost": "0–2.000 € (abhängig von der Anzahl der benötigten Stunden)"
+      },
+      {
+        "title": "TÜV-Gebühren",
+        "cost": "200–400 € (Anmeldegebühr, Theorie- und Praxisprüfung)"
+      },
+      {
+        "title": "Führerschein Ausstellung",
+        "cost": "40–60 €"
+      },
+      {
+        "title": "Übersetzung",
+        "cost": "40–80 €"
+      },
+      {
+        "title": "Gesamtkosten",
+        "cost": "800–3.000 € (je nach individueller Lernzeit und Region)"
       }
     ]
   },
@@ -730,5 +1453,21 @@
         "html": "Folgende Bedingungen gelten:<ul style=\"margin-left: 18px\"><li>Sollten einzelne Bestimmungen dieser AGB unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</li><li>Es gilt das Recht der Bundesrepublik Deutschland.</li><li>Gerichtsstand ist <strong>[Ort]</strong>, sofern der:die Nutzer:in Vollkaufmann:frau ist oder keinen allgemeinen Gerichtsstand in Deutschland hat.</li></ul>"
       }
     ]
+  },
+  "helpPage": {
+    "pageTitle": "Help Center!",
+    "pageDes": "Finde die Antwort deiner Fragen in unserem Help Center.",
+    "title1": "Starten",
+    "des1": "Lerne die Grundlagen",
+    "title2": "Konto",
+    "des2": "Lerne die Grundlagen",
+    "title3": "Rechnung",
+    "des3": "Lerne die Grundlagen",
+    "title4": "Daten",
+    "des4": "Lerne die Grundlagen",
+    "title5": "Troubleshooting",
+    "des5": "Lerne die Grundlagen",
+    "title6": "Sontiges",
+    "des6": "Lerne die Grundlagen"
   }
 }

@@ -56,7 +56,7 @@ export default function Costoverview({
 
           <Box
             sx={{
-              border: '1px solid #E2E8F0',
+              border: '1px solid #D4D4D8',
               borderRadius: '20px 0 20px 0',
               overflow: 'hidden'
             }}
@@ -71,7 +71,7 @@ export default function Costoverview({
 
                   borderBottom:
                     i !== drivingCosts.length - 1
-                      ? '1px solid #E2E8F0'
+                      ? '1px solid #D4D4D8'
                       : 'none',
                   backgroundColor: 'transparent'
                 }}
@@ -94,7 +94,6 @@ export default function Costoverview({
                 >
                   {item.title}
                 </Typography>
-
                 {/* 👉 Column separator – table style */}
                 <Box
                   sx={{
@@ -106,7 +105,6 @@ export default function Costoverview({
                     backgroundColor: '#E2E8F0'
                   }}
                 />
-
                 {/* Cost */}
                 <Typography
                   sx={{
@@ -117,14 +115,13 @@ export default function Costoverview({
                     fontSize: {xs: '14px', md: '15px', lg: '16px'},
                     fontFamily:
                       '"Inter", "Inter Placeholder", sans-serif !important',
-                    // fontWeight: 300,
+                    fontWeight: 300,
                     textAlign: 'left',
                     wordBreak: 'break-word'
                     // marginLeft: '10px'
                   }}
-                >
-                  {item.cost}
-                </Typography>
+                  dangerouslySetInnerHTML={{__html: item.cost}}
+                />
               </Box>
             ))}
           </Box>

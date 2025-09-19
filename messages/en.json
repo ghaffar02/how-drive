@@ -343,15 +343,29 @@
     "description": "We connect learner drivers and driving schools through a digital service.",
     "features": {
       "heading": "Function",
-      "items": ["Students", "Schools", "Installation"]
+      "items": [
+        "Students",
+        "Schools",
+        "Installation"
+      ]
     },
     "services": {
       "heading": "Service",
-      "items": ["About Us", "Pricing", "Contact", "Help"]
+      "items": [
+        "About Us",
+        "Pricing",
+        "Contact",
+        "Help"
+      ]
     },
     "support": {
       "heading": "Legal",
-      "items": ["Imprint", "Privacy Policy", "Terms", "Cookie"]
+      "items": [
+        "Imprint",
+        "Privacy Policy",
+        "Terms",
+        "Cookie"
+      ]
     }
   },
   "loginPage": {
@@ -371,7 +385,7 @@
   },
   "registerPage": {
     "heading": "Create an account as:",
-    "tabValue1": "Student",
+    "tabValue1": "Driving Student",
     "tabValue2": "Driving School",
     "firstName": "First Name",
     "lastName": "Last Name",
@@ -380,7 +394,7 @@
     "policy": "I agree to the ",
     "policy2": "Privacy Policy.",
     "policy3": "",
-    "button": "Register",
+    "button": "Sign up",
     "school": "Name of the Driving School",
     "alreadyExist": "Already have an account?",
     "signin": "Login",
@@ -391,7 +405,8 @@
     "invalidEmail": "Invalid Email",
     "passMin": "Password must be at least 8 characters long",
     "passChar": "Password must contain at least one number",
-    "toastSuccess": "Registeration Successful!"
+    "toastSuccess": "Registeration Successful!",
+    "lastpoint": "We offer our service exclusively for driving license classes A and B as well as the conversion of foreign driving licenses of these classes into German ones."
   },
   "passwordPage": {
     "heading": "Forgot Password?",
@@ -563,7 +578,729 @@
       },
       {
         "title": "Total costs",
-        "cost": "1.500–3.000 € (depending on individual learning time and region)"
+        "cost": "<span style={{ fontWeight: 400 }}>1.500–3.000 €</span> (depending on individual learning time and region)"
+      }
+    ]
+  },
+  "licenseB": {
+    "stepsData": [
+      {
+        "title": "Driving school registration",
+        "content": [
+          "Choose a certified driving school.",
+          "Sign training contract with driving school."
+        ]
+      },
+      {
+        "title": "Prepare documents",
+        "content": [
+          "Identity card or passport: proof of residence.",
+          "Biometric passport photo: standard format.",
+          "Eye test: Must not be older than 2 years.",
+          "First aid course: 9 teaching units."
+        ]
+      },
+      {
+        "title": "Driving license application",
+        "content": [
+          "The application for a driving license must be submitted to your responsible driving license office.",
+          "The application is submitted either through your driving school or directly to the office."
+        ]
+      },
+      {
+        "title": "Theory lessons",
+        "content": [
+          "Raw material: 12 double lessons.",
+          "Additive material: 2 to 4 double lessons."
+        ]
+      },
+      {
+        "title": "Theoretical exam",
+        "content": [
+          "At earliest 3 months before minimum age.",
+          "Approx. 30 questions in multiple-choice format.",
+          "Max. 10 penalty points allowed.",
+          "Approved by TÜV or DEKRA."
+        ]
+      },
+      {
+        "title": "Driving lessons",
+        "content": [
+          "Overland: 5 trips.",
+          "Highway: 4 trips.",
+          "Night: 3 trips.",
+          "In addition, there are normal practice runs."
+        ]
+      },
+      {
+        "title": "Practical exam",
+        "content": [
+          "At earliest 1 month before minimum age.",
+          "Approx. 45 to 60 minutes.",
+          "Vehicle check, driving behavior in city, country and motorway traffic, reversing, parking, hazard assessment.",
+          "Failed: Retake only possible after 2 weeks."
+        ]
+      },
+      {
+        "title": "Issuing a driving license",
+        "content": [
+          "The EU driving license is issued.",
+          "Get your driving license from the driver’s license office.",
+          "For BF17: No driving license, but a driving test certificate. Driving is only permitted with registered accompanying persons."
+        ]
+      }
+    ],
+    "drivingRules": [
+      {
+        "title": "Accompanied driving from 17 (BF17)",
+        "description": "At 17, you are allowed to drive with an accompanying adult (at least 30 years old, at least five years of continuous possession of a Class B license, and a maximum of one point in Flensburg). The exam certificate is only valid in Germany."
+      },
+      {
+        "title": "Trailer regulation",
+        "description": "With class B, you can tow trailers up to 750 kg. For heavier trailers, class BE or B96 is required."
+      },
+      {
+        "title": "Automatic regulation (B197)",
+        "description": "Training partly on automatic, but driving a manual car is still permitted if at least 10 hours training on a manual plus a 15-minute exam on a manual have been completed."
+      },
+      {
+        "title": "Automatic restriction",
+        "description": "Those who take the exam in an automatic transmission will receive a driving license with the key number 78 (automatic transmission only). An additional test is required for manual transmissions."
+      },
+      {
+        "title": "Rewrite",
+        "description": "Holders of an old Class 3 driving license (before 1999) automatically have Class B. A conversion is only necessary for the new EU card driving license, not for the driving license itself."
+      }
+    ],
+    "drivingCosts": [
+      {
+        "title": "Eye test",
+        "cost": "6–10 €"
+      },
+      {
+        "title": "First aid course",
+        "cost": "20–50 €"
+      },
+      {
+        "title": "Basic driving school fee",
+        "cost": "300–800 € (depending on the region and driving school)"
+      },
+      {
+        "title": "Theory lessons",
+        "cost": "200–400 €"
+      },
+      {
+        "title": "Driving lessons",
+        "cost": "1.200–2.000 € (depending on the number of hours required)"
+      },
+      {
+        "title": "TÜV fees",
+        "cost": "200–400 € (registration fee, theory and practical exam)"
+      },
+      {
+        "title": "Driving license issuance",
+        "cost": "40–60 €"
+      },
+      {
+        "title": "Total costs",
+        "cost": "2.000–4.000 € (depending on individual learning time and region)"
+      }
+    ]
+  },
+  "licenseC": {
+    "stepsData": [
+      {
+        "title": "Driving school registration",
+        "content": [
+          "Choose a certified driving school.",
+          "Sign training contract with driving school."
+        ]
+      },
+      {
+        "title": "Prepare documents",
+        "content": [
+          "Identity card or passport: proof of residence.",
+          "Biometric passport photo: standard format.",
+          "Ophthalmological certificate: acuity, visual field, color vision, etc.",
+          "First aid course: 9 teaching units.",
+          "Medical examination (form: §11 FeV): family doctor or company doctor.",
+          "Copy of driving license: Class B."
+        ]
+      },
+      {
+        "title": "Driving license application",
+        "content": [
+          "The application for a driving license must be submitted to your responsible driving license office.",
+          "The application is submitted either through your driving school or directly to the office."
+        ]
+      },
+      {
+        "title": "Theory lessons",
+        "content": [
+          "Raw material: 6 double lessons.",
+          "Additive material: 4 to 10 double lessons."
+        ]
+      },
+      {
+        "title": "Theoretical exam",
+        "content": [
+          "At earliest 3 months before minimum age.",
+          "Approx. 30-40 questions in multiple-choice format.",
+          "Max. 10 penalty points allowed.",
+          "Approved by TÜV or DEKRA."
+        ]
+      },
+      {
+        "title": "Driving lessons",
+        "content": [
+          "Overland: 5 trips.",
+          "Highway: 2 trips.",
+          "Night: 3 trips.",
+          "In addition, there are normal practice runs."
+        ]
+      },
+      {
+        "title": "Practical exam",
+        "content": [
+          "At earliest 1 month before minimum age.",
+          "Approx. 75 minutes.",
+          "Vehicle check, driving behavior in city, country and motorway traffic, reversing, parking, hazard assessment.",
+          "Failed: Retake only possible after 2 weeks."
+        ]
+      },
+      {
+        "title": "Issuing a driving license",
+        "content": [
+          "The EU driving license is issued.",
+          "Get your driving license from the driver’s license office.",
+          "Validity: 5 years, then another medical and ophthalmological examination is required for extension."
+        ]
+      }
+    ],
+    "drivingRules": [
+      {
+        "title": "Strict requirements",
+        "description": "A medical and ophthalmological examination is required. An ophthalmological report is required according to the German Federal Regulations on Ophthalmology (FeV), which is more stringent than for Class B."
+      },
+      {
+        "title": "Professional driver qualification (BKrFQG)",
+        "description": "Anyone who wants to drive commercially also needs a basic qualification (IHK examination) and regular further training (every 5 years)."
+      },
+      {
+        "title": "Accelerated initial qualification",
+        "description": "It is possible to complete the basic qualification in 140 hours (instead of 280 hours) if you choose accelerated training."
+      },
+      {
+        "title": "Joint acquisition of C-CE or C1-C1E",
+        "description": "If intended to get both licenses together, the number of additives materials and special trips increases."
+      },
+      {
+        "title": "Rewrite",
+        "description": "Holders of an old Class 2 driving license (before 1999) automatically have Class C. A conversion is only necessary for the new EU card driving license, not for the driving license itself."
+      }
+    ],
+    "drivingCosts": [
+      {
+        "title": "Eye test certificate",
+        "cost": "6–10 €"
+      },
+      {
+        "title": "First aid course",
+        "cost": "20–50 €"
+      },
+      {
+        "title": "Medical report",
+        "cost": "50–100 €"
+      },
+      {
+        "title": "BKrFQG",
+        "cost": "1.000–2.000 € (depending on the provider)"
+      },
+      {
+        "title": "Basic driving school fee",
+        "cost": "1.000–2.000 € (depending on the region and driving school)"
+      },
+      {
+        "title": "Theory lessons",
+        "cost": "400–800 €"
+      },
+      {
+        "title": "Driving lessons",
+        "cost": "2.000–4.000 € (depending on the number of hours required)"
+      },
+      {
+        "title": "TÜV fees",
+        "cost": "300–600 € (registration fee, theory and practical exam)"
+      },
+      {
+        "title": "Driving license issuance",
+        "cost": "40–60 €"
+      },
+      {
+        "title": "Total costs",
+        "cost": "5.000–10.000 € (depending on individual learning time and region)"
+      }
+    ],
+    "notice": "Notice",
+    "noticeDetails": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future."
+  },
+  "licenseD": {
+    "stepsData": [
+      {
+        "title": "Driving school registration",
+        "content": [
+          "Choose a certified driving school.",
+          "Sign training contract with driving school."
+        ]
+      },
+      {
+        "title": "Prepare documents",
+        "content": [
+          "Identity card or passport: proof of residence.",
+          "Biometric passport photo: standard format.",
+          "Ophthalmological certificate: acuity, visual field, color vision, etc.",
+          "First aid course: 9 teaching units.",
+          "Medical examination (form: §11 FeV): family doctor or company doctor.",
+          "Driving license class B, reaction test, certificate of good conduct."
+        ]
+      },
+      {
+        "title": "Driving license application",
+        "content": [
+          "The application for a driving license must be submitted to your responsible driving license office.",
+          "The application is submitted either through your driving school or directly to the office."
+        ]
+      },
+      {
+        "title": "Theory lessons",
+        "content": [
+          "Raw material: 6 double lessons.",
+          "Additive material: 8 to 18 double lessons."
+        ]
+      },
+      {
+        "title": "Theoretical exam",
+        "content": [
+          "At earliest 3 months before minimum age.",
+          "Approx. 30-40 questions in multiple-choice format.",
+          "Max. 10 penalty points allowed.",
+          "Approved by TÜV or DEKRA."
+        ]
+      },
+      {
+        "title": "Driving lessons",
+        "content": [
+          "Overland: 8-22 trips.",
+          "Highway: 4-14 trips.",
+          "Night: 3-8 trips.",
+          "In addition, there are normal practice runs."
+        ]
+      },
+      {
+        "title": "Practical exam",
+        "content": [
+          "At earliest 1 month before minimum age.",
+          "Approx. 75 minutes.",
+          "Vehicle check, driving behavior in city, country and motorway traffic, reversing, parking, hazard assessment.",
+          "Failed: Retake only possible after 2 weeks."
+        ]
+      },
+      {
+        "title": "Issuing a driving license",
+        "content": [
+          "The EU driving license is issued.",
+          "Get your driving license from the driver’s license office.",
+          "Validity: 5 years, then another medical and ophthalmological examination is required for extension."
+        ]
+      }
+    ],
+    "drivingRules": [
+      {
+        "title": "Strict requirements",
+        "description": "A medical and ophthalmological examination is required. An ophthalmological report is required according to the German Federal Regulations on Ophthalmology (FeV), which is more stringent than for Class B."
+      },
+      {
+        "title": "Professional driver qualification (BKrFQG)",
+        "description": "Anyone who wants to drive commercially also needs a basic qualification (IHK examination) and regular further training (every 5 years)."
+      },
+      {
+        "title": "Accelerated initial qualification",
+        "description": "It is possible to complete the basic qualification in 140 hours (instead of 280 hours) if you choose accelerated training."
+      },
+      {
+        "title": "Passenger transport",
+        "description": "Class D entitles you to commercial and non-commercial passenger transport (e.g. regular buses, coaches, school buses)."
+      },
+      {
+        "title": "Rewrite",
+        "description": "Holders of an old Class 2 driving license (before 1999) automatically have Class C. A conversion is only necessary for the new EU card driving license, not for the driving license itself."
+      }
+    ],
+    "drivingCosts": [
+      {
+        "title": "Eye test certificate",
+        "cost": "6–10 €"
+      },
+      {
+        "title": "First aid course",
+        "cost": "20–50 €"
+      },
+      {
+        "title": "Medical report",
+        "cost": "50–100 €"
+      },
+      {
+        "title": "BKrFQG",
+        "cost": "1.000–2.000 € (depending on the provider)"
+      },
+      {
+        "title": "Basic driving school fee",
+        "cost": "1.500–3.000 € (depending on the region and driving school)"
+      },
+      {
+        "title": "Theory lessons",
+        "cost": "500–1.000 €"
+      },
+      {
+        "title": "Driving lessons",
+        "cost": "3.000–6.000 € (depending on the number of hours required)"
+      },
+      {
+        "title": "TÜV fees",
+        "cost": "400–800 € (registration fee, theory and practical exam)"
+      },
+      {
+        "title": "Driving license issuance",
+        "cost": "40–60 €"
+      },
+      {
+        "title": "Total costs",
+        "cost": "7.000–15.000 € (depending on individual learning time and region)"
+      }
+    ],
+    "notice": "Notice",
+    "noticeDetails": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future."
+  },
+  "licenseLT": {
+    "stepsData": [
+      {
+        "title": "Driving school registration",
+        "content": [
+          "Choose a certified driving school.",
+          "Sign training contract with driving school."
+        ]
+      },
+      {
+        "title": "Prepare documents",
+        "content": [
+          "Identity card or passport: proof of residence.",
+          "Biometric passport photo: standard format.",
+          "Eye test: Must not be older than 2 years.",
+          "First aid course: 9 teaching units."
+        ]
+      },
+      {
+        "title": "Driving license application",
+        "content": [
+          "The application for a driving license must be submitted to your responsible driving license office.",
+          "The application is submitted either through your driving school or directly to the office."
+        ]
+      },
+      {
+        "title": "Theory lessons",
+        "content": [
+          "Raw material: 12 double lessons.",
+          "Additive material: 2 to 6 double lessons."
+        ]
+      },
+      {
+        "title": "Theoretical exam",
+        "content": [
+          "At earliest 3 months before minimum age.",
+          "Approx. 30 questions in multiple-choice format.",
+          "Max. 10 penalty points allowed.",
+          "Approved by TÜV or DEKRA."
+        ]
+      },
+      {
+        "title": "Driving lessons",
+        "content": [
+          "No practical exam for class L.",
+          "No prescribed number of driving lessons."
+        ]
+      },
+      {
+        "title": "Practical exam",
+        "content": [
+          "No practical exam for class L.",
+          "Approx. 45 to 60 minutes.",
+          "Vehicle check, driving behavior in city, country and motorway traffic, reversing, parking, hazard assessment.",
+          "Failed: Retake only possible after 2 weeks."
+        ]
+      },
+      {
+        "title": "Issuing a driving license",
+        "content": [
+          "The driving license is issued.",
+          "Get your driving license from the driver’s license office."
+        ]
+      }
+    ],
+    "drivingRules": [
+      {
+        "title": "Area of application",
+        "description": "Both classes are particularly relevant for agricultural and forestry businesses, municipalities and horticulture."
+      },
+      {
+        "title": "Class L",
+        "description": "Authorized to drive tractors up to 40 km/h and self-propelled machines (e.g. combine harvesters) up to 25 km/h."
+      },
+      {
+        "title": "Class T",
+        "description": "Authorized to drive tractors up to 60 km/h (also with trailer) and self-propelled work machines up to 40 km/h."
+      },
+      {
+        "title": "Requirement",
+        "description": "If you hold a different driving license class, the basic material is reduced to six two-hour lessons."
+      },
+      {
+        "title": "Rewrite",
+        "description": "Holders of an old Class 3 driving license (before 1999) automatically have Class L. A conversion is only necessary for the new EU card driving license, not for the driving license itself."
+      }
+    ],
+    "drivingCostsData1": [
+      {
+        "title": "Eye test",
+        "cost": "6–10 €"
+      },
+      {
+        "title": "First aid course",
+        "cost": "20–50 €"
+      },
+      {
+        "title": "Basic driving school fee",
+        "cost": "200–500 € (depending on the region and driving school)"
+      },
+      {
+        "title": "Theory lessons",
+        "cost": "150–300 €"
+      },
+      {
+        "title": "Driving lessons",
+        "cost": "300–800 € (depending on the number of hours required)"
+      },
+      {
+        "title": "TÜV fees",
+        "cost": "100–200 € (registration fee, theory and practical exam)"
+      },
+      {
+        "title": "Driving license issuance",
+        "cost": "40–60 €"
+      },
+      {
+        "title": "Total costs",
+        "cost": "800–2.000 € (depending on individual learning time and region)"
+      }
+    ],
+    "drivingCostsData2": [
+      {
+        "title": "Eye test",
+        "cost": "6–10 €"
+      },
+      {
+        "title": "First aid course",
+        "cost": "20–50 €"
+      },
+      {
+        "title": "Basic driving school fee",
+        "cost": "300–800 € (depending on the region and driving school)"
+      },
+      {
+        "title": "Theory lessons",
+        "cost": "200–400 €"
+      },
+      {
+        "title": "Driving lessons",
+        "cost": "500–1.200 € (depending on the number of hours required)"
+      },
+      {
+        "title": "TÜV fees",
+        "cost": "150–300 € (registration fee, theory and practical exam)"
+      },
+      {
+        "title": "Driving license issuance",
+        "cost": "40–60 €"
+      },
+      {
+        "title": "Total costs",
+        "cost": "1.200–3.000 € (depending on individual learning time and region)"
+      }
+    ],
+    "notice": "Notice",
+    "noticeDetails": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future."
+  },
+  "licenseForeign": {
+    "stepsData": [
+      {
+        "title": "Driving school registration",
+        "content": [
+          "Choose a certified driving school.",
+          "Sign training contract with driving school."
+        ]
+      },
+      {
+        "title": "Prepare documents",
+        "content": [
+          "Identity card or passport: proof of residence.",
+          "Biometric passport photo: standard format.",
+          "Eye test: Must not be older than 2 years.",
+          "First aid course: 9 teaching units.",
+          "Old driving license and its translation."
+        ]
+      },
+      {
+        "title": "Driving license application",
+        "content": [
+          "The application for a driving license must be submitted to your responsible driving license office.",
+          "The application is submitted either through your driving school or directly to the office."
+        ]
+      },
+      {
+        "title": "Theory lessons",
+        "content": [
+          "Usually not required.",
+          "Optional: depending on the driving school."
+        ]
+      },
+      {
+        "title": "Theoretical exam",
+        "content": [
+          "At earliest 3 months before minimum age.",
+          "Approx. 30 questions in multiple-choice format.",
+          "Max. 10 penalty points allowed.",
+          "Approved by TÜV or DEKRA."
+        ]
+      },
+      {
+        "title": "Driving lessons",
+        "content": [
+          "No prescribed number of driving lessons.",
+          "The number of driving lessons varies from individual to individual."
+        ]
+      },
+      {
+        "title": "Practical exam",
+        "content": [
+          "No practical exam for class L.",
+          "Approx. 45 to 60 minutes.",
+          "Vehicle check, driving behavior in city, country and motorway traffic, reversing, parking, hazard assessment.",
+          "Failed: Retake only possible after 2 weeks."
+        ]
+      },
+      {
+        "title": "Issuing a driving license",
+        "content": [
+          "The driving license is issued.",
+          "Get your driving license from the driver’s license office."
+        ]
+      }
+    ],
+    "drivingRules": [
+      {
+        "title": "Deadlines",
+        "description": "EU/EEA driving licenses can be converted at any time. Driving licenses from countries with a mutual recognition agreement (Annex 11 of the Driving Licence Regulations) generally do not require an exam. However, there are exceptions, including Albania, Moldova, and some US states. Driving licenses from other countries always require an examination."
+      },
+      {
+        "title": "Validity",
+        "description": "The foreign driving license remains valid during the six-month transition period. After the conversion, the German EU driving license is valid."
+      },
+      {
+        "title": "Theoretical and practical exam",
+        "description": "Driving licenses from other countries always require a theory and practical exam. However, no driver training is required. There are no mandatory driving lessons. Furthermore, the decision whether and when to take the exams depends on the applicant's confidence and willingness."
+      },
+      {
+        "title": "Recognition",
+        "description": "Driving licenses from certain countries (e.g., the USA, Switzerland, Japan) may be fully or partially recognized. Driving licenses from other countries (e.g., Turkey, Russia) require a theory and practical exam. Some authorities require proof of regular driving experience abroad."
+      },
+      {
+        "title": "Old driving license",
+        "description": "The old driving license must be handed in when the conversion is done (it will be retained or recorded)."
+      }
+    ],
+    "drivingCostsData1": [
+      {
+        "title": "Eye test",
+        "cost": "6–10 €"
+      },
+      {
+        "title": "First aid course",
+        "cost": "20–50 €"
+      },
+      {
+        "title": "Basic driving school fee",
+        "cost": "500–1.000 € (depending on the region and driving school)"
+      },
+      {
+        "title": "Theory lessons",
+        "cost": "0–400 € (optional, depending on the driving school)"
+      },
+      {
+        "title": "Driving lessons",
+        "cost": "0–1.200 € (depending on the number of hours required)"
+      },
+      {
+        "title": "TÜV fees",
+        "cost": "100–200 € (registration fee, theory and practical exam)"
+      },
+      {
+        "title": "Driving license issuance",
+        "cost": "40–60 €"
+      },
+      {
+        "title": "Translation",
+        "cost": "40–80 €"
+      },
+      {
+        "title": "Total costs",
+        "cost": "700–2.000 € (depending on individual learning time and region)"
+      }
+    ],
+    "drivingCostsData2": [
+      {
+        "title": "Eye test",
+        "cost": "6–10 €"
+      },
+      {
+        "title": "First aid course",
+        "cost": "20–50 €"
+      },
+      {
+        "title": "Basic driving school fee",
+        "cost": "300–800 € (depending on the region and driving school)"
+      },
+      {
+        "title": "Theory lessons",
+        "cost": "0–400 € (optional, depending on the driving school)"
+      },
+      {
+        "title": "Driving lessons",
+        "cost": "0–2.000 € (depending on the number of hours required)"
+      },
+      {
+        "title": "TÜV fees",
+        "cost": "200–400 € (registration fee, theory and practical exam)"
+      },
+      {
+        "title": "Driving license issuance",
+        "cost": "40–60 €"
+      },
+      {
+        "title": "Translation",
+        "cost": "40–80 €"
+      },
+      {
+        "title": "Total costs",
+        "cost": "800–3.000 € (depending on individual learning time and region)"
       }
     ]
   },
@@ -730,5 +1467,21 @@
         "html": "The following conditions apply:<ul style=\"margin-left: 18px\"><li>If individual provisions of these Terms and Conditions are or become invalid, the validity of the remaining provisions shall remain unaffected.</li><li>The law of the Federal Republic of Germany shall apply.</li><li>The place of jurisdiction is <strong>[Location]</strong>, provided the user is a merchant or does not have a general place of jurisdiction in Germany.</li></ul>"
       }
     ]
+  },
+  "helpPage": {
+    "pageTitle": "Help Center!",
+    "pageDes": "Finde die Antwort deiner Fragen in unserem Help Center.",
+    "title1": "Starten",
+    "des1": "Lerne die Grundlagen",
+    "title2": "Konto",
+    "des2": "Lerne die Grundlagen",
+    "title3": "Rechnung",
+    "des3": "Lerne die Grundlagen",
+    "title4": "Daten",
+    "des4": "Lerne die Grundlagen",
+    "title5": "Troubleshooting",
+    "des5": "Lerne die Grundlagen",
+    "title6": "Sontiges",
+    "des6": "Lerne die Grundlagen"
   }
 }
