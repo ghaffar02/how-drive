@@ -927,43 +927,44 @@
   "licenseD": {
     "grid1Data": [
       {
-        "heading": "B",
-        "sub": "from 18",
-        "des": "Cars up to 3.5 t, max. 8 seats"
+        "heading": "D",
+        "sub": "from 24",
+        "des": "Buses with more than 16 people"
       },
       {
-        "heading": "B17",
-        "sub": "from 17",
-        "des": "Accompanied driving"
+        "heading": "DE",
+        "sub": "from 24",
+        "des": "D + trailer over 750 kg"
       },
       {
-        "heading": "BE",
-        "sub": "from 18",
-        "des": "Car + trailer up to 3.5 t"
+        "heading": "D1",
+        "sub": "from 21",
+        "des": "Up to 16 people, max. 8 m length + trailer 750 kg"
       },
       {
-        "heading": "B96",
-        "sub": "from 18",
-        "des": "Car + trailer over 750 kg"
+        "heading": "D1E",
+        "sub": "from 21",
+        "des": "D1 + trailer over 750 kg"
       }
     ],
-    "fileTitle": "ID - passport photo - eye test - first aid<br />If applicable, driver's license copy",
-    "roadTitle": "Special trips:<br />5 overland<br />4 highway<br />3 nights",
+    "fileTitle": "ID - passport photo - eye test certificate - <br /> first aid - medical report - if applicable, <br/>  certificate of good conduct",
+    "roadTitle": "Special trips:<br />8-22 overland<br />4-14 highway<br />3-8 nights",
     "grund": "Basic material",
-    "grundDes": "12 lessons - double lessons",
+    "grundDes": "6 lessons - double lessons",
     "gult": "Validity",
-    "gultDes": "Unlimited, every 15 years renewed",
-    "mofa": "B197",
-    "mofaDes": "Training partly on automatic",
+    "gultDes": "Limited to 5 years then renewal",
+    "mofa": "Requirement",
+    "mofasub": "",
+    "mofaDes": "Driving license class B",
     "zusa": "Additive material",
-    "zusaDes": "2 lessons - double lessons",
+    "zusaDes": "8-18 lessons - double lessons",
     "heading1": "Important information",
     "heading2": "Cost overview",
-    "heading3": "Step-by-step guide to a class B driving license",
+    "heading3": "Step-by-step guide to a class D driving license",
     "heading4": "Notice",
     "title1": "Driving license ",
-    "title2": "Class B",
-    "descriptionhero": "Passenger cars, light commercial vehicles, motor homes and other vehicles, excluding motorcycles",
+    "title2": "Class D",
+    "descriptionhero": "Large buses designed to transport more than eight people (excluding the driver).",
     "stepsData": [
       {
         "title": "Driving school registration",
@@ -1094,7 +1095,7 @@
       },
       {
         "title": "Total costs",
-        "cost": "7.000–15.000 € (depending on individual learning time and region)"
+        "cost": "<span style={{ fontWeight: 400 }}>7.000–15.000 €</span> (depending on individual learning time and region)"
       }
     ],
     "notice": "Notice",

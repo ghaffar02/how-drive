@@ -927,43 +927,44 @@
   "licenseD": {
     "grid1Data": [
       {
-        "heading": "B",
-        "sub": "ab 18",
-        "des": "Pkw bis 3,5 t, max. 8 Sitzplätze"
+        "heading": "D",
+        "sub": "ab 24",
+        "des": "Busse über 16 Personen"
       },
       {
-        "heading": "B17",
-        "sub": "ab 17",
-        "des": "Begleitetes Fahren"
+        "heading": "DE",
+        "sub": "ab 24",
+        "des": "D + trailer over 750 kg"
       },
       {
-        "heading": "BE",
-        "sub": "ab 18",
-        "des": "Pkw + Anhänger bis 3,5 t"
+        "heading": "D1",
+        "sub": "ab 21",
+        "des": "Bis 16 Personen, max. 8 m Länge + Anhänger 750 kg"
       },
       {
-        "heading": "B96",
-        "sub": "ab 18",
-        "des": "Pkw + Anhänger über 750 kg"
+        "heading": "D1E",
+        "sub": "ab 21",
+        "des": "D1 + Anhänger über 750 kg"
       }
     ],
-    "fileTitle": "Ausweis - Passbild - Sehtest - Erste-Hilfe<br />ggb. Führerscheinkopie",
-    "roadTitle": "Sonderfahrten:<br />5 Überland<br />4 Autobahn<br />3 Nacht",
+    "fileTitle": "Ausweis - Passbild - augenärztliches Zeugnis - ärztliches Gutachten - Erste-Hilfe - Reaktionstest - Führungszeugnis",
+    "roadTitle": "Sonderfahrten:<br />8-22 Überland<br />4-14 Autobahn<br />3-8 Nacht",
     "grund": "Grundstoff",
-    "grundDes": "12 Unterrichte - Doppelstunden",
+    "grundDes": "6 Unterrichte - Doppelstunden",
     "gult": "Gültigkeit",
-    "gultDes": "Unbefristet, je 15 Jahre erneut",
-    "mofa": "B197",
-    "mofaDes": "Ausbildung teils auf Automatik",
+    "gultDes": "Befristet auf 5 Jahre",
+    "mofa": "Vorbesitz",
+    "mofasub": "",
+    "mofaDes": "Führerschein Klasse B",
     "zusa": "Zusatzstoff",
-    "zusaDes": "2 Unterrichte - Doppelstunden",
+    "zusaDes": "8-18 Unterrichte - Doppelstunden",
     "heading1": "Wichtige Informationen",
     "heading2": "Kostenübersicht",
-    "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein Klasse A",
+    "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein Klasse D",
     "heading4": "Notice",
     "title1": "Führerschein",
-    "title2": " Klasse B",
-    "descriptionhero": "Pkw, leichte Nutzfahrzeuge, Wohnmobile und andere Fahrzeuge, ausgenommen von Krafträder.",
+    "title2": " Klasse D",
+    "descriptionhero": "Bus und Kraftfahrzeuge, die der Beförderung von mehr als 8 Personen dienen.",
     "stepsData": [
       {
         "title": "Anmeldung Fahrschule",
@@ -1094,7 +1095,7 @@
       },
       {
         "title": "Gesamtkosten",
-        "cost": "7.000–15.000 € (je nach individueller Lernzeit und Region)"
+        "cost": "<span style={{ fontWeight: 400 }}>7.000–15.000 €</span> (je nach individueller Lernzeit und Region)"
       }
     ],
     "notice": "Hinweis",
