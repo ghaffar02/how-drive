@@ -19,6 +19,6 @@ export interface RegisterPayload {
   phoneNumber: string;
 }
 export const registerUser = async (payload: RegisterPayload) => {
-  const {data} = await api.post('users/create', payload);
+  const {data} = await api.post('auth/signup', payload);
   return data;
 };
