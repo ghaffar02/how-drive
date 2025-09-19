@@ -1,14 +1,14 @@
 import React from 'react';
 import {Box, Typography} from '@mui/material';
 
-interface ContentWithMediaProps {
+interface ContentWithImageProps {
   title?: string;
   description?: string;
   mediaSrc?: string;
   direction?: string;
 }
 
-const ContentWithMedia: React.FC<ContentWithMediaProps> = ({
+const ContentWithImage: React.FC<ContentWithImageProps> = ({
   title,
   description,
   mediaSrc,
@@ -19,8 +19,8 @@ const ContentWithMedia: React.FC<ContentWithMediaProps> = ({
       sx={{
         bgcolor: '#FAFAFA',
         padding: {
-          xs: '120px 16px 60px',
-          md: '120px 24px 60px',
+          xs: '56px 16px 60px',
+          md: '64px 24px 60px',
           lg: '120px  48px 60px'
         }
       }}
@@ -32,9 +32,9 @@ const ContentWithMedia: React.FC<ContentWithMediaProps> = ({
           margin: 'auto',
           display: 'flex',
           flexDirection: {xs: 'column', md: direction},
-          alignItems: {xs: 'start', md: 'center'},
+          alignItems: {xs: 'center', md: 'center'},
           justifyContent: 'space-between',
-          gap: {md: '88px', lg: '120px'}
+          gap: {xs: '88px', lg: '120px'}
         }}
       >
         {/* Text Section */}
@@ -44,9 +44,8 @@ const ContentWithMedia: React.FC<ContentWithMediaProps> = ({
               sx={{
                 fontSize: {xs: '28px', md: '32px', lg: '36px'},
                 color: '#000',
-                fontWeight: 600,
-                fontFamily:
-                  '"Inter", "Inter Placeholder", sans-serif !important',
+                fontWeight: 700,
+                fontFamily: 'Satoshi700 !important',
 
                 width: '100%',
                 mb: '24px'
@@ -58,12 +57,11 @@ const ContentWithMedia: React.FC<ContentWithMediaProps> = ({
           {description && (
             <Typography
               sx={{
-                fontSize: {xs: '14px', sm: '16px', lg: '18px'},
+                fontSize: {xs: '16px', sm: '17px', lg: '18px'},
                 // lineHeight: {xs: '22px', sm: '100%'},
                 fontFamily: '"Inter", sans-serif  !important',
-                // maxWidth: '700px',
                 width: '100%',
-                color: '#000000',
+                color: '#2D3748',
                 fontWeight: 300
               }}
               dangerouslySetInnerHTML={{__html: description}}
@@ -92,4 +90,4 @@ const ContentWithMedia: React.FC<ContentWithMediaProps> = ({
   );
 };
 
-export default ContentWithMedia;
+export default ContentWithImage;

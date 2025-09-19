@@ -2,10 +2,13 @@
 
 import {Box, Typography} from '@mui/material';
 import {motion} from 'framer-motion';
-import {useTranslations} from 'next-intl';
-
-export default function HeroAboutus() {
-  const t = useTranslations('Services');
+// import {useTranslations} from 'next-intl';
+interface hero {
+  title?: string;
+  description?: string;
+}
+export default function HeroAboutus({title, description}: hero) {
+  // const t = useTranslations('Services');
 
   return (
     <>
@@ -55,7 +58,7 @@ export default function HeroAboutus() {
               textAlign: 'center'
             }}
           >
-            About WieFührerschein
+            {title}
           </Typography>
           <Typography
             component={motion.p}
@@ -74,9 +77,7 @@ export default function HeroAboutus() {
               width: '100%'
             }}
           >
-            Simplify the process of obtaining a driving license for drivering
-            students and enable more efficient administration for driving
-            schools
+            {description}
           </Typography>
         </Box>
       </Box>
