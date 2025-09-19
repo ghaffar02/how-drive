@@ -39,7 +39,7 @@ export default function ClassGrid({
           }}
         >
           <Grid container spacing={2}>
-            <Grid container spacing={2}>
+            <Grid container spacing={2} sx={{width: '100%'}}>
               {licenseArr1.map((data: any, i: any) => (
                 <Grid
                   key={i}

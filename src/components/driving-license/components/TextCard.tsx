@@ -22,7 +22,7 @@ export default function TextCard({
     <Box
       sx={{
         background: background,
-        // maxWidth: '250px',
+        // maxWidth: '100%',
         width: '100%',
         height: {
           xs: isbool ? '159px' : '180px',

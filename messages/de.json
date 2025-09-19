@@ -1249,7 +1249,7 @@
       },
       {
         "title": "Gesamtkosten",
-        "cost": "800–2.000 € (je nach individueller Lernzeit und Region)"
+        "cost": "<span style={{ fontWeight: 400 }}>800–2.000 €</span>  (je nach individueller Lernzeit und Region)"
       }
     ],
     "drivingCostsData2": [
@@ -1283,13 +1283,45 @@
       },
       {
         "title": "Gesamtkosten",
-        "cost": "1.200–3.000 € (je nach individueller Lernzeit und Region)"
+        "cost": "<span style={{ fontWeight: 400 }}>1.200–3.000 €</span>  (je nach individueller Lernzeit und Region)"
       }
     ],
     "notice": "Hinweis",
     "noticeDetails": "Wir bieten unseres Service ausschließlich für die Führerscheinklassen A und B sowie Umschreiben (Umschreibung ausländischer Führerscheine dieser Klassen in deutsche) an. Aufgrund der geringen Anzahl an Fahrschulen, die die Fahrklassen C, D, L und T anbieten, ist es uns derzeit nicht möglich, diese Klassen zu unterstützen. Wir hoffen, dass wir in Zukunft diese Klassen auch unterstützen können."
   },
   "licenseForeign": {
+    "grid1Data": [
+      {
+        "heading": "A",
+        "sub": "ab 16",
+        "des": "Führerscheinklassen A, A1, A2, AM"
+      },
+      {
+        "heading": "B",
+        "sub": "ab 16",
+        "des": "Führerscheinklassen B, BE, B96, B197"
+      }
+    ],
+    "fileTitle": "Ausweis - Passbild - Sehtest - Erste-Hilfe Original-Führerschein mit Übersetzung",
+    "roadTitle": "Sonderfahrten:<br/>Abhängig vom Herkunftsland",
+    "grund": "Grundstoff",
+    "grundDes": "Keine Theoriestunden",
+    "gult": "Gültigkeit",
+    "gultDes": "Unbefristet nach Umschreibung",
+    "mofa": "Anerkennung",
+    "mofasub": "",
+    "mofaDes": "Abhängig von Ländergruppen",
+    "zusa": "Zusatzstoff",
+    "zusaDes": "Keine Theoriestunden",
+    "heading1": "Important information",
+    "heading2": "Kostenübersicht Umschreibung Klasse A",
+    "heading3": "Schritt-für-Schritt-Anleitung zum Umschreiben Klasse A und B",
+    "heading4": "Kostenübersicht Umschreibung Klasse B",
+    "title1": "Umschreiben ausländischer ",
+    "title2": "Führerscheine",
+    "descriptionhero": "Wer aus Drittstaaten dauerhaft nach Deutschland umzieht, muss seine ausländische Fahrerlaubnis umschreiben lassen.",
+    "notice": "Hinweis",
+    "noticeDetails": "Wir bieten unseres Service ausschließlich für die Führerscheinklassen A und B sowie Umschreiben (Umschreibung ausländischer Führerscheine dieser Klassen in deutsche) an. Aufgrund der geringen Anzahl an Fahrschulen, die die Fahrklassen C, D, L und T anbieten, ist es uns derzeit nicht möglich, diese Klassen zu unterstützen. Wir hoffen, dass wir in Zukunft diese Klassen auch unterstützen können.",
     "stepsData": [
       {
         "title": "Anmeldung Fahrschule",
