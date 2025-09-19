@@ -9,7 +9,7 @@ import Link from 'next/link';
 export default function PasswordForgetPage() {
   const t = useTranslations('passwordPage');
   return (
-    <Box sx={{width: '100%', display: 'flex'}}>
+    <Box sx={{width: '100%', height: '100vh', display: 'flex'}}>
       {/* Left Side */}
       <Box
         sx={{
