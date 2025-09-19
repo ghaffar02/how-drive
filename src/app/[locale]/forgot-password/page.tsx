@@ -5,9 +5,30 @@ import Image from 'next/image';
 import registerImage from '@/assets/svgs/registerImage.svg';
 import {useTranslations} from 'next-intl';
 import Link from 'next/link';
+import api from '@/lib/axios';
+import {useForm, SubmitHandler} from 'react-hook-form';
+
+type FormValues = {
+  email: string;
+};
 
 export default function PasswordForgetPage() {
   const t = useTranslations('passwordPage');
+  const {
+    register,
+    handleSubmit,
+    formState: {errors}
+  } = useForm<FormValues>();
+
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    try {
+      const res = await api.post('/auth/forgotPassword', {email: data.email});
+      console.log('✅ Email sent:', res.data);
+    } catch (error) {
+      console.error('❌ Failed to send email:', error);
+    }
+  };
+
   return (
     <Box sx={{width: '100%', height: '100vh', display: 'flex'}}>
       {/* Left Side */}
@@ -64,6 +85,8 @@ export default function PasswordForgetPage() {
         </Box>
         {/* Input Fields Box */}
         <Box
+          component="form"
+          onSubmit={handleSubmit(onSubmit)}
           sx={{
             maxWidth: '360px',
             width: '100%',
@@ -76,6 +99,9 @@ export default function PasswordForgetPage() {
           <TextField
             label={t('email')}
             type="email"
+            {...register('email', {required: 'Email is required'})}
+            error={!!errors.email}
+            helperText={errors.email?.message}
             sx={{
               '& .MuiOutlinedInput-root': {
                 background: '#F8FAFC',
@@ -102,6 +128,7 @@ export default function PasswordForgetPage() {
           />
 
           <Button
+            type="submit"
             variant="contained"
             disableRipple
             sx={{
