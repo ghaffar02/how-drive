@@ -612,6 +612,7 @@
     "gult": "Gültigkeit",
     "gultDes": "Unbefristet, je 15 Jahre erneut",
     "mofa": "B197",
+    "mofasub": "",
     "mofaDes": "Ausbildung teils auf Automatik",
     "zusa": "Zusatzstoff",
     "zusaDes": "2 Unterrichte - Doppelstunden",
@@ -747,6 +748,46 @@
     ]
   },
   "licenseC": {
+    "grid1Data": [
+      {
+        "heading": "C",
+        "sub": "ab 21",
+        "des": "Lkw über 3,5 t + Anhänger 750 kg"
+      },
+      {
+        "heading": "CE",
+        "sub": "ab 21",
+        "des": "C + Anhänger über 750 kg"
+      },
+      {
+        "heading": "C1",
+        "sub": "ab 18",
+        "des": "Lkw 3,5 bis 7,5 t + Anhänger 750 kg"
+      },
+      {
+        "heading": "C1E",
+        "sub": "ab 18",
+        "des": "C1 + Anhänger über 750 kg"
+      }
+    ],
+    "fileTitle": "Ausweis - Passbild - augenärztliches <br /> Zeugnis - Erste-Hilfe - ärztliches <br/> Gutachten - ggb. Führungszeugnis",
+    "roadTitle": "Sonderfahrten:<br />5 Überland<br />2 Autobahn<br />3 Nacht",
+    "grund": "Grundstoff",
+    "grundDes": "6 Unterrichte - Doppelstunden",
+    "gult": "Gültigkeit",
+    "gultDes": "Befristet auf 5 Jahre",
+    "mofa": "Vorbesitz",
+    "mofasub": "",
+    "mofaDes": "Führerschein Klasse B",
+    "zusa": "Zusatzstoff",
+    "zusaDes": "4-10 Unterrichte - Doppelstunden",
+    "heading1": "Wichtige Informationen",
+    "heading2": "Kostenübersicht",
+    "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein Klasse A",
+    "heading4": "Notice",
+    "title1": "Führerschein",
+    "title2": " Klasse C",
+    "descriptionhero": "Lkw und Kraftfahrzeuge mit einer zulässigen Gesamtmasse von mehr als 3.500 kg.",
     "stepsData": [
       {
         "title": "Anmeldung Fahrschule",
@@ -877,13 +918,52 @@
       },
       {
         "title": "Gesamtkosten",
-        "cost": "5.000–10.000 € (je nach individueller Lernzeit und Region)"
+        "cost": "<span style={{ fontWeight: 400 }}>5.000–10.000 €</span> (je nach individueller Lernzeit und Region)"
       }
     ],
     "notice": "Hinweis",
     "noticeDetails": "Wir bieten unseres Service ausschließlich für die Führerscheinklassen A und B sowie Umschreiben (Umschreibung ausländischer Führerscheine dieser Klassen in deutsche) an. Aufgrund der geringen Anzahl an Fahrschulen, die die Fahrklassen C, D, L und T anbieten, ist es uns derzeit nicht möglich, diese Klassen zu unterstützen. Wir hoffen, dass wir in Zukunft diese Klassen auch unterstützen können."
   },
   "licenseD": {
+    "grid1Data": [
+      {
+        "heading": "B",
+        "sub": "ab 18",
+        "des": "Pkw bis 3,5 t, max. 8 Sitzplätze"
+      },
+      {
+        "heading": "B17",
+        "sub": "ab 17",
+        "des": "Begleitetes Fahren"
+      },
+      {
+        "heading": "BE",
+        "sub": "ab 18",
+        "des": "Pkw + Anhänger bis 3,5 t"
+      },
+      {
+        "heading": "B96",
+        "sub": "ab 18",
+        "des": "Pkw + Anhänger über 750 kg"
+      }
+    ],
+    "fileTitle": "Ausweis - Passbild - Sehtest - Erste-Hilfe<br />ggb. Führerscheinkopie",
+    "roadTitle": "Sonderfahrten:<br />5 Überland<br />4 Autobahn<br />3 Nacht",
+    "grund": "Grundstoff",
+    "grundDes": "12 Unterrichte - Doppelstunden",
+    "gult": "Gültigkeit",
+    "gultDes": "Unbefristet, je 15 Jahre erneut",
+    "mofa": "B197",
+    "mofaDes": "Ausbildung teils auf Automatik",
+    "zusa": "Zusatzstoff",
+    "zusaDes": "2 Unterrichte - Doppelstunden",
+    "heading1": "Wichtige Informationen",
+    "heading2": "Kostenübersicht",
+    "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein Klasse A",
+    "heading4": "Notice",
+    "title1": "Führerschein",
+    "title2": " Klasse B",
+    "descriptionhero": "Pkw, leichte Nutzfahrzeuge, Wohnmobile und andere Fahrzeuge, ausgenommen von Krafträder.",
     "stepsData": [
       {
         "title": "Anmeldung Fahrschule",
@@ -1021,6 +1101,45 @@
     "noticeDetails": "Wir bieten unseres Service ausschließlich für die Führerscheinklassen A und B sowie Umschreiben (Umschreibung ausländischer Führerscheine dieser Klassen in deutsche) an. Aufgrund der geringen Anzahl an Fahrschulen, die die Fahrklassen C, D, L und T anbieten, ist es uns derzeit nicht möglich, diese Klassen zu unterstützen. Wir hoffen, dass wir in Zukunft diese Klassen auch unterstützen können."
   },
   "licenseLT": {
+    "grid1Data": [
+      {
+        "heading": "B",
+        "sub": "ab 18",
+        "des": "Pkw bis 3,5 t, max. 8 Sitzplätze"
+      },
+      {
+        "heading": "B17",
+        "sub": "ab 17",
+        "des": "Begleitetes Fahren"
+      },
+      {
+        "heading": "BE",
+        "sub": "ab 18",
+        "des": "Pkw + Anhänger bis 3,5 t"
+      },
+      {
+        "heading": "B96",
+        "sub": "ab 18",
+        "des": "Pkw + Anhänger über 750 kg"
+      }
+    ],
+    "fileTitle": "Ausweis - Passbild - augenärztliches <br /> Zeugnis - Erste-Hilfe - ärztliches <br/> Gutachten - ggb. Führungszeugnis",
+    "roadTitle": "Sonderfahrten:<br />5 Überland<br />2 Autobahn<br />3 Nacht",
+    "grund": "Grundstoff",
+    "grundDes": "6 Unterrichte - Doppelstunden",
+    "gult": "Gültigkeit",
+    "gultDes": "Befristet auf 5 Jahre",
+    "mofa": "Vorbesitz",
+    "mofaDes": "Führerschein Klasse B",
+    "zusa": "Zusatzstoff",
+    "zusaDes": "4-10 Unterrichte - Doppelstunden",
+    "heading1": "Wichtige Informationen",
+    "heading2": "Kostenübersicht",
+    "heading3": "Schritt-für-Schritt-Anleitung zum Führerschein Klasse A",
+    "heading4": "Notice",
+    "title1": "Führerschein",
+    "title2": " Klasse C",
+    "descriptionhero": "Lkw und Kraftfahrzeuge mit einer zulässigen Gesamtmasse von mehr als 3.500 kg.",
     "stepsData": [
       {
         "title": "Anmeldung Fahrschule",

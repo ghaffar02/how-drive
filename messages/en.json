@@ -612,6 +612,7 @@
     "gult": "Validity",
     "gultDes": "Unlimited, every 15 years renewed",
     "mofa": "B197",
+    "mofasub": "",
     "mofaDes": "Training partly on automatic",
     "zusa": "Additive material",
     "zusaDes": "2 lessons - double lessons",
@@ -747,6 +748,46 @@
     ]
   },
   "licenseC": {
+    "grid1Data": [
+      {
+        "heading": "C",
+        "sub": "ab 21",
+        "des": "Trucks over 3.5 t + trailer 750 kg"
+      },
+      {
+        "heading": "CE",
+        "sub": "ab 21",
+        "des": "C + trailer over 750 kg"
+      },
+      {
+        "heading": "C1",
+        "sub": "ab 18",
+        "des": "Trucks 3.5 to 7.5 t + trailer 750 kg"
+      },
+      {
+        "heading": "C1E",
+        "sub": "ab 18",
+        "des": "C1 + trailer over 750 kg"
+      }
+    ],
+    "fileTitle": "ID - passport photo - eye test certificate - <br /> first aid - medical report - if applicable, <br/>  certificate of good conduct",
+    "roadTitle": "Special trips:<br />5 overland<br />2 highway<br />3 nights",
+    "grund": "Basic material",
+    "grundDes": "6 lessons - double lessons",
+    "gult": "Validity",
+    "gultDes": "Limited to 5 years then renewal",
+    "mofa": "Requirement",
+    "mofasub": "",
+    "mofaDes": "Driving license class B",
+    "zusa": "Additive material",
+    "zusaDes": "4-10 lessons - double lessons",
+    "heading1": "Important information",
+    "heading2": "Cost overview",
+    "heading3": "Step-by-step guide to a class B driving license",
+    "heading4": "Notice",
+    "title1": "Driving license ",
+    "title2": "Class C",
+    "descriptionhero": "Trucks and motor vehicles with a maximum permissible mass of more than 3,500 kg.",
     "stepsData": [
       {
         "title": "Driving school registration",
@@ -877,13 +918,52 @@
       },
       {
         "title": "Total costs",
-        "cost": "5.000–10.000 € (depending on individual learning time and region)"
+        "cost": "<span style={{ fontWeight: 400 }}>5.000–10.000 €</span> (depending on individual learning time and region)"
       }
     ],
     "notice": "Notice",
     "noticeDetails": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future."
   },
   "licenseD": {
+    "grid1Data": [
+      {
+        "heading": "B",
+        "sub": "from 18",
+        "des": "Cars up to 3.5 t, max. 8 seats"
+      },
+      {
+        "heading": "B17",
+        "sub": "from 17",
+        "des": "Accompanied driving"
+      },
+      {
+        "heading": "BE",
+        "sub": "from 18",
+        "des": "Car + trailer up to 3.5 t"
+      },
+      {
+        "heading": "B96",
+        "sub": "from 18",
+        "des": "Car + trailer over 750 kg"
+      }
+    ],
+    "fileTitle": "ID - passport photo - eye test - first aid<br />If applicable, driver's license copy",
+    "roadTitle": "Special trips:<br />5 overland<br />4 highway<br />3 nights",
+    "grund": "Basic material",
+    "grundDes": "12 lessons - double lessons",
+    "gult": "Validity",
+    "gultDes": "Unlimited, every 15 years renewed",
+    "mofa": "B197",
+    "mofaDes": "Training partly on automatic",
+    "zusa": "Additive material",
+    "zusaDes": "2 lessons - double lessons",
+    "heading1": "Important information",
+    "heading2": "Cost overview",
+    "heading3": "Step-by-step guide to a class B driving license",
+    "heading4": "Notice",
+    "title1": "Driving license ",
+    "title2": "Class B",
+    "descriptionhero": "Passenger cars, light commercial vehicles, motor homes and other vehicles, excluding motorcycles",
     "stepsData": [
       {
         "title": "Driving school registration",
@@ -1021,6 +1101,45 @@
     "noticeDetails": "We only offer our service to the driving classes of A and B, as well as Rewrite (conversion of foreign driving licenses of these classes to German ones). Due to small number of driving schools supporting the driving classes of C, D, L, and T, it is not feasible for us to support these classes at the moment. We hope that we can support these classes as well in the future."
   },
   "licenseLT": {
+    "grid1Data": [
+      {
+        "heading": "B",
+        "sub": "from 18",
+        "des": "Cars up to 3.5 t, max. 8 seats"
+      },
+      {
+        "heading": "B17",
+        "sub": "from 17",
+        "des": "Accompanied driving"
+      },
+      {
+        "heading": "BE",
+        "sub": "from 18",
+        "des": "Car + trailer up to 3.5 t"
+      },
+      {
+        "heading": "B96",
+        "sub": "from 18",
+        "des": "Car + trailer over 750 kg"
+      }
+    ],
+    "fileTitle": "ID - passport photo - eye test - first aid<br />If applicable, driver's license copy",
+    "roadTitle": "Special trips:<br />5 overland<br />4 highway<br />3 nights",
+    "grund": "Basic material",
+    "grundDes": "12 lessons - double lessons",
+    "gult": "Validity",
+    "gultDes": "Unlimited, every 15 years renewed",
+    "mofa": "B197",
+    "mofaDes": "Training partly on automatic",
+    "zusa": "Additive material",
+    "zusaDes": "2 lessons - double lessons",
+    "heading1": "Important information",
+    "heading2": "Cost overview",
+    "heading3": "Step-by-step guide to a class B driving license",
+    "heading4": "Notice",
+    "title1": "Driving license ",
+    "title2": "Class B",
+    "descriptionhero": "Passenger cars, light commercial vehicles, motor homes and other vehicles, excluding motorcycles",
     "stepsData": [
       {
         "title": "Driving school registration",
