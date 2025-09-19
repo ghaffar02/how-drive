@@ -1467,5 +1467,21 @@
         "html": "The following conditions apply:<ul style=\"margin-left: 18px\"><li>If individual provisions of these Terms and Conditions are or become invalid, the validity of the remaining provisions shall remain unaffected.</li><li>The law of the Federal Republic of Germany shall apply.</li><li>The place of jurisdiction is <strong>[Location]</strong>, provided the user is a merchant or does not have a general place of jurisdiction in Germany.</li></ul>"
       }
     ]
+  },
+  "helpPage": {
+    "pageTitle": "Help Center!",
+    "pageDes": "Finde die Antwort deiner Fragen in unserem Help Center.",
+    "title1": "Starten",
+    "des1": "Lerne die Grundlagen",
+    "title2": "Konto",
+    "des2": "Lerne die Grundlagen",
+    "title3": "Rechnung",
+    "des3": "Lerne die Grundlagen",
+    "title4": "Daten",
+    "des4": "Lerne die Grundlagen",
+    "title5": "Troubleshooting",
+    "des5": "Lerne die Grundlagen",
+    "title6": "Sontiges",
+    "des6": "Lerne die Grundlagen"
   }
 }

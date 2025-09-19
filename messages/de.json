@@ -343,29 +343,15 @@
     "description": "Wir verknupfen Fahrschüler und Fahrschulen durch ein digitales Service.",
     "features": {
       "heading": "Funktionen",
-      "items": [
-        "Fahrschüler",
-        "Fahrschulen",
-        "Installation"
-      ]
+      "items": ["Fahrschüler", "Fahrschulen", "Installation"]
     },
     "services": {
       "heading": "Service",
-      "items": [
-        "Über uns",
-        "Preise",
-        "Kontakt",
-        "Hilfe"
-      ]
+      "items": ["Über uns", "Preise", "Kontakt", "Hilfe"]
     },
     "support": {
       "heading": "Rechtliches",
-      "items": [
-        "Impressum",
-        "Datenschutz",
-        "AGB",
-        "Cookie"
-      ]
+      "items": ["Impressum", "Datenschutz", "AGB", "Cookie"]
     }
   },
   "loginPage": {
@@ -1467,5 +1453,21 @@
         "html": "Folgende Bedingungen gelten:<ul style=\"margin-left: 18px\"><li>Sollten einzelne Bestimmungen dieser AGB unwirksam sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt.</li><li>Es gilt das Recht der Bundesrepublik Deutschland.</li><li>Gerichtsstand ist <strong>[Ort]</strong>, sofern der:die Nutzer:in Vollkaufmann:frau ist oder keinen allgemeinen Gerichtsstand in Deutschland hat.</li></ul>"
       }
     ]
+  },
+  "helpPage": {
+    "pageTitle": "Help Center!",
+    "pageDes": "Finde die Antwort deiner Fragen in unserem Help Center.",
+    "title1": "Starten",
+    "des1": "Lerne die Grundlagen",
+    "title2": "Konto",
+    "des2": "Lerne die Grundlagen",
+    "title3": "Rechnung",
+    "des3": "Lerne die Grundlagen",
+    "title4": "Daten",
+    "des4": "Lerne die Grundlagen",
+    "title5": "Troubleshooting",
+    "des5": "Lerne die Grundlagen",
+    "title6": "Sontiges",
+    "des6": "Lerne die Grundlagen"
   }
 }
