@@ -343,29 +343,15 @@
     "description": "Wir verknupfen Fahrschüler und Fahrschulen durch ein digitales Service.",
     "features": {
       "heading": "Funktionen",
-      "items": [
-        "Fahrschüler",
-        "Fahrschulen",
-        "Installation"
-      ]
+      "items": ["Fahrschüler", "Fahrschulen", "Installation"]
     },
     "services": {
       "heading": "Service",
-      "items": [
-        "Über uns",
-        "Preise",
-        "Kontakt",
-        "Hilfe"
-      ]
+      "items": ["Über uns", "Preise", "Kontakt", "Hilfe"]
     },
     "support": {
       "heading": "Rechtliches",
-      "items": [
-        "Impressum",
-        "Datenschutz",
-        "AGB",
-        "Cookie"
-      ]
+      "items": ["Impressum", "Datenschutz", "AGB", "Cookie"]
     }
   },
   "loginPage": {
@@ -1705,5 +1691,22 @@
         ]
       }
     ]
+  },
+  "contactPage": {
+    "pageTitle": "Kontaktiere uns!",
+    "pageDes": "Hast du die Antwort deiner Frage in unserem Help Center nicht gefunden oder hast du einfach Fragen? Schreibe uns gerne eine E-Mail.",
+    "input1": "Name",
+    "input2": "E-Mail",
+    "input3": "Thema",
+    "input3a": "Allgemeine Frage",
+    "input3b": "Fehlfunktion",
+    "input3c": "Sonstige",
+    "input4": "Anfragedetails",
+    "input4a": "Wie können wir dich helfen?",
+    "error1": "Name ist erforderlich",
+    "error2": "E-Mail ist erforderlich",
+    "error3": "Thema ist erforderlich",
+    "error4": "Nachricht ist erforderlich",
+    "button": "Schicken"
   }
 }

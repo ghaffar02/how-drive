@@ -343,29 +343,15 @@
     "description": "We connect learner drivers and driving schools through a digital service.",
     "features": {
       "heading": "Function",
-      "items": [
-        "Students",
-        "Schools",
-        "Installation"
-      ]
+      "items": ["Students", "Schools", "Installation"]
     },
     "services": {
       "heading": "Service",
-      "items": [
-        "About Us",
-        "Pricing",
-        "Contact",
-        "Help"
-      ]
+      "items": ["About Us", "Pricing", "Contact", "Help"]
     },
     "support": {
       "heading": "Legal",
-      "items": [
-        "Imprint",
-        "Privacy Policy",
-        "Terms",
-        "Cookie"
-      ]
+      "items": ["Imprint", "Privacy Policy", "Terms", "Cookie"]
     }
   },
   "loginPage": {
@@ -1705,5 +1691,22 @@
         ]
       }
     ]
+  },
+  "contactPage": {
+    "pageTitle": "Contact us!",
+    "pageDes": "If you haven't found the answer to your question in our Help Center, or if you simply have questions, feel free to send us an email.",
+    "input1": "Name",
+    "input2": "Email",
+    "input3": "Topic",
+    "input3a": "General question",
+    "input3b": "Malfunction",
+    "input3c": "Other",
+    "input4": "Request details",
+    "input4a": "How can we help you?",
+    "error1": "Name is required",
+    "error2": "Email is required",
+    "error3": "Topic is required",
+    "error4": "Message is required",
+    "button":"Send"
   }
 }
