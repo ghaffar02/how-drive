@@ -3,9 +3,6 @@ import React from 'react';
 import {Box, Divider, Typography, Paper, Popper, Grow} from '@mui/material';
 import Image, {StaticImageData} from 'next/image';
 import logo from '@/assets/pngs/logo.png';
-// import KeyboardArrowDownRounded from '@mui/icons-material/KeyboardArrowDownRounded';
-
-// local imports
 // tab icons
 import home_black from '@/assets/svgs/dashboard-student/home_black.svg';
 import home_blue from '@/assets/svgs/dashboard-student/home_blue.svg';
@@ -19,18 +16,16 @@ import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
 import setting from '@/assets/svgs/dashboard-student/setting.svg';
 import email from '@/assets/svgs/dashboard-student/email.svg';
 import login from '@/assets/svgs/dashboard-student/login.svg';
+import arrow from '@/assets/svgs/dashboard-student/arrow.svg';
 
 // name spliting function
 function getInitials(fullName: string): string {
   if (!fullName) return '';
-
   const words = fullName.trim().split(' ').filter(Boolean);
   let initials = words[0]?.[0] || '';
-
   if (words.length > 1) {
     initials += words[1][0];
   }
-
   return initials.toUpperCase();
 }
 
@@ -348,6 +343,7 @@ export function MenuDropdown({label, items, profileIcon}: PropsDropdown) {
             >
               {items.map((item) => (
                 <Box
+                  onClick={() => setOpen(false)}
                   key={item.label}
                   sx={{
                     borderRadius: '12px',
@@ -358,32 +354,62 @@ export function MenuDropdown({label, items, profileIcon}: PropsDropdown) {
                     display: 'flex',
                     alignItems: 'center',
                     gap: '12px',
+                    justifyContent: 'space-between',
                     '&:hover': {
-                      backgroundColor: 'rgba(48, 88, 255, 0.10)'
+                      backgroundColor: 'rgba(48, 88, 255, 0.10)',
+                      '& .arrowWrapper': {
+                        opacity: 1,
+                        transform: 'translateX(0)'
+                      }
                     }
                   }}
                 >
                   <Box
                     sx={{
-                      height: '20px',
-                      width: '20px'
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '12px'
+                    }}
+                  >
+                    <Box sx={{height: '20px', width: '20px'}}>
+                      <Image
+                        style={{height: '100%', width: '100%'}}
+                        src={item.menuIcon}
+                        alt={item.label}
+                      />
+                    </Box>
+                    <Typography
+                      sx={{
+                        ...textStyle,
+                        transition: 'all 0.24s ease-in-out',
+                        fontWeight: '400'
+                      }}
+                    >
+                      {item.label}
+                    </Typography>
+                  </Box>
+
+                  {/* Arrow wrapper for animation */}
+                  <Box
+                    className="arrowWrapper"
+                    sx={{
+                      opacity: 0,
+                      transform: 'translateX(-10px)',
+                      transition: 'all 0.3s ease-in-out',
+                      display: 'flex',
+                      alignItems: 'center'
                     }}
                   >
                     <Image
-                      style={{height: '100%', width: '100%'}}
-                      src={item.menuIcon}
-                      alt={item.label}
+                      style={{
+                        height: '16px',
+                        width: '16px',
+                        objectFit: 'cover'
+                      }}
+                      src={arrow}
+                      alt="arrow icon"
                     />
                   </Box>
-                  <Typography
-                    sx={{
-                      ...textStyle,
-                      transition: 'all 0.24s ease-in-out',
-                      fontWeight: '400'
-                    }}
-                  >
-                    {item.label}
-                  </Typography>
                 </Box>
               ))}
             </Paper>
