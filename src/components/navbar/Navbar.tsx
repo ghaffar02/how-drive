@@ -1,7 +1,7 @@
 'use client';
 
 import {useState} from 'react';
-import {Box, Typography, Button} from '@mui/material';
+import {Box, Typography, Button, Link} from '@mui/material';
 import Image from 'next/image';
 import MenuDropdown from './MenuDropdown';
 import LanguageDropdown from './LanguageDropdown';
@@ -15,6 +15,7 @@ import {useRouter} from 'next/navigation';
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const t = useTranslations('Navbar');
+  const t2 = useTranslations('pageRoutes');
   const router = useRouter();
 
   return (
@@ -114,64 +115,79 @@ export default function Navbar() {
               {/* the dropdowns and testuals */}
               <MenuDropdown
                 label={t('aboutus.text')}
+                // items={[
+                //   t('aboutus.item1'),
+                //   t('aboutus.item2'),
+                //   t('aboutus.item3')
+                // ]}
                 items={[
-                  t('aboutus.item1'),
-                  t('aboutus.item2'),
-                  t('aboutus.item3')
+                  {text: t('aboutus.item1'), href: t2('contact')},
+                  {text: t('aboutus.item2'), href: t2('contact')},
+                  {text: t('aboutus.item3'), href: t2('contact')}
                 ]}
               />
               <MenuDropdown
                 label={t('features.text')}
+                // items={[
+                //   t('features.item1'),
+                //   t('features.item2'),
+                //   t('features.item3')
+                // ]}
                 items={[
-                  t('features.item1'),
-                  t('features.item2'),
-                  t('features.item3')
+                  {text: t('features.item1'), href: ''},
+                  {text: t('features.item2'), href: ''},
+                  {text: t('features.item3'), href: ''}
                 ]}
               />
-              <Typography
-                sx={{
-                  color: '#000000',
-                  fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                  fontWeight: '300',
-                  lineHeight: '1.6em',
-                  transition: 'all 0.3s ease-in-out',
-                  padding: '4px 8px',
-                  borderRadius: '5px',
-                  '&:hover': {
-                    backgroundColor: 'rgba(48, 88, 255, 0.1)'
-                  },
-                  cursor: 'pointer',
-                  fontFamily:
-                    '"Inter", "Inter Placeholder", sans-serif !important'
-                }}
-              >
-                {t('pricing')}
-              </Typography>
-              <Typography
-                sx={{
-                  color: '#000000',
-                  fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                  fontWeight: '300',
-                  lineHeight: '1.6em',
-                  transition: 'all 0.3s ease-in-out',
-                  padding: '4px 8px',
-                  borderRadius: '5px',
-                  '&:hover': {
-                    backgroundColor: 'rgba(48, 88, 255, 0.1)'
-                  },
-                  cursor: 'pointer',
-                  fontFamily:
-                    '"Inter", "Inter Placeholder", sans-serif !important'
-                }}
-              >
-                {t('contact')}
-              </Typography>
+              <Link sx={{textDecoration: 'none'}} href={t2('pricing')}>
+                <Typography
+                  sx={{
+                    color: '#000000',
+                    fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                    fontWeight: '300',
+                    lineHeight: '1.6em',
+                    transition: 'all 0.3s ease-in-out',
+                    padding: '4px 8px',
+                    borderRadius: '5px',
+                    '&:hover': {
+                      backgroundColor: 'rgba(48, 88, 255, 0.1)'
+                    },
+                    cursor: 'pointer',
+                    fontFamily:
+                      '"Inter", "Inter Placeholder", sans-serif !important'
+                  }}
+                >
+                  {t('pricing')}
+                </Typography>
+              </Link>
+              <Link sx={{textDecoration: 'none'}} href={t2('contact')}>
+                <Typography
+                  sx={{
+                    color: '#000000',
+                    fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                    fontWeight: '300',
+                    lineHeight: '1.6em',
+                    transition: 'all 0.3s ease-in-out',
+                    padding: '4px 8px',
+                    borderRadius: '5px',
+                    '&:hover': {
+                      backgroundColor: 'rgba(48, 88, 255, 0.1)'
+                    },
+                    cursor: 'pointer',
+                    fontFamily:
+                      '"Inter", "Inter Placeholder", sans-serif !important'
+                  }}
+                >
+                  {t('contact')}
+                </Typography>
+              </Link>
             </Box>
             {/* the icons,butotn  */}
             <Box sx={{display: 'flex', gap: '24px', alignItems: 'center'}}>
               <LanguageDropdown />
               <Image src={profile} alt="profile" height={35} width={35} />
               <Button
+                href={t2('login')}
                 disableRipple
                 sx={{
                   backgroundColor: 'transparent',

@@ -6,16 +6,19 @@ interface ContentWithImageProps {
   description?: string;
   mediaSrc?: string;
   direction?: string;
+  id?: string;
 }
 
 const ContentWithImage: React.FC<ContentWithImageProps> = ({
   title,
   description,
   mediaSrc,
-  direction = 'row'
+  direction = 'row',
+  id
 }) => {
   return (
     <Box
+      id={id}
       sx={{
         bgcolor: '#FAFAFA',
         padding: {
@@ -58,7 +61,6 @@ const ContentWithImage: React.FC<ContentWithImageProps> = ({
             <Typography
               sx={{
                 fontSize: {xs: '16px', sm: '17px', lg: '18px'},
-                // lineHeight: {xs: '22px', sm: '100%'},
                 fontFamily: '"Inter", sans-serif  !important',
                 width: '100%',
                 color: '#2D3748',
@@ -77,11 +79,8 @@ const ContentWithImage: React.FC<ContentWithImageProps> = ({
             alt="media"
             sx={{
               width: '100%',
-              // maxWidth: '580px',
               height: '100%',
-              // objectFit: 'cover',
               borderRadius: '30px'
-              // boxShadow: '14px 8px 16px rgba(243, 236, 218, 0.15)'
             }}
           />
         </Box>

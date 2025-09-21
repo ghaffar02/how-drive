@@ -1,10 +1,16 @@
 'use client';
 
 import * as React from 'react';
-import {Box, Typography, Paper, Popper, Grow} from '@mui/material';
+import {Box, Typography, Paper, Popper, Grow, Link} from '@mui/material';
 import KeyboardArrowDownRounded from '@mui/icons-material/KeyboardArrowDownRounded';
 
-type Props = {label: string; items: string[]};
+type Props = {
+  label: string;
+  items: {
+    text: string;
+    href: string;
+  }[];
+};
 
 const textStyle = {
   color: '#000000',
@@ -17,6 +23,7 @@ const textStyle = {
 export default function MenuDropdown({label, items}: Props) {
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLDivElement | null>(null);
+
   const enter = () => setOpen(true);
   const leave = () => setOpen(false);
 
@@ -77,7 +84,7 @@ export default function MenuDropdown({label, items}: Props) {
                 flexDirection: 'column'
               }}
             >
-              {items.map((text) => (
+              {items.map(({text, href}) => (
                 <Box
                   key={text}
                   sx={{
@@ -94,18 +101,24 @@ export default function MenuDropdown({label, items}: Props) {
                     width: '100%'
                   }}
                 >
-                  <Typography
-                    sx={{
-                      ...textStyle,
-                      transition: 'all 0.24s ease-in-out',
-                      '&:hover': {
-                        color: '#4611F5'
-                      },
-                      fontWeight: '400'
-                    }}
+                  <Link
+                    href={href}
+                    underline="none"
+                    sx={{width: '100%', display: 'block'}}
                   >
-                    {text}
-                  </Typography>
+                    <Typography
+                      sx={{
+                        ...textStyle,
+                        transition: 'all 0.24s ease-in-out',
+                        '&:hover': {
+                          color: '#4611F5'
+                        },
+                        fontWeight: '400'
+                      }}
+                    >
+                      {text}
+                    </Typography>
+                  </Link>
                 </Box>
               ))}
             </Paper>
