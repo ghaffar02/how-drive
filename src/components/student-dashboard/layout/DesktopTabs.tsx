@@ -36,7 +36,7 @@ type Props = {
   setHoverKey: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
-export default function TabStudentLayout({
+export default function DesktopTabs({
   activeKey,
   setActiveKey,
   hoverKey,

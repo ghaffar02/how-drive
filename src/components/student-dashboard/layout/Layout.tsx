@@ -1,10 +1,10 @@
 'use client';
 import React from 'react';
 import {Box} from '@mui/material';
-import TabStudentLayout from './TabStudentLayout';
-import TabStudentLayoutMobile from './TabStudentLayoutMobile';
+import TabStudentLayout from './DesktopTabs';
+import TabStudentLayoutMobile from './MobileTabs';
 
-export default function StudentLayout() {
+export default function StudentDashboard() {
   const [activeKey, setActiveKey] = React.useState<string>('home');
   const [hoverKey, setHoverKey] = React.useState<string | null>(null);
 

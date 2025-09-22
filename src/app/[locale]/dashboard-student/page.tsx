@@ -1,5 +1,5 @@
 'use client';
-import StudentLayout from '@/components/student-dashboard/layout/StudentLayout';
+import StudentLayout from '@/components/student-dashboard/layout/Layout';
 import {Box} from '@mui/material';
 
 export default function StudentDashboard() {

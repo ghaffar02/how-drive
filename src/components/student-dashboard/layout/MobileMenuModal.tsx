@@ -8,7 +8,7 @@ type Props = {
   onClose: () => void;
 };
 
-export default function TabMenuModalForMobile({onClose}: Props) {
+export default function MobileMenuModal({onClose}: Props) {
   return (
     <Box
       onClick={onClose}

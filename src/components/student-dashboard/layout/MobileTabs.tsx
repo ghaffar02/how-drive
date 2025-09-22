@@ -13,7 +13,7 @@ import calander_blue from '@/assets/svgs/dashboard-student/calander_blue.svg';
 import message_black from '@/assets/svgs/dashboard-student/message_black.svg';
 import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
 import menu from '@/assets/svgs/dashboard-student/menu.svg';
-import TabMenuModalForMobile from './TabMenuModalForMobile';
+import TabMenuModalForMobile from './MobileMenuModal';
 
 type Props = {
   activeKey: string;
@@ -22,7 +22,7 @@ type Props = {
   setHoverKey: React.Dispatch<React.SetStateAction<string | null>>;
 };
 
-export default function TabStudentLayoutMobile({
+export default function MobileTabs({
   activeKey,
   setActiveKey,
   hoverKey,
