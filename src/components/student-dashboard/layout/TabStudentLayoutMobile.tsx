@@ -80,7 +80,8 @@ export default function TabStudentLayoutMobile({
           border: '1px solid #fff',
           width: '100%',
           borderRadius: '18px',
-          padding: '12px'
+          padding: '12px',
+          backgroundColor: 'rgba(248, 250, 252, 0.3)'
         }}
       >
         {/* all navigations */}

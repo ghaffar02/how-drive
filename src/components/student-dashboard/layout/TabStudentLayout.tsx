@@ -96,7 +96,8 @@ export default function TabStudentLayout({
           height: '100%',
           display: 'flex',
           justifyContent: 'space-between',
-          flexDirection: 'column'
+          flexDirection: 'column',
+          backgroundColor: 'rgba(248, 250, 252, 0.3)'
         }}
       >
         {/* logo here */}
