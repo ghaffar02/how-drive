@@ -2,6 +2,7 @@
 import React from 'react';
 import {Box} from '@mui/material';
 import TabStudentLayout from './TabStudentLayout';
+import TabStudentLayoutMobile from './TabStudentLayoutMobile';
 
 export default function StudentLayout() {
   const [activeKey, setActiveKey] = React.useState<string>('home');
@@ -25,16 +26,27 @@ export default function StudentLayout() {
           margin: 'auto',
           padding: '4px',
           display: 'flex',
-          height: '100%'
+          height: '100%',
+          flexDirection: {xs: 'column-reverse', md: 'row'}
         }}
       >
         {/* the tab section  */}
-        <TabStudentLayout
-          activeKey={activeKey}
-          setActiveKey={setActiveKey}
-          hoverKey={hoverKey}
-          setHoverKey={setHoverKey}
-        />
+        <Box sx={{display: {xs: 'none', md: 'block'}}}>
+          <TabStudentLayout
+            activeKey={activeKey}
+            setActiveKey={setActiveKey}
+            hoverKey={hoverKey}
+            setHoverKey={setHoverKey}
+          />
+        </Box>
+        <Box sx={{display: {xs: 'block', md: 'none'}}}>
+          <TabStudentLayoutMobile
+            activeKey={activeKey}
+            setActiveKey={setActiveKey}
+            hoverKey={hoverKey}
+            setHoverKey={setHoverKey}
+          />
+        </Box>
 
         {/* and the detail section */}
         <Box
