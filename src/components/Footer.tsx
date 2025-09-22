@@ -1,4 +1,6 @@
-import {Box, Typography} from '@mui/material';
+'use client';
+
+import {Box, Typography, Link} from '@mui/material';
 import {useTranslations} from 'next-intl';
 
 import Logo from '@/assets/pngs/logo.png';
@@ -6,9 +8,13 @@ import Image from 'next/image';
 import facebook from '@/assets/svgs/facebook.svg';
 import instagram from '@/assets/svgs/instagram.svg';
 import tiktok from '@/assets/svgs/tiktok.svg';
+
 type FooterSection = {
   heading: string;
-  items: string[];
+  items: {
+    text: string;
+    href: string;
+  }[];
 };
 
 type FooterData = {
@@ -21,7 +27,6 @@ type FooterData = {
 export default function Footer() {
   const t = useTranslations();
   const footerData = t.raw('Footer') as FooterData;
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const {description, ...sections} = footerData;
 
   return (
@@ -46,6 +51,7 @@ export default function Footer() {
             flexDirection: {xs: 'column', sm: 'row'}
           }}
         >
+          {/* Logo + Description + Socials */}
           <Box sx={{maxWidth: '350px'}}>
             <Box
               sx={{
@@ -83,12 +89,12 @@ export default function Footer() {
               sx={{
                 color: '#2D3748',
                 fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                fontFamily: '"Inter", sans-serif  !important',
+                fontFamily: '"Inter", sans-serif !important',
                 paddingTop: '10px',
                 lineHeight: '1.5em'
               }}
             >
-              {t('Footer.description')}
+              {description}
             </Typography>
             <Box
               sx={{
@@ -115,6 +121,8 @@ export default function Footer() {
               />
             </Box>
           </Box>
+
+          {/* Footer Sections */}
           <Box
             sx={{
               display: 'flex',
@@ -124,7 +132,6 @@ export default function Footer() {
               justifyContent: {xs: 'space-between', sm: 'unset'},
               maxWidth: {lg: '540px', sm: '350px', xs: '80%'},
               mb: {xs: '55px', sm: '40px'}
-              // bgcolor: 'red'
             }}
           >
             {Object.entries(sections).map(([key, section]) => (
@@ -143,7 +150,7 @@ export default function Footer() {
                     paddingBottom: '10px',
                     wordBreak: 'break-word',
                     whiteSpace: 'normal',
-                    fontFamily: '"Inter", sans-serif  !important',
+                    fontFamily: '"Inter", sans-serif !important',
                     overflowWrap: 'break-word'
                   }}
                 >
@@ -151,26 +158,34 @@ export default function Footer() {
                 </Typography>
                 <Box>
                   {section.items.map((item, index) => (
-                    <Typography
+                    <Link
                       key={index}
+                      href={item.href}
+                      underline="none"
                       sx={{
-                        color: '#626b7b',
-                        fontSize: {xs: '12px', md: '13px', lg: '14px'},
-                        paddingBottom:
-                          index !== section.items.length - 1 ? '10px' : 0,
-                        wordBreak: 'break-word',
-                        whiteSpace: 'normal',
-                        overflowWrap: 'break-word',
-                        cursor: 'pointer',
-                        fontFamily: '"Inter", sans-serif  !important',
-                        transition: 'all 0.4s ease-in-out',
-                        '&:hover': {
-                          color: '#4616F5'
-                        }
+                        textDecoration: 'none'
                       }}
                     >
-                      {item}
-                    </Typography>
+                      <Typography
+                        sx={{
+                          color: '#626b7b',
+                          fontSize: {xs: '12px', md: '13px', lg: '14px'},
+                          paddingBottom:
+                            index !== section.items.length - 1 ? '10px' : 0,
+                          wordBreak: 'break-word',
+                          whiteSpace: 'normal',
+                          overflowWrap: 'break-word',
+                          cursor: 'pointer',
+                          fontFamily: '"Inter", sans-serif !important',
+                          transition: 'all 0.4s ease-in-out',
+                          '&:hover': {
+                            color: '#4616F5'
+                          }
+                        }}
+                      >
+                        {item.text}
+                      </Typography>
+                    </Link>
                   ))}
                 </Box>
               </Box>
@@ -178,6 +193,8 @@ export default function Footer() {
           </Box>
         </Box>
       </Box>
+
+      {/* Footer Bottom */}
       <Box>
         <Typography
           sx={{
@@ -188,7 +205,7 @@ export default function Footer() {
             paddingBottom: {xs: '56px', lg: '24px'},
             wordBreak: 'break-word',
             whiteSpace: 'normal',
-            fontFamily: '"Inter", sans-serif  !important',
+            fontFamily: '"Inter", sans-serif !important',
             overflowWrap: 'break-word',
             textAlign: 'center',
             paddingX: {

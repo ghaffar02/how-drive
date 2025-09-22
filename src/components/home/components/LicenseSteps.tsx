@@ -15,6 +15,7 @@ import BgImage from '@/assets/svgs/lincense-steps/backgroundFeature.svg';
 
 export default function LicenseSteps() {
   const t = useTranslations('LicenseSteps');
+  const t2 = useTranslations('pageRoutes');
   return (
     <Box
       sx={{
@@ -62,7 +63,12 @@ export default function LicenseSteps() {
             gridRow: {xs: 'span 2', sm: 'span 2', lg: 'span 1'}
           }}
         >
-          <GridCard title={t('classA')} description={t('dataA')} img={bike} />
+          <GridCard
+            href={t2('drivingLicenseClassA')}
+            title={t('classA')}
+            description={t('dataA')}
+            img={bike}
+          />
         </Box>
 
         <Box
@@ -72,6 +78,7 @@ export default function LicenseSteps() {
           }}
         >
           <GridCard
+            href={t2('drivingLicenseClassB')}
             title={t('classB')}
             description={t('dataB')}
             img={car}
@@ -81,6 +88,7 @@ export default function LicenseSteps() {
 
         <Box sx={{gridColumn: 'span 4', gridRow: 'span 1'}}>
           <GridCardSmall
+            href={t2('drivingLicenseClassC')}
             title={t('classC')}
             description={t('dataC')}
             img={truck}
@@ -89,6 +97,7 @@ export default function LicenseSteps() {
 
         <Box sx={{gridColumn: 'span 4', gridRow: 'span 1'}}>
           <GridCardSmall
+            href={t2('drivingLicenseClassD')}
             title={t('classD')}
             description={t('dataD')}
             img={bus}
@@ -97,6 +106,7 @@ export default function LicenseSteps() {
 
         <Box sx={{gridColumn: 'span 4', gridRow: 'span 1'}}>
           <GridCardSmall
+            href={t2('drivingLicenseClassLAndT')}
             title={t('classL')}
             description={t('dataL')}
             img={tractor}
@@ -105,6 +115,7 @@ export default function LicenseSteps() {
 
         <Box sx={{gridColumn: 'span 8', gridRow: 'span 1'}}>
           <GridCard
+            href={t2('rewriteOfDrivingLicenses')}
             title={t('rewrite')}
             description={t('dataRewrite')}
             img={arrow}
@@ -131,6 +142,7 @@ export default function LicenseSteps() {
           }}
         >
           <GridCard
+            href={t2('drivingLicenseClassA')}
             title={t('classA')}
             description={t('dataA')}
             img={bike}
@@ -145,7 +157,7 @@ export default function LicenseSteps() {
           }}
         >
           <GridCard
-            title={t('classB')}
+            href={t2('drivingLicenseClassB')}
             description={t('dataB')}
             img={car}
             flexdir={true}
@@ -154,7 +166,7 @@ export default function LicenseSteps() {
 
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 2'}}>
           <GridCard
-            title={t('rewrite')}
+            href={t2('rewriteOfDrivingLicenses')}
             description={t('dataRewrite')}
             img={arrow}
             width="720px"
@@ -163,6 +175,7 @@ export default function LicenseSteps() {
 
         <Box sx={{gridColumn: 'span 6', gridRow: 'span 2'}}>
           <GridCardSmall
+            href={t2('drivingLicenseClassC')}
             title={t('classC')}
             description={t('dataC')}
             img={truck}
@@ -171,6 +184,7 @@ export default function LicenseSteps() {
 
         <Box sx={{gridColumn: 'span 6', gridRow: 'span 2'}}>
           <GridCardSmall
+            href={t2('drivingLicenseClassD')}
             title={t('classD')}
             description={t('dataD')}
             img={bus}
@@ -179,6 +193,7 @@ export default function LicenseSteps() {
 
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 2'}}>
           <GridCard
+            href={t2('drivingLicenseClassLAndT')}
             title={t('classL')}
             description={t('dataL')}
             img={tractor}
@@ -205,10 +220,16 @@ export default function LicenseSteps() {
             gridRow: {xs: 'span 4', sm: 'span 4', lg: 'span 4'}
           }}
         >
-          <GridCard title={t('classB')} description={t('dataB')} img={car} />
+          <GridCard
+            href={t2('drivingLicenseClassB')}
+            title={t('classB')}
+            description={t('dataB')}
+            img={car}
+          />
         </Box>
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 4'}}>
           <GridCard
+            href={t2('rewriteOfDrivingLicenses')}
             title={t('rewrite')}
             description={t('dataRewrite')}
             img={arrow}
@@ -217,6 +238,7 @@ export default function LicenseSteps() {
 
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 2'}}>
           <GridCardSmall
+            href={t2('drivingLicenseClassA')}
             title={t('classA')}
             description={t('dataA')}
             img={bike}
@@ -225,6 +247,7 @@ export default function LicenseSteps() {
 
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 2'}}>
           <GridCardSmall
+            href={t2('drivingLicenseClassC')}
             title={t('classC')}
             description={t('dataC')}
             img={truck}
@@ -233,6 +256,7 @@ export default function LicenseSteps() {
 
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 2'}}>
           <GridCardSmall
+            href={t2('drivingLicenseClassD')}
             title={t('classD')}
             description={t('dataD')}
             img={bus}
@@ -240,6 +264,7 @@ export default function LicenseSteps() {
         </Box>
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 2'}}>
           <GridCardSmall
+            href={t2('drivingLicenseClassLAndT')}
             title={t('classL')}
             description={t('dataL')}
             img={tractor}

@@ -1,6 +1,5 @@
 'use client';
 import {Box, Typography, Button} from '@mui/material';
-
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/Footer';
 import TrustServiceSection from '@/components/home/TrustServiceSection';
@@ -9,9 +8,8 @@ import four from '@/assets/svgs/404/four.svg';
 import sadEmoji from '@/assets/svgs/404/sadEmoji.svg';
 import Image from 'next/image';
 
-export default function Page() {
-  const t = useTranslations('AboutUs');
-  const featuresData = t.raw('featuresData');
+export default function Page404() {
+  const t = useTranslations('PageError');
 
   return (
     <>
@@ -73,7 +71,7 @@ export default function Page() {
             fontFamily: 'Satoshi700 !important'
           }}
         >
-          Hoppla! Etwas ist schiefgelaufen!
+          {t('heading')}
         </Typography>
         <Typography
           sx={{
@@ -86,9 +84,7 @@ export default function Page() {
             margin: 'auto'
           }}
         >
-          Die von dir gesuchte Seite existiert nicht in unserer Datenbank! Gehe
-          gerne auf unsere Homepage oder versuche es mit anderen Seiten unserer
-          Website.
+          {t('description')}
         </Typography>
         <Button
           disableRipple
@@ -119,7 +115,7 @@ export default function Page() {
             }
           }}
         >
-          Zur Homepage
+          {t('button')}
         </Button>
       </Box>
       <TrustServiceSection />

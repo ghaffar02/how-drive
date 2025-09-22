@@ -365,27 +365,60 @@
     "features": {
       "heading": "Function",
       "items": [
-        "Students",
-        "Schools",
-        "Installation"
+        {
+          "text": "Students",
+          "href": ""
+        },
+        {
+          "text": "Schools",
+          "href": ""
+        },
+        {
+          "text": "Installation",
+          "href": ""
+        }
       ]
     },
     "services": {
       "heading": "Service",
       "items": [
-        "About Us",
-        "Pricing",
-        "Contact",
-        "Help"
+        {
+          "text": "About Us",
+          "href": "/en/about-us"
+        },
+        {
+          "text": "Pricing",
+          "href": "/en/pricing"
+        },
+        {
+          "text": "Contact",
+          "href": "/en/contact"
+        },
+        {
+          "text": "Help",
+          "href": "/en/help"
+        }
       ]
     },
     "support": {
       "heading": "Legal",
       "items": [
-        "Imprint",
-        "Privacy Policy",
-        "Terms",
-        "Cookie"
+        {
+          "text": "Imprint",
+          "href": "/en/imprint"
+        },
+        {
+          "text": "Privacy Policy",
+          "href": "/en/privacy"
+        },
+        {
+          "text": "Terms",
+          "href": "/en/terms"
+        },
+        {
+          "text": "Cookie",
+          "href": "/en/cookies"
+        }
       ]
     }
   },
@@ -1823,5 +1856,10 @@
     "error3": "Topic is required",
     "error4": "Message is required",
     "button": "Send"
+  },
+  "PageError": {
+    "heading": "Oops! Something went wrong!",
+    "description": "The page you are looking for does not exist in our database! Feel free to go to our homepage or try other pages on our website.",
+    "button": "To Homepage"
   }
 }

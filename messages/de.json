@@ -365,27 +365,60 @@
     "features": {
       "heading": "Funktionen",
       "items": [
-        "Fahrschüler",
-        "Fahrschulen",
-        "Installation"
+        {
+          "text": "Fahrschüler",
+          "href": ""
+        },
+        {
+          "text": "Fahrschulen",
+          "href": ""
+        },
+        {
+          "text": "Installation",
+          "href": ""
+        }
       ]
     },
     "services": {
       "heading": "Service",
       "items": [
-        "Über uns",
-        "Preise",
-        "Kontakt",
-        "Hilfe"
+        {
+          "text": "Über uns",
+          "href": "/en/about-us"
+        },
+        {
+          "text": "Preise",
+          "href": "/en/pricing"
+        },
+        {
+          "text": "Kontakt",
+          "href": "/en/contact"
+        },
+        {
+          "text": "Hilfe",
+          "href": "/en/help"
+        }
       ]
     },
     "support": {
       "heading": "Rechtliches",
       "items": [
-        "Impressum",
-        "Datenschutz",
-        "AGB",
-        "Cookie"
+        {
+          "text": "Impressum",
+          "href": "/en/imprint"
+        },
+        {
+          "text": "Datenschutz",
+          "href": "/en/privacy"
+        },
+        {
+          "text": "AGB",
+          "href": "/en/terms"
+        },
+        {
+          "text": "Cookie",
+          "href": "/en/cookies"
+        }
       ]
     }
   },
@@ -1823,5 +1856,10 @@
     "error3": "Thema ist erforderlich",
     "error4": "Nachricht ist erforderlich",
     "button": "Schicken"
+  },
+  "PageError": {
+    "heading": "Hoppla! Etwas ist schiefgelaufen!",
+    "description": "Die von dir gesuchte Seite existiert nicht in unserer Datenbank! Gehe gerne auf unsere Homepage oder versuche es mit anderen Seiten unserer Website.",
+    "button": "Zur Homepage"
   }
 }
