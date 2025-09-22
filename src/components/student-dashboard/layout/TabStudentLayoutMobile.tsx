@@ -78,10 +78,12 @@ export default function TabStudentLayoutMobile({
       <Box
         sx={{
           border: '1px solid #fff',
-          width: '100%',
+          width: 'calc(100% - 56px)',
           borderRadius: '18px',
           padding: '12px',
-          backgroundColor: 'rgba(248, 250, 252, 0.3)'
+          backgroundColor: 'rgba(248, 250, 252, 0.3)',
+          position: 'fixed',
+          bottom: '29px'
         }}
       >
         {/* all navigations */}
