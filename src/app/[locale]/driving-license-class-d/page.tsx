@@ -3,7 +3,7 @@ import {Box} from '@mui/material';
 
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/Footer';
-import TrustServiceSection from '@/components/home/TrustServiceSection';
+// import TrustServiceSection from '@/components/home/TrustServiceSection';
 import HeroClasses from '@/components/driving-license/HeroClasses';
 import ClassGrid from '@/components/driving-license/ClassGrid';
 import ImportantInformation from '@/components/driving-license/ImportantInformation';
@@ -48,7 +48,7 @@ export default function Page() {
         <Costoverview drivingCosts={drivingCosts} heading={t('heading2')} />
         <DrivingSteps steps={stepsData} heading={t('heading3')} />
         <Notice heading={t('notice')} description={t('noticeDetails')} />
-        <TrustServiceSection />
+        {/* <TrustServiceSection /> */}
         <Footer />
       </Box>
     </>

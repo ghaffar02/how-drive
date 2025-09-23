@@ -10,7 +10,7 @@ import ImportantInformation from '@/components/driving-license/ImportantInformat
 import Costoverview from '@/components/driving-license/CostOverview';
 import {useTranslations} from 'next-intl';
 import DrivingSteps from '@/components/driving-license/Tab';
-import Notice from '@/components/driving-license/Notice';
+// import Notice from '@/components/driving-license/Notice';
 import CostOverviewTwo from '@/components/driving-license/CostOverviewTwo';
 
 export default function Page() {
@@ -61,16 +61,16 @@ export default function Page() {
           heading={t('heading2')}
           Description={t('descost1')}
         />
-        <Box sx={{mt: '-80px'}}>
-          <Costoverview
-            drivingCosts={drivingCosts2}
-            heading={t('heading4')}
-            Description={t('descost2')}
-          />
-        </Box>
+        {/* <Box sx={{mt: '-80px'}}> */}
+        <Costoverview
+          drivingCosts={drivingCosts2}
+          heading={t('heading4')}
+          Description={t('descost2')}
+        />
+        {/* </Box> */}
 
         <DrivingSteps steps={stepsData} heading={t('heading3')} />
-        <Notice heading={t('notice')} description={t('noticeDetails')} />
+        {/* <Notice heading={t('notice')} description={t('noticeDetails')} /> */}
         <TrustServiceSection />
         <Footer />
       </Box>
