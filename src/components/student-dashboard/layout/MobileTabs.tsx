@@ -88,13 +88,14 @@ export default function MobileTabs({
           backgroundColor: 'rgba(248, 250, 252, 0.3)',
           position: 'fixed',
           bottom: '29px',
-          height: '77px'
+          // height: '77px'
+          height: menuOpen ? 'fit-content' : '77px'
         }}
       >
         {/* all navigations */}
         <Box
           sx={{
-            display: 'flex',
+            display: menuOpen ? 'block' : 'flex',
             justifyContent: 'flex-end',
             width: '100%',
             gap: '8px'

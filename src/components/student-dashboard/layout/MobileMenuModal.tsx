@@ -3,32 +3,98 @@ import React from 'react';
 import {Box} from '@mui/material';
 import Image from 'next/image';
 import cross from '@/assets/svgs/dashboard-student/cross.svg';
+import logo from '@/assets/pngs/logo.png';
+import ProfileDropdown from './ProfileDropdown';
+// dropdown icons
+import setting from '@/assets/svgs/dashboard-student/setting.svg';
+import email from '@/assets/svgs/dashboard-student/email.svg';
+import login from '@/assets/svgs/dashboard-student/login.svg';
 
 type Props = {
   onClose: () => void;
 };
 
 export default function MobileMenuModal({onClose}: Props) {
+  // dropdown state + ref
+  const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef<HTMLDivElement>(null!);
+
+  function getInitials(fullName: string): string {
+    if (!fullName) return '';
+    const words = fullName.trim().split(' ').filter(Boolean);
+    let initials = words[0]?.[0] || '';
+    if (words.length > 1) {
+      initials += words[1][0];
+    }
+    return initials.toUpperCase();
+  }
+  const initials = getInitials('Hans zustermann');
   return (
-    <Box
-      onClick={onClose}
-      sx={{
-        cursor: 'pointer',
-        width: 'fit-content',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        padding: '12px'
-      }}
-    >
-      <Image
-        src={cross}
-        alt="close"
-        width={25}
-        height={25}
-        unoptimized
-        style={{display: 'block', margin: 'auto'}}
-      />
-    </Box>
+    <>
+      <Box
+        sx={{
+          height: '400px',
+          width: '100%'
+          // backgroundColor: 'red',
+        }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            backgroundColor: 'red',
+            alignItems: 'center'
+          }}
+        >
+          <Box
+            sx={{
+              height: '50px',
+              width: '50px',
+              cursor: 'pointer'
+            }}
+          >
+            <Image
+              style={{height: '100%', width: '100%'}}
+              src={logo}
+              alt="logo"
+              priority
+            />
+          </Box>
+          <Box sx={{height: '40px', width: '40px'}}>
+            <ProfileDropdown
+              label={initials}
+              items={[
+                {label: 'Einstellungen', menuIcon: setting},
+                {label: 'Support', menuIcon: email},
+                {label: 'Abmelden', menuIcon: login}
+              ]}
+              open={open}
+              setOpen={setOpen}
+              anchorRef={anchorRef}
+            />
+          </Box>
+        </Box>
+        <Box
+          onClick={onClose}
+          sx={{
+            cursor: 'pointer',
+            width: 'fit-content',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: '12px'
+          }}
+        >
+          <Image
+            src={cross}
+            alt="close"
+            width={25}
+            height={25}
+            unoptimized
+            style={{display: 'block', margin: 'auto'}}
+          />
+        </Box>
+      </Box>
+    </>
   );
 }

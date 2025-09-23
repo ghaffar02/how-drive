@@ -1,8 +1,9 @@
 'use client';
 import React from 'react';
-import {Box, Divider, Typography, Paper, Popper, Grow} from '@mui/material';
-import Image, {StaticImageData} from 'next/image';
+import {Box, Divider, Typography} from '@mui/material';
+import Image from 'next/image';
 import logo from '@/assets/pngs/logo.png';
+
 // tab icons
 import home_black from '@/assets/svgs/dashboard-student/home_black.svg';
 import home_blue from '@/assets/svgs/dashboard-student/home_blue.svg';
@@ -12,13 +13,16 @@ import calander_black from '@/assets/svgs/dashboard-student/calander_black.svg';
 import calander_blue from '@/assets/svgs/dashboard-student/calander_blue.svg';
 import message_black from '@/assets/svgs/dashboard-student/message_black.svg';
 import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
+
 // dropdown icons
 import setting from '@/assets/svgs/dashboard-student/setting.svg';
 import email from '@/assets/svgs/dashboard-student/email.svg';
 import login from '@/assets/svgs/dashboard-student/login.svg';
-import arrow from '@/assets/svgs/dashboard-student/arrow.svg';
 
-// name spliting function
+// your independent dropdown
+import ProfileDropdown from './ProfileDropdown';
+
+// name splitting function
 function getInitials(fullName: string): string {
   if (!fullName) return '';
   const words = fullName.trim().split(' ').filter(Boolean);
@@ -80,12 +84,16 @@ export default function DesktopTabs({
       iconHover: message_blue
     }
   ];
-  const name = 'aohn zoe example';
-  const initials = getInitials(name);
+
+  // profile initials
+  const initials = getInitials('aohn zoe example');
+
+  // dropdown state + ref
+  const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef<HTMLDivElement>(null!);
 
   return (
     <>
-      {/* the tab section  */}
       <Box
         sx={{
           border: '1px solid #fff',
@@ -100,7 +108,7 @@ export default function DesktopTabs({
           backgroundColor: 'rgba(248, 250, 252, 0.3)'
         }}
       >
-        {/* logo here */}
+        {/* logo */}
         <Box>
           <Box
             sx={{
@@ -126,12 +134,11 @@ export default function DesktopTabs({
             }}
           />
         </Box>
+
         {/* all navigations */}
         <Box
           sx={{
-            '& > :not(:last-child)': {
-              marginBottom: '16px'
-            },
+            '& > :not(:last-child)': {marginBottom: '16px'},
             paddingY: '24px'
           }}
         >
@@ -165,10 +172,7 @@ export default function DesktopTabs({
                   width={25}
                   height={25}
                   unoptimized
-                  style={{
-                    display: 'block',
-                    margin: 'auto'
-                  }}
+                  style={{display: 'block', margin: 'auto'}}
                 />
                 <Typography
                   sx={{
@@ -189,7 +193,8 @@ export default function DesktopTabs({
             );
           })}
         </Box>
-        {/* profile */}
+
+        {/* profile dropdown */}
         <Box>
           <Divider
             sx={{
@@ -199,225 +204,21 @@ export default function DesktopTabs({
               marginBottom: {xs: '24px', md: '50px'}
             }}
           />
-          <Box
-            sx={{
-              height: '40px',
-              width: '40px',
-              backgroundColor: '#FFFFFF',
-              borderRadius: '50%',
-              margin: 'auto',
-              cursor: 'pointer',
-              '&:hover': {
-                backgroundColor: '#DDE0F0'
-              },
-              '&:active': {
-                backgroundColor: '#B9C2EB'
-              },
-              transition: 'all 0.1s ease-in',
-              position: 'relative'
-            }}
-          >
-            {/* user name profile */}
-            <MenuDropdown
+          <Box sx={{margin: 'auto', width: 'fit-content'}}>
+            <ProfileDropdown
               label={initials}
               items={[
                 {label: 'Einstellungen', menuIcon: setting},
                 {label: 'Support', menuIcon: email},
                 {label: 'Abmelden', menuIcon: login}
               ]}
-              // profileIcon={profileIcon}
+              open={open}
+              setOpen={setOpen}
+              anchorRef={anchorRef}
             />
           </Box>
         </Box>
       </Box>
-      {/* end tab section */}
-    </>
-  );
-}
-
-// the dropdown
-type DropdownItem = {
-  label: string;
-  menuIcon: string;
-};
-
-type PropsDropdown = {
-  label: string;
-  items: DropdownItem[];
-  profileIcon?: StaticImageData;
-};
-
-export function MenuDropdown({label, items, profileIcon}: PropsDropdown) {
-  const textStyle = {
-    color: '#000000',
-    fontSize: '14px',
-    fontWeight: '300',
-    lineHeight: '14px',
-    fontFamily: '"Inter", "Inter Placeholder", sans-serif !important'
-  };
-  const [open, setOpen] = React.useState(false);
-  const anchorRef = React.useRef<HTMLDivElement | null>(null);
-  const enter = () => setOpen(!open);
-
-  return (
-    <>
-      <Box
-        ref={anchorRef}
-        onClick={enter}
-        sx={{
-          position: 'relative',
-          display: 'inline-flex',
-          alignItems: 'center',
-          cursor: 'pointer',
-          height: '40px',
-          width: '40px',
-          backgroundColor: '#FFFFFF',
-          borderRadius: '50%',
-          margin: 'auto',
-          '&:hover': {
-            backgroundColor: '#DDE0F0'
-          },
-          '&:active': {
-            backgroundColor: '#B9C2EB'
-          },
-          transition: 'all 0.1s ease-in',
-          overflow: 'hidden'
-        }}
-      >
-        {profileIcon && (
-          <Image
-            style={{height: '100%', width: '100%', objectFit: 'cover'}}
-            src={profileIcon}
-            alt="profile icon"
-          />
-        )}
-        {!profileIcon && (
-          <Typography
-            sx={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              color: '#2D3748',
-              fontWeight: '500',
-              fontFamily: '"Inter", sans-serif  !important',
-              fontSize: {xs: '14px', md: '15px', lg: '16px'},
-              textTransform: 'capitalize'
-            }}
-          >
-            {label}
-          </Typography>
-        )}
-      </Box>
-
-      <Popper
-        onMouseEnter={() => setOpen(true)}
-        open={open}
-        anchorEl={anchorRef.current}
-        placement="bottom"
-        transition
-        modifiers={[{name: 'offset', options: {offset: [49, 10]}}]}
-        sx={{
-          zIndex: 1300
-        }}
-      >
-        {({TransitionProps}) => (
-          <Grow {...TransitionProps} style={{transformOrigin: 'bottom center'}}>
-            <Paper
-              elevation={8}
-              sx={{
-                minWidth: '200px',
-                borderRadius: '12px',
-                boxShadow:
-                  'rgba(0, 0, 0, 0.05) 0px 10px 20px 0px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px',
-                padding: '8px',
-                display: 'flex',
-                justifyContent: 'flex-start',
-                alignItems: 'flex-start',
-                flexDirection: 'column',
-                backdropFilter: 'blur(15px)',
-                transform: 'translate(100px,0)',
-                maxWidth: '200px',
-                gap: '4px',
-                backgroundColor: 'rgba(255, 255, 255, 0.85)',
-                border: '1px solid #fff'
-              }}
-            >
-              {items.map((item) => (
-                <Box
-                  onClick={() => setOpen(false)}
-                  key={item.label}
-                  sx={{
-                    borderRadius: '12px',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease-in-out',
-                    p: '12px',
-                    width: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '12px',
-                    justifyContent: 'space-between',
-                    '&:hover': {
-                      backgroundColor: 'rgba(48, 88, 255, 0.10)',
-                      '& .arrowWrapper': {
-                        opacity: 1,
-                        transform: 'translateX(0)'
-                      }
-                    }
-                  }}
-                >
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '12px'
-                    }}
-                  >
-                    <Box sx={{height: '20px', width: '20px'}}>
-                      <Image
-                        style={{height: '100%', width: '100%'}}
-                        src={item.menuIcon}
-                        alt={item.label}
-                      />
-                    </Box>
-                    <Typography
-                      sx={{
-                        ...textStyle,
-                        transition: 'all 0.24s ease-in-out',
-                        fontWeight: '400'
-                      }}
-                    >
-                      {item.label}
-                    </Typography>
-                  </Box>
-
-                  {/* Arrow wrapper for animation */}
-                  <Box
-                    className="arrowWrapper"
-                    sx={{
-                      opacity: 0,
-                      transform: 'translateX(-10px)',
-                      transition: 'all 0.3s ease-in-out',
-                      display: 'flex',
-                      alignItems: 'center'
-                    }}
-                  >
-                    <Image
-                      style={{
-                        height: '16px',
-                        width: '16px',
-                        objectFit: 'cover'
-                      }}
-                      src={arrow}
-                      alt="arrow icon"
-                    />
-                  </Box>
-                </Box>
-              ))}
-            </Paper>
-          </Grow>
-        )}
-      </Popper>
     </>
   );
 }
