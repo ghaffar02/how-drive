@@ -3,6 +3,7 @@ import React from 'react';
 import {Box} from '@mui/material';
 import TabStudentLayout from './DesktopTabs';
 import TabStudentLayoutMobile from './MobileTabs';
+import Home from './home/Home';
 
 export default function StudentDashboard() {
   const [activeKey, setActiveKey] = React.useState<string>('home');
@@ -27,7 +28,8 @@ export default function StudentDashboard() {
           padding: '4px',
           display: 'flex',
           height: '100%',
-          flexDirection: {xs: 'column-reverse', md: 'row'}
+          flexDirection: {xs: 'column-reverse', md: 'row'},
+          gap: '16px'
         }}
       >
         {/* the tab section  */}
@@ -57,7 +59,9 @@ export default function StudentDashboard() {
             alignItems: 'center',
             flex: 1
           }}
-        ></Box>
+        >
+          <Home />
+        </Box>
       </Box>
     </Box>
   );
