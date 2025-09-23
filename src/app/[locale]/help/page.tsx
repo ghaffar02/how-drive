@@ -54,7 +54,7 @@ export default function Page() {
 
   return (
     <>
-      <Box>
+      <Box sx={{background: '#fafafa'}}>
         <Box
           sx={{
             position: 'fixed',

@@ -80,7 +80,8 @@ const ContentWithImage: React.FC<ContentWithImageProps> = ({
             sx={{
               width: '100%',
               height: '100%',
-              borderRadius: '30px'
+              borderRadius: '30px',
+              objectFit: 'cover'
             }}
           />
         </Box>

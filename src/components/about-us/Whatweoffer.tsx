@@ -13,11 +13,12 @@ type WhatweofferProps = {
 };
 
 export default function Whatweoffer({Whatweoffer, heading}: WhatweofferProps) {
+  const MotionBox = motion(Box);
   return (
     <Box sx={{bgcolor: '#FAFAFA'}}>
       <Box
         sx={{
-          maxWidth: '1280px',
+          maxWidth: '1380px',
           textAlign: 'center',
 
           margin: ' auto',
@@ -70,9 +71,9 @@ export default function Whatweoffer({Whatweoffer, heading}: WhatweofferProps) {
             {Whatweoffer.map((item, index) => {
               const isEven = index % 2 === 0;
               return (
-                <Box
+                <MotionBox
                   key={index}
-                  component={motion.div}
+                  // component={motion.div}
                   initial={{opacity: 0, x: isEven ? -50 : 50}} // left or right
                   animate={{opacity: 1, x: 0}}
                   exit={{opacity: 0, y: -20}}
@@ -142,7 +143,7 @@ export default function Whatweoffer({Whatweoffer, heading}: WhatweofferProps) {
                             sx={{
                               width: '100%',
                               color: '#2D3748',
-                              fontSize: {xs: '16px', md: '18px', lg: '20px'},
+                              fontSize: {xs: '16px', sm: '17px', lg: '18px'},
                               fontWeight: 500,
                               fontFamily:
                                 '"Inter", "Inter Placeholder", sans-serif !important'
@@ -156,7 +157,7 @@ export default function Whatweoffer({Whatweoffer, heading}: WhatweofferProps) {
                               // maxWidth: '650px',
                               width: '100%',
                               color: '#2D3748',
-                              fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                              fontSize: {xs: '14px', sm: '15px', lg: '16px'},
                               fontFamily:
                                 '"Inter", "Inter Placeholder", sans-serif !important',
                               fontWeight: 300
@@ -168,7 +169,7 @@ export default function Whatweoffer({Whatweoffer, heading}: WhatweofferProps) {
                       </Box>
                     );
                   })}
-                </Box>
+                </MotionBox>
               );
             })}
           </Box>

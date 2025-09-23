@@ -6,13 +6,13 @@ import Footer from '@/components/Footer';
 import HeroAboutus from '@/components/about-us/Hero';
 import Pricing from '@/components/prices/Pricing';
 
-// import {useTranslations} from 'next-intl';
+import {useTranslations} from 'next-intl';
 // import HeroClass from '@/components/driving-license/HeroClasses';
 
 // import Notice from '@/components/driving-license/Notice';
 
 export default function Page() {
-  // const t = useTranslations('licenseA');
+  const t = useTranslations('Pricing');
   // const Whatweoffer = t.raw('drivingRules');
 
   return (
@@ -32,10 +32,7 @@ export default function Page() {
         >
           <Navbar />
         </Box>
-        <HeroAboutus
-          title="Our prices"
-          description="Using our platform is free for driving students. Driving schools have the opportunity to try the platform for free for the first month."
-        />
+        <HeroAboutus title={t('heroTitle')} description={t('heroDes')} />
         <Pricing title={false} />
         <Footer />
       </Box>

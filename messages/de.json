@@ -142,6 +142,8 @@
     ]
   },
   "Pricing": {
+    "heroTitle": "Unsere Preise",
+    "heroDes": "Die Nutzung unserer Plattform ist kostenlos für Fahrschüler. Fahrschulen haben die Möglichkeit, die Plattform im ersten Monat kostenlos zu probieren.",
     "title": "Unsere Preise für Fahrschüler und Fahrschulen",
     "PricingData": [
       {

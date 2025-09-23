@@ -144,6 +144,7 @@ export default function ContactForm() {
             <TextField
               id="subject"
               select
+              SelectProps={{native: true}}
               defaultValue=""
               placeholder="Select..."
               {...register('subject', {required: `${t('error3')}`})}
@@ -152,6 +153,7 @@ export default function ContactForm() {
               sx={{
                 width: '100%',
                 mt: '10px',
+                position: 'relative',
                 '& .MuiInputBase-root': {
                   borderRadius: '10px',
                   background: '#fff',
@@ -165,9 +167,9 @@ export default function ContactForm() {
                 }
               }}
             >
-              <MenuItem value="generalquestions">{t('input3a')}</MenuItem>
-              <MenuItem value="malfunction">{t('input3b')}</MenuItem>
-              <MenuItem value="other">{t('input3c')}</MenuItem>
+              <option value="generalquestions">{t('input3a')}</option>
+              <option value="malfunction">{t('input3b')}</option>
+              <option value="other">{t('input3c')}</option>
             </TextField>
           </Box>
           <Box>

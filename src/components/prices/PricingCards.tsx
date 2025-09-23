@@ -27,14 +27,15 @@ export default function PricingCards({
         return (
           <MotionBox
             key={index}
-            initial={{y: 80, opacity: 0}}
-            whileInView={{y: 0, opacity: 1}}
-            viewport={{once: true}}
-            transition={{
-              duration: 0.5,
-              ease: 'easeOut',
-              delay: index * 0.25
-            }}
+            // Mentioned in the video to remove animation for this part
+            // initial={{y: 80, opacity: 0}}
+            // whileInView={{y: 0, opacity: 1}}
+            // viewport={{once: true}}
+            // transition={{
+            //   duration: 0.5,
+            //   ease: 'easeOut',
+            //   delay: index * 0.25
+            // }}
             sx={{
               flexShrink: 0,
               maxWidth: '440px',

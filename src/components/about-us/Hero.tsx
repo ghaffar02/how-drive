@@ -19,7 +19,7 @@ export default function HeroAboutus({title, description}: hero) {
             sm: '48px 24px',
             md: '48px'
           },
-          mt: '120px',
+          mt: '82px',
           // background: '#FAFAFA',
           background:
             'linear-gradient(60deg, #ea00ff 0%, rgb(70, 17, 245) 50%, rgb(30, 245, 255) 100%)'
@@ -27,7 +27,7 @@ export default function HeroAboutus({title, description}: hero) {
       >
         <Box
           sx={{
-            height: '630px',
+            height: '60vh',
             width: '100%',
             maxWidth: '1280px',
             m: '0 auto',

@@ -15,7 +15,7 @@ export default function Pricing({title = true}: Pricing) {
         sx={{
           bgcolor: '#FAFAFA',
           boxSizing: 'border-box',
-          p: {xs: '48px 16px', md: '48px 24px', lg: '48px'}
+          p: {xs: '56px 16px', md: '64px 24px', lg: '80px 48px'}
         }}
       >
         <Box
