@@ -1865,27 +1865,33 @@
     "button": "Zur Homepage"
   },
   "Dashboard": {
-    "header": {
-      "data": [
-        {
-          "title1": "Führerscheinstelle",
-          "title2": "Nicht angemeldet",
-          "title3": "Angemeldet",
-          "tooltip": "Nicht von der Fahrerlaubnisbehörde oder TÜV erhalten.Bereitgestellt von entweder dir oder deiner Fahrschule."
-        },
-        {
-          "title1": "Theorieprüfung",
-          "title2": "Nicht angemeldet",
-          "title3": "25.07.2025",
-          "tooltip": "Nicht von der Fahrerlaubnisbehörde oder TÜV erhalten.Bereitgestellt von entweder dir oder deiner Fahrschule."
-        },
-        {
-          "title1": "Praktische Prüfung",
-          "title2": "Nicht angemeldet",
-          "title3": "25.07.2025",
-          "tooltip": "Nicht von der Fahrerlaubnisbehörde oder TÜV erhalten.Bereitgestellt von entweder dir oder deiner Fahrschule."
-        }
-      ]
+    "home": {
+      "header": {
+        "data": [
+          {
+            "title1": "Führerscheinstelle",
+            "title2": "Nicht angemeldet",
+            "title3": "Angemeldet",
+            "tooltip": "Nicht von der Fahrerlaubnisbehörde oder TÜV erhalten.Bereitgestellt von entweder dir oder deiner Fahrschule."
+          },
+          {
+            "title1": "Theorieprüfung",
+            "title2": "Nicht angemeldet",
+            "title3": "25.07.2025",
+            "tooltip": "Nicht von der Fahrerlaubnisbehörde oder TÜV erhalten.Bereitgestellt von entweder dir oder deiner Fahrschule."
+          },
+          {
+            "title1": "Praktische Prüfung",
+            "title2": "Nicht angemeldet",
+            "title3": "25.07.2025",
+            "tooltip": "Nicht von der Fahrerlaubnisbehörde oder TÜV erhalten.Bereitgestellt von entweder dir oder deiner Fahrschule."
+          }
+        ]
+      },
+      "appointment": {
+        "title1": "Nächster Termin",
+        "title2": "Kein neuer Termin!"
+      }
     }
   }
 }

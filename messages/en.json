@@ -1865,27 +1865,33 @@
     "button": "To Homepage"
   },
   "Dashboard": {
-    "header": {
-      "data": [
-        {
-          "title1": "Driving license office",
-          "title2": "Not registered",
-          "title3": "Registered",
-          "tooltip": "Not obtained from the driving license office or TÜV. Provided by either you or your driving school."
-        },
-        {
-          "title1": "Theory exam",
-          "title2": "Not registered",
-          "title3": "25.07.2025",
-          "tooltip": "Not obtained from the driving license office or TÜV. Provided by either you or your driving school."
-        },
-        {
-          "title1": "Practical exam",
-          "title2": "Not registered",
-          "title3": "25.07.2025",
-          "tooltip": "Not obtained from the driving license office or TÜV. Provided by either you or your driving school."
-        }
-      ]
+    "home": {
+      "header": {
+        "data": [
+          {
+            "title1": "Driving license office",
+            "title2": "Not registered",
+            "title3": "Registered",
+            "tooltip": "Not obtained from the driving license office or TÜV. Provided by either you or your driving school."
+          },
+          {
+            "title1": "Theory exam",
+            "title2": "Not registered",
+            "title3": "25.07.2025",
+            "tooltip": "Not obtained from the driving license office or TÜV. Provided by either you or your driving school."
+          },
+          {
+            "title1": "Practical exam",
+            "title2": "Not registered",
+            "title3": "25.07.2025",
+            "tooltip": "Not obtained from the driving license office or TÜV. Provided by either you or your driving school."
+          }
+        ]
+      },
+      "appointment":{
+        "title1":"Next Appointment",
+        "title2":"No new appointment set!"
+      }
     }
   }
 }

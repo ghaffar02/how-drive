@@ -1,6 +1,7 @@
 import {Box} from '@mui/material';
 import React from 'react';
 import Header from './components/Header';
+import Appointment from './components/Appointment';
 import LessonCard from './components/LessonCard';
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         }}
       >
         <Header />
+        <Appointment />
         {/* <Header /> */}
       </Box>
       <LessonCard />
