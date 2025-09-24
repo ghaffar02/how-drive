@@ -10,12 +10,16 @@ export default function Home() {
         width: '100%',
         height: '100%',
         background: 'rgba(248,250,252,0.3)',
-        padding: '24px',
+        padding: {xs: '8px', lg: '24px'},
         border: '1px solid #fff',
-        borderRadius: '0px 24px 24px 0px'
+        borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
+        display: 'flex',
+        flexDirection: {xs: 'row', md: 'column'},
+        gap: '20px'
       }}
     >
       <Header />
+      {/* <Header /> */}
     </Box>
   );
 }
