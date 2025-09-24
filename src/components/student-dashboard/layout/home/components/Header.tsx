@@ -8,38 +8,47 @@ import Building from '@/assets/svgs/dashboard-student/home/building.svg';
 import Tooltip from '@/assets/svgs/dashboard-student/home/tooltip.svg';
 import Grade from '@/assets/svgs/dashboard-student/home/grade.svg';
 import Steering from '@/assets/svgs/dashboard-student/home/steering.svg';
-
-const data = [
-  {
-    title1: 'Führerscheinstelle',
-    title2: 'Nicht angemeldet',
-    title3: 'Angemeldet',
-    status: true,
-    imgSrc: Building.src,
-    bgColor: 'rgba(235,0,255,0.1)',
-    id: 1
-  },
-  {
-    title1: 'Theorieprüfung',
-    title2: 'Nicht angemeldet',
-    title3: '25.07.2025',
-    status: false,
-    imgSrc: Grade.src,
-    bgColor: '#00bcd11a',
-    id: 2
-  },
-  {
-    title1: 'Praktische Prüfung',
-    title2: 'Nicht angemeldet',
-    title3: '25.07.2025',
-    status: false,
-    imgSrc: Steering.src,
-    bgColor: '#1270ff1a',
-    id: 3
-  }
-];
+import {useTranslations} from 'next-intl';
 
 export default function Header() {
+  const t = useTranslations('Dashboard.header');
+  const titles = t.raw('data');
+  const data = [
+    {
+      title1: 'Führerscheinstelle',
+      title2: 'Nicht angemeldet',
+      title3: 'Angemeldet',
+      status: true,
+      imgSrc: Building.src,
+      bgColor: 'rgba(235,0,255,0.1)',
+      id: 1,
+      tooltip: ''
+    },
+    {
+      title1: 'Theorieprüfung',
+      title2: 'Nicht angemeldet',
+      title3: '25.07.2025',
+      status: false,
+      imgSrc: Grade.src,
+      bgColor: '#00bcd11a',
+      id: 2,
+      tooltip: ''
+    },
+    {
+      title1: 'Praktische Prüfung',
+      title2: 'Nicht angemeldet',
+      title3: '25.07.2025',
+      status: false,
+      imgSrc: Steering.src,
+      bgColor: '#1270ff1a',
+      id: 3,
+      tooltip: ''
+    }
+  ];
+  const updatedData = data.map((item, index) => ({
+    ...item,
+    ...titles[index]
+  }));
   return (
     <Box
       sx={{
@@ -54,7 +63,7 @@ export default function Header() {
         gap: {xs: '8px', lg: '10px'}
       }}
     >
-      {data.map((item, i) => (
+      {updatedData.map((item, i) => (
         <Card key={i} {...item} />
       ))}
     </Box>
@@ -69,6 +78,7 @@ type CardProps = {
   imgSrc: StaticImageData;
   bgColor: string;
   id: number;
+  tooltip: string;
 };
 
 function Card({
@@ -78,7 +88,8 @@ function Card({
   status,
   imgSrc,
   bgColor,
-  id
+  id,
+  tooltip
 }: CardProps) {
   const [show, setShow] = useState(status);
   const [hover, setHover] = useState(false);
@@ -182,7 +193,7 @@ function Card({
                   top: 30,
                   left: -75,
                   // height: '150px',
-                  width: {xs: '180px', md: 'auto'},
+                  width: {xs: '180px', md: '200px'},
                   background: '#fff',
                   padding: '16px',
                   borderRadius: '12px',
@@ -201,9 +212,7 @@ function Card({
                     color: '#3f3f46'
                   }}
                 >
-                  Nicht von der Fahrerlaubnisbehörde oder TÜV
-                  erhalten.Bereitgestellt von entweder dir oder deiner
-                  Fahrschule.
+                  {tooltip}
                 </Typography>
               </Box>
             )}
