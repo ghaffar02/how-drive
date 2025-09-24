@@ -1,6 +1,7 @@
 import {Box} from '@mui/material';
 import React from 'react';
 import Header from './components/Header';
+import Appointment from './components/Appointment';
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
       }}
     >
       <Header />
-      {/* <Header /> */}
+      <Appointment />
     </Box>
   );
 }

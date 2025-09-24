@@ -11,7 +11,7 @@ import Steering from '@/assets/svgs/dashboard-student/home/steering.svg';
 import {useTranslations} from 'next-intl';
 
 export default function Header() {
-  const t = useTranslations('Dashboard.header');
+  const t = useTranslations('Dashboard.home.header');
   const titles = t.raw('data');
   const data = [
     {
@@ -130,7 +130,7 @@ function Card({
                 md: '14px',
                 lg: '16px'
               },
-              fontFamily: '"Inter", sans-serif',
+              fontFamily: '"Inter", sans-serif !important',
               color: '#3f3f46'
             }}
           >
@@ -157,7 +157,7 @@ function Card({
                 md: '14px',
                 lg: '16px'
               },
-              fontFamily: '"Inter", sans-serif',
+              fontFamily: '"Inter", sans-serif !important',
               color: show ? '#07a66b' : '#d93a32',
               fontWeight: '600',
               cursor: 'pointer'
@@ -181,9 +181,9 @@ function Card({
                 position: 'absolute',
                 background: 'transparent',
                 height: '15px',
-                width: '65px',
+                width: {xs: '30px', sm: '65px', md: '65px'},
                 top: 18,
-                left: -20
+                left: {xs: -5, sm: -20}
               }}
             />
             {hover && (
@@ -208,7 +208,7 @@ function Card({
                       md: '14px',
                       lg: '16px'
                     },
-                    fontFamily: '"Inter", sans-serif',
+                    fontFamily: '"Inter", sans-serif !important',
                     color: '#3f3f46'
                   }}
                 >
