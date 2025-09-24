@@ -22,7 +22,7 @@ export default function HeroAboutus({title, description}: hero) {
           mt: '82px',
           // background: '#FAFAFA',
           background:
-            'linear-gradient(60deg, #ea00ff 0%, rgb(70, 17, 245) 50%, rgb(30, 245, 255) 100%)'
+            'linear-gradient(60deg, #ea00ff 0%, #4611f5ff 50%, rgb(30, 245, 255) 100%)'
         }}
       >
         <Box
