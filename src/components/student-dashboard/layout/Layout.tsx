@@ -66,9 +66,6 @@ export default function StudentDashboard() {
           }}
         >
           <Home />
-          <Home />
-          <Home />
-          <Home />
         </Box>
       </Box>
     </Box>
