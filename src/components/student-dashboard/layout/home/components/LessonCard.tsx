@@ -14,16 +14,16 @@ export default function LessonCard() {
   return (
     <Box
       sx={{
-        maxWidth: {xs: '357px'},
+        maxWidth: {xs: '100%', lg: '357px'},
         width: '100%',
         background: 'rgba(255,255,255,0.75)',
-        padding: {xs: '16px 12px 16px 16px', lg: '24px 16px 24px 24px '},
+        padding: {xs: '16px', md: '24px 16px 24px 24px '},
         borderRadius: '18px',
         display: 'flex',
         flexDirection: {xs: 'column', md: 'row'},
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        gap: {xs: '8px', lg: '10px'}
+        alignItems: {xs: 'end', md: 'center'},
+        justifyContent: 'space-between'
+        // gap: {xs: '8px', lg: '10px'}
       }}
     >
       {/* Icon + Title */}
@@ -34,15 +34,15 @@ export default function LessonCard() {
           flexDirection: 'column',
           alignItems: 'start',
           justifyContent: 'start',
-          gap: {xs: '4px', lg: '24px'}
+          gap: {xs: '4px', md: '24px'}
         }}
       >
         <Typography
           sx={{
-            fontSize: {xs: '12px', md: '14px', lg: '16px'},
+            fontSize: {xs: '14px', md: '15px', lg: '16px'},
             fontFamily: '"Inter", sans-serif',
-            color: '#3f3f46',
-            fontWeight: '600'
+            color: '#2D3748',
+            fontWeight: '500'
           }}
         >
           Theory lessons
@@ -51,10 +51,10 @@ export default function LessonCard() {
         {/* Progress text + tooltip */}
         <Box
           sx={{
-            pl: {xs: '16px', lg: '24px'},
+            pl: {xs: '0px', md: '24px'},
             display: 'flex',
             alignItems: 'center',
-            gap: {xs: '4px', sm: '24px'},
+            // gap: {xs: '4px', sm: '24px'},
             // mt: {xs: '0px', sm: '10px'},
             maxWidth: {xs: '180px', sm: '100%'},
             width: '100%'
@@ -62,19 +62,20 @@ export default function LessonCard() {
         >
           <Typography
             sx={{
-              fontSize: {xs: '12px', md: '14px', lg: '16px'},
+              fontSize: {xs: '12px', md: '13px', lg: '14px'},
               fontFamily: '"Inter", sans-serif',
-              color: '#3f3f46',
-              fontWeight: '600'
+              color: '#2D3748',
+              fontWeight: '300'
             }}
           >
             <Typography
               component="span"
               sx={{
-                fontSize: {xs: '12px', md: '14px', lg: '18px'},
+                fontSize: {xs: '15px', md: '17px', lg: '18px'},
                 fontFamily: '"Inter", sans-serif',
-                color: '#07a66b',
-                fontWeight: 600
+                color: '#07A66B',
+                fontWeight: 600,
+                mr: '4px'
               }}
             >
               11
@@ -95,15 +96,24 @@ export default function LessonCard() {
       </svg>
 
       {/* -------- Right content : Circular Progress -------- */}
-      <Box sx={{position: 'relative', display: 'inline-flex'}}>
+      <Box
+        sx={{position: 'relative', display: 'inline-flex', alignItems: 'end'}}
+      >
         <CircularProgress
           variant="determinate"
           value={80}
-          size={77}
+          size={59}
           thickness={4}
           sx={{
-            // color: '#000',
-            // borderRadius: '300px',
+            // width: {xs: 59, md: 77, lg: 94},
+            // height: {xs: 59, md: 77, lg: 94},
+            transform: {
+              xs: 'scale(0.7)',
+              md: 'scale(2)',
+              lg: 'scale(3.2)'
+            },
+            color: '#000',
+            // boxShadow: '2 2 2 2 #000',
             [`& .${circularProgressClasses.circle}`]: {
               stroke: 'url(#circularGradient)',
               strokeLinecap: 'round'

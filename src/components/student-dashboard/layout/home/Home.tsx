@@ -23,9 +23,13 @@ export default function Home() {
       >
         <Header />
         <Appointment />
+
         {/* <Header /> */}
       </Box>
-      <LessonCard />
+      <Box display="flex" width="100%" gap={2}>
+        <LessonCard />
+        <LessonCard />
+      </Box>
     </>
   );
 }
