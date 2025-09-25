@@ -2,18 +2,43 @@ import localFont from '@/utils/themes';
 import {Box, Typography} from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
-import {useTranslations} from 'next-intl';
+// import {useTranslations} from 'next-intl';
 
-import Clock from '@/assets/svgs/dashboard-student/home/clock.svg';
-import Location from '@/assets/svgs/dashboard-student/home/location.svg';
+import car from '@/assets/svgs/dashboard-student/home/car.svg';
+import fabian from '@/assets/svgs/dashboard-student/home/fabian.svg';
+import logo from '@/assets/pngs/logo.avif';
 
-export default function Appointment() {
-  const t = useTranslations('Dashboard.home.appointment');
-  const show = true;
-  const data = [
-    {imgSrc: Clock, des: '10:15 am'},
-    {imgSrc: Location, des: 'Berliner Straße 1'}
+export default function Messages() {
+  // const t = useTranslations('Dashboard.home.appointment');
+  // const show = true;
+
+  const emails = [
+    {
+      icon: fabian, // yahan ap apna icon ya icon component rakh sakte hain
+      sender: 'Fabian',
+      date: '01.06.2025',
+      subject: 'Das ist das Thema der Email.'
+    },
+    {
+      icon: car,
+      sender: 'Fahrschule',
+      date: '27.05.2025',
+      subject: 'Termin deiner Theorieprüfung'
+    },
+    {
+      icon: car,
+      sender: 'Fahrschule',
+      date: '25.05.2025',
+      subject: 'Das ist das Thema der Email.'
+    },
+    {
+      icon: logo,
+      sender: 'WieFührerschein',
+      date: '20.05.2025',
+      subject: 'Das ist das Thema der Email.'
+    }
   ];
+
   return (
     <Box
       sx={{
@@ -34,11 +59,12 @@ export default function Appointment() {
           fontFamily: '"Inter", sans-serif !important'
         }}
       >
-        {t('title1')}
+        Messages
+        {/* {t('title1')} */}
       </Typography>
       <Box
         sx={{
-          background: '#fff',
+          background: '#c67171ff',
           padding: '12px',
           border: '1px solid #a1a1aa',
           borderRadius: '12px',
@@ -55,7 +81,7 @@ export default function Appointment() {
               fontWeight: '200'
             }}
           >
-            {show && 25}
+            {/* {show && 25} */}
           </Typography>
           <Typography
             sx={{
@@ -65,7 +91,7 @@ export default function Appointment() {
               fontWeight: '200'
             }}
           >
-            {show ? 'July' : `${t('title2')}`}
+            {/* {show ? 'July' : `${t('title2')}`} */}
           </Typography>
         </Box>
         <Box
@@ -87,30 +113,8 @@ export default function Appointment() {
             fontWeight: '300'
           }}
         >
-          {show ? 'Theory exam' : '--'}
+          {/* {show ? 'Theory exam' : '--'} */}
         </Typography>
-      </Box>
-      <Box sx={{display: 'flex', flexDirection: 'column', gap: '6px'}}>
-        {data.map((item, i) => (
-          <Box key={i} sx={{display: 'flex', gap: '10px'}}>
-            <Box sx={{height: '20px', width: '20px'}}>
-              <Image
-                src={item.imgSrc}
-                alt="icon"
-                style={{height: '100%', width: '100%'}}
-              />
-            </Box>
-            <Typography
-              sx={{
-                ...localFont.inter14,
-                color: '#71717a',
-                fontFamily: '"Inter", sans-serif !important'
-              }}
-            >
-              {show ? item.des : '--'}
-            </Typography>
-          </Box>
-        ))}
       </Box>
     </Box>
   );

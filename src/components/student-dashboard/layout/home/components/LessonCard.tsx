@@ -161,10 +161,10 @@ export default function LessonCard({
           >
             <Typography
               sx={{
-                fontSize: '18px',
-                fontWeight: '500',
+                fontSize: '12px',
+                fontWeight: '600',
                 color: '#2D3748',
-                fontFamily: '"Inter", sans-serif'
+                fontFamily: '"Inter", sans-serif !important'
               }}
             >
               {progressValue}
@@ -174,7 +174,7 @@ export default function LessonCard({
                   fontSize: '12px',
                   fontWeight: '500',
                   color: '#2D3748',
-                  fontFamily: '"Inter", sans-serif'
+                  fontFamily: '"Inter", sans-serif !important'
                 }}
               >
                 %

@@ -3,6 +3,7 @@ import React from 'react';
 import Header from './components/Header';
 import Appointment from './components/Appointment';
 import LessonCard from './components/LessonCard';
+import Messages from './components/Message';
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
       >
         <Header />
         <Appointment />
+        <Messages />
 
         {/* <Header /> */}
       </Box>
