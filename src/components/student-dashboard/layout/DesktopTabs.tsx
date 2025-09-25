@@ -139,7 +139,7 @@ export default function DesktopTabs({
         <Box
           sx={{
             '& > :not(:last-child)': {marginBottom: '16px'},
-            paddingY: '24px',
+            // paddingY: '24px',
             overflowY: 'auto'
           }}
         >
