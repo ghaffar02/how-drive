@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Appointment from './components/Appointment';
 import LessonCard from './components/LessonCard';
 import Messages from './components/Message';
+import Process from './components/Process';
 
 export default function Home() {
   return (
@@ -24,9 +25,6 @@ export default function Home() {
       >
         <Header />
         <Appointment />
-        <Messages />
-
-        {/* <Header /> */}
       </Box>
       <Box display="flex" width="100%" gap={2}>
         <LessonCard
@@ -42,6 +40,7 @@ export default function Home() {
           progressValue={30}
         />
       </Box>
+      <Process />
     </>
   );
 }
