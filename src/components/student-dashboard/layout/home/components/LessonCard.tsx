@@ -171,8 +171,8 @@ export default function LessonCard({
               <Typography
                 component="span"
                 sx={{
-                  fontSize: '12px',
-                  fontWeight: '500',
+                  fontSize: '10px',
+                  fontWeight: '400',
                   color: '#2D3748',
                   fontFamily: '"Inter", sans-serif !important'
                 }}
