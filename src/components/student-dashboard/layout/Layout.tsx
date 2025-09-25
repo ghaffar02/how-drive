@@ -13,7 +13,11 @@ export default function StudentDashboard() {
     <Box
       sx={{
         width: '100%',
-        minHeight: '100vh',
+        height: {
+          xs: 'calc(100svh - 32px)', // 16*2
+          sm: 'calc(100svh - 40px)', // 20*2
+          md: 'calc(100svh - 48px)' // 24*2
+        },
         backgroundImage: "url('/bgStudentDashboard2.svg')",
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
@@ -57,7 +61,8 @@ export default function StudentDashboard() {
             gap: '16px',
             flexDirection: 'column',
             alignItems: 'center',
-            flex: 1
+            flex: 1,
+            overflowY: 'scroll'
           }}
         >
           <Home />
