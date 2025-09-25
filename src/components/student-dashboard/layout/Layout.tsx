@@ -62,7 +62,7 @@ export default function StudentDashboard() {
             flexDirection: 'column',
             alignItems: 'center',
             flex: 1,
-            overflowY: 'scroll'
+            overflowY: 'auto'
           }}
         >
           <Home />
