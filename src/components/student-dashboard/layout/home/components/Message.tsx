@@ -6,7 +6,7 @@ import React from 'react';
 
 import car from '@/assets/svgs/dashboard-student/home/car.svg';
 import fabian from '@/assets/svgs/dashboard-student/home/fabian.svg';
-import logo from '@/assets/pngs/logo.avif';
+import logo from '@/assets/svgs/dashboard-student/home/logo.svg';
 
 export default function Messages() {
   // const t = useTranslations('Dashboard.home.appointment');
@@ -14,28 +14,32 @@ export default function Messages() {
 
   const emails = [
     {
+      icon: car,
+      sender: 'Fahrschule',
+      date: '25.05.2025',
+      subject: 'Das ist das Thema der Email.',
+      bgcolor: '#450ff51a'
+    },
+    {
       icon: fabian, // yahan ap apna icon ya icon component rakh sakte hain
       sender: 'Fabian',
       date: '01.06.2025',
-      subject: 'Das ist das Thema der Email.'
+      subject: 'Das ist das Thema der Email.',
+      bgcolor: '#ffa60026'
     },
     {
       icon: car,
       sender: 'Fahrschule',
       date: '27.05.2025',
-      subject: 'Termin deiner Theorieprüfung'
-    },
-    {
-      icon: car,
-      sender: 'Fahrschule',
-      date: '25.05.2025',
-      subject: 'Das ist das Thema der Email.'
+      subject: 'Termin deiner Theorieprüfung',
+      bgcolor: 'rgba(70, 17, 245, 0.1)'
     },
     {
       icon: logo,
       sender: 'WieFührerschein',
       date: '20.05.2025',
-      subject: 'Das ist das Thema der Email.'
+      subject: 'Das ist das Thema der Email.',
+      bgcolor: 'rgba(234, 0, 255, 0.08)'
     }
   ];
 
@@ -44,12 +48,12 @@ export default function Messages() {
       sx={{
         background: '#ffffffbf',
         padding: {xs: '16px', md: '24px'},
-        maxWidth: {xs: '400px', md: '320px'},
+        maxWidth: {xs: '100%', lg: '357px'},
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
         borderRadius: '18px',
-        gap: {xs: '6px', sm: '15px'}
+        gap: {xs: '6px', sm: '8px'}
       }}
     >
       <Typography
@@ -62,59 +66,120 @@ export default function Messages() {
         Messages
         {/* {t('title1')} */}
       </Typography>
+
       <Box
         sx={{
-          background: '#c67171ff',
-          padding: '12px',
-          border: '1px solid #a1a1aa',
-          borderRadius: '12px',
           display: 'flex',
+          width: '100%',
           flexDirection: 'column',
           gap: '10px'
         }}
       >
-        <Box sx={{display: 'flex', gap: '6px', alignItems: 'flex-end'}}>
-          <Typography
-            sx={{
-              ...localFont.h2,
-              fontFamily: '"Inter", sans-serif !important',
-              fontWeight: '200'
-            }}
-          >
-            {/* {show && 25} */}
-          </Typography>
-          <Typography
-            sx={{
-              ...localFont.inter24,
-              color: '#3f3f46',
-              fontFamily: '"Inter", sans-serif !important',
-              fontWeight: '200'
-            }}
-          >
-            {/* {show ? 'July' : `${t('title2')}`} */}
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            width: {xs: '100%'},
-            height: {xs: '1px'},
-            backgroundImage: {
-              xs: 'linear-gradient(to right, rgba(245,245,245,0.6), rgba(203,203,203,1), rgba(245,245,245,0.6))'
-            },
-            minWidth: {md: '1px'},
-            minHeight: {xs: '1px'}
-          }}
-        />
-        <Typography
-          sx={{
-            ...localFont.inter18,
-            color: '#71717A',
-            fontFamily: '"Inter", sans-serif !important',
-            fontWeight: '300'
-          }}
-        >
-          {/* {show ? 'Theory exam' : '--'} */}
-        </Typography>
+        {emails.map((item, index) => {
+          return (
+            <Box
+              key={index}
+              sx={{
+                width: '100%',
+                background: '#fff',
+                padding: '8px',
+                borderRadius: '12px',
+                display: 'flex',
+                flexDirection: 'row',
+                gap: '10px',
+                cursor: 'pointer',
+                boxShadow: ' 0px 0px 2px 0px #a1a1aa',
+
+                '&:hover': {
+                  boxShadow: '0px 0px 2px 1px #a094c8ff'
+                }
+
+                //
+              }}
+            >
+              <Box
+                sx={{
+                  backgroundColor: item.bgcolor,
+                  px: '8px', // padding for inner circle
+                  borderRadius: '8px',
+                  // p: 1, // padding (optional)
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '40px'
+                }}
+              >
+                <Box
+                  sx={{
+                    borderRadius: '999px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <Box sx={{width: '100%', maxWidth: '30px'}}>
+                    <Image
+                      src={item.icon}
+                      alt="car"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'contain'
+                      }}
+                    />
+                  </Box>
+                </Box>
+              </Box>
+              <Box width="100%">
+                <Box
+                  sx={{
+                    // bgcolor: '#888',
+                    width: '100%',
+                    display: 'flex',
+                    gap: '8px',
+                    alignItems: 'center',
+                    justifyContent: 'space-between'
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      ...localFont.inter14,
+                      color: '#718096',
+                      fontFamily: '"Inter", sans-serif !important',
+                      fontWeight: '400'
+                    }}
+                  >
+                    {item.sender}
+                    {/* {show && 25} */}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: {xs: '8.4px', md: '10px', lg: '11px'},
+                      color: '#718096',
+                      fontFamily: '"Inter", sans-serif !important',
+                      fontWeight: '400'
+                    }}
+                  >
+                    {item.date}
+                  </Typography>
+                </Box>
+
+                <Typography
+                  sx={{
+                    // ...localFont.i,
+                    fontSize: {xs: '9.6px', md: '11px', lg: '13px'},
+                    color: '#718096',
+                    fontFamily: '"Inter", sans-serif !important',
+                    fontWeight: '400'
+                  }}
+                >
+                  {item.subject}
+                  {/* {show ? 'Theory exam' : '--'} */}
+                </Typography>
+              </Box>
+            </Box>
+          );
+        })}
       </Box>
     </Box>
   );
