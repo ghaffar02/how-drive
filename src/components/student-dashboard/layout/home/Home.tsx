@@ -27,8 +27,18 @@ export default function Home() {
         {/* <Header /> */}
       </Box>
       <Box display="flex" width="100%" gap={2}>
-        <LessonCard />
-        <LessonCard />
+        <LessonCard
+          title="Theory lessons"
+          completedHours={11}
+          totalHours={14}
+          progressValue={80}
+        />
+        <LessonCard
+          title="Driving lessons"
+          completedHours={12}
+          totalHours={4}
+          progressValue={30}
+        />
       </Box>
     </>
   );

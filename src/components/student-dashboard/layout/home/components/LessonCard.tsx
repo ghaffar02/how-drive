@@ -6,11 +6,21 @@ import {
   CircularProgress,
   circularProgressClasses
 } from '@mui/material';
-import Image from 'next/image';
 // import TooltipIcon from '@/app/_assets/png/Tooltip.png'; // replace with your icon
 // import Icon from '@/app/_assets/png/yourIcon.png'; // replace with your icon
+interface LessonCardProps {
+  title: string;
+  completedHours: number;
+  totalHours: number;
+  progressValue: number;
+}
 
-export default function LessonCard() {
+export default function LessonCard({
+  title,
+  completedHours,
+  totalHours,
+  progressValue
+}: LessonCardProps) {
   return (
     <Box
       sx={{
@@ -40,12 +50,12 @@ export default function LessonCard() {
         <Typography
           sx={{
             fontSize: {xs: '14px', md: '15px', lg: '16px'},
-            fontFamily: '"Inter", sans-serif',
+            fontFamily: '"Inter", sans-serif !important',
             color: '#2D3748',
-            fontWeight: '500'
+            fontWeight: 500
           }}
         >
-          Theory lessons
+          {title}
         </Typography>
 
         {/* Progress text + tooltip */}
@@ -63,7 +73,7 @@ export default function LessonCard() {
           <Typography
             sx={{
               fontSize: {xs: '12px', md: '13px', lg: '14px'},
-              fontFamily: '"Inter", sans-serif',
+              fontFamily: '"Inter", sans-serif !important',
               color: '#2D3748',
               fontWeight: '300'
             }}
@@ -72,22 +82,29 @@ export default function LessonCard() {
               component="span"
               sx={{
                 fontSize: {xs: '15px', md: '17px', lg: '18px'},
-                fontFamily: '"Inter", sans-serif',
+                fontFamily: '"Inter", sans-serif !important',
                 color: '#07A66B',
                 fontWeight: 600,
                 mr: '4px'
               }}
             >
-              11
+              {completedHours}
             </Typography>
-            / 14 hours
+            / {totalHours} hours
           </Typography>
         </Box>
       </Box>
 
       <svg width="0" height="0">
         <defs>
-          <linearGradient id="circularGradient" x1="0" y1="0" x2="0" y2="1">
+          <linearGradient
+            id="circularGradient"
+            x1="0"
+            y1="0"
+            x2="0"
+            y2="1"
+            // boxShadow="0 0 10px rgba(0,0,0,0.3)"
+          >
             {/* 🎨 Replace these two with your own gradient colors */}
             <stop offset="0%" stopColor="#4611f5ff" /> {/* top color */}
             <stop offset="100%" stopColor="#ea00ff" /> {/* bottom color */}
@@ -96,52 +113,82 @@ export default function LessonCard() {
       </svg>
 
       {/* -------- Right content : Circular Progress -------- */}
-      <Box
-        sx={{position: 'relative', display: 'inline-flex', alignItems: 'end'}}
-      >
-        <CircularProgress
-          variant="determinate"
-          value={80}
-          size={59}
-          thickness={4}
-          sx={{
-            // width: {xs: 59, md: 77, lg: 94},
-            // height: {xs: 59, md: 77, lg: 94},
-            transform: {
-              xs: 'scale(0.7)',
-              md: 'scale(2)',
-              lg: 'scale(3.2)'
-            },
-            color: '#000',
-            // boxShadow: '2 2 2 2 #000',
-            [`& .${circularProgressClasses.circle}`]: {
-              stroke: 'url(#circularGradient)',
-              strokeLinecap: 'round'
-            }
-          }}
-        />
+      <Box>
         <Box
           sx={{
-            top: 0,
-            left: 0,
-            bottom: 0,
-            right: 0,
-            position: 'absolute',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-            // borderRadius: '30px'
+            position: 'relative',
+            display: 'inline-flex',
+            // alignItems: 'center',
+            transform: {
+              xs: 'scale(1)',
+              md: 'scale(1.3)',
+              lg: 'scale(1.6)'
+            },
+            // bgcolor: '#000',
+            ml: {xs: '-20%', md: '-20%', lg: '-75px'}
           }}
         >
-          <Typography
+          <CircularProgress
+            variant="determinate"
+            value={100}
+            size={59}
+            thickness={2.5}
             sx={{
-              fontSize: '14px',
-              fontWeight: '600',
-              color: '#3f3f46'
+              color: '#fff', // remaining portion color
+              position: 'absolute',
+              left: 0,
+              top: 0
+            }}
+          />
+          <CircularProgress
+            variant="determinate"
+            value={progressValue}
+            size={59}
+            thickness={2.5}
+            sx={{
+              borderRadius: '50%',
+
+              [`& .${circularProgressClasses.circle}`]: {
+                stroke: 'url(#circularGradient)',
+                strokeLinecap: 'round'
+              }
+            }}
+          />
+          <Box
+            sx={{
+              top: 0,
+              left: 0,
+              bottom: 0,
+              right: 0,
+              position: 'absolute',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+              // borderRadius: '30px'
             }}
           >
-            80%
-          </Typography>
+            <Typography
+              sx={{
+                fontSize: '18px',
+                fontWeight: '500',
+                color: '#2D3748',
+                fontFamily: '"Inter", sans-serif'
+              }}
+            >
+              {progressValue}
+              <Typography
+                component="span"
+                sx={{
+                  fontSize: '12px',
+                  fontWeight: '500',
+                  color: '#2D3748',
+                  fontFamily: '"Inter", sans-serif'
+                }}
+              >
+                %
+              </Typography>
+            </Typography>
+          </Box>
         </Box>
       </Box>
     </Box>
