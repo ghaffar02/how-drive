@@ -115,7 +115,7 @@ export default function DesktopTabs({
               height: '50px',
               width: '50px',
               margin: 'auto',
-              marginBottom: {xs: '24px', md: '50px'},
+              marginBottom: '24px',
               cursor: 'pointer'
             }}
           >
@@ -202,7 +202,7 @@ export default function DesktopTabs({
               borderTop: '1px solid transparent',
               borderImage:
                 'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1',
-              marginBottom: {xs: '24px', md: '50px'}
+              marginBottom: '24px'
             }}
           />
           <Box sx={{margin: 'auto', width: 'fit-content'}}>
