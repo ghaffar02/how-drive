@@ -6,8 +6,7 @@ import {
   CircularProgress,
   circularProgressClasses
 } from '@mui/material';
-// import TooltipIcon from '@/app/_assets/png/Tooltip.png'; // replace with your icon
-// import Icon from '@/app/_assets/png/yourIcon.png'; // replace with your icon
+
 interface LessonCardProps {
   title: string;
   completedHours: number;
@@ -33,7 +32,6 @@ export default function LessonCard({
         flexDirection: {xs: 'column', md: 'row'},
         alignItems: {xs: 'end', md: 'center'},
         justifyContent: 'space-between'
-        // gap: {xs: '8px', lg: '10px'}
       }}
     >
       {/* Icon + Title */}
@@ -64,8 +62,7 @@ export default function LessonCard({
             pl: {xs: '0px', md: '24px'},
             display: 'flex',
             alignItems: 'center',
-            // gap: {xs: '4px', sm: '24px'},
-            // mt: {xs: '0px', sm: '10px'},
+
             maxWidth: {xs: '180px', sm: '100%'},
             width: '100%'
           }}
@@ -97,17 +94,10 @@ export default function LessonCard({
 
       <svg width="0" height="0">
         <defs>
-          <linearGradient
-            id="circularGradient"
-            x1="0"
-            y1="0"
-            x2="0"
-            y2="1"
-            // boxShadow="0 0 10px rgba(0,0,0,0.3)"
-          >
+          <linearGradient id="circularGradient" x1="0" y1="0" x2="0" y2="1">
             {/* 🎨 Replace these two with your own gradient colors */}
-            <stop offset="0%" stopColor="#4611f5ff" /> {/* top color */}
-            <stop offset="100%" stopColor="#ea00ff" /> {/* bottom color */}
+            <stop offset="0%" stopColor="#4611f5ff" />
+            <stop offset="100%" stopColor="#ea00ff" />
           </linearGradient>
         </defs>
       </svg>
@@ -132,9 +122,10 @@ export default function LessonCard({
             variant="determinate"
             value={100}
             size={59}
-            thickness={2.5}
+            thickness={4}
+            // thickness={2.5}
             sx={{
-              color: '#fff', // remaining portion color
+              color: '#fff',
               position: 'absolute',
               left: 0,
               top: 0
@@ -144,7 +135,8 @@ export default function LessonCard({
             variant="determinate"
             value={progressValue}
             size={59}
-            thickness={2.5}
+            thickness={4}
+            // thickness={2.5}
             sx={{
               borderRadius: '50%',
 
