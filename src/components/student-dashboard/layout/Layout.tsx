@@ -3,7 +3,7 @@ import React from 'react';
 import {Box} from '@mui/material';
 import TabStudentLayout from './DesktopTabs';
 import TabStudentLayoutMobile from './MobileTabs';
-import Home from './home/Home';
+// import Home from './home/Home';
 
 export default function StudentDashboard() {
   const [activeKey, setActiveKey] = React.useState<string>('home');
@@ -14,14 +14,13 @@ export default function StudentDashboard() {
       sx={{
         width: '100%',
         height: {
-          xs: 'calc(100svh - 32px)', // 16*2
-          sm: 'calc(100svh - 40px)', // 20*2
-          md: 'calc(100svh - 48px)' // 24*2
+          xs: 'calc(100svh - 32px)',
+          md: 'calc(100svh - 40px)'
         },
-        backgroundImage: "url('/bgStudentDashboard2.svg')",
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
+        // backgroundImage: "url('/bgStudentDashboard2.svg')",
+        // backgroundRepeat: 'no-repeat',
+        // backgroundSize: 'cover',
+        // backgroundPosition: 'center',
         borderRadius: '24px'
       }}
     >
@@ -29,7 +28,7 @@ export default function StudentDashboard() {
         sx={{
           maxWidth: '1400px',
           margin: 'auto',
-          padding: '4px',
+          // padding: '4px',
           display: 'flex',
           height: '100%',
           flexDirection: {xs: 'column-reverse', md: 'row'},
@@ -65,7 +64,7 @@ export default function StudentDashboard() {
             overflowY: 'auto'
           }}
         >
-          <Home />
+          {/* <Home /> */}
         </Box>
       </Box>
     </Box>
