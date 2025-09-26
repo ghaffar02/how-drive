@@ -12,6 +12,7 @@ import calander_black from '@/assets/svgs/dashboard-student/calander_black.svg';
 import calander_blue from '@/assets/svgs/dashboard-student/calander_blue.svg';
 import message_black from '@/assets/svgs/dashboard-student/message_black.svg';
 import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
+import infos_black from '@/assets/svgs/dashboard-student/infos_black.svg';
 import menu from '@/assets/svgs/dashboard-student/menu.svg';
 import TabMenuModalForMobile from './MobileMenuModal';
 
@@ -68,11 +69,11 @@ export default function MobileTabs({
       iconHover: message_blue
     },
     {
-      key: 'menu',
-      label: 'menu',
-      iconBlack: menu,
-      iconBlue: menu,
-      iconHover: menu
+      key: 'Infos',
+      label: 'Infos',
+      iconBlack: infos_black,
+      iconBlue: infos_black,
+      iconHover: infos_black
     }
   ];
 
@@ -88,90 +89,84 @@ export default function MobileTabs({
           backgroundColor: 'rgba(248, 250, 252, 0.3)',
           position: 'fixed',
           bottom: '29px',
-          // height: '77px'
-          height: menuOpen ? 'fit-content' : '77px'
+          height: '77px'
         }}
       >
         {/* all navigations */}
         <Box
           sx={{
-            display: menuOpen ? 'block' : 'flex',
             justifyContent: 'flex-end',
             width: '100%',
-            gap: '8px'
+            gap: '8px',
+            display: 'flex'
           }}
         >
-          {menuOpen ? (
-            // 🔴 Only show the cross when menuOpen is true
-            <TabMenuModalForMobile onClose={() => setMenuOpen(false)} />
-          ) : (
-            navItems.map((item) => {
-              const isActive = activeKey === item.key;
-              const isHover = hoverKey === item.key;
-              const iconSrc = isActive
-                ? item.iconBlue
-                : isHover
-                  ? item.iconHover
-                  : item.iconBlack;
+          {navItems.map((item) => {
+            const isActive = activeKey === item.key;
+            const isHover = hoverKey === item.key;
+            const iconSrc = isActive
+              ? item.iconBlue
+              : isHover
+                ? item.iconHover
+                : item.iconBlack;
 
-              return (
+            return (
+              <Box
+                key={item.key}
+                onClick={() => {
+                  if (item.key === 'Infos') {
+                    setMenuOpen(true); // open menu
+                  } else {
+                    setActiveKey(item.key);
+                  }
+                }}
+                onMouseEnter={() => setHoverKey(item.key)}
+                onMouseLeave={() => setHoverKey(null)}
+                sx={{
+                  cursor: 'pointer',
+                  width: '20%'
+                }}
+              >
                 <Box
-                  key={item.key}
-                  onClick={() => {
-                    if (item.key === 'menu') {
-                      setMenuOpen(true); // open menu
-                    } else {
-                      setActiveKey(item.key);
-                    }
-                  }}
-                  onMouseEnter={() => setHoverKey(item.key)}
-                  onMouseLeave={() => setHoverKey(null)}
                   sx={{
-                    cursor: 'pointer',
-                    width: '20%'
+                    padding: '2px',
+                    borderRadius: '9999px',
+                    backgroundColor: isActive
+                      ? 'rgba(48, 88, 255, 0.10)'
+                      : 'transparent',
+                    width: '100%'
                   }}
                 >
-                  <Box
-                    sx={{
-                      padding: '2px',
-                      borderRadius: '9999px',
-                      backgroundColor: isActive
-                        ? 'rgba(48, 88, 255, 0.10)'
-                        : 'transparent',
-                      width: '100%'
+                  <Image
+                    src={iconSrc}
+                    alt={item.label}
+                    width={25}
+                    height={25}
+                    unoptimized
+                    style={{
+                      display: 'block',
+                      margin: 'auto'
                     }}
-                  >
-                    <Image
-                      src={iconSrc}
-                      alt={item.label}
-                      width={25}
-                      height={25}
-                      unoptimized
-                      style={{
-                        display: 'block',
-                        margin: 'auto'
-                      }}
-                    />
-                  </Box>
-                  <Typography
-                    sx={{
-                      color: isActive ? '#3058FF' : '#000000',
-                      fontWeight: isActive ? '600' : '400',
-                      fontSize: '12px',
-                      fontFamily: '"Inter", sans-serif !important',
-                      textAlign: 'center',
-                      letterSpacing: '0.01em',
-                      lineHeight: '1.5em',
-                      marginTop: '4px',
-                      textTransform: 'capitalize'
-                    }}
-                  >
-                    {item.label}
-                  </Typography>
+                  />
                 </Box>
-              );
-            })
-          )}
+                <Typography
+                  sx={{
+                    color: isActive ? '#3058FF' : '#000000',
+                    fontWeight: isActive ? '600' : '400',
+                    fontSize: '12px',
+                    fontFamily: '"Inter", sans-serif !important',
+                    textAlign: 'center',
+                    letterSpacing: '0.01em',
+                    lineHeight: '1.5em',
+                    marginTop: '4px',
+                    textTransform: 'capitalize'
+                  }}
+                >
+                  {item.label}
+                </Typography>
+              </Box>
+            );
+          })}
         </Box>
       </Box>
       {/* end tab section */}

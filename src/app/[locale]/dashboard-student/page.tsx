@@ -11,8 +11,7 @@ export default function StudentDashboard() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         width: '100%',
-        padding: {xs: '16px', sm: '20px', md: '24px'},
-        backgroundColor: '#fff'
+        padding: {xs: '16px', md: '20px'}
       }}
     >
       <StudentLayout />
