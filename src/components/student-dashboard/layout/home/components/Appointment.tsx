@@ -19,12 +19,13 @@ export default function Appointment() {
       sx={{
         background: '#ffffffbf',
         padding: {xs: '16px', md: '24px'},
-        maxWidth: {xs: '400px', md: '320px'},
+        // maxWidth: {xs: '400px', md: '320px'},
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
         borderRadius: '18px',
-        gap: {xs: '6px', sm: '15px'}
+        gap: {xs: '6px', sm: '15px'},
+        height: {xs: '224px', sm: '252px', md: 'auto'}
       }}
     >
       <Typography

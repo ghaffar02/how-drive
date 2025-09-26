@@ -53,7 +53,7 @@ export default function Process() {
         padding: {xs: '16px', md: '24px'},
         border: '1px solid white',
         borderRadius: '18px',
-        maxWidth: '660px',
+        // maxWidth: '660px',
         width: '100%'
       }}
     >
@@ -80,7 +80,7 @@ export default function Process() {
           rowGap: {xs: '10px', md: '80px'},
           position: 'relative',
           overflow: 'hidden',
-          padding: {xs: '25px 0px', md: '40px 0px'}
+          padding: {xs: '15px 0px', md: '20px 0px'}
         }}
       >
         {data.map((item, i) => (
@@ -98,7 +98,7 @@ export default function Process() {
               sx={{
                 display: {xs: 'none', md: 'block'},
                 position: 'absolute',
-                top: 60,
+                top: 40,
                 mt: i > 1 ? `${i * 61 - 59}px` : '0px',
                 width: i == 1 || i == 5 ? '70%' : '90%',
                 right: i == 1 ? 27 : 'initial',
@@ -115,7 +115,7 @@ export default function Process() {
                 width: i == 1 ? '64px' : '63px',
                 height: i == 1 ? '64px' : '62px',
                 mt: i > 1 ? `${i * 61 - 59}px` : '0px',
-                top: 60,
+                top: 40,
                 zIndex: 99999,
                 borderRadius: '50%',
                 background:

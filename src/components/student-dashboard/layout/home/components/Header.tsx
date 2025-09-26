@@ -52,10 +52,10 @@ export default function Header() {
   return (
     <Box
       sx={{
-        maxWidth: {xs: '400px', md: '100%'},
+        // maxWidth: {xs: '400px', md: '100%'},
         width: '100%',
         background: 'rgba(255,255,255,0.75)',
-        padding: {xs: '16px 12px 16px 16px', lg: '8px'},
+        padding: {xs: '16px 12px 16px 16px', md: '8px'},
         borderRadius: '18px',
         display: 'flex',
         flexDirection: {xs: 'column', md: 'row'},
@@ -223,12 +223,12 @@ function Card({
         <Box
           sx={{
             width: {xs: '100%', md: '1px'},
-            height: {xs: '1px', md: '100%'},
+            height: {xs: '1px', md: '11.7vh'},
             backgroundImage: {
               xs: 'linear-gradient(to right, rgba(245,245,245,0.6), rgba(203,203,203,1), rgba(245,245,245,0.6))',
               md: 'linear-gradient(to bottom, rgba(245,245,245,0.6), rgba(203,203,203,1), rgba(245,245,245,0.6))'
             },
-            minWidth: {md: '1px'},
+            minWidth: {xs: '1px'},
             minHeight: {xs: '1px'}
           }}
         />

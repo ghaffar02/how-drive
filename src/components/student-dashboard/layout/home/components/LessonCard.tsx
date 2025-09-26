@@ -23,7 +23,7 @@ export default function LessonCard({
   return (
     <Box
       sx={{
-        maxWidth: {xs: '100%', lg: '357px'},
+        // maxWidth: {xs: '100%', lg: '357px'},
         width: '100%',
         background: 'rgba(255,255,255,0.75)',
         padding: {xs: '16px', md: '24px 16px 24px 24px '},
