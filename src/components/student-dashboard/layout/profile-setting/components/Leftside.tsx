@@ -21,7 +21,7 @@ export default function Leftside() {
         background: 'rgba(248,250,252,0.3)',
         padding: {xs: '8px', md: '24px 12px'},
         border: '1px solid #fff',
-        display: 'flex',
+        display: {xs: 'none', md: 'flex'},
         alignItems: 'center',
         flexDirection: {xs: 'column'},
         gap: '16px'
@@ -64,8 +64,8 @@ export default function Leftside() {
               },
               '&:hover .hoverArrow': {
                 opacity: 1,
-                transform: 'translateX(12px)',
-                transition: 'transform 0.1s ease-in-out'
+                transform: 'translateX(1px)'
+                // transition: 'transform 0.3s ease-in-out'
               }
             }}
           >
@@ -102,9 +102,13 @@ export default function Leftside() {
                   maxWidth: {xs: '14px', sm: '15px', md: '16px'},
                   width: '100%',
                   height: '100%',
-                  zIndex: 111,
                   opacity: 0,
-                  mr: '15px'
+                  // mr: '2px',
+                  transition: 'opacity 0.5s ease, transform 0.3s ease-in-out',
+                  // opacity: activeIndexes.includes(i) ? 1 : 0,
+                  transform: activeIndexes.includes(i)
+                    ? 'translateX(30px)'
+                    : 'translateX(-10px)'
                 }}
               />
             </Box>
