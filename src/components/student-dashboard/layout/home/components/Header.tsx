@@ -60,7 +60,8 @@ export default function Header() {
         display: 'flex',
         flexDirection: {xs: 'column', md: 'row'},
         alignItems: 'center',
-        gap: {xs: '8px', lg: '10px'}
+        gap: {xs: '8px', lg: '10px'},
+        height: {xs: 'auto', xl: '100%'}
       }}
     >
       {updatedData.map((item, i) => (

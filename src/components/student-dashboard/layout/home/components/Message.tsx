@@ -53,7 +53,8 @@ export default function Messages() {
         display: 'flex',
         flexDirection: 'column',
         borderRadius: '18px',
-        gap: {xs: '6px', sm: '8px'}
+        gap: {xs: '6px', sm: '8px'},
+        height: {xs: 'auto', xl: '100%'}
       }}
     >
       <Typography
@@ -73,7 +74,7 @@ export default function Messages() {
           width: '100%',
           flexDirection: 'column',
           gap: '10px',
-          maxHeight: '188px',
+          maxHeight: {xs: '188px', xl: '100%'},
           overflow: 'auto',
           '&::-webkit-scrollbar': {
             display: 'none'

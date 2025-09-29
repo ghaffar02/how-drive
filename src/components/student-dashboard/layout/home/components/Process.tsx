@@ -54,7 +54,11 @@ export default function Process() {
         border: '1px solid white',
         borderRadius: '18px',
         // maxWidth: '660px',
-        width: '100%'
+        width: '100%',
+        height: {xs: 'auto', xl: '100%'},
+        display: {xs: 'block', xl: 'flex'},
+        flexDirection: 'column',
+        justifyContent: 'space-between'
       }}
     >
       <Typography
@@ -76,7 +80,10 @@ export default function Process() {
           display: 'flex',
           gap: '20px',
           flexWrap: 'wrap',
-          justifyContent: {xs: 'start', md: 'center'},
+          justifyContent: {
+            xs: 'flex-start !important',
+            md: 'center !important'
+          },
           rowGap: {xs: '10px', md: '80px'},
           position: 'relative',
           overflow: 'hidden',

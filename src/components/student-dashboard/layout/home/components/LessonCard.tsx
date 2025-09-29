@@ -31,7 +31,8 @@ export default function LessonCard({
         display: 'flex',
         flexDirection: {xs: 'column', md: 'row'},
         alignItems: {xs: 'end', md: 'center'},
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        height: {xs: 'auto', xl: '100%'}
       }}
     >
       {/* Icon + Title */}

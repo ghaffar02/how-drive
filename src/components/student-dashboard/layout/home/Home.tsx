@@ -13,25 +13,33 @@ export default function Home() {
         sx={{
           maxWidth: '1300px',
           width: '100%',
-          // height: '100%',
+          height: {xs: 'auto', xl: '100%'},
           background: 'rgba(248,250,252,0.3)',
           padding: {xs: '8px', lg: '24px'},
           border: '1px solid #fff',
           borderRadius: {xs: '24px', md: '0px 24px 24px 0px'}
         }}
       >
-        <Grid container spacing={{xs: 2, sm: 3}}>
-          <Grid size={{xs: 6, md: 12}}>
+        <Grid
+          container
+          spacing={{xs: 2, sm: 3}}
+          sx={{height: {xs: 'auto', xl: '100%'}}}
+        >
+          <Grid size={{xs: 6, md: 12}} sx={{height: {xs: 'auto', xl: '20%'}}}>
             <Header />
           </Grid>
           <Grid size={6} sx={{display: {xs: 'block', md: 'none'}}}>
             <Appointment />
           </Grid>
-          <Grid container size={{md: 12, lg: 8}}>
-            <Grid size={12}>
+          <Grid
+            container
+            size={{md: 12, lg: 8}}
+            sx={{height: {xs: 'auto', xl: '80%'}}}
+          >
+            <Grid size={12} sx={{height: {xs: 'auto', xl: '67%'}}}>
               <Process />
             </Grid>
-            <Grid size={6}>
+            <Grid size={6} sx={{height: {xs: 'auto', xl: '28%'}}}>
               <LessonCard
                 title="Theory lessons"
                 completedHours={11}
@@ -39,7 +47,7 @@ export default function Home() {
                 progressValue={80}
               />
             </Grid>
-            <Grid size={6}>
+            <Grid size={6} sx={{height: {xs: 'auto', xl: '28%'}}}>
               <LessonCard
                 title="Driving lessons"
                 completedHours={12}
@@ -48,14 +56,24 @@ export default function Home() {
               />
             </Grid>
           </Grid>
-          <Grid container size={{xs: 12, md: 12, lg: 4}}>
+          <Grid
+            container
+            size={{xs: 12, md: 12, lg: 4}}
+            sx={{height: {xs: 'auto', xl: '80%'}}}
+          >
             <Grid
               size={{md: 6, lg: 12}}
-              sx={{display: {xs: 'none', md: 'block'}}}
+              sx={{
+                display: {xs: 'none', md: 'block'},
+                height: {xs: 'auto', xl: '47.5%'}
+              }}
             >
               <Appointment />
             </Grid>
-            <Grid size={{xs: 12, md: 6, lg: 12}}>
+            <Grid
+              size={{xs: 12, md: 6, lg: 12}}
+              sx={{height: {xs: 'auto', xl: '47.5%'}}}
+            >
               <Messages />
             </Grid>
           </Grid>

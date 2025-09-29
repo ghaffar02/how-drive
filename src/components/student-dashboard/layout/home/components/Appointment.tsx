@@ -23,9 +23,10 @@ export default function Appointment() {
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
+        justifyContent: 'space-between',
         borderRadius: '18px',
         gap: {xs: '6px', sm: '15px'},
-        height: {xs: '224px', sm: '252px', md: 'auto'}
+        height: {xs: '224px', sm: '252px', md: 'auto', xl: '100%'}
       }}
     >
       <Typography
