@@ -83,7 +83,7 @@ export default function Leftside() {
                   fontSize: {xs: '14px', md: '15px', lg: '16px'},
                   color: activeIndexes.includes(i) ? '#4611f5' : '#2d3748',
                   fontFamily: '"Inter", sans-serif !important',
-                  fontWeight: '400'
+                  fontWeight: activeIndexes.includes(i) ? '500' : '400'
                 }}
               >
                 {items}

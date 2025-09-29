@@ -1,7 +1,7 @@
 import localFont from '@/utils/themes';
 import {Box, Typography} from '@mui/material';
 import Image from 'next/image';
-import React from 'react';
+import React, {useState} from 'react';
 // import {useTranslations} from 'next-intl';
 
 import car from '@/assets/svgs/dashboard-student/home/car.svg';
@@ -9,9 +9,7 @@ import fabian from '@/assets/svgs/dashboard-student/home/fabian.svg';
 import logo from '@/assets/svgs/dashboard-student/home/logo.svg';
 
 export default function Messages() {
-  // const t = useTranslations('Dashboard.home.appointment');
-  // const show = true;
-
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const emails = [
     {
       icon: car,
@@ -21,7 +19,7 @@ export default function Messages() {
       bgcolor: '#450ff51a'
     },
     {
-      icon: fabian, // yahan ap apna icon ya icon component rakh sakte hain
+      icon: fabian,
       sender: 'Fabian',
       date: '01.06.2025',
       subject: 'Das ist das Thema der Email.',
@@ -48,7 +46,6 @@ export default function Messages() {
       sx={{
         background: '#ffffffbf',
         padding: {xs: '16px', md: '24px'},
-        // maxWidth: {xs: '100%', lg: '357px'},
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -65,17 +62,21 @@ export default function Messages() {
         }}
       >
         Messages
-        {/* {t('title1')} */}
       </Typography>
 
       <Box
         sx={{
           display: 'flex',
+
           width: '100%',
           flexDirection: 'column',
           gap: '10px',
+          alignItems: 'center',
+
           maxHeight: {xs: '188px', xl: '100%'},
           overflow: 'auto',
+          p: '4px 2px',
+
           '&::-webkit-scrollbar': {
             display: 'none'
           },
@@ -86,9 +87,11 @@ export default function Messages() {
         {emails.map((item, index) => {
           return (
             <Box
+              onClick={() => setSelectedIndex(index)}
               key={index}
               sx={{
                 width: '100%',
+                // maxWidth: '309px',
                 background: '#fff',
                 padding: '8px',
                 borderRadius: '12px',
@@ -96,10 +99,14 @@ export default function Messages() {
                 flexDirection: 'row',
                 gap: '10px',
                 cursor: 'pointer',
-                boxShadow: ' 0px 0px 2px 0px #a1a1aa',
+                // fontWeight: selectedIndex === index ? '700' : '400'
 
+                boxShadow:
+                  selectedIndex === index
+                    ? '0px 0px 2px 0px  #3058ffff'
+                    : ' 0px 0px 2px 0px #d4d4d8ff',
                 '&:hover': {
-                  boxShadow: '0px 0px 2px 1px #a094c8ff'
+                  boxShadow: '0px 0px 2px 0px  #3058ffff'
                 }
 
                 //
@@ -108,9 +115,8 @@ export default function Messages() {
               <Box
                 sx={{
                   backgroundColor: item.bgcolor,
-                  px: '8px', // padding for inner circle
+                  px: '8px',
                   borderRadius: '8px',
-                  // p: 1, // padding (optional)
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -152,20 +158,20 @@ export default function Messages() {
                   <Typography
                     sx={{
                       ...localFont.inter14,
-                      color: '#718096',
+                      // fontWeight: selectedIndex === index ? '700' : '400'
+                      color: selectedIndex === index ? '#000' : '#718096',
                       fontFamily: '"Inter", sans-serif !important',
-                      fontWeight: '400'
+                      fontWeight: selectedIndex === index ? '500' : '400'
                     }}
                   >
                     {item.sender}
-                    {/* {show && 25} */}
                   </Typography>
                   <Typography
                     sx={{
                       fontSize: {xs: '8.4px', md: '10px', lg: '11px'},
-                      color: '#718096',
+                      color: selectedIndex === index ? '#000' : '#718096',
                       fontFamily: '"Inter", sans-serif !important',
-                      fontWeight: '400'
+                      fontWeight: selectedIndex === index ? '500' : '400'
                     }}
                   >
                     {item.date}
@@ -182,7 +188,6 @@ export default function Messages() {
                   }}
                 >
                   {item.subject}
-                  {/* {show ? 'Theory exam' : '--'} */}
                 </Typography>
               </Box>
             </Box>
