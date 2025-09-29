@@ -26,7 +26,7 @@ export default function Appointment() {
         justifyContent: 'space-between',
         borderRadius: '18px',
         gap: {xs: '6px', sm: '15px'},
-        height: {xs: '224px', sm: '252px', md: 'auto', xl: '100%'}
+        height: {xs: '224px', sm: '252px', md: 'auto', lg: '100%'}
       }}
     >
       <Typography

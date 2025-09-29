@@ -54,7 +54,7 @@ export default function Messages() {
         flexDirection: 'column',
         borderRadius: '18px',
         gap: {xs: '6px', sm: '8px'},
-        height: {xs: 'auto', xl: '100%'}
+        height: {xs: 'auto', lg: '100%'}
       }}
     >
       <Typography

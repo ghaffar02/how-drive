@@ -55,8 +55,8 @@ export default function Process() {
         borderRadius: '18px',
         // maxWidth: '660px',
         width: '100%',
-        height: {xs: 'auto', xl: '100%'},
-        display: {xs: 'block', xl: 'flex'},
+        height: {xs: 'auto', lg: '100%'},
+        display: {xs: 'block', lg: 'flex'},
         flexDirection: 'column',
         justifyContent: 'space-between'
       }}
@@ -64,9 +64,10 @@ export default function Process() {
       <Typography
         sx={{
           ...localFont.inter16,
-          fontFamily: '"Inter", sans-serif !impotant',
+          fontFamily: '"Inter", sans-serif !important',
           color: '#2d3748',
-          mb: '16px'
+          mb: '16px',
+          fontWeight: '500'
         }}
       >
         Process
