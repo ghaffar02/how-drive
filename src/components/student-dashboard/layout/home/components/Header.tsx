@@ -61,7 +61,7 @@ export default function Header() {
         flexDirection: {xs: 'column', md: 'row'},
         alignItems: 'center',
         gap: {xs: '8px', lg: '10px'},
-        height: {xs: 'auto', xl: '100%'}
+        height: {xs: 'auto', lg: '100%'}
       }}
     >
       {updatedData.map((item, i) => (
@@ -198,7 +198,8 @@ function Card({
                   background: '#fff',
                   padding: '16px',
                   borderRadius: '12px',
-                  zIndex: 99
+                  zIndex: 99,
+                  boxShadow: '0px 10px 20px 0px rgba(0, 0, 0, 0.05)'
                 }}
               >
                 <Typography
