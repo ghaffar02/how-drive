@@ -1896,6 +1896,17 @@
         "Messages": "Nachrichten",
         "card1Title": "Theoriestunden",
         "card2Title": "Fahrstunden"
+      },
+      "process": {
+        "title": "Verlauf",
+        "step1": "Fahrschule",
+        "step2": "Unterlagen",
+        "step3": "Führerscheinstelle",
+        "step4": "Theoriestunden",
+        "step5": "Theorieprüfung",
+        "step6": "Fahrstunden",
+        "step7": "Praktische Prüfung",
+        "step8": "Erteilung des Führerscheins"
       }
     }
   }
