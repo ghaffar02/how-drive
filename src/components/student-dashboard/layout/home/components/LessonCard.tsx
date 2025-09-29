@@ -6,6 +6,8 @@ import {
   CircularProgress,
   circularProgressClasses
 } from '@mui/material';
+import {animate, useMotionValue} from 'framer-motion';
+import {useEffect, useState} from 'react';
 
 interface LessonCardProps {
   title: string;
@@ -20,6 +22,45 @@ export default function LessonCard({
   totalHours,
   progressValue
 }: LessonCardProps) {
+  const [progress, setProgress] = useState(0);
+
+  // 🔹 Motion value (framer) – ye har frame smoothly update hoti hai
+  const motionProgress = useMotionValue(0);
+
+  useEffect(() => {
+    // React state ko motion value k sath sync rakhna
+    const unsub = motionProgress.on('change', (latest) => {
+      setProgress(latest);
+    });
+
+    // steps dynamic banaye
+    const steps: number[] = [];
+    for (let i = 20; i < progressValue; i += 20) steps.push(i);
+    steps.push(progressValue);
+
+    let index = 0;
+    let currentStart = 0; // 👈 last step ka end
+
+    function goNextStep() {
+      if (index >= steps.length) return;
+
+      const next = steps[index];
+      animate(currentStart, next, {
+        duration: 0.001,
+        ease: 'easeInOut',
+        onUpdate: (v) => motionProgress.set(v),
+        onComplete: () => {
+          currentStart = next;
+          index++;
+          setTimeout(goNextStep, 100);
+        }
+      });
+    }
+
+    goNextStep();
+    return () => unsub();
+  }, [progressValue, motionProgress]);
+
   return (
     <Box
       sx={{
@@ -134,7 +175,8 @@ export default function LessonCard({
           />
           <CircularProgress
             variant="determinate"
-            value={progressValue}
+            value={progress}
+            // value={progressValue}
             size={59}
             thickness={4}
             // thickness={2.5}
