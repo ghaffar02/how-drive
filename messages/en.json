@@ -431,7 +431,7 @@
     "forgetPassword": "Forgot password?",
     "button": "Login",
     "alreadyUser": "Don’t have an account? ",
-    "register": "Register",
+    "register": "Sign up",
     "emailError": "E-Mail is required",
     "passwordError": "Passwort is required",
     "passMin": "Password must be at least 8 characters long",

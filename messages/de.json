@@ -441,8 +441,8 @@
   },
   "registerPage": {
     "heading": "Konto erstellen als:",
-    "tabValue1": "Fahrschuler",
-    "tabValue2": "Fahrschule",
+    "tabValue1": "Fahrschüler",
+    "tabValue2": "Fahrschulen",
     "firstName": "Vorname",
     "lastName": "Nachname",
     "email": "E-Mail",
