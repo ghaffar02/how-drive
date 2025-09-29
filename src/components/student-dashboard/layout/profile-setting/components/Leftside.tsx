@@ -4,15 +4,11 @@ import arrow from '@/assets/svgs/dashboard-student/arrowsetting.svg';
 import {useState} from 'react';
 
 export default function Leftside() {
-  // 👇 ab yahan array of active indexes
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
 
   const handleClick = (i: number) => {
-    setActiveIndexes(
-      (prev) =>
-        prev.includes(i) // agar already active hai to remove
-          ? prev.filter((idx) => idx !== i)
-          : [...prev, i] // warna add kardo
+    setActiveIndexes((prev) =>
+      prev.includes(i) ? prev.filter((idx) => idx !== i) : [...prev, i]
     );
   };
 

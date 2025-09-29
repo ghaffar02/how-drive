@@ -1353,8 +1353,8 @@
         "des": "Driving license classes A, A1, A2, AM"
       },
       {
-        "heading": "T",
-        "sub": "from 16",
+        "heading": "B",
+        "sub": "from 18",
         "des": "Driving license classes B, BE, B96, B197"
       }
     ],
@@ -1888,9 +1888,9 @@
           }
         ]
       },
-      "appointment":{
-        "title1":"Next Appointment",
-        "title2":"No new appointment set!"
+      "appointment": {
+        "title1": "Next Appointment",
+        "title2": "No new appointment set!"
       }
     }
   }
