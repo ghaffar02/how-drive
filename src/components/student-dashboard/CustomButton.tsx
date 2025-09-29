@@ -1,3 +1,4 @@
+import localFont from '@/utils/themes';
 import {Button, ButtonProps} from '@mui/material';
 import {SxProps, Theme} from '@mui/material/styles';
 
@@ -25,15 +26,15 @@ export default function CustomButton({
       variant="contained"
       disableRipple
       sx={{
-        maxWidth: '93px',
-        width: '100%',
+        // maxWidth: '93px',
+        // width: '100%',
         background: bgColor,
         textTransform: 'capitalize',
         padding: '8px 12px',
-        fontSize: '13px',
+        fontSize: {xs: '12px', sm: '13px', md: '14px'},
         borderRadius: '10px',
         fontFamily: '"Inter", sans-serif !important',
-        fontWeight: '500',
+        fontWeight: '400',
         boxShadow: '0px 0px 0px #000',
         '&:hover': {
           background: hoverColor,

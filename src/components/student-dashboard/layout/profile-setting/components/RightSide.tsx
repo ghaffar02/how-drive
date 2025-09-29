@@ -55,7 +55,7 @@ export default function RightSide() {
               <Typography
                 sx={{
                   ...localFont,
-                  fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                  fontSize: {xs: '12px', md: '13px', lg: '14px'},
                   color: '#4A5568',
                   fontFamily: '"Inter", sans-serif !important',
                   fontWeight: activeIndex === i ? '500' : '400'

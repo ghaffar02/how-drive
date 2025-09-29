@@ -1,6 +1,7 @@
 import CustomButton from '@/components/student-dashboard/CustomButton';
+import CustomTextField from '@/components/student-dashboard/InputField';
 import localFont from '@/utils/themes';
-import {Box, Typography} from '@mui/material';
+import {Box, Divider, Typography} from '@mui/material';
 
 export default function Account() {
   return (
@@ -8,11 +9,11 @@ export default function Account() {
       sx={{
         width: '100%',
         height: '100%',
-
+        mt: '12px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'space-evenly',
+        justifyContent: 'space-around',
         gap: '32px'
       }}
     >
@@ -20,14 +21,29 @@ export default function Account() {
         sx={{
           width: '100%',
           display: 'flex',
+          flexDirection: {xs: 'column', md: 'row'},
           gap: '16px',
           alignItems: 'center',
           justifyContent: 'space-between'
         }}
       >
         <Box sx={{width: '100%'}}>
-          <Typography sx={{...localFont.inter18}}>Konto</Typography>
-          <Typography sx={{...localFont.inter16}}>
+          <Typography
+            sx={{
+              ...localFont.inter18,
+              fontWeight: 500,
+              fontFamily: '"Inter", sans-serif !important'
+            }}
+          >
+            Konto
+          </Typography>
+          <Typography
+            sx={{
+              ...localFont.inter16,
+              fontFamily: '"Inter", sans-serif !important',
+              fontWeight: 300
+            }}
+          >
             Persönliche Daten, Konto löschen, etc.
           </Typography>
         </Box>
@@ -42,11 +58,54 @@ export default function Account() {
         >
           <CustomButton
             label="Abbrechen"
-            bgColor="rgba(248,250,252,0.3)"
+            bgColor="rgba(248, 250, 252, 0)"
             hoverTextcolor="#fff"
             sx={{border: '1px solid #000', color: '#000'}}
           />
-          <CustomButton label="Abbrechen" sx={{}} />
+          <CustomButton label="save" sx={{}} />
+        </Box>
+      </Box>
+      <Box width="100%">
+        <Divider
+          sx={{
+            borderTop: '1px solid transparent',
+            borderImage:
+              'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1'
+            // marginBottom: '32px'
+          }}
+        />
+      </Box>
+
+      <Box sx={{width: '100%'}}>
+        <Typography
+          sx={{
+            ...localFont.inter18,
+            fontWeight: 500,
+            fontFamily: '"Inter", sans-serif !important'
+          }}
+        >
+          Konto
+        </Typography>
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: {xs: 'column', md: 'row'},
+            gap: '8px',
+            alignItems: 'start',
+            justifyContent: 'space-between'
+          }}
+        >
+          <Typography
+            sx={{
+              ...localFont.inter16,
+              fontFamily: '"Inter", sans-serif !important',
+              fontWeight: 300
+            }}
+          >
+            Persönliche
+          </Typography>
+          <CustomTextField labal="Deniel" />
         </Box>
       </Box>
     </Box>

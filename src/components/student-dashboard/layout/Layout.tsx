@@ -4,7 +4,6 @@ import {Box, Typography} from '@mui/material';
 import TabStudentLayout from './DesktopTabs';
 import TabStudentLayoutMobile from './MobileTabs';
 import Home from './home/Home';
-import Setting from './profile-setting/Setting';
 import localFont from '@/utils/themes';
 import ProfileDropdown from './ProfileDropdown';
 // ProfileDropdown relative icons
@@ -118,7 +117,6 @@ export default function StudentDashboard() {
             </Box>
           </Box>
           {activeKey === '1' && <Home />}
-          {activeKey === '2' && <Setting />}
         </Box>
       </Box>
     </Box>
