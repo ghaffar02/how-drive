@@ -151,6 +151,7 @@ export default function LessonCard({
             position: 'relative',
             display: 'inline-flex',
             // alignItems: 'center',
+            zIndex: 0,
             transform: {
               xs: 'scale(1)',
               md: 'scale(1.3)',
@@ -170,7 +171,8 @@ export default function LessonCard({
               color: '#fff',
               position: 'absolute',
               left: 0,
-              top: 0
+              top: 0,
+              zIndex: 1
             }}
           />
           <CircularProgress
@@ -182,6 +184,7 @@ export default function LessonCard({
             // thickness={2.5}
             sx={{
               borderRadius: '50%',
+              zIndex: 1,
 
               [`& .${circularProgressClasses.circle}`]: {
                 stroke: 'url(#circularGradient)',
@@ -195,6 +198,7 @@ export default function LessonCard({
               left: 0,
               bottom: 0,
               right: 0,
+              zIndex: 1,
               position: 'absolute',
               display: 'flex',
               alignItems: 'center',
