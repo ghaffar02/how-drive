@@ -61,7 +61,12 @@ export default function StudentDashboard() {
             flexDirection: 'column',
             alignItems: 'center',
             flex: 1,
-            overflowY: 'auto'
+            overflowY: 'auto',
+            '&::-webkit-scrollbar': {
+              display: 'none'
+            },
+            msOverflowStyle: 'none',
+            scrollbarWidth: 'none'
           }}
         >
           <Home />

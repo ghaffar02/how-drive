@@ -108,7 +108,7 @@ export default function Process() {
           />
         ))}
         {[1, 2, 3, 4, 5].map((i, index) => (
-          <>
+          <React.Fragment key={i}>
             <MotionBox
               key={i}
               sx={{
@@ -154,7 +154,7 @@ export default function Process() {
               animate={{opacity: 1}}
               transition={{duration: 0.4, delay: 0.4, ease: 'easeInOut'}}
             />
-          </>
+          </React.Fragment>
         ))}
       </MotionBox>
     </Box>
