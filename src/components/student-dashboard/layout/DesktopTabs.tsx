@@ -139,8 +139,13 @@ export default function DesktopTabs({
         <Box
           sx={{
             '& > :not(:last-child)': {marginBottom: '16px'},
-            // paddingY: '24px',
-            overflowY: 'auto'
+            overflowY: 'auto',
+            // hide scrollbars
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+            '&::-webkit-scrollbar': {
+              display: 'none'
+            }
           }}
         >
           {navItems.map((item) => {

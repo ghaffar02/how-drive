@@ -1,10 +1,13 @@
 'use client';
-
-import localFont from '@/utils/themes';
-import {Box, Modal, Typography} from '@mui/material';
 import * as React from 'react';
-import location from '@/assets/svgs/dashboard-student/home/location.svg';
 import Image, {StaticImageData} from 'next/image';
+import {Box, Modal, Typography} from '@mui/material';
+import localFont from '@/utils/themes';
+import location from '@/assets/svgs/dashboard-student/home/location.svg';
+import phone from '@/assets/svgs/dashboard-student/phone.svg';
+import emailGrey from '@/assets/svgs/dashboard-student/emailGrey.svg';
+import link from '@/assets/svgs/dashboard-student/link.svg';
+import time from '@/assets/svgs/dashboard-student/time.svg';
 
 export type InfoMenuModalProps = {
   open: boolean;
@@ -46,9 +49,9 @@ export default function InfoMenuModal({open, onClose}: InfoMenuModalProps) {
           border: '1px solid #fff',
           p: '24px',
           bottom: '34px',
-          left: '28px',
+          left: {xs: '28px', sm: 'unset'},
+          right: {sm: '28px'},
           zIndex: '10000',
-          // backgroundColor: 'rgba(240, 240, 250, 0.6)',
           background:
             'linear-gradient(150deg, rgba(248, 250, 252, 0.3) 0%, rgba(248, 250, 252, 0.3) 25%, rgba(248, 250, 252, 0.3) 50%, rgba(248, 250, 252, 0.3) 75%, rgba(248, 250, 252, 0.3) 100%) rgba(248, 250, 252, 0.3)',
           backdropFilter: 'blur(15px)',
@@ -117,8 +120,8 @@ export default function InfoMenuModal({open, onClose}: InfoMenuModalProps) {
               }}
             >
               <InfoItem icon={location} label="Ausschläger Weg 100" />
-              <InfoItem icon={location} label="040/42858-0" />
-              <InfoItem icon={location} label="fuehrerschein@lbv.hamburg.de" />
+              <InfoItem icon={phone} label="040/42858-0" />
+              <InfoItem icon={emailGrey} label="fuehrerschein@lbv.hamburg.de" />
             </Box>
           </Box>
           <Box>
@@ -134,8 +137,8 @@ export default function InfoMenuModal({open, onClose}: InfoMenuModalProps) {
               }}
             >
               <InfoItem icon={location} label="Ausschläger Weg 100" />
-              <InfoItem icon={location} label="040/42858-0" />
-              <InfoItem icon={location} label="fuehrerschein@lbv.hamburg.de" />
+              <InfoItem icon={phone} label="040/42858-0" />
+              <InfoItem icon={emailGrey} label="fuehrerschein@lbv.hamburg.de" />
             </Box>
           </Box>
           <Box>
@@ -150,15 +153,12 @@ export default function InfoMenuModal({open, onClose}: InfoMenuModalProps) {
                 marginTop: '10px'
               }}
             >
-              <InfoItem icon={location} label="Mundsburger Damm 44" />
-              <InfoItem icon={location} label="040/52160511" />
-              <InfoItem icon={location} label="info@mundsburg-fahrschule.de" />
+              <InfoItem icon={location} label="Ausschläger Weg 100" />
+              <InfoItem icon={phone} label="040/42858-0" />
+              <InfoItem icon={emailGrey} label="fuehrerschein@lbv.hamburg.de" />
+              <InfoItem icon={link} label="http://mundsburg-fahrschule.de/" />
               <InfoItem
-                icon={location}
-                label="http://mundsburg-fahrschule.de/"
-              />
-              <InfoItem
-                icon={location}
+                icon={time}
                 label="Mo. – Do.: 12:00 – 19:00 UhrFr.: 12:00 – 16:30 Uhr"
               />
             </Box>

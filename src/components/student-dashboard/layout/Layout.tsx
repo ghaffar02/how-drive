@@ -29,7 +29,6 @@ export default function StudentDashboard() {
         sx={{
           maxWidth: '1400px',
           margin: 'auto',
-          // padding: '4px',
           display: 'flex',
           height: '100%',
           flexDirection: {xs: 'column-reverse', md: 'row'},

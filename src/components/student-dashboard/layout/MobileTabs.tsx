@@ -83,12 +83,12 @@ export default function MobileTabs({
       <Box
         sx={{
           border: '1px solid #fff',
-          width: 'calc(100% - 56px)',
+          width: 'calc(100% - 32px)',
           borderRadius: '18px',
           padding: '12px',
           backgroundColor: 'rgba(248, 250, 252, 0.3)',
           position: 'fixed',
-          bottom: '29px',
+          bottom: '16px',
           height: '77px',
           left: '50%',
           transform: 'translateX(-50%)',
