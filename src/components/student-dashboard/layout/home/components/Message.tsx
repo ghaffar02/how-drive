@@ -48,7 +48,7 @@ export default function Messages() {
       sx={{
         background: '#ffffffbf',
         padding: {xs: '16px', md: '24px'},
-        maxWidth: {xs: '100%', lg: '357px'},
+        // maxWidth: {xs: '100%', lg: '357px'},
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -72,7 +72,14 @@ export default function Messages() {
           display: 'flex',
           width: '100%',
           flexDirection: 'column',
-          gap: '10px'
+          gap: '10px',
+          maxHeight: '188px',
+          overflow: 'auto',
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          },
+          msOverflowStyle: 'none',
+          scrollbarWidth: 'none'
         }}
       >
         {emails.map((item, index) => {
