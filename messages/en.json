@@ -1896,6 +1896,17 @@
         "Messages": "Messages",
         "card1Title": "Theory lessons",
         "card2Title": "Driving lessons"
+      },
+      "process": {
+        "title": "Process",
+        "step1": "Driving school",
+        "step2": "Documents",
+        "step3": "Driving license office",
+        "step4": "Theory lessons",
+        "step5": "Theory exam",
+        "step6": "Driving lessons",
+        "step7": "Driving/Practical exam",
+        "step8": "Issuing a driving license"
       }
     }
   }

@@ -2,54 +2,55 @@ import React from 'react';
 import {Box, Typography} from '@mui/material';
 import localFont from '@/utils/themes';
 
+import {useTranslations} from 'next-intl';
 import {motion} from 'framer-motion';
 
 const MotionBox = motion(Box);
 
-const data = [
-  {
-    id: 1,
-    title: 'Driving school',
-    status: true
-  },
-  {
-    id: 2,
-    title: 'Documents',
-    status: false
-  },
-  {
-    id: 3,
-    title: 'Driving license office',
-    status: false
-  },
-  {
-    id: 4,
-    title: 'Theory lessons',
-    status: false
-  },
-  {
-    id: 5,
-    title: 'Theory exam',
-    status: false
-  },
-  {
-    id: 6,
-    title: 'Driving lessons',
-    status: false
-  },
-  {
-    id: 7,
-    title: 'Driving/Practical exam',
-    status: false
-  },
-  {
-    id: 8,
-    title: 'Issuing a driving license',
-    status: false
-  }
-];
-
 export default function Process() {
+  const t = useTranslations('Dashboard.home.process');
+  const data = [
+    {
+      id: 1,
+      title: t('step1'),
+      status: true
+    },
+    {
+      id: 2,
+      title: t('step2'),
+      status: false
+    },
+    {
+      id: 3,
+      title: t('step3'),
+      status: false
+    },
+    {
+      id: 4,
+      title: t('step4'),
+      status: false
+    },
+    {
+      id: 5,
+      title: t('step5'),
+      status: false
+    },
+    {
+      id: 6,
+      title: t('step6'),
+      status: false
+    },
+    {
+      id: 7,
+      title: t('step7'),
+      status: false
+    },
+    {
+      id: 8,
+      title: t('step8'),
+      status: false
+    }
+  ];
   return (
     <Box
       sx={{
@@ -74,10 +75,10 @@ export default function Process() {
           fontWeight: '500'
         }}
       >
-        Process
+        {t('title')}
       </Typography>
       {/* Below is cards code */}
-      <Box
+      <MotionBox
         sx={{
           maxWidth: '600px',
           width: '100%',
@@ -94,6 +95,9 @@ export default function Process() {
           overflow: 'hidden',
           padding: {xs: '15px 0px', md: '20px 0px'}
         }}
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{duration: 0.4, delay: 0.4, ease: 'easeInOut'}}
       >
         {data.map((item, i) => (
           <Card
@@ -152,7 +156,7 @@ export default function Process() {
             />
           </>
         ))}
-      </Box>
+      </MotionBox>
     </Box>
   );
 }

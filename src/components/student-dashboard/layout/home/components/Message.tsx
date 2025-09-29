@@ -9,6 +9,10 @@ import fabian from '@/assets/svgs/dashboard-student/home/fabian.svg';
 import logo from '@/assets/svgs/dashboard-student/home/logo.svg';
 import {useTranslations} from 'next-intl';
 
+import {motion} from 'framer-motion';
+
+const MotionBox = motion(Box);
+
 export default function Messages() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const t = useTranslations('Dashboard.home.MessageLesson');
@@ -66,7 +70,7 @@ export default function Messages() {
         {t('Messages')}
       </Typography>
 
-      <Box
+      <MotionBox
         sx={{
           display: 'flex',
 
@@ -85,6 +89,9 @@ export default function Messages() {
           msOverflowStyle: 'none',
           scrollbarWidth: 'none'
         }}
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{duration: 0.4, delay: 0.4, ease: 'easeInOut'}}
       >
         {emails.map((item, index) => {
           return (
@@ -195,7 +202,7 @@ export default function Messages() {
             </Box>
           );
         })}
-      </Box>
+      </MotionBox>
     </Box>
   );
 }
