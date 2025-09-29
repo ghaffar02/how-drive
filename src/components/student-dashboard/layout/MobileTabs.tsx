@@ -13,14 +13,23 @@ import calander_blue from '@/assets/svgs/dashboard-student/calander_blue.svg';
 import message_black from '@/assets/svgs/dashboard-student/message_black.svg';
 import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
 import infos_black from '@/assets/svgs/dashboard-student/infos_black.svg';
-import menu from '@/assets/svgs/dashboard-student/menu.svg';
-import TabMenuModalForMobile from './MobileMenuModal';
+// import menu from '@/assets/svgs/dashboard-student/menu.svg';
+
+import InfoMenuModal from './InfoMenuModal';
 
 type Props = {
   activeKey: string;
   setActiveKey: React.Dispatch<React.SetStateAction<string>>;
   hoverKey: string | null;
   setHoverKey: React.Dispatch<React.SetStateAction<string | null>>;
+};
+
+type NavItem = {
+  key: string;
+  label: string;
+  iconBlack: string;
+  iconBlue: string;
+  iconHover: string;
 };
 
 export default function MobileTabs({
@@ -30,14 +39,6 @@ export default function MobileTabs({
   setHoverKey
 }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
-
-  type NavItem = {
-    key: string;
-    label: string;
-    iconBlack: string;
-    iconBlue: string;
-    iconHover: string;
-  };
 
   const navItems: NavItem[] = [
     {
@@ -79,7 +80,6 @@ export default function MobileTabs({
 
   return (
     <>
-      {/* the tab section  */}
       <Box
         sx={{
           border: '1px solid #fff',
@@ -89,10 +89,12 @@ export default function MobileTabs({
           backgroundColor: 'rgba(248, 250, 252, 0.3)',
           position: 'fixed',
           bottom: '29px',
-          height: '77px'
+          height: '77px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          backdropFilter: 'blur(8px)'
         }}
       >
-        {/* all navigations */}
         <Box
           sx={{
             justifyContent: 'flex-end',
@@ -115,17 +117,14 @@ export default function MobileTabs({
                 key={item.key}
                 onClick={() => {
                   if (item.key === 'Infos') {
-                    setMenuOpen(true); // open menu
+                    setMenuOpen(true);
                   } else {
                     setActiveKey(item.key);
                   }
                 }}
                 onMouseEnter={() => setHoverKey(item.key)}
                 onMouseLeave={() => setHoverKey(null)}
-                sx={{
-                  cursor: 'pointer',
-                  width: '20%'
-                }}
+                sx={{cursor: 'pointer', width: '20%'}}
               >
                 <Box
                   sx={{
@@ -143,10 +142,7 @@ export default function MobileTabs({
                     width={25}
                     height={25}
                     unoptimized
-                    style={{
-                      display: 'block',
-                      margin: 'auto'
-                    }}
+                    style={{display: 'block', margin: 'auto'}}
                   />
                 </Box>
                 <Typography
@@ -158,7 +154,7 @@ export default function MobileTabs({
                     textAlign: 'center',
                     letterSpacing: '0.01em',
                     lineHeight: '1.5em',
-                    marginTop: '4px',
+                    mt: '4px',
                     textTransform: 'capitalize'
                   }}
                 >
@@ -169,7 +165,9 @@ export default function MobileTabs({
           })}
         </Box>
       </Box>
-      {/* end tab section */}
+
+      {/* The modal lives alongside the tabs and is controlled by state */}
+      <InfoMenuModal open={menuOpen} onClose={() => setMenuOpen(false)} />
     </>
   );
 }

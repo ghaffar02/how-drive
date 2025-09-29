@@ -177,7 +177,7 @@ function Card({id, title, status}: CardProps) {
         borderRadius: '999px',
         cursor: 'pointer',
         position: 'relative',
-        zIndex: 999999
+        zIndex: 100
       }}
     >
       <Box
