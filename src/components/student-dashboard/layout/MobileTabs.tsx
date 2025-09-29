@@ -92,7 +92,8 @@ export default function MobileTabs({
           height: '77px',
           left: '50%',
           transform: 'translateX(-50%)',
-          backdropFilter: 'blur(8px)'
+          backdropFilter: 'blur(8px)',
+          zIndex: '1000'
         }}
       >
         <Box
