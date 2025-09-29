@@ -4,6 +4,7 @@ import {Box} from '@mui/material';
 import TabStudentLayout from './DesktopTabs';
 import TabStudentLayoutMobile from './MobileTabs';
 import Home from './home/Home';
+import Setting from './profile-setting/Setting';
 
 export default function StudentDashboard() {
   const [activeKey, setActiveKey] = React.useState<string>('home');
@@ -65,6 +66,7 @@ export default function StudentDashboard() {
           }}
         >
           <Home />
+          {/* <Setting /> */}
         </Box>
       </Box>
     </Box>
