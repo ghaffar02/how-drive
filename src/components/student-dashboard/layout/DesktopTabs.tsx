@@ -21,18 +21,6 @@ import login from '@/assets/svgs/dashboard-student/login.svg';
 
 // your independent dropdown
 import ProfileDropdown from './ProfileDropdown';
-
-// name splitting function
-function getInitials(fullName: string): string {
-  if (!fullName) return '';
-  const words = fullName.trim().split(' ').filter(Boolean);
-  let initials = words[0]?.[0] || '';
-  if (words.length > 1) {
-    initials += words[1][0];
-  }
-  return initials.toUpperCase();
-}
-
 type Props = {
   activeKey: string;
   setActiveKey: React.Dispatch<React.SetStateAction<string>>;
@@ -86,7 +74,7 @@ export default function DesktopTabs({
   ];
 
   // profile initials
-  const initials = getInitials('aohn zoe example');
+  const initials = 'aohn zoe example';
 
   // dropdown state + ref
   const [open, setOpen] = React.useState(false);
@@ -212,7 +200,7 @@ export default function DesktopTabs({
           />
           <Box sx={{margin: 'auto', width: 'fit-content'}}>
             <ProfileDropdown
-              label={initials}
+              fullName={initials}
               items={[
                 {label: 'Einstellungen', menuIcon: setting},
                 {label: 'Support', menuIcon: email},

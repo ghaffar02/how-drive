@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import {Box, Typography, Paper, Popper, Grow, Divider} from '@mui/material';
+import {SxProps, Theme} from '@mui/material';
 import Image, {StaticImageData} from 'next/image';
 import arrow from '@/assets/svgs/dashboard-student/arrow.svg';
 import profileLogo from '@/assets/svgs/lincense-steps/profileLogo.svg';
@@ -8,21 +9,36 @@ import localFont from '@/utils/themes';
 
 type ProfileDropdownProps = {
   anchorRef: React.RefObject<HTMLDivElement | null>;
-  label: string;
+  fullName: string;
   items: {label: string; menuIcon: string}[];
   open: boolean;
   setOpen: (open: boolean) => void;
   profileIcon?: StaticImageData;
+  positionSx?: SxProps<Theme>;
 };
 
+// helper inside component
+function getInitials(fullName: string): string {
+  if (!fullName) return '';
+  const words = fullName.trim().split(' ').filter(Boolean);
+  let initials = words[0]?.[0] || '';
+  if (words.length > 1) {
+    initials += words[1][0];
+  }
+  return initials.toUpperCase();
+}
+
 export default function ProfileDropdown({
-  label,
+  fullName,
   items,
   profileIcon,
   open,
   setOpen,
-  anchorRef
+  anchorRef,
+  positionSx
 }: ProfileDropdownProps) {
+  const initials = getInitials(fullName);
+
   const textStyle = {
     color: '#000000',
     fontSize: '14px',
@@ -73,7 +89,7 @@ export default function ProfileDropdown({
               textTransform: 'capitalize'
             }}
           >
-            {label}
+            {initials}
           </Typography>
         )}
       </Box>
@@ -85,12 +101,11 @@ export default function ProfileDropdown({
         anchorEl={anchorRef.current}
         placement="top"
         transition
-        // modifiers={[{name: 'offset', options: {offset: [40, 10]}}]}
         sx={{
-          zIndex: 1300,
           left: {md: '20px !important'},
           right: {xs: '20px !important', md: 'unset !important'},
-          bottom: {md: '18px !important'}
+          bottom: {md: '18px !important'},
+          ...positionSx
         }}
       >
         {({TransitionProps}) => (
@@ -135,7 +150,7 @@ export default function ProfileDropdown({
                       fontWeight: '700'
                     }}
                   >
-                    Daniel Mustermann
+                    {fullName}
                   </Typography>
                   <Typography
                     sx={{
@@ -153,8 +168,6 @@ export default function ProfileDropdown({
                 sx={{
                   marginY: '20px',
                   borderTop: '1px solid #fff',
-                  // borderImage:
-                  //   'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1',
                   width: '100%'
                 }}
               />

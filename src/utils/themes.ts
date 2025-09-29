@@ -54,6 +54,7 @@ const localFont = {
   inter20: {
     color: '#2D3748',
     fontSize: {xs: '16px', sm: '18px', md: '20px'},
+    fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
     lineHeight: '1.35em',
     fontWeight: '400'
   },

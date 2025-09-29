@@ -18,17 +18,7 @@ export default function MobileMenuModal({onClose}: Props) {
   // dropdown state + ref
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLDivElement>(null!);
-
-  function getInitials(fullName: string): string {
-    if (!fullName) return '';
-    const words = fullName.trim().split(' ').filter(Boolean);
-    let initials = words[0]?.[0] || '';
-    if (words.length > 1) {
-      initials += words[1][0];
-    }
-    return initials.toUpperCase();
-  }
-  const initials = getInitials('Hans zustermann');
+  const initials = 'Hans zustermann';
   return (
     <>
       <Box
@@ -62,7 +52,7 @@ export default function MobileMenuModal({onClose}: Props) {
           </Box>
           <Box sx={{height: '40px', width: '40px'}}>
             <ProfileDropdown
-              label={initials}
+              fullName={initials}
               items={[
                 {label: 'Einstellungen', menuIcon: setting},
                 {label: 'Support', menuIcon: email},
