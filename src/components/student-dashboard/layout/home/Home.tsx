@@ -5,8 +5,11 @@ import Appointment from './components/Appointment';
 import LessonCard from './components/LessonCard';
 import Messages from './components/Message';
 import Process from './components/Process';
+import {useTranslations} from 'next-intl';
 
 export default function Home() {
+  const t = useTranslations('Dashboard.home.MessageLesson');
+
   return (
     <>
       <Box
@@ -41,7 +44,7 @@ export default function Home() {
             </Grid>
             <Grid size={6} sx={{height: {xs: 'auto', xl: '28%'}}}>
               <LessonCard
-                title="Theory lessons"
+                title={t('card1Title')}
                 completedHours={11}
                 totalHours={14}
                 progressValue={80}
@@ -49,9 +52,9 @@ export default function Home() {
             </Grid>
             <Grid size={6} sx={{height: {xs: 'auto', xl: '28%'}}}>
               <LessonCard
-                title="Driving lessons"
-                completedHours={12}
-                totalHours={4}
+                title={t('card2Title')}
+                completedHours={4}
+                totalHours={12}
                 progressValue={30}
               />
             </Grid>

@@ -1891,6 +1891,11 @@
       "appointment": {
         "title1": "Next Appointment",
         "title2": "No new appointment set!"
+      },
+      "MessageLesson": {
+        "Messages": "Messages",
+        "card1Title": "Theory lessons",
+        "card2Title": "Driving lessons"
       }
     }
   }

@@ -7,9 +7,11 @@ import React, {useState} from 'react';
 import car from '@/assets/svgs/dashboard-student/home/car.svg';
 import fabian from '@/assets/svgs/dashboard-student/home/fabian.svg';
 import logo from '@/assets/svgs/dashboard-student/home/logo.svg';
+import {useTranslations} from 'next-intl';
 
 export default function Messages() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const t = useTranslations('Dashboard.home.MessageLesson');
   const emails = [
     {
       icon: car,
@@ -61,7 +63,7 @@ export default function Messages() {
           fontFamily: '"Inter", sans-serif !important'
         }}
       >
-        Messages
+        {t('Messages')}
       </Typography>
 
       <Box

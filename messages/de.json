@@ -1891,6 +1891,11 @@
       "appointment": {
         "title1": "Nächster Termin",
         "title2": "Kein neuer Termin!"
+      },
+      "MessageLesson": {
+        "Messages": "Nachrichten",
+        "card1Title": "Theoriestunden",
+        "card2Title": "Fahrstunden"
       }
     }
   }
