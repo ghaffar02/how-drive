@@ -4,7 +4,7 @@ import {Box, Typography} from '@mui/material';
 import TabStudentLayout from './DesktopTabs';
 import TabStudentLayoutMobile from './MobileTabs';
 import Home from './home/Home';
-// import Setting from './profile-setting/Setting';
+import Setting from './profile-setting/Setting';
 import localFont from '@/utils/themes';
 import ProfileDropdown from './ProfileDropdown';
 // ProfileDropdown relative icons
@@ -13,7 +13,7 @@ import supportIcon from '@/assets/svgs/dashboard-student/email.svg';
 import logoutIcon from '@/assets/svgs/dashboard-student/login.svg';
 
 export default function StudentDashboard() {
-  const [activeKey, setActiveKey] = React.useState<string>('home');
+  const [activeKey, setActiveKey] = React.useState<string>('1');
   const [hoverKey, setHoverKey] = React.useState<string | null>(null);
   // ProfileDropdown relative states
   const [open, setOpen] = useState(false);
@@ -117,8 +117,8 @@ export default function StudentDashboard() {
               />
             </Box>
           </Box>
-          <Home />
-          {/* <Setting /> */}
+          {activeKey === '1' && <Home />}
+          {activeKey === '2' && <Setting />}
         </Box>
       </Box>
     </Box>

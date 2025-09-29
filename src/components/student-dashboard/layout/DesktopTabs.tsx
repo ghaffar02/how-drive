@@ -44,28 +44,28 @@ export default function DesktopTabs({
 
   const navItems: NavItem[] = [
     {
-      key: 'home',
+      key: '1',
       label: 'home',
       iconBlack: home_black,
       iconBlue: home_blue,
       iconHover: home_blue
     },
     {
-      key: 'timer',
+      key: '2',
       label: 'timer',
       iconBlack: timer_black,
       iconBlue: timer_blue,
       iconHover: timer_blue
     },
     {
-      key: 'calendar',
+      key: '3',
       label: 'calendar',
       iconBlack: calander_black,
       iconBlue: calander_blue,
       iconHover: calander_blue
     },
     {
-      key: 'message',
+      key: '4',
       label: 'message',
       iconBlack: message_black,
       iconBlue: message_blue,
