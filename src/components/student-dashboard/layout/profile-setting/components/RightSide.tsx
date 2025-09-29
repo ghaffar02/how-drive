@@ -1,9 +1,10 @@
 import localFont from '@/utils/themes';
 import {Box, Typography} from '@mui/material';
 import {useState} from 'react';
+import Account from './Account';
 
 export default function RightSide() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | 0>(0);
 
   const handleClick = (i: number) => {
     setActiveIndex(i);
@@ -41,7 +42,7 @@ export default function RightSide() {
               key={i}
               onClick={() => handleClick(i)}
               sx={{
-                background: 'transparent',
+                background: activeIndex === i ? '#ffff' : 'transprant',
                 padding: '4px 8px',
                 borderRadius: '999px',
                 cursor: 'pointer',
@@ -68,8 +69,8 @@ export default function RightSide() {
       </Box>
 
       {/* Pages */}
-      <Box sx={{p: 2, bgcolor: '#fff', borderRadius: '16px'}}>
-        {activeIndex === 0 && <Typography>Account Page Content</Typography>}
+      <Box>
+        {activeIndex === 0 && <Account />}
         {activeIndex === 1 && (
           <Typography>Notification Page Content</Typography>
         )}

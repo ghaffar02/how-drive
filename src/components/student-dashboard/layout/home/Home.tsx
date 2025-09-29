@@ -21,13 +21,7 @@ export default function Home() {
           padding: {xs: '8px', lg: '24px'},
           border: '1px solid #fff',
           borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
-          marginBottom: {xs: '77px', md: 'auto'},
-          overflow: {xs: 'none', lg: 'auto'},
-          '&::-webkit-scrollbar': {
-            display: 'none'
-          },
-          msOverflowStyle: 'none',
-          scrollbarWidth: 'none'
+          marginBottom: {xs: '77px', md: 'auto'}
         }}
       >
         <Grid
