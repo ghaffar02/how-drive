@@ -2,6 +2,10 @@ import React from 'react';
 import {Box, Typography} from '@mui/material';
 import localFont from '@/utils/themes';
 
+import {motion} from 'framer-motion';
+
+const MotionBox = motion(Box);
+
 const data = [
   {
     id: 1,
@@ -101,7 +105,7 @@ export default function Process() {
         ))}
         {[1, 2, 3, 4, 5].map((i, index) => (
           <>
-            <Box
+            <MotionBox
               key={i}
               sx={{
                 display: {xs: 'none', md: 'block'},
@@ -114,8 +118,11 @@ export default function Process() {
                 height: '1px',
                 background: '#14b8a6'
               }}
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              transition={{duration: 0.4, delay: 0.4, ease: 'easeInOut'}}
             />
-            <Box
+            <MotionBox
               key={index}
               sx={{
                 display: i == 5 ? 'none' : {xs: 'none', md: 'block'},
@@ -139,6 +146,9 @@ export default function Process() {
                     ? {left: 0}
                     : {})
               }}
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              transition={{duration: 0.4, delay: 0.4, ease: 'easeInOut'}}
             />
           </>
         ))}

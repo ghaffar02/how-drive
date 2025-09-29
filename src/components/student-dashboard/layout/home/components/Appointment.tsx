@@ -7,6 +7,10 @@ import {useTranslations} from 'next-intl';
 import Clock from '@/assets/svgs/dashboard-student/home/clock.svg';
 import Location from '@/assets/svgs/dashboard-student/home/location.svg';
 
+import {motion} from 'framer-motion';
+
+const MotionBox = motion(Box);
+
 export default function Appointment() {
   const t = useTranslations('Dashboard.home.appointment');
   const show = true;
@@ -38,7 +42,7 @@ export default function Appointment() {
       >
         {t('title1')}
       </Typography>
-      <Box
+      <MotionBox
         sx={{
           background: '#fff',
           padding: '12px',
@@ -48,6 +52,9 @@ export default function Appointment() {
           flexDirection: 'column',
           gap: '10px'
         }}
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{duration: 0.4, delay: 0.4, ease: 'easeInOut'}}
       >
         <Box sx={{display: 'flex', gap: '6px', alignItems: 'flex-end'}}>
           <Typography
@@ -91,7 +98,7 @@ export default function Appointment() {
         >
           {show ? 'Theory exam' : '--'}
         </Typography>
-      </Box>
+      </MotionBox>
       <Box sx={{display: 'flex', flexDirection: 'column', gap: '6px'}}>
         {data.map((item, i) => (
           <Box key={i} sx={{display: 'flex', gap: '10px'}}>
