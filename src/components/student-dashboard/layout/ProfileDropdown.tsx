@@ -1,8 +1,10 @@
 'use client';
 import React from 'react';
-import {Box, Typography, Paper, Popper, Grow} from '@mui/material';
+import {Box, Typography, Paper, Popper, Grow, Divider} from '@mui/material';
 import Image, {StaticImageData} from 'next/image';
 import arrow from '@/assets/svgs/dashboard-student/arrow.svg';
+import profileLogo from '@/assets/svgs/lincense-steps/profileLogo.svg';
+import localFont from '@/utils/themes';
 
 type ProfileDropdownProps = {
   anchorRef: React.RefObject<HTMLDivElement | null>;
@@ -81,30 +83,81 @@ export default function ProfileDropdown({
         onMouseEnter={() => setOpen(true)}
         open={open}
         anchorEl={anchorRef.current}
-        placement="bottom"
+        placement="top"
         transition
-        modifiers={[{name: 'offset', options: {offset: [49, 10]}}]}
-        sx={{zIndex: 1300}}
+        // modifiers={[{name: 'offset', options: {offset: [40, 10]}}]}
+        sx={{
+          zIndex: 1300,
+          left: {md: '20px !important'},
+          right: {xs: '20px !important', md: 'unset !important'},
+          bottom: {md: '18px !important'}
+        }}
       >
         {({TransitionProps}) => (
           <Grow {...TransitionProps} style={{transformOrigin: 'bottom center'}}>
             <Paper
               elevation={8}
               sx={{
-                minWidth: '200px',
                 borderRadius: '12px',
                 boxShadow:
                   'rgba(0, 0, 0, 0.05) 0px 10px 20px, rgba(0, 0, 0, 0.05) 0px 0px 0px 1px',
-                padding: '8px',
+                padding: '16px',
                 display: 'flex',
                 flexDirection: 'column',
                 backdropFilter: 'blur(15px)',
-                maxWidth: '200px',
+                width: '256px',
                 gap: '4px',
-                backgroundColor: 'rgba(255, 255, 255, 0.85)',
+                backgroundColor: 'rgba(240, 240, 250, 0.6)',
                 border: '1px solid #fff'
               }}
             >
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  paddingTop: '8px',
+                  gap: '12px'
+                }}
+              >
+                <Image
+                  style={{height: '42px', width: '42px', objectFit: 'cover'}}
+                  src={profileLogo}
+                  alt="profileLogo"
+                />
+                <Box>
+                  <Typography
+                    sx={{
+                      ...localFont.inter18,
+                      fontFamily:
+                        '"Inter", "Inter Placeholder", sans-serif !important',
+                      fontWeight: '700'
+                    }}
+                  >
+                    Daniel Mustermann
+                  </Typography>
+                  <Typography
+                    sx={{
+                      ...localFont.inter14,
+                      fontFamily:
+                        '"Inter", "Inter Placeholder", sans-serif !important',
+                      fontWeight: '300'
+                    }}
+                  >
+                    mustermann@gmail.com
+                  </Typography>
+                </Box>
+              </Box>
+              <Divider
+                sx={{
+                  marginY: '20px',
+                  borderTop: '1px solid #fff',
+                  // borderImage:
+                  //   'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1',
+                  width: '100%'
+                }}
+              />
               {items.map((item) => (
                 <Box
                   onClick={() => setOpen(false)}
@@ -113,7 +166,7 @@ export default function ProfileDropdown({
                     borderRadius: '12px',
                     cursor: 'pointer',
                     transition: 'all 0.3s ease-in-out',
-                    p: '12px',
+                    padding: '12px',
                     width: '100%',
                     display: 'flex',
                     alignItems: 'center',
