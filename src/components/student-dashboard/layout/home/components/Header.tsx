@@ -1,6 +1,6 @@
 'use client';
 import localFont from '@/utils/themes';
-import {Box, Typography, useMediaQuery, useTheme} from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import Image, {StaticImageData} from 'next/image';
 import React, {useState} from 'react';
 
