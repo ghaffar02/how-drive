@@ -1890,7 +1890,8 @@
       },
       "appointment": {
         "title1": "Next Appointment",
-        "title2": "No new appointment set!"
+        "title2": "No new appointment set!",
+        "exam": "Theory exam"
       },
       "MessageLesson": {
         "Messages": "Messages",

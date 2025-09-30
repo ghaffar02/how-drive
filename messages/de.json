@@ -1890,7 +1890,8 @@
       },
       "appointment": {
         "title1": "Nächster Termin",
-        "title2": "Kein neuer Termin!"
+        "title2": "Kein neuer Termin!",
+        "exam": "Theorieprüfung"
       },
       "MessageLesson": {
         "Messages": "Nachrichten",

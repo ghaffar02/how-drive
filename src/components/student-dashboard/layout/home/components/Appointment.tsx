@@ -30,14 +30,16 @@ export default function Appointment() {
         justifyContent: 'space-between',
         borderRadius: '18px',
         gap: {xs: '6px', sm: '15px'},
-        height: {xs: '224px', sm: '252px', md: 'auto', lg: '100%'}
+        height: '100%'
+        // height: {xs: '224px', sm: '252px', md: 'auto', lg: '100%'}
       }}
     >
       <Typography
         sx={{
           ...localFont.inter16,
           fontWeight: '500',
-          fontFamily: '"Inter", sans-serif !important'
+          fontFamily: '"Inter", sans-serif !important',
+          lineHeight: '1.5em'
         }}
       >
         {t('title1')}
@@ -46,7 +48,8 @@ export default function Appointment() {
         sx={{
           background: '#fff',
           padding: '12px',
-          border: '1px solid #a1a1aa',
+          // border: '1px solid #a1a1aa',
+          boxShadow: '0px 0px 2px 0px #d4d4d8',
           borderRadius: '12px',
           display: 'flex',
           flexDirection: 'column',
@@ -61,7 +64,8 @@ export default function Appointment() {
             sx={{
               ...localFont.h2,
               fontFamily: '"Inter", sans-serif !important',
-              fontWeight: '200'
+              fontWeight: '200',
+              lineHeight: '1em'
             }}
           >
             {show && 25}
@@ -71,7 +75,8 @@ export default function Appointment() {
               ...localFont.inter24,
               color: '#3f3f46',
               fontFamily: '"Inter", sans-serif !important',
-              fontWeight: '200'
+              fontWeight: '200',
+              lineHeight: '1em'
             }}
           >
             {show ? 'July' : `${t('title2')}`}
@@ -93,10 +98,11 @@ export default function Appointment() {
             ...localFont.inter18,
             color: '#71717A',
             fontFamily: '"Inter", sans-serif !important',
-            fontWeight: '300'
+            fontWeight: '300',
+            lineHeight: '1.5em'
           }}
         >
-          {show ? 'Theory exam' : '--'}
+          {show ? `${t('exam')}` : '--'}
         </Typography>
       </MotionBox>
       <Box sx={{display: 'flex', flexDirection: 'column', gap: '6px'}}>
@@ -113,7 +119,8 @@ export default function Appointment() {
               sx={{
                 ...localFont.inter14,
                 color: '#71717a',
-                fontFamily: '"Inter", sans-serif !important'
+                fontFamily: '"Inter", sans-serif !important',
+                lineHeight: '1.6em'
               }}
             >
               {show ? item.des : '--'}

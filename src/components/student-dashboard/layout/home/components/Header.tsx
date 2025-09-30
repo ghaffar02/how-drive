@@ -1,6 +1,6 @@
 'use client';
 import localFont from '@/utils/themes';
-import {Box, Typography} from '@mui/material';
+import {Box, Typography, useMediaQuery, useTheme} from '@mui/material';
 import Image, {StaticImageData} from 'next/image';
 import React, {useState} from 'react';
 
@@ -8,6 +8,9 @@ import Building from '@/assets/svgs/dashboard-student/home/building.svg';
 import Tooltip from '@/assets/svgs/dashboard-student/home/tooltip.svg';
 import Grade from '@/assets/svgs/dashboard-student/home/grade.svg';
 import Steering from '@/assets/svgs/dashboard-student/home/steering.svg';
+import Building1 from '@/assets/svgs/dashboard-student/home/smallBuilding.svg';
+import Grade1 from '@/assets/svgs/dashboard-student/home/smallGrade.svg';
+import Steering1 from '@/assets/svgs/dashboard-student/home/smallSteering.svg';
 import {useTranslations} from 'next-intl';
 
 export default function Header() {
@@ -20,6 +23,7 @@ export default function Header() {
       title3: 'Angemeldet',
       status: true,
       imgSrc: Building.src,
+      imgSrc1: Building1.src,
       bgColor: 'rgba(235,0,255,0.1)',
       id: 1,
       tooltip: ''
@@ -30,6 +34,7 @@ export default function Header() {
       title3: '25.07.2025',
       status: false,
       imgSrc: Grade.src,
+      imgSrc1: Grade1.src,
       bgColor: '#00bcd11a',
       id: 2,
       tooltip: ''
@@ -40,6 +45,7 @@ export default function Header() {
       title3: '25.07.2025',
       status: false,
       imgSrc: Steering.src,
+      imgSrc1: Steering1.src,
       bgColor: '#1270ff1a',
       id: 3,
       tooltip: ''
@@ -59,9 +65,10 @@ export default function Header() {
         borderRadius: '18px',
         display: 'flex',
         flexDirection: {xs: 'column', md: 'row'},
+        justifyContent: 'center',
         alignItems: 'center',
         gap: {xs: '8px', lg: '10px'},
-        height: {xs: 'auto', lg: '100%'}
+        height: {xs: '100%', lg: '100%'}
       }}
     >
       {updatedData.map((item, i) => (
@@ -77,6 +84,7 @@ type CardProps = {
   title3: string;
   status?: boolean;
   imgSrc: StaticImageData;
+  imgSrc1: StaticImageData;
   bgColor: string;
   id: number;
   tooltip: string;
@@ -88,6 +96,7 @@ function Card({
   title3,
   status,
   imgSrc,
+  imgSrc1,
   bgColor,
   id,
   tooltip
@@ -98,7 +107,10 @@ function Card({
     <>
       <Box
         sx={{
-          maxWidth: '356px',
+          // maxWidth: '356px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'space-around',
           width: '100%',
           padding: {xs: '0px', md: '16px'}
         }}
@@ -112,8 +124,8 @@ function Card({
         >
           <Box
             sx={{
-              height: '32px',
-              width: '32px',
+              height: {xs: '24px', sm: '32px'},
+              width: {xs: '24px', sm: '32px'},
               borderRadius: '50%',
               background: bgColor,
               display: 'flex',
@@ -121,7 +133,24 @@ function Card({
               justifyContent: 'center'
             }}
           >
-            <Image src={imgSrc} alt="icon" height={20} width={20} />
+            <Box
+              sx={{
+                display: {xs: 'none', sm: 'block'},
+                height: '20px',
+                width: '20px'
+              }}
+            >
+              <Image src={imgSrc} alt="icon" height={20} width={20} />
+            </Box>
+            <Box
+              sx={{
+                display: {xs: 'block', sm: 'none'},
+                height: '16px',
+                width: '16px'
+              }}
+            >
+              <Image src={imgSrc1} alt="icon" height={16} width={16} />
+            </Box>
           </Box>
           <Typography
             sx={{
@@ -132,7 +161,9 @@ function Card({
                 lg: '16px'
               },
               fontFamily: '"Inter", sans-serif !important',
-              color: '#3f3f46'
+              color: '#3f3f46',
+              fontWeight: '300',
+              lineHeight: '1.5em'
             }}
           >
             {title1}
@@ -161,7 +192,8 @@ function Card({
               fontFamily: '"Inter", sans-serif !important',
               color: show ? '#07a66b' : '#d93a32',
               fontWeight: '600',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              lineHeight: '1.4em'
             }}
           >
             {show ? title3 : title2}
