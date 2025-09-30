@@ -71,58 +71,89 @@ export default function StudentDashboard() {
             },
             msOverflowStyle: 'none',
             scrollbarWidth: 'none',
-            border: '1px solid #fff',
-            boxShadow:
-              'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
-            backdropFilter: 'blur(15px)'
+            // if activeKey === '1' {=> (means only for home tab)}
+            ...(activeKey === '1'
+              ? {
+                  border: {md: '1px solid #fff'},
+                  boxShadow: {
+                    md: 'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px'
+                  },
+                  backdropFilter: {md: 'blur(15px)'}
+                }
+              : {})
           }}
         >
-          {/* the profile tab for mobile  */}
-          <Box
-            sx={{
-              display: {xs: 'flex', md: 'none'},
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              // copy cat
-              border: '1px solid #fff',
-              borderRadius: '18px',
-              padding: '12px',
-              backgroundColor: 'rgba(248, 250, 252, 0.3)',
-              width: '100%',
-              height: '65px !important'
-            }}
-          >
-            <Typography
-              sx={{
-                ...localFont.inter20,
-                fontSize: '16px'
-              }}
-            >
-              Home
-            </Typography>
-            <Box sx={{width: 'fit-content'}}>
-              <ProfileDropdown
-                anchorRef={anchorRef}
-                fullName="Daniel Mustermann"
-                items={[
-                  {label: 'Einstellungen', menuIcon: settingsIcon},
-                  {label: 'Support', menuIcon: supportIcon},
-                  {label: 'Abmelden', menuIcon: logoutIcon}
-                ]}
-                open={open}
-                setOpen={setOpen}
-                positionSx={{
-                  top: {xs: '20px !important', md: '20px  !important'},
-                  right: 'unset',
-                  left: '-20px !important'
-                }}
-                // profileIcon={optionalCustomImage} // if you want profile picture instead of initials
-              />
-            </Box>
-          </Box>
+          <HomeMobileHeader
+            anchorRef={anchorRef}
+            open={open}
+            setOpen={setOpen}
+            title="Home"
+          />
           {activeKey === '1' && <Home />}
         </Box>
       </Box>
     </Box>
+  );
+}
+
+type HomeMobileHeaderProps = {
+  anchorRef: React.RefObject<HTMLDivElement | null>;
+  open: boolean;
+  setOpen: (open: boolean) => void;
+  title?: string;
+};
+
+function HomeMobileHeader({
+  anchorRef,
+  open,
+  setOpen,
+  title = 'Home'
+}: HomeMobileHeaderProps) {
+  return (
+    <>
+      {/* the profile tab for mobile  */}
+      <Box
+        sx={{
+          display: {xs: 'flex', md: 'none'},
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          // copy cat
+          border: '1px solid #fff',
+          borderRadius: '18px',
+          padding: '12px',
+          backgroundColor: 'rgba(248, 250, 252, 0.3)',
+          width: '100%',
+          height: '65px !important'
+        }}
+      >
+        <Typography
+          sx={{
+            ...localFont.inter20,
+            fontSize: '16px'
+          }}
+        >
+          {title}
+        </Typography>
+        <Box sx={{width: 'fit-content'}}>
+          <ProfileDropdown
+            anchorRef={anchorRef}
+            fullName="Daniel Mustermann"
+            items={[
+              {label: 'Einstellungen', menuIcon: settingsIcon},
+              {label: 'Support', menuIcon: supportIcon},
+              {label: 'Abmelden', menuIcon: logoutIcon}
+            ]}
+            open={open}
+            setOpen={setOpen}
+            positionSx={{
+              top: {xs: '20px !important', md: '20px  !important'},
+              right: 'unset',
+              left: '-20px !important'
+            }}
+            // profileIcon={optionalCustomImage} // if you want profile picture instead of initials
+          />
+        </Box>
+      </Box>
+    </>
   );
 }
