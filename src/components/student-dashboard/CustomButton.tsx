@@ -37,6 +37,8 @@ export default function CustomButton({
         fontWeight: '400',
         boxShadow: '0px 0px 0px #000',
         '&:hover': {
+          boxShadow: '0px 0px 0px #000',
+
           background: hoverColor,
           color: hoverTextcolor
         },

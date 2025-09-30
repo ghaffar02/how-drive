@@ -19,7 +19,6 @@ export default function Home() {
           height: {xs: 'auto', lg: '100%'},
           background: 'rgba(248,250,252,0.3)',
           padding: {xs: '8px', lg: '24px'},
-          border: '1px solid #fff',
           borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
           marginBottom: {xs: '77px', md: 'auto'}
         }}
