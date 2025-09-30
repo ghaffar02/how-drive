@@ -83,16 +83,18 @@ export default function MobileTabs({
       <Box
         sx={{
           border: '1px solid #fff',
+          boxShadow:
+            'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
+          backdropFilter: 'blur(15px)',
           width: 'calc(100% - 32px)',
           borderRadius: '18px',
-          padding: '12px',
+          padding: '8px',
           backgroundColor: 'rgba(248, 250, 252, 0.3)',
           position: 'fixed',
           bottom: '16px',
-          height: '77px',
+          // height: '77px',
           left: '50%',
           transform: 'translateX(-50%)',
-          backdropFilter: 'blur(8px)',
           zIndex: '1000'
         }}
       >
@@ -154,7 +156,7 @@ export default function MobileTabs({
                     fontFamily: '"Inter", sans-serif !important',
                     textAlign: 'center',
                     letterSpacing: '0.01em',
-                    lineHeight: '1.5em',
+                    lineHeight: '1.2em',
                     mt: '4px',
                     textTransform: 'capitalize'
                   }}
