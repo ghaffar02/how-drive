@@ -119,7 +119,7 @@ export default function MobileTabs({
               <Box
                 key={item.key}
                 onClick={() => {
-                  if (item.key === 'Infos') {
+                  if (item.key === '5') {
                     setMenuOpen(true);
                   } else {
                     setActiveKey(item.key);
