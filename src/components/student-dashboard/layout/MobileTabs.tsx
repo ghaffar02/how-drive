@@ -85,11 +85,11 @@ export default function MobileTabs({
           border: '1px solid #fff',
           width: 'calc(100% - 32px)',
           borderRadius: '18px',
-          padding: '12px',
+          padding: '8px',
           backgroundColor: 'rgba(248, 250, 252, 0.3)',
           position: 'fixed',
           bottom: '16px',
-          height: '77px',
+          // height: '77px',
           left: '50%',
           transform: 'translateX(-50%)',
           backdropFilter: 'blur(8px)',
@@ -154,7 +154,7 @@ export default function MobileTabs({
                     fontFamily: '"Inter", sans-serif !important',
                     textAlign: 'center',
                     letterSpacing: '0.01em',
-                    lineHeight: '1.5em',
+                    lineHeight: '1.2em',
                     mt: '4px',
                     textTransform: 'capitalize'
                   }}

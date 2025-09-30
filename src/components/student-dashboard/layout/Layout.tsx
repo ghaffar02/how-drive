@@ -85,7 +85,7 @@ export default function StudentDashboard() {
               padding: '12px',
               backgroundColor: 'rgba(248, 250, 252, 0.3)',
               width: '100%',
-              height: '60px !important'
+              height: '65px !important'
             }}
           >
             <Typography
