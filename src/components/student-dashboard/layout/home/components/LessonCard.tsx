@@ -7,6 +7,7 @@ import {
   circularProgressClasses
 } from '@mui/material';
 import {animate, useMotionValue} from 'framer-motion';
+import {useTranslations} from 'next-intl';
 import {useEffect, useState} from 'react';
 
 interface LessonCardProps {
@@ -23,23 +24,21 @@ export default function LessonCard({
   progressValue
 }: LessonCardProps) {
   const [progress, setProgress] = useState(0);
+  const t = useTranslations('Dashboard.home.MessageLesson');
 
-  // 🔹 Motion value (framer) – ye har frame smoothly update hoti hai
   const motionProgress = useMotionValue(0);
 
   useEffect(() => {
-    // React state ko motion value k sath sync rakhna
     const unsub = motionProgress.on('change', (latest) => {
       setProgress(latest);
     });
 
-    // steps dynamic banaye
     const steps: number[] = [];
     for (let i = 20; i < progressValue; i += 20) steps.push(i);
     steps.push(progressValue);
 
     let index = 0;
-    let currentStart = 0; // 👈 last step ka end
+    let currentStart = 0;
 
     function goNextStep() {
       if (index >= steps.length) return;
@@ -129,7 +128,8 @@ export default function LessonCard({
             >
               {completedHours}
             </Typography>
-            / {totalHours} hours
+            / {totalHours} <span></span>
+            {t('hours')}
           </Typography>
         </Box>
       </Box>

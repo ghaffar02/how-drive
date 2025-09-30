@@ -140,13 +140,14 @@ export default function Messages() {
                     justifyContent: 'center'
                   }}
                 >
-                  <Box sx={{width: '100%', maxWidth: '30px'}}>
+                  <Box sx={{width: '100%', maxWidth: '28px', height: '30px'}}>
                     <Image
                       src={item.icon}
                       alt="car"
                       style={{
                         width: '100%',
                         height: '100%',
+                        textAlign: 'center',
                         objectFit: 'contain'
                       }}
                     />

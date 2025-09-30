@@ -1895,7 +1895,8 @@
       "MessageLesson": {
         "Messages": "Messages",
         "card1Title": "Theory lessons",
-        "card2Title": "Driving lessons"
+        "card2Title": "Driving lessons",
+        "hours": "hours"
       },
       "process": {
         "title": "Process",

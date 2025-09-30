@@ -1895,7 +1895,8 @@
       "MessageLesson": {
         "Messages": "Nachrichten",
         "card1Title": "Theoriestunden",
-        "card2Title": "Fahrstunden"
+        "card2Title": "Fahrstunden",
+        "hours": "Stunden"
       },
       "process": {
         "title": "Verlauf",
