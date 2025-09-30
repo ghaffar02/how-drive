@@ -150,8 +150,8 @@ export default function MobileTabs({
                 </Box>
                 <Typography
                   sx={{
-                    color: isActive ? '#3058FF' : '#000000',
-                    fontWeight: isActive ? '600' : '400',
+                    color: isActive ? '#4611F5' : '#000000',
+                    fontWeight: isActive ? '700' : '400',
                     fontSize: '12px',
                     fontFamily: '"Inter", sans-serif !important',
                     textAlign: 'center',

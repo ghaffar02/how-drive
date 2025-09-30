@@ -88,7 +88,6 @@ export default function DesktopTabs({
           boxShadow:
             'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
           backdropFilter: 'blur(15px)',
-          width: 'fit-content',
           borderTopLeftRadius: '24px',
           borderBottomLeftRadius: '24px',
           padding: '24px 8px',
@@ -96,7 +95,7 @@ export default function DesktopTabs({
           display: 'flex',
           justifyContent: 'space-between',
           flexDirection: 'column',
-          backgroundColor: 'rgba(248, 250, 252, 0.3)'
+          width: '88px'
         }}
       >
         {/* logo */}
@@ -155,12 +154,13 @@ export default function DesktopTabs({
                 onMouseEnter={() => setHoverKey(item.key)}
                 onMouseLeave={() => setHoverKey(null)}
                 sx={{
-                  padding: '32px 16px',
+                  padding: '32px 1px',
                   borderRadius: '32px',
                   backgroundColor: isActive
                     ? 'rgba(48, 88, 255, 0.10)'
                     : 'transparent',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  width: '100%'
                 }}
               >
                 <Image
@@ -173,8 +173,8 @@ export default function DesktopTabs({
                 />
                 <Typography
                   sx={{
-                    color: isActive ? '#3058FF' : '#000000',
-                    fontWeight: isActive ? '600' : '400',
+                    color: isActive ? '#4611F5' : '#000000',
+                    fontWeight: isActive ? '700' : '400',
                     fontSize: '12px',
                     fontFamily: '"Inter", sans-serif !important',
                     textAlign: 'center',
