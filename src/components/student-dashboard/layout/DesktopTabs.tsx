@@ -205,13 +205,15 @@ export default function DesktopTabs({
             <ProfileDropdown
               fullName={initials}
               items={[
-                {label: 'Einstellungen', menuIcon: setting},
-                {label: 'Support', menuIcon: email},
-                {label: 'Abmelden', menuIcon: login}
+                {id: '5', label: 'Einstellungen', menuIcon: setting},
+                {id: '6', label: 'Support', menuIcon: email},
+                {id: '7', label: 'Abmelden', menuIcon: login}
               ]}
               open={open}
               setOpen={setOpen}
               anchorRef={anchorRef}
+              activeKey={activeKey}
+              setActiveKey={setActiveKey}
             />
           </Box>
         </Box>

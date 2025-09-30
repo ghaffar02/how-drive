@@ -10,11 +10,15 @@ import localFont from '@/utils/themes';
 type ProfileDropdownProps = {
   anchorRef: React.RefObject<HTMLDivElement | null>;
   fullName: string;
-  items: {label: string; menuIcon: string}[];
+  items: {id: string; label: string; menuIcon: string}[];
   open: boolean;
   setOpen: (open: boolean) => void;
   profileIcon?: StaticImageData;
   positionSx?: SxProps<Theme>;
+
+  // NEW (optional)
+  activeKey?: string;
+  setActiveKey?: (key: string) => void;
 };
 
 // helper inside component
@@ -35,7 +39,8 @@ export default function ProfileDropdown({
   open,
   setOpen,
   anchorRef,
-  positionSx
+  positionSx,
+  setActiveKey
 }: ProfileDropdownProps) {
   const initials = getInitials(fullName);
 
@@ -173,8 +178,11 @@ export default function ProfileDropdown({
               />
               {items.map((item) => (
                 <Box
-                  onClick={() => setOpen(false)}
-                  key={item.label}
+                  onClick={() => {
+                    setOpen(false);
+                    if (setActiveKey) setActiveKey(item.id);
+                  }}
+                  key={item.id || item.label}
                   sx={{
                     borderRadius: '12px',
                     cursor: 'pointer',

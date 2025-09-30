@@ -90,6 +90,9 @@ export default function StudentDashboard() {
             title="Home"
           />
           {activeKey === '1' && <Home />}
+          {activeKey === '5' && <Home />}
+          {activeKey === '6' && <Home />}
+          {activeKey === '7' && <Home />}
         </Box>
       </Box>
     </Box>
@@ -139,9 +142,9 @@ function HomeMobileHeader({
             anchorRef={anchorRef}
             fullName="Daniel Mustermann"
             items={[
-              {label: 'Einstellungen', menuIcon: settingsIcon},
-              {label: 'Support', menuIcon: supportIcon},
-              {label: 'Abmelden', menuIcon: logoutIcon}
+              {id: '', label: 'Einstellungen', menuIcon: settingsIcon},
+              {id: '', label: 'Support', menuIcon: supportIcon},
+              {id: '', label: 'Abmelden', menuIcon: logoutIcon}
             ]}
             open={open}
             setOpen={setOpen}
