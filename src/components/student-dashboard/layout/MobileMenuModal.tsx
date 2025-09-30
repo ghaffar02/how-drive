@@ -54,9 +54,9 @@ export default function MobileMenuModal({onClose}: Props) {
             <ProfileDropdown
               fullName={initials}
               items={[
-                {label: 'Einstellungen', menuIcon: setting},
-                {label: 'Support', menuIcon: email},
-                {label: 'Abmelden', menuIcon: login}
+                {id: '', label: 'Einstellungen', menuIcon: setting},
+                {id: '', label: 'Support', menuIcon: email},
+                {id: '', label: 'Abmelden', menuIcon: login}
               ]}
               open={open}
               setOpen={setOpen}
