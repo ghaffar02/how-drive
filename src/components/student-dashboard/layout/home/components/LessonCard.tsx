@@ -158,7 +158,7 @@ export default function LessonCard({
               lg: 'scale(1.6)'
             },
             // bgcolor: '#000',
-            ml: {xs: '-20%', md: '-20%', lg: '-75px'}
+            ml: {xs: '1%', md: '-20%', lg: '-75px'}
           }}
         >
           <CircularProgress

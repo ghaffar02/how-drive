@@ -103,7 +103,7 @@ export default function Messages() {
                 // maxWidth: '309px',
                 background: '#fff',
                 padding: '8px',
-                borderRadius: '12px',
+                borderRadius: '8px',
                 display: 'flex',
                 flexDirection: 'row',
                 gap: '10px',
