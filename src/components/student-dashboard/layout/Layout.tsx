@@ -12,9 +12,10 @@ import supportIcon from '@/assets/svgs/dashboard-student/email.svg';
 import logoutIcon from '@/assets/svgs/dashboard-student/login.svg';
 import Setting from './profile-setting/Setting';
 import Process from './process/Process';
+import Calander from './calander/Calander';
 
 export default function StudentDashboard() {
-  const [activeKey, setActiveKey] = React.useState<string>('1');
+  const [activeKey, setActiveKey] = React.useState<string>('3');
   const [hoverKey, setHoverKey] = React.useState<string | null>(null);
   // ProfileDropdown relative states
   const [open, setOpen] = useState(false);
@@ -99,6 +100,7 @@ export default function StudentDashboard() {
             setActiveKey={setActiveKey}
           />
           {activeKey === '1' && <Home />}
+          {activeKey === '3' && <Calander />}
           {activeKey === '5' && <Setting />}
           {activeKey === '6' && <Home />}
           {activeKey === '2' && <Process />}

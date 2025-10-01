@@ -1,0 +1,93 @@
+/* Outer card like your design */
+.wrap {
+  width: 276px;
+  height: 282px;
+  padding: 12px;
+  border-radius: 16px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0.55)
+  );
+  backdrop-filter: blur(10px);
+  border: 1px solid #ffffff;
+  box-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.75);
+}
+
+/* Scope DayPicker styles */
+.calendar :global(.rdp) {
+  --rdp-cell-size: 36px; /* day size */
+  --rdp-accent-color: #3b82f6; /* selected blue */
+  --rdp-background-color: transparent;
+  --rdp-outline: 0;
+  --rdp-outline-selected: 0;
+  color: #0f172a;
+  font-family: Inter, system-ui, Arial, sans-serif;
+}
+
+/* Remove extra gaps, compact layout */
+.calendar :global(.rdp-months) {
+  margin: 0;
+}
+.calendar :global(.rdp-month) {
+  margin: 0;
+}
+.calendar :global(.rdp-caption) {
+  margin: 4px 0 8px;
+}
+.calendar :global(.rdp-caption_label) {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Weekday row: Mo Di Mi Do Fr Sa So */
+.calendar :global(.rdp-head_cell) {
+  font-weight: 600;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Day cells */
+.calendar :global(.rdp-day) {
+  width: var(--rdp-cell-size);
+  height: var(--rdp-cell-size);
+  border-radius: 10px; /* rounded squares like your shot */
+}
+
+/* Today subtle ring */
+.calendar :global(.rdp-day_today:not(.rdp-day_selected)) {
+  box-shadow: inset 0 0 0 1.5px rgba(0, 0, 0, 0.2);
+}
+
+/* Selected day (filled blue circle) */
+.calendar :global(.rdp-day_selected) {
+  background: var(--rdp-accent-color);
+  color: white;
+}
+.calendar :global(.rdp-day_selected:hover) {
+  background: var(--rdp-accent-color);
+}
+
+/* Grey “badges” on specific days */
+.event {
+  background: rgba(145, 158, 171, 0.25);
+  color: #111827;
+}
+
+/* Navigation arrows */
+.chev {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  line-height: 1;
+  font-size: 18px;
+  color: #0f172a;
+}
+.chev:hover {
+  background: rgba(15, 23, 42, 0.06);
+}
