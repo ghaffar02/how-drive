@@ -15,10 +15,11 @@ type ProfileDropdownProps = {
   setOpen: (open: boolean) => void;
   profileIcon?: StaticImageData;
   positionSx?: SxProps<Theme>;
-
   // NEW (optional)
   activeKey?: string;
   setActiveKey?: (key: string) => void;
+  //logout handler function for id === '7'
+  onLogout?: () => void;
 };
 
 // helper inside component
@@ -40,7 +41,8 @@ export default function ProfileDropdown({
   setOpen,
   anchorRef,
   positionSx,
-  setActiveKey
+  setActiveKey,
+  onLogout
 }: ProfileDropdownProps) {
   const initials = getInitials(fullName);
 
@@ -178,9 +180,18 @@ export default function ProfileDropdown({
               />
               {items.map((item) => (
                 <Box
+                  // onClick={() => {
+                  //   setOpen(false);
+                  //   if (setActiveKey) setActiveKey(item.id);
+                  // }}
                   onClick={() => {
                     setOpen(false);
-                    if (setActiveKey) setActiveKey(item.id);
+                    if (item.id === '7') {
+                      onLogout?.();
+                    }
+                    if (setActiveKey) {
+                      setActiveKey(item.id);
+                    }
                   }}
                   key={item.id || item.label}
                   sx={{

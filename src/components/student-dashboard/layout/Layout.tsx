@@ -1,5 +1,5 @@
 'use client';
-import React, {useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Box, Typography} from '@mui/material';
 import TabStudentLayout from './DesktopTabs';
 import TabStudentLayoutMobile from './MobileTabs';
@@ -18,6 +18,12 @@ export default function StudentDashboard() {
   // ProfileDropdown relative states
   const [open, setOpen] = useState(false);
   const anchorRef = useRef<HTMLDivElement | null>(null);
+  // logout function here
+  useEffect(() => {
+    if (activeKey === '7') {
+      console.log('logout function here');
+    }
+  }, [activeKey]);
 
   return (
     <Box
@@ -72,7 +78,6 @@ export default function StudentDashboard() {
             },
             msOverflowStyle: 'none',
             scrollbarWidth: 'none',
-            // if activeKey === '1' {=> (means only for home tab)}
             ...(activeKey === '1'
               ? {
                   border: {md: '1px solid #fff'},
@@ -89,11 +94,12 @@ export default function StudentDashboard() {
             open={open}
             setOpen={setOpen}
             title="Home"
+            activeKey={activeKey}
+            setActiveKey={setActiveKey}
           />
           {activeKey === '1' && <Home />}
           {activeKey === '5' && <Setting />}
           {activeKey === '6' && <Home />}
-          {activeKey === '7' && <Home />}
         </Box>
       </Box>
     </Box>
@@ -105,13 +111,18 @@ type HomeMobileHeaderProps = {
   open: boolean;
   setOpen: (open: boolean) => void;
   title?: string;
+  // profiledropdown props
+  activeKey: string;
+  setActiveKey: React.Dispatch<React.SetStateAction<string>>;
 };
 
 function HomeMobileHeader({
   anchorRef,
   open,
   setOpen,
-  title = 'Home'
+  title = 'Home',
+  activeKey,
+  setActiveKey
 }: HomeMobileHeaderProps) {
   return (
     <>
@@ -143,9 +154,9 @@ function HomeMobileHeader({
             anchorRef={anchorRef}
             fullName="Daniel Mustermann"
             items={[
-              {id: '', label: 'Einstellungen', menuIcon: settingsIcon},
-              {id: '', label: 'Support', menuIcon: supportIcon},
-              {id: '', label: 'Abmelden', menuIcon: logoutIcon}
+              {id: '5', label: 'Einstellungen', menuIcon: settingsIcon},
+              {id: '6', label: 'Support', menuIcon: supportIcon},
+              {id: '7', label: 'Abmelden', menuIcon: logoutIcon}
             ]}
             open={open}
             setOpen={setOpen}
@@ -154,6 +165,8 @@ function HomeMobileHeader({
               right: 'unset',
               left: '-20px !important'
             }}
+            activeKey={activeKey}
+            setActiveKey={setActiveKey}
             // profileIcon={optionalCustomImage} // if you want profile picture instead of initials
           />
         </Box>
