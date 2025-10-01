@@ -1,6 +1,7 @@
 import localFont from '@/utils/themes';
-import {Button, ButtonProps} from '@mui/material';
+import {Box, Button, ButtonProps} from '@mui/material';
 import {SxProps, Theme} from '@mui/material/styles';
+import Image, {StaticImageData} from 'next/image';
 
 interface CustomButtonProps extends ButtonProps {
   label: string;
@@ -8,6 +9,7 @@ interface CustomButtonProps extends ButtonProps {
   hoverColor?: string;
   activeColor?: string;
   hoverTextcolor?: string;
+  imgSrc?: StaticImageData | string;
   sx?: SxProps<Theme>;
 }
 
@@ -17,6 +19,7 @@ export default function CustomButton({
   hoverColor = '#300ca8',
   activeColor = '#1A065C',
   hoverTextcolor = '#fff',
+  imgSrc,
 
   sx = {},
   ...rest
@@ -50,6 +53,15 @@ export default function CustomButton({
       }}
       {...rest}
     >
+      {imgSrc && (
+        <Box sx={{maxWidth: '16px', height: '16px'}}>
+          <Image
+            src={imgSrc}
+            alt="icon"
+            style={{width: '100%', height: '100%', objectFit: 'contain'}}
+          />
+        </Box>
+      )}
       {label}
     </Button>
   );

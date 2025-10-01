@@ -6,7 +6,17 @@ import RightSide from './components/RightSide';
 export default function Setting() {
   return (
     <>
-      <Box gap={2} sx={{display: 'flex', height: '100vh', width: '100%'}}>
+      <Box
+        gap={2}
+        sx={{
+          display: 'flex',
+          width: '100%',
+          height: {
+            xs: 'calc(100svh - 194px)',
+            md: 'calc(100svh - 40px)'
+          }
+        }}
+      >
         <Leftside />
 
         <RightSide />

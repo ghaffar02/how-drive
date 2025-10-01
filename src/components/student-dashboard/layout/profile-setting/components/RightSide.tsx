@@ -17,8 +17,12 @@ export default function RightSide() {
         background: 'rgba(248,250,252,0.3)',
         p: {xs: '8px', lg: '24px'},
         border: '1px solid #fff',
+        boxShadow:
+          'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
+        backdropFilter: 'blur(15px)',
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
-        height: {xs: '78%', md: '100%'}
+        height: {xs: '100%', md: '100%'}
+        // maxHeight:"752px",
         // height: 562
       }}
     >
@@ -27,13 +31,13 @@ export default function RightSide() {
           overflowY: 'scroll',
           // height: '100vh',
           height: {xs: '100%', lg: '100%'},
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '20px',
+          // display: 'flex',
+          // flexDirection: 'column',
 
-          overflow: ' hidden auto'
-          // msOverflowStyle: 'none',
-          // scrollbarWidth: 'none'
+          overflow: ' hidden auto',
+          msOverflowStyle: 'none',
+          scrollbarWidth: 'none'
+          // mb: '20px',
         }}
       >
         {/* Tabs */}

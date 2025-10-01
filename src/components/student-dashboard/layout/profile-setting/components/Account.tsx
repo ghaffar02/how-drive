@@ -1,42 +1,45 @@
 import CustomButton from '@/components/student-dashboard/CustomButton';
+import CustomCard from '@/components/student-dashboard/Dropdown';
 import CustomTextField from '@/components/student-dashboard/InputField';
 import localFont from '@/utils/themes';
 import {Box, Divider, Typography} from '@mui/material';
+import {useState} from 'react';
 
+const formFields = [
+  {
+    label: 'First name',
+    placeholder: 'Daniel'
+  },
+  {
+    label: 'Last name',
+    placeholder: 'Mustermann'
+  },
+  {
+    label: 'Email',
+    placeholder: 'd.mustermann@gmail.com'
+  },
+  {
+    label: 'Place of residence',
+    placeholder: 'Hamburg'
+  },
+  {
+    label: 'Phone number',
+    placeholder: '01518745692'
+  },
+  {
+    label: 'Driving school',
+    placeholder: 'Mundsburg'
+  }
+];
 export default function Account() {
-  const formFields = [
-    {
-      label: 'First name',
-      placeholder: 'Daniel'
-    },
-    {
-      label: 'Last name',
-      placeholder: 'Mustermann'
-    },
-    {
-      label: 'Email',
-      placeholder: 'd.mustermann@gmail.com'
-    },
-    {
-      label: 'Place of residence',
-      placeholder: 'Hamburg'
-    },
-    {
-      label: 'Phone number',
-      placeholder: '01518745692'
-    },
-    {
-      label: 'Driving school',
-      placeholder: 'Mundsburg'
-    }
-  ];
+  const [openDropdown, setOpenDropdown] = useState(false);
 
   return (
     <Box
       sx={{
         width: '100%',
-       
-        mt: '12px',
+        // height: '100%',
+        mt: '32px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -132,7 +135,7 @@ export default function Account() {
                   width: '100%',
                   display: 'flex',
                   flexDirection: {xs: 'column', lg: 'row'},
-                  gap: {xs: '8px', lg: '0px'},
+                  gap: {xs: '8px'},
                   alignItems: 'start',
                   justifyContent: 'space-between'
                 }}
@@ -141,7 +144,7 @@ export default function Account() {
                   sx={{
                     ...localFont.inter14,
                     width: '100%',
-                    maxWidth: '405px',
+                    maxWidth: '400px',
                     fontFamily: '"Inter", sans-serif !important',
                     fontWeight: 400,
                     textAlign: 'left'
@@ -152,7 +155,7 @@ export default function Account() {
                 </Typography>
                 <CustomTextField
                   labal={items.placeholder}
-                  sx={{textAlign: 'end'}}
+                  sx={{textAlign: 'end', maxWidth: {lg: '403px'}}}
                 />
               </Box>
             );
@@ -162,7 +165,7 @@ export default function Account() {
       <Box width="100%">
         <Divider
           sx={{
-            mt: '32px',
+            // mt: '32px',
             borderTop: '1px solid transparent',
             borderImage:
               'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1'
@@ -177,12 +180,12 @@ export default function Account() {
           flexDirection: {xs: 'column', lg: 'row'},
           // flexWrap: 'wrap',
           gap: '16px',
-          alignItems: 'center',
-          justifyContent: 'space-between'
+          alignItems: 'start'
+          // justifyContent: 'space-between'
           // mb: '12px'
         }}
       >
-        <Box sx={{width: '100%', maxWidth: {lg: '550px'}}}>
+        <Box sx={{width: '100%', maxWidth: {lg: '900px'}}}>
           <Typography
             sx={{
               ...localFont.inter16,
@@ -207,7 +210,7 @@ export default function Account() {
         </Box>
         <Box
           sx={{
-            width: '100%',
+            width: {xs: '100%', lg: '75%'},
             p: '4px',
             display: 'flex',
             gap: '10px',
@@ -216,12 +219,29 @@ export default function Account() {
             // justifyContent: 'space-between'
           }}
         >
-          <CustomButton
-            label="Delete account"
-            bgColor="rgb(220, 38, 38)"
-            hoverColor="#991919"
-            sx={{}}
-          />
+          <Box sx={{width: '100%', position: 'relative'}}>
+            <CustomButton
+              label="Delete account"
+              bgColor="rgb(220, 38, 38)"
+              hoverColor="#991919"
+              sx={{}}
+              onClick={() => setOpenDropdown(() => !openDropdown)}
+            />
+
+            {openDropdown && (
+              <Box
+                sx={{
+                  position: 'absolute',
+                  bottom: {xs: -40, md: -40, lg: -100},
+                  right: {xs: '-80px', sm: -310, lg: -30},
+                  width: '100%'
+                  // maxWidth: '532px'
+                }}
+              >
+                <CustomCard onClose={() => setOpenDropdown(true)} />
+              </Box>
+            )}
+          </Box>
           <CustomButton
             label="learn more"
             bgColor="rgba(248, 250, 252, 0)"

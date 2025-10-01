@@ -1,5 +1,6 @@
 import {TextField} from '@mui/material';
 import {SxProps, Theme} from '@mui/material/styles';
+
 interface CustomTextFieldProps {
   bgColor?: string;
   borderColor?: string;
@@ -11,9 +12,8 @@ interface CustomTextFieldProps {
 
 export default function CustomTextField({
   bgColor = '#f8fafcff',
-  // bgColor = '#fff',
   borderColor = '#E2E8F0',
-  hoverBorderColor = '#1976d2',
+  hoverBorderColor = '#3058ff',
   radius = '8px',
   labal,
   sx = {},
@@ -24,39 +24,46 @@ export default function CustomTextField({
       placeholder={labal}
       {...rest}
       sx={{
-        // maxWidth: '400px',
         width: '100%',
+        pr: '1px',
 
         '& .MuiOutlinedInput-root': {
           background: bgColor,
           borderRadius: radius,
-
           boxShadow:
             '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
-          // border: `1px solid ${borderColor}`,
+
           '& .MuiOutlinedInput-input': {
             padding: '12px',
+            height: '16px',
             fontSize: '14px',
             fontFamily: '"Inter", sans-serif !important',
-            lineHeight: '1px !important',
-            // color: '#eae7e7ff',
+
             '&::placeholder': {
               color: '#999',
-              // lineHeight: '16px !important',
+              lineHeight: '14px !important',
               opacity: 1
             }
           },
+
+          // Default border
           '& fieldset': {
             borderColor: borderColor
           },
+
+          // Disable hover color change (same as default)
           '&:hover fieldset': {
-            borderColor: hoverBorderColor
+            borderColor: borderColor
+          },
+
+          // Active (focused) border color
+          '&.Mui-focused fieldset': {
+            borderColor: hoverBorderColor,
+            borderWidth: '1.5px'
           }
         },
         ...sx
       }}
-    >
-      {labal}dkjhkuqiuqi
-    </TextField>
+    />
   );
 }
