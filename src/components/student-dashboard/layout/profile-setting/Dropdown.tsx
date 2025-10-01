@@ -1,6 +1,6 @@
 import {Box, Typography} from '@mui/material';
 import {ReactNode} from 'react';
-import CustomButton from './CustomButton';
+import CustomButton from '../../CustomButton';
 import localFont from '@/utils/themes';
 import tick from '@/assets/svgs/dashboard-student/tick.svg';
 import cross from '@/assets/svgs/dashboard-student/btncross.svg';

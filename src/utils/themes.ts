@@ -72,7 +72,7 @@ const localFont = {
   },
   inter14: {
     color: '#4A5568',
-    fontSize: {xs: '12px', sm: '13px', md: '14px'},
+    fontSize: {xs: '12px', md: '13px', lg: '14px'},
     lineHeight: '1.6em',
     fontWeight: '400'
   }

@@ -1,23 +1,19 @@
 import CustomButton from '@/components/student-dashboard/CustomButton';
-import CustomCard from '@/components/student-dashboard/layout/profile-setting/Dropdown';
 import CustomTextField from '@/components/student-dashboard/InputField';
 import localFont from '@/utils/themes';
 import {Box, Divider, Typography} from '@mui/material';
+import {useTranslations} from 'next-intl';
 import {
-  JSXElementConstructor,
   ReactElement,
+  JSXElementConstructor,
   ReactNode,
   ReactPortal,
-  useState
+  Key
 } from 'react';
-import {useTranslations} from 'next-intl';
 
-export default function Account() {
-  const [openDropdown, setOpenDropdown] = useState(false);
-  const t = useTranslations('Dashboard.Settings.RightSide.AccountTab');
-
+export default function Password() {
+  const t = useTranslations('Dashboard.Settings.RightSide.Password');
   const formFields = t.raw('formFields');
-
   return (
     <Box
       sx={{
@@ -63,11 +59,10 @@ export default function Account() {
         </Box>
         <Box
           sx={{
-            p: '4px',
-
             width: '100%',
             display: 'flex',
             gap: '10px',
+            p: '4px',
             alignItems: 'center',
             justifyContent: 'end'
           }}
@@ -116,34 +111,28 @@ export default function Account() {
         >
           {formFields.map(
             (
-              items: {
-                label:
-                  | string
-                  | number
-                  | bigint
-                  | boolean
-                  | ReactElement<unknown, string | JSXElementConstructor<any>>
-                  | Iterable<ReactNode>
-                  | ReactPortal
-                  | Promise<
-                      | string
-                      | number
-                      | bigint
-                      | boolean
-                      | ReactPortal
-                      | ReactElement<
-                          unknown,
-                          string | JSXElementConstructor<any>
-                        >
-                      | Iterable<ReactNode>
-                      | null
-                      | undefined
-                    >
-                  | null
-                  | undefined;
-                placeholder: string | undefined;
-              },
-              i: number
+              items:
+                | string
+                | number
+                | bigint
+                | boolean
+                | ReactElement<unknown, string | JSXElementConstructor<any>>
+                | Iterable<ReactNode>
+                | ReactPortal
+                | Promise<
+                    | string
+                    | number
+                    | bigint
+                    | boolean
+                    | ReactPortal
+                    | ReactElement<unknown, string | JSXElementConstructor<any>>
+                    | Iterable<ReactNode>
+                    | null
+                    | undefined
+                  >
+                | null
+                | undefined,
+              i: Key | null | undefined
             ) => {
               return (
                 <Box
@@ -165,106 +154,20 @@ export default function Account() {
                       fontFamily: '"Inter", sans-serif !important',
                       fontWeight: 400,
                       textAlign: 'left'
+
                       // mt: {xs: '8px', lg: '0px'}
                     }}
                   >
-                    {items.label}
+                    {items}
                   </Typography>
                   <CustomTextField
-                    labal={items.placeholder}
+                    // labal={items}
                     sx={{textAlign: 'end', maxWidth: {lg: '403px'}}}
                   />
                 </Box>
               );
             }
           )}
-        </Box>
-      </Box>
-      <Box width="100%">
-        <Divider
-          sx={{
-            // mt: '32px',
-            borderTop: '1px solid transparent',
-            borderImage:
-              'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1'
-            // marginBottom: '32px'
-          }}
-        />
-      </Box>
-      <Box
-        sx={{
-          position: 'relative',
-          width: '100%',
-          display: 'flex',
-          flexDirection: {xs: 'column', lg: 'row'},
-          // flexWrap: 'wrap',
-          gap: '16px',
-          alignItems: 'start'
-          // justifyContent: 'space-between'
-          // mb: '12px'
-        }}
-      >
-        <Box sx={{width: '100%', p: '4px'}}>
-          <Typography
-            sx={{
-              ...localFont.inter16,
-              fontWeight: 500,
-              fontFamily: '"Inter", sans-serif !important'
-            }}
-          >
-            {t('heading3')}
-          </Typography>
-          <Typography
-            sx={{
-              width: '100%',
-              ...localFont.inter14,
-              fontFamily: '"Inter", sans-serif !important',
-              fontWeight: 300
-            }}
-          >
-            {t('description2')}
-          </Typography>
-        </Box>
-        <Box
-          sx={{
-            width: {xs: '100%', lg: '68%'},
-            p: '4px',
-            display: 'flex',
-            gap: '10px',
-            alignItems: 'center',
-            justifyContent: 'flex-end'
-            // justifyContent: 'space-between'
-          }}
-        >
-          <Box sx={{}}>
-            <CustomButton
-              label={t('btn3')}
-              bgColor="rgb(220, 38, 38)"
-              hoverColor="#991919"
-              sx={{}}
-              onClick={() => setOpenDropdown(() => !openDropdown)}
-            />
-
-            {openDropdown && (
-              <Box
-                sx={{
-                  position: 'absolute',
-                  bottom: {xs: -40, md: -40, lg: -100},
-                  right: {xs: '-80px', sm: -310, lg: -30},
-                  width: '100%'
-                  // maxWidth: '532px'
-                }}
-              >
-                <CustomCard onClose={() => setOpenDropdown(true)} />
-              </Box>
-            )}
-          </Box>
-          <CustomButton
-            label={t('btn4')}
-            bgColor="rgba(248, 250, 252, 0)"
-            hoverTextcolor="#fff"
-            sx={{border: '1px solid #a1a1aaff', color: '#000'}}
-          />
         </Box>
       </Box>
     </Box>

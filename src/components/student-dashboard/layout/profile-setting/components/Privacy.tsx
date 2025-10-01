@@ -1,8 +1,8 @@
 import CustomButton from '@/components/student-dashboard/CustomButton';
 import CustomCard from '@/components/student-dashboard/layout/profile-setting/Dropdown';
-import CustomTextField from '@/components/student-dashboard/InputField';
 import localFont from '@/utils/themes';
 import {Box, Divider, Typography} from '@mui/material';
+import {useTranslations} from 'next-intl';
 import {
   JSXElementConstructor,
   ReactElement,
@@ -10,13 +10,16 @@ import {
   ReactPortal,
   useState
 } from 'react';
-import {useTranslations} from 'next-intl';
 
-export default function Account() {
+export default function Privacy() {
   const [openDropdown, setOpenDropdown] = useState(false);
-  const t = useTranslations('Dashboard.Settings.RightSide.AccountTab');
-
+  const [activeIndex, setActiveIndex] = useState<number | 0>(0);
+  const t = useTranslations('Dashboard.Settings.RightSide.PrivacyTab');
   const formFields = t.raw('formFields');
+
+  const handleClick = (i: number) => {
+    setActiveIndex(i);
+  };
 
   return (
     <Box
@@ -64,7 +67,6 @@ export default function Account() {
         <Box
           sx={{
             p: '4px',
-
             width: '100%',
             display: 'flex',
             gap: '10px',
@@ -114,70 +116,133 @@ export default function Account() {
             justifyContent: 'space-between'
           }}
         >
-          {formFields.map(
-            (
-              items: {
-                label:
-                  | string
-                  | number
-                  | bigint
-                  | boolean
-                  | ReactElement<unknown, string | JSXElementConstructor<any>>
-                  | Iterable<ReactNode>
-                  | ReactPortal
-                  | Promise<
+          <Box
+            sx={{
+              width: '100%',
+              display: 'flex',
+              flexDirection: {xs: 'column', lg: 'row'},
+              gap: {xs: '8px'},
+              alignItems: 'start',
+              justifyContent: 'space-between'
+            }}
+          >
+            <Typography
+              sx={{
+                ...localFont.inter14,
+                width: '100%',
+                maxWidth: '400px',
+                fontFamily: '"Inter", sans-serif !important',
+                fontWeight: 400,
+                textAlign: 'left'
+                // mt: {xs: '8px', lg: '0px'}
+              }}
+            >
+              {t('heading2')}
+            </Typography>
+
+            <Box
+              sx={{
+                // bgcolor: '#000',
+                width: '100%',
+                display: 'flex',
+                flexDirection: {xs: 'column'},
+                gap: '20px',
+                alignItems: 'end',
+                justifyContent: 'end'
+              }}
+            >
+              <Box
+                sx={{
+                  width: '100%',
+                  maxWidth: '328px',
+                  bgcolor: '#ffffff99',
+                  display: 'flex',
+                  p: '4px',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  boxShadow: '0px 0px 2px 0px #a1a1aa',
+                  borderRadius: '999px',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+              >
+                {/* Moving Highlight */}
+                <Box
+                  sx={{
+                    position: 'absolute',
+                    top: 4,
+                    bottom: 4,
+                    left: 4,
+                    width: `calc((100% - 8px) / 3)`, // 3 buttons ka equal divide
+                    borderRadius: '999px',
+                    background: '#fff',
+                    boxShadow: '0px 2px 6px 0px #00000033',
+                    transition: 'all 0.4s ease',
+                    transform: `translateX(${activeIndex * 100}%)`, // move on X
+                    zIndex: 1
+                  }}
+                />
+
+                {formFields.map(
+                  (
+                    item:
                       | string
                       | number
                       | bigint
                       | boolean
-                      | ReactPortal
                       | ReactElement<
                           unknown,
                           string | JSXElementConstructor<any>
                         >
                       | Iterable<ReactNode>
+                      | ReactPortal
+                      | Promise<
+                          | string
+                          | number
+                          | bigint
+                          | boolean
+                          | ReactPortal
+                          | ReactElement<
+                              unknown,
+                              string | JSXElementConstructor<any>
+                            >
+                          | Iterable<ReactNode>
+                          | null
+                          | undefined
+                        >
                       | null
-                      | undefined
+                      | undefined,
+                    i: number
+                  ) => (
+                    <Box
+                      key={i}
+                      onClick={() => handleClick(i)}
+                      sx={{
+                        flex: 1,
+                        textAlign: 'center',
+                        p: '4px 8px',
+                        cursor: 'pointer',
+                        zIndex: 2
+                      }}
                     >
-                  | null
-                  | undefined;
-                placeholder: string | undefined;
-              },
-              i: number
-            ) => {
-              return (
-                <Box
-                  key={i}
-                  sx={{
-                    width: '100%',
-                    display: 'flex',
-                    flexDirection: {xs: 'column', lg: 'row'},
-                    gap: {xs: '8px'},
-                    alignItems: 'start',
-                    justifyContent: 'space-between'
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      ...localFont.inter14,
-                      width: '100%',
-                      maxWidth: '400px',
-                      fontFamily: '"Inter", sans-serif !important',
-                      fontWeight: 400,
-                      textAlign: 'left'
-                      // mt: {xs: '8px', lg: '0px'}
-                    }}
-                  >
-                    {items.label}
-                  </Typography>
-                  <CustomTextField
-                    labal={items.placeholder}
-                    sx={{textAlign: 'end', maxWidth: {lg: '403px'}}}
-                  />
-                </Box>
-              );
-            }
-          )}
+                      <Typography
+                        sx={{
+                          lineHeight: '1.6em',
+                          fontSize: {xs: '12px', md: '13px', lg: '14px'},
+                          color: activeIndex === i ? '#4A5568' : '#4A5568',
+                          fontWeight: activeIndex === i ? '500' : '400',
+                          transition: 'all 0.3s ease-in-out',
+                          fontFamily: '"Inter", sans-serif !important'
+                        }}
+                      >
+                        {item}
+                      </Typography>
+                    </Box>
+                  )
+                )}
+              </Box>
+            </Box>
+          </Box>
         </Box>
       </Box>
       <Box width="100%">
@@ -227,7 +292,7 @@ export default function Account() {
         </Box>
         <Box
           sx={{
-            width: {xs: '100%', lg: '68%'},
+            width: {xs: '100%', lg: '75%'},
             p: '4px',
             display: 'flex',
             gap: '10px',
@@ -239,8 +304,8 @@ export default function Account() {
           <Box sx={{}}>
             <CustomButton
               label={t('btn3')}
-              bgColor="rgb(220, 38, 38)"
-              hoverColor="#991919"
+              bgColor="#0D9488"
+              hoverColor="#0C5C72"
               sx={{}}
               onClick={() => setOpenDropdown(() => !openDropdown)}
             />

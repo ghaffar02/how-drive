@@ -2,8 +2,10 @@ import localFont from '@/utils/themes';
 import {Box, Typography} from '@mui/material';
 import arrow from '@/assets/svgs/dashboard-student/arrowsetting.svg';
 import {useState} from 'react';
+import {useTranslations} from 'next-intl';
 
 export default function Leftside() {
+  const t = useTranslations('Dashboard.Settings.leftSide');
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
 
   const handleClick = (i: number) => {
@@ -12,6 +14,7 @@ export default function Leftside() {
     );
   };
 
+  const data = t.raw('SettingsArray');
   return (
     <Box
       sx={{
@@ -39,85 +42,86 @@ export default function Leftside() {
           fontFamily: '"Inter", sans-serif !important'
         }}
       >
-        Settings
+        {t('title')}
       </Typography>
 
-      {['Account', 'Notifications', 'Privacy', 'Preferences', 'Password'].map(
-        (items, i) => (
-          <Box
-            key={i}
-            onClick={() => handleClick(i)}
-            sx={{
-              width: '100%',
-              background: '#fff',
-              padding: '8px',
-              borderRadius: '8px',
-              display: 'flex',
-              flexDirection: 'row',
-              gap: '10px',
-              cursor: 'pointer',
+      {data.map((items: string, i: number) => (
+        <Box
+          key={i}
+          onClick={() => handleClick(i)}
+          sx={{
+            width: '100%',
+            background: activeIndexes.includes(i)
+              ? 'rgba(255, 255, 255, 0.85)'
+              : '#ffffff99',
+            padding: '8px',
+            borderRadius: '8px',
+            display: 'flex',
+            flexDirection: 'row',
+            gap: '10px',
+            cursor: 'pointer',
+            boxShadow: activeIndexes.includes(i)
+              ? '0px 0px 4px 0px #4611f5'
+              : '0px 0px 2px 0px #a1a1aa51',
+            transition: 'all 0.3s ease',
+            '&:hover': {
               boxShadow: activeIndexes.includes(i)
                 ? '0px 0px 4px 0px #4611f5'
-                : '0px 0px 2px 0px #a1a1aa',
-              transition: 'all 0.3s ease',
-              '&:hover': {
-                boxShadow: activeIndexes.includes(i)
-                  ? '0px 0px 4px 0px #4611f5'
-                  : '0px 0px 2px 0px #d4d4d8'
-              },
-              '&:hover .hoverArrow': {
-                opacity: 1,
-                transform: 'translateX(1px)'
-                // transition: 'transform 0.3s ease-in-out'
-              }
+                : '0px 0px 2px 0px #d4d4d8',
+              background: 'rgba(255, 255, 255, 0.85)'
+            },
+            '&:hover .hoverArrow': {
+              opacity: 1,
+              transform: 'translateX(1px)'
+              // transition: 'transform 0.3s ease-in-out'
+            }
+          }}
+        >
+          <Box
+            sx={{
+              display: 'flex',
+              textAlign: 'center',
+              justifyContent: 'space-between',
+              width: '100%'
             }}
           >
-            <Box
+            <Typography
               sx={{
-                display: 'flex',
-                textAlign: 'center',
-                justifyContent: 'space-between',
-                width: '100%'
+                lineHeight: '1.8em',
+                fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                color: activeIndexes.includes(i) ? '#4611f5' : '#2d3748',
+                fontFamily: '"Inter", sans-serif !important',
+                fontWeight: activeIndexes.includes(i) ? '500' : '400'
               }}
             >
-              <Typography
-                sx={{
-                  ...localFont.inter16,
-                  fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                  color: activeIndexes.includes(i) ? '#4611f5' : '#2d3748',
-                  fontFamily: '"Inter", sans-serif !important',
-                  fontWeight: activeIndexes.includes(i) ? '500' : '400'
-                }}
-              >
-                {items}
-              </Typography>
+              {items}
+            </Typography>
 
-              <Box
-                className={
-                  (!activeIndexes.includes(i) && 'hoverArrow') as
-                    | string
-                    | undefined
-                }
-                component="img"
-                src={arrow.src}
-                alt="Arrow"
-                sx={{
-                  maxWidth: {xs: '14px', sm: '15px', md: '16px'},
-                  width: '100%',
-                  height: '100%',
-                  opacity: 0,
-                  // mr: '2px',
-                  transition: 'opacity 0.5s ease, transform 0.3s ease-in-out',
-                  // opacity: activeIndexes.includes(i) ? 1 : 0,
-                  transform: activeIndexes.includes(i)
-                    ? 'translateX(30px)'
-                    : 'translateX(-10px)'
-                }}
-              />
-            </Box>
+            <Box
+              className={
+                (!activeIndexes.includes(i) && 'hoverArrow') as
+                  | string
+                  | undefined
+              }
+              component="img"
+              src={arrow.src}
+              alt="Arrow"
+              sx={{
+                maxWidth: {xs: '14px', sm: '15px', md: '16px'},
+                width: '100%',
+                height: '100%',
+                opacity: 0,
+                // mr: '2px',
+                transition: 'opacity 0.5s ease, transform 0.3s ease-in-out',
+                // opacity: activeIndexes.includes(i) ? 1 : 0,
+                transform: activeIndexes.includes(i)
+                  ? 'translateX(30px)'
+                  : 'translateX(-10px)'
+              }}
+            />
           </Box>
-        )
-      )}
+        </Box>
+      ))}
     </Box>
   );
 }
