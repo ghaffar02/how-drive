@@ -80,7 +80,7 @@ export default function StudentDashboard() {
             },
             msOverflowStyle: 'none',
             scrollbarWidth: 'none',
-            paddingTop: {xs: '97px', md: 'none'},
+            paddingTop: {xs: '97px', md: 'unset'},
             ...(activeKey === '1'
               ? {
                   border: {md: '1px solid #fff'},
