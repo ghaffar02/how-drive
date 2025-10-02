@@ -151,7 +151,8 @@ function HomeMobileHeader({
           left: '16px',
           right: '16px',
           width: '100%',
-          maxWidth: 'calc(100% - 32px)'
+          maxWidth: 'calc(100% - 32px)',
+          zIndex: '1000'
         }}
       >
         <Typography
