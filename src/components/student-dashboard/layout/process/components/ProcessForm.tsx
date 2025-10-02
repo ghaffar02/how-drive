@@ -4,8 +4,11 @@ import {
   Box,
   Button,
   Checkbox,
+  FormControl,
   FormControlLabel,
+  FormHelperText,
   MenuItem,
+  Select,
   TextField,
   Typography
 } from '@mui/material';
@@ -20,7 +23,7 @@ export default function ProcessForm() {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        gap: '48px',
+        gap: {xs: '36px', md: '48px'},
         padding: '24px',
         background: 'rgba(248,250,252,0.3)',
         backdropFilter: 'blur(15px)',
@@ -131,48 +134,39 @@ export function DrivingLicenseForm() {
         control={control}
         rules={{required: 'Driving license class is required'}}
         render={({field}) => (
-          <TextField
-            select
-            label="Driving license class"
-            {...field}
-            fullWidth
-            error={!!errors.licenseClass}
-            helperText={errors.licenseClass?.message}
-            sx={{
-              background: '#ffffff',
-              borderRadius: '10px',
-              '& .MuiInputBase-root': {
+          <FormControl fullWidth error={!!errors.licenseClass}>
+            <Select
+              displayEmpty
+              {...field}
+              // error={!!errors.licenseClass}
+              // helperText={errors.licenseClass?.message}
+              sx={{
+                background: '#ffffff',
+                borderRadius: '10px',
                 height: '40px',
                 fontSize: '14px',
-                padding: '12px'
-              },
-              '& .MuiOutlinedInput-notchedOutline': {
-                borderRadius: '10px'
-              },
-              '& .MuiSelect-select': {
-                display: 'flex',
-                alignItems: 'center',
-                padding: '0 12px', // proper horizontal padding
-                fontSize: '14px'
-              },
-              '& .MuiInputLabel-root': {
-                top: '-6px', // adjust vertical position of label
-                fontSize: '14px'
-              },
-              '& .MuiInputLabel-shrink': {
-                top: '0px'
-              }
-            }}
-          >
-            <MenuItem value="B">B</MenuItem>
-            <MenuItem value="BF17">BF17</MenuItem>
-            <MenuItem value="BE">BE</MenuItem>
-            <MenuItem value="B96">B96</MenuItem>
-            <MenuItem value="A">A</MenuItem>
-            <MenuItem value="A2">A2</MenuItem>
-            <MenuItem value="A1">A1</MenuItem>
-            <MenuItem value="AM">AM</MenuItem>
-          </TextField>
+                '& .MuiSelect-select': {
+                  padding: '12px',
+                  color: field.value === '' ? '#aaa' : 'inherit' // greyed placeholder
+                }
+              }}
+            >
+              <MenuItem value="" disabled>
+                Driving license class
+              </MenuItem>
+              <MenuItem value="B">B</MenuItem>
+              <MenuItem value="BF17">BF17</MenuItem>
+              <MenuItem value="BE">BE</MenuItem>
+              <MenuItem value="B96">B96</MenuItem>
+              <MenuItem value="A">A</MenuItem>
+              <MenuItem value="A2">A2</MenuItem>
+              <MenuItem value="A1">A1</MenuItem>
+              <MenuItem value="AM">AM</MenuItem>
+            </Select>
+            {errors.licenseClass && (
+              <FormHelperText>{errors.licenseClass.message}</FormHelperText>
+            )}
+          </FormControl>
         )}
       />
 
@@ -182,47 +176,36 @@ export function DrivingLicenseForm() {
         control={control}
         rules={{required: 'Place of residence is required'}}
         render={({field}) => (
-          <TextField
-            select
-            label="Place of residence"
-            {...field}
-            fullWidth
-            error={!!errors.residence}
-            helperText={errors.residence?.message}
-            sx={{
-              background: '#ffffff',
-              borderRadius: '10px',
-              '& .MuiInputBase-root': {
+          <FormControl fullWidth error={!!errors.residence}>
+            <Select
+              {...field}
+              displayEmpty
+              sx={{
+                background: '#ffffff',
+                borderRadius: '10px',
                 height: '40px',
                 fontSize: '14px',
-                padding: '12px'
-              },
-              '& .MuiOutlinedInput-notchedOutline': {
-                borderRadius: '10px'
-              },
-              '& .MuiSelect-select': {
-                display: 'flex',
-                alignItems: 'center',
-                padding: '0 12px', // proper horizontal padding
-                fontSize: '14px'
-              },
-              '& .MuiInputLabel-root': {
-                top: '-6px',
-                fontSize: '14px'
-              },
-              '& .MuiInputLabel-shrink': {
-                top: '0px'
-              }
-            }}
-          >
-            <MenuItem value="Berlin">Berlin</MenuItem>
-            <MenuItem value="Hamburg">Hamburg</MenuItem>
-            <MenuItem value="München">München</MenuItem>
-            <MenuItem value="Düsseldorf">Düsseldorf</MenuItem>
-            <MenuItem value="Köln">Köln</MenuItem>
-            <MenuItem value="Frankfurt">Frankfurt</MenuItem>
-            <MenuItem value="Stuttgart">Stuttgart</MenuItem>
-          </TextField>
+                '& .MuiSelect-select': {
+                  padding: '12px',
+                  color: field.value === '' ? '#aaa' : 'inherit' // greyed placeholder
+                }
+              }}
+            >
+              <MenuItem value="" disabled>
+                Place of residence
+              </MenuItem>
+              <MenuItem value="Berlin">Berlin</MenuItem>
+              <MenuItem value="Hamburg">Hamburg</MenuItem>
+              <MenuItem value="München">München</MenuItem>
+              <MenuItem value="Düsseldorf">Düsseldorf</MenuItem>
+              <MenuItem value="Köln">Köln</MenuItem>
+              <MenuItem value="Frankfurt">Frankfurt</MenuItem>
+              <MenuItem value="Stuttgart">Stuttgart</MenuItem>
+            </Select>
+            {errors.residence && (
+              <FormHelperText>{errors.residence.message}</FormHelperText>
+            )}
+          </FormControl>
         )}
       />
 
@@ -239,7 +222,8 @@ export function DrivingLicenseForm() {
         }}
         render={({field}) => (
           <TextField
-            label="Phone number"
+            // label="Phone number"
+            placeholder="Phone number"
             type="tel"
             {...field}
             fullWidth
@@ -260,6 +244,7 @@ export function DrivingLicenseForm() {
               '& .MuiInputBase-input': {
                 padding: 0,
                 fontSize: '14px'
+                // background: '#fff'
               },
               '& .MuiInputLabel-root': {
                 top: '-6px',
@@ -280,7 +265,8 @@ export function DrivingLicenseForm() {
         // rules={{required: 'Driving school is required'}}
         render={({field}) => (
           <TextField
-            label="Driving school"
+            // label="Driving school"
+            placeholder="Driving school"
             {...field}
             fullWidth
             // error={!!errors.school}
@@ -334,6 +320,7 @@ export function DrivingLicenseForm() {
         variant="contained"
         sx={{
           backgroundColor: isReady ? '#4615ff' : 'grey.600',
+          borderRadius: '10px',
           color: 'white',
           textTransform: 'none',
           py: 1.2,

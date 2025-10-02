@@ -30,7 +30,12 @@ export default function Appointment() {
         justifyContent: 'space-between',
         borderRadius: '18px',
         gap: {xs: '6px', sm: '15px'},
-        height: '100%'
+        height: '100%',
+        border: '1px solid #fff',
+        boxShadow: {
+          md: 'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px'
+        },
+        overflow: 'hidden'
         // height: {xs: '224px', sm: '252px', md: 'auto', lg: '100%'}
       }}
     >

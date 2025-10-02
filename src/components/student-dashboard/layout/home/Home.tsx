@@ -18,6 +18,7 @@ export default function Home() {
           width: '100%',
           height: {xs: 'auto', lg: '100%'},
           padding: {xs: '8px', lg: '24px'},
+          background: 'rgba(248,250,252,0.3)',
           borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
           marginBottom: {xs: '63px', md: 'auto'},
           backgroundColor: 'rgba(248, 250, 252, 0.3)',
@@ -51,7 +52,7 @@ export default function Home() {
             <Grid size={12} sx={{height: {xs: 'auto', lg: '70%', xl: '73%'}}}>
               <Process />
             </Grid>
-            <Grid size={6} sx={{height: {xs: 'auto', lg: '25%'}}}>
+            <Grid size={6} sx={{height: {xs: 'auto', lg: '26%', xl: '24%'}}}>
               <LessonCard
                 title={t('card1Title')}
                 completedHours={11}
@@ -59,7 +60,7 @@ export default function Home() {
                 progressValue={80}
               />
             </Grid>
-            <Grid size={6} sx={{height: {xs: 'auto', lg: '25%'}}}>
+            <Grid size={6} sx={{height: {xs: 'auto', lg: '26%', xl: '24%'}}}>
               <LessonCard
                 title={t('card2Title')}
                 completedHours={4}
@@ -85,7 +86,7 @@ export default function Home() {
             </Grid>
             <Grid
               size={{xs: 12, md: 6, lg: 12}}
-              sx={{height: {xs: 'auto', lg: '48%', xl: '49%'}}}
+              sx={{height: {xs: 'auto', lg: '48%', xl: '48%'}}}
             >
               <Messages />
             </Grid>
