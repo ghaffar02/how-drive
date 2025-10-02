@@ -45,7 +45,7 @@ export default function StudentDashboard() {
           display: 'flex',
           height: '100%',
           flexDirection: {xs: 'column-reverse', md: 'row'},
-          gap: '16px'
+          gap: {md: '16px'}
         }}
       >
         {/* the tab section  */}
@@ -80,6 +80,7 @@ export default function StudentDashboard() {
             },
             msOverflowStyle: 'none',
             scrollbarWidth: 'none',
+            paddingTop: {xs: '97px', md: 'none'},
             ...(activeKey === '1'
               ? {
                   border: {md: '1px solid #fff'},
@@ -137,11 +138,20 @@ function HomeMobileHeader({
           alignItems: 'center',
           // copy cat
           border: '1px solid #fff',
+          boxShadow:
+            'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
+          backdropFilter: 'blur(15px)',
+          backgroundColor: 'rgba(248, 250, 252, 0.3)',
           borderRadius: '18px',
           padding: '12px',
-          backgroundColor: 'rgba(248, 250, 252, 0.3)',
+          height: '65px !important',
+          // position fixed here
+          position: 'fixed',
+          top: '16px',
+          left: '16px',
+          right: '16px',
           width: '100%',
-          height: '65px !important'
+          maxWidth: 'calc(100% - 32px)'
         }}
       >
         <Typography

@@ -86,15 +86,15 @@ export default function MobileTabs({
           boxShadow:
             'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
           backdropFilter: 'blur(15px)',
+          backgroundColor: 'rgba(248, 250, 252, 0.3)',
           width: 'calc(100% - 32px)',
           borderRadius: '18px',
           padding: '8px',
-          backgroundColor: 'rgba(248, 250, 252, 0.3)',
+          // position fixed here
           position: 'fixed',
           bottom: '16px',
-          // height: '77px',
-          left: '50%',
-          transform: 'translateX(-50%)',
+          left: '16px',
+          right: '16px',
           zIndex: '1000'
         }}
       >
