@@ -8,14 +8,27 @@ import {
   ReactElement,
   ReactNode,
   ReactPortal,
+  useEffect,
+  useRef,
   useState
 } from 'react';
 
 export default function Privacy() {
   const [openDropdown, setOpenDropdown] = useState(false);
+  const dropdownRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState<number | 0>(0);
   const t = useTranslations('Dashboard.Settings.RightSide.PrivacyTab');
   const formFields = t.raw('formFields');
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    function handleClickOutside(_event: {target: any}) {}
+    if (openDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [openDropdown]);
 
   const handleClick = (i: number) => {
     setActiveIndex(i);
@@ -301,7 +314,7 @@ export default function Privacy() {
             // justifyContent: 'space-between'
           }}
         >
-          <Box sx={{}}>
+          <Box sx={{position: 'relative'}}>
             <CustomButton
               label={t('btn3')}
               bgColor="#0D9488"
@@ -309,18 +322,22 @@ export default function Privacy() {
               sx={{}}
               onClick={() => setOpenDropdown(() => !openDropdown)}
             />
-
             {openDropdown && (
               <Box
+                ref={dropdownRef}
                 sx={{
                   position: 'absolute',
-                  bottom: {xs: -40, md: -40, lg: -100},
-                  right: {xs: '-80px', sm: -310, lg: -30},
-                  width: '100%'
-                  // maxWidth: '532px'
+                  bottom: '100%',
+                  right: 0,
+                  mb: '8px',
+                  width: '363px',
+                  zIndex: 10
                 }}
               >
-                <CustomCard onClose={() => setOpenDropdown(true)} />
+                <CustomCard
+                  text="Would you like to download your personal data?"
+                  onClose={() => setOpenDropdown(true)}
+                />
               </Box>
             )}
           </Box>

@@ -1,9 +1,11 @@
 import {Box} from '@mui/material';
-import React from 'react';
+import React, {useState} from 'react';
 import Leftside from './components/Leftside';
 import RightSide from './components/RightSide';
 
 export default function Setting() {
+  const [activeIndex, setActiveIndex] = useState<number | 0>(0);
+
   return (
     <>
       <Box
@@ -17,9 +19,12 @@ export default function Setting() {
           }
         }}
       >
-        <Leftside />
+        <Leftside
+          activeIndexes={activeIndex}
+          setActiveIndexes={setActiveIndex}
+        />
 
-        <RightSide />
+        <RightSide activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
       </Box>
     </>
   );

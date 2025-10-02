@@ -10,6 +10,7 @@ interface CustomCardProps {
   padding?: number | string;
   radius?: number | string;
   bgColor?: string;
+  text?: string;
   onClose?: () => void;
 }
 
@@ -17,7 +18,8 @@ export default function CustomCard({
   onClose,
   padding = '16px',
   radius = '10px',
-  bgColor = '#ffffff'
+
+  text
 }: CustomCardProps) {
   return (
     <Box
@@ -31,12 +33,12 @@ export default function CustomCard({
         justifyContent: 'center',
         alignItems: 'center',
         padding,
+        background: 'rgba(248, 250, 252, 0.53)',
+        border: '1px solid #fff',
         boxShadow:
-          '0px 10px 20px 0px rgba(0, 0, 0, 0.05), 0px 0px 2px 1px rgba(0, 0, 0, 0.05)',
-        backgroundColor: bgColor,
-        // overflow: 'var(--overflow-clip-fallback, clip)',
-        // alignContent: 'center',
-        // flexWrap: 'nowrap',
+          'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
+        backdropFilter: 'blur(15px)',
+
         gap: '16px',
         borderRadius: radius
       }}
@@ -48,7 +50,7 @@ export default function CustomCard({
           fontFamily: '"Inter", sans-serif !important'
         }}
       >
-        Do you really want to delete your account?
+        {text}
       </Typography>
 
       <Box
@@ -63,11 +65,14 @@ export default function CustomCard({
         }}
       >
         <CustomButton
-          label="yes"
+          label="no"
           bgColor="rgb(220, 38, 38)"
           hoverColor="#991919"
-          imgSrc={tick}
+          hoverTextcolor="#fff"
+          imgSrc={cross}
           sx={{
+            border: '1px solid #a1a1aaff',
+            // color: '#000',
             gap: '8px',
             maxWidth: '80px',
             width: '100%',
@@ -75,14 +80,11 @@ export default function CustomCard({
           }}
         />
         <CustomButton
-          label="no"
-          bgColor="#71717A"
-          hoverTextcolor="#fff"
-          hoverColor="rgb(82, 82, 91)"
-          imgSrc={cross}
+          label="yes"
+          bgColor="#0D9488"
+          hoverColor="#0C5C72"
+          imgSrc={tick}
           sx={{
-            border: '1px solid #a1a1aaff',
-            // color: '#000',
             gap: '8px',
             maxWidth: '80px',
             width: '100%',

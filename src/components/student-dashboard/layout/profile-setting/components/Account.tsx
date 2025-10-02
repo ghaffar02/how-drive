@@ -8,13 +8,30 @@ import {
   ReactElement,
   ReactNode,
   ReactPortal,
+  useEffect,
+  useRef,
   useState
 } from 'react';
 import {useTranslations} from 'next-intl';
 
 export default function Account() {
   const [openDropdown, setOpenDropdown] = useState(false);
+  const dropdownRef = useRef(null);
   const t = useTranslations('Dashboard.Settings.RightSide.AccountTab');
+
+  // Outside click close
+  useEffect(() => {
+    function handleClickOutside(event: {target: any}) {
+      // if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      // }
+    }
+    if (openDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [openDropdown]);
 
   const formFields = t.raw('formFields');
 
@@ -191,9 +208,9 @@ export default function Account() {
           }}
         />
       </Box>
+
       <Box
         sx={{
-          position: 'relative',
           width: '100%',
           display: 'flex',
           flexDirection: {xs: 'column', lg: 'row'},
@@ -236,26 +253,30 @@ export default function Account() {
             // justifyContent: 'space-between'
           }}
         >
-          <Box sx={{}}>
+          <Box sx={{position: 'relative'}}>
             <CustomButton
-              label={t('btn3')}
+              label="Delete account"
               bgColor="rgb(220, 38, 38)"
               hoverColor="#991919"
-              sx={{}}
-              onClick={() => setOpenDropdown(() => !openDropdown)}
+              onClick={() => setOpenDropdown((prev) => !prev)} // toggle
             />
 
             {openDropdown && (
               <Box
+                ref={dropdownRef}
                 sx={{
                   position: 'absolute',
-                  bottom: {xs: -40, md: -40, lg: -100},
-                  right: {xs: '-80px', sm: -310, lg: -30},
-                  width: '100%'
-                  // maxWidth: '532px'
+                  bottom: '100%',
+                  right: 0,
+                  mb: '8px',
+                  width: '323px',
+                  zIndex: 10
                 }}
               >
-                <CustomCard onClose={() => setOpenDropdown(true)} />
+                <CustomCard
+                  text=" Do you really want to delete your account?"
+                  onClose={() => setOpenDropdown(true)}
+                />
               </Box>
             )}
           </Box>

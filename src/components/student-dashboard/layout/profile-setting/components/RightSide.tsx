@@ -7,14 +7,18 @@ import Preference from './Preference';
 import Privacy from './Privacy';
 import {useTranslations} from 'next-intl';
 
-export default function RightSide() {
+export default function RightSide({  activeIndex, setActiveIndex,
+}: {
+  activeIndex: number;
+  setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
+}) {
   const t = useTranslations('Dashboard.Settings.leftSide');
-  const [activeIndex, setActiveIndex] = useState<number | 0>(0);
+  // const [activeIndex, setActiveIndex] = useState<number | 0>(0);
   const data = t.raw('RightSideArray');
 
-  const handleClick = (i: number) => {
-    setActiveIndex(i);
-  };
+  // const handleClick = (i: number) => {
+  //   setActiveIndex(i);
+  // };
 
   return (
     <Box
@@ -33,15 +37,12 @@ export default function RightSide() {
         sx={{
           p: {xs: '8px', md: '24px'},
           overflowY: 'scroll',
-          // height: '100vh',
+
           height: {xs: '100%', lg: '100%'},
-          // display: 'flex',
-          // flexDirection: 'column',
 
           overflow: ' hidden auto',
           msOverflowStyle: 'none',
           scrollbarWidth: 'none'
-          // mb: '20px',
         }}
       >
         {/* Tabs */}
@@ -59,7 +60,7 @@ export default function RightSide() {
           {data.map((items: string, i: number) => (
             <Box
               key={i}
-              onClick={() => handleClick(i)}
+              // onClick={() => handleClick(i)}
               sx={{
                 background: activeIndex === i ? '#ffff' : 'transprant',
                 padding: '4px 8px',
