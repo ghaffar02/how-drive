@@ -13,6 +13,7 @@ import logoutIcon from '@/assets/svgs/dashboard-student/login.svg';
 import Setting from './profile-setting/Setting';
 import Process from './process/Process';
 import Support from './support/Support';
+import Message from './messages/Message';
 
 export default function StudentDashboard() {
   const [activeKey, setActiveKey] = React.useState<string>('1');
@@ -102,9 +103,10 @@ export default function StudentDashboard() {
             setActiveKey={setActiveKey}
           />
           {activeKey === '1' && <Home />}
+          {activeKey === '2' && <Process />}
+          {activeKey === '4' && <Message />}
           {activeKey === '5' && <Setting />}
           {activeKey === '6' && <Support />}
-          {activeKey === '2' && <Process />}
         </Box>
       </Box>
     </Box>
