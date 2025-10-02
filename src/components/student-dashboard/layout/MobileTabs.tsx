@@ -16,6 +16,8 @@ import calander_blue from '@/assets/svgs/dashboard-student/calander_blue.svg';
 import message_black from '@/assets/svgs/dashboard-student/message_black.svg';
 import message_bold from '@/assets/svgs/dashboard-student/message_bold.svg';
 import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
+import infos_black from '@/assets/svgs/dashboard-student/infos_black.svg';
+
 // import menu from '@/assets/svgs/dashboard-student/menu.svg';
 
 import InfoMenuModal from './InfoMenuModal';
@@ -71,6 +73,13 @@ export default function MobileTabs({
       iconBlack: message_black,
       iconBlue: message_blue,
       iconHover: message_bold
+    },
+    {
+      key: '5',
+      label: 'Infos',
+      iconBlack: infos_black,
+      iconBlue: infos_black,
+      iconHover: infos_black
     }
   ];
 
