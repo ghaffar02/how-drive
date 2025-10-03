@@ -28,7 +28,7 @@ export default function ProcessForm() {
         background: 'rgba(248,250,252,0.3)',
         backdropFilter: 'blur(15px)',
         boxShadow: `0px 0px 0px 1px rgb(255, 255, 255, rgb(255, 255, 255)), 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)`,
-        height: {xs: '90%', md: '100%'},
+        height: {xs: 'fit-content', md: '100%'},
         // marginBottom: '150px',
         width: '100%',
         border: '1px solid #fff',

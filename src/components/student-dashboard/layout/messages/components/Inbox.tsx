@@ -1,5 +1,5 @@
 import localFont from '@/utils/themes';
-import {Box, TextField, Typography} from '@mui/material';
+import {Box, Menu, MenuItem, TextField, Typography} from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 
@@ -8,42 +8,158 @@ import printIcon from '@/assets/svgs/dashboard-student/printIcon.svg';
 import deleteIcon from '@/assets/svgs/dashboard-student/deleteIcon.svg';
 import sendIcon from '@/assets/svgs/dashboard-student/sendIcon.svg';
 import attachIcon from '@/assets/svgs/dashboard-student/attachIcon.svg';
+import dots from '@/assets/svgs/dashboard-student/dots.svg';
+
+import backIcon from '@/assets/svgs/dashboard-student/backIcon.svg';
+import deleteIcon2 from '@/assets/svgs/dashboard-student/deleteIcon2.svg';
+import copyIcon from '@/assets/svgs/dashboard-student/copyIcon.svg';
 
 const messages = [
-  'Every challenge you face is an opportunity to grow stronger and smarter than before.',
-  'Success does not come overnight; it comes with consistent effort and patience every single day.',
-  'No matter how small the step, moving forward will always bring you closer to your goals. Every challenge you face is an opportunity to grow stronger and smarter than before.',
-  'Sometimes, the most important thing you can do is simply believe in yourself when no one else does.',
-  'Happiness doesn’t come from what you have, but from how you choose to see the world around you.',
-  'Failure is not the opposite of success; it’s a part of the journey that teaches you valuable lessons. Every challenge you face is an opportunity to grow stronger and smarter than before.',
-  'Your mindset determines your reality, so choose positivity even when the road feels difficult.',
-  'Learning a skill takes time, but each mistake you make is a step closer to mastery.',
-  'When things feel overwhelming, pause, take a deep breath, and remind yourself of how far you’ve already come. Every challenge you face is an opportunity to grow stronger and smarter than before.',
-  'Discipline will take you further than motivation ever can, because it stays when motivation fades.',
-  'Opportunities rarely come announced; prepare yourself so you’re ready when they do.',
-  'Growth happens outside of your comfort zone, so don’t be afraid to take risks and try new things. Every challenge you face is an opportunity to grow stronger and smarter than before.',
-  'Every person you meet knows something you don’t — be curious, listen, and learn from them.',
-  'The best investment you can ever make is in yourself — your skills, your health, and your mindset.',
-  'You’ll never always be motivated, but you can train yourself to always stay consistent.',
-  'Even the longest journey begins with a single step — so take yours today without fear.',
-  'Hard work beats talent when talent doesn’t work hard, so never underestimate persistence.',
-  'Time is the most valuable resource you have, so spend it wisely on what truly matters.',
-  'Gratitude turns what you already have into enough, making life more fulfilling and joyful.',
-  'Small habits practiced daily create big results over time — start with just one change today.'
+  {
+    sender: 'system',
+    message:
+      'Every challenge you face is an opportunity to grow stronger and smarter than before.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Success does not come overnight; it comes with consistent effort and patience every single day.'
+  },
+  {
+    sender: 'system',
+    message:
+      'No matter how small the step, moving forward will always bring you closer to your goals. Every challenge you face is an opportunity to grow stronger and smarter than before.'
+  },
+  {
+    sender: 'user',
+    message:
+      'Sometimes, the most important thing you can do is simply believe in yourself when no one else does.'
+  },
+  {
+    sender: 'user',
+    message:
+      'Happiness doesn’t come from what you have, but from how you choose to see the world around you.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Failure is not the opposite of success; it’s a part of the journey that teaches you valuable lessons. Every challenge you face is an opportunity to grow stronger and smarter than before.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Your mindset determines your reality, so choose positivity even when the road feels difficult.'
+  },
+  {
+    sender: 'user',
+    message:
+      'Learning a skill takes time, but each mistake you make is a step closer to mastery.'
+  },
+  {
+    sender: 'system',
+    message:
+      'When things feel overwhelming, pause, take a deep breath, and remind yourself of how far you’ve already come. Every challenge you face is an opportunity to grow stronger and smarter than before.'
+  },
+  {
+    sender: 'user',
+    message:
+      'Discipline will take you further than motivation ever can, because it stays when motivation fades.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Opportunities rarely come announced; prepare yourself so you’re ready when they do.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Growth happens outside of your comfort zone, so don’t be afraid to take risks and try new things. Every challenge you face is an opportunity to grow stronger and smarter than before.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Every person you meet knows something you don’t — be curious, listen, and learn from them.'
+  },
+  {
+    sender: 'system',
+    message:
+      'The best investment you can ever make is in yourself — your skills, your health, and your mindset.'
+  },
+  {
+    sender: 'system',
+    message:
+      'You’ll never always be motivated, but you can train yourself to always stay consistent.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Even the longest journey begins with a single step — so take yours today without fear.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Hard work beats talent when talent doesn’t work hard, so never underestimate persistence.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Time is the most valuable resource you have, so spend it wisely on what truly matters.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Gratitude turns what you already have into enough, making life more fulfilling and joyful.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Small habits practiced daily create big results over time — start with just one change today.'
+  }
+];
+
+const options = [
+  {
+    icon: backIcon,
+    title: 'Antworten'
+  },
+  {
+    icon: copyIcon,
+    title: 'Kopien'
+  },
+  {
+    icon: deleteIcon2,
+    title: 'Löschen'
+  }
 ];
 
 export default function Inbox() {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const date = new Date();
+  const currentDate = date.toLocaleString('de-DE', {
+    day: '2-digit',
+    month: 'long',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
   return (
     <Box
       sx={{
         width: '100%',
-        padding: '24px',
+        padding: {xs: '8px', md: '24px'},
         display: 'flex',
         flexDirection: 'column',
         gap: '16px',
         background: 'rgba(248,250,252,0.3)',
         border: '1px solid #fff',
-        borderRadius: '0px 24px 24px 0px'
+        borderRadius: {xs: '24px', md: '0px 24px 24px 0px'}
+        // marginBottom: {xs: '65px', md: '0px'}
       }}
     >
       <Box
@@ -101,14 +217,14 @@ export default function Inbox() {
             marginLeft: 'auto'
           }}
         >
-          <Box sx={{height: '20px', width: '20px'}}>
+          <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
             <Image
               src={deleteIcon}
               alt="delete"
               style={{height: '100%', width: '100%'}}
             />
           </Box>
-          <Box sx={{height: '20px', width: '20px'}}>
+          <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
             <Image
               src={printIcon}
               alt="print"
@@ -128,40 +244,145 @@ export default function Inbox() {
           display: 'flex',
           flexDirection: 'column',
           gap: '24px',
-          overflow: 'auto'
+          overflow: 'auto',
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          },
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none'
         }}
       >
         {messages.map((data, i) => (
           <Box
             key={i}
-            sx={{display: 'flex', flexDirection: 'column', gap: '6px'}}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '6px',
+              alignItems: data.sender === 'user' ? 'flex-end' : 'flex-start'
+            }}
           >
-            <Typography
-              sx={{
-                ...localFont.inter14,
-                fontWeight: '300',
-                fontFamily: '"Inter", sans-serif !important'
-              }}
-            >
-              26. Mai, 9:50 Uhr
-            </Typography>
+            <Box sx={{display: 'flex', alignItems: 'center', gap: '4px'}}>
+              <Typography
+                sx={{
+                  ...localFont.inter14,
+                  fontWeight: '300',
+                  fontFamily: '"Inter", sans-serif !important'
+                }}
+              >
+                {currentDate}
+              </Typography>
+              {data.sender !== 'user' && (
+                <>
+                  <Box
+                    onClick={handleClick}
+                    sx={{
+                      height: '20px',
+                      width: '20px',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <Image
+                      src={dots}
+                      alt="dots"
+                      style={{height: '100%', width: '100%'}}
+                    />
+                  </Box>
+                  <Menu
+                    id="long-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    slotProps={{
+                      paper: {
+                        sx: {
+                          width: '150px',
+                          p: '8px',
+                          borderRadius: '12px',
+                          border: '1px solid #fff',
+                          boxShadow:
+                            '0px 0px 0px 1px rgb(255,255,255), 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
+                          background:
+                            'linear-gradient(145deg, rgba(227, 227, 255, 0.4) 0%, rgba(255, 240, 227, 0.4) 100%);',
+                          backdropFilter: 'blur(15px)',
+                          '& .MuiMenuItem-root': {
+                            p: 0,
+                            borderRadius: '12px'
+                          }
+                        }
+                      },
+                      list: {
+                        'aria-labelledby': 'long-button',
+                        sx: {
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '10px'
+                        }
+                      }
+                    }}
+                  >
+                    {options.map((option, i) => (
+                      <MenuItem key={i} onClick={handleClose}>
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            width: '100%',
+                            padding: '8px',
+                            borderRadius: '8px',
+                            '&:hover': {
+                              backgroundColor: 'rgba(191,234,255,.5)'
+                            }
+                          }}
+                        >
+                          {/* Example: add icon or image */}
+                          <Image
+                            src={option.icon}
+                            alt={option.title}
+                            width={18}
+                            height={18}
+                          />
+                          <Typography
+                            sx={{
+                              ...localFont.inter14,
+                              fontFamily: '"Inter", sans-serif !important',
+                              color: '#1a202c'
+                            }}
+                          >
+                            {option.title}
+                          </Typography>
+                        </Box>
+                      </MenuItem>
+                    ))}
+                  </Menu>
+                </>
+              )}
+            </Box>
             <Box
               sx={{
                 maxWidth: '80%',
                 width: '100%',
                 padding: '12px',
-                background: 'rgba(191,202,255,1)',
-                borderRadius: '18px 2px 18px 18px'
+                background:
+                  data.sender === 'user'
+                    ? 'linear-gradient(to left, rgba(191,202,255,1), rgba(191,234,255,1))'
+                    : 'linear-gradient(to left, rgba(165,243,252,1), rgba(130,255,236,1))',
+                borderRadius:
+                  data.sender === 'user'
+                    ? '18px 2px 18px 18px'
+                    : '2px 18px 18px 18px'
               }}
             >
               <Typography
                 sx={{
                   ...localFont.inter14,
                   fontWeight: '400',
-                  fontFamily: '"Inter", sans-serif !important'
+                  fontFamily: '"Inter", sans-serif !important',
+                  color: '#1a202c'
                 }}
               >
-                {data}
+                {data.message}
               </Typography>
             </Box>
           </Box>
@@ -197,7 +418,7 @@ export default function Inbox() {
               }
             }}
           />
-          <Box sx={{height: '24px', width: '24px'}}>
+          <Box sx={{height: '24px', width: '24px', cursor: 'pointer'}}>
             <Image src={attachIcon} alt="attachIcon" height={24} width={24} />
           </Box>
         </Box>
@@ -209,7 +430,8 @@ export default function Inbox() {
             borderRadius: '18px',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            cursor: 'pointer'
           }}
         >
           <Image src={sendIcon} alt="sendIcon" height={24} width={24} />
