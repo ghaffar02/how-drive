@@ -33,7 +33,7 @@ export default function StudentDashboard() {
       sx={{
         width: '100%',
         height: {
-          xs: 'calc(100svh - 32px)',
+          xs: '100svh',
           md: 'calc(100svh - 40px)'
         },
         borderRadius: '24px'
@@ -82,10 +82,11 @@ export default function StudentDashboard() {
             msOverflowStyle: 'none',
             scrollbarWidth: 'none',
             paddingTop: {xs: '97px', md: 'unset'},
+            paddingBottom: {xs: '97px', md: 'auto'},
             ...(activeKey === '1'
               ? {
                   border: {md: '1px solid #fff'},
-                  borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
+                  borderRadius: {md: '0px 24px 24px 0px'},
                   boxShadow: {
                     md: 'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px'
                   },
