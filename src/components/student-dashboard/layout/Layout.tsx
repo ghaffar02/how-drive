@@ -13,6 +13,8 @@ import logoutIcon from '@/assets/svgs/dashboard-student/login.svg';
 import Setting from './profile-setting/Setting';
 import Process from './process/Process';
 import Calander from './calander/Calander';
+import Support from './support/Support';
+import Message from './messages/Message';
 
 export default function StudentDashboard() {
   const [activeKey, setActiveKey] = React.useState<string>('3');
@@ -32,7 +34,7 @@ export default function StudentDashboard() {
       sx={{
         width: '100%',
         height: {
-          xs: 'calc(100svh - 32px)',
+          xs: '100svh',
           md: 'calc(100svh - 40px)'
         },
         borderRadius: '24px'
@@ -45,7 +47,7 @@ export default function StudentDashboard() {
           display: 'flex',
           height: '100%',
           flexDirection: {xs: 'column-reverse', md: 'row'},
-          gap: '16px'
+          gap: {md: '16px'}
         }}
       >
         {/* the tab section  */}
@@ -80,9 +82,12 @@ export default function StudentDashboard() {
             },
             msOverflowStyle: 'none',
             scrollbarWidth: 'none',
+            paddingTop: {xs: '97px', md: 'unset'},
+            paddingBottom: {xs: '97px', md: 'auto'},
             ...(activeKey === '1'
               ? {
                   border: {md: '1px solid #fff'},
+                  borderRadius: {md: '0px 24px 24px 0px'},
                   boxShadow: {
                     md: 'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px'
                   },
@@ -104,6 +109,9 @@ export default function StudentDashboard() {
           {activeKey === '5' && <Setting />}
           {activeKey === '6' && <Home />}
           {activeKey === '2' && <Process />}
+          {activeKey === '4' && <Message />}
+          {activeKey === '5' && <Setting />}
+          {activeKey === '6' && <Support />}
         </Box>
       </Box>
     </Box>
@@ -138,11 +146,21 @@ function HomeMobileHeader({
           alignItems: 'center',
           // copy cat
           border: '1px solid #fff',
+          boxShadow:
+            'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
+          backdropFilter: 'blur(15px)',
+          backgroundColor: 'rgba(248, 250, 252, 0.3)',
           borderRadius: '18px',
           padding: '12px',
-          backgroundColor: 'rgba(248, 250, 252, 0.3)',
+          height: '65px !important',
+          // position fixed here
+          position: 'fixed',
+          top: '16px',
+          left: '16px',
+          right: '16px',
           width: '100%',
-          height: '65px !important'
+          maxWidth: 'calc(100% - 32px)',
+          zIndex: '1000'
         }}
       >
         <Typography

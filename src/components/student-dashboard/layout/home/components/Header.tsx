@@ -68,7 +68,11 @@ export default function Header() {
         justifyContent: 'center',
         alignItems: 'center',
         gap: {xs: '8px', lg: '10px'},
-        height: {xs: '100%', lg: '100%'}
+        height: {xs: '100%', lg: '100%'},
+        border: '1px solid #fff',
+        boxShadow: {
+          md: 'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px'
+        }
       }}
     >
       {updatedData.map((item, i) => (
@@ -181,7 +185,7 @@ function Card({
           }}
         >
           <Typography
-            onClick={() => setShow((prev) => !prev)}
+            // onClick={() => setShow((prev) => !prev)}
             sx={{
               ...localFont.inter16,
               fontSize: {

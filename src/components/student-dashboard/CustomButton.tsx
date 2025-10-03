@@ -29,12 +29,13 @@ export default function CustomButton({
       variant="contained"
       disableRipple
       sx={{
-        // maxWidth: '93px',
-        // width: '100%',
+        fontSize: {xs: '12px', md: '13px', lg: '14px'},
+        lineHeight: '1.5em',
+        height: '38px',
+
         background: bgColor,
         textTransform: 'capitalize',
         padding: '8px 12px',
-        fontSize: {xs: '12px', sm: '13px', md: '14px'},
         borderRadius: '10px',
         fontFamily: '"Inter", sans-serif !important',
         fontWeight: '400',

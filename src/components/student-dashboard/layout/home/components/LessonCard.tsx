@@ -72,7 +72,11 @@ export default function LessonCard({
         flexDirection: {xs: 'column', md: 'row'},
         alignItems: {xs: 'end', md: 'center'},
         justifyContent: 'space-between',
-        height: {xs: 'auto', lg: '100%'}
+        height: {xs: 'auto', lg: '100%'},
+        border: '1px solid #fff',
+        boxShadow: {
+          md: 'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px'
+        }
       }}
     >
       {/* Icon + Title */}

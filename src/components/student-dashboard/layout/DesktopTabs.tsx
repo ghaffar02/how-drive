@@ -6,12 +6,16 @@ import logo from '@/assets/pngs/logo.png';
 
 // tab icons
 import home_black from '@/assets/svgs/dashboard-student/home_black.svg';
+import home_bold from '@/assets/svgs/dashboard-student/home_bold.svg';
 import home_blue from '@/assets/svgs/dashboard-student/home_blue.svg';
 import timer_black from '@/assets/svgs/dashboard-student/timer_black.svg';
+import timer_bold from '@/assets/svgs/dashboard-student/timer_bold.svg';
 import timer_blue from '@/assets/svgs/dashboard-student/timer_blue.svg';
 import calander_black from '@/assets/svgs/dashboard-student/calander_black.svg';
+import calander_bold from '@/assets/svgs/dashboard-student/calander_bold.svg';
 import calander_blue from '@/assets/svgs/dashboard-student/calander_blue.svg';
 import message_black from '@/assets/svgs/dashboard-student/message_black.svg';
+import message_bold from '@/assets/svgs/dashboard-student/message_bold.svg';
 import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
 
 // dropdown icons
@@ -48,28 +52,28 @@ export default function DesktopTabs({
       label: 'home',
       iconBlack: home_black,
       iconBlue: home_blue,
-      iconHover: home_blue
+      iconHover: home_bold
     },
     {
       key: '2',
       label: 'timer',
       iconBlack: timer_black,
       iconBlue: timer_blue,
-      iconHover: timer_blue
+      iconHover: timer_bold
     },
     {
       key: '3',
       label: 'calendar',
       iconBlack: calander_black,
       iconBlue: calander_blue,
-      iconHover: calander_blue
+      iconHover: calander_bold
     },
     {
       key: '4',
       label: 'message',
       iconBlack: message_black,
       iconBlue: message_blue,
-      iconHover: message_blue
+      iconHover: message_bold
     }
   ];
 

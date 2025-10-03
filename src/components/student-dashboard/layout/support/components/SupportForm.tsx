@@ -1,23 +1,49 @@
 'use client';
 import localFont from '@/utils/themes';
 import {Box, Button, MenuItem, TextField, Typography} from '@mui/material';
-import React from 'react';
+import React, {Dispatch, SetStateAction} from 'react';
 import {useForm, Controller} from 'react-hook-form';
+import drop from '@/assets/svgs/dashboard-student/dropdown.svg';
+import Image from 'next/image';
 
 type Inputs = {
   category: string;
   details: string;
+  file: FileList;
 };
 
-export default function SupportForm() {
+type Props = {
+  setOpenFaq: Dispatch<SetStateAction<boolean>>;
+  openFaq: boolean;
+};
+
+export default function SupportForm({setOpenFaq, openFaq}: Props) {
   const {
     register,
     handleSubmit,
     reset,
     control,
+    watch,
     formState: {errors}
   } = useForm<Inputs>();
   function Submit(data: Inputs) {
+    if (data.file && data.file.length > 0) {
+      const uploadedFile = data.file[0]; // <-- actual File object
+      console.log('Full File object:', uploadedFile);
+      console.log('File name:', uploadedFile.name);
+      console.log('File type:', uploadedFile.type);
+      console.log('File size:', uploadedFile.size);
+
+      // Example: convert to FormData for API upload
+      const formData = new FormData();
+      formData.append('category', data.category);
+      formData.append('details', data.details);
+      formData.append('file', uploadedFile);
+
+      console.log(formData);
+
+      // send `formData` to backend
+    }
     console.log(data);
     reset();
   }
@@ -32,11 +58,49 @@ export default function SupportForm() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'space-around',
+        gap: {xs: '20px', md: '60px'},
+        justifyContent: 'center',
         padding: {xs: '8px', md: '24px'},
         height: '100%'
       }}
     >
+      <Box
+        onClick={() => setOpenFaq((prev: boolean) => !prev)}
+        sx={{
+          display: {
+            xs: 'flex',
+            md: 'none'
+          },
+          margin: 'auto',
+          maxWidth: '80px',
+          width: '100%'
+          // gap: '6px'
+        }}
+      >
+        <Typography
+          sx={{
+            ...localFont.inter20,
+            fontWeight: '600',
+            fontFamily: '"Inter", sans-serif !important'
+          }}
+        >
+          FAQs
+        </Typography>
+        <Box
+          sx={{
+            height: '25px',
+            width: '25px !important',
+            transition: 'transform 0.3s ease-in-out',
+            transform: openFaq ? 'rotate(180deg)' : 'rotate(0deg)'
+          }}
+        >
+          <Image
+            src={drop}
+            alt="drop"
+            style={{height: '100%', width: '100%'}}
+          />
+        </Box>
+      </Box>
       <Box>
         <Typography sx={{...localFont.h6, textAlign: 'center', mb: '10px'}}>
           Submit a new request!
@@ -64,7 +128,7 @@ export default function SupportForm() {
           padding: '20px',
           display: 'flex',
           flexDirection: 'column',
-          gap: '20px'
+          gap: {xs: '10px', md: '20px'}
         }}
       >
         <Box sx={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
@@ -154,6 +218,67 @@ export default function SupportForm() {
             }}
           />
         </Box>
+
+        {/* Drag and drop file code  */}
+
+        <Box sx={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
+          <Typography
+            sx={{
+              ...localFont.inter14,
+              fontFamily: '"Inter", sans-serif !important'
+            }}
+          >
+            Upload File
+          </Typography>
+
+          {/* File Upload Field */}
+          <Box
+            sx={{
+              border: '2px dashed #ccc',
+              borderRadius: '8px',
+              p: '20px',
+              textAlign: 'center',
+              background: '#ffffff99',
+              cursor: 'pointer',
+              '&:hover': {borderColor: '#4615ff'}
+            }}
+            onClick={() => document.getElementById('fileInput')?.click()}
+          >
+            <input
+              type="file"
+              id="fileInput"
+              style={{display: 'none'}}
+              {...register('file', {required: 'File is required'})}
+            />
+
+            <Typography sx={{fontSize: '14px', color: '#666'}}>
+              Drag & drop a file here, or{' '}
+              <span style={{color: '#4615ff', fontWeight: 500}}>browse</span>
+            </Typography>
+            {watch('file')?.length > 0 && (
+              <Box sx={{mt: 2}}>
+                <img
+                  src={URL.createObjectURL(watch('file')[0])}
+                  alt="Preview"
+                  style={{
+                    maxWidth: '100px',
+                    maxHeight: '100px',
+                    borderRadius: '8px',
+                    objectFit: 'contain'
+                  }}
+                />
+              </Box>
+            )}
+
+            {errors.file && (
+              <Typography sx={{fontSize: '12px', color: 'red', mt: 1}}>
+                {errors.file.message}
+              </Typography>
+            )}
+          </Box>
+        </Box>
+
+        {/* Drag and drop file code  */}
         <Button
           type="submit"
           fullWidth
