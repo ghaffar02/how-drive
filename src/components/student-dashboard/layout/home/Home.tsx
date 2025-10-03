@@ -20,7 +20,6 @@ export default function Home() {
           padding: {xs: '8px', lg: '24px'},
           background: 'rgba(248,250,252,0.3)',
           borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
-          marginBottom: {xs: '63px', md: 'auto'},
           backgroundColor: 'rgba(248, 250, 252, 0.3)',
           border: {xs: '1px solid #fff', md: 'none'},
           boxShadow: {
