@@ -1,8 +1,8 @@
+// import {useTranslations} from 'next-intl';
 import localFont from '@/utils/themes';
 import {Box, Typography} from '@mui/material';
 import Image from 'next/image';
 import React, {useState} from 'react';
-// import {useTranslations} from 'next-intl';
 
 import car from '@/assets/svgs/dashboard-student/home/car.svg';
 import fabian from '@/assets/svgs/dashboard-student/home/fabian.svg';

@@ -12,7 +12,7 @@ export default function Process() {
       sx={{
         width: '100%',
         // background: 'red',
-        height: '100%',
+        height: {md: '100%'},
         display: 'flex',
         gap: '16px'
       }}

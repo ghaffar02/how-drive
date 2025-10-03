@@ -18,7 +18,7 @@ export default function Home() {
           width: '100%',
           height: {xs: 'auto', lg: '100%'},
           padding: {xs: '8px', lg: '24px'},
-          background: 'rgba(248,250,252,0.3)',
+          background: 'rgba(21, 31, 42, 0.3)',
           borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
           backgroundColor: 'rgba(248, 250, 252, 0.3)',
           border: {xs: '1px solid #fff', md: 'none'},
