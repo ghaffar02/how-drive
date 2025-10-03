@@ -6,8 +6,11 @@ import Password from './Password';
 import Preference from './Preference';
 import Privacy from './Privacy';
 import {useTranslations} from 'next-intl';
+import Notification from './Notification';
 
-export default function RightSide({  activeIndex, setActiveIndex,
+export default function RightSide({
+  activeIndex,
+  setActiveIndex
 }: {
   activeIndex: number;
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
@@ -24,12 +27,14 @@ export default function RightSide({  activeIndex, setActiveIndex,
     <Box
       sx={{
         width: '100%',
-        background: 'rgba(248,250,252,0.3)',
+        background: '#f8fafc4d',
         border: '1px solid #fff',
+
         boxShadow:
-          'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
+          '0px 0px 0px 1px #ffffff), 0px 1px 0px 0px rgba(0, 0, 0, 0.25),  0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
         backdropFilter: 'blur(15px)',
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
+        // borderRadius: '0px 24px 24px 0px',
         height: {xs: '100%', md: '100%'}
       }}
     >
@@ -90,19 +95,9 @@ export default function RightSide({  activeIndex, setActiveIndex,
         {/* Pages */}
         <Box>
           {activeIndex === 0 && <Account />}
-          {activeIndex === 1 && (
-            <Typography>Notification Page Content</Typography>
-          )}
-          {activeIndex === 2 && (
-            <Typography>
-              <Privacy />
-            </Typography>
-          )}
-          {activeIndex === 3 && (
-            <Typography>
-              <Preference />
-            </Typography>
-          )}
+          {activeIndex === 1 && <Notification />}
+          {activeIndex === 2 && <Privacy />}
+          {activeIndex === 3 && <Preference />}
           {activeIndex === 4 && <Password />}
         </Box>
       </Box>
