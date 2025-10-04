@@ -23,7 +23,6 @@ export default function Setting() {
           activeIndexes={activeIndex}
           setActiveIndexes={setActiveIndex}
         />
-
         <RightSide activeIndex={activeIndex} setActiveIndex={setActiveIndex} />
       </Box>
     </>

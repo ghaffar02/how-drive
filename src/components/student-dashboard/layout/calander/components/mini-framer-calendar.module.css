@@ -1,7 +1,8 @@
 /* Outer card like your design */
 .wrap {
-  width: 276px;
-  height: 282px;
+  width: 268px;
+  /* height: 282px; */
+  height: 289px;
   padding: 12px;
   border-radius: 16px;
   background: linear-gradient(
@@ -39,7 +40,7 @@
 }
 .calendar :global(.rdp-caption_label) {
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 /* Weekday row: Mo Di Mi Do Fr Sa So */
@@ -69,7 +70,6 @@
 .calendar :global(.rdp-day_selected:hover) {
   background: var(--rdp-accent-color);
 }
-
 /* Grey “badges” on specific days */
 .event {
   background: rgba(145, 158, 171, 0.25);

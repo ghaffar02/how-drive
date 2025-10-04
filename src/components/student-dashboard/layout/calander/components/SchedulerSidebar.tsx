@@ -1,6 +1,5 @@
 import localFont from '@/utils/themes';
 import {Box, Typography} from '@mui/material';
-import MiniFramerCalendar from './MiniFramerCalendar';
 
 export default function SchedulerSidebar() {
   return (
@@ -32,7 +31,6 @@ export default function SchedulerSidebar() {
       >
         Settings
       </Typography>
-      <MiniFramerCalendar />
     </Box>
   );
 }
