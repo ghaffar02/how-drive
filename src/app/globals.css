@@ -108,6 +108,11 @@ a {
   width: 32.57px !important;
 }
 
+.rdp-weekday {
+  height: 28px !important;
+  width: 32.57px !important;
+}
+
 .rdp-week > *:not(:last-child) {
   /* margin-right: 4px !important; */
 }
@@ -129,4 +134,12 @@ a {
   justify-content: space-between;
   gap: 4px;
   margin-bottom: 4px;
+}
+.rdp-month_caption {
+  padding: 8px;
+}
+
+/* icon color   */
+.rdp-chevron {
+  fill: #000 !important;
 }
