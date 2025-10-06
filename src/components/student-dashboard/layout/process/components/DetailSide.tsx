@@ -1,5 +1,5 @@
 'use client';
-import React, {useState} from 'react';
+import React from 'react';
 import localFont from '@/utils/themes';
 import {Box, Typography} from '@mui/material';
 import Image, {StaticImageData} from 'next/image';

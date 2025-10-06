@@ -144,10 +144,12 @@ export function DrivingLicenseForm() {
                 background: '#ffffff',
                 borderRadius: '10px',
                 height: '40px',
+                fontFamily: '"Inter", sans-serif !important',
                 fontSize: '14px',
                 '& .MuiSelect-select': {
                   padding: '12px',
-                  color: field.value === '' ? '#aaa' : 'inherit' // greyed placeholder
+                  color: field.value === '' ? '#aaa' : 'inherit',
+                  fontFamily: '"Inter", sans-serif !important'
                 }
               }}
             >
@@ -185,9 +187,11 @@ export function DrivingLicenseForm() {
                 borderRadius: '10px',
                 height: '40px',
                 fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important',
                 '& .MuiSelect-select': {
                   padding: '12px',
-                  color: field.value === '' ? '#aaa' : 'inherit' // greyed placeholder
+                  color: field.value === '' ? '#aaa' : 'inherit',
+                  fontFamily: '"Inter", sans-serif !important'
                 }
               }}
             >
@@ -236,19 +240,22 @@ export function DrivingLicenseForm() {
                 height: '100%',
                 fontSize: '14px',
                 padding: '12px',
-                borderRadius: '10px'
+                borderRadius: '10px',
+                fontFamily: '"Inter", sans-serif !important'
               },
               '& .MuiOutlinedInput-notchedOutline': {
                 borderRadius: '10px'
               },
               '& .MuiInputBase-input': {
                 padding: 0,
-                fontSize: '14px'
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
                 // background: '#fff'
               },
               '& .MuiInputLabel-root': {
                 top: '-6px',
-                fontSize: '14px'
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
               },
               '& .MuiInputLabel-shrink': {
                 top: '0px'
@@ -278,18 +285,21 @@ export function DrivingLicenseForm() {
                 height: '100%',
                 fontSize: '14px',
                 padding: '12px',
-                borderRadius: '10px'
+                borderRadius: '10px',
+                fontFamily: '"Inter", sans-serif !important'
               },
               '& .MuiOutlinedInput-notchedOutline': {
                 borderRadius: '10px'
               },
               '& .MuiInputBase-input': {
                 padding: 0,
-                fontSize: '14px'
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
               },
               '& .MuiInputLabel-root': {
                 top: '-6px',
-                fontSize: '14px'
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
               },
               '& .MuiInputLabel-shrink': {
                 top: '0px'
@@ -308,7 +318,10 @@ export function DrivingLicenseForm() {
             control={<Checkbox {...field} checked={field.value} />}
             label="I want to have my foreign driving license converted."
             sx={{
-              ...localFont.inter14
+              '& .MuiFormControlLabel-label': {
+                ...localFont.inter14,
+                fontFamily: '"Inter", sans-serif !important'
+              }
             }}
           />
         )}
@@ -325,6 +338,8 @@ export function DrivingLicenseForm() {
           textTransform: 'none',
           py: 1.2,
           fontWeight: 600,
+          fontSize: {xs: '14px', md: '15px', lg: '16px'},
+          fontFamily: '"Inter", sans-serif !important',
           '&:hover': {
             backgroundColor: isReady ? '#3a12d1' : 'grey.700'
           }
