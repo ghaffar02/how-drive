@@ -305,6 +305,7 @@ export default function Privacy() {
         }}
         sx={{
           position: 'relative',
+          zIndex: 4,
           width: '100%',
           display: 'flex',
           flexDirection: {xs: 'column', lg: 'row'},
@@ -348,7 +349,7 @@ export default function Privacy() {
             // justifyContent: 'space-between'
           }}
         >
-          <Box sx={{position: 'relative'}}>
+          <Box sx={{position: 'relative', zIndex: 22}}>
             <CustomButton
               label={t('btn3')}
               bgColor="#0D9488"
@@ -362,12 +363,18 @@ export default function Privacy() {
                   position: 'absolute',
                   right: {xs: '-20%', sm: 0},
                   mt: '8px',
-                  width: {xs: '283px', sm: '363px'},
-                  zIndex: 1
+
+                  // width: {xs: '100%', sm: 'fit-content'},
+                  // maxWidth: '100%',
+                  // overflow: 'hidden',
+                  // minWidth: '200px',
+                  left: 'auto',
+                  width: {xs: '283px', sm: '333px'},
+                  zIndex: 33
                 }}
               >
                 <CustomCard
-                  text="Would you like to download your personal data?"
+                  text={t('dropDown')}
                   onClose={() => setOpenDropdown(false)}
                 />
               </Box>

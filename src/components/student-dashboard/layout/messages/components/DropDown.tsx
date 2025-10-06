@@ -4,7 +4,6 @@ import CustomButton from '../../CustomButton';
 import localFont from '@/utils/themes';
 import tick from '@/assets/svgs/dashboard-student/tick.svg';
 import cross from '@/assets/svgs/dashboard-student/btncross.svg';
-import {useTranslations} from 'next-intl';
 
 interface CustomCardProps {
   children?: ReactNode;
@@ -22,7 +21,6 @@ export default function CustomCard({
 
   text
 }: CustomCardProps) {
-  const t = useTranslations('Dashboard.Settings.RightSide.AccountTab');
   return (
     <Box
       onClick={onClose}
@@ -72,7 +70,7 @@ export default function CustomCard({
         }}
       >
         <CustomButton
-          label={t('btn6')}
+          label="no"
           bgColor="rgb(220, 38, 38)"
           hoverColor="#991919"
           hoverTextcolor="#fff"
@@ -87,7 +85,7 @@ export default function CustomCard({
           }}
         />
         <CustomButton
-          label={t('btn5')}
+          label="yes"
           bgColor="#0D9488"
           hoverColor="#0C5C72"
           imgSrc={tick}

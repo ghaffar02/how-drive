@@ -270,7 +270,7 @@ export default function Account() {
         >
           <Box sx={{position: 'relative'}}>
             <CustomButton
-              label="Delete account"
+              label={t('btn3')}
               bgColor="rgb(220, 38, 38)"
               hoverColor="#991919"
               onClick={() => setOpenDropdown((prev) => !prev)} // toggle
@@ -289,7 +289,7 @@ export default function Account() {
                 }}
               >
                 <CustomCard
-                  text=" Do you really want to delete your account?"
+                  text={t('dropDown')}
                   onClose={() => setOpenDropdown(false)}
                 />
               </Box>

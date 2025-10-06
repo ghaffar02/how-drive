@@ -1940,6 +1940,9 @@
           "btn2": "Speichern",
           "btn3": "Konto löschen",
           "btn4": "Mehr erfahren",
+          "btn6": "nein",
+          "btn5": "ja",
+          "dropDown": "Möchtest du dein Konto wirklich löschen?",
           "formFields": [
             {
               "label": "Vorname",
@@ -1977,6 +1980,7 @@
           "btn2": "Speichern",
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
+          "dropDown": "Möchtest du dein Konto wirklich löschen?",
           "formFields": [
             "Notwendige",
             "Analytics",
