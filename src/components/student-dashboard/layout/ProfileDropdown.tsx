@@ -112,6 +112,8 @@ export default function ProfileDropdown({
           left: {md: '20px !important'},
           right: {xs: '20px !important', md: 'unset !important'},
           bottom: {md: '18px !important'},
+          position: 'fixed',
+          zIndex: '1000',
           ...positionSx
         }}
       >
