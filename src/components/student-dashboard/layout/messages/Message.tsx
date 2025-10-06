@@ -10,6 +10,8 @@ export default function Message() {
         width: '100%',
         height: {xs: 'auto', md: '100%'},
         display: 'flex',
+        position: 'relative',
+        zIndex: 1,
         gap: '16px'
       }}
     >

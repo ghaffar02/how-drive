@@ -40,7 +40,7 @@ export default function CustomCard({
 
         border: '1px solid rgb(255, 255, 255)',
         backgroundColor: '#f0f0fa99',
-        // backdropFilter: 'blur(15px)',
+        backdropFilter: 'blur(15px)',
         // borderRadius: "12px",
         boxShadow: `
     0px 0px 0px 1px rgb(255, 255, 255),

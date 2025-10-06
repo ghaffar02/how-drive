@@ -1,5 +1,5 @@
 import {Box, TextField, Typography} from '@mui/material';
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import Image from 'next/image';
 import searchIcon from '@/assets/svgs/dashboard-student/searchIcon.svg';
@@ -98,14 +98,41 @@ const emails = [
 
 import {motion} from 'framer-motion';
 import localFont from '@/utils/themes';
+import LeftSideDropDown from './LeftSideDropDown';
 
 const MotionBox = motion(Box);
 
 export default function Notifications() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
+        setOpenDropdown(false);
+      }
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setOpenDropdown(false);
+      }
+    }
+
+    // ✅ Proper cleanup: dono listeners remove karo
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
 
   return (
     <Box
+      onClick={(e) => e.stopPropagation()}
       sx={{
         minWidth: '300px',
         maxWidth: '300px',
@@ -153,9 +180,9 @@ export default function Notifications() {
               flex: 1,
               '& .MuiOutlinedInput-root': {
                 borderRadius: 0,
-                '& fieldset': {border: 'none'}, // remove border
-                '&:hover fieldset': {border: 'none'}, // remove on hover
-                '&.Mui-focused fieldset': {border: 'none'} // remove on focus
+                '& fieldset': {border: 'none'},
+                '&:hover fieldset': {border: 'none'},
+                '&.Mui-focused fieldset': {border: 'none'}
               },
               '& .MuiInputBase-input': {
                 height: 'auto',
@@ -170,10 +197,41 @@ export default function Notifications() {
             width: '36px',
             background: '#ffffffbf',
             padding: '8px',
-            borderRadius: '50%'
+            borderRadius: '50%',
+            position: 'relative',
+            overflow: 'visible !important'
+            // bgcolor: '#d80909ff'
           }}
         >
-          <Image src={crossIcon} alt="addIcon" height={20} width={20} />
+          <Image
+            src={crossIcon}
+            alt="addIcon"
+            height={20}
+            width={20}
+            style={{position: 'relative'}}
+            onClick={() => setOpenDropdown((prev) => !prev)}
+          />
+          {openDropdown && (
+            <Box
+              component={motion.div}
+              initial={{opacity: 0, scale: 0.8, y: -10}}
+              animate={{opacity: 1, scale: 1, y: 0}}
+              exit={{opacity: 0, scale: 0.8, y: -10}}
+              transition={{duration: 0.3, ease: 'easeOut'}}
+              sx={{
+                // bgcolor: '#000',
+                position: 'absolute',
+                zIndex: 999999999,
+                // left: {md: 100, lg: 130, xl: 200},
+                right: 0,
+                mt: '20px',
+                width: {xs: '300px'},
+                overflow: 'visible'
+              }}
+            >
+              <LeftSideDropDown onClose={() => setOpenDropdown(false)} />
+            </Box>
+          )}
         </Box>
       </Box>
       {/* Below part of notification screen */}

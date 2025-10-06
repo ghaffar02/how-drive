@@ -91,3 +91,8 @@ a {
 .css-1usuzwp-MuiButtonBase-root-MuiTab-root {
   font-weight: unset !important;
 }
+
+/* overflow in dashbord fixed here */
+.css-12botxm {
+  overflow: visible !important;
+}

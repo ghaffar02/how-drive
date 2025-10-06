@@ -1,9 +1,10 @@
 import {Box, Typography} from '@mui/material';
 import {ReactNode} from 'react';
-import CustomButton from '../../CustomButton';
+
 import localFont from '@/utils/themes';
 import tick from '@/assets/svgs/dashboard-student/tick.svg';
 import cross from '@/assets/svgs/dashboard-student/btncross.svg';
+import CustomButton from '@/components/student-dashboard/CustomButton';
 
 interface CustomCardProps {
   children?: ReactNode;
@@ -38,7 +39,7 @@ export default function CustomCard({
 
         border: '1px solid rgb(255, 255, 255)',
         backgroundColor: '#f0f0fa99',
-        // backdropFilter: 'blur(15px)',
+        backdropFilter: 'blur(15px)',
         // borderRadius: "12px",
         boxShadow: `
     0px 0px 0px 1px rgb(255, 255, 255),
@@ -50,23 +51,34 @@ export default function CustomCard({
       <Typography
         sx={{
           ...localFont.inter14,
-          fontWeight: 500,
-          fontFamily: '"Inter", sans-serif !important'
+          fontWeight: 300,
+          fontFamily: '"Inter", sans-serif !important',
+          textAlign: 'center'
         }}
       >
-        {text}
+        If you delete this conversation, it will be deleted from your profile on
+        our servers, but will remain visible to your driving school.
+      </Typography>
+      <Typography
+        sx={{
+          ...localFont.inter14,
+          fontWeight: 500,
+          fontFamily: '"Inter", sans-serif !important',
+          textAlign: 'center'
+        }}
+      >
+        Are you sure you want to delete this message?
       </Typography>
 
       <Box
         sx={{
           width: {xs: '100%'},
 
-          p: ' 8px 4px',
+          p: '  4px',
           display: 'flex',
           gap: '16px',
           alignItems: 'center',
           justifyContent: 'center'
-          // justifyContent: 'space-between'
         }}
       >
         <CustomButton

@@ -1,7 +1,7 @@
 import localFont from '@/utils/themes';
 import {Box, Menu, MenuItem, TextField, Typography} from '@mui/material';
 import Image from 'next/image';
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import car from '@/assets/svgs/dashboard-student/car.svg';
 import printIcon from '@/assets/svgs/dashboard-student/printIcon.svg';
@@ -13,6 +13,7 @@ import dots from '@/assets/svgs/dashboard-student/dots.svg';
 import backIcon from '@/assets/svgs/dashboard-student/backIcon.svg';
 import deleteIcon2 from '@/assets/svgs/dashboard-student/deleteIcon2.svg';
 import copyIcon from '@/assets/svgs/dashboard-student/copyIcon.svg';
+import CustomCard from './DropDown';
 
 const messages = [
   {
@@ -134,7 +135,40 @@ const options = [
 
 export default function Inbox() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [openDropdown, setOpenDropdown] = useState(false);
   const open = Boolean(anchorEl);
+
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
+        setOpenDropdown(false);
+      }
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setOpenDropdown(false);
+      }
+    }
+
+    if (openDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
+    }
+
+    // Cleanup
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [openDropdown]);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -217,13 +251,41 @@ export default function Inbox() {
             marginLeft: 'auto'
           }}
         >
-          <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
+          <Box
+            sx={{
+              height: '20px',
+              width: '20px',
+              cursor: 'pointer',
+              position: 'relative'
+            }}
+          >
             <Image
               src={deleteIcon}
               alt="delete"
               style={{height: '100%', width: '100%'}}
+              onClick={() => setOpenDropdown((prev) => !prev)}
             />
+
+            {openDropdown && (
+              <Box
+                sx={{
+                  position: 'absolute',
+                  // bottom: '100%',
+                  // left: {xs: '10%', sm: 'unset'},
+                  right: {xs: '-10%', sm: 0},
+                  mt: '8px',
+                  width: {xs: '283px', sm: '300px'},
+                  zIndex: 10
+                }}
+              >
+                <CustomCard
+                  text="jhuy wmqnjq qmwjhiwu  wmfbw"
+                  onClose={() => setOpenDropdown(false)}
+                />
+              </Box>
+            )}
           </Box>
+
           <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
             <Image
               src={printIcon}
