@@ -2,6 +2,7 @@ import CustomButton from '@/components/student-dashboard/CustomButton';
 import localFont from '@/utils/themes';
 import {Box, Divider, Typography} from '@mui/material';
 import {useTranslations} from 'next-intl';
+import {motion} from 'framer-motion';
 import {
   ReactElement,
   JSXElementConstructor,
@@ -12,8 +13,9 @@ import {
 import {ToggleSwitch} from './ToggleSwitch';
 
 export default function Notification() {
-  const t = useTranslations('Dashboard.Settings.RightSide.Password');
-  const formFields = t.raw('formFields');
+  const t = useTranslations('Dashboard.Settings.RightSide.Notifications');
+  const formFieldsOn = t.raw('formFieldsOn');
+  const formFieldsOff = t.raw('formFieldsOff');
   return (
     <Box
       sx={{
@@ -79,10 +81,8 @@ export default function Notification() {
       <Box width="100%">
         <Divider
           sx={{
-            borderTop: '1px solid transparent',
             borderImage:
-              'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1'
-            // marginBottom: '32px'
+              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
           }}
         />
       </Box>
@@ -99,17 +99,24 @@ export default function Notification() {
         >
           {t('heading2')}
         </Typography>
-        <Box
-          sx={{
+        <motion.div
+          initial={{rotateY: -50, opacity: 0}}
+          animate={{rotateY: 0, opacity: 1}}
+          transition={{
+            duration: 1.4,
+            delay: 0.3,
+            ease: 'easeOut'
+          }}
+          style={{
             width: '100%',
             display: 'flex',
-            flexDirection: {xs: 'column'},
+            flexDirection: 'column',
             gap: '32px',
             alignItems: 'start',
             justifyContent: 'space-between'
           }}
         >
-          {formFields.map(
+          {formFieldsOn.map(
             (
               items:
                 | string
@@ -170,17 +177,24 @@ export default function Notification() {
               );
             }
           )}
-        </Box>
+        </motion.div>
       </Box>
       <Box width="100%">
-        <Divider
-          sx={{
-            borderTop: '1px solid transparent',
-            borderImage:
-              'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1'
-            // marginBottom: '32px'
+        <motion.div
+          initial={{opacity: 0, y: 130}}
+          animate={{opacity: 1, y: 0}}
+          transition={{
+            duration: 0.8,
+            ease: 'easeOut'
           }}
-        />
+        >
+          <Divider
+            sx={{
+              borderImage:
+                'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
+            }}
+          />
+        </motion.div>
       </Box>
 
       <Box sx={{width: '100%'}}>
@@ -193,7 +207,7 @@ export default function Notification() {
             p: '4px'
           }}
         >
-          {t('heading2')}
+          {t('heading3')}
         </Typography>
         <Box
           sx={{
@@ -205,7 +219,7 @@ export default function Notification() {
             justifyContent: 'space-between'
           }}
         >
-          {formFields.map(
+          {formFieldsOff.map(
             (
               items:
                 | string

@@ -1994,6 +1994,36 @@
             "Neues Passwort",
             "Neues Passwort wiederholen"
           ]
+        },
+        "Preferen": {
+          "heading1": "Präferenzen",
+          "heading2": "Sprachpräferenzen",
+          "heading3": "Einloggen Status",
+          "description1": "Sprachpräferenzen, Einloggen Status, etc.",
+          "btn1": "Abbrechen",
+          "btn2": "Speichern",
+          "lable1": "Sprache",
+          "lable2": "Eingeloggt bleiben",
+          "option1": "wähle aus"
+        },
+        "Notifications": {
+          "heading1": "Benachrichtigung",
+          "heading2": "Allgemeine Benachrichtigung",
+          "heading3": "Newsletter",
+          "description1": "Allgemeine Benachrichtigungen, Newsletter, etc.",
+          "btn1": "Abbrechen",
+          "btn2": "Speichern",
+          "btn3": "Daten exportieren",
+          "btn4": "Mehr erfahren",
+          "formFieldsOn": [
+            "Gebuchte Termine",
+            "Nachrichten",
+            "Führerscheinstelle angemeldet"
+          ],
+          "formFieldsOff": [
+            "News und Update",
+            "Angebote und Werbung"
+          ]
         }
       }
     }

@@ -16,21 +16,40 @@ import {useTranslations} from 'next-intl';
 
 export default function Account() {
   const [openDropdown, setOpenDropdown] = useState(false);
-  const dropdownRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
   const t = useTranslations('Dashboard.Settings.RightSide.AccountTab');
 
   // Outside click close
+
   useEffect(() => {
-    function handleClickOutside(event: {target: any}) {
-      // if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-      // }
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target as Node)
+      ) {
+        setOpenDropdown(false);
+      }
     }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === 'Escape') {
+        setOpenDropdown(false);
+      }
+    }
+
     if (openDropdown) {
       document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('keydown', handleKeyDown);
     } else {
       document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleKeyDown);
     }
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+
+    // Cleanup
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, [openDropdown]);
 
   const formFields = t.raw('formFields');
@@ -101,10 +120,8 @@ export default function Account() {
       <Box width="100%">
         <Divider
           sx={{
-            borderTop: '1px solid transparent',
             borderImage:
-              'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1'
-            // marginBottom: '32px'
+              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
           }}
         />
       </Box>
@@ -200,11 +217,8 @@ export default function Account() {
       <Box width="100%">
         <Divider
           sx={{
-            // mt: '32px',
-            borderTop: '1px solid transparent',
             borderImage:
-              'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1'
-            // marginBottom: '32px'
+              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
           }}
         />
       </Box>
@@ -243,6 +257,7 @@ export default function Account() {
           </Typography>
         </Box>
         <Box
+          ref={containerRef}
           sx={{
             width: {xs: '100%', lg: '68%'},
             p: '4px',
@@ -263,19 +278,19 @@ export default function Account() {
 
             {openDropdown && (
               <Box
-                ref={dropdownRef}
                 sx={{
                   position: 'absolute',
                   bottom: '100%',
-                  right: 0,
+                  // left: {xs: '10%', sm: 'unset'},
+                  right: {xs: '-20%', sm: 0},
                   mb: '8px',
-                  width: '323px',
+                  width: {xs: '283px', sm: '333px'},
                   zIndex: 10
                 }}
               >
                 <CustomCard
                   text=" Do you really want to delete your account?"
-                  onClose={() => setOpenDropdown(true)}
+                  onClose={() => setOpenDropdown(false)}
                 />
               </Box>
             )}

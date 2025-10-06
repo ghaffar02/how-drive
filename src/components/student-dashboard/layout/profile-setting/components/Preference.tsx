@@ -4,9 +4,9 @@ import {Box, Divider, MenuItem, TextField, Typography} from '@mui/material';
 import {ToggleSwitch} from './ToggleSwitch';
 import {useTranslations} from 'next-intl';
 
-const formFields = ['Current password', 'New password', 'repeat password'];
+// const formFields = ['Current password', 'New password', 'repeat password'];
 export default function Preference() {
-  const t = useTranslations('Dashboard.Settings.RightSide.Password');
+  const t = useTranslations('Dashboard.Settings.RightSide.Preferen');
 
   return (
     <Box
@@ -73,10 +73,8 @@ export default function Preference() {
       <Box width="100%">
         <Divider
           sx={{
-            borderTop: '1px solid transparent',
             borderImage:
-              'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1'
-            // marginBottom: '32px'
+              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
           }}
         />
       </Box>
@@ -123,7 +121,7 @@ export default function Preference() {
                 textAlign: 'left'
               }}
             >
-              language
+              {t('lable1')}
             </Typography>
 
             <TextField
@@ -135,16 +133,21 @@ export default function Preference() {
               sx={{
                 background: '#ffffff99',
                 height: 40,
-                maxWidth: '402px',
+                maxWidth: {lg: '402px'},
                 width: '100%',
                 borderRadius: '8px',
                 '& .MuiInputBase-root': {
                   height: '100%',
                   fontSize: '14px',
-                  padding: '12px'
+                  padding: '12px',
+                  boxShadow:
+                    '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
                 },
                 '&:hover .MuiOutlinedInput-notchedOutline': {
-                  border: 'none'
+                  border: 'none !important'
+                },
+                '& fieldset': {
+                  borderColor: '#E2E8F0'
                 },
                 '& .MuiSelect-select': {
                   padding: 0,
@@ -153,7 +156,7 @@ export default function Preference() {
               }}
             >
               <MenuItem value="" disabled>
-                Select...
+                {t('option1')}...
               </MenuItem>
               <MenuItem value="malfunction">Malfunction</MenuItem>
               <MenuItem value="question">Question</MenuItem>
@@ -164,10 +167,8 @@ export default function Preference() {
       <Box width="100%">
         <Divider
           sx={{
-            borderTop: '1px solid transparent',
             borderImage:
-              'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1'
-            // marginBottom: '32px'
+              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
           }}
         />
       </Box>
@@ -182,7 +183,7 @@ export default function Preference() {
             p: '4px'
           }}
         >
-          {t('heading2')}
+          {t('heading3')}
         </Typography>
         <Box
           sx={{
@@ -216,10 +217,10 @@ export default function Preference() {
                 // mt: {xs: '8px', lg: '0px'}
               }}
             >
-              language
+              {t('lable2')}
             </Typography>
 
-            <ToggleSwitch defaultChecked={false} />
+            <ToggleSwitch />
           </Box>
         </Box>
       </Box>
