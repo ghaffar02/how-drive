@@ -3,6 +3,7 @@ import CustomCard from '@/components/student-dashboard/layout/profile-setting/Dr
 import localFont from '@/utils/themes';
 import {Box, Divider, Typography} from '@mui/material';
 import {useTranslations} from 'next-intl';
+import {motion} from 'framer-motion';
 import {
   JSXElementConstructor,
   ReactElement,
@@ -276,14 +277,32 @@ export default function Privacy() {
         </Box>
       </Box>
       <Box width="100%">
-        <Divider
-          sx={{
-            borderImage:
-              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
+        <motion.div
+          initial={{opacity: 0, y: 130}}
+          animate={{opacity: 1, y: 0}}
+          transition={{
+            duration: 0.8,
+            ease: 'easeOut'
           }}
-        />
+        >
+          <Divider
+            sx={{
+              borderImage:
+                'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
+            }}
+          />
+        </motion.div>
       </Box>
+
       <Box
+        component={motion.div}
+        initial={{opacity: 0, y: 130}}
+        animate={{opacity: 1, y: 0}}
+        transition={{
+          duration: 0.8,
+          delay: 0.3,
+          ease: 'easeOut'
+        }}
         sx={{
           position: 'relative',
           width: '100%',
