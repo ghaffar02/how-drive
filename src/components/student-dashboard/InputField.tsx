@@ -48,7 +48,7 @@ export default function CustomTextField({
 
           // Default border
           '& fieldset': {
-            borderColor: ' #e2e8f011'
+            borderColor: ' #e2e8f00a'
           },
 
           // Disable hover color change (same as default)

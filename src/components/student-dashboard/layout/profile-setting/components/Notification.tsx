@@ -12,8 +12,9 @@ import {
 import {ToggleSwitch} from './ToggleSwitch';
 
 export default function Notification() {
-  const t = useTranslations('Dashboard.Settings.RightSide.Password');
-  const formFields = t.raw('formFields');
+  const t = useTranslations('Dashboard.Settings.RightSide.Notifications');
+  const formFieldsOn = t.raw('formFieldsOn');
+  const formFieldsOff = t.raw('formFieldsOff');
   return (
     <Box
       sx={{
@@ -107,7 +108,7 @@ export default function Notification() {
             justifyContent: 'space-between'
           }}
         >
-          {formFields.map(
+          {formFieldsOn.map(
             (
               items:
                 | string
@@ -189,7 +190,7 @@ export default function Notification() {
             p: '4px'
           }}
         >
-          {t('heading2')}
+          {t('heading3')}
         </Typography>
         <Box
           sx={{
@@ -201,7 +202,7 @@ export default function Notification() {
             justifyContent: 'space-between'
           }}
         >
-          {formFields.map(
+          {formFieldsOff.map(
             (
               items:
                 | string

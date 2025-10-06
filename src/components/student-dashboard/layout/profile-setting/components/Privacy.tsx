@@ -167,7 +167,7 @@ export default function Privacy() {
                 // mt: {xs: '8px', lg: '0px'}
               }}
             >
-              {t('heading2')}
+              Cookies
             </Typography>
 
             <Box

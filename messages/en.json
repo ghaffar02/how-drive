@@ -1994,6 +1994,37 @@
             "Analytics",
             "Allow all"
           ]
+        },
+        "Preferen": {
+          "heading1": "Preferences",
+          "heading2": "Language preferences",
+          "heading3": "Login status",
+          "description1": "Language preferences, login status, etc.",
+          "btn1": "Cancel",
+          "btn2": "Save",
+          "lable1": "Language",
+          "lable2": "Stay logged in",
+          "option1": "Select"
+        },
+        "Notifications": {
+          "heading1": "Notifications",
+          "heading2": "General notification",
+          "heading3": "Newsletter",
+          "description1": "General notification, newsletter, etc.",
+          "description2": "You can download your personal data. This will take up to 3 business days.",
+          "btn1": "Cancel",
+          "btn2": "Save",
+          "btn3": "Export data",
+          "btn4": "Learn more",
+          "formFieldsOn": [
+            "Booked appointments",
+            "News",
+            "Driving license office registered"
+          ],
+          "formFieldsOff": [
+            "Genereller Newsletter",
+            "Offers and advertising"
+          ]
         }
       }
     }
