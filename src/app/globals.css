@@ -95,4 +95,55 @@ a {
 /* overflow in dashbord fixed here */
 .css-12botxm {
   overflow: visible !important;
+  /* the calander styles */
+}
+.mini-framer-calendar_wrap___pkdM {
+  padding: 8px !important;
+}
+
+.rdp-day_button {
+  font-size: 14px !important;
+}
+.rdp-weekday {
+  font-size: 14px !important;
+}
+.rdp-day_button {
+  height: 28px !important;
+  width: 32.57px !important;
+}
+
+.rdp-weekday {
+  height: 28px !important;
+  width: 32.57px !important;
+}
+
+.rdp-week > *:not(:last-child) {
+  /* margin-right: 4px !important; */
+}
+
+.rdp-selected .rdp-day_button {
+  border: none !important;
+}
+.mini-framer-calendar_calendar__IHP9r .rdp-day {
+  border-radius: 50% !important;
+}
+.rdp-week {
+  display: flex !important;
+  justify-content: space-between;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+.rdp-weekdays {
+  display: flex !important;
+  justify-content: space-between;
+  gap: 4px;
+  margin-bottom: 4px;
+}
+.rdp-month_caption {
+  padding: 8px;
+}
+
+/* icon color   */
+.rdp-chevron {
+  fill: #000 !important;
 }
