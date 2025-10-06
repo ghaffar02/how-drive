@@ -11,7 +11,7 @@ interface CustomTextFieldProps {
 }
 
 export default function CustomTextField({
-  bgColor = '#f8fafcff',
+  bgColor = '#F8FAFC',
   borderColor = '#E2E8F0',
   hoverBorderColor = '#3058ff',
   radius = '8px',
@@ -48,7 +48,7 @@ export default function CustomTextField({
 
           // Default border
           '& fieldset': {
-            borderColor: borderColor
+            borderColor: ' #e2e8f011'
           },
 
           // Disable hover color change (same as default)

@@ -19,9 +19,11 @@ export default function RightSide({
   // const [activeIndex, setActiveIndex] = useState<number | 0>(0);
   const data = t.raw('RightSideArray');
 
-  // const handleClick = (i: number) => {
-  //   setActiveIndex(i);
-  // };
+  const handleClick = (i: number) => {
+    if (window.innerWidth <= 900) {
+      setActiveIndex(i);
+    }
+  };
 
   return (
     <Box
@@ -29,9 +31,13 @@ export default function RightSide({
         width: '100%',
         background: '#f8fafc4d',
         border: '1px solid #fff',
-
-        boxShadow:
-          '0px 0px 0px 1px #ffffff), 0px 1px 0px 0px rgba(0, 0, 0, 0.25),  0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
+        boxShadow: `
+    0px 0px 0px 1px #ffffff,
+    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+  `,
+        // boxShadow:
+        //   '0px 0px 0px 1px #ffffff), 0px 1px 0px 0px rgba(0, 0, 0, 0.25),  0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
         backdropFilter: 'blur(15px)',
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
         // borderRadius: '0px 24px 24px 0px',
@@ -65,7 +71,7 @@ export default function RightSide({
           {data.map((items: string, i: number) => (
             <Box
               key={i}
-              // onClick={() => handleClick(i)}
+              onClick={() => handleClick(i)}
               sx={{
                 background: activeIndex === i ? '#ffff' : 'transprant',
                 padding: '4px 8px',
@@ -79,7 +85,7 @@ export default function RightSide({
             >
               <Typography
                 sx={{
-                  ...localFont,
+                  lineHeight: '1.6em',
                   fontSize: {xs: '12px', md: '13px', lg: '14px'},
                   color: '#4A5568',
                   fontFamily: '"Inter", sans-serif !important',

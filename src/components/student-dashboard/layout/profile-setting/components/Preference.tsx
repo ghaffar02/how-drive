@@ -73,10 +73,8 @@ export default function Preference() {
       <Box width="100%">
         <Divider
           sx={{
-            borderTop: '1px solid transparent',
             borderImage:
-              'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1'
-            // marginBottom: '32px'
+              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
           }}
         />
       </Box>
@@ -164,10 +162,8 @@ export default function Preference() {
       <Box width="100%">
         <Divider
           sx={{
-            borderTop: '1px solid transparent',
             borderImage:
-              'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1'
-            // marginBottom: '32px'
+              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
           }}
         />
       </Box>

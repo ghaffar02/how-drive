@@ -26,21 +26,25 @@ export default function CustomCard({
       onClick={onClose}
       sx={{
         width: '100%',
-        maxWidth: '324px',
-
+        // maxWidth: {xs: '323px', sm: '333px'},
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         padding,
-        background: 'rgba(248, 250, 252, 0.53)',
-        border: '1px solid #fff',
-        boxShadow:
-          'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
-        backdropFilter: 'blur(15px)',
 
-        gap: '16px',
-        borderRadius: radius
+        gap: '24px',
+        borderRadius: radius,
+
+        border: '1px solid rgb(255, 255, 255)',
+        backgroundColor: '#f0f0fa99',
+        // backdropFilter: 'blur(15px)',
+        // borderRadius: "12px",
+        boxShadow: `
+    0px 0px 0px 1px rgb(255, 255, 255),
+    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+  `
       }}
     >
       <Typography
@@ -56,7 +60,8 @@ export default function CustomCard({
       <Box
         sx={{
           width: {xs: '100%'},
-          p: '4px',
+
+          p: ' 8px 4px',
           display: 'flex',
           gap: '16px',
           alignItems: 'center',
