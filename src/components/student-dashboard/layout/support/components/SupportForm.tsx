@@ -56,6 +56,8 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
         background: 'transparent',
         border: '1px solid #f8fafc',
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
+        boxShadow:
+          '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
         maxWidth: '860px',
         width: '100%',
         display: 'flex',

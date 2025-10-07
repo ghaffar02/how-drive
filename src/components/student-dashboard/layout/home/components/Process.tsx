@@ -64,9 +64,8 @@ export default function Process() {
         display: {xs: 'block', lg: 'flex'},
         flexDirection: 'column',
         justifyContent: 'space-between',
-        boxShadow: {
-          md: 'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px'
-        }
+        boxShadow:
+          '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)'
       }}
     >
       <Typography

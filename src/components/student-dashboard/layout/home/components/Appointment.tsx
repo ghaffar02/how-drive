@@ -32,9 +32,8 @@ export default function Appointment() {
         gap: {xs: '6px', sm: '15px'},
         height: '100%',
         border: '1px solid #fff',
-        boxShadow: {
-          md: 'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px'
-        },
+        boxShadow:
+          '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
         overflow: 'hidden'
         // height: {xs: '224px', sm: '252px', md: 'auto', lg: '100%'}
       }}
