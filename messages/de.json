@@ -1981,11 +1981,7 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du dein Konto wirklich löschen?",
-          "formFields": [
-            "Notwendige",
-            "Analytics",
-            "Alle zulassen"
-          ]
+          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2024,10 +2020,7 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": [
-            "News und Update",
-            "Angebote und Werbung"
-          ]
+          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
         }
       }
     },
@@ -2105,6 +2098,25 @@
         "btn": "Abbrechen",
         "btn1": "Senden "
       }
+    },
+    "Support": {
+      "title1": "Neue Anfrage einreichen!",
+      "des": "Hast du Probleme bei unserem Service oder hast du einfach Fragen? Schicke uns deine Anfrage. Wir versuchen so schnell wie möglich sie zu verarbeiten.",
+      "opt1": "Kategorie",
+      "choice1": "wähle aus...",
+      "choice2": "Fehlfunktion",
+      "choice3": "Frage",
+      "choice4": "Feedback",
+      "choice5": "Sonstige",
+      "opt2": "Anfragedetails",
+      "placeholder2": "Wie können wir dich helfen?",
+      "opt3": "Screenshots oder Dateien hochladen",
+      "placeholder3": "Ziehe eine Datei hierher oder",
+      "browse": "durchsuchen",
+      "btn": "Schicken",
+      "err1": "Kategorie ist erforderlich",
+      "err2": "Nachricht ist erforderlich",
+      "err3": "Datei ist erforderlich"
     }
   }
 }

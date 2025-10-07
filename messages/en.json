@@ -2106,6 +2106,25 @@
         "btn": "Cancel",
         "btn1": "Send"
       }
+    },
+    "Support": {
+      "title1": "Submit a new request!",
+      "des": "Are you experiencing problems with our service or do you simply have questions? Send us your request. We'll try to process it as quickly as possible.",
+      "opt1": "Category",
+      "choice1": "Select...",
+      "choice2": "Malfunction",
+      "choice3": "Question",
+      "choice4": "Feedback",
+      "choice5": "Other",
+      "opt2": "Request details",
+      "placeholder2": "How can we help you?",
+      "opt3": "Upload file",
+      "placeholder3": "Drag & drop a file here, or",
+      "browse": "browse",
+      "btn": "Send",
+      "err1": "Category is required",
+      "err2": "Message is required",
+      "err3": "File is required"
     }
   }
 }
