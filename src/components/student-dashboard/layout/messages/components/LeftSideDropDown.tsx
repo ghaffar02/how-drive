@@ -34,18 +34,8 @@ export default function LeftSideDropDown({
         alignItems: 'center',
         padding,
 
-        gap: '24px',
-        borderRadius: radius,
-
-        border: '1px solid rgb(255, 255, 255)',
-        backgroundColor: '#f0f0fa99',
-        backdropFilter: 'blur(10px)',
-        // borderRadius: "12px",
-        boxShadow: `
-    0px 0px 0px 1px rgb(255, 255, 255),
-    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
-  `
+        gap: '24px'
+        // borderRadius: radius
       }}
     >
       <Box

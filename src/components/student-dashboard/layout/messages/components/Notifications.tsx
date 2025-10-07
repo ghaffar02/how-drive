@@ -96,7 +96,7 @@ const emails = [
   }
 ];
 
-import {motion} from 'framer-motion';
+import {AnimatePresence, motion} from 'framer-motion';
 import localFont from '@/utils/themes';
 import LeftSideDropDown from './LeftSideDropDown';
 
@@ -105,34 +105,28 @@ const MotionBox = motion(Box);
 export default function Notifications() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [openDropdown, setOpenDropdown] = useState(false);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const iconRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
-        containerRef.current &&
-        !containerRef.current.contains(event.target as Node)
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
       ) {
-        setOpenDropdown(false);
+        return;
       }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
+
+      setOpenDropdown(false);
     }
 
-    function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
-        setOpenDropdown(false);
-      }
-    }
-
-    // ✅ Proper cleanup: dono listeners remove karo
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleKeyDown);
-    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
-
   return (
     <Box
-      onClick={(e) => e.stopPropagation()}
       sx={{
         minWidth: '300px',
         maxWidth: '300px',
@@ -192,6 +186,7 @@ export default function Notifications() {
           />
         </Box>
         <Box
+          ref={iconRef}
           sx={{
             height: '36px',
             width: '36px',
@@ -211,27 +206,67 @@ export default function Notifications() {
             style={{position: 'relative'}}
             onClick={() => setOpenDropdown((prev) => !prev)}
           />
-          {openDropdown && (
-            <Box
-              component={motion.div}
-              initial={{opacity: 0, scale: 0.8, y: -10}}
-              animate={{opacity: 1, scale: 1, y: 0}}
-              exit={{opacity: 0, scale: 0.8, y: -10}}
-              transition={{duration: 0.3, ease: 'easeOut'}}
-              sx={{
-                // bgcolor: '#000',
-                position: 'absolute',
-                zIndex: 999999999,
-                // left: {md: 100, lg: 130, xl: 200},
-                right: 0,
-                mt: '20px',
-                width: {xs: '300px'},
-                overflow: 'visible'
-              }}
-            >
-              <LeftSideDropDown onClose={() => setOpenDropdown(false)} />
-            </Box>
-          )}
+          <AnimatePresence>
+            {openDropdown && (
+              <Box
+                component={motion.div}
+                initial={{
+                  opacity: 0,
+                  scale: 0.5,
+                  y: -20,
+                  x: 20,
+                  originX: 1,
+                  originY: 0
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                  x: 0,
+                  originX: 1,
+                  originY: 0
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.5,
+                  // dur: 1,
+                  y: -20,
+                  x: 20,
+                  originX: 1,
+                  originY: 0
+                }}
+                transition={{
+                  duration: 0.5,
+                  type: 'spring',
+                  stiffness: 300,
+                  damping: 25
+                }}
+                sx={{
+                  // bgcolor: '#000',
+                  position: 'absolute',
+                  zIndex: 999999999,
+                  // left: {md: 100, lg: 130, xl: 200},
+                  right: 0,
+                  mt: '20px',
+                  width: {xs: '300px'},
+                  overflow: 'visible',
+                  border: '1px solid rgb(255, 255, 255)',
+                  backgroundColor: '#f0f0fa99',
+                  backdropFilter: 'blur(8px)',
+                  // borderRadius: "12px",
+                  boxShadow: `
+    0px 0px 0px 1px rgb(255, 255, 255),
+    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+  `,
+                  borderRadius: '12px',
+                  transformOrigin: 'top right'
+                }}
+              >
+                <LeftSideDropDown />
+              </Box>
+            )}
+          </AnimatePresence>
         </Box>
       </Box>
       {/* Below part of notification screen */}
@@ -273,7 +308,6 @@ export default function Notifications() {
                 flexDirection: 'row',
                 gap: '10px',
                 cursor: 'pointer',
-                // fontWeight: selectedIndex === index ? '700' : '400'
 
                 boxShadow:
                   selectedIndex === index
