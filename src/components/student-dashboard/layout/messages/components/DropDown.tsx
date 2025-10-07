@@ -5,6 +5,7 @@ import localFont from '@/utils/themes';
 import tick from '@/assets/svgs/dashboard-student/tick.svg';
 import cross from '@/assets/svgs/dashboard-student/btncross.svg';
 import CustomButton from '@/components/student-dashboard/CustomButton';
+import {useTranslations} from 'next-intl';
 
 interface CustomCardProps {
   children?: ReactNode;
@@ -22,6 +23,8 @@ export default function CustomCard({
 
   text
 }: CustomCardProps) {
+  const t = useTranslations('Dashboard.Messages.dropDown');
+
   return (
     <Box
       onClick={onClose}
@@ -35,17 +38,6 @@ export default function CustomCard({
         padding,
 
         gap: '24px'
-        //       borderRadius: radius,
-
-        //       border: '1px solid rgb(255, 255, 255)',
-        //       backgroundColor: '#f0f0fa99',
-        //       backdropFilter: 'blur(15px)',
-        //       // borderRadius: "12px",
-        //       boxShadow: `
-        //   0px 0px 0px 1px rgb(255, 255, 255),
-        //   0px 1px 0px 0px rgba(0, 0, 0, 0.25),
-        //   0px 1px 1px 0px rgba(0, 0, 0, 0.25)
-        // `
       }}
     >
       <Typography
@@ -56,8 +48,7 @@ export default function CustomCard({
           textAlign: 'center'
         }}
       >
-        If you delete this conversation, it will be deleted from your profile on
-        our servers, but will remain visible to your driving school.
+        {t('des')}
       </Typography>
       <Typography
         sx={{
@@ -67,7 +58,7 @@ export default function CustomCard({
           textAlign: 'center'
         }}
       >
-        Are you sure you want to delete this message?
+        {t('title')}
       </Typography>
 
       <Box
@@ -82,13 +73,13 @@ export default function CustomCard({
         }}
       >
         <CustomButton
-          label="no"
+          label={t('btn')}
           bgColor="rgb(220, 38, 38)"
           hoverColor="#991919"
           hoverTextcolor="#fff"
           imgSrc={cross}
           sx={{
-            border: '1px solid #a1a1aaff',
+            // border: '1px solid #a1a1aaff',
             // color: '#000',
             gap: '8px',
             maxWidth: '80px',
@@ -97,7 +88,7 @@ export default function CustomCard({
           }}
         />
         <CustomButton
-          label="yes"
+          label={t('btn1')}
           bgColor="#0D9488"
           hoverColor="#0C5C72"
           imgSrc={tick}

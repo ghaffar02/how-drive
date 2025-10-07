@@ -9,7 +9,6 @@ import {useTranslations} from 'next-intl';
 interface CustomCardProps {
   children?: ReactNode;
   padding?: number | string;
-  radius?: number | string;
   bgColor?: string;
   text?: string;
   onClose?: () => void;
@@ -18,8 +17,6 @@ interface CustomCardProps {
 export default function CustomCard({
   onClose,
   padding = '16px',
-  radius = '10px',
-
   text
 }: CustomCardProps) {
   const t = useTranslations('Dashboard.Settings.RightSide.AccountTab');

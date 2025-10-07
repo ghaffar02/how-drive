@@ -1993,7 +1993,11 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Do you really want to delete your account?",
-          "formFields": ["Necessary", "Analytics", "Allow all"]
+          "formFields": [
+            "Necessary",
+            "Analytics",
+            "Allow all"
+          ]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2021,7 +2025,10 @@
             "News",
             "Driving license office registered"
           ],
-          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
+          "formFieldsOff": [
+            "Genereller Newsletter",
+            "Offers and advertising"
+          ]
         }
       }
     },
@@ -2077,6 +2084,27 @@
         "cancelBtn": "Cancel",
         "saveBtn": "Save",
         "clickIconTitle": "Click on individual steps to mark them as completed."
+      }
+    },
+    "Messages": {
+      "dropDown": {
+        "des": "If you delete this conversation, it will be deleted from your profile on our servers, but will remain visible to your driving school.",
+        "title": "Are you sure you want to delete this message?",
+        "btn": "No",
+        "btn1": "Yes"
+      },
+      "formDropDown": {
+        "label1": "From",
+        "option1": "Fahrschule Mundsburg",
+        "option2": "Fahrer 1 - Fabian",
+        "option3": "Fahrer 2 - Tom",
+        "placeholder": "select ...",
+        "label2": "To",
+        "label3": "Topic",
+        "label4": "Message",
+        "label5": "Upload file",
+        "btn": "Cancel",
+        "btn1": "Send"
       }
     }
   }

@@ -296,11 +296,11 @@ export default function Account() {
                   sx={{
                     position: 'absolute',
                     bottom: '100%',
-                    right: {xs: '-20%', sm: 0},
+                    right: {xs: '-70%', sm: 0},
                     mb: '8px',
-                    width: {xs: '283px', sm: '333px'},
+                    width: {xs: '280px', sm: '302px', lg: '333px'},
                     zIndex: 178879,
-                    overflow: 'visible',
+                    // overflow: 'visible',
                     border: '1px solid rgb(255, 255, 255)',
                     backgroundColor: '#f0f0fa99',
                     backdropFilter: 'blur(10px)',
@@ -311,7 +311,6 @@ export default function Account() {
   `,
                     borderRadius: '12px',
                     transformOrigin: ' bottom'
-                    // overflow: 'visible'
                   }}
                 >
                   <CustomCard

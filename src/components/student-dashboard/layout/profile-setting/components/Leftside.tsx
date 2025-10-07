@@ -25,7 +25,7 @@ export default function Leftside({
       sx={{
         position: 'relative',
         zIndex: 1,
-        maxWidth: '300px',
+        maxWidth: {md: '250px', lg: '300px'},
         width: '100%',
         // height: '100%',
         background: 'rgba(248,250,252,0.3)',

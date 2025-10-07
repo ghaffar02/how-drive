@@ -53,7 +53,7 @@ export default function CustomTextField({
 
           // Disable hover color change (same as default)
           '&:hover fieldset': {
-            borderColor: borderColor
+            borderColor: '#e2e8f00a'
           },
 
           // Active (focused) border color

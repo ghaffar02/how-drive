@@ -6,6 +6,7 @@ import tick from '@/assets/svgs/dashboard-student/send.svg';
 import cross from '@/assets/svgs/dashboard-student/btncross.svg';
 import CustomButton from '@/components/student-dashboard/CustomButton';
 import CustomTextField from '@/components/student-dashboard/InputField';
+import {useTranslations} from 'next-intl';
 
 interface CustomCardProps {
   children?: ReactNode;
@@ -21,6 +22,8 @@ export default function LeftSideDropDown({
   padding = '16px'
 }: CustomCardProps) {
   const [selectedCategory, setSelectedCategory] = useState('');
+  const t = useTranslations('Dashboard.Messages.formDropDown');
+
   return (
     <Box
       onClick={onClose}
@@ -57,8 +60,7 @@ export default function LeftSideDropDown({
             textAlign: 'left'
           }}
         >
-          To:
-          {/* {t('lable1')} */}
+          {t('label1')}
         </Typography>
 
         <TextField
@@ -89,21 +91,26 @@ export default function LeftSideDropDown({
               border: 'none !important'
             },
             '& fieldset': {
-              borderColor: '#E2E8F0'
+              borderColor: '#ffffff0c !important'
             },
             '& .MuiSelect-select': {
               padding: 0,
               fontSize: '14px',
               color: selectedCategory ? '#999' : '#999'
+            },
+            '&.Mui-focused fieldset': {
+              borderColor: '#3058ff',
+              borderWidth: '1.5px'
             }
           }}
         >
           <MenuItem value="" disabled>
-            select....
-            {/* {t('option1')}... */}
+            {t('placeholder')}
           </MenuItem>
-          <MenuItem value="malfunction">Malfunction</MenuItem>
-          <MenuItem value="question">Question</MenuItem>
+
+          <MenuItem value="Fahrschule Mundsburg">Fahrschule Mundsburg</MenuItem>
+          <MenuItem value="Fahrer 1 - Fabian">Fahrer 1 - Fabian</MenuItem>
+          <MenuItem value="Fahrer 2 - Tom">Fahrer 2 - Tom</MenuItem>
         </TextField>
       </Box>
       <Box
@@ -129,7 +136,37 @@ export default function LeftSideDropDown({
             // mt: {xs: '8px', lg: '0px'}
           }}
         >
-          Topic:
+          {t('label2')}
+        </Typography>
+        <CustomTextField
+          // labal={items}
+          sx={{textAlign: 'end', maxWidth: {lg: '403px'}}}
+        />
+      </Box>
+      <Box
+        sx={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: {xs: 'column'},
+          gap: {xs: '8px'},
+          alignItems: 'start',
+          justifyContent: 'space-between'
+        }}
+      >
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            width: '100%',
+            maxWidth: '400px',
+            fontFamily: '"Inter", sans-serif !important',
+            fontWeight: 400,
+            textAlign: 'left',
+            textTransform: 'capitalize'
+
+            // mt: {xs: '8px', lg: '0px'}
+          }}
+        >
+          {t('label3')}
         </Typography>
         <CustomTextField
           // labal={items}
@@ -152,7 +189,7 @@ export default function LeftSideDropDown({
             textTransform: 'capitalize'
           }}
         >
-          Message:
+          {t('label4')}
         </Typography>
 
         <TextField
@@ -200,7 +237,7 @@ export default function LeftSideDropDown({
             fontFamily: '"Inter", sans-serif !important'
           }}
         >
-          upload file:
+          {t('label5')}
         </Typography>
 
         <TextField
@@ -246,7 +283,7 @@ export default function LeftSideDropDown({
         }}
       >
         <CustomButton
-          label="cancel"
+          label={t('btn')}
           bgColor="rgb(220, 38, 38)"
           hoverColor="#991919"
           hoverTextcolor="#fff"
@@ -255,13 +292,13 @@ export default function LeftSideDropDown({
             // border: '1px solid #a1a1aaff',
             // color: '#000',
             gap: '8px',
-            maxWidth: '122px',
+            maxWidth: '125px',
             width: '100%',
             justifyContent: 'start'
           }}
         />
         <CustomButton
-          label="send"
+          label={t('btn1')}
           bgColor="#0D9488"
           hoverColor="#0C5C72"
           imgSrc={tick}
