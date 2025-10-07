@@ -80,7 +80,7 @@ export default function CustomCard({
           hoverTextcolor="#fff"
           imgSrc={cross}
           sx={{
-            border: '1px solid #a1a1aaff',
+            // border: '1px solid #a1a1aaff',
             // color: '#000',
             gap: '8px',
             maxWidth: '80px',

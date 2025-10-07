@@ -10,7 +10,7 @@ import CustomTextField from '@/components/student-dashboard/InputField';
 interface CustomCardProps {
   children?: ReactNode;
   padding?: number | string;
-  radius?: number | string;
+
   bgColor?: string;
   text?: string;
   onClose?: () => void;
@@ -18,8 +18,7 @@ interface CustomCardProps {
 
 export default function LeftSideDropDown({
   onClose,
-  padding = '16px',
-  radius = '10px'
+  padding = '16px'
 }: CustomCardProps) {
   const [selectedCategory, setSelectedCategory] = useState('');
   return (
@@ -71,21 +70,20 @@ export default function LeftSideDropDown({
           SelectProps={{
             displayEmpty: true
           }}
-          // error={!!errors.category}
-          // helperText={errors.category?.message}
           sx={{
-            background: '#ffffff99',
             height: 40,
             // maxWidth: {lg: '402px'},
             width: '100%',
 
-            borderRadius: '12px',
             '& .MuiInputBase-root': {
+              background: '#ffffff99',
+              borderRadius: '8px',
               height: '100%',
               fontSize: '14px',
               padding: '12px',
-              boxShadow:
-                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+              // border: '1px solid  rgba(0, 0, 0, 0.24)'
+
+              boxShadow: '0px 0px 0px 1px #0000000f, 0px 1px 0px #00000011  '
             },
             '&:hover .MuiOutlinedInput-notchedOutline': {
               border: 'none !important'
@@ -96,7 +94,7 @@ export default function LeftSideDropDown({
             '& .MuiSelect-select': {
               padding: 0,
               fontSize: '14px',
-              color: selectedCategory ? '#aaa' : '#9ca3af'
+              color: selectedCategory ? '#999' : '#999'
             }
           }}
         >
@@ -164,7 +162,7 @@ export default function LeftSideDropDown({
           variant="outlined"
           sx={{
             '& .MuiInputBase-root': {
-              borderRadius: '12px',
+              borderRadius: '8px',
               background: '#ffffff99',
               boxShadow:
                 '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
@@ -212,7 +210,7 @@ export default function LeftSideDropDown({
           variant="outlined"
           sx={{
             '& .MuiInputBase-root': {
-              borderRadius: '12px',
+              borderRadius: '8px',
               background: '#ffffff99',
               boxShadow:
                 '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
@@ -254,7 +252,7 @@ export default function LeftSideDropDown({
           hoverTextcolor="#fff"
           imgSrc={cross}
           sx={{
-            border: '1px solid #a1a1aaff',
+            // border: '1px solid #a1a1aaff',
             // color: '#000',
             gap: '8px',
             maxWidth: '122px',
