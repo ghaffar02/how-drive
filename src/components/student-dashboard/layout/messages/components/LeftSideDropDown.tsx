@@ -23,6 +23,10 @@ export default function LeftSideDropDown({
 }: CustomCardProps) {
   const [selectedCategory, setSelectedCategory] = useState('');
   const t = useTranslations('Dashboard.Messages.formDropDown');
+  const handleContainerClick = (event: React.MouseEvent) => {
+    // Yeh prevent karega ke andar ke elements par click karne se onClose trigger na ho
+    event.stopPropagation();
+  };
 
   return (
     <Box
@@ -41,6 +45,7 @@ export default function LeftSideDropDown({
       }}
     >
       <Box
+        onClick={handleContainerClick}
         sx={{
           width: '100%',
           display: 'flex',
@@ -91,16 +96,16 @@ export default function LeftSideDropDown({
               border: 'none !important'
             },
             '& fieldset': {
-              borderColor: '#ffffff0c !important'
+              borderColor: '#e2e8f010'
             },
             '& .MuiSelect-select': {
               padding: 0,
               fontSize: '14px',
               color: selectedCategory ? '#999' : '#999'
             },
-            '&.Mui-focused fieldset': {
+            '&.Mui-focused ': {
               borderColor: '#3058ff',
-              borderWidth: '1.5px'
+              borderWidth: '1px'
             }
           }}
         >
@@ -292,7 +297,7 @@ export default function LeftSideDropDown({
             // border: '1px solid #a1a1aaff',
             // color: '#000',
             gap: '8px',
-            maxWidth: '125px',
+            maxWidth: '122px',
             width: '100%',
             justifyContent: 'start'
           }}

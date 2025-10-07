@@ -209,6 +209,7 @@ export default function Notifications() {
           <AnimatePresence>
             {openDropdown && (
               <Box
+                ref={dropdownRef}
                 component={motion.div}
                 initial={{
                   opacity: 0,

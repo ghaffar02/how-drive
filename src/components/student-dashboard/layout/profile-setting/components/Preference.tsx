@@ -143,15 +143,13 @@ export default function Preference() {
                 height: 40,
                 maxWidth: {lg: '402px'},
                 width: '100%',
-                // '& .MuiSelect-select': {
-                //   padding: '12px',
-                //   color: '#aaa'
-                // },
+
                 borderRadius: '8px',
                 '& .MuiInputBase-root': {
                   height: '100%',
                   fontSize: '14px',
                   padding: '12px',
+                  borderRadius: '12px',
                   boxShadow:
                     '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
                 },
@@ -159,12 +157,12 @@ export default function Preference() {
                   border: 'none !important'
                 },
                 '& fieldset': {
-                  borderColor: '#E2E8F0'
+                  borderColor: '#e2e8f00a'
                 },
                 '& .MuiSelect-select': {
                   padding: 0,
                   fontSize: '16px',
-                  color: selectedCategory ? '#aaa' : '#9ca3af'
+                  color: selectedCategory ? '#000' : '#aaa'
                 }
               }}
             >
