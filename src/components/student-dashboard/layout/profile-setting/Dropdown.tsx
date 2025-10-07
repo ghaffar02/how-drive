@@ -27,6 +27,7 @@ export default function CustomCard({
     <Box
       onClick={onClose}
       sx={{
+        position: 'relative',
         width: '100%',
         // maxWidth: {xs: '323px', sm: '333px'},
         display: 'flex',
@@ -34,19 +35,20 @@ export default function CustomCard({
         justifyContent: 'center',
         alignItems: 'center',
         padding,
+        zIndex: 23333,
 
-        gap: '24px',
-        borderRadius: radius,
+        gap: '24px'
+        //       borderRadius: radius,
 
-        border: '1px solid rgb(255, 255, 255)',
-        backgroundColor: '#f0f0fa99',
-        backdropFilter: 'blur(15px)',
-        // borderRadius: "12px",
-        boxShadow: `
-    0px 0px 0px 1px rgb(255, 255, 255),
-    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
-  `
+        //       border: '1px solid rgb(255, 255, 255)',
+        //       backgroundColor: '#f0f0fa99',
+        //       backdropFilter: 'blur(15px)',
+        //       // borderRadius: "12px",
+        //       boxShadow: `
+        //   0px 0px 0px 1px rgb(255, 255, 255),
+        //   0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+        //   0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+        // `
       }}
     >
       <Typography
@@ -78,7 +80,7 @@ export default function CustomCard({
           hoverTextcolor="#fff"
           imgSrc={cross}
           sx={{
-            border: '1px solid #a1a1aaff',
+            // border: '1px solid #a1a1aaff',
             // color: '#000',
             gap: '8px',
             maxWidth: '80px',

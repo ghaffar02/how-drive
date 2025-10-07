@@ -14,6 +14,7 @@ import backIcon from '@/assets/svgs/dashboard-student/backIcon.svg';
 import deleteIcon2 from '@/assets/svgs/dashboard-student/deleteIcon2.svg';
 import copyIcon from '@/assets/svgs/dashboard-student/copyIcon.svg';
 import CustomCard from './DropDown';
+import {AnimatePresence, motion} from 'framer-motion';
 
 const messages = [
   {
@@ -136,39 +137,27 @@ const options = [
 export default function Inbox() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [openDropdown, setOpenDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
   const open = Boolean(anchorEl);
-
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
+  const iconRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
-        containerRef.current &&
-        !containerRef.current.contains(event.target as Node)
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
       ) {
-        setOpenDropdown(false);
+        return;
       }
-    }
-
-    function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
-        setOpenDropdown(false);
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
       }
+
+      setOpenDropdown(false);
     }
 
-    if (openDropdown) {
-      document.addEventListener('mousedown', handleClickOutside);
-      document.addEventListener('keydown', handleKeyDown);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleKeyDown);
-    }
-
-    // Cleanup
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [openDropdown]);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -252,6 +241,7 @@ export default function Inbox() {
           }}
         >
           <Box
+            ref={iconRef}
             sx={{
               height: '20px',
               width: '20px',
@@ -266,8 +256,42 @@ export default function Inbox() {
               onClick={() => setOpenDropdown((prev) => !prev)}
             />
 
+            {/* <AnimatePresence mode="wait"> */}
             {openDropdown && (
               <Box
+                //  key="dropdown"
+                component={motion.div}
+                initial={{
+                  opacity: 0,
+                  scale: 0.5,
+                  y: -20,
+                  x: 20,
+                  originX: 1,
+                  originY: 0
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                  x: 0,
+                  originX: 1,
+                  originY: 0
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.5,
+                  // dur: 1,
+                  y: -20,
+                  x: 20,
+                  originX: 1,
+                  originY: 0
+                }}
+                transition={{
+                  duration: 0.5,
+                  type: 'spring',
+                  stiffness: 300,
+                  damping: 25
+                }}
                 sx={{
                   position: 'absolute',
                   // bottom: '100%',
@@ -275,7 +299,19 @@ export default function Inbox() {
                   right: {xs: '-10%', sm: 0},
                   mt: '8px',
                   width: {xs: '283px', sm: '300px'},
-                  zIndex: 10
+                  zIndex: 10,
+                  overflow: 'visible',
+                  border: '1px solid rgb(255, 255, 255)',
+                  backgroundColor: '#f0f0fa99',
+                  backdropFilter: 'blur(8px)',
+                  // borderRadius: "12px",
+                  boxShadow: `
+    0px 0px 0px 1px rgb(255, 255, 255),
+    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+  `,
+                  borderRadius: '12px',
+                  transformOrigin: 'top right'
                 }}
               >
                 <CustomCard
@@ -284,6 +320,7 @@ export default function Inbox() {
                 />
               </Box>
             )}
+            {/* <AnimatePresence/> */}
           </Box>
 
           <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
