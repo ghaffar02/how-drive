@@ -55,6 +55,7 @@ export default function Header() {
     ...item,
     ...titles[index]
   }));
+
   return (
     <Box
       sx={{
@@ -70,9 +71,8 @@ export default function Header() {
         gap: {xs: '8px', lg: '10px'},
         height: {xs: '100%', lg: '100%'},
         border: '1px solid #fff',
-        boxShadow: {
-          md: 'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px'
-        }
+        boxShadow:
+          '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)'
       }}
     >
       {updatedData.map((item, i) => (

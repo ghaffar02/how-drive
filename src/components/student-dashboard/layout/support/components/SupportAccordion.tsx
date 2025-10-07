@@ -1,5 +1,5 @@
 'use client';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
 import {
   Accordion,
@@ -19,8 +19,20 @@ type InputProp = {
 
 const SupportAccordion = ({openFaq}: InputProp) => {
   const [expanded, setExpanded] = useState<number[]>([]);
+  const [isDesktop, setIsDesktop] = useState(false);
   const t = useTranslations('Faq');
   const PricingData = t.raw('FaqData');
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsDesktop(window.innerWidth >= 900);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleChange =
     (panel: number) => (event: React.SyntheticEvent, isExpanded: boolean) => {
@@ -34,8 +46,7 @@ const SupportAccordion = ({openFaq}: InputProp) => {
   return (
     <AnimatePresence>
       {/* ✅ Only animate mount/unmount on mobile */}
-      {(openFaq ||
-        (typeof window !== 'undefined' && window.innerWidth >= 900)) && (
+      {(openFaq || isDesktop) && (
         <Box
           sx={{
             position: {xs: 'absolute', md: 'relative'},
