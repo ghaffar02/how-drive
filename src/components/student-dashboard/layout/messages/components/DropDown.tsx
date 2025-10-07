@@ -1,10 +1,10 @@
 import {Box, Typography} from '@mui/material';
 import {ReactNode} from 'react';
-import CustomButton from '../../CustomButton';
+
 import localFont from '@/utils/themes';
 import tick from '@/assets/svgs/dashboard-student/tick.svg';
 import cross from '@/assets/svgs/dashboard-student/btncross.svg';
-import {useTranslations} from 'next-intl';
+import CustomButton from '@/components/student-dashboard/CustomButton';
 
 interface CustomCardProps {
   children?: ReactNode;
@@ -22,12 +22,10 @@ export default function CustomCard({
 
   text
 }: CustomCardProps) {
-  const t = useTranslations('Dashboard.Settings.RightSide.AccountTab');
   return (
     <Box
       onClick={onClose}
       sx={{
-        position: 'relative',
         width: '100%',
         // maxWidth: {xs: '323px', sm: '333px'},
         display: 'flex',
@@ -35,7 +33,6 @@ export default function CustomCard({
         justifyContent: 'center',
         alignItems: 'center',
         padding,
-        zIndex: 23333,
 
         gap: '24px'
         //       borderRadius: radius,
@@ -54,33 +51,44 @@ export default function CustomCard({
       <Typography
         sx={{
           ...localFont.inter14,
-          fontWeight: 500,
-          fontFamily: '"Inter", sans-serif !important'
+          fontWeight: 300,
+          fontFamily: '"Inter", sans-serif !important',
+          textAlign: 'center'
         }}
       >
-        {text}
+        If you delete this conversation, it will be deleted from your profile on
+        our servers, but will remain visible to your driving school.
+      </Typography>
+      <Typography
+        sx={{
+          ...localFont.inter14,
+          fontWeight: 500,
+          fontFamily: '"Inter", sans-serif !important',
+          textAlign: 'center'
+        }}
+      >
+        Are you sure you want to delete this message?
       </Typography>
 
       <Box
         sx={{
           width: {xs: '100%'},
 
-          p: ' 8px 4px',
+          p: '  4px',
           display: 'flex',
           gap: '16px',
           alignItems: 'center',
           justifyContent: 'center'
-          // justifyContent: 'space-between'
         }}
       >
         <CustomButton
-          label={t('btn6')}
+          label="no"
           bgColor="rgb(220, 38, 38)"
           hoverColor="#991919"
           hoverTextcolor="#fff"
           imgSrc={cross}
           sx={{
-            // border: '1px solid #a1a1aaff',
+            border: '1px solid #a1a1aaff',
             // color: '#000',
             gap: '8px',
             maxWidth: '80px',
@@ -89,7 +97,7 @@ export default function CustomCard({
           }}
         />
         <CustomButton
-          label={t('btn5')}
+          label="yes"
           bgColor="#0D9488"
           hoverColor="#0C5C72"
           imgSrc={tick}

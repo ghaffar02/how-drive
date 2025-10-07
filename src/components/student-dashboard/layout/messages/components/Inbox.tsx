@@ -1,7 +1,7 @@
 import localFont from '@/utils/themes';
 import {Box, Menu, MenuItem, TextField, Typography} from '@mui/material';
 import Image from 'next/image';
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import car from '@/assets/svgs/dashboard-student/car.svg';
 import printIcon from '@/assets/svgs/dashboard-student/printIcon.svg';
@@ -13,6 +13,8 @@ import dots from '@/assets/svgs/dashboard-student/dots.svg';
 import backIcon from '@/assets/svgs/dashboard-student/backIcon.svg';
 import deleteIcon2 from '@/assets/svgs/dashboard-student/deleteIcon2.svg';
 import copyIcon from '@/assets/svgs/dashboard-student/copyIcon.svg';
+import CustomCard from './DropDown';
+import {AnimatePresence, motion} from 'framer-motion';
 
 const messages = [
   {
@@ -134,7 +136,28 @@ const options = [
 
 export default function Inbox() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
   const open = Boolean(anchorEl);
+  const iconRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
+
+      setOpenDropdown(false);
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
@@ -165,12 +188,13 @@ export default function Inbox() {
       <Box
         sx={{
           width: '100%',
-          padding: '24px',
+          padding: {xs: '16px', md: '24px'},
           border: '1px solid #fff',
           borderRadius: '18px',
           background: '#FAF8FE',
           display: 'flex',
           gap: '16px'
+          // height: '84px'
         }}
       >
         <Box
@@ -217,13 +241,89 @@ export default function Inbox() {
             marginLeft: 'auto'
           }}
         >
-          <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
+          <Box
+            ref={iconRef}
+            sx={{
+              height: '20px',
+              width: '20px',
+              cursor: 'pointer',
+              position: 'relative'
+            }}
+          >
             <Image
               src={deleteIcon}
               alt="delete"
               style={{height: '100%', width: '100%'}}
+              onClick={() => setOpenDropdown((prev) => !prev)}
             />
+
+            {/* <AnimatePresence mode="wait"> */}
+            {openDropdown && (
+              <Box
+                //  key="dropdown"
+                component={motion.div}
+                initial={{
+                  opacity: 0,
+                  scale: 0.5,
+                  y: -20,
+                  x: 20,
+                  originX: 1,
+                  originY: 0
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                  x: 0,
+                  originX: 1,
+                  originY: 0
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.5,
+                  // dur: 1,
+                  y: -20,
+                  x: 20,
+                  originX: 1,
+                  originY: 0
+                }}
+                transition={{
+                  duration: 0.5,
+                  type: 'spring',
+                  stiffness: 300,
+                  damping: 25
+                }}
+                sx={{
+                  position: 'absolute',
+                  // bottom: '100%',
+                  // left: {xs: '10%', sm: 'unset'},
+                  right: {xs: '-10%', sm: 0},
+                  mt: '8px',
+                  width: {xs: '283px', sm: '300px'},
+                  zIndex: 10,
+                  overflow: 'visible',
+                  border: '1px solid rgb(255, 255, 255)',
+                  backgroundColor: '#f0f0fa99',
+                  backdropFilter: 'blur(8px)',
+                  // borderRadius: "12px",
+                  boxShadow: `
+    0px 0px 0px 1px rgb(255, 255, 255),
+    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+  `,
+                  borderRadius: '12px',
+                  transformOrigin: 'top right'
+                }}
+              >
+                <CustomCard
+                  text="jhuy wmqnjq qmwjhiwu  wmfbw"
+                  onClose={() => setOpenDropdown(false)}
+                />
+              </Box>
+            )}
+            {/* <AnimatePresence/> */}
           </Box>
+
           <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
             <Image
               src={printIcon}
@@ -237,9 +337,8 @@ export default function Inbox() {
       <Box
         sx={{
           width: '100%',
-          height: '100%',
           background: '#ffffffbf',
-          padding: '24px',
+          padding: {xs: '16px', md: '24px'},
           borderRadius: '18px',
           display: 'flex',
           flexDirection: 'column',

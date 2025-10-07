@@ -92,7 +92,11 @@ a {
   font-weight: unset !important;
 }
 
-/* the calander styles */
+/* overflow in dashbord fixed here */
+.css-12botxm {
+  overflow: visible !important;
+  /* the calander styles */
+}
 .mini-framer-calendar_wrap___pkdM {
   padding: 8px !important;
 }

@@ -3,6 +3,7 @@ import React, {useState} from 'react';
 import {Box} from '@mui/material';
 import DetailSide from './components/DetailSide';
 import ProcessForm from './components/ProcessForm';
+import ProcessSteps from './components/ProcessSteps';
 
 export default function Process() {
   const [show, setShow] = useState(true);
@@ -19,6 +20,7 @@ export default function Process() {
     >
       <DetailSide show={show} />
       <ProcessForm />
+      {/* <ProcessSteps /> */}
     </Box>
   );
 }

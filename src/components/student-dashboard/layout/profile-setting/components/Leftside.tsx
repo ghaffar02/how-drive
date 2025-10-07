@@ -23,6 +23,8 @@ export default function Leftside({
   return (
     <Box
       sx={{
+        position: 'relative',
+        zIndex: 1,
         maxWidth: '300px',
         width: '100%',
         // height: '100%',

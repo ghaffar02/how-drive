@@ -3,7 +3,7 @@ import CustomCard from '@/components/student-dashboard/layout/profile-setting/Dr
 import localFont from '@/utils/themes';
 import {Box, Divider, Typography} from '@mui/material';
 import {useTranslations} from 'next-intl';
-import {motion} from 'framer-motion';
+import {AnimatePresence, motion} from 'framer-motion';
 import {
   JSXElementConstructor,
   ReactElement,
@@ -15,40 +15,31 @@ import {
 } from 'react';
 
 export default function Privacy() {
-  const [openDropdown, setOpenDropdown] = useState(false);
-  const containerRef = useRef<HTMLDivElement | null>(null);
   const [activeIndex, setActiveIndex] = useState<number | 0>(0);
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const iconRef = useRef<HTMLDivElement | null>(null);
+
   const t = useTranslations('Dashboard.Settings.RightSide.PrivacyTab');
   const formFields = t.raw('formFields');
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
-        containerRef.current &&
-        !containerRef.current.contains(event.target as Node)
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
       ) {
-        setOpenDropdown(false);
+        return;
       }
-    }
-
-    function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
-        setOpenDropdown(false);
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
       }
+
+      setOpenDropdown(false);
     }
 
-    if (openDropdown) {
-      document.addEventListener('mousedown', handleClickOutside);
-      document.addEventListener('keydown', handleKeyDown);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleKeyDown);
-    }
-
-    // Cleanup
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [openDropdown]);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const handleClick = (i: number) => {
     setActiveIndex(i);
@@ -305,6 +296,7 @@ export default function Privacy() {
         }}
         sx={{
           position: 'relative',
+          zIndex: 4,
           width: '100%',
           display: 'flex',
           flexDirection: {xs: 'column', lg: 'row'},
@@ -337,7 +329,7 @@ export default function Privacy() {
           </Typography>
         </Box>
         <Box
-          ref={containerRef}
+          ref={iconRef}
           sx={{
             width: {xs: '100%', lg: '75%'},
             p: '4px',
@@ -348,7 +340,7 @@ export default function Privacy() {
             // justifyContent: 'space-between'
           }}
         >
-          <Box sx={{position: 'relative'}}>
+          <Box sx={{position: 'relative', zIndex: 22}}>
             <CustomButton
               label={t('btn3')}
               bgColor="#0D9488"
@@ -356,22 +348,70 @@ export default function Privacy() {
               sx={{}}
               onClick={() => setOpenDropdown(() => !openDropdown)}
             />
-            {openDropdown && (
-              <Box
-                sx={{
-                  position: 'absolute',
-                  right: {xs: '-20%', sm: 0},
-                  mt: '8px',
-                  width: {xs: '283px', sm: '363px'},
-                  zIndex: 1
-                }}
-              >
-                <CustomCard
-                  text="Would you like to download your personal data?"
-                  onClose={() => setOpenDropdown(false)}
-                />
-              </Box>
-            )}
+
+            <AnimatePresence>
+              {openDropdown && (
+                <Box
+                  component={motion.div}
+                  initial={{
+                    opacity: 0,
+                    scale: 0.5,
+                    y: -20,
+                    x: 20,
+                    originX: 1,
+                    originY: 0
+                  }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    x: 0,
+                    originX: 1,
+                    originY: 0
+                  }}
+                  exit={{
+                    opacity: 0,
+                    scale: 0.5,
+                    // dur: 1,
+                    y: -20,
+                    x: 20,
+                    originX: 1,
+                    originY: 0
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    type: 'spring',
+                    stiffness: 300,
+                    damping: 25
+                  }}
+                  sx={{
+                    position: 'absolute',
+                    right: {xs: '-20%', sm: 0},
+                    mt: '8px',
+                    left: 'auto',
+                    width: {xs: '283px', sm: '333px'},
+                    zIndex: 33,
+                    overflow: 'visible',
+                    border: '1px solid rgb(255, 255, 255)',
+                    backgroundColor: '#f0f0fa99',
+                    backdropFilter: 'blur(8px)',
+                    // borderRadius: "12px",
+                    boxShadow: `
+    0px 0px 0px 1px rgb(255, 255, 255),
+    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+  `,
+                    borderRadius: '12px',
+                    transformOrigin: 'top right'
+                  }}
+                >
+                  <CustomCard
+                    text={t('dropDown')}
+                    onClose={() => setOpenDropdown(false)}
+                  />
+                </Box>
+              )}
+            </AnimatePresence>
           </Box>
           <CustomButton
             label={t('btn4')}

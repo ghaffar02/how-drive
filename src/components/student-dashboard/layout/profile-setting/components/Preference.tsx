@@ -3,9 +3,12 @@ import localFont from '@/utils/themes';
 import {Box, Divider, MenuItem, TextField, Typography} from '@mui/material';
 import {ToggleSwitch} from './ToggleSwitch';
 import {useTranslations} from 'next-intl';
+import {useState} from 'react';
 
 // const formFields = ['Current password', 'New password', 'repeat password'];
 export default function Preference() {
+  const [selectedCategory, setSelectedCategory] = useState('');
+
   const t = useTranslations('Dashboard.Settings.RightSide.Preferen');
 
   return (
@@ -128,6 +131,11 @@ export default function Preference() {
               select
               fullWidth
               variant="outlined"
+              value={selectedCategory} // e.g. from useState
+              onChange={(e) => setSelectedCategory(e.target.value)}
+              SelectProps={{
+                displayEmpty: true
+              }}
               // error={!!errors.category}
               // helperText={errors.category?.message}
               sx={{
@@ -135,6 +143,10 @@ export default function Preference() {
                 height: 40,
                 maxWidth: {lg: '402px'},
                 width: '100%',
+                // '& .MuiSelect-select': {
+                //   padding: '12px',
+                //   color: '#aaa'
+                // },
                 borderRadius: '8px',
                 '& .MuiInputBase-root': {
                   height: '100%',
@@ -151,7 +163,8 @@ export default function Preference() {
                 },
                 '& .MuiSelect-select': {
                   padding: 0,
-                  fontSize: '14px'
+                  fontSize: '16px',
+                  color: selectedCategory ? '#aaa' : '#9ca3af'
                 }
               }}
             >

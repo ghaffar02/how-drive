@@ -1,5 +1,5 @@
 import {Box, TextField, Typography} from '@mui/material';
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import Image from 'next/image';
 import searchIcon from '@/assets/svgs/dashboard-student/searchIcon.svg';
@@ -96,14 +96,35 @@ const emails = [
   }
 ];
 
-import {motion} from 'framer-motion';
+import {AnimatePresence, motion} from 'framer-motion';
 import localFont from '@/utils/themes';
+import LeftSideDropDown from './LeftSideDropDown';
 
 const MotionBox = motion(Box);
 
 export default function Notifications() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const iconRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
 
+      setOpenDropdown(false);
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
   return (
     <Box
       sx={{
@@ -153,9 +174,9 @@ export default function Notifications() {
               flex: 1,
               '& .MuiOutlinedInput-root': {
                 borderRadius: 0,
-                '& fieldset': {border: 'none'}, // remove border
-                '&:hover fieldset': {border: 'none'}, // remove on hover
-                '&.Mui-focused fieldset': {border: 'none'} // remove on focus
+                '& fieldset': {border: 'none'},
+                '&:hover fieldset': {border: 'none'},
+                '&.Mui-focused fieldset': {border: 'none'}
               },
               '& .MuiInputBase-input': {
                 height: 'auto',
@@ -165,15 +186,87 @@ export default function Notifications() {
           />
         </Box>
         <Box
+          ref={iconRef}
           sx={{
             height: '36px',
             width: '36px',
             background: '#ffffffbf',
             padding: '8px',
-            borderRadius: '50%'
+            borderRadius: '50%',
+            position: 'relative',
+            overflow: 'visible !important'
+            // bgcolor: '#d80909ff'
           }}
         >
-          <Image src={crossIcon} alt="addIcon" height={20} width={20} />
+          <Image
+            src={crossIcon}
+            alt="addIcon"
+            height={20}
+            width={20}
+            style={{position: 'relative'}}
+            onClick={() => setOpenDropdown((prev) => !prev)}
+          />
+          <AnimatePresence>
+            {openDropdown && (
+              <Box
+                component={motion.div}
+                initial={{
+                  opacity: 0,
+                  scale: 0.5,
+                  y: -20,
+                  x: 20,
+                  originX: 1,
+                  originY: 0
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                  x: 0,
+                  originX: 1,
+                  originY: 0
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.5,
+                  // dur: 1,
+                  y: -20,
+                  x: 20,
+                  originX: 1,
+                  originY: 0
+                }}
+                transition={{
+                  duration: 0.5,
+                  type: 'spring',
+                  stiffness: 300,
+                  damping: 25
+                }}
+                sx={{
+                  // bgcolor: '#000',
+                  position: 'absolute',
+                  zIndex: 999999999,
+                  // left: {md: 100, lg: 130, xl: 200},
+                  right: 0,
+                  mt: '20px',
+                  width: {xs: '300px'},
+                  overflow: 'visible',
+                  border: '1px solid rgb(255, 255, 255)',
+                  backgroundColor: '#f0f0fa99',
+                  backdropFilter: 'blur(8px)',
+                  // borderRadius: "12px",
+                  boxShadow: `
+    0px 0px 0px 1px rgb(255, 255, 255),
+    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+  `,
+                  borderRadius: '12px',
+                  transformOrigin: 'top right'
+                }}
+              >
+                <LeftSideDropDown />
+              </Box>
+            )}
+          </AnimatePresence>
         </Box>
       </Box>
       {/* Below part of notification screen */}
@@ -215,7 +308,6 @@ export default function Notifications() {
                 flexDirection: 'row',
                 gap: '10px',
                 cursor: 'pointer',
-                // fontWeight: selectedIndex === index ? '700' : '400'
 
                 boxShadow:
                   selectedIndex === index

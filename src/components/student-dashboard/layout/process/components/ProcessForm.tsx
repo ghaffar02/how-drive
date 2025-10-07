@@ -14,8 +14,10 @@ import {
 } from '@mui/material';
 import React, {useEffect, useState} from 'react';
 import {Controller, useForm} from 'react-hook-form';
+import {useTranslations} from 'next-intl';
 
 export default function ProcessForm() {
+  const t = useTranslations('Dashboard.Process.processform');
   return (
     <Box
       sx={{
@@ -46,7 +48,7 @@ export default function ProcessForm() {
             mb: '10px'
           }}
         >
-          Please fill in the following information!
+          {t('title')}
         </Typography>
         <Typography
           sx={{
@@ -57,9 +59,7 @@ export default function ProcessForm() {
             textAlign: 'center'
           }}
         >
-          By filling out the following information, a new guide for obtaining a
-          driving license will be created. Connecting a driving school is also
-          possible later in the &quot;Settings&quot;.
+          {t('des')}
         </Typography>
       </Box>
       <DrivingLicenseForm />
@@ -78,6 +78,7 @@ type FormValues = {
 };
 
 export function DrivingLicenseForm() {
+  const t = useTranslations('Dashboard.Process.processform');
   const {
     control,
     handleSubmit,
@@ -132,7 +133,7 @@ export function DrivingLicenseForm() {
       <Controller
         name="licenseClass"
         control={control}
-        rules={{required: 'Driving license class is required'}}
+        rules={{required: `${t('err1')}`}}
         render={({field}) => (
           <FormControl fullWidth error={!!errors.licenseClass}>
             <Select
@@ -144,15 +145,17 @@ export function DrivingLicenseForm() {
                 background: '#ffffff',
                 borderRadius: '10px',
                 height: '40px',
+                fontFamily: '"Inter", sans-serif !important',
                 fontSize: '14px',
                 '& .MuiSelect-select': {
                   padding: '12px',
-                  color: field.value === '' ? '#aaa' : 'inherit' // greyed placeholder
+                  color: field.value === '' ? '#aaa' : 'inherit',
+                  fontFamily: '"Inter", sans-serif !important'
                 }
               }}
             >
               <MenuItem value="" disabled>
-                Driving license class
+                {t('opt1')}
               </MenuItem>
               <MenuItem value="B">B</MenuItem>
               <MenuItem value="BF17">BF17</MenuItem>
@@ -174,7 +177,7 @@ export function DrivingLicenseForm() {
       <Controller
         name="residence"
         control={control}
-        rules={{required: 'Place of residence is required'}}
+        rules={{required: `${t('err2')}`}}
         render={({field}) => (
           <FormControl fullWidth error={!!errors.residence}>
             <Select
@@ -185,14 +188,16 @@ export function DrivingLicenseForm() {
                 borderRadius: '10px',
                 height: '40px',
                 fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important',
                 '& .MuiSelect-select': {
                   padding: '12px',
-                  color: field.value === '' ? '#aaa' : 'inherit' // greyed placeholder
+                  color: field.value === '' ? '#aaa' : 'inherit',
+                  fontFamily: '"Inter", sans-serif !important'
                 }
               }}
             >
               <MenuItem value="" disabled>
-                Place of residence
+                {t('opt2')}
               </MenuItem>
               <MenuItem value="Berlin">Berlin</MenuItem>
               <MenuItem value="Hamburg">Hamburg</MenuItem>
@@ -214,7 +219,7 @@ export function DrivingLicenseForm() {
         name="phone"
         control={control}
         rules={{
-          required: 'Phone number is required',
+          required: `${t('err3')}`,
           pattern: {
             value: /^[0-9]{10,12}$/, // adjust according to your needs
             message: 'Enter a valid phone number'
@@ -223,7 +228,7 @@ export function DrivingLicenseForm() {
         render={({field}) => (
           <TextField
             // label="Phone number"
-            placeholder="Phone number"
+            placeholder={t('opt3')}
             type="tel"
             {...field}
             fullWidth
@@ -236,19 +241,22 @@ export function DrivingLicenseForm() {
                 height: '100%',
                 fontSize: '14px',
                 padding: '12px',
-                borderRadius: '10px'
+                borderRadius: '10px',
+                fontFamily: '"Inter", sans-serif !important'
               },
               '& .MuiOutlinedInput-notchedOutline': {
                 borderRadius: '10px'
               },
               '& .MuiInputBase-input': {
                 padding: 0,
-                fontSize: '14px'
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
                 // background: '#fff'
               },
               '& .MuiInputLabel-root': {
                 top: '-6px',
-                fontSize: '14px'
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
               },
               '& .MuiInputLabel-shrink': {
                 top: '0px'
@@ -266,7 +274,7 @@ export function DrivingLicenseForm() {
         render={({field}) => (
           <TextField
             // label="Driving school"
-            placeholder="Driving school"
+            placeholder={t('opt4')}
             {...field}
             fullWidth
             // error={!!errors.school}
@@ -278,18 +286,21 @@ export function DrivingLicenseForm() {
                 height: '100%',
                 fontSize: '14px',
                 padding: '12px',
-                borderRadius: '10px'
+                borderRadius: '10px',
+                fontFamily: '"Inter", sans-serif !important'
               },
               '& .MuiOutlinedInput-notchedOutline': {
                 borderRadius: '10px'
               },
               '& .MuiInputBase-input': {
                 padding: 0,
-                fontSize: '14px'
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
               },
               '& .MuiInputLabel-root': {
                 top: '-6px',
-                fontSize: '14px'
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
               },
               '& .MuiInputLabel-shrink': {
                 top: '0px'
@@ -306,9 +317,12 @@ export function DrivingLicenseForm() {
         render={({field}) => (
           <FormControlLabel
             control={<Checkbox {...field} checked={field.value} />}
-            label="I want to have my foreign driving license converted."
+            label={t('check')}
             sx={{
-              ...localFont.inter14
+              '& .MuiFormControlLabel-label': {
+                ...localFont.inter14,
+                fontFamily: '"Inter", sans-serif !important'
+              }
             }}
           />
         )}
@@ -325,12 +339,14 @@ export function DrivingLicenseForm() {
           textTransform: 'none',
           py: 1.2,
           fontWeight: 600,
+          fontSize: {xs: '14px', md: '15px', lg: '16px'},
+          fontFamily: '"Inter", sans-serif !important',
           '&:hover': {
             backgroundColor: isReady ? '#3a12d1' : 'grey.700'
           }
         }}
       >
-        Continue
+        {t('button')}
       </Button>
     </Box>
   );

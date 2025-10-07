@@ -13,6 +13,8 @@ export default function Setting() {
         sx={{
           display: 'flex',
           width: '100%',
+          position: 'relative',
+          zIndex: 1,
           height: {
             xs: 'calc(100svh - 194px)',
             md: 'calc(100svh - 40px)'

@@ -28,6 +28,8 @@ export default function RightSide({
   return (
     <Box
       sx={{
+        position: 'relative',
+        zIndex: 1,
         width: '100%',
         background: '#f8fafc4d',
         border: '1px solid #fff',

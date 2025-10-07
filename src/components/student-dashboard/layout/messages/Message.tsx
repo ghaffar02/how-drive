@@ -8,9 +8,11 @@ export default function Message() {
     <Box
       sx={{
         width: '100%',
-        height: {xs: 'auto', md: '100%'},
         display: 'flex',
-        gap: '16px'
+        position: 'relative',
+        zIndex: 1,
+        gap: '16px',
+        height: {xs: 'calc(100vh - 194px)', md: '100%'}
       }}
     >
       <Notifications />

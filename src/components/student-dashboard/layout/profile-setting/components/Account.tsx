@@ -13,45 +13,31 @@ import {
   useState
 } from 'react';
 import {useTranslations} from 'next-intl';
+import {AnimatePresence, motion} from 'framer-motion';
 
 export default function Account() {
   const [openDropdown, setOpenDropdown] = useState(false);
-  const containerRef = useRef<HTMLDivElement | null>(null);
-
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const iconRef = useRef<HTMLDivElement | null>(null);
   const t = useTranslations('Dashboard.Settings.RightSide.AccountTab');
-
-  // Outside click close
-
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
-        containerRef.current &&
-        !containerRef.current.contains(event.target as Node)
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
       ) {
-        setOpenDropdown(false);
+        return;
       }
-    }
-
-    function handleKeyDown(event: KeyboardEvent) {
-      if (event.key === 'Escape') {
-        setOpenDropdown(false);
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
       }
+
+      setOpenDropdown(false);
     }
 
-    if (openDropdown) {
-      document.addEventListener('mousedown', handleClickOutside);
-      document.addEventListener('keydown', handleKeyDown);
-    } else {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleKeyDown);
-    }
-
-    // Cleanup
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, [openDropdown]);
-
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
   const formFields = t.raw('formFields');
 
   return (
@@ -228,11 +214,8 @@ export default function Account() {
           width: '100%',
           display: 'flex',
           flexDirection: {xs: 'column', lg: 'row'},
-          // flexWrap: 'wrap',
           gap: '16px',
           alignItems: 'start'
-          // justifyContent: 'space-between'
-          // mb: '12px'
         }}
       >
         <Box sx={{width: '100%', p: '4px'}}>
@@ -257,7 +240,7 @@ export default function Account() {
           </Typography>
         </Box>
         <Box
-          ref={containerRef}
+          ref={iconRef}
           sx={{
             width: {xs: '100%', lg: '68%'},
             p: '4px',
@@ -265,35 +248,79 @@ export default function Account() {
             gap: '10px',
             alignItems: 'center',
             justifyContent: 'flex-end'
-            // justifyContent: 'space-between'
           }}
         >
           <Box sx={{position: 'relative'}}>
             <CustomButton
-              label="Delete account"
+              label={t('btn3')}
               bgColor="rgb(220, 38, 38)"
               hoverColor="#991919"
               onClick={() => setOpenDropdown((prev) => !prev)} // toggle
             />
 
-            {openDropdown && (
-              <Box
-                sx={{
-                  position: 'absolute',
-                  bottom: '100%',
-                  // left: {xs: '10%', sm: 'unset'},
-                  right: {xs: '-20%', sm: 0},
-                  mb: '8px',
-                  width: {xs: '283px', sm: '333px'},
-                  zIndex: 10
-                }}
-              >
-                <CustomCard
-                  text=" Do you really want to delete your account?"
-                  onClose={() => setOpenDropdown(false)}
-                />
-              </Box>
-            )}
+            <AnimatePresence>
+              {openDropdown && (
+                <Box
+                  component={motion.div}
+                  initial={{
+                    opacity: 0,
+                    scale: 0.5,
+                    y: 70,
+                    x: 20,
+                    originX: 1,
+                    originY: 0
+                  }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    x: 0,
+                    originX: 1,
+                    originY: 0
+                  }}
+                  exit={{
+                    opacity: 0,
+                    scale: 0.5,
+                    // dur: 1,
+                    y: 60,
+                    x: 20,
+                    originX: 1,
+                    originY: 0
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    type: 'spring',
+                    stiffness: 300,
+                    damping: 25
+                  }}
+                  sx={{
+                    position: 'absolute',
+                    bottom: '100%',
+                    right: {xs: '-20%', sm: 0},
+                    mb: '8px',
+                    width: {xs: '283px', sm: '333px'},
+                    zIndex: 178879,
+                    overflow: 'visible',
+                    border: '1px solid rgb(255, 255, 255)',
+                    backgroundColor: '#f0f0fa99',
+                    backdropFilter: 'blur(10px)',
+                    boxShadow: `
+    0px 0px 0px 1px rgb(255, 255, 255),
+    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+  `,
+                    borderRadius: '12px',
+                    transformOrigin: ' bottom'
+                    // overflow: 'visible'
+                  }}
+                >
+                  <CustomCard
+                    text={t('dropDown')}
+                    // onClose={() => setOpenDropdown(false)}
+                  />
+                </Box>
+              )}
+            </AnimatePresence>
           </Box>
           <CustomButton
             label={t('btn4')}
