@@ -9,11 +9,14 @@ import emailGrey from '@/assets/svgs/dashboard-student/emailGrey.svg';
 import link from '@/assets/svgs/dashboard-student/link.svg';
 import time from '@/assets/svgs/dashboard-student/time.svg';
 
+import {useTranslations} from 'next-intl';
+
 type DetailProps = {
   show: boolean;
 };
 
 export default function DetailSide({show}: DetailProps) {
+  const t = useTranslations('Dashboard.Process.detailSide');
   return (
     <Box
       sx={{
@@ -53,7 +56,7 @@ export default function DetailSide({show}: DetailProps) {
               lineHeight: '1.5em'
             }}
           >
-            Führerscheinklasse
+            {t('title1')}
           </Typography>
           <Box
             sx={{
@@ -90,12 +93,9 @@ export default function DetailSide({show}: DetailProps) {
           </Box>
         </Box>
 
-        <InfoCard title="Wohnsitz" value={show ? 'Hamburg' : '—'} />
+        <InfoCard title={t('title2')} value={show ? 'Hamburg' : '—'} />
         <Box>
-          <InfoCard
-            title="Führerscheinstelle"
-            value={show ? 'Hamburg-Mitte' : '—'}
-          />
+          <InfoCard title={t('title3')} value={show ? 'Hamburg-Mitte' : '—'} />
           <Box
             sx={{
               display: 'flex',
@@ -118,7 +118,7 @@ export default function DetailSide({show}: DetailProps) {
           </Box>
         </Box>
         <Box>
-          <InfoCard title="TÜV?" value={show ? 'Hamburg-Mitte' : '—'} />
+          <InfoCard title={t('title4')} value={show ? 'Hamburg-Mitte' : '—'} />
           <Box
             sx={{
               display: 'flex',
@@ -141,7 +141,7 @@ export default function DetailSide({show}: DetailProps) {
           </Box>
         </Box>
         <Box>
-          <InfoCard title="Fahrschule" value={show ? 'Mundsburg' : '—'} />
+          <InfoCard title={t('title5')} value={show ? 'Mundsburg' : '—'} />
           <Box
             sx={{
               display: 'flex',

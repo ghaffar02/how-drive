@@ -11,118 +11,116 @@ import checkmark from '@/assets/svgs/dashboard-student/checkmark.svg';
 import cross1 from '@/assets/svgs/dashboard-student/cross2.svg';
 import tick from '@/assets/svgs/dashboard-student/tick.svg';
 
-const fillAnimation = keyframes`0%{height:0%} 100%{height:100%}`;
-const data = [
-  {
-    id: 1,
-    title: 'Driving school registeration',
-    points:
-      '<ul><li>Choose a certified driving school.</li><li>Sign training contract with driving school.</li></ul>',
-    link: 'Find driving school',
-    width: '125px',
-    complete: true
-  },
-  {
-    id: 2,
-    title: 'Prepare documents',
-    points:
-      '<ul><li>Identity card or passport: proof of residence.</li><li>Biometric passport photo: standard format.</li><li>Eye test: Must not be older than 2 years.</li><li>First aid course: 9 teaching units.</li></ul>',
-    link: '',
-    complete: false
-  },
-  {
-    id: 3,
-    title: 'Driving license application',
-    points:
-      '<ul><li>The application for a driving license must be submitted to your responsible driving license office.</li><li>The application is submitted either through your driving school or directly to the office.</li></ul>',
-    link: `Is the driver's license office not right one for you? Let us know.`,
-    width: '260px',
-    complete: false
-  },
-  {
-    id: 4,
-    title: 'Theory lessons',
-    points:
-      '<ul><li>Raw material: 12 double lessons.</li><li>Additive material: 2-4 double lessons.</li></ul>',
-    link: 'Book an appointment at the driving school.',
-    complete: false
-  },
-  {
-    id: 5,
-    title: 'Theoretical exam',
-    points:
-      '<ul><li>At earliest 3 months before minimum age.</li><li>Approx. 30 questions in multiple-choice format.</li><li>Max. 10 penalty points allowed</li><li>Approved by TÜV or DEKRA.</li></ul>',
-    link: 'Communicate the date of the exam.',
-    complete: false
-  },
-  {
-    id: 6,
-    title: 'Driving lessons',
-    points:
-      '<ul><li>Overland: 5 trips.</li><li>Highway: 4 trips.</li><li>Night trip: 3 trips.</li><li>In addition, there are normal practice runs.</li></ul>',
-    link: 'Book an appointment at the driving school.',
-    complete: false
-  },
-  {
-    id: 7,
-    title: 'Practical exam',
-    points:
-      '<ul><li>At earliest 1 month before minimum age.</li><li>Approx. 45 to 60 minutes.</li><li>Vehicle check, driving behavior in city, country and motorway traffic, reversing, parking, hazard assessment.</li><li>Failed: Retake only possible after 2 weeks.</li></ul>',
-    link: 'Communicate the date of the exam.',
-    complete: false
-  },
-  {
-    id: 8,
-    title: 'Issuing a driving license',
-    complete: false
-  }
-];
+import {useTranslations} from 'next-intl';
 
-const steps = [
-  {
-    id: 1,
-    title: 'Driving school registeration',
-    status: true
-  },
-  {
-    id: 2,
-    title: 'Prepare documents',
-    status: true
-  },
-  {
-    id: 3,
-    title: 'Driving license application',
-    status: true
-  },
-  {
-    id: 4,
-    title: 'Theory lessons',
-    status: true
-  },
-  {
-    id: 5,
-    title: 'Theoretical exam',
-    status: false
-  },
-  {
-    id: 6,
-    title: 'Driving lessons',
-    status: false
-  },
-  {
-    id: 7,
-    title: 'Practical exam',
-    status: false
-  },
-  {
-    id: 8,
-    title: 'Issuing a driving license',
-    status: false
-  }
-];
+const fillAnimation = keyframes`0%{height:0%} 100%{height:100%}`;
 
 export default function ProcessSteps() {
+  const t = useTranslations('Dashboard.Process.processSteps');
+
   const [open, setOpen] = useState(false);
+  const data = [
+    {
+      id: 1,
+      title: t('step1'),
+      points: t.raw('points1'),
+      link: t('des1'),
+      width: '125px',
+      complete: true
+    },
+    {
+      id: 2,
+      title: t('step2'),
+      points: t.raw('points2'),
+      link: '',
+      complete: false
+    },
+    {
+      id: 3,
+      title: t('step3'),
+      points: t.raw('points3'),
+      link: t('des3'),
+      width: '260px',
+      complete: false
+    },
+    {
+      id: 4,
+      title: t('step4'),
+      points: t.raw('points4'),
+      link: t('des4'),
+      complete: false
+    },
+    {
+      id: 5,
+      title: t('step5'),
+      points: t.raw('points5'),
+      link: t('des5'),
+      complete: false
+    },
+    {
+      id: 6,
+      title: t('step6'),
+      points: t.raw('points6'),
+      link: t('des6'),
+      complete: false
+    },
+    {
+      id: 7,
+      title: t('step7'),
+      points: t.raw('points7'),
+      link: t('des7'),
+      complete: false
+    },
+    {
+      id: 8,
+      title: t('step8'),
+      complete: false
+    }
+  ];
+
+  const steps = [
+    {
+      id: 1,
+      title: t('step1'),
+      status: true
+    },
+    {
+      id: 2,
+      title: t('step2'),
+      status: true
+    },
+    {
+      id: 3,
+      title: t('step3'),
+      status: true
+    },
+    {
+      id: 4,
+      title: t('step4'),
+      status: true
+    },
+    {
+      id: 5,
+      title: t('step5'),
+      status: false
+    },
+    {
+      id: 6,
+      title: t('step6'),
+      status: false
+    },
+    {
+      id: 7,
+      title: t('step7'),
+      status: false
+    },
+    {
+      id: 8,
+      title: t('step8'),
+      status: false
+    }
+  ];
+
   function openModal() {
     setOpen((prev) => !prev);
   }
@@ -197,11 +195,11 @@ export default function ProcessSteps() {
                 textAlign: 'center'
               }}
             >
-              Click on individual steps to mark them as completed.
+              {t('clickIconTitle')}
             </Typography>
             {/* Steps */}
             <Box sx={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
-              {steps.map((step) => (
+              {data.map((step) => (
                 <Box
                   key={step.id}
                   sx={{
@@ -210,7 +208,7 @@ export default function ProcessSteps() {
                     alignItems: 'center',
                     gap: '8px',
                     padding: '6px 16px 6px 6px',
-                    background: step.status
+                    background: step.complete
                       ? 'linear-gradient(to left, rgba(165,243,252,1), rgba(94,234,212,1))'
                       : 'linear-gradient(to right, rgba(248,250,252,1), rgba(255,255,255,1))',
                     borderRadius: '999px',
@@ -221,7 +219,7 @@ export default function ProcessSteps() {
                     sx={{
                       width: '30px',
                       height: '30px',
-                      background: step.status ? '#fff' : '#71717a',
+                      background: step.complete ? '#fff' : '#71717a',
                       borderRadius: '50%',
                       display: 'flex',
                       alignItems: 'center',
@@ -231,7 +229,7 @@ export default function ProcessSteps() {
                     <Typography
                       sx={{
                         ...localFont.inter14,
-                        color: step.status ? '#0d9488' : '#fff',
+                        color: step.complete ? '#0d9488' : '#fff',
                         fontFamily: '"Inter", sans-serif !important'
                       }}
                     >
@@ -241,7 +239,7 @@ export default function ProcessSteps() {
                   <Typography
                     sx={{
                       ...localFont.inter14,
-                      color: step.status ? '#0d9488' : '#4a5568',
+                      color: step.complete ? '#0d9488' : '#4a5568',
                       fontFamily: '"Inter", sans-serif !important'
                     }}
                   >
@@ -274,7 +272,7 @@ export default function ProcessSteps() {
                     fontFamily: '"Inter", sans-serif !important'
                   }}
                 >
-                  Cancel
+                  {t('cancelBtn')}
                 </Typography>
               </Box>
               <Box
@@ -298,7 +296,7 @@ export default function ProcessSteps() {
                     fontFamily: '"Inter", sans-serif !important'
                   }}
                 >
-                  Save
+                  {t('saveBtn')}
                 </Typography>
               </Box>
             </Box>
@@ -314,12 +312,7 @@ export default function ProcessSteps() {
             letterSpacing: '0.01em'
           }}
         >
-          Click on this icon to change the status of steps and mark them as done
-          or not. If your account is linked to a driving school, some steps will
-          be marked as completed by your driving school (e.g., if the driving
-          license application is submitted to the driving license office through
-          your driving school). Please note that the changes you make here will
-          be shown to your driving school.
+          {t('para')}
         </Typography>
       </Box>
       {/* Below Box */}
@@ -349,6 +342,7 @@ export function Steps({
   width = '190px',
   complete
 }: PropsData) {
+  const t = useTranslations('Dashboard.Process.processSteps');
   return id === 8 ? (
     <Box
       sx={{
@@ -445,7 +439,7 @@ export function Steps({
                 fontFamily: '"Inter", sans-serif !important'
               }}
             >
-              The EU driving license is issued.
+              {t('title1')}
             </Typography>
             <Typography
               sx={{
@@ -453,7 +447,7 @@ export function Steps({
                 fontFamily: '"Inter", sans-serif !important'
               }}
             >
-              Get your driving license from the driver&apos;s license office.
+              {t('title2')}
             </Typography>
           </Box>
           <Box sx={{display: 'flex', gap: '4px'}}>
@@ -464,8 +458,7 @@ export function Steps({
                 fontFamily: '"Inter", sans-serif !important'
               }}
             >
-              For BF17: No driving license, but a driving test certificate.
-              Driving is only permitted with registered accompanying persons.
+              {t('title3')}
             </Typography>
           </Box>
         </Box>
@@ -501,7 +494,7 @@ export function Steps({
                 fontFamily: '"Inter", sans-serif !important'
               }}
             >
-              Write a review about us
+              {t('btn1')}
             </Typography>
             <Image src={linkIcon} alt="linkIcon" height={16} width={16} />
           </Box>
@@ -530,7 +523,7 @@ export function Steps({
                 fontFamily: '"Inter", sans-serif !important'
               }}
             >
-              Your desire for future features
+              {t('btn2')}
             </Typography>
             <Image src={linkIcon} alt="linkIcon" height={16} width={16} />
           </Box>

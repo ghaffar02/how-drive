@@ -1981,11 +1981,7 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du dein Konto wirklich löschen?",
-          "formFields": [
-            "Notwendige",
-            "Analytics",
-            "Alle zulassen"
-          ]
+          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2024,11 +2020,62 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": [
-            "News und Update",
-            "Angebote und Werbung"
-          ]
+          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
         }
+      }
+    },
+    "Process": {
+      "detailSide": {
+        "title1": "Führerscheinklasse",
+        "title2": "Wohnsitz",
+        "title3": "Führerscheinstelle",
+        "title4": "TÜV?",
+        "title5": "Fahrschule"
+      },
+      "processform": {
+        "title": "Fülle die folgenden Informationen aus!",
+        "des": "Beim Ausfüllen der folgenden Informationen wird einen neuen Leitfaden zum Erwerb des Führerscheins erstellt. Die Verbindung einer Fahrschule ist auch später im Bereich \"Einstellungen\" möglich.",
+        "opt1": "Führerscheinklasse",
+        "opt2": "Wohnsitz",
+        "opt3": "Handynummer",
+        "opt4": "Fahrschule",
+        "check": "Ich möchte meinen ausländischen Führerschein umschreiben lassen.",
+        "button": "Weiter",
+        "err1": "Fahrerscheinklasse ist erforderlich",
+        "err2": "Wohnort ist erforderlich",
+        "err3": "Telefonnummer ist erforderlich"
+      },
+      "processSteps": {
+        "para": "Klicke auf dieses Symbol, um den Status von Schritten zu ändern und diese als erledigt zu markieren. Ist deiner Account mit einer Fahrschule verknüpft, werden einige Schritte von deiner Fahrschule als erledigt markiert (z.B. wenn der Führerscheinantrag über deine Fahrschule bei der Fahrerlaubnisbehörde eingereicht wird). Bitte beachte, dass die hier vorgenommenen Änderungen deiner Fahrschule angezeigt werden.",
+        "step1": "Anmeldung Fahrschule",
+        "des1": "Fahrschule finden",
+        "points1": "<ul><li>Wähle eine zertifizierte Fahrschule.</li><li>Unterschreibe Ausbildungsvertrag bei der Fahrschule.</li></ul>",
+        "step2": "Unterlagen vorbereiten",
+        "points2": "<ul><li>Personalausweis oder Reisepass: Nachweis des Wohnsitzes</li><li>Biometrisches Passbild: Standardformat</li><li>Sehtest: Nicht älter als 2 Jahre sein.</li><li>Erste-Hilfe-Kurs: 9 Unterrichtseinheiten.</li></ul>",
+        "step3": "Führerscheinantrag",
+        "des3": "Stimmt die Führerscheinstelle für dich nicht? Lass uns wissen.",
+        "points3": "<ul><li>Der Antrag auf Erteilung des Führerscheins muss bei deiner zuständigen Fahrerlaubnisbehörde eingereicht werden.</li><li>Der Antrag wird entweder über deine Fahrschule oder direkt bei der Behörde eingereicht.</li></ul>",
+        "step4": "Theoriestunden",
+        "des4": "Termin bei der Fahrschule buchen",
+        "points4": "<ul><li>Grundstoff: 12 Doppelstunden.</li><li>Zusatzstoff: 2-4 Doppelstunden</li></ul>",
+        "step5": "Theoretische Prüfung",
+        "des5": "Termin der Prüfung mitteilen",
+        "points5": "<ul><li>Frühestens 3 Monate vor Mindestalter.</li><li>Ca. 30 Fragen im Multiple-Choice-Format</li><li>Max. 10 Fehlerpunkte erlaubt (aber nicht 2x 5er-Fragen falsch)</li><li>Abgenommen bei TÜV oder DEKRA.</li></ul>",
+        "step6": "Fahrstunden",
+        "des6": "Termin bei der Fahrschule buchen",
+        "points6": "<ul><li>Überland: 5 Fahrten</li><li>Autobahn: 4 Fahrten.</li><li>Nachtfahrt: 3 Fahrten.</li><li>Hinzu kommen normale Übungsfahrten</li></ul>",
+        "step7": "Praktische Prüfung",
+        "des7": "Termin der Prüfung mitteilen",
+        "points7": "<ul><li>Frühestens 1 Monate vor Mindestalter</li><li>Ca. 45 bis 60 Minuten</li><li>Fahrzeugcheck, Fahrverhalten im Stadt-, Überland- und Autobahnverkehr, Rückwärtsfahren, Parken, Gefahreneinschätzung</li><li>Nicht bestanden: Wiederholung erst nach 2 Wochen</li></ul>",
+        "step8": "Erteilung des Führerscheins",
+        "title1": "Der EU-Führerschein wird ausgestellt.",
+        "title2": "Hole dir deinen Führerschein bei der Fahrerlaubnisbehörde ab.",
+        "title3": "Bei BF17: Keinen Führerschein, sondern eine Prüfungsbescheinigung. Fahren nur mit eingetragenen Begleitpersonen erlaubt.",
+        "btn1": "Rezension über uns schreiben",
+        "btn2": "Wunsch nach zukünftigen Features",
+        "cancelBtn": "Abbrechen",
+        "saveBtn": "Speichern",
+        "clickIconTitle": "Klicke auf einzelne Schritte, um diese als erledigt zu markieren."
       }
     }
   }

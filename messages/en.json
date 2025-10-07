@@ -1993,11 +1993,7 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Do you really want to delete your account?",
-          "formFields": [
-            "Necessary",
-            "Analytics",
-            "Allow all"
-          ]
+          "formFields": ["Necessary", "Analytics", "Allow all"]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2025,11 +2021,62 @@
             "News",
             "Driving license office registered"
           ],
-          "formFieldsOff": [
-            "Genereller Newsletter",
-            "Offers and advertising"
-          ]
+          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
         }
+      }
+    },
+    "Process": {
+      "detailSide": {
+        "title1": "Driving license class",
+        "title2": "Place of residence",
+        "title3": "Driving license office",
+        "title4": "TÜV?",
+        "title5": "Driving school"
+      },
+      "processform": {
+        "title": "Please fill in the following information!",
+        "des": "By filling out the following information, a new guide for obtaining a driving license will be created. Connecting a driving school is also possible later in the \"Settings\".",
+        "opt1": "Driving license class",
+        "opt2": "Place of residence",
+        "opt3": "Phone number",
+        "opt4": "Driving school",
+        "check": "I want to have my foreign driving license converted.",
+        "button": "Continue",
+        "err1": "Driving license class is required",
+        "err2": "Place of residence is required",
+        "err3": "Phone number is required"
+      },
+      "processSteps": {
+        "para": "Click on this icon to change the status of steps and mark them as done or not. If your account is linked to a driving school, some steps will be marked as completed by your driving school (e.g., if the driving license application is submitted to the driving license office through your driving school). Please note that the changes you make here will be shown to your driving school.",
+        "step1": "Driving school registeration",
+        "des1": "Find driving school",
+        "points1": "<ul><li>Choose a certified driving school.</li><li>Sign training contract with driving school.</li></ul>",
+        "step2": "Prepare documents",
+        "points2": "<ul><li>Identity card or passport: proof of residence.</li><li>Biometric passport photo: standard format.</li><li>Eye test: Must not be older than 2 years.</li><li>First aid course: 9 teaching units.</li></ul>",
+        "step3": "Driving license application",
+        "des3": "Is the driver's license office not right one for you? Let us know.",
+        "points3": "<ul><li>The application for a driving license must be submitted to your responsible driving license office.</li><li>The application is submitted either through your driving school or directly to the office.</li></ul>",
+        "step4": "Theory lessons",
+        "des4": "Book an appointment at the driving school",
+        "points4": "<ul><li>Raw material: 12 double lessons.</li><li>Additive material: 2-4 double lessons.</li></ul>",
+        "step5": "Theoretical exam",
+        "des5": "Communicate the date of the exam",
+        "points5": "<ul><li>At earliest 3 months before minimum age.</li><li>Approx. 30 questions in multiple-choice format.</li><li>Max. 10 penalty points allowed</li><li>Approved by TÜV or DEKRA.</li></ul>",
+        "step6": "Driving lessons",
+        "des6": "Book an appointment at the driving school",
+        "points6": "<ul><li>Overland: 5 trips.</li><li>Highway: 4 trips.</li><li>Night trip: 3 trips.</li><li>In addition, there are normal practice runs.</li></ul>",
+        "step7": "Practical exam",
+        "des7": "Communicate the date of the exam",
+        "points7": "<ul><li>At earliest 1 month before minimum age.</li><li>Approx. 45 to 60 minutes.</li><li>Vehicle check, driving behavior in city, country and motorway traffic, reversing, parking, hazard assessment.</li><li>Failed: Retake only possible after 2 weeks.</li></ul>",
+        "step8": "Issuing a driving license",
+        "title1": "The EU driving license is issued.",
+        "title2": "Get your driving license from the driver's license office.",
+        "title3": "For BF17: No driving license, but a driving test certificate. Driving is only permitted with registered accompanying persons.",
+        "btn1": "Write a review about us",
+        "btn2": "Your desire for future features",
+        "cancelBtn": "Cancel",
+        "saveBtn": "Save",
+        "clickIconTitle": "Click on individual steps to mark them as completed."
       }
     }
   }

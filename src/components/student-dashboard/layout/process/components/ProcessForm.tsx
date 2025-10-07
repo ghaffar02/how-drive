@@ -14,8 +14,10 @@ import {
 } from '@mui/material';
 import React, {useEffect, useState} from 'react';
 import {Controller, useForm} from 'react-hook-form';
+import {useTranslations} from 'next-intl';
 
 export default function ProcessForm() {
+  const t = useTranslations('Dashboard.Process.processform');
   return (
     <Box
       sx={{
@@ -46,7 +48,7 @@ export default function ProcessForm() {
             mb: '10px'
           }}
         >
-          Please fill in the following information!
+          {t('title')}
         </Typography>
         <Typography
           sx={{
@@ -57,9 +59,7 @@ export default function ProcessForm() {
             textAlign: 'center'
           }}
         >
-          By filling out the following information, a new guide for obtaining a
-          driving license will be created. Connecting a driving school is also
-          possible later in the &quot;Settings&quot;.
+          {t('des')}
         </Typography>
       </Box>
       <DrivingLicenseForm />
@@ -78,6 +78,7 @@ type FormValues = {
 };
 
 export function DrivingLicenseForm() {
+  const t = useTranslations('Dashboard.Process.processform');
   const {
     control,
     handleSubmit,
@@ -132,7 +133,7 @@ export function DrivingLicenseForm() {
       <Controller
         name="licenseClass"
         control={control}
-        rules={{required: 'Driving license class is required'}}
+        rules={{required: `${t('err1')}`}}
         render={({field}) => (
           <FormControl fullWidth error={!!errors.licenseClass}>
             <Select
@@ -154,7 +155,7 @@ export function DrivingLicenseForm() {
               }}
             >
               <MenuItem value="" disabled>
-                Driving license class
+                {t('opt1')}
               </MenuItem>
               <MenuItem value="B">B</MenuItem>
               <MenuItem value="BF17">BF17</MenuItem>
@@ -176,7 +177,7 @@ export function DrivingLicenseForm() {
       <Controller
         name="residence"
         control={control}
-        rules={{required: 'Place of residence is required'}}
+        rules={{required: `${t('err2')}`}}
         render={({field}) => (
           <FormControl fullWidth error={!!errors.residence}>
             <Select
@@ -196,7 +197,7 @@ export function DrivingLicenseForm() {
               }}
             >
               <MenuItem value="" disabled>
-                Place of residence
+                {t('opt2')}
               </MenuItem>
               <MenuItem value="Berlin">Berlin</MenuItem>
               <MenuItem value="Hamburg">Hamburg</MenuItem>
@@ -218,7 +219,7 @@ export function DrivingLicenseForm() {
         name="phone"
         control={control}
         rules={{
-          required: 'Phone number is required',
+          required: `${t('err3')}`,
           pattern: {
             value: /^[0-9]{10,12}$/, // adjust according to your needs
             message: 'Enter a valid phone number'
@@ -227,7 +228,7 @@ export function DrivingLicenseForm() {
         render={({field}) => (
           <TextField
             // label="Phone number"
-            placeholder="Phone number"
+            placeholder={t('opt3')}
             type="tel"
             {...field}
             fullWidth
@@ -273,7 +274,7 @@ export function DrivingLicenseForm() {
         render={({field}) => (
           <TextField
             // label="Driving school"
-            placeholder="Driving school"
+            placeholder={t('opt4')}
             {...field}
             fullWidth
             // error={!!errors.school}
@@ -316,7 +317,7 @@ export function DrivingLicenseForm() {
         render={({field}) => (
           <FormControlLabel
             control={<Checkbox {...field} checked={field.value} />}
-            label="I want to have my foreign driving license converted."
+            label={t('check')}
             sx={{
               '& .MuiFormControlLabel-label': {
                 ...localFont.inter14,
@@ -345,7 +346,7 @@ export function DrivingLicenseForm() {
           }
         }}
       >
-        Continue
+        {t('button')}
       </Button>
     </Box>
   );
