@@ -188,12 +188,13 @@ export default function Inbox() {
       <Box
         sx={{
           width: '100%',
-          padding: '24px',
+          padding: {xs: '16px', md: '24px'},
           border: '1px solid #fff',
           borderRadius: '18px',
           background: '#FAF8FE',
           display: 'flex',
           gap: '16px'
+          // height: '84px'
         }}
       >
         <Box
@@ -336,9 +337,8 @@ export default function Inbox() {
       <Box
         sx={{
           width: '100%',
-          height: '100%',
           background: '#ffffffbf',
-          padding: '24px',
+          padding: {xs: '16px', md: '24px'},
           borderRadius: '18px',
           display: 'flex',
           flexDirection: 'column',
