@@ -64,9 +64,8 @@ export default function Process() {
         display: {xs: 'block', lg: 'flex'},
         flexDirection: 'column',
         justifyContent: 'space-between',
-        boxShadow: {
-          md: 'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px'
-        }
+        boxShadow:
+          '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)'
       }}
     >
       <Typography
@@ -138,7 +137,7 @@ export default function Process() {
                 height: i == 1 ? '64px' : '62px',
                 mt: i > 1 ? `${i * 61 - 59}px` : '0px',
                 top: 40,
-                zIndex: 99999,
+                zIndex: 100,
                 borderRadius: '50%',
                 background:
                   i % 2 === 0

@@ -55,7 +55,7 @@ export default function CustomButton({
       {...rest}
     >
       {imgSrc && (
-        <Box sx={{maxWidth: '16px', height: '16px'}}>
+        <Box sx={{maxWidth: '16px', height: '16px', width: '100%'}}>
           <Image
             src={imgSrc}
             alt="icon"

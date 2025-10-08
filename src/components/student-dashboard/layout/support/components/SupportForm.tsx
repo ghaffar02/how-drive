@@ -6,6 +6,8 @@ import {useForm, Controller} from 'react-hook-form';
 import drop from '@/assets/svgs/dashboard-student/dropdown.svg';
 import Image from 'next/image';
 
+import {useTranslations} from 'next-intl';
+
 type Inputs = {
   category: string;
   details: string;
@@ -18,6 +20,7 @@ type Props = {
 };
 
 export default function SupportForm({setOpenFaq, openFaq}: Props) {
+  const t = useTranslations('Dashboard.Support');
   const {
     register,
     handleSubmit,
@@ -52,16 +55,24 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
       sx={{
         background: 'transparent',
         border: '1px solid #f8fafc',
-        borderRadius: {xs: '8px', md: '0px 24px 24px 0px'},
+        borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
+        boxShadow:
+          '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
         maxWidth: '860px',
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         gap: {xs: '20px', md: '60px'},
-        justifyContent: 'center',
-        padding: {xs: '8px', md: '24px'},
-        height: '100%'
+        justifyContent: {md: 'center'},
+        padding: {xs: '20px', md: '24px'},
+        height: {xs: 'calc(100vh - 194px)', md: '100%'},
+        overflow: 'auto',
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none',
+        '&::-webkit-scrollbar': {
+          display: 'none'
+        }
       }}
     >
       <Box
@@ -71,7 +82,7 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
             xs: 'flex',
             md: 'none'
           },
-          margin: 'auto',
+          // margin: 'auto',
           maxWidth: '80px',
           width: '100%'
           // gap: '6px'
@@ -103,7 +114,7 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
       </Box>
       <Box>
         <Typography sx={{...localFont.h6, textAlign: 'center', mb: '10px'}}>
-          Submit a new request!
+          {t('title1')}
         </Typography>
         <Typography
           sx={{
@@ -113,9 +124,7 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
             textAlign: 'center'
           }}
         >
-          Are you experiencing problems with our service or do you simply have
-          questions? Send us your request. We&apos;ll try to process it as
-          quickly as possible.
+          {t('des')}
         </Typography>
       </Box>
       <Box
@@ -138,13 +147,13 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
               fontFamily: '"Inter", sans-serif !important'
             }}
           >
-            Category
+            {t('opt1')}
           </Typography>
           <Controller
             name="category"
             control={control}
             defaultValue=""
-            rules={{required: 'Category is required'}}
+            rules={{required: t('err1')}}
             render={({field}) => (
               <TextField
                 {...field}
@@ -172,12 +181,12 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
                 }}
               >
                 <MenuItem value="" disabled>
-                  Select...
+                  {t('choice1')}
                 </MenuItem>
-                <MenuItem value="malfunction">Malfunction</MenuItem>
-                <MenuItem value="question">Question</MenuItem>
-                <MenuItem value="feedback">Feedback</MenuItem>
-                <MenuItem value="other">Other</MenuItem>
+                <MenuItem value="malfunction">{t('choice2')}</MenuItem>
+                <MenuItem value="question">{t('choice3')}</MenuItem>
+                <MenuItem value="feedback">{t('choice4')}</MenuItem>
+                <MenuItem value="other">{t('choice5')}</MenuItem>
               </TextField>
             )}
           />
@@ -189,7 +198,7 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
               fontFamily: '"Inter", sans-serif !important'
             }}
           >
-            Request details
+            {t('opt2')}
           </Typography>
           <TextField
             multiline
@@ -198,8 +207,8 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
             variant="outlined"
             error={!!errors.details}
             helperText={errors.details?.message}
-            placeholder="How can we help you?"
-            {...register('details', {required: 'Message is required'})}
+            placeholder={t('placeholder2')}
+            {...register('details', {required: t('err2')})}
             sx={{
               borderRadius: '8px',
               '& .MuiInputBase-root': {
@@ -228,7 +237,7 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
               fontFamily: '"Inter", sans-serif !important'
             }}
           >
-            Upload File
+            {t('opt3')}
           </Typography>
 
           {/* File Upload Field */}
@@ -236,7 +245,7 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
             sx={{
               border: '2px dashed #ccc',
               borderRadius: '8px',
-              p: '20px',
+              p: {xs: '12px', md: '20px'},
               textAlign: 'center',
               background: '#ffffff99',
               cursor: 'pointer',
@@ -248,12 +257,26 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
               type="file"
               id="fileInput"
               style={{display: 'none'}}
-              {...register('file', {required: 'File is required'})}
+              {...register('file', {required: t('err3')})}
             />
 
-            <Typography sx={{fontSize: '14px', color: '#666'}}>
-              Drag & drop a file here, or{' '}
-              <span style={{color: '#4615ff', fontWeight: 500}}>browse</span>
+            <Typography
+              sx={{
+                fontSize: '14px',
+                color: '#666',
+                fontFamily: '"Inter", sans-serif !important'
+              }}
+            >
+              {t('placeholder3')}{' '}
+              <span
+                style={{
+                  color: '#4615ff',
+                  fontWeight: 500,
+                  fontFamily: '"Inter", sans-serif !important'
+                }}
+              >
+                {t('browse')}
+              </span>
             </Typography>
             {watch('file')?.length > 0 && (
               <Box sx={{mt: 2}}>
@@ -288,6 +311,7 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
             fontSize: {xs: '14px', md: '15px', lg: '16px'},
             fontFamily: '"Inter", sans-serif !important',
             fontWeight: '500',
+            textTransform: 'none',
             height: '40px',
             borderRadius: '8px',
             background: '#4611f5',
@@ -299,7 +323,7 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
             }
           }}
         >
-          Send
+          {t('btn')}
         </Button>
       </Box>
     </Box>

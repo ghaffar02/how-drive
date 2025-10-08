@@ -2077,6 +2077,46 @@
         "saveBtn": "Speichern",
         "clickIconTitle": "Klicke auf einzelne Schritte, um diese als erledigt zu markieren."
       }
+    },
+    "Messages": {
+      "dropDown": {
+        "des": "Wenn du diese Nachricht löschst, wird sie aus deinem Profil auf unseren Servern gelöscht, bleibt aber für deine Fahrschule sichtbar.",
+        "title": "Möchtest du diese Nachricht wirklich löschen?",
+        "btn": "Nein",
+        "btn1": "Ja"
+      },
+      "formDropDown": {
+        "label1": "Von",
+        "placeholder": "wähle ...",
+        "option1": "Fahrschule Mundsburg",
+        "option2": "Fahrer 1 - Fabian",
+        "option3": "Fahrer 2 - Tom",
+        "label2": "An",
+        "label3": "Betreff",
+        "label4": "Nachricht",
+        "label5": "Datei hochladen",
+        "btn": "Abbrechen",
+        "btn1": "Senden "
+      }
+    },
+    "Support": {
+      "title1": "Neue Anfrage einreichen!",
+      "des": "Hast du Probleme bei unserem Service oder hast du einfach Fragen? Schicke uns deine Anfrage. Wir versuchen so schnell wie möglich sie zu verarbeiten.",
+      "opt1": "Kategorie",
+      "choice1": "wähle aus...",
+      "choice2": "Fehlfunktion",
+      "choice3": "Frage",
+      "choice4": "Feedback",
+      "choice5": "Sonstige",
+      "opt2": "Anfragedetails",
+      "placeholder2": "Wie können wir dich helfen?",
+      "opt3": "Screenshots oder Dateien hochladen",
+      "placeholder3": "Ziehe eine Datei hierher oder",
+      "browse": "durchsuchen",
+      "btn": "Schicken",
+      "err1": "Kategorie ist erforderlich",
+      "err2": "Nachricht ist erforderlich",
+      "err3": "Datei ist erforderlich"
     }
   }
 }

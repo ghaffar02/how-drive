@@ -386,15 +386,15 @@ export default function Privacy() {
                   }}
                   sx={{
                     position: 'absolute',
-                    right: {xs: '-20%', sm: 0},
+                    right: {xs: '-70%', sm: 0},
                     mt: '8px',
                     left: 'auto',
-                    width: {xs: '283px', sm: '333px'},
+                    width: {xs: '280px', sm: '302px', lg: '333px'},
                     zIndex: 33,
                     overflow: 'visible',
                     border: '1px solid rgb(255, 255, 255)',
                     backgroundColor: '#f0f0fa99',
-                    backdropFilter: 'blur(8px)',
+                    backdropFilter: 'blur(12px)',
                     // borderRadius: "12px",
                     boxShadow: `
     0px 0px 0px 1px rgb(255, 255, 255),
