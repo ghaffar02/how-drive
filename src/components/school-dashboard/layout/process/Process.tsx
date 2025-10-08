@@ -1,12 +1,11 @@
 'use client';
-import React, {useState} from 'react';
+import React from 'react';
 import {Box} from '@mui/material';
 import DetailSide from './components/DetailSide';
-import ProcessForm from './components/ProcessForm';
-import ProcessSteps from './components/ProcessSteps';
+import StudentDetail from './components/StudentDetail';
 
 export default function Process() {
-  const [show, setShow] = useState(true);
+  // const [show, setShow] = useState(true);
 
   return (
     <Box
@@ -19,8 +18,7 @@ export default function Process() {
       }}
     >
       <DetailSide />
-      <ProcessForm />
-      {/* <ProcessSteps /> */}
+      <StudentDetail />
     </Box>
   );
 }
