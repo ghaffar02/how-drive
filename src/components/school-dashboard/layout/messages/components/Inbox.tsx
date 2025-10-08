@@ -1,0 +1,541 @@
+import localFont from '@/utils/themes';
+import {Box, Menu, MenuItem, TextField, Typography} from '@mui/material';
+import Image from 'next/image';
+import React, {useEffect, useRef, useState} from 'react';
+
+import car from '@/assets/svgs/dashboard-student/car.svg';
+import printIcon from '@/assets/svgs/dashboard-student/printIcon.svg';
+import deleteIcon from '@/assets/svgs/dashboard-student/deleteIcon.svg';
+import sendIcon from '@/assets/svgs/dashboard-student/sendIcon.svg';
+import attachIcon from '@/assets/svgs/dashboard-student/attachIcon.svg';
+import dots from '@/assets/svgs/dashboard-student/dots.svg';
+
+import backIcon from '@/assets/svgs/dashboard-student/backIcon.svg';
+import deleteIcon2 from '@/assets/svgs/dashboard-student/deleteIcon2.svg';
+import copyIcon from '@/assets/svgs/dashboard-student/copyIcon.svg';
+import CustomCard from './DropDown';
+import {AnimatePresence, motion} from 'framer-motion';
+
+const messages = [
+  {
+    sender: 'system',
+    message:
+      'Every challenge you face is an opportunity to grow stronger and smarter than before.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Success does not come overnight; it comes with consistent effort and patience every single day.'
+  },
+  {
+    sender: 'system',
+    message:
+      'No matter how small the step, moving forward will always bring you closer to your goals. Every challenge you face is an opportunity to grow stronger and smarter than before.'
+  },
+  {
+    sender: 'user',
+    message:
+      'Sometimes, the most important thing you can do is simply believe in yourself when no one else does.'
+  },
+  {
+    sender: 'user',
+    message:
+      'Happiness doesn’t come from what you have, but from how you choose to see the world around you.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Failure is not the opposite of success; it’s a part of the journey that teaches you valuable lessons. Every challenge you face is an opportunity to grow stronger and smarter than before.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Your mindset determines your reality, so choose positivity even when the road feels difficult.'
+  },
+  {
+    sender: 'user',
+    message:
+      'Learning a skill takes time, but each mistake you make is a step closer to mastery.'
+  },
+  {
+    sender: 'system',
+    message:
+      'When things feel overwhelming, pause, take a deep breath, and remind yourself of how far you’ve already come. Every challenge you face is an opportunity to grow stronger and smarter than before.'
+  },
+  {
+    sender: 'user',
+    message:
+      'Discipline will take you further than motivation ever can, because it stays when motivation fades.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Opportunities rarely come announced; prepare yourself so you’re ready when they do.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Growth happens outside of your comfort zone, so don’t be afraid to take risks and try new things. Every challenge you face is an opportunity to grow stronger and smarter than before.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Every person you meet knows something you don’t — be curious, listen, and learn from them.'
+  },
+  {
+    sender: 'system',
+    message:
+      'The best investment you can ever make is in yourself — your skills, your health, and your mindset.'
+  },
+  {
+    sender: 'system',
+    message:
+      'You’ll never always be motivated, but you can train yourself to always stay consistent.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Even the longest journey begins with a single step — so take yours today without fear.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Hard work beats talent when talent doesn’t work hard, so never underestimate persistence.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Time is the most valuable resource you have, so spend it wisely on what truly matters.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Gratitude turns what you already have into enough, making life more fulfilling and joyful.'
+  },
+  {
+    sender: 'system',
+    message:
+      'Small habits practiced daily create big results over time — start with just one change today.'
+  }
+];
+
+const options = [
+  {
+    icon: backIcon,
+    title: 'Antworten'
+  },
+  {
+    icon: copyIcon,
+    title: 'Kopien'
+  },
+  {
+    icon: deleteIcon2,
+    title: 'Löschen'
+  }
+];
+
+export default function Inbox() {
+  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const open = Boolean(anchorEl);
+  const iconRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
+
+      setOpenDropdown(false);
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+  const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const date = new Date();
+  const currentDate = date.toLocaleString('de-DE', {
+    day: '2-digit',
+    month: 'long',
+    hour: '2-digit',
+    minute: '2-digit'
+  });
+  return (
+    <Box
+      sx={{
+        width: '100%',
+        padding: {xs: '8px', md: '24px'},
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '16px',
+        background: 'rgba(248,250,252,0.3)',
+        border: '1px solid #fff',
+        borderRadius: {xs: '24px', md: '0px 24px 24px 0px'}
+        // marginBottom: {xs: '65px', md: '0px'}
+      }}
+    >
+      <Box
+        sx={{
+          width: '100%',
+          padding: {xs: '16px', md: '24px'},
+          border: '1px solid #fff',
+          borderRadius: '18px',
+          background: '#FAF8FE',
+          display: 'flex',
+          gap: '16px'
+          // height: '84px'
+        }}
+      >
+        <Box
+          sx={{
+            width: '52px',
+            height: '52px',
+            background: 'rgba(70,17,245,0.1)',
+            borderRadius: '8px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}
+        >
+          <Image src={car} alt="car" height={24} width={24} />
+        </Box>
+        <Box>
+          <Typography
+            sx={{
+              ...localFont.inter18,
+              fontFamily: '"Inter", sans-serif !important',
+              fontWeight: '500',
+              lineHeight: '1.4em'
+            }}
+          >
+            Fahrschule Mundsburg
+          </Typography>
+          <Typography
+            sx={{
+              ...localFont.inter14,
+              fontFamily: '"Inter", sans-serif !important',
+              fontWeight: '400',
+              lineHeight: '1.6em'
+            }}
+          >
+            Termin deiner Theorieprüfung
+          </Typography>
+        </Box>
+        {/* Delete and Print Icon */}
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '18px',
+            marginLeft: 'auto'
+          }}
+        >
+          <Box
+            ref={iconRef}
+            sx={{
+              height: '20px',
+              width: '20px',
+              cursor: 'pointer',
+              position: 'relative'
+            }}
+          >
+            <Image
+              src={deleteIcon}
+              alt="delete"
+              style={{height: '100%', width: '100%'}}
+              onClick={() => setOpenDropdown((prev) => !prev)}
+            />
+
+            {/* <AnimatePresence mode="wait"> */}
+            {openDropdown && (
+              <Box
+                //  key="dropdown"
+                component={motion.div}
+                initial={{
+                  opacity: 0,
+                  scale: 0.5,
+                  y: -20,
+                  x: 20,
+                  originX: 1,
+                  originY: 0
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                  x: 0,
+                  originX: 1,
+                  originY: 0
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.5,
+                  // dur: 1,
+                  y: -20,
+                  x: 20,
+                  originX: 1,
+                  originY: 0
+                }}
+                transition={{
+                  duration: 0.5,
+                  type: 'spring',
+                  stiffness: 300,
+                  damping: 25
+                }}
+                sx={{
+                  position: 'absolute',
+                  // bottom: '100%',
+                  // left: {xs: '10%', sm: 'unset'},
+                  right: {xs: '-10%', sm: 0},
+                  mt: '8px',
+                  width: {xs: '283px', sm: '300px'},
+                  zIndex: 10,
+                  overflow: 'visible',
+                  border: '1px solid rgb(255, 255, 255)',
+                  backgroundColor: '#f0f0fa99',
+                  backdropFilter: 'blur(8px)',
+                  // borderRadius: "12px",
+                  boxShadow: `
+    0px 0px 0px 1px rgb(255, 255, 255),
+    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+  `,
+                  borderRadius: '12px',
+                  transformOrigin: 'top right'
+                }}
+              >
+                <CustomCard
+                  text="jhuy wmqnjq qmwjhiwu  wmfbw"
+                  onClose={() => setOpenDropdown(false)}
+                />
+              </Box>
+            )}
+            {/* <AnimatePresence/> */}
+          </Box>
+
+          <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
+            <Image
+              src={printIcon}
+              alt="print"
+              style={{height: '100%', width: '100%'}}
+            />
+          </Box>
+        </Box>
+      </Box>
+      {/* Message Box */}
+      <Box
+        sx={{
+          width: '100%',
+          background: '#ffffffbf',
+          padding: {xs: '16px', md: '24px'},
+          borderRadius: '18px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '24px',
+          overflow: 'auto',
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          },
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none'
+        }}
+      >
+        {messages.map((data, i) => (
+          <Box
+            key={i}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '6px',
+              alignItems: data.sender === 'user' ? 'flex-end' : 'flex-start'
+            }}
+          >
+            <Box sx={{display: 'flex', alignItems: 'center', gap: '4px'}}>
+              <Typography
+                sx={{
+                  ...localFont.inter14,
+                  fontWeight: '300',
+                  fontFamily: '"Inter", sans-serif !important'
+                }}
+              >
+                {currentDate}
+              </Typography>
+              {data.sender !== 'user' && (
+                <>
+                  <Box
+                    onClick={handleClick}
+                    sx={{
+                      height: '20px',
+                      width: '20px',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <Image
+                      src={dots}
+                      alt="dots"
+                      style={{height: '100%', width: '100%'}}
+                    />
+                  </Box>
+                  <Menu
+                    id="long-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    slotProps={{
+                      paper: {
+                        sx: {
+                          width: '150px',
+                          p: '8px',
+                          borderRadius: '12px',
+                          border: '1px solid #fff',
+                          boxShadow:
+                            '0px 0px 0px 1px rgb(255,255,255), 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
+                          background:
+                            'linear-gradient(145deg, rgba(227, 227, 255, 0.4) 0%, rgba(255, 240, 227, 0.4) 100%);',
+                          backdropFilter: 'blur(15px)',
+                          '& .MuiMenuItem-root': {
+                            p: 0,
+                            borderRadius: '12px'
+                          }
+                        }
+                      },
+                      list: {
+                        'aria-labelledby': 'long-button',
+                        sx: {
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '10px'
+                        }
+                      }
+                    }}
+                  >
+                    {options.map((option, i) => (
+                      <MenuItem key={i} onClick={handleClose}>
+                        <Box
+                          sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            width: '100%',
+                            padding: '8px',
+                            borderRadius: '8px',
+                            '&:hover': {
+                              backgroundColor: 'rgba(191,234,255,.5)'
+                            }
+                          }}
+                        >
+                          {/* Example: add icon or image */}
+                          <Image
+                            src={option.icon}
+                            alt={option.title}
+                            width={18}
+                            height={18}
+                          />
+                          <Typography
+                            sx={{
+                              ...localFont.inter14,
+                              fontFamily: '"Inter", sans-serif !important',
+                              color: '#1a202c'
+                            }}
+                          >
+                            {option.title}
+                          </Typography>
+                        </Box>
+                      </MenuItem>
+                    ))}
+                  </Menu>
+                </>
+              )}
+            </Box>
+            <Box
+              sx={{
+                maxWidth: '80%',
+                width: '100%',
+                padding: '12px',
+                background:
+                  data.sender === 'user'
+                    ? 'linear-gradient(to left, rgba(191,202,255,1), rgba(191,234,255,1))'
+                    : 'linear-gradient(to left, rgba(165,243,252,1), rgba(130,255,236,1))',
+                borderRadius:
+                  data.sender === 'user'
+                    ? '18px 2px 18px 18px'
+                    : '2px 18px 18px 18px'
+              }}
+            >
+              <Typography
+                sx={{
+                  ...localFont.inter14,
+                  fontWeight: '400',
+                  fontFamily: '"Inter", sans-serif !important',
+                  color: '#1a202c'
+                }}
+              >
+                {data.message}
+              </Typography>
+            </Box>
+          </Box>
+        ))}
+      </Box>
+      {/* Typing Box */}
+      <Box sx={{width: '100%', height: '48px', display: 'flex', gap: '10px'}}>
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            gap: '10px',
+            alignItems: 'center',
+            padding: '8px 16px',
+            borderRadius: '18px',
+            background: '#ffffffbf'
+          }}
+        >
+          <TextField
+            placeholder="Nachricht"
+            variant="outlined"
+            sx={{
+              flex: 1,
+              '& .MuiOutlinedInput-root': {
+                borderRadius: 0,
+                '& fieldset': {border: 'none'}, // remove border
+                '&:hover fieldset': {border: 'none'}, // remove on hover
+                '&.Mui-focused fieldset': {border: 'none'} // remove on focus
+              },
+              '& .MuiInputBase-input': {
+                height: 'auto',
+                padding: '0px'
+              }
+            }}
+          />
+          <Box sx={{height: '24px', width: '24px', cursor: 'pointer'}}>
+            <Image src={attachIcon} alt="attachIcon" height={24} width={24} />
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            height: '48px',
+            width: '48px',
+            background: 'rgba(255,255,255,0.75)',
+            borderRadius: '18px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            cursor: 'pointer'
+          }}
+        >
+          <Image src={sendIcon} alt="sendIcon" height={24} width={24} />
+        </Box>
+      </Box>
+    </Box>
+  );
+}
