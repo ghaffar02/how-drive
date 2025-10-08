@@ -389,7 +389,7 @@ export default function Privacy() {
                     right: {xs: '-70%', sm: 0},
                     mt: '8px',
                     left: 'auto',
-                    width: {xs: '280px', sm: '302px', lg: '333px'},
+                    width: {xs: '280px', sm: '322px', lg: '333px'},
                     zIndex: 33,
                     overflow: 'visible',
                     border: '1px solid rgb(255, 255, 255)',

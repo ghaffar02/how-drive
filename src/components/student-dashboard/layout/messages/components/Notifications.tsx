@@ -107,24 +107,25 @@ export default function Notifications() {
   const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const iconRef = useRef<HTMLDivElement | null>(null);
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        dropdownRef.current.contains(event.target as Node)
-      ) {
-        return;
-      }
-      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
-        return;
-      }
+  // useEffect(() => {
+  //   function handleClickOutside(event: MouseEvent) {
+  //     if (
+  //       dropdownRef.current &&
+  //       dropdownRef.current.contains(event.target as Node)
+  //     ) {
+  //       return;
+  //     }
 
-      setOpenDropdown(false);
-    }
+  //     if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+  //       return;
+  //     }
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  //     setOpenDropdown(false);
+  //   }
+
+  //   document.addEventListener('mousedown', handleClickOutside);
+  //   return () => document.removeEventListener('mousedown', handleClickOutside);
+  // }, []);
   return (
     <Box
       sx={{

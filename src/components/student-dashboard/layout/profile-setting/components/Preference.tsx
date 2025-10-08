@@ -131,13 +131,11 @@ export default function Preference() {
               select
               fullWidth
               variant="outlined"
-              value={selectedCategory} // e.g. from useState
+              value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
               SelectProps={{
                 displayEmpty: true
               }}
-              // error={!!errors.category}
-              // helperText={errors.category?.message}
               sx={{
                 background: '#ffffff99',
                 height: 40,
@@ -153,9 +151,15 @@ export default function Preference() {
                   boxShadow:
                     '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
                 },
+
                 '&:hover .MuiOutlinedInput-notchedOutline': {
-                  border: 'none !important'
+                  borderColor: '#d93c2e10'
                 },
+
+                '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':
+                  {
+                    border: ' 1px solid #3058ff'
+                  },
                 '& fieldset': {
                   borderColor: '#e2e8f00a'
                 },
@@ -169,8 +173,8 @@ export default function Preference() {
               <MenuItem value="" disabled>
                 {t('option1')}...
               </MenuItem>
-              <MenuItem value="malfunction">Malfunction</MenuItem>
-              <MenuItem value="question">Question</MenuItem>
+              <MenuItem value="german">Deutsch</MenuItem>
+              <MenuItem value="english">English</MenuItem>
             </TextField>
           </Box>
         </Box>
