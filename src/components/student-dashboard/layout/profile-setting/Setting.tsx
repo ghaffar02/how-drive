@@ -1,7 +1,7 @@
 import {Box} from '@mui/material';
 import React, {useState} from 'react';
-import Leftside from './components/Leftside';
-import RightSide from './components/RightSide';
+import Leftside from './components/LeftsideSetting';
+import RightSide from './components/RightSideSetting';
 
 export default function Setting() {
   const [activeIndex, setActiveIndex] = useState<number | 0>(0);

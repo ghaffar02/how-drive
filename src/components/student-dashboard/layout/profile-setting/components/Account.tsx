@@ -298,7 +298,7 @@ export default function Account() {
                     bottom: '100%',
                     right: {xs: '-70%', sm: 0},
                     mb: '8px',
-                    width: {xs: '280px', sm: '302px', lg: '333px'},
+                    width: {xs: '280px', sm: '322px', lg: '333px'},
                     zIndex: 178879,
                     // overflow: 'visible',
                     border: '1px solid rgb(255, 255, 255)',

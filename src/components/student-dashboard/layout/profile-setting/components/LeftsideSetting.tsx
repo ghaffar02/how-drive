@@ -68,13 +68,13 @@ export default function Leftside({
             cursor: 'pointer',
             boxShadow:
               activeIndexes === i
-                ? '0px 0px 4px 0px #4611f5'
+                ? '0px 0px 2px 0px #4611f5'
                 : '0px 0px 2px 0px #a1a1aa51',
             transition: 'all 0.3s ease',
             '&:hover': {
               boxShadow:
                 activeIndexes === i
-                  ? '0px 0px 4px 0px #4611f5'
+                  ? '0px 0px 2px 0px #4611f5'
                   : '0px 0px 2px 0px #d4d4d8',
               background: 'rgba(255, 255, 255, 0.85)'
             },

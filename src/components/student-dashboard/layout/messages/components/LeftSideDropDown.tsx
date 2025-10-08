@@ -95,13 +95,18 @@ export default function LeftSideDropDown({
             '&:hover .MuiOutlinedInput-notchedOutline': {
               border: 'none !important'
             },
+            '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':
+              {
+                border: ' 1px solid #3058ff'
+              },
             '& fieldset': {
               borderColor: '#e2e8f010'
             },
+
             '& .MuiSelect-select': {
               padding: 0,
               fontSize: '14px',
-              color: selectedCategory ? '#999' : '#999'
+              color: selectedCategory ? '#000' : '#aaa'
             },
             '&.Mui-focused ': {
               borderColor: '#3058ff',
