@@ -234,7 +234,7 @@ function Card({
                   background: '#fff',
                   padding: '16px',
                   borderRadius: '12px',
-                  zIndex: 99,
+                  zIndex: 101,
                   boxShadow: '0px 10px 20px 0px rgba(0, 0, 0, 0.05)'
                 }}
               >

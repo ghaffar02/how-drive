@@ -137,7 +137,7 @@ export default function Process() {
                 height: i == 1 ? '64px' : '62px',
                 mt: i > 1 ? `${i * 61 - 59}px` : '0px',
                 top: 40,
-                zIndex: 99999,
+                zIndex: 100,
                 borderRadius: '50%',
                 background:
                   i % 2 === 0
