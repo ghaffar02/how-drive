@@ -18,7 +18,7 @@ export default function Process() {
         gap: '16px'
       }}
     >
-      <DetailSide show={show} />
+      <DetailSide />
       <ProcessForm />
       {/* <ProcessSteps /> */}
     </Box>

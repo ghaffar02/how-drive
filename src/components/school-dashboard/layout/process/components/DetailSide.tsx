@@ -1,257 +1,481 @@
-'use client';
-import React from 'react';
+import {Box, Tab, Tabs, TextField, Typography} from '@mui/material';
+import React, {SyntheticEvent, useEffect, useRef, useState} from 'react';
+
+import Image from 'next/image';
+import searchIcon from '@/assets/svgs/dashboard-student/searchIcon.svg';
+import crossIcon from '@/assets/svgs/dashboard-student/crossicon.svg';
+
+import car from '@/assets/svgs/dashboard-student/home/car.svg';
+import fabian from '@/assets/svgs/dashboard-student/home/fabian.svg';
+import logo from '@/assets/svgs/dashboard-student/home/logo.svg';
+
+const emails = [
+  {
+    icon: car,
+    sender: 'Fahrschule',
+    date: '25.05.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: '#450ff51a'
+  },
+  {
+    icon: fabian,
+    sender: 'Fabian',
+    date: '01.06.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: '#ffa60026'
+  },
+  {
+    icon: car,
+    sender: 'Fahrschule',
+    date: '27.05.2025',
+    subject: 'Termin deiner Theorieprüfung',
+    bgcolor: 'rgba(70, 17, 245, 0.1)'
+  },
+  {
+    icon: logo,
+    sender: 'WieFührerschein',
+    date: '20.05.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: 'rgba(234, 0, 255, 0.08)'
+  },
+  {
+    icon: car,
+    sender: 'Fahrschule',
+    date: '25.05.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: '#450ff51a'
+  },
+  {
+    icon: fabian,
+    sender: 'Fabian',
+    date: '01.06.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: '#ffa60026'
+  },
+  {
+    icon: car,
+    sender: 'Fahrschule',
+    date: '27.05.2025',
+    subject: 'Termin deiner Theorieprüfung',
+    bgcolor: 'rgba(70, 17, 245, 0.1)'
+  },
+  {
+    icon: logo,
+    sender: 'WieFührerschein',
+    date: '20.05.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: 'rgba(234, 0, 255, 0.08)'
+  },
+  {
+    icon: car,
+    sender: 'Fahrschule',
+    date: '25.05.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: '#450ff51a'
+  },
+  {
+    icon: fabian,
+    sender: 'Fabian',
+    date: '01.06.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: '#ffa60026'
+  },
+  {
+    icon: car,
+    sender: 'Fahrschule',
+    date: '27.05.2025',
+    subject: 'Termin deiner Theorieprüfung',
+    bgcolor: 'rgba(70, 17, 245, 0.1)'
+  },
+  {
+    icon: logo,
+    sender: 'WieFührerschein',
+    date: '20.05.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: 'rgba(234, 0, 255, 0.08)'
+  }
+];
+
+import {AnimatePresence, motion} from 'framer-motion';
 import localFont from '@/utils/themes';
-import {Box, Typography} from '@mui/material';
-import Image, {StaticImageData} from 'next/image';
-import location from '@/assets/svgs/dashboard-student/home/location.svg';
-import phone from '@/assets/svgs/dashboard-student/phone.svg';
-import emailGrey from '@/assets/svgs/dashboard-student/emailGrey.svg';
-import link from '@/assets/svgs/dashboard-student/link.svg';
-import time from '@/assets/svgs/dashboard-student/time.svg';
+import LeftSideDropDown from './LeftSideDropDown';
 
-import {useTranslations} from 'next-intl';
+const MotionBox = motion(Box);
 
-type DetailProps = {
-  show: boolean;
-};
+export default function DetailSide() {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const iconRef = useRef<HTMLDivElement | null>(null);
+  const [value, setValue] = useState('active');
+  const handleChange = (event: SyntheticEvent, newValue: string) => {
+    setValue(newValue);
+  };
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
 
-export default function DetailSide({show}: DetailProps) {
-  const t = useTranslations('Dashboard.Process.detailSide');
+      setOpenDropdown(false);
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
   return (
     <Box
       sx={{
-        display: {xs: 'none', md: 'block'},
         minWidth: '300px',
         maxWidth: '300px',
         width: '100%',
-        // borderRadius: '10px',
-        border: '1px solid #fff',
-        p: '24px 12px',
-        bottom: '34px',
+        height: '100%',
         background: 'rgba(248,250,252,0.3)',
-        backdropFilter: 'blur(15px)',
-        boxShadow: `0px 0px 0px 1px rgb(255, 255, 255, rgb(255, 255, 255)), 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)`,
-        // transformOrigin: 'center',
-        // transition: 'all 0.3s ease-in-out',
-        // transform: show ? 'scale(1)' : 'scale(0.8)',
-        // opacity: show ? 1 : 0,
-        // maxHeight: 'calc(100vh - 84px)',
-        overflowY: 'auto',
-        // hide scrollbars
-        scrollbarWidth: 'none',
-        msOverflowStyle: 'none',
-        '&::-webkit-scrollbar': {
-          display: 'none'
-        }
+        padding: '24px 12px',
+        border: '1px solid #fff',
+        display: {xs: 'none', md: 'flex'},
+        flexDirection: 'column',
+        gap: '8px'
       }}
     >
-      {/* Content box */}
-      <Box sx={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
-        <Box sx={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
-          <Typography
-            sx={{
-              ...localFont.inter16,
-              fontWeight: '500',
-              fontFamily: '"Inter", sans-serif !important',
-              lineHeight: '1.5em'
-            }}
-          >
-            {t('title1')}
-          </Typography>
-          <Box
-            sx={{
-              padding: '8px',
-              backgroundColor: '#fff',
-              borderRadius: '8px',
-              textAlign: 'center',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '6px'
-            }}
-          >
-            <Typography
-              sx={{
-                color: '#000',
-                fontSize: '24px',
-                fontWeight: '300',
-                fontFamily: '"Inter", sans-serif !important'
-              }}
-            >
-              {show ? 'B' : '—'}
-            </Typography>
-            <Typography
-              sx={{
-                color: '#3F3F46',
-                fontSize: '14.4px',
-                fontWeight: '300',
-                fontFamily: '"Inter", sans-serif !important'
-              }}
-            >
-              {show ? '(BF17)' : ''}
-            </Typography>
-          </Box>
-        </Box>
-
-        <InfoCard title={t('title2')} value={show ? 'Hamburg' : '—'} />
-        <Box>
-          <InfoCard title={t('title3')} value={show ? 'Hamburg-Mitte' : '—'} />
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              '& > *:not(:last-child)': {
-                marginBottom: '6px'
-              },
-              marginTop: '10px'
-            }}
-          >
-            <InfoItem
-              icon={location}
-              label={show ? 'Ausschläger Weg 100' : '—'}
-            />
-            <InfoItem icon={phone} label={show ? '040/42858-0' : '—'} />
-            <InfoItem
-              icon={emailGrey}
-              label={show ? 'fuehrerschein@lbv.hamburg.de' : '—'}
-            />
-          </Box>
-        </Box>
-        <Box>
-          <InfoCard title={t('title4')} value={show ? 'Hamburg-Mitte' : '—'} />
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              '& > *:not(:last-child)': {
-                marginBottom: '6px'
-              },
-              marginTop: '10px'
-            }}
-          >
-            <InfoItem
-              icon={location}
-              label={show ? 'Ausschläger Weg 100' : '—'}
-            />
-            <InfoItem icon={phone} label={show ? '040/42858-0' : '—'} />
-            <InfoItem
-              icon={emailGrey}
-              label={show ? 'fuehrerschein@lbv.hamburg.de' : '—'}
-            />
-          </Box>
-        </Box>
-        <Box>
-          <InfoCard title={t('title5')} value={show ? 'Mundsburg' : '—'} />
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              '& > *:not(:last-child)': {
-                marginBottom: '6px'
-              },
-              marginTop: '10px'
-            }}
-          >
-            <InfoItem
-              icon={location}
-              label={show ? 'Ausschläger Weg 100' : '—'}
-            />
-            <InfoItem icon={phone} label={show ? '040/42858-0' : '—'} />
-            <InfoItem
-              icon={emailGrey}
-              label={show ? 'fuehrerschein@lbv.hamburg.de' : '—'}
-            />
-            <InfoItem
-              icon={link}
-              label={show ? 'http://mundsburg-fahrschule.de/' : '—'}
-            />
-            <InfoItem
-              icon={time}
-              label={
-                show
-                  ? 'Mo. – Do.: 12:00 – 19:00 UhrFr.: 12:00 – 16:30 Uhr'
-                  : '—'
-              }
-            />
-          </Box>
-        </Box>
-      </Box>
-    </Box>
-  );
-}
-
-type InfoCardProps = {
-  title: string;
-  value: string;
-};
-
-function InfoCard({title, value}: InfoCardProps) {
-  return (
-    <Box sx={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
-      <Typography
-        sx={{
-          ...localFont.inter16,
-          fontWeight: '500',
-          fontFamily: '"Inter", sans-serif !important'
-        }}
-      >
-        {title}
-      </Typography>
       <Box
         sx={{
-          padding: '8px',
-          backgroundColor: '#fff',
-          borderRadius: '8px',
-          textAlign: 'center',
+          width: '100%',
+          height: '62px',
+          display: 'flex',
+          gap: '10px'
+        }}
+      >
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            gap: '4px',
+            padding: '10px',
+            borderRadius: '999px',
+            height: '38px',
+            alignItems: 'center',
+            background: 'rgba(255,255,255,0.75)'
+          }}
+        >
+          <Box sx={{height: '16px', width: '16px'}}>
+            <Image
+              src={searchIcon}
+              alt="searchIcon"
+              style={{height: '100%', width: '100%'}}
+            />
+          </Box>
+          <TextField
+            placeholder="Search"
+            variant="outlined"
+            sx={{
+              flex: 1,
+              '& .MuiOutlinedInput-root': {
+                borderRadius: 0,
+                '& fieldset': {border: 'none'},
+                '&:hover fieldset': {border: 'none'},
+                '&.Mui-focused fieldset': {border: 'none'}
+              },
+              '& .MuiInputBase-input': {
+                height: 'auto',
+                padding: '0px'
+              }
+            }}
+          />
+        </Box>
+        <Box
+          ref={iconRef}
+          sx={{
+            height: '36px',
+            width: '36px',
+            background: '#ffffffbf',
+            padding: '8px',
+            borderRadius: '50%',
+            position: 'relative',
+            overflow: 'visible !important'
+            // bgcolor: '#d80909ff'
+          }}
+        >
+          <Image
+            src={crossIcon}
+            alt="addIcon"
+            height={20}
+            width={20}
+            style={{position: 'relative'}}
+            onClick={() => setOpenDropdown((prev) => !prev)}
+          />
+          <AnimatePresence>
+            {openDropdown && (
+              <Box
+                ref={dropdownRef}
+                component={motion.div}
+                initial={{
+                  opacity: 0,
+                  scale: 0.5,
+                  y: -20,
+                  x: 20,
+                  originX: 1,
+                  originY: 0
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                  x: 0,
+                  originX: 1,
+                  originY: 0
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.5,
+                  // dur: 1,
+                  y: -20,
+                  x: 20,
+                  originX: 1,
+                  originY: 0
+                }}
+                transition={{
+                  duration: 0.5,
+                  type: 'spring',
+                  stiffness: 300,
+                  damping: 25
+                }}
+                sx={{
+                  // bgcolor: '#000',
+                  position: 'absolute',
+                  zIndex: 999999999,
+                  // left: {md: 100, lg: 130, xl: 200},
+                  right: 0,
+                  mt: '20px',
+                  width: {xs: '300px'},
+                  overflow: 'visible',
+                  border: '1px solid rgb(255, 255, 255)',
+                  backgroundColor: '#f0f0fa99',
+                  backdropFilter: 'blur(8px)',
+                  // borderRadius: "12px",
+                  boxShadow: `
+    0px 0px 0px 1px rgb(255, 255, 255),
+    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+  `,
+                  borderRadius: '12px',
+                  transformOrigin: 'top right'
+                }}
+              >
+                <LeftSideDropDown />
+              </Box>
+            )}
+          </AnimatePresence>
+        </Box>
+      </Box>
+      {/* Below part of notification screen */}
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        sx={{
+          width: '100%',
+          background: '#ffffff99',
+          minHeight: 'unset',
+          height: 'auto !important',
+          padding: '4px',
+          borderRadius: '9999px',
           display: 'flex',
           alignItems: 'center',
-          justifyContent: 'center',
-          gap: '6px'
+          boxShadow: '0px 0px 2px 0px #d4d4d8',
+          overflow: 'unset',
+          '& .MuiTabs-indicator': {
+            display: 'none'
+          },
+          // 🎯 Target all Tab components
+          '& .MuiTab-root': {
+            flex: 1,
+            padding: '4px 8px',
+            borderRadius: '9999px',
+            textTransform: 'none',
+            fontSize: {xs: '12px', md: '13px', lg: '14px'},
+            fontFamily: '"Inter", sans-serif !important',
+            fontWeight: 400,
+            lineHeight: '1.6em',
+            color: '#4a5568',
+            minHeight: 'unset',
+            // height: 'unset',
+            justifyContent: 'center',
+            // '&:hover': {
+            //   background: 'rgba(0,122,255,0.1)'
+            // },
+            '&.Mui-selected': {
+              background: '#fff',
+              border: '1px solid #fff',
+              fontWeight: 500,
+              boxShadow: 'rgba(0,0,0,0.25) 0px 1px 2px 0px'
+            }
+          },
+          '& .MuiTabs-scroller': {
+            overflow: 'unset !important'
+          }
+        }}
+      >
+        <Tab value="active" label="Aktiv" />
+        <Tab value="inactive" label="Inaktiv" />
+      </Tabs>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirction: 'column',
+          alignItems: 'center',
+          height: '100%'
         }}
       >
         <Typography
           sx={{
             ...localFont.inter16,
-            fontFamily: '"Inter", sans-serif !important'
+            fontFamily: '"Inter", sans-serif !important',
+            textAlign: 'center'
           }}
         >
-          {value}
+          Klicke auf &quot;Plus-Symbol&quot;, um neue Schüler einzuladen.
         </Typography>
       </Box>
-    </Box>
-  );
-}
-
-type InfoItemProps = {
-  icon: StaticImageData;
-  label: string;
-};
-
-function InfoItem({icon, label}: InfoItemProps) {
-  return (
-    <Box
-      sx={{
-        display: 'flex',
-        alignItems: 'flex-start',
-        gap: '10px'
-      }}
-    >
-      <Image
-        style={{height: '22px', width: '22px', objectFit: 'contain'}}
-        src={icon}
-        alt={label}
-      />
-      <Typography
+      {/* Below is the part which we will show when we have the data */}
+      {/* <MotionBox
         sx={{
-          fontSize: '12px',
-          fontWeight: '400',
-          fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
-          color: '#71717A',
-          lineHeight: '20px'
+          display: 'flex',
+
+          width: '100%',
+          flexDirection: 'column',
+          gap: '10px',
+          alignItems: 'center',
+
+          // maxHeight: {xs: '188px', xl: '100%'},
+          overflow: 'auto',
+          p: '4px 2px',
+
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          },
+          msOverflowStyle: 'none',
+          scrollbarWidth: 'none'
         }}
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{duration: 0.4, delay: 0.4, ease: 'easeInOut'}}
       >
-        {label}
-      </Typography>
+        {emails.map((item, index) => {
+          return (
+            <Box
+              onClick={() => setSelectedIndex(index)}
+              key={index}
+              sx={{
+                width: '100%',
+                // maxWidth: '309px',
+                background: '#fff',
+                padding: '8px',
+                borderRadius: '8px',
+                display: 'flex',
+                flexDirection: 'row',
+                gap: '10px',
+                cursor: 'pointer',
+
+                boxShadow:
+                  selectedIndex === index
+                    ? '0px 0px 2px 0px  #3058ffff'
+                    : ' 0px 0px 2px 0px #d4d4d8ff',
+                '&:hover': {
+                  boxShadow: '0px 0px 2px 0px  #3058ffff'
+                }
+
+                //
+              }}
+            >
+              <Box
+                sx={{
+                  backgroundColor: item.bgcolor,
+                  px: '8px',
+                  borderRadius: '8px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '40px'
+                }}
+              >
+                <Box
+                  sx={{
+                    borderRadius: '999px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <Box sx={{width: '100%', maxWidth: '30px', height: '30px'}}>
+                    <Image
+                      src={item.icon}
+                      alt="car"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        textAlign: 'center',
+                        objectFit: 'contain'
+                      }}
+                    />
+                  </Box>
+                </Box>
+              </Box>
+              <Box width="100%">
+                <Box
+                  sx={{
+                    // bgcolor: '#888',
+                    width: '100%',
+                    display: 'flex',
+                    gap: '8px',
+                    alignItems: 'center',
+                    justifyContent: 'space-between'
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      ...localFont.inter14,
+                      // fontWeight: selectedIndex === index ? '700' : '400'
+                      color: selectedIndex === index ? '#000' : '#718096',
+                      fontFamily: '"Inter", sans-serif !important',
+                      fontWeight: selectedIndex === index ? '500' : '400'
+                    }}
+                  >
+                    {item.sender}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: {xs: '8.4px', md: '10px', lg: '11px'},
+                      color: selectedIndex === index ? '#000' : '#718096',
+                      fontFamily: '"Inter", sans-serif !important',
+                      fontWeight: selectedIndex === index ? '500' : '400'
+                    }}
+                  >
+                    {item.date}
+                  </Typography>
+                </Box>
+
+                <Typography
+                  sx={{
+                    // ...localFont.i,
+                    fontSize: {xs: '9.6px', md: '11px', lg: '13px'},
+                    color: '#718096',
+                    fontFamily: '"Inter", sans-serif !important',
+                    fontWeight: '400'
+                  }}
+                >
+                  {item.subject}
+                </Typography>
+              </Box>
+            </Box>
+          );
+        })}
+      </MotionBox> */}
     </Box>
   );
 }
