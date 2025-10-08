@@ -4,7 +4,7 @@ import * as React from 'react';
 import {DayPicker} from 'react-day-picker';
 import {enGB} from 'date-fns/locale';
 import 'react-day-picker/style.css';
-import styles from './mini-framer-calendar.module.css';
+import styles from './mini-calendar.module.css';
 
 export default function MiniFramerCalendar() {
   const [selected, setSelected] = React.useState<Date | undefined>(
