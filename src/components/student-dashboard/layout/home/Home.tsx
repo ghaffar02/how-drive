@@ -17,15 +17,15 @@ export default function Home() {
           maxWidth: '1300px',
           width: '100%',
           height: {xs: 'auto', lg: '100%'},
-          padding: {xs: '8px', lg: '24px'},
+          padding: {xs: '8px', md: '24px'},
           background: 'rgba(21, 31, 42, 0.3)',
           borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
           backgroundColor: 'rgba(248, 250, 252, 0.3)',
-          border: {xs: '1px solid #fff', md: 'none'},
-          boxShadow: {
-            xs: 'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
-            md: 'none'
-          },
+          border: {xs: '2px solid #fff', md: 'none'},
+          // boxShadow: {
+          //   xs: 'rgb(255, 255, 255) 1px 1px 1px 1px, rgba(0, 0, 0, 0.25) 0px 1px 1px 1px, rgba(0, 0, 0, 0.25) 1px 1px 1px 1px',
+          //   md: 'none'
+          // },
           backdropFilter: {xs: 'blur(15px)', md: 'none'},
           zIndex: '1'
         }}
@@ -34,9 +34,12 @@ export default function Home() {
           container
           sx={{height: {xs: 'auto', lg: '100%'}}}
           columnSpacing={{xs: 2, sm: 3, md: 3}}
-          rowSpacing={{xs: 2, sm: 3, md: 3, lg: 2}}
+          rowSpacing={{xs: 2, sm: 3, md: 3, lg: 3}}
         >
-          <Grid size={{xs: 6, md: 12}} sx={{height: {xs: 'auto', lg: '18%'}}}>
+          <Grid
+            size={{xs: 6, md: 12}}
+            sx={{height: {xs: 'auto', lg: '17%', xl: '19%'}}}
+          >
             <Header />
           </Grid>
           <Grid size={6} sx={{display: {xs: 'block', md: 'none'}}}>
