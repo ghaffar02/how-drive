@@ -80,10 +80,12 @@ export default function LessonCard({
       }}
     >
       {/* Icon + Title */}
+
       <Box
         sx={{
-          mt: {lg: -5},
+          mt: {lg: -2, xl: -4},
           width: '100%',
+          height: 'auto',
           display: 'flex',
           flexDirection: 'column',
           // alignItems: 'start',
