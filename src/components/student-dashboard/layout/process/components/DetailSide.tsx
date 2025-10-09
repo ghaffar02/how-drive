@@ -21,11 +21,11 @@ export default function DetailSide({show}: DetailProps) {
     <Box
       sx={{
         display: {xs: 'none', md: 'block'},
-        minWidth: '300px',
-        maxWidth: '300px',
+        minWidth: {md: '230px', lg: '300px'},
+        maxWidth: {md: '230px', lg: '300px'},
         width: '100%',
         // borderRadius: '10px',
-        border: '1px solid #fff',
+        border: '2px solid #fff',
         p: '24px 12px',
         bottom: '34px',
         background: 'rgba(248,250,252,0.3)',
@@ -237,13 +237,13 @@ function InfoItem({icon, label}: InfoItemProps) {
       }}
     >
       <Image
-        style={{height: '22px', width: '22px', objectFit: 'contain'}}
+        style={{height: '20px', width: '20px', objectFit: 'contain'}}
         src={icon}
         alt={label}
       />
       <Typography
         sx={{
-          fontSize: '12px',
+          ...localFont.inter14,
           fontWeight: '400',
           fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
           color: '#71717A',

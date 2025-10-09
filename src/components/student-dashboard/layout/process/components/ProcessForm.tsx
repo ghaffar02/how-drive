@@ -30,10 +30,10 @@ export default function ProcessForm() {
         background: 'rgba(248,250,252,0.3)',
         backdropFilter: 'blur(15px)',
         boxShadow: `0px 0px 0px 1px rgb(255, 255, 255, rgb(255, 255, 255)), 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)`,
-        height: {xs: 'fit-content', md: '100%'},
+        height: {xs: '100%', md: '100%'},
         // marginBottom: '150px',
         width: '100%',
-        border: '1px solid #fff',
+        border: '2px solid #fff',
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'}
       }}
     >
@@ -147,6 +147,8 @@ export function DrivingLicenseForm() {
                 height: '40px',
                 fontFamily: '"Inter", sans-serif !important',
                 fontSize: '14px',
+                boxShadow:
+                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
                 '& .MuiSelect-select': {
                   padding: '12px',
                   color: field.value === '' ? '#aaa' : 'inherit',
@@ -189,6 +191,8 @@ export function DrivingLicenseForm() {
                 height: '40px',
                 fontSize: '14px',
                 fontFamily: '"Inter", sans-serif !important',
+                boxShadow:
+                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
                 '& .MuiSelect-select': {
                   padding: '12px',
                   color: field.value === '' ? '#aaa' : 'inherit',
@@ -219,7 +223,7 @@ export function DrivingLicenseForm() {
         name="phone"
         control={control}
         rules={{
-          required: `${t('err3')}`,
+          // required: `${t('err3')}`,
           pattern: {
             value: /^[0-9]{10,12}$/, // adjust according to your needs
             message: 'Enter a valid phone number'
@@ -235,14 +239,17 @@ export function DrivingLicenseForm() {
             error={!!errors.phone}
             helperText={errors.phone?.message}
             sx={{
+              // height: '40px',
               borderRadius: '10px',
               '& .MuiInputBase-root': {
                 background: '#ffffff',
-                height: '100%',
+                height: '40px',
                 fontSize: '14px',
                 padding: '12px',
                 borderRadius: '10px',
-                fontFamily: '"Inter", sans-serif !important'
+                fontFamily: '"Inter", sans-serif !important',
+                boxShadow:
+                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
               },
               '& .MuiOutlinedInput-notchedOutline': {
                 borderRadius: '10px'
@@ -280,6 +287,7 @@ export function DrivingLicenseForm() {
             // error={!!errors.school}
             // helperText={errors.school?.message}
             sx={{
+              height: '40px',
               borderRadius: '10px',
               '& .MuiInputBase-root': {
                 background: '#ffffff',
@@ -287,7 +295,9 @@ export function DrivingLicenseForm() {
                 fontSize: '14px',
                 padding: '12px',
                 borderRadius: '10px',
-                fontFamily: '"Inter", sans-serif !important'
+                fontFamily: '"Inter", sans-serif !important',
+                boxShadow:
+                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
               },
               '& .MuiOutlinedInput-notchedOutline': {
                 borderRadius: '10px'
@@ -319,6 +329,17 @@ export function DrivingLicenseForm() {
             control={<Checkbox {...field} checked={field.value} />}
             label={t('check')}
             sx={{
+              margin: '0px',
+              alignItems: 'flex-start',
+              gap: '8px',
+              '& .MuiCheckbox-root': {
+                padding: '0px',
+                height: '24px',
+                width: '24px'
+              },
+              '& .MuiSvgIcon-root': {
+                fontSize: '24px' // this controls the tick box icon size
+              },
               '& .MuiFormControlLabel-label': {
                 ...localFont.inter14,
                 fontFamily: '"Inter", sans-serif !important'
@@ -337,6 +358,7 @@ export function DrivingLicenseForm() {
           borderRadius: '10px',
           color: 'white',
           textTransform: 'none',
+          height: '40px',
           py: 1.2,
           fontWeight: 600,
           fontSize: {xs: '14px', md: '15px', lg: '16px'},

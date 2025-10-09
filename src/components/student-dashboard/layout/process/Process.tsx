@@ -6,21 +6,21 @@ import ProcessForm from './components/ProcessForm';
 import ProcessSteps from './components/ProcessSteps';
 
 export default function Process() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   return (
     <Box
       sx={{
         width: '100%',
         // background: 'red',
-        height: {md: '100%'},
+        height: {xs: '100%', md: '100%'},
         display: 'flex',
         gap: '16px'
       }}
     >
       <DetailSide show={show} />
-      <ProcessForm />
-      {/* <ProcessSteps /> */}
+      {/* <ProcessForm /> */}
+      <ProcessSteps />
     </Box>
   );
 }

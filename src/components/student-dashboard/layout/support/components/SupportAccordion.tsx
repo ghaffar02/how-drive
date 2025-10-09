@@ -50,13 +50,13 @@ const SupportAccordion = ({openFaq}: InputProp) => {
         <Box
           sx={{
             position: {xs: 'absolute', md: 'relative'},
-            bgcolor: 'transparent',
-            border: '1px solid #fff',
+            bgcolor: {xs: 'rgba(240,240,250,0.6)', md: 'transparent'},
+            border: '2px solid #fff',
             borderRadius: {xs: '18px', md: '0px'},
             p: {xs: '12px', md: '24px 12px'},
             overflow: 'auto',
-            maxWidth: '300px',
-            minWidth: '300px',
+            maxWidth: {xs: '300px', md: '230px', lg: '300px'},
+            minWidth: {xs: '300px', md: '230px', lg: '300px'},
             width: '100%',
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
@@ -88,7 +88,8 @@ const SupportAccordion = ({openFaq}: InputProp) => {
                 ...localFont.inter16,
                 fontFamily: '"Inter", sans-serif !important',
                 fontWeight: '400',
-                display: {xs: 'none', md: 'block'}
+                display: {xs: 'none', md: 'block'},
+                textAlign: 'center'
               }}
             >
               {t('title')}
@@ -116,11 +117,16 @@ const SupportAccordion = ({openFaq}: InputProp) => {
                     sx={{
                       cursor: 'pointer',
                       marginBottom: '16px',
-                      borderRadius: '18px 18px 18px 2px !important',
-                      boxShadow: '0px 1px 2px rgba(0,0,0,0.25)',
+                      borderRadius: expanded.includes(index)
+                        ? '18px 18px 2px 2px !important'
+                        : '18px 18px 18px 2px !important',
+                      boxShadow: '0px 0px 2px 0px rgb(212,212,216)',
                       border: '0px solid #000000',
                       '&::before': {display: 'none'},
-                      backgroundColor: '#ffffff99'
+                      backgroundColor: '#ffffff99',
+                      '&:hover': {
+                        background: 'rgba(255,255,255,0.85)'
+                      }
                     }}
                   >
                     <AccordionSummary

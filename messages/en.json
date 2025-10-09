@@ -1993,11 +1993,7 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Do you really want to delete your account?",
-          "formFields": [
-            "Necessary",
-            "Analytics",
-            "Allow all"
-          ]
+          "formFields": ["Necessary", "Analytics", "Allow all"]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2025,10 +2021,7 @@
             "News",
             "Driving license office registered"
           ],
-          "formFieldsOff": [
-            "Genereller Newsletter",
-            "Offers and advertising"
-          ]
+          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
         }
       }
     },
@@ -2037,7 +2030,7 @@
         "title1": "Driving license class",
         "title2": "Place of residence",
         "title3": "Driving license office",
-        "title4": "TÜV?",
+        "title4": "TÜV",
         "title5": "Driving school"
       },
       "processform": {

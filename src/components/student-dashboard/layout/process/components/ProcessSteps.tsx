@@ -140,7 +140,9 @@ export default function ProcessSteps() {
         overflow: 'auto',
         '&::-webkit-scrollbar': {
           display: 'none'
-        }
+        },
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none'
       }}
     >
       <Box
