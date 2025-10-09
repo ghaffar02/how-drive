@@ -4,6 +4,7 @@ import {Box, Divider, MenuItem, TextField, Typography} from '@mui/material';
 import {ToggleSwitch} from './ToggleSwitch';
 import {useTranslations} from 'next-intl';
 import {useState} from 'react';
+import GradientDivider from '../GradientDivider';
 
 // const formFields = ['Current password', 'New password', 'repeat password'];
 export default function Preference() {
@@ -16,7 +17,7 @@ export default function Preference() {
       sx={{
         width: '100%',
         // height: '100%',
-        mt: '32px',
+        // mt: '32px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -73,14 +74,7 @@ export default function Preference() {
           <CustomButton label={t('btn2')} sx={{}} />
         </Box>
       </Box>
-      <Box width="100%">
-        <Divider
-          sx={{
-            borderImage:
-              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
-          }}
-        />
-      </Box>
+      <GradientDivider />
 
       <Box sx={{width: '100%'}}>
         <Typography
@@ -179,14 +173,7 @@ export default function Preference() {
           </Box>
         </Box>
       </Box>
-      <Box width="100%">
-        <Divider
-          sx={{
-            borderImage:
-              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
-          }}
-        />
-      </Box>
+      <GradientDivider />
 
       <Box sx={{width: '100%'}}>
         <Typography

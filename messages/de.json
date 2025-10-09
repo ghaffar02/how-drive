@@ -1980,8 +1980,12 @@
           "btn2": "Speichern",
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
-          "dropDown": "Möchtest du dein Konto wirklich löschen?",
-          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
+          "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
+          "formFields": [
+            "Notwendige",
+            "Analytics",
+            "Alle zulassen"
+          ]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2020,7 +2024,10 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
+          "formFieldsOff": [
+            "News und Update",
+            "Angebote und Werbung"
+          ]
         }
       }
     },

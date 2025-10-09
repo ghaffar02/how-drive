@@ -40,6 +40,8 @@ export default function RightSide({
   `,
         // boxShadow:
         //   '0px 0px 0px 1px #ffffff), 0px 1px 0px 0px rgba(0, 0, 0, 0.25),  0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
+        overflow: 'hidden',
+
         backdropFilter: 'blur(15px)',
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
         // borderRadius: '0px 24px 24px 0px',
@@ -62,7 +64,7 @@ export default function RightSide({
         <Box
           sx={{
             bgcolor: '#ffffff99',
-            display: 'flex',
+            display: {xs: 'flex', md: 'none'},
             p: '4px',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -101,7 +103,7 @@ export default function RightSide({
         </Box>
 
         {/* Pages */}
-        <Box>
+        <Box sx={{overflowY: 'hidden'}}>
           {activeIndex === 0 && <Account />}
           {activeIndex === 1 && <Notification />}
           {activeIndex === 2 && <Privacy />}

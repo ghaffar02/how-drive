@@ -14,6 +14,8 @@ export default function Setting() {
           display: 'flex',
           width: '100%',
           position: 'relative',
+          overflow: 'hidden',
+
           zIndex: 1,
           height: {
             xs: 'calc(100svh - 194px)',

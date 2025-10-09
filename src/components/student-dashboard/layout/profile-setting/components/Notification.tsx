@@ -1,8 +1,7 @@
 import CustomButton from '@/components/student-dashboard/CustomButton';
 import localFont from '@/utils/themes';
-import {Box, Divider, Typography} from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import {useTranslations} from 'next-intl';
-import {motion} from 'framer-motion';
 import {
   ReactElement,
   JSXElementConstructor,
@@ -11,6 +10,7 @@ import {
   Key
 } from 'react';
 import {ToggleSwitch} from './ToggleSwitch';
+import GradientDivider from '../GradientDivider';
 
 export default function Notification() {
   const t = useTranslations('Dashboard.Settings.RightSide.Notifications');
@@ -21,7 +21,7 @@ export default function Notification() {
       sx={{
         width: '100%',
         // height: '100%',
-        mt: '32px',
+        // mt: '32px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -78,14 +78,7 @@ export default function Notification() {
           <CustomButton label={t('btn2')} sx={{}} />
         </Box>
       </Box>
-      <Box width="100%">
-        <Divider
-          sx={{
-            borderImage:
-              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
-          }}
-        />
-      </Box>
+      <GradientDivider />
 
       <Box sx={{width: '100%'}}>
         <Typography
@@ -99,15 +92,8 @@ export default function Notification() {
         >
           {t('heading2')}
         </Typography>
-        <motion.div
-          initial={{rotateY: -50, opacity: 0}}
-          animate={{rotateY: 0, opacity: 1}}
-          transition={{
-            duration: 1.4,
-            delay: 0.3,
-            ease: 'easeOut'
-          }}
-          style={{
+        <Box
+          sx={{
             width: '100%',
             display: 'flex',
             flexDirection: 'column',
@@ -177,25 +163,9 @@ export default function Notification() {
               );
             }
           )}
-        </motion.div>
+        </Box>
       </Box>
-      <Box width="100%">
-        <motion.div
-          initial={{opacity: 0, y: 130}}
-          animate={{opacity: 1, y: 0}}
-          transition={{
-            duration: 0.8,
-            ease: 'easeOut'
-          }}
-        >
-          <Divider
-            sx={{
-              borderImage:
-                'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
-            }}
-          />
-        </motion.div>
-      </Box>
+      <GradientDivider />
 
       <Box sx={{width: '100%'}}>
         <Typography
