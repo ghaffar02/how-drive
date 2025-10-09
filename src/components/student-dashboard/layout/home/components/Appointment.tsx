@@ -124,7 +124,8 @@ export default function Appointment() {
                 ...localFont.inter14,
                 color: '#71717a',
                 fontFamily: '"Inter", sans-serif !important',
-                lineHeight: '1.6em'
+                lineHeight: '1.6em',
+                fontWeight: '300'
               }}
             >
               {show ? item.des : '--'}

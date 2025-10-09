@@ -52,8 +52,9 @@ export default function InfoMenuModal({open, onClose}: InfoMenuModalProps) {
           left: {xs: '28px', sm: 'unset'},
           right: {sm: '28px'},
           zIndex: '10000',
-          background:
-            'linear-gradient(150deg, rgba(248, 250, 252, 0.3) 0%, rgba(248, 250, 252, 0.3) 25%, rgba(248, 250, 252, 0.3) 50%, rgba(248, 250, 252, 0.3) 75%, rgba(248, 250, 252, 0.3) 100%) rgba(248, 250, 252, 0.3)',
+          // background:
+          //   'linear-gradient(150deg, rgba(248, 250, 252, 0.3) 0%, rgba(248, 250, 252, 0.3) 25%, rgba(248, 250, 252, 0.3) 50%, rgba(248, 250, 252, 0.3) 75%, rgba(248, 250, 252, 0.3) 100%) rgba(248, 250, 252, 0.3)',
+          background: 'rgba(240,240,250,0.6)',
           backdropFilter: 'blur(15px)',
           boxShadow: `0px 0px 0px 1px rgb(255, 255, 255, rgb(255, 255, 255)), 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)`,
           transformOrigin: 'center',
@@ -76,7 +77,8 @@ export default function InfoMenuModal({open, onClose}: InfoMenuModalProps) {
             <Typography
               sx={{
                 ...localFont.inter16,
-                fontWeight: '500'
+                fontWeight: '500',
+                fontFamily: '"Inter", sans-serif !important'
               }}
             >
               Führerscheinklasse
@@ -84,7 +86,8 @@ export default function InfoMenuModal({open, onClose}: InfoMenuModalProps) {
             <Box
               sx={{
                 padding: '8px',
-                backgroundColor: '#fff',
+                backgroundColor: '#ffffff99',
+                boxShadow: '0px 0px 2px 0px rgb(216,216,216)',
                 borderRadius: '8px',
                 textAlign: 'center',
                 display: 'flex',
@@ -94,12 +97,22 @@ export default function InfoMenuModal({open, onClose}: InfoMenuModalProps) {
               }}
             >
               <Typography
-                sx={{color: '#000', fontSize: '24px', fontWeight: '300'}}
+                sx={{
+                  color: '#000',
+                  fontSize: '24px',
+                  fontWeight: '300',
+                  fontFamily: '"Inter", sans-serif !important'
+                }}
               >
                 B
               </Typography>
               <Typography
-                sx={{color: '#3F3F46', fontSize: '14.4px', fontWeight: '300'}}
+                sx={{
+                  color: '#3F3F46',
+                  fontSize: '14.4px',
+                  fontWeight: '300',
+                  fontFamily: '"Inter", sans-serif !important'
+                }}
               >
                 (BF17)
               </Typography>
@@ -125,7 +138,7 @@ export default function InfoMenuModal({open, onClose}: InfoMenuModalProps) {
             </Box>
           </Box>
           <Box>
-            <InfoCard title="TÜV?" value="Hamburg-Mitte" />
+            <InfoCard title="TÜV" value="Hamburg-Mitte" />
             <Box
               sx={{
                 display: 'flex',
@@ -176,11 +189,19 @@ type InfoCardProps = {
 
 function InfoCard({title, value}: InfoCardProps) {
   return (
-    <Box sx={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        boxShadow: '0px 0px 2px 0px rgb(216,216,216)',
+        gap: '10px'
+      }}
+    >
       <Typography
         sx={{
           ...localFont.inter16,
-          fontWeight: '500'
+          fontWeight: '500',
+          fontFamily: '"Inter", sans-serif !important'
         }}
       >
         {title}
@@ -188,7 +209,7 @@ function InfoCard({title, value}: InfoCardProps) {
       <Box
         sx={{
           padding: '8px',
-          backgroundColor: '#fff',
+          backgroundColor: '#ffffff99',
           borderRadius: '8px',
           textAlign: 'center',
           display: 'flex',
@@ -197,7 +218,14 @@ function InfoCard({title, value}: InfoCardProps) {
           gap: '6px'
         }}
       >
-        <Typography sx={{...localFont.inter16}}>{value}</Typography>
+        <Typography
+          sx={{
+            ...localFont.inter16,
+            fontFamily: '"Inter", sans-serif !important'
+          }}
+        >
+          {value}
+        </Typography>
       </Box>
     </Box>
   );

@@ -95,7 +95,7 @@ export default function Process() {
           rowGap: {xs: '10px', md: '80px'},
           position: 'relative',
           overflow: 'hidden',
-          padding: {xs: '15px 0px', md: '20px 0px'}
+          padding: {xs: '15px 0px', md: '20px 0px 0px'}
         }}
         initial={{opacity: 0}}
         animate={{opacity: 1}}
@@ -183,7 +183,9 @@ function Card({id, title, status}: CardProps) {
         borderRadius: '999px',
         cursor: 'pointer',
         position: 'relative',
-        zIndex: 100
+        zIndex: 100,
+        boxShadow:
+          'rgba(0, 0, 0, 0.21) 0px 0.48175px 1.63795px -1.5px, rgba(0, 0, 0, 0.18) 0px 1.83083px 6.22481px -3px, rgba(0, 0, 0, 0.02) 0px 8px 27.2px -4.5px'
       }}
     >
       <Box
@@ -201,7 +203,8 @@ function Card({id, title, status}: CardProps) {
           sx={{
             ...localFont.inter14,
             color: status ? '#0d9488' : '#fff',
-            fontFamily: '"Inter", sans-serif !important'
+            fontFamily: '"Inter", sans-serif !important',
+            fontWeight: '500'
           }}
         >
           {id}
@@ -211,7 +214,8 @@ function Card({id, title, status}: CardProps) {
         sx={{
           ...localFont.inter14,
           color: status ? '#0d9488' : '#4a5568',
-          fontFamily: '"Inter", sans-serif !important'
+          fontFamily: '"Inter", sans-serif !important',
+          fontWeight: '500'
         }}
       >
         {title}
