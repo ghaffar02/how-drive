@@ -183,9 +183,8 @@ export default function ProcessSteps() {
               display: open ? 'flex' : 'none',
               flexDirection: 'column',
               gap: '24px',
-              background:
-                'linear-gradient(145deg, rgba(227, 227, 255, 0.4) 0%, rgba(255, 240, 227, 0.4) 100%)',
-              backdropFilter: 'blur(15px)',
+              background: '#f0f0fa99',
+              backdropFilter: 'blur(8px)',
               zIndex: 9,
               cursor: 'default'
             }}
@@ -214,7 +213,9 @@ export default function ProcessSteps() {
                       ? 'linear-gradient(to left, rgba(165,243,252,1), rgba(94,234,212,1))'
                       : 'linear-gradient(to right, rgba(248,250,252,1), rgba(255,255,255,1))',
                     borderRadius: '999px',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    boxShadow:
+                      'rgba(0, 0, 0, 0.21) 0px 0.48175px 1.63795px -1.5px, rgba(0, 0, 0, 0.18) 0px 1.83083px 6.22481px -3px, rgba(0, 0, 0, 0.02) 0px 8px 27.2px -4.5px'
                   }}
                 >
                   <Box
@@ -263,7 +264,8 @@ export default function ProcessSteps() {
                   background: '#dc2626',
                   borderRadius: '10px',
                   border: 'none',
-                  minWidth: '95px'
+                  minWidth: '95px',
+                  cursor: 'pointer'
                 }}
               >
                 <Image src={cross1} alt="cancel" height={16} width={16} />
@@ -287,7 +289,8 @@ export default function ProcessSteps() {
                   background: '#0d9488',
                   borderRadius: '10px',
                   border: 'none',
-                  minWidth: '95px'
+                  minWidth: '95px',
+                  cursor: 'pointer'
                 }}
               >
                 <Image src={tick} alt="save" height={16} width={16} />
