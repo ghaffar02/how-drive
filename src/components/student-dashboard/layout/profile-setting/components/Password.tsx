@@ -10,6 +10,7 @@ import {
   ReactPortal,
   Key
 } from 'react';
+import GradientDivider from '../GradientDivider';
 
 export default function Password() {
   const t = useTranslations('Dashboard.Settings.RightSide.Password');
@@ -19,7 +20,7 @@ export default function Password() {
       sx={{
         width: '100%',
         // height: '100%',
-        mt: '32px',
+        // mt: '32px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -76,14 +77,7 @@ export default function Password() {
           <CustomButton label={t('btn2')} sx={{}} />
         </Box>
       </Box>
-      <Box width="100%">
-        <Divider
-          sx={{
-            borderImage:
-              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
-          }}
-        />
-      </Box>
+      <GradientDivider />
 
       <Box sx={{width: '100%'}}>
         <Typography

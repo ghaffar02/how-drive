@@ -1992,7 +1992,7 @@
           "btn2": "Save",
           "btn3": "Export data",
           "btn4": "Learn more",
-          "dropDown": "Do you really want to delete your account?",
+          "dropDown": "Would you like to download your personal data?",
           "formFields": ["Necessary", "Analytics", "Allow all"]
         },
         "Preferen": {
