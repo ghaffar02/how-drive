@@ -11,88 +11,9 @@ import logo from '@/assets/svgs/dashboard-student/home/logo.svg';
 
 const emails = [
   {
-    icon: car,
-    sender: 'Fahrschule',
-    date: '25.05.2025',
     subject: 'Das ist das Thema der Email.',
-    bgcolor: '#450ff51a'
-  },
-  {
-    icon: fabian,
-    sender: 'Fabian',
-    date: '01.06.2025',
-    subject: 'Das ist das Thema der Email.',
-    bgcolor: '#ffa60026'
-  },
-  {
-    icon: car,
-    sender: 'Fahrschule',
-    date: '27.05.2025',
-    subject: 'Termin deiner Theorieprüfung',
-    bgcolor: 'rgba(70, 17, 245, 0.1)'
-  },
-  {
-    icon: logo,
-    sender: 'WieFührerschein',
-    date: '20.05.2025',
-    subject: 'Das ist das Thema der Email.',
-    bgcolor: 'rgba(234, 0, 255, 0.08)'
-  },
-  {
-    icon: car,
-    sender: 'Fahrschule',
-    date: '25.05.2025',
-    subject: 'Das ist das Thema der Email.',
-    bgcolor: '#450ff51a'
-  },
-  {
-    icon: fabian,
-    sender: 'Fabian',
-    date: '01.06.2025',
-    subject: 'Das ist das Thema der Email.',
-    bgcolor: '#ffa60026'
-  },
-  {
-    icon: car,
-    sender: 'Fahrschule',
-    date: '27.05.2025',
-    subject: 'Termin deiner Theorieprüfung',
-    bgcolor: 'rgba(70, 17, 245, 0.1)'
-  },
-  {
-    icon: logo,
-    sender: 'WieFührerschein',
-    date: '20.05.2025',
-    subject: 'Das ist das Thema der Email.',
-    bgcolor: 'rgba(234, 0, 255, 0.08)'
-  },
-  {
-    icon: car,
-    sender: 'Fahrschule',
-    date: '25.05.2025',
-    subject: 'Das ist das Thema der Email.',
-    bgcolor: '#450ff51a'
-  },
-  {
-    icon: fabian,
-    sender: 'Fabian',
-    date: '01.06.2025',
-    subject: 'Das ist das Thema der Email.',
-    bgcolor: '#ffa60026'
-  },
-  {
-    icon: car,
-    sender: 'Fahrschule',
-    date: '27.05.2025',
-    subject: 'Termin deiner Theorieprüfung',
-    bgcolor: 'rgba(70, 17, 245, 0.1)'
-  },
-  {
-    icon: logo,
-    sender: 'WieFührerschein',
-    date: '20.05.2025',
-    subject: 'Das ist das Thema der Email.',
-    bgcolor: 'rgba(234, 0, 255, 0.08)'
+
+    class: 'B'
   }
 ];
 
@@ -103,7 +24,8 @@ import LeftSideDropDown from './LeftSideDropDown';
 const MotionBox = motion(Box);
 
 export default function DetailSide() {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
+
   const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const iconRef = useRef<HTMLDivElement | null>(null);
@@ -129,11 +51,16 @@ export default function DetailSide() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  const handleClick = (i: number) => {
+    setActiveIndexes((prev) =>
+      prev.includes(i) ? prev.filter((idx) => idx !== i) : [...prev, i]
+    );
+  };
+
   return (
     <Box
       sx={{
-        // bgcolor: 'red',
-
         maxWidth: '300px',
         width: '100%',
         height: '100%',
@@ -199,8 +126,8 @@ export default function DetailSide() {
             padding: '8px',
             borderRadius: '50%',
             position: 'relative',
-            overflow: 'visible !important',
-            bgcolor: '#d80909ff'
+            overflow: 'visible !important'
+            // bgcolor: '#d80909ff'
           }}
         >
           <Image
@@ -325,26 +252,9 @@ export default function DetailSide() {
         <Tab value="active" label="Aktiv" />
         <Tab value="inactive" label="Inaktiv" />
       </Tabs>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirction: 'column',
-          alignItems: 'center',
-          height: '100%'
-        }}
-      >
-        <Typography
-          sx={{
-            ...localFont.inter16,
-            fontFamily: '"Inter", sans-serif !important',
-            textAlign: 'center'
-          }}
-        >
-          Klicke auf &quot;Plus-Symbol&quot;, um neue Schüler einzuladen.
-        </Typography>
-      </Box>
+
       {/* Below is the part which we will show when we have the data */}
-      {/* <MotionBox
+      <MotionBox
         sx={{
           display: 'flex',
 
@@ -367,14 +277,13 @@ export default function DetailSide() {
         animate={{opacity: 1}}
         transition={{duration: 0.4, delay: 0.4, ease: 'easeInOut'}}
       >
-        {emails.map((item, index) => {
+        {emails.map((items, i) => {
           return (
             <Box
-              onClick={() => setSelectedIndex(index)}
-              key={index}
+              key={i}
+              onClick={() => handleClick(i)}
               sx={{
                 width: '100%',
-                // maxWidth: '309px',
                 background: '#fff',
                 padding: '8px',
                 borderRadius: '8px',
@@ -382,101 +291,46 @@ export default function DetailSide() {
                 flexDirection: 'row',
                 gap: '10px',
                 cursor: 'pointer',
-
-                boxShadow:
-                  selectedIndex === index
-                    ? '0px 0px 2px 0px  #3058ffff'
-                    : ' 0px 0px 2px 0px #d4d4d8ff',
+                boxShadow: activeIndexes.includes(i)
+                  ? '0px 0px 4px 0px #4611f5'
+                  : '0px 0px 2px 0px #a1a1aa',
+                transition: 'all 0.3s ease',
                 '&:hover': {
-                  boxShadow: '0px 0px 2px 0px  #3058ffff'
+                  boxShadow: activeIndexes.includes(i)
+                    ? '0px 0px 4px 0px #4611f5'
+                    : '0px 0px 2px 0px #d4d4d8'
+                },
+                '&:hover .hoverArrow': {
+                  opacity: 1,
+                  transform: 'translateX(1px)'
+                  // transition: 'transform 0.3s ease-in-out'
                 }
-
-                //
               }}
             >
               <Box
                 sx={{
-                  backgroundColor: item.bgcolor,
-                  px: '8px',
-                  borderRadius: '8px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  height: '40px'
+                  display: 'flex',
+                  textAlign: 'center',
+                  justifyContent: 'space-between',
+                  width: '100%'
                 }}
               >
-                <Box
-                  sx={{
-                    borderRadius: '999px',
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center'
-                  }}
-                >
-                  <Box sx={{width: '100%', maxWidth: '30px', height: '30px'}}>
-                    <Image
-                      src={item.icon}
-                      alt="car"
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        textAlign: 'center',
-                        objectFit: 'contain'
-                      }}
-                    />
-                  </Box>
-                </Box>
-              </Box>
-              <Box width="100%">
-                <Box
-                  sx={{
-                    // bgcolor: '#888',
-                    width: '100%',
-                    display: 'flex',
-                    gap: '8px',
-                    alignItems: 'center',
-                    justifyContent: 'space-between'
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      ...localFont.inter14,
-                      // fontWeight: selectedIndex === index ? '700' : '400'
-                      color: selectedIndex === index ? '#000' : '#718096',
-                      fontFamily: '"Inter", sans-serif !important',
-                      fontWeight: selectedIndex === index ? '500' : '400'
-                    }}
-                  >
-                    {item.sender}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontSize: {xs: '8.4px', md: '10px', lg: '11px'},
-                      color: selectedIndex === index ? '#000' : '#718096',
-                      fontFamily: '"Inter", sans-serif !important',
-                      fontWeight: selectedIndex === index ? '500' : '400'
-                    }}
-                  >
-                    {item.date}
-                  </Typography>
-                </Box>
-
                 <Typography
                   sx={{
-                    // ...localFont.i,
-                    fontSize: {xs: '9.6px', md: '11px', lg: '13px'},
-                    color: '#718096',
+                    ...localFont.inter14,
+                    fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                    color: activeIndexes.includes(i) ? '#4611f5' : '#2d3748',
                     fontFamily: '"Inter", sans-serif !important',
-                    fontWeight: '400'
+                    fontWeight: activeIndexes.includes(i) ? '500' : '400'
                   }}
                 >
-                  {item.subject}
+                  {items.subject}
                 </Typography>
               </Box>
             </Box>
           );
         })}
-      </MotionBox> */}
+      </MotionBox>
     </Box>
   );
 }
