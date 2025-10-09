@@ -132,7 +132,8 @@ export default function DetailSide() {
   return (
     <Box
       sx={{
-        minWidth: '300px',
+        // bgcolor: 'red',
+
         maxWidth: '300px',
         width: '100%',
         height: '100%',
@@ -198,8 +199,8 @@ export default function DetailSide() {
             padding: '8px',
             borderRadius: '50%',
             position: 'relative',
-            overflow: 'visible !important'
-            // bgcolor: '#d80909ff'
+            overflow: 'visible !important',
+            bgcolor: '#d80909ff'
           }}
         >
           <Image
@@ -292,7 +293,7 @@ export default function DetailSide() {
           '& .MuiTabs-indicator': {
             display: 'none'
           },
-          // 🎯 Target all Tab components
+
           '& .MuiTab-root': {
             flex: 1,
             padding: '4px 8px',
