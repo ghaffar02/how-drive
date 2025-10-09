@@ -1,5 +1,6 @@
 'use client';
 
+import localFont from '@/utils/themes';
 import {
   Box,
   Typography,
@@ -72,24 +73,27 @@ export default function LessonCard({
         flexDirection: {xs: 'column', md: 'row'},
         alignItems: {xs: 'end', md: 'center'},
         justifyContent: 'space-between',
-        height: {xs: 'auto', lg: '100%'},
+        height: {xs: '138px', sm: 'auto', lg: '100%'},
         border: '1px solid #fff',
-        boxShadow:"0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)"
+        boxShadow:
+          '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)'
       }}
     >
       {/* Icon + Title */}
       <Box
         sx={{
+          mt: {lg: -5},
           width: '100%',
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'start',
-          justifyContent: 'start',
+          // alignItems: 'start',
+          // justifyContent: 'start',
           gap: {xs: '4px', md: '24px'}
         }}
       >
         <Typography
           sx={{
+            ...localFont.inter16,
             fontSize: {xs: '14px', md: '15px', lg: '16px'},
             fontFamily: '"Inter", sans-serif !important',
             color: '#2D3748',
@@ -112,6 +116,7 @@ export default function LessonCard({
         >
           <Typography
             sx={{
+              ...localFont.inter14,
               fontSize: {xs: '12px', md: '13px', lg: '14px'},
               fontFamily: '"Inter", sans-serif !important',
               color: '#2D3748',
@@ -121,6 +126,7 @@ export default function LessonCard({
             <Typography
               component="span"
               sx={{
+                ...localFont.inter18,
                 fontSize: {xs: '15px', md: '17px', lg: '18px'},
                 fontFamily: '"Inter", sans-serif !important',
                 color: '#07A66B',
@@ -188,6 +194,9 @@ export default function LessonCard({
               borderRadius: '50%',
               zIndex: 1,
 
+              boxShadow:
+                ' rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.08) 0px 2px 4px 0px',
+
               [`& .${circularProgressClasses.circle}`]: {
                 stroke: 'url(#circularGradient)',
                 strokeLinecap: 'round'
@@ -205,6 +214,7 @@ export default function LessonCard({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center'
+
               // borderRadius: '30px'
             }}
           >
