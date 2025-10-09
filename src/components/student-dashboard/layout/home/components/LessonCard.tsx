@@ -71,7 +71,7 @@ export default function LessonCard({
         borderRadius: '18px',
         display: 'flex',
         flexDirection: {xs: 'column', md: 'row'},
-        alignItems: {xs: 'end', md: 'center'},
+        alignItems: {xs: 'end', md: 'start'},
         justifyContent: 'space-between',
         height: {xs: '138px', sm: 'auto', lg: '100%'},
         border: '1px solid #fff',
@@ -83,7 +83,7 @@ export default function LessonCard({
 
       <Box
         sx={{
-          mt: {lg: -2, xl: -4},
+          // mt: {lg: -2, xl: -4},
           width: '100%',
           height: 'auto',
           display: 'flex',
@@ -167,6 +167,7 @@ export default function LessonCard({
               md: 'scale(1.3)',
               lg: 'scale(1.6)'
             },
+            mt: {md: 1, lg: '20px'},
             // bgcolor: '#000',
             ml: {xs: '1%', md: '-20%', lg: '-75px'}
           }}
