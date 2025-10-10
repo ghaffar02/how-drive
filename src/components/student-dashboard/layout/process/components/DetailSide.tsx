@@ -61,7 +61,7 @@ export default function DetailSide({show}: DetailProps) {
           <Box
             sx={{
               padding: '8px',
-              backgroundColor: '#fff',
+              backgroundColor: '#ffffff99',
               borderRadius: '8px',
               textAlign: 'center',
               display: 'flex',
@@ -200,7 +200,7 @@ function InfoCard({title, value}: InfoCardProps) {
       <Box
         sx={{
           padding: '8px',
-          backgroundColor: '#fff',
+          backgroundColor: '#ffffff99',
           borderRadius: '8px',
           textAlign: 'center',
           display: 'flex',

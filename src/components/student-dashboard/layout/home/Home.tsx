@@ -22,6 +22,12 @@ export default function Home() {
           borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
           backgroundColor: 'rgba(248, 250, 252, 0.3)',
           border: {xs: '2px solid #fff', md: 'none'},
+          overflowY: {md: 'auto', lg: 'unset'},
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          },
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
           // boxShadow: {
           //   xs: 'rgb(255, 255, 255) 1px 1px 1px 1px, rgba(0, 0, 0, 0.25) 0px 1px 1px 1px, rgba(0, 0, 0, 0.25) 1px 1px 1px 1px',
           //   md: 'none'
@@ -38,7 +44,7 @@ export default function Home() {
         >
           <Grid
             size={{xs: 6, md: 12}}
-            sx={{height: {xs: 'auto', lg: '17%', xl: '19%'}}}
+            sx={{height: {xs: 'auto', lg: '18%', xl: '19%'}}}
           >
             <Header />
           </Grid>

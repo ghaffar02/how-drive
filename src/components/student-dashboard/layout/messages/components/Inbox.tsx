@@ -165,12 +165,32 @@ export default function Inbox() {
     setAnchorEl(null);
   };
   const date = new Date();
-  const currentDate = date.toLocaleString('de-DE', {
-    day: '2-digit',
-    month: 'long',
-    hour: '2-digit',
-    minute: '2-digit'
-  });
+  const currentDate = date
+    .toLocaleString('de-DE', {
+      day: '2-digit',
+      month: 'long',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    })
+    .replace('um', '');
+
+  // File upload function, right now just opening selection
+  const handleFileClick = () => {
+    const input = document.getElementById('hiddenFileInput');
+    if (input) {
+      input.click();
+    }
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      console.log('Selected file:', file.name);
+      // you can also store it in state or upload it directly here
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -189,7 +209,7 @@ export default function Inbox() {
         sx={{
           width: '100%',
           padding: {xs: '16px', md: '24px'},
-          border: '1px solid #fff',
+          border: '2px solid #fff',
           borderRadius: '18px',
           background: '#FAF8FE',
           display: 'flex',
@@ -210,7 +230,13 @@ export default function Inbox() {
         >
           <Image src={car} alt="car" height={24} width={24} />
         </Box>
-        <Box>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between'
+          }}
+        >
           <Typography
             sx={{
               ...localFont.inter18,
@@ -237,7 +263,7 @@ export default function Inbox() {
           sx={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '18px',
+            gap: '14px',
             marginLeft: 'auto'
           }}
         >
@@ -305,7 +331,6 @@ export default function Inbox() {
                   border: '1px solid rgb(255, 255, 255)',
                   backgroundColor: '#f0f0fa99',
                   backdropFilter: 'blur(8px)',
-                  // borderRadius: "12px",
                   boxShadow: `
     0px 0px 0px 1px rgb(255, 255, 255),
     0px 1px 0px 0px rgba(0, 0, 0, 0.25),
@@ -339,6 +364,7 @@ export default function Inbox() {
           width: '100%',
           background: '#ffffffbf',
           padding: {xs: '16px', md: '24px'},
+          border: '2px solid #fff',
           borderRadius: '18px',
           display: 'flex',
           flexDirection: 'column',
@@ -371,92 +397,95 @@ export default function Inbox() {
               >
                 {currentDate}
               </Typography>
-              {data.sender !== 'user' && (
-                <>
-                  <Box
-                    onClick={handleClick}
-                    sx={{
-                      height: '20px',
-                      width: '20px',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    <Image
-                      src={dots}
-                      alt="dots"
-                      style={{height: '100%', width: '100%'}}
-                    />
-                  </Box>
-                  <Menu
-                    id="long-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    slotProps={{
-                      paper: {
-                        sx: {
-                          width: '150px',
-                          p: '8px',
-                          borderRadius: '12px',
-                          border: '1px solid #fff',
-                          boxShadow:
-                            '0px 0px 0px 1px rgb(255,255,255), 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
-                          background:
-                            'linear-gradient(145deg, rgba(227, 227, 255, 0.4) 0%, rgba(255, 240, 227, 0.4) 100%);',
-                          backdropFilter: 'blur(15px)',
-                          '& .MuiMenuItem-root': {
-                            p: 0,
-                            borderRadius: '12px'
-                          }
-                        }
-                      },
-                      list: {
-                        'aria-labelledby': 'long-button',
-                        sx: {
-                          display: 'flex',
-                          flexDirection: 'column',
-                          gap: '10px'
+              {/* {data.sender !== 'user' && ( */}
+              <>
+                <Box
+                  onClick={handleClick}
+                  sx={{
+                    height: '20px',
+                    width: '20px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <Image
+                    src={dots}
+                    alt="dots"
+                    style={{height: '100%', width: '100%'}}
+                  />
+                </Box>
+                <Menu
+                  id="long-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  slotProps={{
+                    paper: {
+                      sx: {
+                        width: '150px',
+                        p: '8px',
+                        borderRadius: '12px',
+                        border: '1px solid #fff',
+                        backgroundColor: '#f0f0fa99',
+                        backdropFilter: 'blur(8px)',
+                        boxShadow: `
+    0px 0px 0px 1px rgb(255, 255, 255),
+    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+  `,
+                        '& .MuiMenuItem-root': {
+                          p: 0,
+                          borderRadius: '12px'
                         }
                       }
-                    }}
-                  >
-                    {options.map((option, i) => (
-                      <MenuItem key={i} onClick={handleClose}>
-                        <Box
+                    },
+                    list: {
+                      'aria-labelledby': 'long-button',
+                      sx: {
+                        padding: '0px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '8px'
+                      }
+                    }
+                  }}
+                >
+                  {options.map((option, i) => (
+                    <MenuItem key={i} onClick={handleClose}>
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                          width: '100%',
+                          padding: '8px',
+                          borderRadius: '8px',
+                          '&:hover': {
+                            backgroundColor: 'rgba(48,88,255,.1)'
+                          }
+                        }}
+                      >
+                        {/* Example: add icon or image */}
+                        <Image
+                          src={option.icon}
+                          alt={option.title}
+                          width={18}
+                          height={18}
+                        />
+                        <Typography
                           sx={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '8px',
-                            width: '100%',
-                            padding: '8px',
-                            borderRadius: '8px',
-                            '&:hover': {
-                              backgroundColor: 'rgba(191,234,255,.5)'
-                            }
+                            ...localFont.inter14,
+                            fontFamily: '"Inter", sans-serif !important',
+                            color: '#1a202c'
                           }}
                         >
-                          {/* Example: add icon or image */}
-                          <Image
-                            src={option.icon}
-                            alt={option.title}
-                            width={18}
-                            height={18}
-                          />
-                          <Typography
-                            sx={{
-                              ...localFont.inter14,
-                              fontFamily: '"Inter", sans-serif !important',
-                              color: '#1a202c'
-                            }}
-                          >
-                            {option.title}
-                          </Typography>
-                        </Box>
-                      </MenuItem>
-                    ))}
-                  </Menu>
-                </>
-              )}
+                          {option.title}
+                        </Typography>
+                      </Box>
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </>
+              {/* )} */}
             </Box>
             <Box
               sx={{
@@ -496,6 +525,7 @@ export default function Inbox() {
             gap: '10px',
             alignItems: 'center',
             padding: '8px 16px',
+            border: '1px solid #fff',
             borderRadius: '18px',
             background: '#ffffffbf'
           }}
@@ -517,20 +547,33 @@ export default function Inbox() {
               }
             }}
           />
-          <Box sx={{height: '24px', width: '24px', cursor: 'pointer'}}>
+          <Box
+            onClick={handleFileClick}
+            sx={{height: '24px', width: '24px', cursor: 'pointer'}}
+          >
             <Image src={attachIcon} alt="attachIcon" height={24} width={24} />
           </Box>
+          {/* Input for the file */}
+          <input
+            type="file"
+            id="hiddenFileInput"
+            style={{display: 'none'}}
+            onChange={handleFileChange}
+          />
         </Box>
         <Box
           sx={{
             height: '48px',
-            width: '48px',
+            maxWidth: '48px',
+            minWidth: '48px',
+            width: '100%',
             background: 'rgba(255,255,255,0.75)',
             borderRadius: '18px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            border: '2px solid #fff'
           }}
         >
           <Image src={sendIcon} alt="sendIcon" height={24} width={24} />

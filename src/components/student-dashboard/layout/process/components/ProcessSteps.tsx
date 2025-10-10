@@ -19,6 +19,14 @@ export default function ProcessSteps() {
   const t = useTranslations('Dashboard.Process.processSteps');
 
   const [open, setOpen] = useState(false);
+  const [activeBoxes, setActiveBoxes] = useState<{[key: number]: boolean}>({});
+
+  const handleToggle = (id: number) => {
+    setActiveBoxes((prev) => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
   const data = [
     {
       id: 1,
@@ -127,8 +135,8 @@ export default function ProcessSteps() {
   return (
     <Box
       sx={{
-        width: '100%',
-        border: '1px solid #fff',
+        // width: '100%',
+        border: '2px solid #fff',
         borderRadius: {xs: '24px', md: '2px 24px 24px 2px'},
         background: 'rgba(248,250,252,0.3)',
         backdropFilter: 'blur(15px)',
@@ -137,7 +145,7 @@ export default function ProcessSteps() {
         display: 'flex',
         flexDirection: 'column',
         gap: '24px',
-        overflow: 'auto',
+        overflow: 'scroll',
         '&::-webkit-scrollbar': {
           display: 'none'
         },
@@ -171,6 +179,7 @@ export default function ProcessSteps() {
             style={{height: '100%', width: '100%'}}
           />
           <Box
+            onClick={(e) => e.stopPropagation()}
             sx={{
               position: 'absolute',
               top: 35,
@@ -200,56 +209,60 @@ export default function ProcessSteps() {
             </Typography>
             {/* Steps */}
             <Box sx={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
-              {data.map((step) => (
-                <Box
-                  key={step.id}
-                  sx={{
-                    width: 'fit-content',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    padding: '6px 16px 6px 6px',
-                    background: step.complete
-                      ? 'linear-gradient(to left, rgba(165,243,252,1), rgba(94,234,212,1))'
-                      : 'linear-gradient(to right, rgba(248,250,252,1), rgba(255,255,255,1))',
-                    borderRadius: '999px',
-                    cursor: 'pointer',
-                    boxShadow:
-                      'rgba(0, 0, 0, 0.21) 0px 0.48175px 1.63795px -1.5px, rgba(0, 0, 0, 0.18) 0px 1.83083px 6.22481px -3px, rgba(0, 0, 0, 0.02) 0px 8px 27.2px -4.5px'
-                  }}
-                >
+              {data.map((step) => {
+                const isActive = activeBoxes[step.id] || false;
+                return (
                   <Box
+                    onClick={() => handleToggle(step.id)}
+                    key={step.id}
                     sx={{
-                      width: '30px',
-                      height: '30px',
-                      background: step.complete ? '#fff' : '#71717a',
-                      borderRadius: '50%',
+                      width: 'fit-content',
                       display: 'flex',
                       alignItems: 'center',
-                      justifyContent: 'center'
+                      gap: '8px',
+                      padding: '6px 16px 6px 6px',
+                      background: isActive
+                        ? 'linear-gradient(to left, rgba(165,243,252,1), rgba(94,234,212,1))'
+                        : 'linear-gradient(to right, rgba(248,250,252,1), rgba(255,255,255,1))',
+                      borderRadius: '999px',
+                      cursor: 'pointer',
+                      boxShadow:
+                        'rgba(0, 0, 0, 0.21) 0px 0.48175px 1.63795px -1.5px, rgba(0, 0, 0, 0.18) 0px 1.83083px 6.22481px -3px, rgba(0, 0, 0, 0.02) 0px 8px 27.2px -4.5px'
                     }}
                   >
+                    <Box
+                      sx={{
+                        width: '30px',
+                        height: '30px',
+                        background: isActive ? '#fff' : '#71717a',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}
+                    >
+                      <Typography
+                        sx={{
+                          ...localFont.inter14,
+                          color: isActive ? '#0d9488' : '#fff',
+                          fontFamily: '"Inter", sans-serif !important'
+                        }}
+                      >
+                        {step.id}
+                      </Typography>
+                    </Box>
                     <Typography
                       sx={{
                         ...localFont.inter14,
-                        color: step.complete ? '#0d9488' : '#fff',
+                        color: isActive ? '#0d9488' : '#4a5568',
                         fontFamily: '"Inter", sans-serif !important'
                       }}
                     >
-                      {step.id}
+                      {step.title}
                     </Typography>
                   </Box>
-                  <Typography
-                    sx={{
-                      ...localFont.inter14,
-                      color: step.complete ? '#0d9488' : '#4a5568',
-                      fontFamily: '"Inter", sans-serif !important'
-                    }}
-                  >
-                    {step.title}
-                  </Typography>
-                </Box>
-              ))}
+                );
+              })}
             </Box>
 
             {/* Buttons */}
@@ -265,7 +278,13 @@ export default function ProcessSteps() {
                   borderRadius: '10px',
                   border: 'none',
                   minWidth: '95px',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  '&:hover': {
+                    background: 'rgb(153,25,25)'
+                  },
+                  '&:active': {
+                    background: 'rgb(82,82,91)'
+                  }
                 }}
               >
                 <Image src={cross1} alt="cancel" height={16} width={16} />
@@ -290,7 +309,13 @@ export default function ProcessSteps() {
                   borderRadius: '10px',
                   border: 'none',
                   minWidth: '95px',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  '&:hover': {
+                    background: 'rgb(12,93,86)'
+                  },
+                  '&:active': {
+                    background: 'rgb(82,82,91)'
+                  }
                 }}
               >
                 <Image src={tick} alt="save" height={16} width={16} />
@@ -470,13 +495,16 @@ export function Steps({
         <Box
           sx={{
             display: 'flex',
+            flexDirection: {xs: 'column', md: 'row'},
             justifyContent: 'center',
+            alignItems: 'center',
             padding: '4px',
             gap: '12px'
           }}
         >
           <Box
             sx={{
+              width: 'fit-content',
               cursor: 'pointer',
               padding: '12px',
               display: 'flex',
@@ -496,7 +524,8 @@ export function Steps({
             <Typography
               sx={{
                 ...localFont.inter14,
-                fontFamily: '"Inter", sans-serif !important'
+                fontFamily: '"Inter", sans-serif !important',
+                fontWeight: '500'
               }}
             >
               {t('btn1')}
@@ -506,6 +535,7 @@ export function Steps({
           {/* Second Button */}
           <Box
             sx={{
+              width: 'fit-content',
               cursor: 'pointer',
               padding: '12px',
               display: 'flex',
@@ -525,7 +555,8 @@ export function Steps({
             <Typography
               sx={{
                 ...localFont.inter14,
-                fontFamily: '"Inter", sans-serif !important'
+                fontFamily: '"Inter", sans-serif !important',
+                fontWeight: '500'
               }}
             >
               {t('btn2')}
@@ -537,7 +568,7 @@ export function Steps({
     </Box>
   ) : (
     <Box
-      sx={{display: 'flex', width: '100%', height: {xs: '470px', md: '316px'}}}
+      sx={{display: 'flex', width: '100%', height: {xs: '470px', lg: '316px'}}}
     >
       <Box
         sx={{
@@ -558,8 +589,9 @@ export function Steps({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow:
-              'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.08) 0px 2px 4px 0px'
+            boxShadow: complete
+              ? '0px 0px 0px 1px rgba(30, 245, 165, 0.25), 0px 1px 0px 0px rgba(30, 245, 165, 0.25), 0px 2px 4px 0px rgba(30, 245, 165, 0.08)'
+              : 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.08) 0px 2px 4px 0px'
           }}
         >
           <Typography
@@ -603,8 +635,9 @@ export function Steps({
               padding: '6px 16px',
               background:
                 'linear-gradient(145deg, rgba(248,250,252,1)), rgba(255,255,255,1)',
-              boxShadow:
-                'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.08) 0px 2px 4px 0px',
+              boxShadow: complete
+                ? '0px 0px 0px 1px rgba(30, 245, 165, 0.25), 0px 1px 0px 0px rgba(30, 245, 165, 0.25), 0px 2px 4px 0px rgba(30, 245, 165, 0.08)'
+                : 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.08) 0px 2px 4px 0px',
               borderRadius: '999px',
               display: 'flex',
               alignItems: 'center'
@@ -630,8 +663,9 @@ export function Steps({
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              boxShadow:
-                'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.08) 0px 2px 4px 0px'
+              boxShadow: complete
+                ? '0px 0px 0px 1px rgba(30, 245, 165, 0.25), 0px 1px 0px 0px rgba(30, 245, 165, 0.25), 0px 2px 4px 0px rgba(30, 245, 165, 0.08)'
+                : 'rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgba(0, 0, 0, 0.05) 0px 1px 0px 0px, rgba(0, 0, 0, 0.08) 0px 2px 4px 0px'
             }}
           >
             <Image
@@ -648,7 +682,7 @@ export function Steps({
             mt: '12px',
             padding: '4px',
             display: 'flex',
-            flexDirection: {xs: 'column', md: 'row'},
+            flexDirection: {xs: 'column', lg: 'row'},
             gap: '48px'
           }}
         >
@@ -699,7 +733,8 @@ export function Steps({
                 <Typography
                   sx={{
                     ...localFont.inter14,
-                    fontFamily: '"Inter", sans-serif !important'
+                    fontFamily: '"Inter", sans-serif !important',
+                    fontWeight: '500'
                   }}
                 >
                   {link}

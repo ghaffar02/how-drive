@@ -107,25 +107,25 @@ export default function Notifications() {
   const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const iconRef = useRef<HTMLDivElement | null>(null);
-  // useEffect(() => {
-  //   function handleClickOutside(event: MouseEvent) {
-  //     if (
-  //       dropdownRef.current &&
-  //       dropdownRef.current.contains(event.target as Node)
-  //     ) {
-  //       return;
-  //     }
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
 
-  //     if (iconRef.current && iconRef.current.contains(event.target as Node)) {
-  //       return;
-  //     }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
 
-  //     setOpenDropdown(false);
-  //   }
+      setOpenDropdown(false);
+    }
 
-  //   document.addEventListener('mousedown', handleClickOutside);
-  //   return () => document.removeEventListener('mousedown', handleClickOutside);
-  // }, []);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
   return (
     <Box
       sx={{
@@ -187,6 +187,7 @@ export default function Notifications() {
           />
         </Box>
         <Box
+          onClick={() => setOpenDropdown((prev) => !prev)}
           ref={iconRef}
           sx={{
             height: '36px',
@@ -212,13 +213,13 @@ export default function Notifications() {
             height={20}
             width={20}
             style={{position: 'relative'}}
-            onClick={() => setOpenDropdown((prev) => !prev)}
           />
           <AnimatePresence>
             {openDropdown && (
               <Box
                 ref={dropdownRef}
                 component={motion.div}
+                onClick={(e) => e.stopPropagation()}
                 initial={{
                   opacity: 0,
                   scale: 0.5,
@@ -287,10 +288,11 @@ export default function Notifications() {
           flexDirection: 'column',
           gap: '10px',
           alignItems: 'center',
-
           // maxHeight: {xs: '188px', xl: '100%'},
-          overflow: 'auto',
-          p: '4px 2px',
+          overflowX: 'visible',
+          overflowY: 'auto',
+          py: '1px',
+          // p: '4px 2px',
 
           '&::-webkit-scrollbar': {
             display: 'none'
@@ -308,16 +310,17 @@ export default function Notifications() {
               onClick={() => setSelectedIndex(index)}
               key={index}
               sx={{
-                width: '100%',
+                width: '99%',
                 // maxWidth: '309px',
-                background: 'rgba(255,255,255,0.75)',
+                background:
+                  selectedIndex === index ? 'rgba(255,255,255,1)' : '#ffffffb3',
                 padding: '8px',
                 borderRadius: '8px',
                 display: 'flex',
                 flexDirection: 'row',
                 gap: '10px',
                 cursor: 'pointer',
-
+                overflowX: 'visible',
                 boxShadow:
                   selectedIndex === index
                     ? '0px 0px 2px 0px  #3058ffff'
@@ -348,7 +351,14 @@ export default function Notifications() {
                     justifyContent: 'center'
                   }}
                 >
-                  <Box sx={{width: '100%', maxWidth: '30px', height: '30px'}}>
+                  <Box
+                    sx={{
+                      width: '100%',
+                      minWidth: '30px',
+                      maxWidth: '30px',
+                      height: '30px'
+                    }}
+                  >
                     <Image
                       src={item.icon}
                       alt="car"

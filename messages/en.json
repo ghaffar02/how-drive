@@ -2087,12 +2087,10 @@
         "btn1": "Yes"
       },
       "formDropDown": {
-        "label1": "From",
+        "label1": "To",
         "option1": "Fahrschule Mundsburg",
-        "option2": "Fahrer 1 - Fabian",
-        "option3": "Fahrer 2 - Tom",
+        "option2": "Fabian - Fahrer",
         "placeholder": "select ...",
-        "label2": "To",
         "label3": "Topic",
         "label4": "Message",
         "label5": "Upload file",

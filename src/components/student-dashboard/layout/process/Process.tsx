@@ -13,14 +13,14 @@ export default function Process() {
       sx={{
         width: '100%',
         // background: 'red',
-        height: {xs: '100%', md: '100%'},
-        display: 'flex',
-        gap: '16px'
+        height: {xs: 'auto', md: '100%'},
+        display: {md: 'flex'},
+        gap: {md: '16px'}
       }}
     >
       <DetailSide show={show} />
-      <ProcessForm />
-      {/* <ProcessSteps /> */}
+      {/* <ProcessForm /> */}
+      <ProcessSteps />
     </Box>
   );
 }

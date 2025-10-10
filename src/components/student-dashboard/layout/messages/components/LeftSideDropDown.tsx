@@ -83,7 +83,7 @@ export default function LeftSideDropDown({
             width: '100%',
 
             '& .MuiInputBase-root': {
-              background: '#ffffff99',
+              background: '#ffffff',
               borderRadius: '8px',
               height: '100%',
               fontSize: '14px',
@@ -118,12 +118,12 @@ export default function LeftSideDropDown({
             {t('placeholder')}
           </MenuItem>
 
-          <MenuItem value="Fahrschule Mundsburg">Fahrschule Mundsburg</MenuItem>
-          <MenuItem value="Fahrer 1 - Fabian">Fahrer 1 - Fabian</MenuItem>
-          <MenuItem value="Fahrer 2 - Tom">Fahrer 2 - Tom</MenuItem>
+          <MenuItem value="Fahrschule-Mundsburg">Fahrschule Mundsburg</MenuItem>
+          <MenuItem value="Fabian-Fahrer">Fabian - Fahrer</MenuItem>
+          {/* <MenuItem value="Fahrer 2 - Tom">Fahrer 2 - Tom</MenuItem> */}
         </TextField>
       </Box>
-      <Box
+      {/* <Box
         sx={{
           width: '100%',
           display: 'flex',
@@ -150,9 +150,10 @@ export default function LeftSideDropDown({
         </Typography>
         <CustomTextField
           // labal={items}
+          bgColor="#fff"
           sx={{textAlign: 'end', maxWidth: {lg: '403px'}}}
         />
-      </Box>
+      </Box> */}
       <Box
         sx={{
           width: '100%',
@@ -179,6 +180,7 @@ export default function LeftSideDropDown({
           {t('label3')}
         </Typography>
         <CustomTextField
+          bgColor="#fff"
           // labal={items}
           sx={{textAlign: 'end', maxWidth: {lg: '403px'}}}
         />
@@ -208,21 +210,30 @@ export default function LeftSideDropDown({
           fullWidth
           variant="outlined"
           sx={{
-            '& .MuiInputBase-root': {
+            '& .MuiOutlinedInput-root': {
               borderRadius: '8px',
-              background: '#ffffff99',
+              background: '#ffffff',
               boxShadow:
                 '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
               height: '100%',
               fontSize: '14px',
-              padding: '12px'
-            },
-            '&:hover .MuiOutlinedInput-notchedOutline': {
-              border: 'none'
-              // borderColor: 'rgba(255, 255, 0, 1)'
-            },
-            '& fieldset': {
-              borderColor: ' #e2e8f00a'
+              padding: '12px',
+
+              // Default border (none or light)
+              '& fieldset': {
+                borderColor: '#e2e8f00a'
+              },
+
+              // On hover
+              '&:hover fieldset': {
+                borderColor: '#e2e8f00a'
+              },
+
+              // ✅ On focus
+              '&.Mui-focused fieldset': {
+                borderColor: '#3850ff',
+                borderWidth: '1.5px'
+              }
             },
 
             '& .MuiInputBase-input': {
@@ -243,7 +254,7 @@ export default function LeftSideDropDown({
         <Typography
           sx={{
             ...localFont.inter14,
-            textTransform: 'capitalize',
+            textTransform: 'none',
             fontFamily: '"Inter", sans-serif !important'
           }}
         >
@@ -256,21 +267,30 @@ export default function LeftSideDropDown({
           fullWidth
           variant="outlined"
           sx={{
-            '& .MuiInputBase-root': {
+            '& .MuiOutlinedInput-root': {
               borderRadius: '8px',
-              background: '#ffffff99',
+              background: '#ffffff',
               boxShadow:
                 '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
               height: '100%',
               fontSize: '14px',
-              padding: '12px'
-            },
-            '&:hover .MuiOutlinedInput-notchedOutline': {
-              border: 'none'
-              // borderColor: 'rgba(255, 255, 0, 1)'
-            },
-            '& fieldset': {
-              borderColor: ' #e2e8f00a'
+              padding: '12px',
+
+              // Default border (none or light)
+              '& fieldset': {
+                borderColor: '#e2e8f00a'
+              },
+
+              // On hover
+              '&:hover fieldset': {
+                borderColor: '#e2e8f00a'
+              },
+
+              // ✅ On focus
+              '&.Mui-focused fieldset': {
+                borderColor: '#3850ff',
+                borderWidth: '1.5px'
+              }
             },
 
             '& .MuiInputBase-input': {
@@ -301,7 +321,7 @@ export default function LeftSideDropDown({
           sx={{
             // border: '1px solid #a1a1aaff',
             // color: '#000',
-            gap: '8px',
+            gap: '7px',
             maxWidth: '122px',
             width: '100%',
             justifyContent: 'start'
