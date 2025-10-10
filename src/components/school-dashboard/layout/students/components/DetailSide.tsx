@@ -14,6 +14,16 @@ const emails = [
     subject: 'Das ist das Thema der Email.',
 
     class: 'B'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+
+    class: 'B'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+
+    class: 'B'
   }
 ];
 
@@ -284,7 +294,9 @@ export default function DetailSide() {
               onClick={() => handleClick(i)}
               sx={{
                 width: '100%',
-                background: '#fff',
+                background: activeIndexes.includes(i)
+                  ? '#ffffff99'
+                  : '#ffffffd9',
                 padding: '8px',
                 borderRadius: '8px',
                 display: 'flex',
@@ -293,12 +305,12 @@ export default function DetailSide() {
                 cursor: 'pointer',
                 boxShadow: activeIndexes.includes(i)
                   ? '0px 0px 4px 0px #4611f5'
-                  : '0px 0px 2px 0px #a1a1aa',
+                  : '0px 0px 2px 0px #D4D4D8',
                 transition: 'all 0.3s ease',
                 '&:hover': {
                   boxShadow: activeIndexes.includes(i)
                     ? '0px 0px 4px 0px #4611f5'
-                    : '0px 0px 2px 0px #d4d4d8'
+                    : '0px 0px 2px 0px #D4D4D8'
                 },
                 '&:hover .hoverArrow': {
                   opacity: 1,
@@ -311,6 +323,7 @@ export default function DetailSide() {
                 sx={{
                   display: 'flex',
                   textAlign: 'center',
+                  flexDirection: 'column',
                   justifyContent: 'space-between',
                   width: '100%'
                 }}
@@ -318,13 +331,25 @@ export default function DetailSide() {
                 <Typography
                   sx={{
                     ...localFont.inter14,
-                    fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                    color: activeIndexes.includes(i) ? '#4611f5' : '#2d3748',
+                    textAlign: 'start',
+                    color: activeIndexes.includes(i) ? '#4611f5' : '#4A5568',
                     fontFamily: '"Inter", sans-serif !important',
                     fontWeight: activeIndexes.includes(i) ? '500' : '400'
                   }}
                 >
                   {items.subject}
+                </Typography>
+                <Typography
+                  sx={{
+                    ...localFont.inter14,
+                    textAlign: 'end',
+
+                    color: activeIndexes.includes(i) ? '#4611f5' : '#4A5568',
+                    fontFamily: '"Inter", sans-serif !important',
+                    fontWeight: activeIndexes.includes(i) ? '500' : '400'
+                  }}
+                >
+                  {items.class}
                 </Typography>
               </Box>
             </Box>

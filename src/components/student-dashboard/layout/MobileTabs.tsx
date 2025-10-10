@@ -75,7 +75,7 @@ export default function MobileTabs({
       iconHover: message_bold
     },
     {
-      key: '5',
+      key: '',
       label: 'Infos',
       iconBlack: infos_black,
       iconBlue: infos_black,

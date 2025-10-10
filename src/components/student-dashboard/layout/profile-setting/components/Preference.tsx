@@ -1,6 +1,6 @@
 import CustomButton from '@/components/student-dashboard/CustomButton';
 import localFont from '@/utils/themes';
-import {Box, Divider, MenuItem, TextField, Typography} from '@mui/material';
+import {Box, MenuItem, TextField, Typography} from '@mui/material';
 import {ToggleSwitch} from './ToggleSwitch';
 import {useTranslations} from 'next-intl';
 import {useState} from 'react';
@@ -131,7 +131,7 @@ export default function Preference() {
                 displayEmpty: true
               }}
               sx={{
-                background: '#ffffff99',
+                background: '#ffffffff',
                 height: 40,
                 maxWidth: {lg: '402px'},
                 width: '100%',
@@ -141,22 +141,18 @@ export default function Preference() {
                   height: '100%',
                   fontSize: '14px',
                   padding: '12px',
-                  borderRadius: '12px',
+                  borderRadius: '10px',
+                  fontFamily: '"Inter", sans-serif !important',
                   boxShadow:
                     '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
                 },
-
-                '&:hover .MuiOutlinedInput-notchedOutline': {
-                  borderColor: '#d93c2e10'
+                '& .MuiOutlinedInput-notchedOutline': {
+                  borderRadius: '10px'
                 },
 
-                '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':
-                  {
-                    border: ' 1px solid #3058ff'
-                  },
-                '& fieldset': {
-                  borderColor: '#e2e8f00a'
-                },
+                // '&:hover .MuiOutlinedInput-notchedOutline': {
+                //   borderColor: '#82828210'
+                // },
                 '& .MuiSelect-select': {
                   padding: 0,
                   fontSize: '16px',

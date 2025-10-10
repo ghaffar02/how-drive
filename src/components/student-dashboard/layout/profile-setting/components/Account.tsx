@@ -190,7 +190,10 @@ export default function Account() {
                   </Typography>
                   <CustomTextField
                     labal={items.placeholder}
-                    sx={{textAlign: 'end', maxWidth: {lg: '403px'}}}
+                    sx={{
+                      textAlign: 'end',
+                      maxWidth: {lg: '403px ', width: '100%'}
+                    }}
                   />
                 </Box>
               );

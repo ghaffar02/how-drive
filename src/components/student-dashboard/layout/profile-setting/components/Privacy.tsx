@@ -1,7 +1,7 @@
 import CustomButton from '@/components/student-dashboard/CustomButton';
 import CustomCard from '@/components/student-dashboard/layout/profile-setting/Dropdown';
 import localFont from '@/utils/themes';
-import {Box, Divider, Typography} from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import {useTranslations} from 'next-intl';
 import {AnimatePresence, motion} from 'framer-motion';
 import {
@@ -307,6 +307,7 @@ export default function Privacy() {
             gap: '10px',
             alignItems: 'center',
             justifyContent: 'flex-end'
+
             // justifyContent: 'space-between'
           }}
         >
@@ -315,7 +316,6 @@ export default function Privacy() {
               label={t('btn3')}
               bgColor="#0D9488"
               hoverColor="#0C5C72"
-              sx={{}}
               onClick={() => setOpenDropdown(() => !openDropdown)}
             />
 
@@ -358,12 +358,15 @@ export default function Privacy() {
                     position: 'absolute',
                     right: {xs: '-70%', sm: 0},
                     mt: '8px',
+                    mb: '8px',
                     left: 'auto',
-                    width: {xs: '280px', sm: '349px', md: '324px', lg: '405px'},
+                    bottom: {xs: '100%', md: 'unset'},
+                    width: {xs: '280px', sm: '349px', lg: '405px'},
                     zIndex: 33,
                     overflow: 'visible',
                     border: '1px solid rgb(255, 255, 255)',
                     backgroundColor: '#f0f0fa99',
+
                     backdropFilter: 'blur(12px)',
                     // borderRadius: "12px",
                     boxShadow: `
@@ -372,12 +375,12 @@ export default function Privacy() {
     0px 1px 1px 0px rgba(0, 0, 0, 0.25)
   `,
                     borderRadius: '12px',
-                    transformOrigin: 'top right'
+                    transformOrigin: {xs: 'bottom right', md: 'top right'}
                   }}
                 >
                   <CustomCard
                     text={t('dropDown')}
-                    onClose={() => setOpenDropdown(false)}
+                    // onClose={() => setOpenDropdown(false)}
                   />
                 </Box>
               )}
