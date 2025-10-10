@@ -1,7 +1,7 @@
 import CustomButton from '@/components/student-dashboard/CustomButton';
 import CustomTextField from '@/components/student-dashboard/InputField';
 import localFont from '@/utils/themes';
-import {Box, Divider, Typography} from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import {useTranslations} from 'next-intl';
 import {
   ReactElement,
