@@ -377,7 +377,7 @@ export default function Privacy() {
                 >
                   <CustomCard
                     text={t('dropDown')}
-                    onClose={() => setOpenDropdown(false)}
+                    // onClose={() => setOpenDropdown(false)}
                   />
                 </Box>
               )}

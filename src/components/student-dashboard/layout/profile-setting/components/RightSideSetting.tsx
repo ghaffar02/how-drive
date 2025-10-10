@@ -103,7 +103,7 @@ export default function RightSide({
         </Box>
 
         {/* Pages */}
-        <Box sx={{overflowY: 'hidden'}}>
+        <Box sx={{}}>
           {activeIndex === 0 && <Account />}
           {activeIndex === 1 && <Notification />}
           {activeIndex === 2 && <Privacy />}
