@@ -180,7 +180,7 @@ export default function Inbox() {
         flexDirection: 'column',
         gap: '16px',
         background: 'rgba(248,250,252,0.3)',
-        border: '1px solid #fff',
+        border: '2px solid #fff',
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'}
         // marginBottom: {xs: '65px', md: '0px'}
       }}

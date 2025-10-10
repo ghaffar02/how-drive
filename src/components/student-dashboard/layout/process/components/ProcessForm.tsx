@@ -353,18 +353,19 @@ export function DrivingLicenseForm() {
       <Button
         type="submit"
         variant="contained"
+        disableRipple
         sx={{
-          backgroundColor: isReady ? '#4615ff' : 'grey.600',
+          backgroundColor: isReady ? '#4615ff' : '#808080',
           borderRadius: '10px',
           color: 'white',
           textTransform: 'none',
           height: '40px',
-          py: 1.2,
+          p: '8px 16px',
           fontWeight: 600,
           fontSize: {xs: '14px', md: '15px', lg: '16px'},
           fontFamily: '"Inter", sans-serif !important',
           '&:hover': {
-            backgroundColor: isReady ? '#3a12d1' : 'grey.700'
+            backgroundColor: isReady ? '#3a12d1' : '#808080'
           }
         }}
       >

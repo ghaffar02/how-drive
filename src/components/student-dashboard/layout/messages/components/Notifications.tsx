@@ -7,7 +7,7 @@ import crossIcon from '@/assets/svgs/dashboard-student/crossicon.svg';
 
 import car from '@/assets/svgs/dashboard-student/home/car.svg';
 import fabian from '@/assets/svgs/dashboard-student/home/fabian.svg';
-import logo from '@/assets/svgs/dashboard-student/home/logo.svg';
+import logo from '@/assets/pngs/logo.avif';
 
 const emails = [
   {
@@ -129,13 +129,13 @@ export default function Notifications() {
   return (
     <Box
       sx={{
-        minWidth: '300px',
-        maxWidth: '300px',
+        minWidth: {md: '230px', lg: '300px'},
+        maxWidth: {md: '230px', lg: '300px'},
         width: '100%',
         height: '100%',
         background: 'rgba(248,250,252,0.3)',
         padding: '24px 12px',
-        border: '1px solid #fff',
+        border: '2px solid #fff',
         display: {xs: 'none', md: 'flex'},
         flexDirection: 'column',
         gap: '8px'
@@ -195,7 +195,14 @@ export default function Notifications() {
             padding: '8px',
             borderRadius: '50%',
             position: 'relative',
-            overflow: 'visible !important'
+            overflow: 'visible !important',
+            cursor: 'pointer',
+            '&:hover': {
+              background: 'rgba(228,228,231,0.75)'
+            },
+            '&:active': {
+              background: 'rgba(212,212,216,0.75)'
+            }
             // bgcolor: '#d80909ff'
           }}
         >
@@ -303,7 +310,7 @@ export default function Notifications() {
               sx={{
                 width: '100%',
                 // maxWidth: '309px',
-                background: '#fff',
+                background: 'rgba(255,255,255,0.75)',
                 padding: '8px',
                 borderRadius: '8px',
                 display: 'flex',
@@ -314,7 +321,7 @@ export default function Notifications() {
                 boxShadow:
                   selectedIndex === index
                     ? '0px 0px 2px 0px  #3058ffff'
-                    : ' 0px 0px 2px 0px #d4d4d8ff',
+                    : ' 0px 0px 2px 0px rgb(212,212,216)',
                 '&:hover': {
                   boxShadow: '0px 0px 2px 0px  #3058ffff'
                 }

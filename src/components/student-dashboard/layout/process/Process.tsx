@@ -19,8 +19,8 @@ export default function Process() {
       }}
     >
       <DetailSide show={show} />
-      {/* <ProcessForm /> */}
-      <ProcessSteps />
+      <ProcessForm />
+      {/* <ProcessSteps /> */}
     </Box>
   );
 }
