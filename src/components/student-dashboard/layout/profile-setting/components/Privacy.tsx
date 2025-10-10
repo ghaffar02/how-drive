@@ -358,7 +358,9 @@ export default function Privacy() {
                     position: 'absolute',
                     right: {xs: '-70%', sm: 0},
                     mt: '8px',
+                    mb: '8px',
                     left: 'auto',
+                    bottom: {xs: '100%', md: 'unset'},
                     width: {xs: '280px', sm: '349px', lg: '405px'},
                     zIndex: 33,
                     overflow: 'visible',
@@ -373,7 +375,7 @@ export default function Privacy() {
     0px 1px 1px 0px rgba(0, 0, 0, 0.25)
   `,
                     borderRadius: '12px',
-                    transformOrigin: 'top right'
+                    transformOrigin: {xs: 'bottom right', md: 'top right'}
                   }}
                 >
                   <CustomCard
