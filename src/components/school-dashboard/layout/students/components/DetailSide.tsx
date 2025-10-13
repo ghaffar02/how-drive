@@ -4,34 +4,89 @@ import React, {SyntheticEvent, useEffect, useRef, useState} from 'react';
 import Image from 'next/image';
 import searchIcon from '@/assets/svgs/dashboard-student/searchIcon.svg';
 import crossIcon from '@/assets/svgs/dashboard-student/crossicon.svg';
-
-import car from '@/assets/svgs/dashboard-student/home/car.svg';
-import fabian from '@/assets/svgs/dashboard-student/home/fabian.svg';
-import logo from '@/assets/svgs/dashboard-student/home/logo.svg';
-
-const emails = [
-  {
-    subject: 'Das ist das Thema der Email.',
-
-    class: 'B'
-  },
-  {
-    subject: 'Das ist das Thema der Email.',
-
-    class: 'B'
-  },
-  {
-    subject: 'Das ist das Thema der Email.',
-
-    class: 'B'
-  }
-];
-
 import {AnimatePresence, motion} from 'framer-motion';
 import localFont from '@/utils/themes';
 import LeftSideDropDown from './LeftSideDropDown';
 
 const MotionBox = motion(Box);
+const emails = [
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B (Umschreiben)'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B17'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B (Umschreiben)'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B17'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B (Umschreiben)'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B17'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B (Umschreiben)'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B17'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B (Umschreiben)'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B17'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B (Umschreiben)'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B17'
+  },
+  {
+    subject: 'Das ist das Thema der Email.',
+    class: 'B (Umschreiben)'
+  }
+];
 
 export default function DetailSide() {
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
@@ -39,9 +94,16 @@ export default function DetailSide() {
   const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const iconRef = useRef<HTMLDivElement | null>(null);
-  const [value, setValue] = useState('active');
-  const handleChange = (event: SyntheticEvent, newValue: string) => {
-    setValue(newValue);
+  // const [value, setValue] = useState('active');
+
+  const [activeIndex, setActiveIndex] = useState<number | 0>(0);
+
+  // const handleChange = (event: SyntheticEvent, newValue: string) => {
+  //   setValue(newValue);
+  // };
+
+  const handleClicktab = (i: number) => {
+    setActiveIndex(i);
   };
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -213,55 +275,78 @@ export default function DetailSide() {
         </Box>
       </Box>
       {/* Below part of notification screen */}
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        sx={{
-          width: '100%',
-          background: '#ffffff99',
-          minHeight: 'unset',
-          height: 'auto !important',
-          padding: '4px',
-          borderRadius: '9999px',
-          display: 'flex',
-          alignItems: 'center',
-          boxShadow: '0px 0px 2px 0px #d4d4d8',
-          overflow: 'unset',
-          '& .MuiTabs-indicator': {
-            display: 'none'
-          },
 
-          '& .MuiTab-root': {
-            flex: 1,
-            padding: '4px 8px',
-            borderRadius: '9999px',
-            textTransform: 'none',
-            fontSize: {xs: '12px', md: '13px', lg: '14px'},
-            fontFamily: '"Inter", sans-serif !important',
-            fontWeight: 400,
-            lineHeight: '1.6em',
-            color: '#4a5568',
-            minHeight: 'unset',
-            // height: 'unset',
-            justifyContent: 'center',
-            // '&:hover': {
-            //   background: 'rgba(0,122,255,0.1)'
-            // },
-            '&.Mui-selected': {
-              background: '#fff',
-              border: '1px solid #fff',
-              fontWeight: 500,
-              boxShadow: 'rgba(0,0,0,0.25) 0px 1px 2px 0px'
-            }
-          },
-          '& .MuiTabs-scroller': {
-            overflow: 'unset !important'
-          }
+      <Box
+        sx={{
+          // bgcolor: '#000',
+          width: '100%',
+          display: 'flex',
+          flexDirection: {xs: 'column'},
+          gap: '20px',
+          alignItems: 'end',
+          justifyContent: 'end'
         }}
       >
-        <Tab value="active" label="Aktiv" />
-        <Tab value="inactive" label="Inaktiv" />
-      </Tabs>
+        <Box
+          sx={{
+            width: '100%',
+            // maxWidth: '828px',
+            bgcolor: '#ffffff99',
+            display: 'flex',
+            p: '4px',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            boxShadow: '0px 0px 2px 0px #D4D4D8',
+            borderRadius: '999px',
+            position: 'relative',
+            overflow: 'hidden'
+          }}
+        >
+          {/* Moving Highlight */}
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 4,
+              bottom: 4,
+              left: 4,
+              width: `calc((100% - 8px) / 2)`,
+              borderRadius: '999px',
+              background: '#4611F5',
+              boxShadow: '0px 2px 6px 0px #00000033',
+              transition: 'all 0.4s ease',
+              transform: `translateX(${activeIndex * 100}%)`, // move on X
+              zIndex: 1
+            }}
+          />
+
+          {['Aktiv', 'Inaktiv'].map((item, i) => (
+            <Box
+              key={i}
+              onClick={() => handleClicktab(i)}
+              sx={{
+                flex: 1,
+                textAlign: 'center',
+                p: '4px 8px',
+                cursor: 'pointer',
+                zIndex: 2
+              }}
+            >
+              <Typography
+                sx={{
+                  lineHeight: '1.6em',
+                  fontSize: {xs: '12px', md: '13px', lg: '14px'},
+                  color: activeIndex === i ? '#ffff' : '#4A5568',
+                  fontWeight: activeIndex === i ? '400' : '400',
+                  transition: 'all 0.3s ease-in-out',
+                  fontFamily: '"Inter", sans-serif !important'
+                }}
+              >
+                {item}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+      </Box>
 
       {/* Below is the part which we will show when we have the data */}
       <MotionBox
@@ -295,8 +380,8 @@ export default function DetailSide() {
               sx={{
                 width: '100%',
                 background: activeIndexes.includes(i)
-                  ? '#ffffff99'
-                  : '#ffffffd9',
+                  ? '#ffffffd9'
+                  : '#ffffff99',
                 padding: '8px',
                 borderRadius: '8px',
                 display: 'flex',
@@ -304,13 +389,14 @@ export default function DetailSide() {
                 gap: '10px',
                 cursor: 'pointer',
                 boxShadow: activeIndexes.includes(i)
-                  ? '0px 0px 4px 0px #4611f5'
+                  ? '0px 0px 2px 0px #4611f5'
                   : '0px 0px 2px 0px #D4D4D8',
                 transition: 'all 0.3s ease',
                 '&:hover': {
                   boxShadow: activeIndexes.includes(i)
-                    ? '0px 0px 4px 0px #4611f5'
-                    : '0px 0px 2px 0px #D4D4D8'
+                    ? '0px 0px 2px 0px #4611f5'
+                    : '0px 0px 4px 0px #D4D4D8',
+                  background: '#ffffff'
                 },
                 '&:hover .hoverArrow': {
                   opacity: 1,
