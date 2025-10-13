@@ -2151,5 +2151,44 @@
         }
       ]
     }
+  },
+  "SchoolDashboard": {
+    "Support": {
+      "title": "Häufig gestellte Fragen",
+      "FaqData": [
+        {
+          "title": "Wie kann ich meine Profildaten ändern?",
+          "content": "Gehe in deinem Dashboard zu „Einstellungen => Konto“. Dort kannst du deine Kontaktdaten, Passwort und weitere Informationen jederzeit anpassen."
+        },
+        {
+          "title": "Ein Schüler hat storniert, aber der Termin ist noch als „gebucht“ markiert. Wie korrigiere ich das?",
+          "content": "Gehe zu „Kalender“ und wähle den betreffenden Termin aus. Klicke auf „Stift-Symbol“ und dann auf „Stornieren“. Der Platz wird automatisch wieder freigegeben."
+        },
+        {
+          "title": "Wie kann ich meine Zahlungsinformationen ändern?",
+          "content": "Gehe im Dashboard auf „Einstellungen => Zahlung“. Dort kannst du deine Zahlungsdaten (z. B. Kreditkarte oder SEPA-Lastschrift) aktualisieren oder eine neue Zahlungsmethode hinzufügen. Änderungen werden ab dem nächsten Abrechnungszeitraum übernommen."
+        },
+        {
+          "title": "Wie kann ich mein Abo upgraden oder downgraden?",
+          "content": "Du kannst dein Paket jederzeit über „Einstellungen“ ändern. Ein Upgrade wird sofort wirksam, ein Downgrade erfolgt zum Ende der aktuellen Abrechnungsperiode."
+        },
+        {
+          "title": "Meine Rechnungen sind nicht korrekt – was soll ich tun?",
+          "content": "Bitte prüfe deine Abrechnungen im Bereich „Rechnung“. Sollte dir ein Fehler auffallen, kontaktiere bitte unseren Support mit der entsprechenden Rechnungsnummer. Wir kümmern uns schnellstmöglich um eine Klärung."
+        },
+        {
+          "title": "Kann ich mehrere Standorte in meinem Konto verwalten?",
+          "content": "Nein, aktuell ist es nicht möglich, mehrere Standorte innerhalb eines einzelnen Kontos zu verwalten. Jede Fahrschule benötigt ein separates Konto pro Standort. Wenn du mehrere Konten verwalten möchtest, kontaktiere bitte unseren Support – wir helfen dir gerne bei der bestmöglichen Lösung."
+        },
+        {
+          "title": "Wie lösche ich mein Konto?",
+          "content": "Die Kontolöschung ist über das Dashboard unter „Einstellungen“ möglich. Bitte beachte, dass alle Daten dauerhaft entfernt werden und dieser Schritt nicht rückgängig gemacht werden kann."
+        },
+        {
+          "title": "Meine Frage ist hier nicht dabei – wie kann ich den Support erreichen?",
+          "content": "Falls deine Frage nicht beantwortet wurde, nutze bitte das Kontaktformular auf dieser Seite oder schreibe eine E-Mail. Wir versuchen so schnell wie möglich antworten."
+        }
+      ]
+    }
   }
 }

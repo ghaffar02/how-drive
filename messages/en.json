@@ -2152,5 +2152,44 @@
         }
       ]
     }
+  },
+  "SchoolDashboard": {
+    "Support": {
+      "title": "Frequently asked questions",
+      "FaqData": [
+        {
+          "title": "How can I change my profile information?",
+          "content": "Go to \"Settings => Account\" on your dashboard. There you can edit your contact details, password, and other information at any time."
+        },
+        {
+          "title": "A student has canceled, but the appointment is still marked as \"booked.\" How do I correct this?",
+          "content": "Go to \"Calendar\" and select the appointment in question. Click the \"pencil icon\" and then \"Cancel\". The slot will be automatically released."
+        },
+        {
+          "title": "How can I change my payment information?",
+          "content": "In the dashboard, go to \"Settings => Payment\". There you can update your payment details (e.g., credit card or SEPA direct debit) or add a new payment method. Changes will take effect starting with the next billing period."
+        },
+        {
+          "title": "How can I upgrade or downgrade my subscription?",
+          "content": "You can change your package at any time via \"Settings\". An upgrade takes effect immediately; a downgrade takes effect at the end of the current billing period."
+        },
+        {
+          "title": "My invoices are incorrect – what should I do?",
+          "content": "Please check your invoices in the \"Invoice\" section. If you notice an error, please contact our support team with the corresponding invoice number. We will resolve the issue as quickly as possible."
+        },
+        {
+          "title": "Can I manage multiple locations in my account?",
+          "content": "No, it's currently not possible to manage multiple locations within a single account. Each driving school requires a separate account for each location. If you would like to manage multiple accounts, please contact our support team – we'll be happy to help you find the best solution."
+        },
+        {
+          "title": "How do I delete my account?",
+          "content": "You can delete your account via the dashboard under \"Settings\". Please note that all data will be permanently deleted and this step cannot be undone."
+        },
+        {
+          "title": "My question isn't listed here – how can I contact support?",
+          "content": "If your question hasn't been answered, please use the contact form on this page or send us an email. We'll try to respond as quickly as possible."
+        }
+      ]
+    }
   }
 }
