@@ -6,7 +6,8 @@ import searchIcon from '@/assets/svgs/dashboard-student/searchIcon.svg';
 import crossIcon from '@/assets/svgs/dashboard-student/crossicon.svg';
 import {AnimatePresence, motion} from 'framer-motion';
 import localFont from '@/utils/themes';
-import LeftSideDropDown from '../components/LeftSideDropDown';
+// import LeftSideDropDown from '../components/LeftSideDropDown';
+import AppointmentsDropDown from '../components/AppointmentsDropDown';
 
 const MotionBox = motion(Box);
 const emails = [
@@ -78,7 +79,7 @@ const emails = [
 export default function DetailSide() {
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
 
-  const [openDropdown, setOpenDropdown] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(true);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const iconRef = useRef<HTMLDivElement | null>(null);
   // const [value, setValue] = useState('active');
@@ -249,7 +250,7 @@ export default function DetailSide() {
                 sx={{
                   // bgcolor: '#000',
                   position: 'absolute',
-                  zIndex: 999999999,
+                  zIndex: 99,
                   // left: {md: 100, lg: 130, xl: 200},
                   right: 0,
                   mt: '20px',
@@ -268,7 +269,7 @@ export default function DetailSide() {
                   transformOrigin: 'top right'
                 }}
               >
-                <LeftSideDropDown />
+                <AppointmentsDropDown />
               </Box>
             )}
           </AnimatePresence>

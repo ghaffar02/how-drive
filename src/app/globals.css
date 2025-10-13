@@ -147,3 +147,23 @@ a {
 .rdp-chevron {
   fill: #000 !important;
 }
+
+.MuiMultiSectionDigitalClock-root {
+  max-height: 220px !important;
+  overflow-y: auto !important;
+  scroll-behavior: smooth;
+}
+
+.MuiMultiSectionDigitalClockSection-item {
+  font-size: 16px !important;
+  padding: 6px 0 !important;
+}
+
+.MuiMultiSectionDigitalClock-root::-webkit-scrollbar {
+  width: 6px;
+}
+
+.MuiMultiSectionDigitalClock-root::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 6px;
+}
