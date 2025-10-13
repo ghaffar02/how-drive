@@ -20,7 +20,7 @@ type InputProp = {
 const SupportAccordion = ({openFaq}: InputProp) => {
   const [expanded, setExpanded] = useState<number[]>([]);
   const [isDesktop, setIsDesktop] = useState(false);
-  const t = useTranslations('Faq');
+  const t = useTranslations('Dashboard.Support');
   const PricingData = t.raw('FaqData');
 
   useEffect(() => {

@@ -2115,7 +2115,41 @@
       "btn": "Send",
       "err1": "Category is required",
       "err2": "Message is required",
-      "err3": "File is required"
+      "err3": "File is required",
+      "FaqData": [
+        {
+          "title": "How can I change my profile information?",
+          "content": "Go to \"Settings => Account\" on your dashboard. There you can edit your contact details, password, and other information at any time."
+        },
+        {
+          "title": "I don't see any suitable driving schools in my area – why is that?",
+          "content": "There may not currently be any registered partner driving schools in your area. We're constantly expanding our network!"
+        },
+        {
+          "title": "How can I cancel or reschedule my booked theory or driving lesson?",
+          "content": "To cancel booked appointments with your driving school, simply click the \"X\" symbol next to the respective appointment in the daily overview of the calendar. However, theory and practical exams cannot be canceled. You must contact your driving school directly for this. You can contact your driving school in your dashboard under \"Message\". To reschedule appointments, first cancel them and then book new ones from the available time slots."
+        },
+        {
+          "title": "My driving school isn't responding to my messages. What can I do?",
+          "content": "Some driving schools take some time to respond to inquiries, especially during peak times. If you don't hear back within three business days, we recommend contacting the driving school again via our system."
+        },
+        {
+          "title": "How can I change my driving school?",
+          "content": "You can search for and book a new driving school through our platform at any time. However, you will need to resolve any outstanding bookings or contracts with your current driving school yourself. Please inform both driving schools about the change to avoid misunderstandings."
+        },
+        {
+          "title": "Can I register for the exam via the platform?",
+          "content": "No. Unfortunately, our platform cannot book appointments directly with TÜV. Exam appointments are usually booked by your driving school and displayed on your dashboard."
+        },
+        {
+          "title": "Why can't I see all available driving lessons?",
+          "content": "Some driving schools only list specific dates online. If you can't find suitable driving lessons, contact your driving school directly—they often have additional capacity that can't be booked online."
+        },
+        {
+          "title": "My question isn't listed here – how can I contact support?",
+          "content": "If your question hasn't been answered, please use the contact form on this page or send us an email. We'll try to respond as quickly as possible."
+        }
+      ]
     }
   }
 }
