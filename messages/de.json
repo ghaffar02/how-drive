@@ -1981,11 +1981,7 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": [
-            "Notwendige",
-            "Analytics",
-            "Alle zulassen"
-          ]
+          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2024,10 +2020,7 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": [
-            "News und Update",
-            "Angebote und Werbung"
-          ]
+          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
         }
       }
     },
@@ -2121,7 +2114,41 @@
       "btn": "Schicken",
       "err1": "Kategorie ist erforderlich",
       "err2": "Nachricht ist erforderlich",
-      "err3": "Datei ist erforderlich"
+      "err3": "Datei ist erforderlich",
+      "FaqData": [
+        {
+          "title": "Wie kann ich meine Profildaten ändern?",
+          "content": "Gehe in deinem Dashboard zu „Einstellungen => Konto“. Dort kannst du deine Kontaktdaten, Passwort und weitere Informationen jederzeit anpassen."
+        },
+        {
+          "title": "Ich sehe keine passenden Fahrschulen in meiner Umgebung – woran liegt das?",
+          "content": "Möglicherweise gibt es aktuell keine registrierten Partnerfahrschulen in deiner Region. Wir erweitern unser Netzwerk ständig!"
+        },
+        {
+          "title": "Wie kann ich meine gebuchte Theorie- oder Fahrstunde stornieren oder verschieben?",
+          "content": "Um gebuchte Termine bei deiner Fahrschule zu stornieren, klickst du einfach in der Tagesübersicht im Kalender auf das „X“-Symbol neben jedem Termin. Die Stornierung von Theorie- und Praxisprüfungen ist jedoch nicht möglich. Wende dich hierfür bitte direkt an deine Fahrschule. Du kannst deine Fahrschule in deinem Dashboard unter „Nachricht“ kontaktieren. Um Termine zu verschieben, storniere diese zunächst und buche dann neue aus den verfügbaren Zeitfenstern."
+        },
+        {
+          "title": "Meine Fahrschule antwortet nicht auf meine Nachrichten. Was kann ich tun?",
+          "content": "Manche Fahrschulen benötigen etwas Zeit, um auf Anfragen zu reagieren – besonders während Stoßzeiten. Sollte innerhalb von 3 Werktagen keine Rückmeldung erfolgen, empfehlen wir, die Fahrschule erneut über unser System zu kontaktieren."
+        },
+        {
+          "title": "Wie kann ich meine Fahrschule wechseln?",
+          "content": "Du kannst jederzeit eine neue Fahrschule über unsere Plattform suchen und buchen. Offene Buchungen oder Verträge mit deiner aktuellen Fahrschule musst du jedoch selbst klären. Informiere beide Fahrschulen über den Wechsel, um Missverständnisse zu vermeiden."
+        },
+        {
+          "title": "Kann ich meine Prüfungsanmeldung über die Plattform vornehmen?",
+          "content": "Nein. Unsere Plattform kann leider nicht Termine direkt bei TÜV buchen. Die Prüfungstermine werden in der Regel von deiner Fahrschule gebucht und dir in deinem Dashboard angezeigt."
+        },
+        {
+          "title": "Warum sehe ich nicht alle verfügbaren Fahrstunden?",
+          "content": "Manche Fahrschulen zeigen nur bestimmte Termine online an. Falls du keine passenden Fahrstunden findest, kontaktiere deine Fahrschule direkt – oft gibt es zusätzliche Kapazitäten, die nicht online gebucht werden können."
+        },
+        {
+          "title": "Meine Frage ist hier nicht dabei – wie kann ich den Support erreichen?",
+          "content": "Falls deine Frage nicht beantwortet wurde, nutze bitte das Kontaktformular auf dieser Seite oder schreibe eine E-Mail. Wir versuchen so schnell wie möglich antworten."
+        }
+      ]
     }
   }
 }
