@@ -1,5 +1,5 @@
-import {Box, Tab, Tabs, TextField, Typography} from '@mui/material';
-import React, {SyntheticEvent, useEffect, useRef, useState} from 'react';
+import {Box, TextField, Typography} from '@mui/material';
+import React, {useEffect, useRef, useState} from 'react';
 
 import Image from 'next/image';
 import searchIcon from '@/assets/svgs/dashboard-student/searchIcon.svg';
@@ -12,31 +12,18 @@ const MotionBox = motion(Box);
 const emails = [
   {
     subject: 'Das ist das Thema der Email.',
-    class: 'B (Umschreiben)'
+    class: 'B',
+    isRequest: true
   },
   {
     subject: 'Das ist das Thema der Email.',
-    class: 'B'
+    class: 'B17',
+    isRequest: true
   },
   {
     subject: 'Das ist das Thema der Email.',
-    class: 'B17'
-  },
-  {
-    subject: 'Das ist das Thema der Email.',
-    class: 'B (Umschreiben)'
-  },
-  {
-    subject: 'Das ist das Thema der Email.',
-    class: 'B'
-  },
-  {
-    subject: 'Das ist das Thema der Email.',
-    class: 'B17'
-  },
-  {
-    subject: 'Das ist das Thema der Email.',
-    class: 'B (Umschreiben)'
+    class: 'B (Umschreiben)',
+    isRequest: true
   },
   {
     subject: 'Das ist das Thema der Email.',
@@ -98,11 +85,7 @@ export default function DetailSide() {
 
   const [activeIndex, setActiveIndex] = useState<number | 0>(0);
 
-  // const handleChange = (event: SyntheticEvent, newValue: string) => {
-  //   setValue(newValue);
-  // };
-
-  const handleClicktab = (i: number) => {
+  const handleClickTab = (i: number) => {
     setActiveIndex(i);
   };
   useEffect(() => {
@@ -124,16 +107,28 @@ export default function DetailSide() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
+  // const handleClick = (i: number) => {
+  //   setActiveIndexes((prev) =>
+  //     prev.includes(i) ? prev.filter((idx) => idx !== i) : [...prev, i]
+  //   );
+  // };
   const handleClick = (i: number) => {
-    setActiveIndexes((prev) =>
-      prev.includes(i) ? prev.filter((idx) => idx !== i) : [...prev, i]
-    );
+    setActiveIndexes((prev) => {
+      if (activeIndex === 0) {
+        return prev.includes(i)
+          ? prev.filter((idx) => idx !== i)
+          : [...prev, i];
+      } else if (activeIndex === 1) {
+        return [i];
+      }
+      return prev;
+    });
   };
 
   return (
     <Box
       sx={{
-        maxWidth: '300px',
+        maxWidth: {md: '230px', lg: '300px'},
         width: '100%',
         height: '100%',
         background: 'rgba(248,250,252,0.3)',
@@ -144,6 +139,7 @@ export default function DetailSide() {
         gap: '8px'
       }}
     >
+      {/* search bar */}
       <Box
         sx={{
           width: '100%',
@@ -161,7 +157,8 @@ export default function DetailSide() {
             borderRadius: '999px',
             height: '38px',
             alignItems: 'center',
-            background: 'rgba(255,255,255,0.75)'
+            background: '#ffffffbf',
+            boxShadow: '0px 0px 2px 0px #D4D4D8'
           }}
         >
           <Box sx={{height: '16px', width: '16px'}}>
@@ -198,8 +195,11 @@ export default function DetailSide() {
             padding: '8px',
             borderRadius: '50%',
             position: 'relative',
-            overflow: 'visible !important'
-            // bgcolor: '#d80909ff'
+            cursor: 'pointer',
+            overflow: 'visible !important',
+            '&:hover': {
+              bgcolor: '#E4E4E7'
+            }
           }}
         >
           <Image
@@ -276,6 +276,7 @@ export default function DetailSide() {
       </Box>
       {/* Below part of notification screen */}
 
+      {/* tab */}
       <Box
         sx={{
           // bgcolor: '#000',
@@ -312,7 +313,7 @@ export default function DetailSide() {
               width: `calc((100% - 8px) / 2)`,
               borderRadius: '999px',
               background: '#4611F5',
-              boxShadow: '0px 2px 6px 0px #00000033',
+              // boxShadow: '0px 2px 6px 0px #fe0909ff',
               transition: 'all 0.4s ease',
               transform: `translateX(${activeIndex * 100}%)`, // move on X
               zIndex: 1
@@ -322,7 +323,7 @@ export default function DetailSide() {
           {['Aktiv', 'Inaktiv'].map((item, i) => (
             <Box
               key={i}
-              onClick={() => handleClicktab(i)}
+              onClick={() => handleClickTab(i)}
               sx={{
                 flex: 1,
                 textAlign: 'center',
@@ -388,14 +389,18 @@ export default function DetailSide() {
                 flexDirection: 'row',
                 gap: '10px',
                 cursor: 'pointer',
-                boxShadow: activeIndexes.includes(i)
-                  ? '0px 0px 2px 0px #4611f5'
-                  : '0px 0px 2px 0px #D4D4D8',
+                boxShadow: items.isRequest
+                  ? '0px 0px 2px 0px  #f97316'
+                  : activeIndexes.includes(i)
+                    ? '0px 0px 2px 0px #4611f5'
+                    : '0px 0px 2px 0px #D4D4D8',
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  boxShadow: activeIndexes.includes(i)
-                    ? '0px 0px 2px 0px #4611f5'
-                    : '0px 0px 4px 0px #D4D4D8',
+                  boxShadow: items.isRequest
+                    ? '#f97316'
+                    : activeIndexes.includes(i)
+                      ? '0px 0px 2px 0px #4611f5'
+                      : '0px 0px 4px 0px #D4D4D8',
                   background: '#ffffff'
                 },
                 '&:hover .hoverArrow': {
@@ -418,7 +423,11 @@ export default function DetailSide() {
                   sx={{
                     ...localFont.inter14,
                     textAlign: 'start',
-                    color: activeIndexes.includes(i) ? '#4611f5' : '#4A5568',
+                    color: items.isRequest
+                      ? '#f97316'
+                      : activeIndexes.includes(i)
+                        ? '#4611f5'
+                        : '#4A5568',
                     fontFamily: '"Inter", sans-serif !important',
                     fontWeight: activeIndexes.includes(i) ? '500' : '400'
                   }}
@@ -430,7 +439,11 @@ export default function DetailSide() {
                     ...localFont.inter14,
                     textAlign: 'end',
 
-                    color: activeIndexes.includes(i) ? '#4611f5' : '#4A5568',
+                    color: items.isRequest
+                      ? '#f97316'
+                      : activeIndexes.includes(i)
+                        ? '#4611f5'
+                        : '#4A5568',
                     fontFamily: '"Inter", sans-serif !important',
                     fontWeight: activeIndexes.includes(i) ? '500' : '400'
                   }}
