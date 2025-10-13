@@ -1,5 +1,6 @@
 import {Box} from '@mui/material';
 import React from 'react';
+import Header from '../components/Header';
 
 export default function StudentDetail() {
   return (
@@ -16,7 +17,7 @@ export default function StudentDetail() {
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'}
       }}
     >
-      <Box></Box>
+      <Header />
     </Box>
   );
 }
