@@ -169,11 +169,11 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
                 error={!!errors.category}
                 helperText={errors.category?.message}
                 sx={{
-                  background: '#ffffff',
-                  height: 40,
+                  // height: 40,
                   borderRadius: '10px',
                   '& .MuiInputBase-root': {
-                    height: '100%',
+                    background: '#ffffff !important',
+                    height: '40px',
                     fontSize: '14px',
                     padding: '12px',
                     borderRadius: '10px'

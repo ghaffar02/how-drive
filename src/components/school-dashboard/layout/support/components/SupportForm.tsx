@@ -54,11 +54,11 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
     <Box
       sx={{
         background: 'transparent',
-        border: '1px solid #f8fafc',
+        border: '2px solid #fff',
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
-        boxShadow:
-          '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
-        maxWidth: '860px',
+        // boxShadow:
+        //   '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
+        // maxWidth: '860px',
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
@@ -83,8 +83,14 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
             md: 'none'
           },
           // margin: 'auto',
-          maxWidth: '80px',
-          width: '100%'
+          maxWidth: '70px',
+          width: '100%',
+          padding: '5px 0px 3px',
+          cursor: 'pointer',
+          borderRadius: '8px',
+          '&:hover': {
+            backgroundColor: 'rgba(48, 88, 255, 0.1)'
+          }
           // gap: '6px'
         }}
       >
@@ -163,16 +169,18 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
                 error={!!errors.category}
                 helperText={errors.category?.message}
                 sx={{
-                  background: '#ffffff99',
-                  height: 40,
-                  borderRadius: '8px',
+                  // height: 40,
+                  borderRadius: '10px',
                   '& .MuiInputBase-root': {
-                    height: '100%',
+                    background: '#ffffff !important',
+                    height: '40px',
                     fontSize: '14px',
-                    padding: '12px'
+                    padding: '12px',
+                    borderRadius: '10px'
                   },
                   '&:hover .MuiOutlinedInput-notchedOutline': {
-                    border: 'none'
+                    border: '1px solid black',
+                    borderRadius: '10px'
                   },
                   '& .MuiSelect-select': {
                     padding: 0,
@@ -210,19 +218,31 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
             placeholder={t('placeholder2')}
             {...register('details', {required: t('err2')})}
             sx={{
-              borderRadius: '8px',
+              borderRadius: '10px',
               '& .MuiInputBase-root': {
-                background: '#ffffff99',
+                background: '#ffffff',
                 height: '100%',
                 fontSize: '14px',
-                padding: '12px'
+                padding: '12px',
+                borderRadius: '10px',
+                fontFamily: '"Inter", sans-serif !important'
               },
-              '&:hover .MuiOutlinedInput-notchedOutline': {
-                border: 'none'
+              '& .MuiOutlinedInput-notchedOutline': {
+                borderRadius: '10px'
               },
               '& .MuiInputBase-input': {
                 padding: 0,
-                fontSize: '14px'
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
+                // background: '#fff'
+              },
+              '& .MuiInputLabel-root': {
+                top: '-6px',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
+              },
+              '& .MuiInputLabel-shrink': {
+                top: '0px'
               }
             }}
           />
@@ -243,13 +263,13 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
           {/* File Upload Field */}
           <Box
             sx={{
-              border: '2px dashed #ccc',
-              borderRadius: '8px',
+              border: 'none',
+              borderRadius: '10px',
               p: {xs: '12px', md: '20px'},
               textAlign: 'center',
-              background: '#ffffff99',
+              background: '#ffffff',
               cursor: 'pointer',
-              '&:hover': {borderColor: '#4615ff'}
+              '&:hover': {border: '1px solid black'}
             }}
             onClick={() => document.getElementById('fileInput')?.click()}
           >
@@ -257,7 +277,10 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
               type="file"
               id="fileInput"
               style={{display: 'none'}}
-              {...register('file', {required: t('err3')})}
+              {...register(
+                'file'
+                // {required: t('err3')}
+              )}
             />
 
             <Typography
