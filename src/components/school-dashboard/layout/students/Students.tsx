@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
 import {Box} from '@mui/material';
-import DetailSide from './components/DetailSide';
-import StudentDetail from './components/StudentDetail';
+import DetailSide from './sections/DetailSide';
+import StudentDetail from './sections/StudentDetail';
 
 export default function Process() {
   // const [show, setShow] = useState(true);

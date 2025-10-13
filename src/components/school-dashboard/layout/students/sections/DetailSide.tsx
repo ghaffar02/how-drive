@@ -6,7 +6,7 @@ import searchIcon from '@/assets/svgs/dashboard-student/searchIcon.svg';
 import crossIcon from '@/assets/svgs/dashboard-student/crossicon.svg';
 import {AnimatePresence, motion} from 'framer-motion';
 import localFont from '@/utils/themes';
-import LeftSideDropDown from './LeftSideDropDown';
+import LeftSideDropDown from '../components/LeftSideDropDown';
 
 const MotionBox = motion(Box);
 const emails = [
