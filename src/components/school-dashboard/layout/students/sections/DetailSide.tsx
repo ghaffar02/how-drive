@@ -89,24 +89,24 @@ export default function DetailSide() {
   const handleClickTab = (i: number) => {
     setActiveIndex(i);
   };
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        dropdownRef.current.contains(event.target as Node)
-      ) {
-        return;
-      }
-      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
-        return;
-      }
+  // useEffect(() => {
+  //   function handleClickOutside(event: MouseEvent) {
+  //     if (
+  //       dropdownRef.current &&
+  //       dropdownRef.current.contains(event.target as Node)
+  //     ) {
+  //       return;
+  //     }
+  //     if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+  //       return;
+  //     }
 
-      setOpenDropdown(false);
-    }
+  //     setOpenDropdown(false);
+  //   }
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
+  //   document.addEventListener('mousedown', handleClickOutside);
+  //   return () => document.removeEventListener('mousedown', handleClickOutside);
+  // }, []);
 
   // const handleClick = (i: number) => {
   //   setActiveIndexes((prev) =>
