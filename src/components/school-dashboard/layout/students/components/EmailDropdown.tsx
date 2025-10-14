@@ -53,7 +53,7 @@ export default function EmailDropdown({
           sx={{
             ...localFont.inter14,
             width: '100%',
-            maxWidth: '400px',
+
             fontFamily: '"Inter", sans-serif !important',
             fontWeight: 400,
             textAlign: 'left'
@@ -83,7 +83,7 @@ export default function EmailDropdown({
           sx={{
             ...localFont.inter14,
             width: '100%',
-            maxWidth: '400px',
+
             fontFamily: '"Inter", sans-serif !important',
             fontWeight: 400,
             textAlign: 'left'

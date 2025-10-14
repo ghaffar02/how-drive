@@ -54,7 +54,7 @@ export default function LeftSideDropDown({
           sx={{
             ...localFont.inter16,
             width: '100%',
-            maxWidth: '400px',
+
             fontFamily: '"Inter", sans-serif !important',
             fontWeight: 400,
             textAlign: 'center'
@@ -66,7 +66,7 @@ export default function LeftSideDropDown({
           sx={{
             ...localFont.inter14,
             width: '100%',
-            maxWidth: '400px',
+
             fontFamily: '"Inter", sans-serif !important',
             fontWeight: 400,
             textAlign: 'center'

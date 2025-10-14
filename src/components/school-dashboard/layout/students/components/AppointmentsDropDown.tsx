@@ -25,7 +25,6 @@ export default function AppointmentsDropDown({
 
   return (
     <Box
-      onClick={onClose}
       sx={{
         width: '100%',
         // maxWidth: {xs: '323px', sm: '333px'},
@@ -45,7 +44,7 @@ export default function AppointmentsDropDown({
           width: '100%',
           display: 'flex',
           flexDirection: {xs: 'column'},
-          gap: {xs: '8px'},
+          gap: {xs: '4px'},
           alignItems: 'start',
           justifyContent: 'space-between'
         }}
@@ -54,7 +53,7 @@ export default function AppointmentsDropDown({
           sx={{
             ...localFont.inter14,
             width: '100%',
-            maxWidth: '400px',
+
             fontFamily: '"Inter", sans-serif !important',
             fontWeight: 400,
             textAlign: 'left'
@@ -86,6 +85,7 @@ export default function AppointmentsDropDown({
               fontSize: '14px',
               padding: '12px',
               borderRadius: '12px',
+
               boxShadow:
                 '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
             },
@@ -116,7 +116,7 @@ export default function AppointmentsDropDown({
           width: '100%',
           display: 'flex',
           flexDirection: {xs: 'column'},
-          gap: {xs: '8px'},
+          gap: {xs: '4px'},
           alignItems: 'start',
           justifyContent: 'space-between'
         }}
@@ -125,7 +125,7 @@ export default function AppointmentsDropDown({
           sx={{
             ...localFont.inter14,
             width: '100%',
-            maxWidth: '400px',
+
             fontFamily: '"Inter", sans-serif !important',
             fontWeight: 400,
             textAlign: 'left',
@@ -183,7 +183,7 @@ export default function AppointmentsDropDown({
           width: '100%',
           display: 'flex',
           flexDirection: {xs: 'column'},
-          gap: {xs: '8px'},
+          gap: {xs: '4px'},
           alignItems: 'start',
           justifyContent: 'space-between'
         }}
@@ -192,7 +192,7 @@ export default function AppointmentsDropDown({
           sx={{
             ...localFont.inter14,
             width: '100%',
-            maxWidth: '400px',
+
             fontFamily: '"Inter", sans-serif !important',
             fontWeight: 400,
             textAlign: 'left',
@@ -250,7 +250,7 @@ export default function AppointmentsDropDown({
           width: '100%',
           display: 'flex',
           flexDirection: {xs: 'column'},
-          gap: {xs: '8px'},
+          gap: {xs: '4px'},
           alignItems: 'start',
           justifyContent: 'space-between'
         }}
@@ -259,7 +259,7 @@ export default function AppointmentsDropDown({
           sx={{
             ...localFont.inter14,
             width: '100%',
-            maxWidth: '400px',
+
             fontFamily: '"Inter", sans-serif !important',
             fontWeight: 400,
             textAlign: 'left',
@@ -325,6 +325,7 @@ export default function AppointmentsDropDown({
         }}
       >
         <CustomButton
+          onClick={onClose}
           label="Add appointment"
           imgSrc={cross}
           sx={{

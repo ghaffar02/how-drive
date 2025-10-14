@@ -7,6 +7,8 @@ import pen from '@/assets/svgs/dashboard-student/pen.svg';
 import {AnimatePresence, motion} from 'framer-motion';
 import EmailDropdown from './EmailDropdown';
 import DrivinglicenseDropdown from './DrivinglicenseDropdown';
+import TheoryexamDropDown from './TheoryexamDropDown';
+import AppointmentsDropDown from './AppointmentsDropDown';
 
 export default function Header() {
   const [checked, setChecked] = React.useState(true);
@@ -160,8 +162,10 @@ export default function Header() {
                     transformOrigin: 'top right'
                   }}
                 >
-                  <EmailDropdown onClose={() => setOpenDropdown(false)} />
+                  <AppointmentsDropDown />
+                  {/* <EmailDropdown onClose={() => setOpenDropdown(false)} /> */}
                   {/* <DrivinglicenseDropdown /> */}
+                  {/* <TheoryexamDropDown text="Is the theory exam already registered? Select the day and time for it. These will be displayed to the student." /> */}
                 </Box>
               )}
             </AnimatePresence>
