@@ -8,15 +8,24 @@ interface CustomTextFieldProps {
   radius?: string | number;
   labal?: string;
   sx?: SxProps<Theme>;
+  type?: string;
+  name?: string;
+  id?: string;
 }
 
 export default function CustomTextField({
   labal,
   sx = {},
+  type,
+  name,
+  id,
   ...rest
 }: CustomTextFieldProps) {
   return (
     <TextField
+      type={type}
+      id={id}
+      name={name}
       placeholder={labal}
       {...rest}
       sx={{
@@ -28,6 +37,7 @@ export default function CustomTextField({
           height: '100%',
           // width: '100%',
           fontSize: '14px',
+          color: type && '#999999 !important',
 
           padding: '12px',
           borderRadius: '10px',
@@ -35,6 +45,12 @@ export default function CustomTextField({
           boxShadow:
             '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
         },
+        // change the icon color
+        [`& input[type="${type}"]::-webkit-calendar-picker-indicator`]: {
+          filter: 'invert(36%) sepia(88%) saturate(23%) hue-rotate(180deg)',
+          cursor: 'pointer'
+        },
+
         '& .MuiOutlinedInput-notchedOutline': {
           borderRadius: '10px'
         },

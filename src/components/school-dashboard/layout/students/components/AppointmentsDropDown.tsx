@@ -4,6 +4,7 @@ import {ReactNode, useState} from 'react';
 import localFont from '@/utils/themes';
 import cross from '@/assets/svgs/dashboard-student/addicon.svg';
 import CustomButton from '@/components/student-dashboard/CustomButton';
+import CustomTextField from '@/components/school-dashboard/InputField';
 
 interface CustomCardProps {
   children?: ReactNode;
@@ -136,47 +137,7 @@ export default function AppointmentsDropDown({
         >
           Day
         </Typography>
-        <TextField
-          type="date"
-          id="appt"
-          name="appt"
-          sx={{
-            width: '100%',
-            height: '40px',
-            borderRadius: '10px',
-            '& .MuiInputBase-root': {
-              background: '#ffffff',
-              height: '100%',
-              // width: '100%',
-              fontSize: '14px',
-              padding: '12px',
-              borderRadius: '10px',
-              fontFamily: '"Inter", sans-serif !important',
-              boxShadow:
-                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
-            },
-            '& .MuiOutlinedInput-notchedOutline': {
-              borderRadius: '10px'
-            },
-
-            '& .MuiInputBase-input': {
-              padding: 0,
-              fontSize: '14px',
-              fontFamily: '"Inter", sans-serif !important'
-            },
-            '&:hover fieldset': {
-              // borderColor: 'transparent !important'
-            },
-            '& .MuiInputLabel-root': {
-              top: '-6px',
-              fontSize: '14px',
-              fontFamily: '"Inter", sans-serif !important'
-            },
-            '& .MuiInputLabel-shrink': {
-              top: '0px'
-            }
-          }}
-        />
+        <CustomTextField type="date" id="appt" name="appt" />
       </Box>
       <Box
         sx={{
@@ -203,47 +164,7 @@ export default function AppointmentsDropDown({
         >
           Begin
         </Typography>
-        <TextField
-          type="time"
-          id="appt"
-          name="appt"
-          sx={{
-            width: '100%',
-            height: '40px',
-            borderRadius: '10px',
-            '& .MuiInputBase-root': {
-              background: '#ffffff',
-              height: '100%',
-              // width: '100%',
-              fontSize: '14px',
-              padding: '12px',
-              borderRadius: '10px',
-              fontFamily: '"Inter", sans-serif !important',
-              boxShadow:
-                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
-            },
-            '& .MuiOutlinedInput-notchedOutline': {
-              borderRadius: '10px'
-            },
-
-            '& .MuiInputBase-input': {
-              padding: 0,
-              fontSize: '14px',
-              fontFamily: '"Inter", sans-serif !important'
-            },
-            '&:hover fieldset': {
-              // borderColor: 'transparent !important'
-            },
-            '& .MuiInputLabel-root': {
-              top: '-6px',
-              fontSize: '14px',
-              fontFamily: '"Inter", sans-serif !important'
-            },
-            '& .MuiInputLabel-shrink': {
-              top: '0px'
-            }
-          }}
-        />
+        <CustomTextField type="time" id="appt" name="appt" />
       </Box>
       <Box
         sx={{
@@ -264,52 +185,10 @@ export default function AppointmentsDropDown({
             fontWeight: 400,
             textAlign: 'left',
             textTransform: 'capitalize'
-
-            // mt: {xs: '8px', lg: '0px'}
           }}
         >
           End
-          <TextField
-            type="time"
-            id="appt"
-            name="appt"
-            sx={{
-              width: '100%',
-              height: '40px',
-              borderRadius: '10px',
-              '& .MuiInputBase-root': {
-                background: '#ffffff',
-                height: '100%',
-                // width: '100%',
-                fontSize: '14px',
-                padding: '12px',
-                borderRadius: '10px',
-                fontFamily: '"Inter", sans-serif !important',
-                boxShadow:
-                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
-              },
-              '& .MuiOutlinedInput-notchedOutline': {
-                borderRadius: '10px'
-              },
-
-              '& .MuiInputBase-input': {
-                padding: 0,
-                fontSize: '14px',
-                fontFamily: '"Inter", sans-serif !important'
-              },
-              '&:hover fieldset': {
-                // borderColor: 'transparent !important'
-              },
-              '& .MuiInputLabel-root': {
-                top: '-6px',
-                fontSize: '14px',
-                fontFamily: '"Inter", sans-serif !important'
-              },
-              '& .MuiInputLabel-shrink': {
-                top: '0px'
-              }
-            }}
-          />
+          <CustomTextField type="time" id="appt" name="appt" />
         </Typography>
       </Box>
 

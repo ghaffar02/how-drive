@@ -162,8 +162,8 @@ export default function Header() {
                     transformOrigin: 'top right'
                   }}
                 >
-                  <AppointmentsDropDown />
-                  {/* <EmailDropdown onClose={() => setOpenDropdown(false)} /> */}
+                  {/* <AppointmentsDropDown /> */}
+                  <EmailDropdown onClose={() => setOpenDropdown(false)} />
                   {/* <DrivinglicenseDropdown /> */}
                   {/* <TheoryexamDropDown text="Is the theory exam already registered? Select the day and time for it. These will be displayed to the student." /> */}
                 </Box>
