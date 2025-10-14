@@ -44,7 +44,7 @@ export default function Home() {
         >
           <Grid
             size={{xs: 6, md: 12}}
-            sx={{height: {xs: 'auto', lg: '18%', xl: '19%'}}}
+            sx={{height: {xs: 'auto', lg: '18%', xl: '17%'}}}
           >
             <Header />
           </Grid>
@@ -54,13 +54,13 @@ export default function Home() {
           <Grid
             container
             size={{md: 12, lg: 8}}
-            sx={{height: {xs: 'auto', lg: '79%'}}}
+            sx={{height: {xs: 'auto', lg: '78%', xl: '80%'}}}
             spacing={{xs: 2, sm: 3, md: 3}}
           >
-            <Grid size={12} sx={{height: {xs: 'auto', lg: '70%', xl: '73%'}}}>
+            <Grid size={12} sx={{height: {xs: 'auto', lg: '70%', xl: '70%'}}}>
               <Process />
             </Grid>
-            <Grid size={6} sx={{height: {xs: 'auto', lg: '26%', xl: '24%'}}}>
+            <Grid size={6} sx={{height: {xs: 'auto', lg: '26%', xl: '25%'}}}>
               <LessonCard
                 title={t('card1Title')}
                 completedHours={11}
@@ -68,7 +68,7 @@ export default function Home() {
                 progressValue={80}
               />
             </Grid>
-            <Grid size={6} sx={{height: {xs: 'auto', lg: '26%', xl: '24%'}}}>
+            <Grid size={6} sx={{height: {xs: 'auto', lg: '26%', xl: '25%'}}}>
               <LessonCard
                 title={t('card2Title')}
                 completedHours={4}
@@ -80,21 +80,21 @@ export default function Home() {
           <Grid
             container
             size={{xs: 12, md: 12, lg: 4}}
-            sx={{height: {xs: 'auto', lg: '79%'}}}
+            sx={{height: {xs: 'auto', lg: '78%', xl: '80%'}}}
             spacing={3}
           >
             <Grid
               size={{md: 6, lg: 12}}
               sx={{
                 display: {xs: 'none', md: 'block'},
-                height: {xs: 'auto', lg: '48%', xl: '49%'}
+                height: {xs: 'auto', lg: '48%', xl: '47.5%'}
               }}
             >
               <Appointment />
             </Grid>
             <Grid
               size={{xs: 12, md: 6, lg: 12}}
-              sx={{height: {xs: 'auto', lg: '48%', xl: '48%'}}}
+              sx={{height: {xs: 'auto', lg: '48%', xl: '47.5%'}}}
             >
               <Messages />
             </Grid>

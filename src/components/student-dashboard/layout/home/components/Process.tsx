@@ -94,7 +94,7 @@ export default function Process() {
           },
           rowGap: {xs: '10px', md: '80px'},
           position: 'relative',
-          overflow: 'hidden',
+          overflow: 'visible',
           padding: {xs: '15px 0px', md: '20px 0px 0px'}
         }}
         initial={{opacity: 0}}
