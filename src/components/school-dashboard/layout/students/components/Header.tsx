@@ -1,16 +1,40 @@
 import localFont from '@/utils/themes';
 import {Box, Typography, Switch} from '@mui/material';
 import Image from 'next/image';
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import pen from '@/assets/svgs/dashboard-student/pen.svg';
+import {AnimatePresence, motion} from 'framer-motion';
+import EmailDropdown from './EmailDropdown';
 
 export default function Header() {
   const [checked, setChecked] = React.useState(true);
+  const [openDropdown, setOpenDropdown] = useState(true);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const iconRef = useRef<HTMLDivElement | null>(null);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
   };
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
+
+      setOpenDropdown(false);
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
   return (
     <Box
       sx={{
@@ -68,12 +92,78 @@ export default function Header() {
           >
             Mustermann
           </Typography>
-          <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
+
+          <Box
+            ref={iconRef}
+            sx={{height: '20px', width: '20px', cursor: 'pointer'}}
+          >
             <Image
               src={pen}
               alt="edit"
               style={{height: '100%', width: '100%'}}
+              onClick={() => setOpenDropdown((prev) => !prev)}
             />
+            <AnimatePresence>
+              {openDropdown && (
+                <Box
+                  ref={dropdownRef}
+                  component={motion.div}
+                  initial={{
+                    opacity: 0,
+                    scale: 0.5,
+                    y: -20,
+                    x: 20,
+                    originX: 1,
+                    originY: 0
+                  }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    x: 0,
+                    originX: 1,
+                    originY: 0
+                  }}
+                  exit={{
+                    opacity: 0,
+                    scale: 0.5,
+                    // dur: 1,
+                    y: -20,
+                    x: 20,
+                    originX: 1,
+                    originY: 0
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    type: 'spring',
+                    stiffness: 300,
+                    damping: 25
+                  }}
+                  sx={{
+                    position: 'absolute',
+                    zIndex: 99,
+
+                    left: 100,
+                    mt: '10px',
+                    width: {xs: '300px'},
+                    overflow: 'visible',
+                    border: '1px solid rgb(255, 255, 255)',
+                    backgroundColor: '#f0f0fa99',
+                    backdropFilter: 'blur(8px)',
+                    boxShadow: `
+    0px 0px 0px 1px rgb(255, 255, 255),
+    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+  `,
+                    borderRadius: '12px',
+                    transformOrigin: 'top right'
+                  }}
+                >
+                  <EmailDropdown onClose={() => setOpenDropdown(false)} />
+                  {/* <AppointmentsDropDown /> */}
+                </Box>
+              )}
+            </AnimatePresence>
           </Box>
         </Box>
         <Box>

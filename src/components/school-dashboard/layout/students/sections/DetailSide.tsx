@@ -8,6 +8,7 @@ import {AnimatePresence, motion} from 'framer-motion';
 import localFont from '@/utils/themes';
 // import LeftSideDropDown from '../components/LeftSideDropDown';
 import AppointmentsDropDown from '../components/AppointmentsDropDown';
+import LeftSideDropDown from '../components/LeftSideDropDown';
 
 const MotionBox = motion(Box);
 const emails = [
@@ -79,7 +80,7 @@ const emails = [
 export default function DetailSide() {
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
 
-  const [openDropdown, setOpenDropdown] = useState(true);
+  const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const iconRef = useRef<HTMLDivElement | null>(null);
   // const [value, setValue] = useState('active');
@@ -89,24 +90,24 @@ export default function DetailSide() {
   const handleClickTab = (i: number) => {
     setActiveIndex(i);
   };
-  // useEffect(() => {
-  //   function handleClickOutside(event: MouseEvent) {
-  //     if (
-  //       dropdownRef.current &&
-  //       dropdownRef.current.contains(event.target as Node)
-  //     ) {
-  //       return;
-  //     }
-  //     if (iconRef.current && iconRef.current.contains(event.target as Node)) {
-  //       return;
-  //     }
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
 
-  //     setOpenDropdown(false);
-  //   }
+      setOpenDropdown(false);
+    }
 
-  //   document.addEventListener('mousedown', handleClickOutside);
-  //   return () => document.removeEventListener('mousedown', handleClickOutside);
-  // }, []);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   // const handleClick = (i: number) => {
   //   setActiveIndexes((prev) =>
@@ -269,7 +270,8 @@ export default function DetailSide() {
                   transformOrigin: 'top right'
                 }}
               >
-                <AppointmentsDropDown />
+                <LeftSideDropDown />
+                {/* <AppointmentsDropDown /> */}
               </Box>
             )}
           </AnimatePresence>
