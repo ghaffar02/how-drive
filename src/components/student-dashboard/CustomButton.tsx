@@ -11,6 +11,7 @@ interface CustomButtonProps extends ButtonProps {
   hoverTextcolor?: string;
   imgSrc?: StaticImageData | string;
   sx?: SxProps<Theme>;
+  onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 export default function CustomButton({
@@ -20,12 +21,13 @@ export default function CustomButton({
   activeColor = '#1A065C',
   hoverTextcolor = '#fff',
   imgSrc,
-
+  onClick,
   sx = {},
   ...rest
 }: CustomButtonProps) {
   return (
     <Button
+      onClick={onClick}
       variant="contained"
       disableRipple
       sx={{
