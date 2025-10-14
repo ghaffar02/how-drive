@@ -1,6 +1,8 @@
 import {Box} from '@mui/material';
 import React from 'react';
 import Header from '../components/Header';
+import ExamInfo from '../components/ExamInfo';
+import Process from '../components/Process';
 
 export default function StudentDetail() {
   return (
@@ -8,7 +10,6 @@ export default function StudentDetail() {
       sx={{
         width: '100%',
         height: '100%',
-
         padding: '24px',
         background: 'rgba(248,250,252,0.3)',
         backdropFilter: 'blur(15px)',
@@ -18,6 +19,8 @@ export default function StudentDetail() {
       }}
     >
       <Header />
+      <ExamInfo />
+      {/* <Process /> */}
     </Box>
   );
 }
