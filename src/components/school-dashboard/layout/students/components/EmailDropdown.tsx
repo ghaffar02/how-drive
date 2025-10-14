@@ -1,6 +1,6 @@
 import {Box, Typography} from '@mui/material';
 import {ReactNode} from 'react';
-import tick from '@/assets/svgs/dashboard-student/send.svg';
+import tick from '@/assets/svgs/dashboard-student/tick.svg';
 import cross from '@/assets/svgs/dashboard-student/btncross.svg';
 import localFont from '@/utils/themes';
 import CustomButton from '@/components/student-dashboard/CustomButton';
@@ -27,7 +27,6 @@ export default function EmailDropdown({
 
   return (
     <Box
-      onClick={onClose}
       sx={{
         width: '100%',
         display: 'flex',

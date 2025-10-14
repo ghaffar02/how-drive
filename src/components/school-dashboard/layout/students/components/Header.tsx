@@ -6,6 +6,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import pen from '@/assets/svgs/dashboard-student/pen.svg';
 import {AnimatePresence, motion} from 'framer-motion';
 import EmailDropdown from './EmailDropdown';
+import DrivinglicenseDropdown from './DrivinglicenseDropdown';
 
 export default function Header() {
   const [checked, setChecked] = React.useState(true);
@@ -143,7 +144,7 @@ export default function Header() {
                     position: 'absolute',
                     zIndex: 99,
 
-                    left: 100,
+                    left: {xs: 40, sm: 100},
                     mt: '10px',
                     width: {xs: '300px'},
                     overflow: 'visible',
@@ -160,7 +161,7 @@ export default function Header() {
                   }}
                 >
                   <EmailDropdown onClose={() => setOpenDropdown(false)} />
-                  {/* <AppointmentsDropDown /> */}
+                  {/* <DrivinglicenseDropdown /> */}
                 </Box>
               )}
             </AnimatePresence>

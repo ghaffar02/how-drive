@@ -28,6 +28,7 @@ export default function CustomTextField({
           height: '100%',
           // width: '100%',
           fontSize: '14px',
+
           padding: '12px',
           borderRadius: '10px',
           fontFamily: '"Inter", sans-serif !important',
