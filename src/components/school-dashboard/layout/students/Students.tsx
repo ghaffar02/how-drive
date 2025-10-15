@@ -13,7 +13,7 @@ export default function Process() {
         width: '100%',
         // background: 'red',
         // height: {xs: '100%', md: '100%'},
-        height: '100%',
+        height: {xs: 'auto', md: '100%'},
         display: 'flex',
         gap: '16px'
       }}
