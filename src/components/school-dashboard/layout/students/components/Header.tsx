@@ -5,12 +5,13 @@ import React, {useEffect, useRef, useState} from 'react';
 
 import pen from '@/assets/svgs/dashboard-student/pen.svg';
 import {AnimatePresence, motion} from 'framer-motion';
-// import EmailDropdown from './EmailDropdown';
+import EmailDropdown from './EmailDropdown';
 // import DrivinglicenseDropdown from './DrivinglicenseDropdown';
 // import TheoryexamDropDown from './TheoryexamDropDown';
 // import AppointmentsDropDown from './AppointmentsDropDown';
 // import EditappointmentDropDown from './EditappointmentDropDown';
-import LessonDropDown from './LessonDropDown';
+// import LessonDropDown from './LessonDropDown';
+// import MessagesDropDown from './MessagesDropDown';
 
 export default function Header() {
   const [checked, setChecked] = React.useState(true);
@@ -165,7 +166,8 @@ export default function Header() {
                     transformOrigin: 'top right'
                   }}
                 >
-                  <LessonDropDown Label1="Driver" Label2="Day" />
+                  {/* <MessagesDropDown /> */}
+                  {/* <LessonDropDown Label1="Driver" Label2="Day" /> */}
                   {/* <AppointmentsDropDown /> */}
                   {/* <EditappointmentDropDown
                     title="Edit appointment"
@@ -185,7 +187,7 @@ export default function Header() {
                     ]}
                   /> */}
 
-                  {/* <EmailDropdown onClose={() => setOpenDropdown(false)} /> */}
+                  <EmailDropdown onClose={() => setOpenDropdown(false)} />
                   {/* <DrivinglicenseDropdown /> */}
                   {/* <TheoryexamDropDown text="Is the theory exam already registered? Select the day and time for it. These will be displayed to the student." /> */}
                 </Box>
