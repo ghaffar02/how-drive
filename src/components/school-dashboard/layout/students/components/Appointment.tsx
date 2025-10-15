@@ -6,12 +6,49 @@ import React from 'react';
 import addIcon from '@/assets/svgs/circleadd.svg';
 
 export default function Appointment() {
+  const cardArray = [
+    {
+      id: 1,
+      barColor: 'red',
+      name: 'Besprechung',
+      date: '17.10.2025',
+      time: '12:30 - 13:00'
+    },
+    {
+      id: 2,
+      barColor: 'purple',
+      name: 'Besprechung',
+      date: '18.10.2025',
+      time: '13:30 - 14:00'
+    },
+    {
+      id: 3,
+      barColor: 'orange',
+      name: 'Besprechung',
+      date: '20.10.2025',
+      time: '11:30 - 12:00'
+    },
+    {
+      id: 4,
+      barColor: 'green',
+      name: 'Besprechung',
+      date: '17.11.2025',
+      time: '12:30 - 13:00'
+    },
+    {
+      id: 5,
+      barColor: 'yellow',
+      name: 'Besprechung',
+      date: '17.10.2025',
+      time: '12:30 - 13:00'
+    }
+  ];
   return (
     <Box
       sx={{
         width: '100%',
         height: '100%',
-        padding: '24px',
+        padding: {xs: '16px', lg: '24px'},
         display: 'flex',
         flexDirection: 'column',
         gap: '8px',
@@ -47,24 +84,40 @@ export default function Appointment() {
       </Box>
       <Box
         sx={{
-          flex: 1,
           overflow: 'auto',
           display: 'flex',
           flexDirection: 'column',
           gap: '10px',
-          // height: '100%',
-          // overflowY: 'auto',
-          padding: '4px 0px'
+          height: {xs: '190px', md: '270px', lg: '280px'},
+          padding: '4px',
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          },
+          msOverflowStyle: 'none'
         }}
       >
-        <Card />
-        <Card />
+        {cardArray.map((data) => (
+          <Card
+            key={data.id}
+            name={data.name}
+            barColor={data.barColor}
+            date={data.date}
+            time={data.time}
+          />
+        ))}
       </Box>
     </Box>
   );
 }
 
-export function Card() {
+type CardProps = {
+  name: string;
+  barColor: string;
+  date: string;
+  time: string;
+};
+
+export function Card({name, barColor, date, time}: CardProps) {
   return (
     <Box
       sx={{
@@ -87,7 +140,7 @@ export function Card() {
           sx={{
             height: '22px',
             width: '6px',
-            backgroundColor: 'red',
+            backgroundColor: barColor,
             borderRadius: '999px'
           }}
         />
@@ -98,7 +151,7 @@ export function Card() {
             fontWeight: '500'
           }}
         >
-          Besprechung
+          {name}
         </Typography>
       </Box>
       <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
@@ -108,7 +161,7 @@ export function Card() {
             fontFamily: '"Inter", sans-serif !important'
           }}
         >
-          12:30 - 13:00
+          {time}
         </Typography>
         <Typography
           sx={{
@@ -116,7 +169,7 @@ export function Card() {
             fontFamily: '"Inter", sans-serif !important'
           }}
         >
-          17.10.2025
+          {date}
         </Typography>
       </Box>
     </Box>
