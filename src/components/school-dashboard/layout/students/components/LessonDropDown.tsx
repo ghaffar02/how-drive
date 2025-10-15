@@ -7,11 +7,16 @@ import CustomTextField from '@/components/school-dashboard/InputField';
 import {useTranslations} from 'next-intl';
 
 interface CustomCardProps {
-  text?: string;
+  Label1?: string;
+  Label2?: string;
   onClose?: () => void;
 }
 
-export default function EmailDropdown({onClose}: CustomCardProps) {
+export default function LessonDropDown({
+  onClose,
+  Label1,
+  Label2
+}: CustomCardProps) {
   const t = useTranslations('Dashboard.Messages.formDropDown');
   const handleContainerClick = (event: React.MouseEvent) => {
     event.stopPropagation();
@@ -51,13 +56,10 @@ export default function EmailDropdown({onClose}: CustomCardProps) {
             textAlign: 'left'
           }}
         >
-          Vorname
+          {Label1}
         </Typography>
 
-        <CustomTextField
-          labal="Daniel"
-          sx={{textAlign: 'end', maxWidth: {lg: '403px'}}}
-        />
+        <CustomTextField type="number" />
       </Box>
       <Box
         onClick={handleContainerClick}
@@ -80,10 +82,10 @@ export default function EmailDropdown({onClose}: CustomCardProps) {
             textAlign: 'left'
           }}
         >
-          Nachname
+          {Label2}
         </Typography>
 
-        <CustomTextField labal="Mustermann" />
+        <CustomTextField type="number" />
       </Box>
 
       <Box

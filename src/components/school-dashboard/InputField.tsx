@@ -2,10 +2,6 @@ import {TextField} from '@mui/material';
 import {SxProps, Theme} from '@mui/material/styles';
 
 interface CustomTextFieldProps {
-  bgColor?: string;
-  borderColor?: string;
-  hoverBorderColor?: string;
-  radius?: string | number;
   labal?: string;
   sx?: SxProps<Theme>;
   type?: string;
@@ -37,7 +33,7 @@ export default function CustomTextField({
           height: '100%',
           // width: '100%',
           fontSize: '14px',
-          color: type && '#999999 !important',
+          color: type !== 'number' ? '#999999 !important' : undefined,
 
           padding: '12px',
           borderRadius: '10px',
@@ -46,11 +42,12 @@ export default function CustomTextField({
             '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
         },
         // change the icon color
-        [`& input[type="${type}"]::-webkit-calendar-picker-indicator`]: {
-          filter: 'invert(36%) sepia(88%) saturate(23%) hue-rotate(180deg)',
-          cursor: 'pointer'
-        },
-
+        ...(type !== 'number' && {
+          [`& input[type="${type}"]::-webkit-calendar-picker-indicator`]: {
+            filter: 'invert(36%) sepia(88%) saturate(23%) hue-rotate(180deg)',
+            cursor: 'pointer'
+          }
+        }),
         '& .MuiOutlinedInput-notchedOutline': {
           borderRadius: '10px'
         },
