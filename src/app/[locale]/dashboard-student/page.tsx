@@ -11,7 +11,7 @@ export default function StudentDashboard() {
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         width: '100%',
-        padding: {xs: '0px 16px', md: '20px'},
+        padding: {xs: '0px 16px', md: '24px'},
         position: 'relative'
       }}
     >
