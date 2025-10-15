@@ -5,10 +5,12 @@ import React, {useEffect, useRef, useState} from 'react';
 
 import pen from '@/assets/svgs/dashboard-student/pen.svg';
 import {AnimatePresence, motion} from 'framer-motion';
-import EmailDropdown from './EmailDropdown';
-import DrivinglicenseDropdown from './DrivinglicenseDropdown';
-import TheoryexamDropDown from './TheoryexamDropDown';
-import AppointmentsDropDown from './AppointmentsDropDown';
+// import EmailDropdown from './EmailDropdown';
+// import DrivinglicenseDropdown from './DrivinglicenseDropdown';
+// import TheoryexamDropDown from './TheoryexamDropDown';
+// import AppointmentsDropDown from './AppointmentsDropDown';
+// import EditappointmentDropDown from './EditappointmentDropDown';
+import LessonDropDown from './LessonDropDown';
 
 export default function Header() {
   const [checked, setChecked] = React.useState(true);
@@ -42,7 +44,7 @@ export default function Header() {
     <Box
       sx={{
         width: '100%',
-        height:"100%",
+        height: '100%',
         border: '1px solid #fff',
         borderRadius: '18px',
         p: {xs: '16px', lg: '24px'},
@@ -163,8 +165,27 @@ export default function Header() {
                     transformOrigin: 'top right'
                   }}
                 >
+                  <LessonDropDown Label1="Driver" Label2="Day" />
                   {/* <AppointmentsDropDown /> */}
-                  <EmailDropdown onClose={() => setOpenDropdown(false)} />
+                  {/* <EditappointmentDropDown
+                    title="Edit appointment"
+                    driverLabel="Driver"
+                    dayLabel="Day"
+                    beginLabel="Begin"
+                    endLabel="End"
+                    participantsLabel="Participants"
+                    participantName="Daniel Mustermann 1"
+                    cancelHeading="Cancel appointment"
+                    cancelDescription="To cancel the appointment remove all participants from the list and click Save."
+                    cancelBtnLabel="Cancel"
+                    saveBtnLabel="Save"
+                    dropdownOptions={[
+                      {value: 'malfunction', label: 'Malfunction'},
+                      {value: 'question', label: 'Question'}
+                    ]}
+                  /> */}
+
+                  {/* <EmailDropdown onClose={() => setOpenDropdown(false)} /> */}
                   {/* <DrivinglicenseDropdown /> */}
                   {/* <TheoryexamDropDown text="Is the theory exam already registered? Select the day and time for it. These will be displayed to the student." /> */}
                 </Box>
