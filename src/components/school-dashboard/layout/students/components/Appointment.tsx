@@ -43,6 +43,8 @@ export default function Appointment() {
       time: '12:30 - 13:00'
     }
   ];
+  const show = true;
+
   return (
     <Box
       sx={{
@@ -96,15 +98,32 @@ export default function Appointment() {
           msOverflowStyle: 'none'
         }}
       >
-        {cardArray.map((data) => (
-          <Card
-            key={data.id}
-            name={data.name}
-            barColor={data.barColor}
-            date={data.date}
-            time={data.time}
-          />
-        ))}
+        {show ? (
+          cardArray.map((data) => (
+            <Card
+              key={data.id}
+              name={data.name}
+              barColor={data.barColor}
+              date={data.date}
+              time={data.time}
+            />
+          ))
+        ) : (
+          <Typography
+            sx={{
+              ...localFont.inter24,
+              color: '#3f3f46',
+              fontWeight: '200',
+              // textAlign: 'center',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: '100%'
+            }}
+          >
+            No new appointment!
+          </Typography>
+        )}
       </Box>
     </Box>
   );
@@ -117,7 +136,7 @@ type CardProps = {
   time: string;
 };
 
-export function Card({name, barColor, date, time}: CardProps) {
+function Card({name, barColor, date, time}: CardProps) {
   return (
     <Box
       sx={{

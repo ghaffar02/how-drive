@@ -135,7 +135,7 @@ export default function DetailSide() {
         height: '100%',
         background: 'rgba(248,250,252,0.3)',
         padding: '24px 12px',
-        border: '1px solid #fff',
+        border: '2px solid #fff',
         display: {xs: 'none', md: 'flex'},
         flexDirection: 'column',
         gap: '8px'
