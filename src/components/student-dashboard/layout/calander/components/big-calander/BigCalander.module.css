@@ -1,0 +1,113 @@
+.calendarWrapper {
+  background: linear-gradient(180deg, #f5f4ff 0%, #ebeafc 100%);
+  border-radius: 20px;
+  padding: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(12px);
+  height: calc(100% - 60px);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* ✅ New container ensures Calendar inherits height properly */
+.calendarContainer {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ properly scoped global rules (no more “pure selector” error) */
+.calendarWrapper :global(.rbc-calendar) {
+  height: 100% !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.calendarWrapper :global(.rbc-month-view) {
+  height: 100% !important;
+}
+
+/* Base calendar overrides */
+.calendarWrapper :global(.rbc-month-view) {
+  border: none;
+  background: transparent;
+  border-radius: 16px;
+}
+
+.calendarWrapper :global(.rbc-header) {
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  color: #5a5a8c;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  border-radius: 10px 10px 0 0;
+}
+
+.calendarWrapper :global(.rbc-day-bg) {
+  border: none;
+  transition: background 0.3s ease;
+  border-radius: 8px;
+}
+
+.calendarWrapper :global(.rbc-date-cell) {
+  text-align: center;
+  color: #111;
+  font-weight: 500;
+  padding: 6px;
+}
+
+.calendarWrapper :global(.rbc-date-cell.rbc-now) {
+  background-color: #000;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.calendarWrapper :global(.rbc-off-range-bg) {
+  background-color: transparent;
+  opacity: 0.5;
+}
+
+/* Remove borders */
+.calendarWrapper :global(.rbc-row),
+.calendarWrapper :global(.rbc-month-row),
+.calendarWrapper :global(.rbc-day-bg + .rbc-day-bg) {
+  border: none !important;
+}
+
+.calendarWrapper :global(.rbc-toolbar) {
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.calendarWrapper :global(.rbc-toolbar-label) {
+  font-weight: 600;
+  color: #4b4b7a;
+  font-family: 'Inter', sans-serif;
+}
+
+.calendarWrapper :global(.rbc-btn-group button) {
+  background: rgba(255, 255, 255, 0.6);
+  border: none;
+  border-radius: 8px;
+  padding: 4px 10px;
+  margin: 0 4px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.calendarWrapper :global(.rbc-btn-group button:hover) {
+  background: rgba(120, 120, 255, 0.2);
+}
+
+.calendarWrapper :global(.rbc-event) {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
