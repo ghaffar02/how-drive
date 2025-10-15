@@ -34,14 +34,17 @@ export default function StudentDetail() {
         <Header />
       </Box>
       <Box
-        sx={{gridRow: '2', gridColumn: {xs: '1 / span 2', lg: '1 / span 1'}}}
+        sx={{
+          gridRow: '2',
+          gridColumn: {xs: '1 / span 2', lg: '1 / span 1'}
+        }}
       >
         <ExamInfo />
       </Box>
       <Box
         sx={{
           gridRow: {xs: '3', lg: '2'},
-          gridColumn: {xs: '1 / span 2', lg: '1 / span 1'}
+          gridColumn: {xs: '1 / span 2', lg: '2 / span 1'}
         }}
       >
         <ExamInfo />
