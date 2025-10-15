@@ -8,8 +8,11 @@ import localFont from '@/utils/themes';
 import ProfileDropdown from './ProfileDropdown';
 // ProfileDropdown relative icons
 import settingsIcon from '@/assets/svgs/dashboard-student/setting.svg';
+import settingsIconBold from '@/assets/svgs/dashboard-student/settingsIconBold.svg';
 import supportIcon from '@/assets/svgs/dashboard-student/email.svg';
+import supportIconBold from '@/assets/svgs/dashboard-student/supportIconBold.svg';
 import logoutIcon from '@/assets/svgs/dashboard-student/login.svg';
+import logoutIconBold from '@/assets/svgs/dashboard-student/logoutIconBold.svg';
 import Setting from './profile-setting/Setting';
 import Process from './process/Process';
 import Calander from './calander/Calander';
@@ -175,9 +178,24 @@ function HomeMobileHeader({
             anchorRef={anchorRef}
             fullName="Daniel Mustermann"
             items={[
-              {id: '5', label: 'Einstellungen', menuIcon: settingsIcon},
-              {id: '6', label: 'Support', menuIcon: supportIcon},
-              {id: '7', label: 'Abmelden', menuIcon: logoutIcon}
+              {
+                id: '5',
+                label: 'Einstellungen',
+                menuIcon: settingsIcon,
+                menuIconHover: settingsIconBold
+              },
+              {
+                id: '6',
+                label: 'Support',
+                menuIcon: supportIcon,
+                menuIconHover: supportIconBold
+              },
+              {
+                id: '7',
+                label: 'Abmelden',
+                menuIcon: logoutIcon,
+                menuIconHover: logoutIconBold
+              }
             ]}
             open={open}
             setOpen={setOpen}
