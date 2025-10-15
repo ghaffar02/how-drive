@@ -9,7 +9,9 @@ import {
 } from '@mui/material';
 import {animate, useMotionValue} from 'framer-motion';
 import {useTranslations} from 'next-intl';
+import Image from 'next/image';
 import {useEffect, useState} from 'react';
+import pen from '@/assets/svgs/dashboard-student/pen.svg';
 
 interface LessonCardProps {
   title: string;
@@ -112,7 +114,7 @@ export default function LessonCard({
             pl: {xs: '0px', md: '24px'},
             display: 'flex',
             alignItems: 'center',
-
+            gap: '4px',
             maxWidth: {xs: '180px', sm: '100%'},
             width: '100%'
           }}
@@ -142,6 +144,13 @@ export default function LessonCard({
             / {totalHours} <span></span>
             {t('hours')}
           </Typography>
+          <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
+            <Image
+              src={pen}
+              alt="edit"
+              style={{height: '100%', width: '100%'}}
+            />
+          </Box>
         </Box>
       </Box>
 

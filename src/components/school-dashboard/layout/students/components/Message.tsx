@@ -8,6 +8,7 @@ import car from '@/assets/svgs/dashboard-student/home/car.svg';
 import fabian from '@/assets/svgs/dashboard-student/home/fabian.svg';
 import logo from '@/assets/pngs/logo.avif';
 import {useTranslations} from 'next-intl';
+import addIcon from '@/assets/svgs/circleadd.svg';
 
 import {motion} from 'framer-motion';
 
@@ -64,16 +65,24 @@ export default function Messages() {
           '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)'
       }}
     >
-      <Typography
-        sx={{
-          ...localFont.inter16,
-          fontWeight: '500',
-          fontFamily: '"Inter", sans-serif !important'
-        }}
-      >
-        {t('Messages')}
-      </Typography>
-
+      <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
+        <Typography
+          sx={{
+            ...localFont.inter16,
+            fontWeight: '500',
+            fontFamily: '"Inter", sans-serif !important'
+          }}
+        >
+          {t('Messages')}
+        </Typography>
+        <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
+          <Image
+            src={addIcon}
+            alt="add"
+            style={{height: '100%', width: '100%'}}
+          />
+        </Box>
+      </Box>
       <MotionBox
         sx={{
           display: 'flex',

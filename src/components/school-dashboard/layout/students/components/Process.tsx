@@ -4,6 +4,8 @@ import localFont from '@/utils/themes';
 
 import {useTranslations} from 'next-intl';
 import {motion} from 'framer-motion';
+import pen from '@/assets/svgs/dashboard-student/pen.svg';
+import Image from 'next/image';
 
 const MotionBox = motion(Box);
 
@@ -69,17 +71,28 @@ export default function Process() {
           '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)'
       }}
     >
-      <Typography
+      <Box
         sx={{
-          ...localFont.inter16,
-          fontFamily: '"Inter", sans-serif !important',
-          color: '#2d3748',
-          mb: '16px',
-          fontWeight: '500'
+          display: 'flex',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between'
         }}
       >
-        {t('title')}
-      </Typography>
+        <Typography
+          sx={{
+            ...localFont.inter16,
+            fontFamily: '"Inter", sans-serif !important',
+            color: '#2d3748',
+            mb: '16px',
+            fontWeight: '500'
+          }}
+        >
+          {t('title')}
+        </Typography>
+        <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
+          <Image src={pen} alt="edit" style={{height: '100%', width: '100%'}} />
+        </Box>
+      </Box>
       {/* Below is cards code */}
       <MotionBox
         sx={{
@@ -93,7 +106,7 @@ export default function Process() {
             xs: 'flex-start !important',
             md: 'center !important'
           },
-          rowGap: {xs: '10px', md: '80px'},
+          rowGap: {xs: '10px', lg: '80px'},
           position: 'relative',
           overflow: 'hidden',
           padding: {xs: '15px 0px', md: '20px 0px'}
@@ -115,7 +128,7 @@ export default function Process() {
             <MotionBox
               key={i}
               sx={{
-                display: {xs: 'none', md: 'block'},
+                display: {xs: 'none', lg: 'block'},
                 position: 'absolute',
                 top: 40,
                 mt: i > 1 ? `${i * 61 - 59}px` : '0px',
@@ -132,7 +145,7 @@ export default function Process() {
             <MotionBox
               key={index}
               sx={{
-                display: i == 5 ? 'none' : {xs: 'none', md: 'block'},
+                display: i == 5 ? 'none' : {xs: 'none', lg: 'block'},
                 position: 'absolute',
                 width: i == 1 ? '64px' : '63px',
                 height: i == 1 ? '64px' : '62px',
