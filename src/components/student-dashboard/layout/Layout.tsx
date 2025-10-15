@@ -100,11 +100,25 @@ export default function StudentDashboard() {
               : {})
           }}
         >
-          <HomeMobileHeader
+          <MobileHeader
             anchorRef={anchorRef}
             open={open}
             setOpen={setOpen}
-            title="Home"
+            title={
+              activeKey === '1'
+                ? 'Home'
+                : activeKey === '2'
+                  ? 'Timer'
+                  : activeKey === '3'
+                    ? 'Calendar'
+                    : activeKey === '4'
+                      ? 'Messages'
+                      : activeKey === '5'
+                        ? 'Settings'
+                        : activeKey === '6'
+                          ? 'Support'
+                          : ''
+            }
             activeKey={activeKey}
             setActiveKey={setActiveKey}
           />
@@ -120,7 +134,7 @@ export default function StudentDashboard() {
   );
 }
 
-type HomeMobileHeaderProps = {
+type MobileHeaderProps = {
   anchorRef: React.RefObject<HTMLDivElement | null>;
   open: boolean;
   setOpen: (open: boolean) => void;
@@ -130,14 +144,14 @@ type HomeMobileHeaderProps = {
   setActiveKey: React.Dispatch<React.SetStateAction<string>>;
 };
 
-function HomeMobileHeader({
+function MobileHeader({
   anchorRef,
   open,
   setOpen,
   title = 'Home',
   activeKey,
   setActiveKey
-}: HomeMobileHeaderProps) {
+}: MobileHeaderProps) {
   return (
     <>
       {/* the profile tab for mobile  */}
