@@ -59,11 +59,10 @@ export default function ExamInfo() {
   return (
     <Box
       sx={{
-        // maxWidth: {xs: '400px', md: '100%'},
         width: '100%',
         height: '100%',
         background: 'rgba(255,255,255,0.75)',
-        padding: {xs: '16px 12px 16px 16px', md: '8px'},
+        padding: {xs: '16px', md: '8px'},
         borderRadius: '18px',
         display: 'flex',
         flexDirection: 'column',

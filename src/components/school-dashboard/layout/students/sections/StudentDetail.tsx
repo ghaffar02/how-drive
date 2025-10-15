@@ -5,6 +5,7 @@ import ExamInfo from '../components/ExamInfo';
 import Process from '../components/Process';
 import LessonCard from '../components/LessonCard';
 import Messages from '../components/Message';
+import Appointment from '../components/Appointment';
 
 export default function StudentDetail() {
   return (
@@ -12,7 +13,7 @@ export default function StudentDetail() {
       sx={{
         width: '100%',
         height: {xs: '100%', md: '100%'},
-        padding: '24px',
+        padding: {xs: '16px', md: '24px'},
         background: 'rgba(248,250,252,0.3)',
         backdropFilter: 'blur(15px)',
         boxShadow: `0px 0px 0px 1px rgb(255, 255, 255, rgb(255, 255, 255)), 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)`,
@@ -47,7 +48,7 @@ export default function StudentDetail() {
           gridColumn: {xs: '1 / span 2', lg: '2 / span 1'}
         }}
       >
-        <ExamInfo />
+        <Appointment />
       </Box>
       <Box sx={{gridRow: {xs: '4', lg: '3'}, gridColumn: '1 / span 2'}}>
         <Process />
