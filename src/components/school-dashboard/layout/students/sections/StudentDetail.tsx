@@ -5,6 +5,7 @@ import ExamInfo from '../components/ExamInfo';
 import Process from '../components/Process';
 import LessonCard from '../components/LessonCard';
 import Messages from '../components/Message';
+import Appointment from '../components/Appointment';
 
 export default function StudentDetail() {
   return (
@@ -47,7 +48,7 @@ export default function StudentDetail() {
           gridColumn: {xs: '1 / span 2', lg: '2 / span 1'}
         }}
       >
-        <ExamInfo />
+        <Appointment />
       </Box>
       <Box sx={{gridRow: {xs: '4', lg: '3'}, gridColumn: '1 / span 2'}}>
         <Process />
