@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, {useState} from 'react';
 import {Box, Typography, Paper, Popper, Grow, Divider} from '@mui/material';
 import {SxProps, Theme} from '@mui/material';
 import Image, {StaticImageData} from 'next/image';
@@ -10,7 +10,12 @@ import localFont from '@/utils/themes';
 type ProfileDropdownProps = {
   anchorRef: React.RefObject<HTMLDivElement | null>;
   fullName: string;
-  items: {id: string; label: string; menuIcon: string}[];
+  items: {
+    id: string;
+    label: string;
+    menuIcon: string;
+    menuIconHover?: string;
+  }[];
   open: boolean;
   setOpen: (open: boolean) => void;
   profileIcon?: StaticImageData;
@@ -45,6 +50,7 @@ export default function ProfileDropdown({
   onLogout
 }: ProfileDropdownProps) {
   const initials = getInitials(fullName);
+  const [hoveredItemId, setHoveredItemId] = useState<string | null>(null);
 
   const textStyle = {
     color: '#000000',
@@ -180,77 +186,88 @@ export default function ProfileDropdown({
                   width: '100%'
                 }}
               />
-              {items.map((item) => (
-                <Box
-                  // onClick={() => {
-                  //   setOpen(false);
-                  //   if (setActiveKey) setActiveKey(item.id);
-                  // }}
-                  onClick={() => {
-                    setOpen(false);
-                    if (item.id === '7') {
-                      onLogout?.();
-                    }
-                    if (setActiveKey) {
-                      setActiveKey(item.id);
-                    }
-                  }}
-                  key={item.id || item.label}
-                  sx={{
-                    borderRadius: '12px',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease-in-out',
-                    padding: '12px',
-                    width: '100%',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    '&:hover': {
-                      backgroundColor: 'rgba(48, 88, 255, 0.10)',
-                      '& .arrowWrapper': {
-                        opacity: 1,
-                        transform: 'translateX(0)'
-                      }
-                    }
-                  }}
-                >
-                  <Box
-                    sx={{display: 'flex', alignItems: 'center', gap: '12px'}}
-                  >
-                    <Box sx={{height: '20px', width: '20px'}}>
-                      <Image
-                        style={{height: '100%', width: '100%'}}
-                        src={item.menuIcon}
-                        alt={item.label}
-                      />
-                    </Box>
-                    <Typography sx={{...textStyle, fontWeight: '400'}}>
-                      {item.label}
-                    </Typography>
-                  </Box>
 
+              {items.map((item) => {
+                const isHovered = hoveredItemId === item.id;
+                const iconSrc =
+                  isHovered && item.menuIconHover
+                    ? item.menuIconHover
+                    : item.menuIcon;
+
+                return (
                   <Box
-                    className="arrowWrapper"
+                    // onClick={() => {
+                    //   setOpen(false);
+                    //   if (setActiveKey) setActiveKey(item.id);
+                    // }}
+                    onClick={() => {
+                      setOpen(false);
+                      if (item.id === '7') {
+                        onLogout?.();
+                      }
+                      if (setActiveKey) {
+                        setActiveKey(item.id);
+                      }
+                    }}
+                    onMouseEnter={() => setHoveredItemId(item.id)}
+                    onMouseLeave={() => setHoveredItemId(null)}
+                    key={item.id || item.label}
                     sx={{
-                      opacity: 0,
-                      transform: 'translateX(-10px)',
+                      borderRadius: '12px',
+                      cursor: 'pointer',
                       transition: 'all 0.3s ease-in-out',
+                      padding: '12px',
+                      width: '100%',
                       display: 'flex',
-                      alignItems: 'center'
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      '&:hover': {
+                        backgroundColor: 'rgba(48, 88, 255, 0.10)',
+                        '& .arrowWrapper': {
+                          opacity: 1,
+                          transform: 'translateX(0)'
+                        }
+                      }
                     }}
                   >
-                    <Image
-                      style={{
-                        height: '16px',
-                        width: '16px',
-                        objectFit: 'cover'
+                    <Box
+                      sx={{display: 'flex', alignItems: 'center', gap: '12px'}}
+                    >
+                      <Box sx={{height: '20px', width: '20px'}}>
+                        <Image
+                          style={{height: '100%', width: '100%'}}
+                          src={iconSrc}
+                          alt={item.label}
+                        />
+                      </Box>
+                      <Typography sx={{...textStyle, fontWeight: '400'}}>
+                        {item.label}
+                      </Typography>
+                    </Box>
+
+                    <Box
+                      className="arrowWrapper"
+                      sx={{
+                        opacity: 0,
+                        transform: 'translateX(-10px)',
+                        transition: 'all 0.3s ease-in-out',
+                        display: 'flex',
+                        alignItems: 'center'
                       }}
-                      src={arrow}
-                      alt="arrow icon"
-                    />
+                    >
+                      <Image
+                        style={{
+                          height: '16px',
+                          width: '16px',
+                          objectFit: 'cover'
+                        }}
+                        src={arrow}
+                        alt="arrow icon"
+                      />
+                    </Box>
                   </Box>
-                </Box>
-              ))}
+                );
+              })}
             </Paper>
           </Grow>
         )}

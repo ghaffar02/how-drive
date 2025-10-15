@@ -19,8 +19,6 @@ import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
 import infos_black from '@/assets/svgs/dashboard-student/infos_black.svg';
 import infos_bold from '@/assets/svgs/dashboard-student/infos_bold.svg';
 
-// import menu from '@/assets/svgs/dashboard-student/menu.svg';
-
 import InfoMenuModal from './InfoMenuModal';
 
 type Props = {
@@ -76,7 +74,7 @@ export default function MobileTabs({
       iconHover: message_bold
     },
     {
-      key: '',
+      key: '5',
       label: 'Infos',
       iconBlack: infos_black,
       iconBlue: infos_black,
@@ -96,7 +94,6 @@ export default function MobileTabs({
           width: 'calc(100% - 32px)',
           borderRadius: '18px',
           padding: '8px',
-          // position fixed here
           position: 'fixed',
           bottom: '16px',
           left: '16px',
@@ -115,11 +112,15 @@ export default function MobileTabs({
           {navItems.map((item) => {
             const isActive = activeKey === item.key;
             const isHover = hoverKey === item.key;
-            const iconSrc = isActive
-              ? item.iconBlue
-              : isHover
-                ? item.iconHover
-                : item.iconBlack;
+            const isInfosTab = item.key === '5';
+
+            const iconSrc = isInfosTab
+              ? item.iconBlack
+              : isActive
+                ? item.iconBlue
+                : isHover
+                  ? item.iconHover
+                  : item.iconBlack;
 
             return (
               <Box
@@ -139,9 +140,10 @@ export default function MobileTabs({
                   sx={{
                     padding: '2px',
                     borderRadius: '9999px',
-                    backgroundColor: isActive
-                      ? 'rgba(48, 88, 255, 0.10)'
-                      : 'transparent',
+                    backgroundColor:
+                      !isInfosTab && isActive
+                        ? 'rgba(48, 88, 255, 0.10)'
+                        : 'transparent',
                     width: '100%'
                   }}
                 >
@@ -156,8 +158,8 @@ export default function MobileTabs({
                 </Box>
                 <Typography
                   sx={{
-                    color: isActive ? '#4611F5' : '#000000',
-                    fontWeight: isActive ? '700' : '400',
+                    color: !isInfosTab && isActive ? '#4611F5' : '#000000',
+                    fontWeight: !isInfosTab && isActive ? '700' : '400',
                     fontSize: '12px',
                     fontFamily: '"Inter", sans-serif !important',
                     textAlign: 'center',

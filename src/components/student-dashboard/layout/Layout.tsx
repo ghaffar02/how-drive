@@ -8,8 +8,11 @@ import localFont from '@/utils/themes';
 import ProfileDropdown from './ProfileDropdown';
 // ProfileDropdown relative icons
 import settingsIcon from '@/assets/svgs/dashboard-student/setting.svg';
+import settingsIconBold from '@/assets/svgs/dashboard-student/settingsIconBold.svg';
 import supportIcon from '@/assets/svgs/dashboard-student/email.svg';
+import supportIconBold from '@/assets/svgs/dashboard-student/supportIconBold.svg';
 import logoutIcon from '@/assets/svgs/dashboard-student/login.svg';
+import logoutIconBold from '@/assets/svgs/dashboard-student/logoutIconBold.svg';
 import Setting from './profile-setting/Setting';
 import Process from './process/Process';
 import Calander from './calander/Calander';
@@ -97,11 +100,25 @@ export default function StudentDashboard() {
               : {})
           }}
         >
-          <HomeMobileHeader
+          <MobileHeader
             anchorRef={anchorRef}
             open={open}
             setOpen={setOpen}
-            title="Home"
+            title={
+              activeKey === '1'
+                ? 'Home'
+                : activeKey === '2'
+                  ? 'Timer'
+                  : activeKey === '3'
+                    ? 'Calendar'
+                    : activeKey === '4'
+                      ? 'Messages'
+                      : activeKey === '5'
+                        ? 'Settings'
+                        : activeKey === '6'
+                          ? 'Support'
+                          : ''
+            }
             activeKey={activeKey}
             setActiveKey={setActiveKey}
           />
@@ -117,7 +134,7 @@ export default function StudentDashboard() {
   );
 }
 
-type HomeMobileHeaderProps = {
+type MobileHeaderProps = {
   anchorRef: React.RefObject<HTMLDivElement | null>;
   open: boolean;
   setOpen: (open: boolean) => void;
@@ -127,14 +144,14 @@ type HomeMobileHeaderProps = {
   setActiveKey: React.Dispatch<React.SetStateAction<string>>;
 };
 
-function HomeMobileHeader({
+function MobileHeader({
   anchorRef,
   open,
   setOpen,
   title = 'Home',
   activeKey,
   setActiveKey
-}: HomeMobileHeaderProps) {
+}: MobileHeaderProps) {
   return (
     <>
       {/* the profile tab for mobile  */}
@@ -175,9 +192,24 @@ function HomeMobileHeader({
             anchorRef={anchorRef}
             fullName="Daniel Mustermann"
             items={[
-              {id: '5', label: 'Einstellungen', menuIcon: settingsIcon},
-              {id: '6', label: 'Support', menuIcon: supportIcon},
-              {id: '7', label: 'Abmelden', menuIcon: logoutIcon}
+              {
+                id: '5',
+                label: 'Einstellungen',
+                menuIcon: settingsIcon,
+                menuIconHover: settingsIconBold
+              },
+              {
+                id: '6',
+                label: 'Support',
+                menuIcon: supportIcon,
+                menuIconHover: supportIconBold
+              },
+              {
+                id: '7',
+                label: 'Abmelden',
+                menuIcon: logoutIcon,
+                menuIconHover: logoutIconBold
+              }
             ]}
             open={open}
             setOpen={setOpen}
