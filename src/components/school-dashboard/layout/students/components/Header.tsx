@@ -42,6 +42,7 @@ export default function Header() {
     <Box
       sx={{
         width: '100%',
+        height:"100%",
         border: '1px solid #fff',
         borderRadius: '18px',
         p: {xs: '16px', lg: '24px'},
