@@ -17,6 +17,7 @@ import message_black from '@/assets/svgs/dashboard-student/message_black.svg';
 import message_bold from '@/assets/svgs/dashboard-student/message_bold.svg';
 import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
 import infos_black from '@/assets/svgs/dashboard-student/infos_black.svg';
+import infos_bold from '@/assets/svgs/dashboard-student/infos_bold.svg';
 
 // import menu from '@/assets/svgs/dashboard-student/menu.svg';
 
@@ -79,7 +80,7 @@ export default function MobileTabs({
       label: 'Infos',
       iconBlack: infos_black,
       iconBlue: infos_black,
-      iconHover: infos_black
+      iconHover: infos_bold
     }
   ];
 
