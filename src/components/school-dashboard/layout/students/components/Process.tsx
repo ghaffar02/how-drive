@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Box, Typography} from '@mui/material';
 import localFont from '@/utils/themes';
 
@@ -15,6 +15,28 @@ export default function Process() {
   const t = useTranslations('Dashboard.home.process');
   const [open, setOpen] = useState(false);
   const [activeBoxes, setActiveBoxes] = useState<{[key: number]: boolean}>({});
+  const modalRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
+      }
+    }
+
+    if (open) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [open]);
 
   const handleToggle = (id: number) => {
     setActiveBoxes((prev) => ({
@@ -22,9 +44,20 @@ export default function Process() {
       [id]: !prev[id]
     }));
   };
+
   function openModal() {
     setOpen((prev) => !prev);
   }
+
+  const handleSave = () => {
+    // Here you can do something with activeBoxes (e.g. send to API)
+    console.log('Saved data:', activeBoxes);
+    setOpen(false);
+  };
+
+  const handleCancel = () => {
+    setOpen(false);
+  };
 
   const data = [
     {
@@ -105,7 +138,11 @@ export default function Process() {
           {t('title')}
         </Typography>
         <Box
-          onClick={openModal}
+          ref={modalRef}
+          onClick={(e) => {
+            e.stopPropagation();
+            openModal();
+          }}
           sx={{
             height: '20px',
             width: '20px',
@@ -197,6 +234,7 @@ export default function Process() {
             <Box sx={{display: 'flex', justifyContent: 'center', gap: '16px'}}>
               <Box
                 component="button"
+                onClick={handleCancel}
                 sx={{
                   padding: '8px 12px',
                   display: 'flex',
@@ -229,6 +267,7 @@ export default function Process() {
               </Box>
               <Box
                 component="button"
+                onClick={handleSave}
                 sx={{
                   padding: '8px 12px',
                   display: 'flex',
