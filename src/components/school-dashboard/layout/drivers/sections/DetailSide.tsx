@@ -9,70 +9,71 @@ import localFont from '@/utils/themes';
 // import LeftSideDropDown from '../components/LeftSideDropDown';
 // import AppointmentsDropDown from '../components/AppointmentsDropDown';
 import LeftSideDropDown from '../../students/components/LeftSideDropDown';
+import profile from '@/assets/svgs/dashboard-student/profile.svg';
 
 const MotionBox = motion(Box);
 const emails = [
   {
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Tom Schwarz 1',
     class: 'B',
     isRequest: true
   },
   {
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Tom Schwarz 2',
     class: 'B17',
     isRequest: true
   },
   {
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Tom Schwarz 3',
     class: 'B (Umschreiben)',
     isRequest: true
   },
   {
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Tom Schwarz 4',
     class: 'B'
   },
   {
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Tom Schwarz 5',
     class: 'B17'
   },
   {
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Tom Schwarz 6',
     class: 'B (Umschreiben)'
   },
   {
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Tom Schwarz 7',
     class: 'B'
   },
   {
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Tom Schwarz 8',
     class: 'B17'
   },
   {
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Tom Schwarz 9',
     class: 'B (Umschreiben)'
   },
   {
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Tom Schwarz 10',
     class: 'B'
   },
   {
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Tom Schwarz 11',
     class: 'B17'
   },
   {
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Tom Schwarz 12',
     class: 'B (Umschreiben)'
   },
   {
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Tom Schwarz 13',
     class: 'B'
   },
   {
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Tom Schwarz 14',
     class: 'B17'
   },
   {
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Tom Schwarz 15',
     class: 'B (Umschreiben)'
   }
 ];
@@ -356,16 +357,13 @@ export default function DetailSide() {
       <MotionBox
         sx={{
           display: 'flex',
-
           width: '100%',
           flexDirection: 'column',
           gap: '10px',
           alignItems: 'center',
-
           // maxHeight: {xs: '188px', xl: '100%'},
           overflow: 'auto',
           p: '4px 2px',
-
           '&::-webkit-scrollbar': {
             display: 'none'
           },
@@ -415,6 +413,20 @@ export default function DetailSide() {
             >
               <Box
                 sx={{
+                  height: '40px',
+                  minWidth: '40px',
+                  background: '#2563eb1a',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  border: '1px solid rgba(37,99,235,0.1)',
+                  borderRadius: '8px'
+                }}
+              >
+                <Image src={profile} alt="profile" height={24} width={24} />
+              </Box>
+              <Box
+                sx={{
                   display: 'flex',
                   textAlign: 'center',
                   flexDirection: 'column',
@@ -439,7 +451,7 @@ export default function DetailSide() {
                 </Typography>
                 <Typography
                   sx={{
-                    ...localFont.inter14,
+                    fontSize: {xs: '10.8px', md: '11.8px', lg: '12.8px'},
                     textAlign: 'end',
 
                     color: items.isRequest

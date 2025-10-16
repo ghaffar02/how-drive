@@ -1993,11 +1993,7 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": [
-            "Necessary",
-            "Analytics",
-            "Allow all"
-          ]
+          "formFields": ["Necessary", "Analytics", "Allow all"]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2025,10 +2021,7 @@
             "News",
             "Driving license office registered"
           ],
-          "formFieldsOff": [
-            "Genereller Newsletter",
-            "Offers and advertising"
-          ]
+          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
         }
       }
     },
@@ -2210,6 +2203,15 @@
       "messLable1": "Topic",
       "messLable2": "Message",
       "messBtn": "Send message"
+    },
+    "Drivers": {
+      "DriverDetail": {
+        "headerTitle": "No drivers have been added to the list yet!",
+        "drivingTitle": "Driving students",
+        "drivingDes": "Click on the \"plus\" icon to add new students.",
+        "messageTitle": "Messages",
+        "messageDes": "No messages!"
+      }
     }
   }
 }

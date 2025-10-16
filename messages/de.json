@@ -1981,11 +1981,7 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": [
-            "Notwendige",
-            "Analytics",
-            "Alle zulassen"
-          ]
+          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2024,10 +2020,7 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": [
-            "News und Update",
-            "Angebote und Werbung"
-          ]
+          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
         }
       }
     },
@@ -2209,6 +2202,15 @@
       "messLable1": "Betreff",
       "messLable2": "Nachricht",
       "messBtn": "Nachricht senden"
+    },
+    "Drivers": {
+      "DriverDetail": {
+        "headerTitle": "Es wurden noch keine Fahrer zur Liste hinzugefügt!",
+        "drivingTitle": "Fahrschüler",
+        "drivingDes": "Klicke auf \"Plus-Symbol\", um neue Fahrschüler hinzufügen.",
+        "messageTitle": "Nachrichten",
+        "messageDes": "Keine Nachrichten!"
+      }
     }
   }
 }
