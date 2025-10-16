@@ -10,8 +10,10 @@ import {
 import {animate, useMotionValue} from 'framer-motion';
 import {useTranslations} from 'next-intl';
 import Image from 'next/image';
-import {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
+import {AnimatePresence, motion} from 'framer-motion';
 import pen from '@/assets/svgs/dashboard-student/pen.svg';
+import LessonDropDown from './LessonDropDown';
 
 interface LessonCardProps {
   title: string;
@@ -27,9 +29,29 @@ export default function LessonCard({
   progressValue
 }: LessonCardProps) {
   const [progress, setProgress] = useState(0);
-  const t = useTranslations('Dashboard.home.MessageLesson');
-
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const iconRef = useRef<HTMLDivElement | null>(null);
   const motionProgress = useMotionValue(0);
+  const t = useTranslations('SchoolDashboard.MessageLesson');
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
+
+      setOpenDropdown(false);
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   useEffect(() => {
     const unsub = motionProgress.on('change', (latest) => {
@@ -144,12 +166,91 @@ export default function LessonCard({
             / {totalHours} <span></span>
             {t('hours')}
           </Typography>
-          <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
+          {/* <Box sx={{}}>
             <Image
               src={pen}
               alt="edit"
               style={{height: '100%', width: '100%'}}
             />
+          </Box> */}
+
+          <Box
+            ref={iconRef}
+            sx={{
+              height: '20px',
+              width: '20px',
+              cursor: 'pointer',
+              position: 'relative'
+            }}
+          >
+            <Image
+              src={pen}
+              alt="edit"
+              style={{height: '100%', width: '100%'}}
+              onClick={() => setOpenDropdown((prev) => !prev)}
+            />
+            <AnimatePresence>
+              {openDropdown && (
+                <Box
+                  ref={dropdownRef}
+                  component={motion.div}
+                  initial={{
+                    opacity: 0,
+                    scale: 0.5,
+                    y: 100,
+                    x: 20,
+                    originX: 1,
+                    originY: 0
+                  }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    x: 0,
+                    originX: 1,
+                    originY: 0
+                  }}
+                  exit={{
+                    opacity: 0,
+                    scale: 0.5,
+                    // dur: 1,
+                    y: 100,
+                    x: 20,
+                    originX: 1,
+                    originY: 0
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    type: 'spring',
+                    stiffness: 300,
+                    damping: 25
+                  }}
+                  sx={{
+                    // bgcolor: '#000',
+                    position: 'absolute',
+                    zIndex: 99999,
+                    bottom: '100%',
+                    right: 0,
+                    mb: '8px',
+                    width: {xs: '300px'},
+                    overflow: 'visible',
+                    border: '1px solid rgb(255, 255, 255)',
+                    backgroundColor: '#f0f0fa99',
+                    backdropFilter: 'blur(8px)',
+
+                    boxShadow: `
+    0px 0px 0px 1px rgb(255, 255, 255),
+    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+  `,
+                    borderRadius: '12px',
+                    transformOrigin: 'top right'
+                  }}
+                >
+                  <LessonDropDown Label1={t('lable1')} Label2={t('lable2')} />
+                </Box>
+              )}
+            </AnimatePresence>
           </Box>
         </Box>
       </Box>

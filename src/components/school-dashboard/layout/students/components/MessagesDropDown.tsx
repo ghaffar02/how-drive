@@ -4,7 +4,7 @@ import tick from '@/assets/svgs/dashboard-student/send.svg';
 import localFont from '@/utils/themes';
 import CustomButton from '@/components/student-dashboard/CustomButton';
 import CustomTextField from '@/components/school-dashboard/InputField';
-
+import {useTranslations} from 'next-intl';
 interface CustomCardProps {
   onClose?: () => void;
 }
@@ -13,6 +13,7 @@ export default function MessagesDropDown({onClose}: CustomCardProps) {
   const handleContainerClick = (event: React.MouseEvent) => {
     event.stopPropagation();
   };
+  const t = useTranslations('SchoolDashboard.MessageLesson');
 
   return (
     <Box
@@ -48,7 +49,7 @@ export default function MessagesDropDown({onClose}: CustomCardProps) {
             textAlign: 'left'
           }}
         >
-          Topic
+          {t('messLable1')}
         </Typography>
 
         <CustomTextField />
@@ -74,7 +75,7 @@ export default function MessagesDropDown({onClose}: CustomCardProps) {
             textAlign: 'left'
           }}
         >
-          Messages
+          {t('messLable2')}
         </Typography>
 
         <TextField
@@ -113,11 +114,11 @@ export default function MessagesDropDown({onClose}: CustomCardProps) {
         }}
       >
         <CustomButton
-          label="Send message"
+          label={t('messBtn')}
           imgSrc={tick}
           sx={{
             gap: '8px',
-            maxWidth: '152px',
+            maxWidth: '174px',
             width: '100%',
             justifyContent: 'start'
           }}
