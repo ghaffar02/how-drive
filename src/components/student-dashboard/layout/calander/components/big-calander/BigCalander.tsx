@@ -57,10 +57,10 @@ const events = [
 const EventComponent: React.FC<{event: any}> = ({event}) => (
   <div
     style={{
-      width: '5px',
-      height: '12px',
-      borderRadius: '3px',
-      margin: '1px auto',
+      width: '6px',
+      height: '18px',
+      borderRadius: '999px',
+      margin: '2px 0 2px 15%',
       backgroundColor: event.color
     }}
   />
