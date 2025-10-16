@@ -1,21 +1,19 @@
-import {Box, Typography} from '@mui/material';
-import tick from '@/assets/svgs/dashboard-student/tick.svg';
-import cross from '@/assets/svgs/dashboard-student/btncross.svg';
+import {Box, TextField, Typography} from '@mui/material';
+import tick from '@/assets/svgs/dashboard-student/send.svg';
+
 import localFont from '@/utils/themes';
 import CustomButton from '@/components/student-dashboard/CustomButton';
 import CustomTextField from '@/components/school-dashboard/InputField';
 import {useTranslations} from 'next-intl';
-
 interface CustomCardProps {
-  text?: string;
   onClose?: () => void;
 }
 
-export default function EmailDropdown({onClose}: CustomCardProps) {
-  const t = useTranslations('Dashboard.Messages.formDropDown');
+export default function MessagesDropDown({onClose}: CustomCardProps) {
   const handleContainerClick = (event: React.MouseEvent) => {
     event.stopPropagation();
   };
+  const t = useTranslations('SchoolDashboard.MessageLesson');
 
   return (
     <Box
@@ -51,13 +49,10 @@ export default function EmailDropdown({onClose}: CustomCardProps) {
             textAlign: 'left'
           }}
         >
-          Vorname
+          {t('messLable1')}
         </Typography>
 
-        <CustomTextField
-          labal="Daniel"
-          sx={{textAlign: 'end', maxWidth: {lg: '403px'}}}
-        />
+        <CustomTextField />
       </Box>
       <Box
         onClick={handleContainerClick}
@@ -80,10 +75,31 @@ export default function EmailDropdown({onClose}: CustomCardProps) {
             textAlign: 'left'
           }}
         >
-          Nachname
+          {t('messLable2')}
         </Typography>
 
-        <CustomTextField labal="Mustermann" />
+        <TextField
+          multiline
+          rows={4}
+          fullWidth
+          variant="outlined"
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              borderRadius: '8px',
+              background: '#ffffff',
+              // boxShadow:
+              //   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
+              height: '100%',
+              fontSize: '14px',
+              padding: '12px'
+            },
+
+            '& .MuiInputBase-input': {
+              padding: 0,
+              fontSize: '14px'
+            }
+          }}
+        />
       </Box>
 
       <Box
@@ -98,27 +114,11 @@ export default function EmailDropdown({onClose}: CustomCardProps) {
         }}
       >
         <CustomButton
-          onClick={onClose}
-          label={t('btn')}
-          bgColor="rgb(220, 38, 38)"
-          hoverColor="#991919"
-          hoverTextcolor="#fff"
-          imgSrc={cross}
-          sx={{
-            gap: '7px',
-            maxWidth: '122px',
-            width: '100%',
-            justifyContent: 'start'
-          }}
-        />
-        <CustomButton
-          label={t('btn1')}
-          bgColor="#0D9488"
-          hoverColor="#0C5C72"
+          label={t('messBtn')}
           imgSrc={tick}
           sx={{
             gap: '8px',
-            maxWidth: '122px',
+            maxWidth: '174px',
             width: '100%',
             justifyContent: 'start'
           }}

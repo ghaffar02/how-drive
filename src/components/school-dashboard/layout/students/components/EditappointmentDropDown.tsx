@@ -6,7 +6,6 @@ import cross from '@/assets/svgs/dashboard-student/btncross.svg';
 import CustomButton from '@/components/student-dashboard/CustomButton';
 import CustomTextField from '@/components/school-dashboard/InputField';
 import Image from 'next/image';
-import addIcon from '@/assets/svgs/circleadd.svg';
 import crossCircle from '@/assets/svgs/dashboard-student/crosscircle.svg';
 
 interface DropdownOption {

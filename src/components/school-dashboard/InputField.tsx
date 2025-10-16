@@ -2,10 +2,6 @@ import {TextField} from '@mui/material';
 import {SxProps, Theme} from '@mui/material/styles';
 
 interface CustomTextFieldProps {
-  bgColor?: string;
-  borderColor?: string;
-  hoverBorderColor?: string;
-  radius?: string | number;
   labal?: string;
   sx?: SxProps<Theme>;
   type?: string;
@@ -35,21 +31,22 @@ export default function CustomTextField({
         '& .MuiInputBase-root': {
           background: '#ffffff',
           height: '100%',
-          // width: '100%',
           fontSize: '14px',
-          color: type && '#999999 !important',
-
+          color: '#000000',
           padding: '12px',
           borderRadius: '10px',
-          fontFamily: '"Inter", sans-serif !important',
-          boxShadow:
-            '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+          fontFamily: '"Inter", sans-serif !important'
+          // boxShadow:
+          //   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
         },
-        // change the icon color
-        [`& input[type="${type}"]::-webkit-calendar-picker-indicator`]: {
-          filter: 'invert(36%) sepia(88%) saturate(23%) hue-rotate(180deg)',
-          cursor: 'pointer'
-        },
+
+        // for date/time pickers (make icon grey)
+        ...(type !== 'number' && {
+          [`& input[type="${type}"]::-webkit-calendar-picker-indicator`]: {
+            filter: 'invert(36%) sepia(88%) saturate(23%) hue-rotate(180deg)',
+            cursor: 'pointer'
+          }
+        }),
 
         '& .MuiOutlinedInput-notchedOutline': {
           borderRadius: '10px'
@@ -58,9 +55,14 @@ export default function CustomTextField({
         '& .MuiInputBase-input': {
           padding: 0,
           fontSize: '14px',
-          fontFamily: '"Inter", sans-serif !important'
+          fontFamily: '"Inter", sans-serif !important',
+          color: '#000000' // 👈 ensure input text is black
         },
-        '&:hover fieldset': {},
+
+        '&::placeholder': {
+          color: '#999999' // placeholder color (grey)
+        },
+
         '& .MuiInputLabel-root': {
           top: '-6px',
           fontSize: '14px',

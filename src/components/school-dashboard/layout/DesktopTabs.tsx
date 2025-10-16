@@ -17,6 +17,9 @@ import calander_blue from '@/assets/svgs/dashboard-student/calander_blue.svg';
 import message_black from '@/assets/svgs/dashboard-student/message_black.svg';
 import message_bold from '@/assets/svgs/dashboard-student/message_bold.svg';
 import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
+import driver_black from '@/assets/svgs/dashboard-student/driver_black.svg';
+import driver_blue from '@/assets/svgs/dashboard-student/driver_blue.svg';
+import driver_bold from '@/assets/svgs/dashboard-student/driver_bold.svg';
 
 // dropdown icons
 import setting from '@/assets/svgs/dashboard-student/setting.svg';
@@ -74,6 +77,13 @@ export default function DesktopTabs({
       iconBlack: message_black,
       iconBlue: message_blue,
       iconHover: message_bold
+    },
+    {
+      key: '7',
+      label: 'driver',
+      iconBlack: driver_black,
+      iconBlue: driver_blue,
+      iconHover: driver_bold
     }
   ];
 

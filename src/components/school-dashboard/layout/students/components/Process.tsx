@@ -1,14 +1,64 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Box, Typography} from '@mui/material';
 import localFont from '@/utils/themes';
 
 import {useTranslations} from 'next-intl';
 import {motion} from 'framer-motion';
+import pen from '@/assets/svgs/dashboard-student/pen.svg';
+import Image from 'next/image';
+import cross1 from '@/assets/svgs/dashboard-student/cross2.svg';
+import tick from '@/assets/svgs/dashboard-student/tick.svg';
 
 const MotionBox = motion(Box);
 
 export default function Process() {
   const t = useTranslations('Dashboard.home.process');
+  const [open, setOpen] = useState(false);
+  const [activeBoxes, setActiveBoxes] = useState<{[key: number]: boolean}>({});
+  const modalRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
+      }
+    }
+
+    if (open) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [open]);
+
+  const handleToggle = (id: number) => {
+    setActiveBoxes((prev) => ({
+      ...prev,
+      [id]: !prev[id]
+    }));
+  };
+
+  function openModal() {
+    setOpen((prev) => !prev);
+  }
+
+  const handleSave = () => {
+    // Here you can do something with activeBoxes (e.g. send to API)
+    console.log('Saved data:', activeBoxes);
+    setOpen(false);
+  };
+
+  const handleCancel = () => {
+    setOpen(false);
+  };
+
   const data = [
     {
       id: 1,
@@ -69,17 +119,190 @@ export default function Process() {
           '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)'
       }}
     >
-      <Typography
+      <Box
         sx={{
-          ...localFont.inter16,
-          fontFamily: '"Inter", sans-serif !important',
-          color: '#2d3748',
-          mb: '16px',
-          fontWeight: '500'
+          display: 'flex',
+          alignItems: 'flex-start',
+          justifyContent: 'space-between'
         }}
       >
-        {t('title')}
-      </Typography>
+        <Typography
+          sx={{
+            ...localFont.inter16,
+            fontFamily: '"Inter", sans-serif !important',
+            color: '#2d3748',
+            mb: '16px',
+            fontWeight: '500'
+          }}
+        >
+          {t('title')}
+        </Typography>
+        <Box
+          ref={modalRef}
+          onClick={(e) => {
+            e.stopPropagation();
+            openModal();
+          }}
+          sx={{
+            height: '20px',
+            width: '20px',
+            cursor: 'pointer',
+            position: 'relative'
+          }}
+        >
+          <Image src={pen} alt="edit" style={{height: '100%', width: '100%'}} />
+          {/* The code for the pop up */}
+          <Box
+            onClick={(e) => e.stopPropagation()}
+            sx={{
+              position: 'absolute',
+              top: 35,
+              right: 0,
+              border: '1px solid #fff',
+              borderRadius: '12px',
+              padding: '16px',
+              minWidth: '300px',
+              width: '100%',
+              display: open ? 'flex' : 'none',
+              flexDirection: 'column',
+              gap: '24px',
+              background: '#f0f0fa99',
+              backdropFilter: 'blur(8px)',
+              zIndex: 999,
+              cursor: 'default'
+            }}
+          >
+            {/* Steps */}
+            <Box sx={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
+              {data.map((step) => {
+                const isActive = activeBoxes[step.id] || false;
+                return (
+                  <Box
+                    onClick={() => handleToggle(step.id)}
+                    key={step.id}
+                    sx={{
+                      width: 'fit-content',
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      padding: '6px 16px 6px 6px',
+                      background: isActive
+                        ? 'linear-gradient(to left, rgba(165,243,252,1), rgba(94,234,212,1))'
+                        : 'linear-gradient(to right, rgba(248,250,252,1), rgba(255,255,255,1))',
+                      borderRadius: '999px',
+                      cursor: 'pointer',
+                      boxShadow:
+                        'rgba(0, 0, 0, 0.21) 0px 0.48175px 1.63795px -1.5px, rgba(0, 0, 0, 0.18) 0px 1.83083px 6.22481px -3px, rgba(0, 0, 0, 0.02) 0px 8px 27.2px -4.5px'
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: '30px',
+                        height: '30px',
+                        background: isActive ? '#fff' : '#71717a',
+                        borderRadius: '50%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}
+                    >
+                      <Typography
+                        sx={{
+                          ...localFont.inter14,
+                          color: isActive ? '#0d9488' : '#fff',
+                          fontFamily: '"Inter", sans-serif !important'
+                        }}
+                      >
+                        {step.id}
+                      </Typography>
+                    </Box>
+                    <Typography
+                      sx={{
+                        ...localFont.inter14,
+                        color: isActive ? '#0d9488' : '#4a5568',
+                        fontFamily: '"Inter", sans-serif !important'
+                      }}
+                    >
+                      {step.title}
+                    </Typography>
+                  </Box>
+                );
+              })}
+            </Box>
+
+            {/* Buttons */}
+            <Box sx={{display: 'flex', justifyContent: 'center', gap: '16px'}}>
+              <Box
+                component="button"
+                onClick={handleCancel}
+                sx={{
+                  padding: '8px 12px',
+                  display: 'flex',
+                  gap: '8px',
+                  alignItems: 'center',
+                  background: '#dc2626',
+                  borderRadius: '10px',
+                  border: 'none',
+                  minWidth: '95px',
+                  cursor: 'pointer',
+                  '&:hover': {
+                    background: 'rgb(153,25,25)'
+                  },
+                  '&:active': {
+                    background: 'rgb(82,82,91)'
+                  }
+                }}
+              >
+                <Image src={cross1} alt="cancel" height={16} width={16} />
+                <Typography
+                  sx={{
+                    ...localFont.inter14,
+                    color: '#fff',
+                    fontFamily: '"Inter", sans-serif !important'
+                  }}
+                >
+                  {/* {t('cancelBtn')} */}
+                  Cancel
+                </Typography>
+              </Box>
+              <Box
+                component="button"
+                onClick={handleSave}
+                sx={{
+                  padding: '8px 12px',
+                  display: 'flex',
+                  gap: '8px',
+                  alignItems: 'center',
+                  background: '#0d9488',
+                  borderRadius: '10px',
+                  border: 'none',
+                  minWidth: '95px',
+                  cursor: 'pointer',
+                  '&:hover': {
+                    background: 'rgb(12,93,86)'
+                  },
+                  '&:active': {
+                    background: 'rgb(82,82,91)'
+                  }
+                }}
+              >
+                <Image src={tick} alt="save" height={16} width={16} />
+                <Typography
+                  sx={{
+                    ...localFont.inter14,
+                    color: '#fff',
+                    fontFamily: '"Inter", sans-serif !important'
+                  }}
+                >
+                  {/* {t('saveBtn')} */}
+                  Save
+                </Typography>
+              </Box>
+            </Box>
+          </Box>
+          {/* The code for the pop up */}
+        </Box>
+      </Box>
       {/* Below is cards code */}
       <MotionBox
         sx={{
@@ -93,7 +316,7 @@ export default function Process() {
             xs: 'flex-start !important',
             md: 'center !important'
           },
-          rowGap: {xs: '10px', md: '80px'},
+          rowGap: {xs: '10px', lg: '80px'},
           position: 'relative',
           overflow: 'hidden',
           padding: {xs: '15px 0px', md: '20px 0px'}
@@ -115,7 +338,7 @@ export default function Process() {
             <MotionBox
               key={i}
               sx={{
-                display: {xs: 'none', md: 'block'},
+                display: {xs: 'none', lg: 'block'},
                 position: 'absolute',
                 top: 40,
                 mt: i > 1 ? `${i * 61 - 59}px` : '0px',
@@ -132,7 +355,7 @@ export default function Process() {
             <MotionBox
               key={index}
               sx={{
-                display: i == 5 ? 'none' : {xs: 'none', md: 'block'},
+                display: i == 5 ? 'none' : {xs: 'none', lg: 'block'},
                 position: 'absolute',
                 width: i == 1 ? '64px' : '63px',
                 height: i == 1 ? '64px' : '62px',

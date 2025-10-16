@@ -6,8 +6,10 @@ import Process from '../components/Process';
 import LessonCard from '../components/LessonCard';
 import Messages from '../components/Message';
 import Appointment from '../components/Appointment';
+import {useTranslations} from 'next-intl';
 
 export default function StudentDetail() {
+  const t = useTranslations('SchoolDashboard.MessageLesson');
   return (
     <Box
       sx={{
@@ -55,7 +57,7 @@ export default function StudentDetail() {
       </Box>
       <Box sx={{gridRow: {xs: '5', lg: '4'}, gridColumn: '1'}}>
         <LessonCard
-          title="Theory lessons"
+          title={t('card1Title')}
           completedHours={11}
           totalHours={14}
           progressValue={80}
@@ -63,7 +65,7 @@ export default function StudentDetail() {
       </Box>
       <Box sx={{gridRow: '5', gridColumn: {xs: '2 / span 1', lg: '1'}}}>
         <LessonCard
-          title="Driving lessons"
+          title={t('card2Title')}
           completedHours={11}
           totalHours={14}
           progressValue={80}

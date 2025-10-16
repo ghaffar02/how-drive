@@ -1,11 +1,15 @@
 import localFont from '@/utils/themes';
 import {Box, Typography} from '@mui/material';
 import Image from 'next/image';
-import React from 'react';
-
+import React, {useEffect, useRef, useState} from 'react';
+import {AnimatePresence, motion} from 'framer-motion';
 import addIcon from '@/assets/svgs/circleadd.svg';
+import AppointmentsDropDown from './AppointmentsDropDown';
 
 export default function Appointment() {
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const iconRef = useRef<HTMLDivElement | null>(null);
   const cardArray = [
     {
       id: 1,
@@ -43,6 +47,27 @@ export default function Appointment() {
       time: '12:30 - 13:00'
     }
   ];
+  const show = true;
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
+
+      setOpenDropdown(false);
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
     <Box
       sx={{
@@ -74,12 +99,91 @@ export default function Appointment() {
         >
           Appointments
         </Typography>
-        <Box sx={{height: '24px', width: '24px'}}>
+        {/* <Box sx={{height: '24px', width: '24px'}}>
           <Image
             src={addIcon}
             alt="addIcon"
             style={{height: '100%', width: '100%'}}
           />
+        </Box> */}
+
+        <Box
+          ref={iconRef}
+          sx={{
+            height: '20px',
+            width: '20px',
+            cursor: 'pointer',
+            position: 'relative'
+          }}
+        >
+          <Image
+            src={addIcon}
+            alt="addIcon"
+            style={{height: '100%', width: '100%'}}
+            onClick={() => setOpenDropdown((prev) => !prev)}
+          />
+          <AnimatePresence>
+            {openDropdown && (
+              <Box
+                ref={dropdownRef}
+                component={motion.div}
+                initial={{
+                  opacity: 0,
+                  scale: 0.5,
+                  y: -20,
+                  x: 20,
+                  originX: 1,
+                  originY: 0
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                  x: 0,
+                  originX: 1,
+                  originY: 0
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.5,
+                  // dur: 1,
+                  y: -20,
+                  x: 20,
+                  originX: 1,
+                  originY: 0
+                }}
+                transition={{
+                  duration: 0.5,
+                  type: 'spring',
+                  stiffness: 300,
+                  damping: 25
+                }}
+                sx={{
+                  // bgcolor: '#000',
+                  position: 'absolute',
+                  zIndex: 99999999,
+                  // bottom: '100%',
+                  right: 0,
+                  mb: '8px',
+                  width: {xs: '300px'},
+                  overflow: 'visible',
+                  border: '1px solid rgb(255, 255, 255)',
+                  backgroundColor: '#f0f0fa99',
+                  backdropFilter: 'blur(8px)',
+
+                  boxShadow: `
+            0px 0px 0px 1px rgb(255, 255, 255),
+            0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+            0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+          `,
+                  borderRadius: '12px',
+                  transformOrigin: 'top right'
+                }}
+              >
+                <AppointmentsDropDown />
+              </Box>
+            )}
+          </AnimatePresence>
         </Box>
       </Box>
       <Box
@@ -96,15 +200,32 @@ export default function Appointment() {
           msOverflowStyle: 'none'
         }}
       >
-        {cardArray.map((data) => (
-          <Card
-            key={data.id}
-            name={data.name}
-            barColor={data.barColor}
-            date={data.date}
-            time={data.time}
-          />
-        ))}
+        {show ? (
+          cardArray.map((data) => (
+            <Card
+              key={data.id}
+              name={data.name}
+              barColor={data.barColor}
+              date={data.date}
+              time={data.time}
+            />
+          ))
+        ) : (
+          <Typography
+            sx={{
+              ...localFont.inter24,
+              color: '#3f3f46',
+              fontWeight: '200',
+              // textAlign: 'center',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              height: '100%'
+            }}
+          >
+            No new appointment!
+          </Typography>
+        )}
       </Box>
     </Box>
   );
@@ -117,7 +238,7 @@ type CardProps = {
   time: string;
 };
 
-export function Card({name, barColor, date, time}: CardProps) {
+function Card({name, barColor, date, time}: CardProps) {
   return (
     <Box
       sx={{
