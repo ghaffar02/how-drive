@@ -16,7 +16,10 @@ import calander_blue from '@/assets/svgs/dashboard-student/calander_blue.svg';
 import message_black from '@/assets/svgs/dashboard-student/message_black.svg';
 import message_bold from '@/assets/svgs/dashboard-student/message_bold.svg';
 import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
-import infos_black from '@/assets/svgs/dashboard-student/infos_black.svg';
+// import infos_black from '@/assets/svgs/dashboard-student/infos_black.svg';
+import driver_black from '@/assets/svgs/dashboard-student/driver_black.svg';
+import driver_blue from '@/assets/svgs/dashboard-student/driver_blue.svg';
+import driver_bold from '@/assets/svgs/dashboard-student/driver_bold.svg';
 
 // import menu from '@/assets/svgs/dashboard-student/menu.svg';
 
@@ -74,12 +77,19 @@ export default function MobileTabs({
       iconBlue: message_blue,
       iconHover: message_bold
     },
+    // {
+    //   key: '5',
+    //   label: 'Infos',
+    //   iconBlack: infos_black,
+    //   iconBlue: infos_black,
+    //   iconHover: infos_black
+    // },
     {
-      key: '5',
-      label: 'Infos',
-      iconBlack: infos_black,
-      iconBlue: infos_black,
-      iconHover: infos_black
+      key: '7',
+      label: 'driver',
+      iconBlack: driver_black,
+      iconBlue: driver_blue,
+      iconHover: driver_bold
     }
   ];
 

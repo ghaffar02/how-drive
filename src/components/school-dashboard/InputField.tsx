@@ -35,9 +35,9 @@ export default function CustomTextField({
           color: '#000000',
           padding: '12px',
           borderRadius: '10px',
-          fontFamily: '"Inter", sans-serif !important',
-          boxShadow:
-            '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+          fontFamily: '"Inter", sans-serif !important'
+          // boxShadow:
+          //   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
         },
 
         // for date/time pickers (make icon grey)
