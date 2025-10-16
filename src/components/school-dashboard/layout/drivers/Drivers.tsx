@@ -5,7 +5,14 @@ import DriverDetail from './sections/DriverDetail';
 
 export default function Drivers() {
   return (
-    <Box sx={{width: '100%', height: '100%', display: 'flex', gap: '16px'}}>
+    <Box
+      sx={{
+        width: '100%',
+        height: {xs: 'auto', md: '100%'},
+        display: 'flex',
+        gap: '16px'
+      }}
+    >
       <DetailSide />
       <DriverDetail />
     </Box>

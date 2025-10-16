@@ -5,7 +5,11 @@ import React from 'react';
 import addIcon from '@/assets/svgs/circleadd.svg';
 import profile from '@/assets/svgs/dashboard-student/profile.svg';
 
-export default function DrivingStudents() {
+type Props = {
+  title: string;
+};
+
+export default function DrivingStudents({title}: Props) {
   const cardArray = [
     {
       name: 'Daniel Mustermann 2',
@@ -62,7 +66,7 @@ export default function DrivingStudents() {
             fontWeight: '500'
           }}
         >
-          Driving Students
+          {title}
         </Typography>
         <Box sx={{height: '24px', width: '24px'}}>
           <Image
@@ -82,7 +86,8 @@ export default function DrivingStudents() {
           '&::-webkit-scrollbar': {
             display: 'none'
           },
-          msOverflowStyle: 'none'
+          msOverflowStyle: 'none',
+          scrollbarWidth: 'none'
         }}
       >
         {cardArray.map((data, i) => (
