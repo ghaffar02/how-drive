@@ -1,10 +1,10 @@
 import {Box, TextField, Typography} from '@mui/material';
 import React, {useEffect, useRef, useState} from 'react';
+import {AnimatePresence, motion} from 'framer-motion';
 
 import Image from 'next/image';
 import searchIcon from '@/assets/svgs/dashboard-student/searchIcon.svg';
 import crossIcon from '@/assets/svgs/dashboard-student/crossicon.svg';
-import {AnimatePresence, motion} from 'framer-motion';
 import localFont from '@/utils/themes';
 // import LeftSideDropDown from '../components/LeftSideDropDown';
 import AppointmentsDropDown from '../components/AppointmentsDropDown';

@@ -1981,7 +1981,11 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
+          "formFields": [
+            "Notwendige",
+            "Analytics",
+            "Alle zulassen"
+          ]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2020,7 +2024,10 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
+          "formFieldsOff": [
+            "News und Update",
+            "Angebote und Werbung"
+          ]
         }
       }
     },
@@ -2189,6 +2196,19 @@
           "content": "Falls deine Frage nicht beantwortet wurde, nutze bitte das Kontaktformular auf dieser Seite oder schreibe eine E-Mail. Wir versuchen so schnell wie möglich antworten."
         }
       ]
+    },
+    "MessageLesson": {
+      "Messages": "Nachrichten",
+      "card1Title": "Theoriestunden",
+      "card2Title": "Fahrstunden",
+      "hours": "Stunden",
+      "lable1": "Erledigte Theoriestunden",
+      "lable2": "Vorgeschriebene Theoriestunden",
+      "btn": "Abbrechen",
+      "btn1": "Speichern ",
+      "messLable1": "Betreff",
+      "messLable2": "Nachricht",
+      "messBtn": "Nachricht senden"
     }
   }
 }

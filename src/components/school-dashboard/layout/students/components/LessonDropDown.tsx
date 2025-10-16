@@ -17,7 +17,7 @@ export default function LessonDropDown({
   Label1,
   Label2
 }: CustomCardProps) {
-  const t = useTranslations('Dashboard.Messages.formDropDown');
+  const t = useTranslations('SchoolDashboard.MessageLesson');
   const handleContainerClick = (event: React.MouseEvent) => {
     event.stopPropagation();
   };
