@@ -17,80 +17,80 @@ const MotionBox = motion(Box);
 const emails = [
   {
     icon: iconorange,
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Das ist das ',
     class: 'B',
     isRequest: true
   },
   {
     icon: iconorange,
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Das ist das ',
     class: 'B17',
     isRequest: true
   },
   {
     icon: iconorange,
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Das ist das ',
     class: 'B (Umschreiben)',
     isRequest: true
   },
   {
     icon: iconpurple,
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Das ist das ',
     class: 'B'
   },
   {
     icon: iconnave,
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Das ist das ',
     class: 'B17'
   },
   {
     icon: iconnave,
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Das ist das ',
     class: 'B (Umschreiben)'
   },
   {
     icon: iconnave,
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Das ist das ',
     class: 'B'
   },
   {
     icon: iconnave,
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Das ist das ',
     class: 'B17'
   },
   {
     icon: iconnave,
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Das ist das ',
     class: 'B (Umschreiben)'
   },
   {
     icon: iconnave,
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Das ist das ',
     class: 'B'
   },
   {
     icon: iconnave,
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Das ist das ',
     class: 'B17'
   },
   {
     icon: iconnave,
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Das ist das ',
     class: 'B (Umschreiben)'
   },
   {
     icon: iconnave,
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Das ist das ',
     class: 'B'
   },
   {
     icon: iconnave,
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Das ist das ',
     class: 'B17'
   },
   {
     icon: iconnave,
-    subject: 'Das ist das Thema der Email.',
+    subject: 'Das ist das ',
     class: 'B (Umschreiben)'
   }
 ];
