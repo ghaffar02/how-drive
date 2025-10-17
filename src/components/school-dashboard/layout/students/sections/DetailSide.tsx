@@ -9,69 +9,87 @@ import localFont from '@/utils/themes';
 // import LeftSideDropDown from '../components/LeftSideDropDown';
 import AppointmentsDropDown from '../components/AppointmentsDropDown';
 import LeftSideDropDown from '../components/LeftSideDropDown';
+import iconpurple from '@/assets/svgs/dashboard-student/purple.svg';
+import iconorange from '@/assets/svgs/dashboard-student/orange.svg';
+import iconnave from '@/assets/svgs/dashboard-student/nave.svg';
 
 const MotionBox = motion(Box);
 const emails = [
   {
+    icon: iconorange,
     subject: 'Das ist das Thema der Email.',
     class: 'B',
     isRequest: true
   },
   {
+    icon: iconorange,
     subject: 'Das ist das Thema der Email.',
     class: 'B17',
     isRequest: true
   },
   {
+    icon: iconorange,
     subject: 'Das ist das Thema der Email.',
     class: 'B (Umschreiben)',
     isRequest: true
   },
   {
+    icon: iconpurple,
     subject: 'Das ist das Thema der Email.',
     class: 'B'
   },
   {
+    icon: iconnave,
     subject: 'Das ist das Thema der Email.',
     class: 'B17'
   },
   {
+    icon: iconnave,
     subject: 'Das ist das Thema der Email.',
     class: 'B (Umschreiben)'
   },
   {
+    icon: iconnave,
     subject: 'Das ist das Thema der Email.',
     class: 'B'
   },
   {
+    icon: iconnave,
     subject: 'Das ist das Thema der Email.',
     class: 'B17'
   },
   {
+    icon: iconnave,
     subject: 'Das ist das Thema der Email.',
     class: 'B (Umschreiben)'
   },
   {
+    icon: iconnave,
     subject: 'Das ist das Thema der Email.',
     class: 'B'
   },
   {
+    icon: iconnave,
     subject: 'Das ist das Thema der Email.',
     class: 'B17'
   },
   {
+    icon: iconnave,
     subject: 'Das ist das Thema der Email.',
     class: 'B (Umschreiben)'
   },
   {
+    icon: iconnave,
     subject: 'Das ist das Thema der Email.',
     class: 'B'
   },
   {
+    icon: iconnave,
     subject: 'Das ist das Thema der Email.',
     class: 'B17'
   },
   {
+    icon: iconnave,
     subject: 'Das ist das Thema der Email.',
     class: 'B (Umschreiben)'
   }
@@ -413,6 +431,46 @@ export default function DetailSide() {
                 }
               }}
             >
+              <Box
+                sx={{
+                  background: items.isRequest
+                    ? ' rgba(249, 115, 22, 0.1)'
+                    : activeIndexes.includes(i)
+                      ? 'rgba(70, 17, 245, 0.1)'
+                      : 'rgba(37, 99, 235, 0.1)',
+                  // backgroundColor: item.bgcolor,
+                  px: '8px',
+                  borderRadius: '8px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  height: '40px'
+                }}
+              >
+                <Box
+                  sx={{
+                    borderRadius: '999px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <Box sx={{width: '100%', maxWidth: '30px', height: '30px'}}>
+                    <Image
+                      src={items.icon}
+                      alt="
+iconnave"
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        textAlign: 'center',
+                        objectFit: 'contain'
+                      }}
+                    />
+                  </Box>
+                </Box>
+              </Box>
+
               <Box
                 sx={{
                   display: 'flex',
