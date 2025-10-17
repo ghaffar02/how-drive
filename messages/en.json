@@ -1993,7 +1993,11 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": ["Necessary", "Analytics", "Allow all"]
+          "formFields": [
+            "Necessary",
+            "Analytics",
+            "Allow all"
+          ]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2021,7 +2025,10 @@
             "News",
             "Driving license office registered"
           ],
-          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
+          "formFieldsOff": [
+            "Genereller Newsletter",
+            "Offers and advertising"
+          ]
         }
       }
     },
@@ -2154,6 +2161,28 @@
     }
   },
   "SchoolDashboard": {
+    "header": {
+      "data": [
+        {
+          "title1": "Driving license office",
+          "title2": "Not registered",
+          "title3": "Registered",
+          "tooltip": "Is the student registered by the responsible driving license office?"
+        },
+        {
+          "title1": "Theory exam",
+          "title2": "Not registered",
+          "title3": "25.07.2025",
+          "tooltip": "Is the theory exam already registered? Select the day and time for it. These will be displayed to the student."
+        },
+        {
+          "title1": "Practical exam",
+          "title2": "Not registered",
+          "title3": "25.07.2025",
+          "tooltip": "Is the practical exam already registered? Select the day and time for it. These will be displayed to the student."
+        }
+      ]
+    },
     "Support": {
       "title": "Frequently asked questions",
       "FaqData": [

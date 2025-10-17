@@ -2,9 +2,9 @@ import localFont from '@/utils/themes';
 import {Box, Typography, Switch} from '@mui/material';
 import Image from 'next/image';
 import React, {useEffect, useRef, useState} from 'react';
+import {AnimatePresence, motion} from 'framer-motion';
 
 import pen from '@/assets/svgs/dashboard-student/pen.svg';
-import {AnimatePresence, motion} from 'framer-motion';
 import EmailDropdown from './EmailDropdown';
 // import DrivinglicenseDropdown from './DrivinglicenseDropdown';
 // import TheoryexamDropDown from './TheoryexamDropDown';
@@ -15,13 +15,9 @@ import EmailDropdown from './EmailDropdown';
 
 export default function Header() {
   const [checked, setChecked] = React.useState(true);
-  const [openDropdown, setOpenDropdown] = useState(true);
+  const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const iconRef = useRef<HTMLDivElement | null>(null);
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(event.target.checked);
-  };
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -41,6 +37,10 @@ export default function Header() {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(event.target.checked);
+  };
+
   return (
     <Box
       sx={{
