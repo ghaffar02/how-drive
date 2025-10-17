@@ -2161,6 +2161,33 @@
     }
   },
   "SchoolDashboard": {
+    "DriversDa": {
+      "HeaderDropDown": {
+        "inputTitle1": "First name",
+        "lable1": "Tom",
+        "inputTitle2": "Last name",
+        "lable2": "Schwarz",
+        "inputTitle3": "Email Address",
+        "lable3": "t.schwarz@gmail.com",
+        "inputTitle4": "Phone number",
+        "lable4": "015128746528",
+        "checkText1": "Driving license class A",
+        "checkText2": "Driving license class B",
+        "btn": "Cancel",
+        "btn1": "Save "
+      },
+      "Drivers": {
+        "DriverDetail": {
+          "headerTitle": "Es wurden noch keine Fahrer zur Liste hinzugefügt!",
+          "drivingTitle": "Fahrschüler",
+          "drivingDes": "Klicke auf \"Plus-Symbol\", um neue Fahrschüler hinzufügen.",
+          "messageTitle": "Nachrichten",
+          "messageDes": "Keine Nachrichten!",
+          "label": "Student name",
+          "btn": "Assign student"
+        }
+      }
+    },
     "header": {
       "data": [
         {

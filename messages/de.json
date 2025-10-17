@@ -2232,13 +2232,31 @@
       "messLable2": "Nachricht",
       "messBtn": "Nachricht senden"
     },
+    "DriversDa": {
+      "HeaderDropDown": {
+        "inputTitle1": "Vorname",
+        "lable1": "Daniel",
+        "inputTitle2": "Nachname",
+        "lable2": "Mustermann",
+        "inputTitle3": "E-Mail-Adresse",
+        "lable3": "t.schwarz@gmail.com",
+        "inputTitle4": "Handynummer",
+        "lable4": "015128746528",
+        "checkText1": "Führerscheinklasse A",
+        "checkText2": "Führerscheinklasse B",
+        "btn": "Abbrechen",
+        "btn1": "Speichern "
+      }
+    },
     "Drivers": {
       "DriverDetail": {
         "headerTitle": "Es wurden noch keine Fahrer zur Liste hinzugefügt!",
         "drivingTitle": "Fahrschüler",
         "drivingDes": "Klicke auf \"Plus-Symbol\", um neue Fahrschüler hinzufügen.",
         "messageTitle": "Nachrichten",
-        "messageDes": "Keine Nachrichten!"
+        "messageDes": "Keine Nachrichten!",
+        "label": "Fahrschüler*in",
+        "btn": "Fahrschüler zuweisen"
       }
     }
   }
