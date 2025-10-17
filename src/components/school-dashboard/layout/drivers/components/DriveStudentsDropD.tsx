@@ -13,7 +13,7 @@ export default function DriveStudentsDropD({onClose}: CustomCardProps) {
   const handleContainerClick = (event: React.MouseEvent) => {
     event.stopPropagation();
   };
-  const t = useTranslations('SchoolDashboard.MessageLesson');
+  const t = useTranslations('SchoolDashboard.Drivers');
 
   return (
     <Box
@@ -49,7 +49,7 @@ export default function DriveStudentsDropD({onClose}: CustomCardProps) {
             textAlign: 'left'
           }}
         >
-          {t('messLable1')}
+          {t('label')}
         </Typography>
 
         <CustomTextField />
@@ -67,7 +67,7 @@ export default function DriveStudentsDropD({onClose}: CustomCardProps) {
         }}
       >
         <CustomButton
-          label={t('messBtn')}
+          label={t('btn')}
           imgSrc={tick}
           sx={{
             gap: '8px',
