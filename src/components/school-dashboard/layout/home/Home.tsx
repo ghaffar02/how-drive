@@ -1,14 +1,19 @@
 import {Box, Grid} from '@mui/material';
 import React from 'react';
-import Header from './components/Header';
-import Appointment from './components/Appointment';
-import LessonCard from './components/LessonCard';
-import Messages from './components/Message';
-import Process from './components/Process';
+// import Header from './components/Header';
+// import Appointment from './components/Appointment';
+// import LessonCard from './components/LessonCard';
+// import Messages from './components/Message';
+// import Process from './components/Process';
 import {useTranslations} from 'next-intl';
+import ProfileCard from './components/ProfileCard';
+import ActiveIcon from '@/assets/svgs/dashboard-student/active.svg';
+import InactiveIcon from '@/assets/svgs/dashboard-student/inactive.svg';
+import Messages from './components/Message';
+import Drivers from './components/Drivers';
 
 export default function Home() {
-  const t = useTranslations('Dashboard.home.MessageLesson');
+  // const t = useTranslations('Dashboard.home.MessageLesson');
 
   return (
     <>
@@ -16,8 +21,8 @@ export default function Home() {
         sx={{
           maxWidth: '1300px',
           width: '100%',
-          height: {xs: 'auto', lg: '100%'},
-          padding: {xs: '8px', lg: '24px'},
+          height: {xs: '100%', md: '100%'},
+          padding: {xs: '8px', md: '24px'},
           background: 'rgba(21, 31, 42, 0.3)',
           borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
           backgroundColor: 'rgba(248, 250, 252, 0.3)',
@@ -27,70 +32,65 @@ export default function Home() {
             md: 'none'
           },
           backdropFilter: {xs: 'blur(15px)', md: 'none'},
-          zIndex: '1'
+          zIndex: '1',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(6, minmax(50px, 1fr))',
+          gridTemplateRows: 'repeat(5, minmax(0px, 1fr))',
+          gap: {xs: '20px', md: '28px'}
         }}
       >
-        <Grid
-          container
-          sx={{height: {xs: 'auto', lg: '100%'}}}
-          columnSpacing={{xs: 2, sm: 3, md: 3}}
-          rowSpacing={{xs: 2, sm: 3, md: 3, lg: 2}}
+        <Box
+          sx={{
+            gridColumn: {xs: '1 / span 6', md: '1 / span 2'},
+            gridRow: {xs: '1 / span 1', md: '1 / span 1'}
+          }}
         >
-          <Grid size={{xs: 6, md: 12}} sx={{height: {xs: 'auto', lg: '18%'}}}>
-            <Header />
-          </Grid>
-          <Grid size={6} sx={{display: {xs: 'block', md: 'none'}}}>
-            <Appointment />
-          </Grid>
-          <Grid
-            container
-            size={{md: 12, lg: 8}}
-            sx={{height: {xs: 'auto', lg: '79%'}}}
-            spacing={{xs: 2, sm: 3, md: 3}}
-          >
-            <Grid size={12} sx={{height: {xs: 'auto', lg: '70%', xl: '73%'}}}>
-              <Process />
-            </Grid>
-            <Grid size={6} sx={{height: {xs: 'auto', lg: '26%', xl: '24%'}}}>
-              <LessonCard
-                title={t('card1Title')}
-                completedHours={11}
-                totalHours={14}
-                progressValue={80}
-              />
-            </Grid>
-            <Grid size={6} sx={{height: {xs: 'auto', lg: '26%', xl: '24%'}}}>
-              <LessonCard
-                title={t('card2Title')}
-                completedHours={4}
-                totalHours={12}
-                progressValue={30}
-              />
-            </Grid>
-          </Grid>
-          <Grid
-            container
-            size={{xs: 12, md: 12, lg: 4}}
-            sx={{height: {xs: 'auto', lg: '79%'}}}
-            spacing={3}
-          >
-            <Grid
-              size={{md: 6, lg: 12}}
-              sx={{
-                display: {xs: 'none', md: 'block'},
-                height: {xs: 'auto', lg: '48%', xl: '49%'}
-              }}
-            >
-              <Appointment />
-            </Grid>
-            <Grid
-              size={{xs: 12, md: 6, lg: 12}}
-              sx={{height: {xs: 'auto', lg: '48%', xl: '48%'}}}
-            >
-              <Messages />
-            </Grid>
-          </Grid>
-        </Grid>
+          <ProfileCard
+            imgSrc={ActiveIcon}
+            title="Active students"
+            students={164}
+          />
+        </Box>
+        <Box
+          sx={{
+            gridColumn: {xs: '1 / span 6', md: '3 / span 2'},
+            gridRow: {xs: '2 / span 1', md: '1 / span 1'}
+          }}
+        >
+          <ProfileCard
+            imgSrc={InactiveIcon}
+            title="Inactive students"
+            students={1300}
+          />
+        </Box>
+        <Box
+          sx={{
+            gridColumn: {xs: '1 / span 6', md: '5 / span 2'},
+            gridRow: {xs: '3 / span 1', md: '1 / span 1'}
+          }}
+        >
+          <ProfileCard
+            title="All students"
+            students={1464}
+            progressBar={true}
+          />
+        </Box>
+        <Box
+          sx={{
+            gridColumn: {xs: '1 / span 6', md: '1 / span 3', lg: '5 / span 2'},
+            gridRow: {xs: '4 / span 1', md: '4 / span 2', lg: '2 / span 2'}
+          }}
+        >
+          <Messages />
+        </Box>
+        <Box
+          sx={{
+            gridColumn: {xs: '1 / span 6', md: '4 / span 3', lg: '5 / span 2'},
+            gridRow: {xs: '5 / span 1', md: '4 / span 2', lg: '4 / span 2'}
+          }}
+        >
+          <Drivers title="Drivers" />
+        </Box>
       </Box>
     </>
   );
