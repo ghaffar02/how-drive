@@ -5,6 +5,7 @@ import {format, parse, startOfWeek, getDay} from 'date-fns';
 import enUS from 'date-fns/locale/en-US';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import styles from './BigCalander.module.css';
+import {Box} from '@mui/material';
 
 const locales = {'en-US': enUS};
 const localizer = dateFnsLocalizer({
@@ -20,50 +21,59 @@ const events = [
     title: 'Event 5',
     start: new Date(2025, 9, 9),
     end: new Date(2025, 9, 9),
-    color: '#4F46E5'
+    color: '#4F46E5',
+    totalAppointment: '12'
   },
   {
     title: 'Event 12',
     start: new Date(2025, 9, 13),
     end: new Date(2025, 9, 13),
-    color: '#A855F7'
+    color: '#A855F7',
+    totalAppointment: '12'
   },
   {
     title: 'Event 3',
     start: new Date(2025, 9, 13),
     end: new Date(2025, 9, 13),
-    color: '#06B6D4'
+    color: '#06B6D4',
+    totalAppointment: '12'
   },
   {
     title: 'Event 5',
     start: new Date(2025, 9, 17),
     end: new Date(2025, 9, 17),
-    color: '#4F46E5'
+    color: '#4F46E5',
+    totalAppointment: '12'
   },
   {
     title: 'Event 12',
     start: new Date(2025, 9, 17),
     end: new Date(2025, 9, 17),
-    color: '#A855F7'
+    color: '#A855F7',
+    totalAppointment: '12'
   },
   {
     title: 'Event 3',
     start: new Date(2025, 9, 31),
     end: new Date(2025, 9, 31),
-    color: '#06B6D4'
+    color: '#06B6D4',
+    totalAppointment: '12'
   }
 ];
 
 const EventComponent: React.FC<{event: any}> = ({event}) => (
-  <div
-    style={{
-      width: '6px',
-      height: '18px',
-      borderRadius: '999px',
-      margin: '2px 0 2px 15%',
-      backgroundColor: event.color
-    }}
-  />
+  <div style={{display: 'flex', alignItems: 'center', gap: '4px'}}>
+    <div
+      style={{
+        width: '6px',
+        height: '18px',
+        borderRadius: '999px',
+        margin: '2px 0 2px 15%',
+        backgroundColor: event.color
+      }}
+    />
+    <p className={styles.totalAppointment}>{event.totalAppointment}</p>
+  </div>
 );
 
 export default function BigCalendar() {

@@ -81,6 +81,13 @@
   padding: 10px 0;
 }
 
+.totalAppointment {
+  color: #4a5568;
+  font-weight: 300;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif !important;
+}
+
 .calendarWrapper :global(.rbc-button-link) {
   color: #2d3748;
   font-weight: 300;
