@@ -1,13 +1,44 @@
+'use client';
 import localFont from '@/utils/themes';
 import {Box, Typography} from '@mui/material';
 
 export default function SchedulerSidebar() {
+  const appointments = [
+    {
+      id: 1,
+      color: '#9333EA', // purple
+      title: 'Besprechung',
+      time: '12:30 - 13:00',
+      date: '17.10.2025'
+    },
+    {
+      id: 2,
+      color: '#2563EB', // blue
+      title: 'Gruppe 1',
+      time: '12:30 - 13:00',
+      date: '17.10.2025'
+    },
+    {
+      id: 3,
+      color: '#0891B2', // cyan
+      title: 'Tom',
+      time: '12:30 - 13:00',
+      date: '17.10.2025'
+    },
+    {
+      id: 4,
+      color: '#DC2626', // red
+      title: 'Theorieprüfung',
+      time: '12:30 - 13:00',
+      date: '17.10.2025'
+    }
+  ];
+
   return (
     <Box
       sx={{
         maxWidth: '300px',
         width: '100%',
-        // height: '100%',
         background: 'rgba(248,250,252,0.3)',
         padding: {xs: '8px', md: '24px 12px'},
         border: '1px solid #fff',
@@ -16,7 +47,7 @@ export default function SchedulerSidebar() {
         backdropFilter: 'blur(15px)',
         display: {xs: 'none', md: 'flex'},
         alignItems: 'center',
-        flexDirection: {xs: 'column'},
+        flexDirection: 'column',
         gap: '16px'
       }}
     >
@@ -25,12 +56,107 @@ export default function SchedulerSidebar() {
           ...localFont.inter16,
           fontSize: {xs: '14px', md: '15px', lg: '16px'},
           fontWeight: '500',
-          // colo
           fontFamily: '"Inter", sans-serif !important'
         }}
       >
         Settings
       </Typography>
+
+      {/* List of Appointments */}
+      <Box
+        sx={{
+          marginTop: '32px',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '12px'
+        }}
+      >
+        {appointments.map((appt) => (
+          <AppointmentCard
+            key={appt.id}
+            color={appt.color}
+            title={appt.title}
+            time={appt.time}
+            date={appt.date}
+          />
+        ))}
+      </Box>
+    </Box>
+  );
+}
+
+/* ✅ Reusable AppointmentCard Component (BOTTOM of file) */
+interface AppointmentCardProps {
+  color: string;
+  title: string;
+  time: string;
+  date: string;
+}
+
+function AppointmentCard({color, title, time, date}: AppointmentCardProps) {
+  return (
+    <Box
+      sx={{
+        padding: '7px 8px 4px 8px',
+        borderRadius: '8px',
+        backgroundColor: 'rgba(255, 255, 255, 0.6)',
+        boxShadow:
+          '0px 0px 2px 0px var(--token-46fa6e04-aa50-4324-8a35-fd1170036322, rgb(212, 212, 216))',
+        width: '100%'
+      }}
+    >
+      <Box sx={{display: 'flex', gap: '8px', alignItems: 'center'}}>
+        <Box
+          sx={{
+            height: '23px',
+            width: '6px',
+            borderRadius: '999px',
+            backgroundColor: color
+          }}
+        ></Box>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontWeight: '700',
+            fontFamily: '"Inter", sans-serif !important',
+            color: '#4A5568'
+          }}
+        >
+          {title}
+        </Typography>
+      </Box>
+
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          gap: '20px',
+          alignItems: 'center',
+          marginTop: '4px'
+        }}
+      >
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontWeight: '300',
+            fontFamily: '"Inter", sans-serif !important',
+            color: '#4A5568'
+          }}
+        >
+          {time}
+        </Typography>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontWeight: '300',
+            fontFamily: '"Inter", sans-serif !important',
+            color: '#4A5568'
+          }}
+        >
+          {date}
+        </Typography>
+      </Box>
     </Box>
   );
 }
