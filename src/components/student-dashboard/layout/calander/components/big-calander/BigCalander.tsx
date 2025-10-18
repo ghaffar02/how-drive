@@ -18,22 +18,28 @@ const localizer = dateFnsLocalizer({
 
 const events = [
   {
-    title: 'Talk',
+    title: 'Gespräch',
     start: new Date(2025, 9, 17, 9, 0),
     end: new Date(2025, 9, 17, 10, 30),
     color: '#A855F7'
   },
   {
-    title: 'Theory',
+    title: 'Theoriestunden',
     start: new Date(2025, 9, 17, 13, 30),
     end: new Date(2025, 9, 17, 14, 45),
-    color: '#4F46E5'
+    color: '#2563EB'
   },
   {
-    title: 'Driving',
+    title: 'Fahrstunden',
     start: new Date(2025, 9, 17, 15, 0),
     end: new Date(2025, 9, 17, 16, 0),
-    color: '#06B6D4'
+    color: '#0891B2'
+  },
+  {
+    title: 'Theorieprüfung',
+    start: new Date(2025, 9, 17, 10, 15),
+    end: new Date(2025, 9, 17, 10, 35),
+    color: '#DC2626'
   }
 ];
 
@@ -56,16 +62,29 @@ export default function BigCalendar() {
     setSelectedDate(slotInfo.start);
   };
 
+  // transform events into simpler structure for the DayDetailView
   const appointments = events.map((e, i) => ({
     id: i + 1,
     title: e.title,
-    startTime: e.start.toLocaleTimeString([], {
-      hour: '2-digit',
-      minute: '2-digit'
-    }),
-    endTime: e.end.toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}),
-    color: e.color
+    startTime: `${String(e.start.getHours()).padStart(2, '0')}:${String(
+      e.start.getMinutes()
+    ).padStart(2, '0')}`,
+    endTime: `${String(e.end.getHours()).padStart(2, '0')}:${String(
+      e.end.getMinutes()
+    ).padStart(2, '0')}`,
+    color: e.color,
+    dateKey: `${e.start.getFullYear()}-${e.start.getMonth()}-${e.start.getDate()}`
   }));
+
+  // Filter appointments by the selected date
+  const selectedAppointments =
+    selectedDate !== null
+      ? appointments.filter(
+          (a) =>
+            a.dateKey ===
+            `${selectedDate.getFullYear()}-${selectedDate.getMonth()}-${selectedDate.getDate()}`
+        )
+      : [];
 
   return (
     <div className={styles.calendarWrapper}>
@@ -73,9 +92,7 @@ export default function BigCalendar() {
         {selectedDate ? (
           <DayDetailView
             date={selectedDate}
-            appointments={appointments.filter(
-              (a) => new Date(a.startTime).getDate() === selectedDate.getDate()
-            )}
+            appointments={selectedAppointments}
             onClose={() => setSelectedDate(null)}
           />
         ) : (
@@ -88,6 +105,7 @@ export default function BigCalendar() {
             views={['month']}
             selectable
             onSelectSlot={handleDateClick}
+            onSelectEvent={(event) => setSelectedDate(event.start)}
             toolbar
             style={{flex: 1, height: '100%', width: '100%'}}
           />

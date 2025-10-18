@@ -23,6 +23,18 @@ export function DayDetailView({
   appointments,
   onClose
 }: DayDetailViewProps) {
+  const startHour = 6;
+  const endHour = 23;
+  const totalRows = endHour - startHour; // 17 rows
+  const totalColumns = 4; // 4 categories
+
+  const categories = [
+    {label: 'Gespräch', color: '#A855F7'},
+    {label: 'Theoriestunden', color: '#2563EB'},
+    {label: 'Fahrstunden', color: '#0891B2'},
+    {label: 'Prüfungen', color: '#DC2626'}
+  ];
+
   return (
     <Box
       sx={{
@@ -73,128 +85,113 @@ export function DayDetailView({
         />
       </Box>
 
-      {/* Category Labels (like Gespräch, Theoriestunden, Fahrstunden) */}
-      <Box
-        sx={{
-          display: 'flex',
-          gap: 1.5,
-          mb: 2,
-          flexWrap: 'wrap'
-        }}
-      >
-        <Box
-          sx={{
-            background: '#A855F7',
-            borderRadius: '8px',
-            padding: '6px 12px',
-            color: '#fff',
-            fontWeight: 500,
-            fontSize: '13px'
-          }}
-        >
-          Gespräch
-        </Box>
-        <Box
-          sx={{
-            background: '#4F46E5',
-            borderRadius: '8px',
-            padding: '6px 12px',
-            color: '#fff',
-            fontWeight: 500,
-            fontSize: '13px'
-          }}
-        >
-          Theoriestunden
-        </Box>
-        <Box
-          sx={{
-            background: '#06B6D4',
-            borderRadius: '8px',
-            padding: '6px 12px',
-            color: '#fff',
-            fontWeight: 500,
-            fontSize: '13px'
-          }}
-        >
-          Fahrstunden
-        </Box>
-      </Box>
-
-      {/* Timeline Section (06:00 - 23:00) */}
+      {/* Table Grid */}
       <Box
         sx={{
           flex: 1,
           display: 'grid',
-          gridTemplateRows: 'repeat(18, 1fr)', // 6:00 - 23:00
+          gridTemplateRows: `40px repeat(${totalRows}, 1fr)`, // extra row for headers
+          gridTemplateColumns: `60px repeat(${totalColumns}, 1fr)`,
           gap: '4px',
           overflowY: 'auto',
           pr: 1
         }}
       >
-        {Array.from({length: 18}, (_, i) => {
-          const hour = 6 + i; // start at 6 AM
-          const label = `${hour.toString().padStart(2, '0')}:00`;
+        {/* === Header Row === */}
+        <Box /> {/* Empty time column header */}
+        {categories.map((cat, idx) => (
+          <Box
+            key={idx}
+            sx={{
+              background: cat.color,
+              borderRadius: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              color: '#fff',
+              fontWeight: 500,
+              fontSize: '13px',
+              height: '30px'
+              // marginBottom: '54px',
+              // padding: '40px'
+            }}
+          >
+            {cat.label}
+          </Box>
+        ))}
+        {/* === Time Rows + Cells === */}
+        {Array.from({length: totalRows}, (_, rowIndex) => {
+          const hour = startHour + rowIndex;
+          const label = `${hour.toString().padStart(2, '0')}`;
 
           return (
-            <Box
-              key={hour}
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                borderRadius: '10px',
-                background: 'rgba(255,255,255,0.6)',
-                border: '1px solid rgba(255,255,255,0.4)',
-                padding: '6px 8px',
-                position: 'relative',
-                minHeight: '38px'
-              }}
-            >
-              <Typography
+            <React.Fragment key={hour}>
+              {/* Time Label Cell */}
+              <Box
                 sx={{
-                  width: 45,
-                  fontSize: '13px',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  fontSize: '14px',
                   color: '#4B5563',
-                  flexShrink: 0
+                  fontWeight: 500
                 }}
               >
                 {label}
-              </Typography>
+              </Box>
 
-              {/* Appointment(s) that match this hour */}
-              {appointments
-                .filter(
+              {/* Appointment Cells */}
+              {Array.from({length: totalColumns}).map((_, colIndex) => {
+                const category = categories[colIndex];
+                const cellAppointments = appointments.filter(
                   (a) =>
-                    parseInt(a.startTime.split(':')[0]) === hour ||
-                    (parseInt(a.startTime.split(':')[0]) < hour &&
-                      parseInt(a.endTime.split(':')[0]) >= hour)
-                )
-                .map((a) => (
+                    parseInt(a.startTime.split(':')[0]) === hour &&
+                    a.color.toLowerCase() === category.color.toLowerCase()
+                );
+
+                return (
                   <Box
-                    key={a.id}
+                    key={`${hour}-${colIndex}`}
                     sx={{
-                      background: a.color,
-                      color: '#fff',
+                      background: 'rgba(255,255,255,0.6)',
+                      border: '1px solid rgba(255,255,255,0.4)',
                       borderRadius: '8px',
-                      padding: '6px 10px',
-                      fontSize: '13px',
-                      fontWeight: 500,
-                      marginLeft: '10px',
-                      minWidth: '140px',
-                      boxShadow:
-                        '0px 0px 2px 0px var(--token-46fa6e04-aa50-4324-8a35-fd1170036322, rgb(212, 212, 216))',
-                      border:
-                        '1px solid var(--token-eb8c55ba-37a9-4a2d-935d-5f0ec2080647, #ffffff)'
+                      minHeight: '48px',
+                      padding: '4px 6px',
+                      position: 'relative'
                     }}
                   >
-                    <Typography sx={{fontSize: '13px', fontWeight: 600}}>
-                      {a.title}
-                    </Typography>
-                    <Typography sx={{fontSize: '12px', opacity: 0.9}}>
-                      {a.startTime} - {a.endTime}
-                    </Typography>
+                    {cellAppointments.map((a) => (
+                      <Box
+                        key={a.id}
+                        sx={{
+                          background: `${a.color}20`,
+                          border: `1px solid ${a.color}`,
+                          borderRadius: '8px',
+                          padding: '4px 8px',
+                          color: '#1f2937',
+                          fontSize: '13px',
+                          fontWeight: 500,
+                          height: '100%',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          justifyContent: 'center',
+                          boxShadow:
+                            '0px 0px 2px 0px var(--token-46fa6e04-aa50-4324-8a35-fd1170036322, rgb(212, 212, 216))'
+                        }}
+                      >
+                        <Typography sx={{fontWeight: 600, fontSize: '13px'}}>
+                          {a.title}
+                        </Typography>
+                        <Typography sx={{fontSize: '12px', opacity: 0.9}}>
+                          {a.startTime} - {a.endTime}
+                        </Typography>
+                      </Box>
+                    ))}
                   </Box>
-                ))}
-            </Box>
+                );
+              })}
+            </React.Fragment>
           );
         })}
       </Box>
