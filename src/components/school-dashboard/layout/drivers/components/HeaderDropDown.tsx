@@ -6,11 +6,11 @@ import cross from '@/assets/svgs/dashboard-student/btncross.svg';
 import tick from '@/assets/svgs/dashboard-student/tick.svg';
 import CustomButton from '@/components/student-dashboard/CustomButton';
 import CustomTextField from '@/components/school-dashboard/InputField';
+import {useTranslations} from 'next-intl';
 
 interface CustomCardProps {
   children?: ReactNode;
   padding?: number | string;
-
   bgColor?: string;
   text?: string;
   onClose?: () => void;
@@ -22,19 +22,17 @@ export default function HeaderDropDown({
 }: CustomCardProps) {
   const [checkedA, setCheckedA] = useState(false);
   const [checkedB, setCheckedB] = useState(true);
+  const t = useTranslations('SchoolDashboard.DriversDa.HeaderDropDown');
   return (
     <Box
       sx={{
         width: '100%',
-        // maxWidth: {xs: '323px', sm: '333px'},
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         padding,
-
         gap: '24px'
-        // borderRadius: radius
       }}
     >
       <Box
@@ -60,12 +58,12 @@ export default function HeaderDropDown({
             // mt: {xs: '8px', lg: '0px'}
           }}
         >
-          Vorname
+          {t('inputTitle1')}
           {/* 
 
  */}
         </Typography>
-        <CustomTextField labal="Daniel" />
+        <CustomTextField labal={t('lable1')} />
       </Box>
       <Box
         sx={{
@@ -90,10 +88,10 @@ export default function HeaderDropDown({
             // mt: {xs: '8px', lg: '0px'}
           }}
         >
-          Nachname
+          {t('inputTitle2')}
         </Typography>
 
-        <CustomTextField labal="Mustermann" />
+        <CustomTextField labal={t('lable2')} />
       </Box>
       <Box
         sx={{
@@ -116,8 +114,9 @@ export default function HeaderDropDown({
             textTransform: 'capitalize'
           }}
         >
-          E-Mail-Adresse
-          <CustomTextField labal="t.schwarz@gmail.com" />
+          {t('inputTitle3')}
+
+          <CustomTextField labal={t('lable3')} />
         </Typography>
       </Box>
       <Box
@@ -141,8 +140,9 @@ export default function HeaderDropDown({
             textTransform: 'capitalize'
           }}
         >
-          Handynummer
-          <CustomTextField labal="015128746528" />
+          {t('inputTitle4')}
+
+          <CustomTextField labal={t('lable4')} />
         </Typography>
       </Box>
 
@@ -183,7 +183,7 @@ export default function HeaderDropDown({
               fontWeight: 300
             }}
           >
-            Driving license class A
+            {t('checkText1')}
           </Typography>
         </Box>
 
@@ -214,7 +214,7 @@ export default function HeaderDropDown({
               fontWeight: 300
             }}
           >
-            Driving license class B
+            {t('checkText2')}
           </Typography>
         </Box>
       </Box>
@@ -231,26 +231,26 @@ export default function HeaderDropDown({
       >
         <CustomButton
           onClick={onClose}
-          label="cancel"
+          label={t('btn')}
           bgColor="rgb(220, 38, 38)"
           hoverColor="#991919"
           hoverTextcolor="#fff"
           imgSrc={cross}
           sx={{
             gap: '7px',
-            maxWidth: '182px',
+            maxWidth: '122px',
             width: '100%',
             justifyContent: 'start'
           }}
         />
         <CustomButton
-          label="seve"
+          label={t('btn1')}
           bgColor="#0D9488"
           hoverColor="#0C5C72"
           imgSrc={tick}
           sx={{
             gap: '8px',
-            maxWidth: '99px',
+            maxWidth: '122px',
             width: '100%',
             justifyContent: 'start'
           }}
