@@ -8,8 +8,9 @@ import {AnimatePresence, motion} from 'framer-motion';
 import localFont from '@/utils/themes';
 // import LeftSideDropDown from '../components/LeftSideDropDown';
 // import AppointmentsDropDown from '../components/AppointmentsDropDown';
-import LeftSideDropDown from '../../students/components/LeftSideDropDown';
 import profile from '@/assets/svgs/dashboard-student/profile.svg';
+import LeftformDropDown from '../components/LeftformDropDown';
+import {useTranslations} from 'next-intl';
 
 const MotionBox = motion(Box);
 const emails = [
@@ -87,7 +88,8 @@ export default function DetailSide() {
   // const [value, setValue] = useState('active');
 
   const [activeIndex, setActiveIndex] = useState<number | 0>(0);
-
+  const t = useTranslations('SchoolDashboard.leftSideTab');
+  const textTab = t.raw('textTab');
   const handleClickTab = (i: number) => {
     setActiveIndex(i);
   };
@@ -172,7 +174,7 @@ export default function DetailSide() {
             />
           </Box>
           <TextField
-            placeholder="Search"
+            placeholder={t('search')}
             variant="outlined"
             sx={{
               flex: 1,
@@ -191,6 +193,7 @@ export default function DetailSide() {
         </Box>
         <Box
           ref={iconRef}
+          onClick={() => setOpenDropdown((prev) => !prev)}
           sx={{
             height: '36px',
             width: '36px',
@@ -211,7 +214,6 @@ export default function DetailSide() {
             height={20}
             width={20}
             style={{position: 'relative'}}
-            onClick={() => setOpenDropdown((prev) => !prev)}
           />
           <AnimatePresence>
             {openDropdown && (
@@ -252,7 +254,7 @@ export default function DetailSide() {
                 sx={{
                   // bgcolor: '#000',
                   position: 'absolute',
-                  zIndex: 99,
+                  zIndex: 99999,
                   // left: {md: 100, lg: 130, xl: 200},
                   right: 0,
                   mt: '20px',
@@ -271,7 +273,7 @@ export default function DetailSide() {
                   transformOrigin: 'top right'
                 }}
               >
-                <LeftSideDropDown />
+                <LeftformDropDown />
                 {/* <AppointmentsDropDown /> */}
               </Box>
             )}
@@ -324,7 +326,7 @@ export default function DetailSide() {
             }}
           />
 
-          {['Aktiv', 'Inaktiv'].map((item, i) => (
+          {textTab.map((item: string, i: number) => (
             <Box
               key={i}
               onClick={() => handleClickTab(i)}

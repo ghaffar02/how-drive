@@ -2161,6 +2161,13 @@
     }
   },
   "SchoolDashboard": {
+    "leftSideTab": {
+      "textTab": [
+        "Active",
+        "Inactive"
+      ],
+      "search": "Search"
+    },
     "DriversDa": {
       "HeaderDropDown": {
         "inputTitle1": "First name",
@@ -2175,6 +2182,19 @@
         "checkText2": "Driving license class B",
         "btn": "Cancel",
         "btn1": "Save "
+      },
+      "leftDD": {
+        "inputTitle1": "First name",
+        "lable1": "Tom",
+        "inputTitle2": "Last name",
+        "lable2": "Schwarz",
+        "inputTitle3": "Email Address",
+        "lable3": "t.schwarz@gmail.com",
+        "inputTitle4": "Phone number",
+        "lable4": "015128746528",
+        "checkText1": "Driving license class A",
+        "checkText2": "Driving license class B",
+        "btn": "Add"
       },
       "Drivers": {
         "DriverDetail": {
@@ -2266,7 +2286,18 @@
         "drivingTitle": "Driving students",
         "drivingDes": "Click on the \"plus\" icon to add new students.",
         "messageTitle": "Messages",
-        "messageDes": "No messages!"
+        "messageDes": "No messages!",
+        "label": "Student name",
+        "btn": "Assign student"
+      },
+      "DriverDetailMessages": {
+        "messLable1": "Subject",
+        "messLable2": "Message",
+        "messLable3": "Upload file",
+        "messBtn": "Send message",
+        "desDriverStudents": "Do you want to remove the driving student from the list?",
+        "btn1": "Yes",
+        "btn": "No"
       }
     }
   }

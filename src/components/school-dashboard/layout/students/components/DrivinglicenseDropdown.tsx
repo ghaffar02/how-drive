@@ -1,23 +1,20 @@
-import {Box, Typography} from '@mui/material';
-import {ReactNode} from 'react';
-import tick from '@/assets/svgs/dashboard-student/tick.svg';
-import cross from '@/assets/svgs/dashboard-student/btncross.svg';
+import {Box, TextField, Typography} from '@mui/material';
+import tick from '@/assets/svgs/dashboard-student/send.svg';
+
 import localFont from '@/utils/themes';
 import CustomButton from '@/components/student-dashboard/CustomButton';
-
+import CustomTextField from '@/components/school-dashboard/InputField';
+import {useTranslations} from 'next-intl';
 interface CustomCardProps {
-  children?: ReactNode;
-  padding?: number | string;
-
-  bgColor?: string;
-  text?: string;
   onClose?: () => void;
 }
 
-export default function DrivinglicenseDropdown({
-  onClose,
-  padding = '16px'
-}: CustomCardProps) {
+export default function DriveMessagesDropD({onClose}: CustomCardProps) {
+  const handleContainerClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
+  };
+  const t = useTranslations('SchoolDashboard.Drivers.DriverDetailMessages');
+
   return (
     <Box
       sx={{
@@ -26,27 +23,137 @@ export default function DrivinglicenseDropdown({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        padding,
+        padding: '16px',
 
         gap: '24px'
       }}
     >
-      <Typography
+      <Box
+        onClick={handleContainerClick}
         sx={{
-          ...localFont.inter14,
-          fontWeight: 400,
-          fontFamily: '"Inter", sans-serif !important',
-          textAlign: 'center',
-          color: '#4A5568'
+          width: '100%',
+          display: 'flex',
+          flexDirection: {xs: 'column'},
+          gap: {xs: '8px'},
+          alignItems: 'start',
+          justifyContent: 'space-between'
         }}
       >
-        Is the student registered by the responsible driving license office?
-      </Typography>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            width: '100%',
+
+            fontFamily: '"Inter", sans-serif !important',
+            fontWeight: 400,
+            textAlign: 'left'
+          }}
+        >
+          {t('messLable1')}
+        </Typography>
+
+        <CustomTextField />
+      </Box>
+      <Box
+        onClick={handleContainerClick}
+        sx={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: {xs: 'column'},
+          gap: {xs: '8px'},
+          alignItems: 'start',
+          justifyContent: 'space-between'
+        }}
+      >
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            width: '100%',
+
+            fontFamily: '"Inter", sans-serif !important',
+            fontWeight: 400,
+            textAlign: 'left'
+          }}
+        >
+          {t('messLable2')}
+        </Typography>
+
+        <TextField
+          multiline
+          rows={4}
+          fullWidth
+          variant="outlined"
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              borderRadius: '8px',
+              background: '#ffffff',
+              // boxShadow:
+              //   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
+              height: '100%',
+              fontSize: '14px',
+              padding: '12px'
+            },
+
+            '& .MuiInputBase-input': {
+              padding: 0,
+              fontSize: '14px'
+            }
+          }}
+        />
+      </Box>
+      <Box
+        onClick={handleContainerClick}
+        sx={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: {xs: 'column'},
+          gap: {xs: '8px'},
+          alignItems: 'start',
+          justifyContent: 'space-between'
+        }}
+      >
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            width: '100%',
+
+            fontFamily: '"Inter", sans-serif !important',
+            fontWeight: 400,
+            textAlign: 'left'
+          }}
+        >
+          {t('messLable3')}
+        </Typography>
+
+        <TextField
+          multiline
+          rows={4}
+          fullWidth
+          variant="outlined"
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              borderRadius: '8px',
+              background: '#ffffff',
+              // boxShadow:
+              //   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
+              height: '100%',
+              fontSize: '14px',
+              padding: '12px'
+            },
+
+            '& .MuiInputBase-input': {
+              padding: 0,
+              fontSize: '14px'
+            }
+          }}
+        />
+      </Box>
 
       <Box
         sx={{
           width: {xs: '100%'},
-          p: '8px',
+
+          p: '  4px',
           display: 'flex',
           gap: '16px',
           alignItems: 'center',
@@ -54,27 +161,11 @@ export default function DrivinglicenseDropdown({
         }}
       >
         <CustomButton
-          onClick={onClose}
-          label="no"
-          bgColor="rgb(220, 38, 38)"
-          hoverColor="#991919"
-          hoverTextcolor="#fff"
-          imgSrc={cross}
-          sx={{
-            gap: '8px',
-            maxWidth: '80px',
-            width: '100%',
-            justifyContent: 'start'
-          }}
-        />
-        <CustomButton
-          label="yes"
-          bgColor="#0D9488"
-          hoverColor="#0C5C72"
+          label={t('messBtn')}
           imgSrc={tick}
           sx={{
             gap: '8px',
-            maxWidth: '80px',
+            maxWidth: '174px',
             width: '100%',
             justifyContent: 'start'
           }}

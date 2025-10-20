@@ -13,7 +13,7 @@ export default function DriveMessagesDropD({onClose}: CustomCardProps) {
   const handleContainerClick = (event: React.MouseEvent) => {
     event.stopPropagation();
   };
-  const t = useTranslations('SchoolDashboard.MessageLesson');
+  const t = useTranslations('SchoolDashboard.Drivers.DriverDetailMessages');
 
   return (
     <Box
@@ -122,7 +122,7 @@ export default function DriveMessagesDropD({onClose}: CustomCardProps) {
             textAlign: 'left'
           }}
         >
-          {t('messLable2')}
+          {t('messLable3')}
         </Typography>
 
         <TextField

@@ -2,14 +2,14 @@ import localFont from '@/utils/themes';
 import {Box, Typography, Switch} from '@mui/material';
 import Image from 'next/image';
 import React, {useEffect, useRef, useState} from 'react';
-
-import pen from '@/assets/svgs/dashboard-student/pen.svg';
 import {AnimatePresence, motion} from 'framer-motion';
 import HeaderDropDown from './HeaderDropDown';
 
+import pen from '@/assets/svgs/dashboard-student/pen.svg';
+
 export default function Header() {
   const [checked, setChecked] = React.useState(true);
-  const [openDropdown, setOpenDropdown] = useState(true);
+  const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const iconRef = useRef<HTMLDivElement | null>(null);
 
@@ -96,7 +96,11 @@ export default function Header() {
 
           <Box
             ref={iconRef}
-            sx={{height: '20px', width: '20px', cursor: 'pointer'}}
+            sx={{
+              height: '20px',
+              width: '20px',
+              cursor: 'pointer'
+            }}
           >
             <Image
               src={pen}
