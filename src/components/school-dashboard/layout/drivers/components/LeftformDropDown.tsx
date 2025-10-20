@@ -2,8 +2,7 @@ import {Box, Typography} from '@mui/material';
 import {useState} from 'react';
 
 import localFont from '@/utils/themes';
-import cross from '@/assets/svgs/dashboard-student/btncross.svg';
-import tick from '@/assets/svgs/dashboard-student/tick.svg';
+import cross from '@/assets/svgs/dashboard-student/addicon.svg';
 import CustomButton from '@/components/student-dashboard/CustomButton';
 import CustomTextField from '@/components/school-dashboard/InputField';
 import {useTranslations} from 'next-intl';
@@ -12,10 +11,10 @@ interface CustomCardProps {
   onClose?: () => void;
 }
 
-export default function HeaderDropDown({onClose}: CustomCardProps) {
+export default function LeftformDropDown({onClose}: CustomCardProps) {
   const [checkedA, setCheckedA] = useState(false);
   const [checkedB, setCheckedB] = useState(true);
-  const t = useTranslations('SchoolDashboard.DriversDa.HeaderDropDown');
+  const t = useTranslations('SchoolDashboard.DriversDa.leftDD');
   const handleContainerClick = (event: React.MouseEvent) => {
     event.stopPropagation();
   };
@@ -51,8 +50,6 @@ export default function HeaderDropDown({onClose}: CustomCardProps) {
             fontWeight: 400,
             textAlign: 'left',
             textTransform: 'capitalize'
-
-            // mt: {xs: '8px', lg: '0px'}
           }}
         >
           {t('inputTitle1')}
@@ -60,7 +57,7 @@ export default function HeaderDropDown({onClose}: CustomCardProps) {
 
  */}
         </Typography>
-        <CustomTextField labal={t('lable1')} />
+        <CustomTextField />
       </Box>
       <Box
         sx={{
@@ -88,7 +85,7 @@ export default function HeaderDropDown({onClose}: CustomCardProps) {
           {t('inputTitle2')}
         </Typography>
 
-        <CustomTextField labal={t('lable2')} />
+        <CustomTextField />
       </Box>
       <Box
         sx={{
@@ -113,7 +110,7 @@ export default function HeaderDropDown({onClose}: CustomCardProps) {
         >
           {t('inputTitle3')}
 
-          <CustomTextField labal={t('lable3')} />
+          <CustomTextField />
         </Typography>
       </Box>
       <Box
@@ -139,7 +136,7 @@ export default function HeaderDropDown({onClose}: CustomCardProps) {
         >
           {t('inputTitle4')}
 
-          <CustomTextField labal={t('lable4')} />
+          <CustomTextField />
         </Typography>
       </Box>
 
@@ -229,9 +226,6 @@ export default function HeaderDropDown({onClose}: CustomCardProps) {
         <CustomButton
           onClick={onClose}
           label={t('btn')}
-          bgColor="rgb(220, 38, 38)"
-          hoverColor="#991919"
-          hoverTextcolor="#fff"
           imgSrc={cross}
           sx={{
             gap: '7px',
@@ -239,19 +233,6 @@ export default function HeaderDropDown({onClose}: CustomCardProps) {
             width: '100%',
             justifyContent: 'start'
           }}
-        />
-        <CustomButton
-          label={t('btn1')}
-          bgColor="#0D9488"
-          hoverColor="#0C5C72"
-          imgSrc={tick}
-          sx={{
-            gap: '8px',
-            maxWidth: '122px',
-            width: '100%',
-            justifyContent: 'start'
-          }}
-          onClick={onClose}
         />
       </Box>
     </Box>
