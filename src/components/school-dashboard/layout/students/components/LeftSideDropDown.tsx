@@ -1,5 +1,4 @@
 import {Box, Typography} from '@mui/material';
-import {ReactNode} from 'react';
 
 import localFont from '@/utils/themes';
 
@@ -7,24 +6,18 @@ import InputField from '@/components/school-dashboard/InputField';
 import CustomButton from '@/components/school-dashboard/CustomButton';
 
 import send from '@/assets/svgs/dashboard-student/send.svg';
+import {useTranslations} from 'next-intl';
 
 interface CustomCardProps {
-  children?: ReactNode;
-  padding?: number | string;
-
-  bgColor?: string;
-  text?: string;
   onClose?: () => void;
 }
 
-export default function LeftSideDropDown({
-  onClose,
-  padding = '16px'
-}: CustomCardProps) {
+export default function LeftSideDropDown({onClose}: CustomCardProps) {
   const handleContainerClick = (event: React.MouseEvent) => {
     // Yeh prevent karega ke andar ke elements par click karne se onClose trigger na ho
     event.stopPropagation();
   };
+  const t = useTranslations('SchoolDashboard.studentLeftDD');
 
   return (
     <Box
@@ -35,7 +28,7 @@ export default function LeftSideDropDown({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        padding,
+        padding: '16px',
         gap: '24px'
       }}
     >
@@ -60,7 +53,7 @@ export default function LeftSideDropDown({
             textAlign: 'center'
           }}
         >
-          Neue Schüler einladen
+          {t('heading')}
         </Typography>
         <Typography
           sx={{
@@ -72,9 +65,7 @@ export default function LeftSideDropDown({
             textAlign: 'center'
           }}
         >
-          Wir senden eine Einladung an die folgende E-Mail-Adresse. Die
-          Einladung muss zunächst angenommen werden, um in dieser Liste zu
-          erscheinen.
+          {t('des')}
         </Typography>
         <Box sx={{width: '100%'}}>
           <Typography
@@ -84,12 +75,12 @@ export default function LeftSideDropDown({
               mb: '6px'
             }}
           >
-            E-Mail-Adresse
+            {t('label')}
           </Typography>
           <InputField />
         </Box>
         <CustomButton
-          label="Einladung senden"
+          label={t('btn')}
           imgSrc={send}
           bgColor="#4611f5"
           hoverColor="rgb(48,12,168)"

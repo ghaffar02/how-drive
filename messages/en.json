@@ -2168,6 +2168,12 @@
       ],
       "search": "Search"
     },
+    "studentLeftDD": {
+      "heading": "Invite new students",
+      "des": "We will send an invitation to the following email address. The invitation must first be accepted to appear on this list.",
+      "label": "Email address",
+      "btn": "Send invitation"
+    },
     "DriversDa": {
       "HeaderDropDown": {
         "inputTitle1": "First name",
