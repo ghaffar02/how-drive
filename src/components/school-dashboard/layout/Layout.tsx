@@ -13,12 +13,12 @@ import logoutIcon from '@/assets/svgs/dashboard-student/login.svg';
 import Setting from './profile-setting/Setting';
 import Calander from './calander/Calander';
 import Support from './support/Support';
-import Message from './messages/Message';
+
 import Students from './students/Students';
 import Drivers from './drivers/Drivers';
 
 export default function StudentDashboard() {
-  const [activeKey, setActiveKey] = React.useState<string>('4');
+  const [activeKey, setActiveKey] = React.useState<string>('2');
   const [hoverKey, setHoverKey] = React.useState<string | null>(null);
   // ProfileDropdown relative states
   const [open, setOpen] = useState(false);

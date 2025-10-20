@@ -12,6 +12,7 @@ import LeftSideDropDown from '../components/LeftSideDropDown';
 import iconpurple from '@/assets/svgs/dashboard-student/purple.svg';
 import iconorange from '@/assets/svgs/dashboard-student/orange.svg';
 import iconnave from '@/assets/svgs/dashboard-student/nave.svg';
+import {useTranslations} from 'next-intl';
 
 const MotionBox = motion(Box);
 const emails = [
@@ -104,7 +105,8 @@ export default function DetailSide() {
   // const [value, setValue] = useState('active');
 
   const [activeIndex, setActiveIndex] = useState<number | 0>(0);
-
+  const t = useTranslations('SchoolDashboard.leftSideTab');
+  const textTab = t.raw('textTab');
   const handleClickTab = (i: number) => {
     setActiveIndex(i);
   };
@@ -189,7 +191,7 @@ export default function DetailSide() {
             />
           </Box>
           <TextField
-            placeholder="Search"
+            placeholder={t('search')}
             variant="outlined"
             sx={{
               flex: 1,
@@ -341,7 +343,7 @@ export default function DetailSide() {
             }}
           />
 
-          {['Aktiv', 'Inaktiv'].map((item, i) => (
+          {textTab.map((item: string, i: number) => (
             <Box
               key={i}
               onClick={() => handleClickTab(i)}
