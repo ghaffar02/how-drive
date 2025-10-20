@@ -9,29 +9,26 @@ import CustomTextField from '@/components/school-dashboard/InputField';
 import {useTranslations} from 'next-intl';
 
 interface CustomCardProps {
-  children?: ReactNode;
-  padding?: number | string;
-  bgColor?: string;
-  text?: string;
   onClose?: () => void;
 }
 
-export default function HeaderDropDown({
-  onClose,
-  padding = '16px'
-}: CustomCardProps) {
+export default function HeaderDropDown({onClose}: CustomCardProps) {
   const [checkedA, setCheckedA] = useState(false);
   const [checkedB, setCheckedB] = useState(true);
   const t = useTranslations('SchoolDashboard.DriversDa.HeaderDropDown');
+  const handleContainerClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
+  };
   return (
     <Box
+      onClick={handleContainerClick}
       sx={{
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        padding,
+        padding: '16px',
         gap: '24px'
       }}
     >

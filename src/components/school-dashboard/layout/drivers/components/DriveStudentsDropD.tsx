@@ -13,7 +13,7 @@ export default function DriveStudentsDropD({onClose}: CustomCardProps) {
   const handleContainerClick = (event: React.MouseEvent) => {
     event.stopPropagation();
   };
-  const t = useTranslations('SchoolDashboard.Drivers');
+  const t = useTranslations('SchoolDashboard.Drivers.DriverDetail');
 
   return (
     <Box
@@ -71,7 +71,7 @@ export default function DriveStudentsDropD({onClose}: CustomCardProps) {
           imgSrc={tick}
           sx={{
             gap: '8px',
-            maxWidth: '174px',
+            maxWidth: '204px',
             width: '100%',
             justifyContent: 'start'
           }}

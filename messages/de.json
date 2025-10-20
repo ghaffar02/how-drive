@@ -2257,6 +2257,15 @@
         "messageDes": "Keine Nachrichten!",
         "label": "Fahrschüler*in",
         "btn": "Fahrschüler zuweisen"
+      },
+      "DriverDetailMessages": {
+        "messLable1": "Betreff",
+        "messLable2": "Nachricht",
+        "messLable3": "Datei hochladen",
+        "messBtn": "Nachricht senden",
+        "desDriverStudents": "Möchtest du den/die Fahrschüler*in aus der Liste entfernen?",
+        "btn1": "Ja",
+        "btn": "Nein"
       }
     }
   }

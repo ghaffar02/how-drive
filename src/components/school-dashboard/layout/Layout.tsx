@@ -18,7 +18,7 @@ import Students from './students/Students';
 import Drivers from './drivers/Drivers';
 
 export default function StudentDashboard() {
-  const [activeKey, setActiveKey] = React.useState<string>('2');
+  const [activeKey, setActiveKey] = React.useState<string>('4');
   const [hoverKey, setHoverKey] = React.useState<string | null>(null);
   // ProfileDropdown relative states
   const [open, setOpen] = useState(false);

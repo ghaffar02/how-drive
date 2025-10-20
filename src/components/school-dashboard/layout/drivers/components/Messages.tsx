@@ -11,7 +11,7 @@ import logo from '@/assets/pngs/logo.avif';
 import {useTranslations} from 'next-intl';
 import addIcon from '@/assets/svgs/circleadd.svg';
 
-import MessagesDropDown from '../../students/components/MessagesDropDown';
+import DriveMessagesDropD from './DriveMessagesDropD';
 
 const MotionBox = motion(Box);
 
@@ -127,6 +127,7 @@ export default function Messages() {
         </Typography>
 
         <Box
+          onClick={() => setOpenDropdown((prev) => !prev)}
           ref={iconRef}
           sx={{
             height: '20px',
@@ -139,7 +140,6 @@ export default function Messages() {
             src={addIcon}
             alt="add"
             style={{height: '100%', width: '100%'}}
-            onClick={() => setOpenDropdown((prev) => !prev)}
           />
           <AnimatePresence>
             {openDropdown && (
@@ -149,7 +149,7 @@ export default function Messages() {
                 initial={{
                   opacity: 0,
                   scale: 0.5,
-                  y: 100,
+                  y: -20,
                   x: 20,
                   originX: 1,
                   originY: 0
@@ -166,7 +166,7 @@ export default function Messages() {
                   opacity: 0,
                   scale: 0.5,
                   // dur: 1,
-                  y: 100,
+                  y: -20,
                   x: 20,
                   originX: 1,
                   originY: 0
@@ -181,9 +181,9 @@ export default function Messages() {
                   // bgcolor: '#000',
                   position: 'absolute',
                   zIndex: 99999,
-                  bottom: '100%',
+                  top: '100%',
                   right: 0,
-                  mb: '8px',
+                  mt: '12px',
                   width: {xs: '300px'},
                   overflow: 'visible',
                   border: '1px solid rgb(255, 255, 255)',
@@ -191,15 +191,15 @@ export default function Messages() {
                   backdropFilter: 'blur(8px)',
                   // borderRadius: "12px",
                   boxShadow: `
-    0px 0px 0px 1px rgb(255, 255, 255),
-    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
-  `,
+                      0px 0px 0px 1px rgb(255, 255, 255),
+                      0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+                      0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+                    `,
                   borderRadius: '12px',
                   transformOrigin: 'top right'
                 }}
               >
-                <MessagesDropDown />
+                <DriveMessagesDropD />
               </Box>
             )}
           </AnimatePresence>

@@ -1,15 +1,40 @@
 import localFont from '@/utils/themes';
 import {Box, Typography} from '@mui/material';
 import Image from 'next/image';
-import React from 'react';
 import addIcon from '@/assets/svgs/circleadd.svg';
 import profile from '@/assets/svgs/dashboard-student/profile.svg';
-
+import React, {useEffect, useRef, useState} from 'react';
+import {AnimatePresence, motion} from 'framer-motion';
+import DriveStudentsDropD from './DriveStudentsDropD';
+import DrivinglicenseDropdown from './DrivinglicenseDropdown';
 type Props = {
   title: string;
 };
 
 export default function DrivingStudents({title}: Props) {
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const iconRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
+
+      setOpenDropdown(false);
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const cardArray = [
     {
       name: 'Daniel Mustermann 2',
@@ -68,12 +93,83 @@ export default function DrivingStudents({title}: Props) {
         >
           {title}
         </Typography>
-        <Box sx={{height: '24px', width: '24px'}}>
+        <Box
+          ref={iconRef}
+          onClick={() => setOpenDropdown((prev) => !prev)}
+          sx={{
+            height: '24px',
+            width: '24px',
+            cursor: 'pointer',
+            position: 'relative'
+          }}
+        >
           <Image
             src={addIcon}
             alt="addIcon"
             style={{height: '100%', width: '100%'}}
           />
+          <AnimatePresence>
+            {openDropdown && (
+              <Box
+                ref={dropdownRef}
+                component={motion.div}
+                initial={{
+                  opacity: 0,
+                  scale: 0.5,
+                  y: -20,
+                  x: 20,
+                  originX: 1,
+                  originY: 0
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  y: 0,
+                  x: 0,
+                  originX: 1,
+                  originY: 0
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.5,
+                  // dur: 1,
+                  y: -20,
+                  x: 20,
+                  originX: 1,
+                  originY: 0
+                }}
+                transition={{
+                  duration: 0.5,
+                  type: 'spring',
+                  stiffness: 300,
+                  damping: 25
+                }}
+                sx={{
+                  // bgcolor: '#000',
+                  position: 'absolute',
+                  zIndex: 99999,
+                  top: '100%',
+                  right: 0,
+                  mt: '12px',
+                  width: {xs: '300px'},
+                  overflow: 'visible',
+                  border: '1px solid rgb(255, 255, 255)',
+                  backgroundColor: '#f0f0fa99',
+                  backdropFilter: 'blur(8px)',
+                  // borderRadius: "12px",
+                  boxShadow: `
+                              0px 0px 0px 1px rgb(255, 255, 255),
+                              0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+                              0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+                            `,
+                  borderRadius: '12px',
+                  transformOrigin: 'top right'
+                }}
+              >
+                <DriveStudentsDropD />
+              </Box>
+            )}
+          </AnimatePresence>
         </Box>
       </Box>
       <Box
@@ -104,9 +200,35 @@ type CardProps = {
 };
 
 function Card({name, drivingClass}: CardProps) {
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const iconRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
+
+      setOpenDropdown(false);
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
     <Box
+      ref={iconRef}
+      onClick={() => setOpenDropdown((prev) => !prev)}
       sx={{
+        position: 'relative',
         width: '100%',
         background: '#ffffff99',
         padding: '8px',
@@ -121,6 +243,68 @@ function Card({name, drivingClass}: CardProps) {
         }
       }}
     >
+      <AnimatePresence>
+        {openDropdown && (
+          <Box
+            ref={dropdownRef}
+            component={motion.div}
+            initial={{
+              opacity: 0,
+              scale: 0.5,
+              y: -20,
+              x: 20,
+              originX: 1,
+              originY: 0
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+              x: 0,
+              originX: 1,
+              originY: 0
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.5,
+              // dur: 1,
+              y: -20,
+              x: 20,
+              originX: 1,
+              originY: 0
+            }}
+            transition={{
+              duration: 0.5,
+              type: 'spring',
+              stiffness: 300,
+              damping: 25
+            }}
+            sx={{
+              // bgcolor: '#000',
+              position: 'absolute',
+              zIndex: 99999,
+              top: '100%',
+              right: 0,
+              mt: '12px',
+              width: {xs: '300px'},
+              overflow: 'visible',
+              border: '1px solid rgb(255, 255, 255)',
+              backgroundColor: '#f0f0fa99',
+              backdropFilter: 'blur(8px)',
+              // borderRadius: "12px",
+              boxShadow: `
+                              0px 0px 0px 1px rgb(255, 255, 255),
+                              0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+                              0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+                            `,
+              borderRadius: '12px',
+              transformOrigin: 'top right'
+            }}
+          >
+            <DrivinglicenseDropdown />
+          </Box>
+        )}
+      </AnimatePresence>
       <Box
         sx={{
           height: '40px',
