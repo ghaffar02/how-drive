@@ -8,15 +8,17 @@ type ProfileProps = {
   title: string;
   imgSrc?: StaticImageData | string;
   progressBar?: boolean;
+  activePercentage?: number;
 };
 
 export default function ProfileCard({
   students,
   title,
   imgSrc,
-  progressBar = false
+  progressBar = false,
+  activePercentage
 }: ProfileProps) {
-  const value1 = 50;
+  const value1 = activePercentage || 0;
   const value2 = 100 - value1;
 
   const size = 70;
@@ -74,7 +76,7 @@ export default function ProfileCard({
               strokeWidth={strokeWidth}
               fill="none"
               strokeDasharray={circumference}
-              strokeDashoffset={offset1}
+              strokeDashoffset={offset2} //this allows you see the part according to value
               strokeLinecap="butt"
               style={{
                 transition: 'stroke-dashoffset 1s ease-out',
@@ -92,7 +94,7 @@ export default function ProfileCard({
               strokeWidth={strokeWidth}
               fill="none"
               strokeDasharray={circumference}
-              strokeDashoffset={offset2}
+              strokeDashoffset={offset1} //this allows you see the part according to value
               strokeLinecap="butt"
               style={{
                 transition: 'stroke-dashoffset 1s ease-out',
