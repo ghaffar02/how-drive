@@ -1,4 +1,4 @@
-import {Box, Grid} from '@mui/material';
+import {Box} from '@mui/material';
 import React from 'react';
 // import Header from './components/Header';
 // import Appointment from './components/Appointment';
@@ -14,6 +14,12 @@ import Drivers from './components/Drivers';
 
 export default function Home() {
   // const t = useTranslations('Dashboard.home.MessageLesson');
+  const activeStudents = 164;
+  const inactiveStudents = 1300;
+  const totalStudents = activeStudents + inactiveStudents;
+  const percentageValueActive = parseFloat(
+    ((activeStudents / totalStudents) * 100).toFixed(1)
+  );
 
   return (
     <>
@@ -48,7 +54,7 @@ export default function Home() {
           <ProfileCard
             imgSrc={ActiveIcon}
             title="Active students"
-            students={164}
+            students={activeStudents}
           />
         </Box>
         <Box
@@ -60,7 +66,7 @@ export default function Home() {
           <ProfileCard
             imgSrc={InactiveIcon}
             title="Inactive students"
-            students={1300}
+            students={inactiveStudents}
           />
         </Box>
         <Box
@@ -71,8 +77,9 @@ export default function Home() {
         >
           <ProfileCard
             title="All students"
-            students={1464}
+            students={totalStudents}
             progressBar={true}
+            activePercentage={percentageValueActive}
           />
         </Box>
         <Box
