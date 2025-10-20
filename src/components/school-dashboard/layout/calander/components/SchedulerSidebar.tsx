@@ -1,11 +1,23 @@
 import localFont from '@/utils/themes';
-import {Box, Typography} from '@mui/material';
+import {Box, MenuItem, Select, TextField, Typography} from '@mui/material';
+import {useState} from 'react';
+import crossIcon from '@/assets/svgs/dashboard-student/crossicon.svg';
+import Image from 'next/image';
+import CustomTextField from '@/components/school-dashboard/InputField';
+import arrowIcon from '@/assets/svgs/dashboard-student/arrow.svg';
+import circleAdd from '@/assets/svgs/circleadd.svg';
+import circleCross from '@/assets/svgs/dashboard-student/crosscircle.svg';
 
 export default function SchedulerSidebar() {
+  const [activeIndex, setActiveIndex] = useState<number | 0>(0);
+
+  const handleClickTab = (i: number) => {
+    setActiveIndex(i);
+  };
   return (
     <Box
       sx={{
-        maxWidth: '300px',
+        maxWidth: {md: '230px', lg: '300px'},
         width: '100%',
         // height: '100%',
         background: 'rgba(248,250,252,0.3)',
@@ -29,8 +41,273 @@ export default function SchedulerSidebar() {
           fontFamily: '"Inter", sans-serif !important'
         }}
       >
-        Settings
+        Set appointment schedules
       </Typography>
+
+      {/* Tab Section */}
+
+      <Box
+        sx={{
+          // bgcolor: '#000',
+          width: '100%',
+          display: 'flex',
+          flexDirection: {xs: 'column'},
+          gap: '20px',
+          alignItems: 'end',
+          justifyContent: 'end'
+        }}
+      >
+        <Box
+          sx={{
+            width: '100%',
+            // maxWidth: '828px',
+            bgcolor: '#ffffff99',
+            display: 'flex',
+            p: '4px',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            boxShadow: '0px 0px 2px 0px #D4D4D8',
+            borderRadius: '999px',
+            position: 'relative',
+            overflow: 'hidden'
+          }}
+        >
+          {/* Moving Highlight */}
+          <Box
+            sx={{
+              position: 'absolute',
+              top: 4,
+              bottom: 4,
+              left: 4,
+              width: `calc((100% - 8px) / 3)`,
+              borderRadius: '999px',
+              background: '#4611F5',
+              // boxShadow: '0px 2px 6px 0px #fe0909ff',
+              transition: 'all 0.4s ease',
+              transform: `translateX(${activeIndex * 100}%)`, // move on X
+              zIndex: 1
+            }}
+          />
+
+          {['Talk', 'Theory', 'Driving'].map((item, i) => (
+            <Box
+              key={i}
+              onClick={() => handleClickTab(i)}
+              sx={{
+                flex: 1,
+                textAlign: 'center',
+                p: '4px 8px',
+                cursor: 'pointer',
+                zIndex: 2
+              }}
+            >
+              <Typography
+                sx={{
+                  lineHeight: '1.6em',
+                  fontSize: {xs: '12px', md: '13px', lg: '14px'},
+                  color: activeIndex === i ? '#ffff' : '#4A5568',
+                  fontWeight: activeIndex === i ? '400' : '400',
+                  transition: 'all 0.3s ease-in-out',
+                  fontFamily: '"Inter", sans-serif !important'
+                }}
+              >
+                {item}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+        <SelectAppointmentType />
+      </Box>
+    </Box>
+  );
+}
+
+function SelectAppointmentType() {
+  const [value, setValue] = useState('');
+  return (
+    <Box
+      sx={{
+        width: '100%',
+        border: '1px solid red',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '32px'
+      }}
+    >
+      <Box>
+        <Box sx={{display: 'flex', gap: '6px', mb: '6px'}}>
+          <Box
+            sx={{
+              width: '6px',
+              height: '22px',
+              background: 'red',
+              borderRadius: '999px'
+            }}
+          />
+          <Typography sx={{...localFont.inter14}}>Category</Typography>
+        </Box>
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            gap: '6px'
+          }}
+        >
+          <Box
+            sx={{
+              width: '100%',
+              display: 'flex',
+              padding: '10px',
+              borderRadius: '12px',
+              height: '38px',
+              alignItems: 'center',
+              background: '#ffffffbf',
+              boxShadow: '0px 0px 2px 0px #D4D4D8'
+            }}
+          >
+            <Select
+              displayEmpty
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+              sx={{
+                flex: 1,
+                borderRadius: 0,
+                '& fieldset': {border: 'none'},
+                '&:hover fieldset': {border: 'none'},
+                '&.Mui-focused fieldset': {border: 'none'},
+                '& .MuiSelect-select': {
+                  padding: '0px',
+                  height: 'auto'
+                },
+                '& .MuiOutlinedInput-root': {
+                  borderRadius: 0
+                }
+              }}
+              variant="outlined"
+              renderValue={
+                value !== ''
+                  ? undefined
+                  : () => <span style={{color: '#999'}}>Select type</span>
+              }
+            >
+              <MenuItem value="driving">Driving Lesson</MenuItem>
+              <MenuItem value="theory">Theory Class</MenuItem>
+              <MenuItem value="test">Final Test</MenuItem>
+            </Select>
+          </Box>
+          <Box
+            sx={{
+              height: '36px',
+              width: '36px',
+              background: '#ffffffbf',
+              padding: '8px',
+              borderRadius: '50%',
+              position: 'relative',
+              cursor: 'pointer',
+              overflow: 'visible !important',
+              '&:hover': {
+                bgcolor: '#E4E4E7'
+              }
+            }}
+          >
+            <Image
+              src={crossIcon}
+              alt="addIcon"
+              height={20}
+              width={20}
+              style={{position: 'relative'}}
+              // onClick={() => setOpenDropdown((prev) => !prev)}
+            />
+          </Box>
+        </Box>
+      </Box>
+      {/* Capacity Persons */}
+      <Box sx={{width: '100%'}}>
+        <Typography sx={{...localFont.inter14, mb: '6px'}}>
+          Capacity (persons)
+        </Typography>
+        <CustomTextField type="number" />
+      </Box>
+      {/* Duration Minutes */}
+      <Box sx={{width: '100%'}}>
+        <Typography sx={{...localFont.inter14, mb: '6px'}}>
+          Duration (minutes)
+        </Typography>
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            padding: '10px',
+            borderRadius: '12px',
+            height: '38px',
+            alignItems: 'center',
+            background: '#ffffffbf',
+            boxShadow: '0px 0px 2px 0px #D4D4D8'
+          }}
+        >
+          <Select
+            sx={{
+              flex: 1,
+              borderRadius: 0,
+              '& fieldset': {border: 'none'},
+              '&:hover fieldset': {border: 'none'},
+              '&.Mui-focused fieldset': {border: 'none'},
+              '& .MuiSelect-select': {
+                padding: '0px',
+                height: 'auto'
+              },
+              '& .MuiOutlinedInput-root': {
+                borderRadius: 0
+              }
+            }}
+          >
+            <MenuItem value="15">15</MenuItem>
+            <MenuItem value="30">30</MenuItem>
+            <MenuItem value="45">45</MenuItem>
+            <MenuItem value="60">60</MenuItem>
+            <MenuItem value="90">90</MenuItem>
+            <MenuItem value="120">120</MenuItem>
+          </Select>
+        </Box>
+      </Box>
+      {/* Weekly Hours */}
+      <Box>
+        <Typography sx={{...localFont.inter14, mb: '10px'}}>
+          Weekly hours
+        </Typography>
+        <Box>
+          <Box sx={{display: 'flex', gap: '10px', alignItems: 'center'}}>
+            <Typography sx={{...localFont.inter14}}>Mo</Typography>
+            <Box sx={{display: 'flex', alignItems: 'center', gap: '4px'}}>
+              <CustomTextField type="time" />
+              <Image src={arrowIcon} alt="arrowIcon" height={14} width={14} />
+              <CustomTextField
+                type="time"
+                sx={{
+                  // '& input::-webkit-calendar-picker-indicator': {
+                  //   display: 'none',
+                  //   WebkitAppearance: 'none'
+                  // }
+                  '& input::-webkit-calendar-picker-indicator': {
+                    opacity: 0, // hides it visually
+                    cursor: 'pointer' // still clickable
+                  }
+                }}
+              />
+            </Box>
+            <Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between'
+                // gap: '15px'
+              }}
+            >
+              <Image src={circleCross} alt="cross" height={20} width={20} />
+              <Image src={circleAdd} alt="add" height={20} width={20} />
+            </Box>
+          </Box>
+        </Box>
+      </Box>
     </Box>
   );
 }
