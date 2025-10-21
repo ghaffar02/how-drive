@@ -2213,6 +2213,62 @@
             }
           ]
         },
+        "BussinessTab": {
+          "heading1": "Account",
+          "heading2": "Personal data",
+          "heading3": "Delete account",
+          "description1": "Personal data, delete account, etc.",
+          "description2": "If you delete your account, you will lose access to your data and the driver's license process. We will permanently delete your personal data.",
+          "btn1": "Cancel",
+          "btn2": "Save",
+          "btn3": "Delete account",
+          "btn4": "Learn more",
+          "btn5": "yes",
+          "btn6": "no",
+          "dropDown": "Do you really want to delete your account?",
+          "formFields": [
+            {
+              "label": "Vorname",
+              "placeholder": "Daniel"
+            },
+            {
+              "label": "Nachname",
+              "placeholder": "Mustermann"
+            },
+            {
+              "label": "E-Mail",
+              "placeholder": "d.mustermann@gmail.com"
+            },
+            {
+              "label": "Wohnort",
+              "placeholder": "Hamburg"
+            },
+            {
+              "label": "Telefonnummer",
+              "placeholder": "01518745692"
+            },
+            {
+              "isbool": true,
+              "label": "Fahrschule",
+              "placeholder": "Mundsburg"
+            },
+            {
+              "label": "Fahrschule",
+              "checkBox1": "Mundsburg",
+              "checkBox2": "Eppendorf"
+            },
+            {
+              "isbool": true,
+              "label": "Fahrschule",
+              "placeholder": "Mundsburg"
+            },
+            {
+              "isbool": true,
+              "label": "Fahrschule",
+              "placeholder": "Mundsburg"
+            }
+          ]
+        },
         "Password": {
           "heading1": "Password",
           "heading2": "Change password",

@@ -5,6 +5,7 @@ import Preference from './Preference';
 import Privacy from './Privacy';
 import {useTranslations} from 'next-intl';
 import Notification from './Notification';
+import Business from './Business';
 
 export default function RightSide({
   activeIndex,
@@ -102,7 +103,7 @@ export default function RightSide({
 
         {/* Pages */}
         <Box sx={{}}>
-          {activeIndex === 0 && <Account />}
+          {activeIndex === 0 && <Business />}
           {activeIndex === 1 && <Account />}
           {activeIndex === 2 && <Notification />}
           {activeIndex === 3 && <Notification />}
