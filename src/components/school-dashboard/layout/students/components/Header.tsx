@@ -102,13 +102,13 @@ export default function Header() {
 
           <Box
             ref={iconRef}
+            onClick={() => setOpenDropdown((prev) => !prev)}
             sx={{height: '20px', width: '20px', cursor: 'pointer'}}
           >
             <Image
               src={pen}
               alt="edit"
               style={{height: '100%', width: '100%'}}
-              onClick={() => setOpenDropdown((prev) => !prev)}
             />
             <AnimatePresence>
               {openDropdown && (

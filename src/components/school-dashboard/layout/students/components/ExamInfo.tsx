@@ -18,6 +18,7 @@ import Building1 from '@/assets/svgs/dashboard-student/home/smallBuilding.svg';
 import Grade1 from '@/assets/svgs/dashboard-student/home/smallGrade.svg';
 import Steering1 from '@/assets/svgs/dashboard-student/home/smallSteering.svg';
 import TheoryexamDropDown from './TheoryexamDropDown';
+import DriveMessagesDropD from './DrivinglicenseDropdown';
 
 const data = [
   {
@@ -207,10 +208,11 @@ function Card({
             position: 'relative',
             cursor: 'pointer'
           }}
-          // onClick={(e) => {
-          //   e.stopPropagation();
-          //   setOpenDropdown((prev) => !prev);
-          // }}
+          ref={iconRef}
+          onClick={(e) => {
+            e.stopPropagation();
+            setOpenDropdown((prev) => !prev);
+          }}
         >
           <Typography
             sx={{
@@ -225,14 +227,7 @@ function Card({
             {show ? title3 : title2}
           </Typography>
 
-          <Box
-            ref={iconRef}
-            sx={{height: '20px', width: '20px', cursor: 'pointer'}}
-            onClick={(e) => {
-              e.stopPropagation();
-              setOpenDropdown((prev) => !prev);
-            }}
-          >
+          <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
             <Image
               src={Pen}
               alt="edit"
@@ -241,7 +236,6 @@ function Card({
             <AnimatePresence>
               {openDropdown && (
                 <Box
-                  onClick={(e) => e.stopPropagation()}
                   ref={dropdownRef}
                   component={motion.div}
                   initial={{
@@ -297,7 +291,7 @@ function Card({
                   // onClick={(e) => e.stopPropagation()}
                 >
                   {id === 1 ? (
-                    <DrivinglicenseDropdown />
+                    <DrivinglicenseDropdown text={tooltip} />
                   ) : (
                     <TheoryexamDropDown text={tooltip} />
                   )}
