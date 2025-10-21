@@ -64,6 +64,7 @@ export default function DrivingStudents({title}: Props) {
   return (
     <Box
       sx={{
+        position: 'relative',
         width: '100%',
         height: {xs: '320px', md: '324px', lg: '329px'},
         padding: {xs: '16px 0px', lg: '24px 0px'},
@@ -228,7 +229,7 @@ function Card({name, drivingClass}: CardProps) {
       ref={iconRef}
       onClick={() => setOpenDropdown((prev) => !prev)}
       sx={{
-        position: 'relative',
+        // position: 'relative',
         width: '100%',
         background: '#ffffff99',
         padding: '8px',
@@ -283,7 +284,7 @@ function Card({name, drivingClass}: CardProps) {
               // bgcolor: '#000',
               position: 'absolute',
               zIndex: 99999,
-              top: '100%',
+              top: '20%',
               right: 0,
               mt: '12px',
               width: {xs: '300px'},

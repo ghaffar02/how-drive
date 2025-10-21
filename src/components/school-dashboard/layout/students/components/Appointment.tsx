@@ -71,6 +71,8 @@ export default function Appointment() {
   return (
     <Box
       sx={{
+        position: 'relative',
+
         width: '100%',
         height: '100%',
         padding: {xs: '16px', lg: '24px'},
@@ -81,7 +83,7 @@ export default function Appointment() {
         background: '#ffffffbf',
         boxShadow:
           '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0,0,0,0.25), 0px 1px 1px 0px rgba(0,0,0,0.25)',
-        overflow: 'hidden'
+        overflow: 'visible'
       }}
     >
       <Box
@@ -273,7 +275,6 @@ function Card({name, barColor, date, time}: CardProps) {
         borderRadius: '8px',
         boxShadow: '0px 0px 2px 0px rgb(212,212,216)',
         cursor: 'pointer',
-        position: 'relative',
         '&:hover': {
           background: 'rgba(255,255,255,0.85)',
           boxShadow: '0px 0px 2px 0px rgb(70,17,245)'
@@ -320,7 +321,7 @@ function Card({name, barColor, date, time}: CardProps) {
               // bgcolor: '#000',
               position: 'absolute',
               zIndex: 99999999,
-              // bottom: '100%',
+              top: '10%',
               right: 0,
               mb: '8px',
               width: {xs: '300px'},
