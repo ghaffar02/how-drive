@@ -2168,6 +2168,14 @@
       ],
       "search": "Search"
     },
+    "studentHeader": {
+      "lable1": "First name",
+      "input1": "Daniel",
+      "lable2": "Last name",
+      "input2": "Mustermann",
+      "btn": "Cancel",
+      "btn1": "Save "
+    },
     "studentLeftDD": {
       "heading": "Invite new students",
       "des": "We will send an invitation to the following email address. The invitation must first be accepted to appear on this list.",

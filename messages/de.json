@@ -2167,6 +2167,14 @@
       ],
       "search": "Suchen"
     },
+    "studentHeader": {
+      "lable1": "Vorname",
+      "input1": "Daniel",
+      "lable2": "Nachname",
+      "input2": "Mustermann",
+      "btn": "Abbrechen",
+      "btn1": "Speichern "
+    },
     "studentLeftDD": {
       "heading": "Neue Schüler einladen",
       "des": "Wir senden eine Einladung an die folgende E-Mail-Adresse. Die Einladung muss zunächst angenommen werden, um in dieser Liste zu erscheinen.",

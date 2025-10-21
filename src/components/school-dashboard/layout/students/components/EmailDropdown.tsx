@@ -12,7 +12,7 @@ interface CustomCardProps {
 }
 
 export default function EmailDropdown({onClose}: CustomCardProps) {
-  const t = useTranslations('Dashboard.Messages.formDropDown');
+  const t = useTranslations('SchoolDashboard.studentHeader');
   const handleContainerClick = (event: React.MouseEvent) => {
     event.stopPropagation();
   };
@@ -51,11 +51,11 @@ export default function EmailDropdown({onClose}: CustomCardProps) {
             textAlign: 'left'
           }}
         >
-          Vorname
+          {t('lable1')}
         </Typography>
 
         <CustomTextField
-          labal="Daniel"
+          labal={t('input1')}
           sx={{textAlign: 'end', maxWidth: {lg: '403px'}}}
         />
       </Box>
@@ -80,10 +80,10 @@ export default function EmailDropdown({onClose}: CustomCardProps) {
             textAlign: 'left'
           }}
         >
-          Nachname
+          {t('lable2')}
         </Typography>
 
-        <CustomTextField labal="Mustermann" />
+        <CustomTextField labal={t('input2')} />
       </Box>
 
       <Box
