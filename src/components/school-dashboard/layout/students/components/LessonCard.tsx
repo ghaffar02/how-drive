@@ -16,6 +16,7 @@ import pen from '@/assets/svgs/dashboard-student/pen.svg';
 import LessonDropDown from './LessonDropDown';
 
 interface LessonCardProps {
+  isbool?: boolean;
   title: string;
   completedHours: number;
   totalHours: number;
@@ -24,6 +25,7 @@ interface LessonCardProps {
 
 export default function LessonCard({
   title,
+  isbool,
   completedHours,
   totalHours,
   progressValue
@@ -229,8 +231,11 @@ export default function LessonCard({
                     // bgcolor: '#000',
                     position: 'absolute',
                     zIndex: 99999,
-                    bottom: '100%',
-                    right: 0,
+                    bottom: {xs: '100%'},
+
+                    left: {xs: isbool ? '-90px' : 'auto', lg: 0},
+                    right: {xs: !isbool ? '-12px' : 'unset', lg: 'unset'},
+
                     mb: '8px',
                     width: {xs: '300px'},
                     overflow: 'visible',

@@ -57,6 +57,7 @@ export default function StudentDetail() {
       </Box>
       <Box sx={{gridRow: {xs: '5', lg: '4'}, gridColumn: '1'}}>
         <LessonCard
+          isbool={true}
           title={t('card1Title')}
           completedHours={11}
           totalHours={14}
