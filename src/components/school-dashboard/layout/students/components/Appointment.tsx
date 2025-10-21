@@ -5,11 +5,30 @@ import React, {useEffect, useRef, useState} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
 import addIcon from '@/assets/svgs/circleadd.svg';
 import AppointmentsDropDown from './AppointmentsDropDown';
+import EditappointmentDropDown from './EditappointmentDropDown';
 
 export default function Appointment() {
   const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const iconRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
+
+      setOpenDropdown(false);
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
   const cardArray = [
     {
       id: 1,
@@ -48,25 +67,6 @@ export default function Appointment() {
     }
   ];
   const show = true;
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        dropdownRef.current.contains(event.target as Node)
-      ) {
-        return;
-      }
-      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
-        return;
-      }
-
-      setOpenDropdown(false);
-    }
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
 
   return (
     <Box
@@ -109,9 +109,10 @@ export default function Appointment() {
 
         <Box
           ref={iconRef}
+          onClick={() => setOpenDropdown((prev) => !prev)}
           sx={{
-            height: '20px',
-            width: '20px',
+            height: '24px',
+            width: '24px',
             cursor: 'pointer',
             position: 'relative'
           }}
@@ -120,7 +121,6 @@ export default function Appointment() {
             src={addIcon}
             alt="addIcon"
             style={{height: '100%', width: '100%'}}
-            onClick={() => setOpenDropdown((prev) => !prev)}
           />
           <AnimatePresence>
             {openDropdown && (
@@ -239,8 +239,31 @@ type CardProps = {
 };
 
 function Card({name, barColor, date, time}: CardProps) {
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const iconRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
+
+      setOpenDropdown(false);
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
   return (
     <Box
+      ref={iconRef}
+      onClick={() => setOpenDropdown((prev) => !prev)}
       sx={{
         padding: '7px 8px 4px',
         display: 'flex',
@@ -250,12 +273,92 @@ function Card({name, barColor, date, time}: CardProps) {
         borderRadius: '8px',
         boxShadow: '0px 0px 2px 0px rgb(212,212,216)',
         cursor: 'pointer',
+        position: 'relative',
         '&:hover': {
           background: 'rgba(255,255,255,0.85)',
           boxShadow: '0px 0px 2px 0px rgb(70,17,245)'
         }
       }}
     >
+      <AnimatePresence>
+        {openDropdown && (
+          <Box
+            ref={dropdownRef}
+            component={motion.div}
+            initial={{
+              opacity: 0,
+              scale: 0.5,
+              y: -20,
+              x: 20,
+              originX: 1,
+              originY: 0
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+              x: 0,
+              originX: 1,
+              originY: 0
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.5,
+              // dur: 1,
+              y: -20,
+              x: 20,
+              originX: 1,
+              originY: 0
+            }}
+            transition={{
+              duration: 0.5,
+              type: 'spring',
+              stiffness: 300,
+              damping: 25
+            }}
+            sx={{
+              // bgcolor: '#000',
+              position: 'absolute',
+              zIndex: 99999999,
+              // bottom: '100%',
+              right: 0,
+              mb: '8px',
+              width: {xs: '300px'},
+              overflow: 'visible',
+              border: '1px solid rgb(255, 255, 255)',
+              backgroundColor: '#f0f0fa99',
+              backdropFilter: 'blur(8px)',
+
+              boxShadow: `
+            0px 0px 0px 1px rgb(255, 255, 255),
+            0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+            0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+          `,
+              borderRadius: '12px',
+              transformOrigin: 'top right'
+            }}
+          >
+            <EditappointmentDropDown
+              title="Edit appointment"
+              driverLabel="Driver"
+              dayLabel="Day"
+              beginLabel="Begin"
+              endLabel="End"
+              participantsLabel="Participants"
+              participantName="Daniel Mustermann 1"
+              cancelHeading="Cancel appointment"
+              cancelDescription="To cancel the appointment remove all participants from the list and click Save."
+              cancelBtnLabel="Cancel"
+              saveBtnLabel="Save"
+              dropdownOptions={[
+                {value: 'malfunction', label: 'Malfunction'},
+                {value: 'question', label: 'Question'}
+              ]}
+            />
+          </Box>
+        )}
+      </AnimatePresence>
+
       <Box sx={{display: 'flex', alignItems: 'center', gap: '8px'}}>
         <Box
           sx={{
