@@ -77,7 +77,7 @@ export default function StudentDashboard() {
             flexDirection: 'column',
             alignItems: 'center',
             flex: 1,
-            overflowY: 'visible !important',
+            overflowY: {xs: 'auto !important', md: 'visible !important'},
             overflowX: 'visible !important',
             '&::-webkit-scrollbar': {
               display: 'none'
