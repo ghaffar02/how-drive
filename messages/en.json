@@ -2161,6 +2161,131 @@
     }
   },
   "SchoolDashboard": {
+    "Settings": {
+      "leftSide": {
+        "title": "Settings",
+        "SettingsArray": [
+          "Business profile",
+          "Account",
+          "Notifications",
+          "Payment",
+          "Privacy",
+          "Preferences",
+          "Password"
+        ],
+        "RightSideArray": [
+          "Busi.",
+          "Account",
+          "Notif.",
+          "Pay",
+          "Privacy",
+          "Prefern.",
+          "Password"
+        ]
+      },
+      "RightSide": {
+        "AccountTab": {
+          "heading1": "Account",
+          "heading2": "Personal data",
+          "heading3": "Delete account",
+          "description1": "Personal data, delete account, etc.",
+          "description2": "If you delete your account, you will lose access to your data and the driver's license process. We will permanently delete your personal data.",
+          "btn1": "Cancel",
+          "btn2": "Save",
+          "btn3": "Delete account",
+          "btn4": "Learn more",
+          "btn5": "yes",
+          "btn6": "no",
+          "dropDown": "Do you really want to delete your account?",
+          "formFields": [
+            {
+              "label": "First name",
+              "placeholder": "Daniel"
+            },
+            {
+              "label": "Last name",
+              "placeholder": "Mustermann"
+            },
+            {
+              "label": "Email",
+              "placeholder": "d.mustermann@gmail.com"
+            },
+            {
+              "label": "Place of residence",
+              "placeholder": "Hamburg"
+            },
+            {
+              "label": "Phone number",
+              "placeholder": "01518745692"
+            },
+            {
+              "label": "Driving school",
+              "placeholder": "Mundsburg"
+            }
+          ]
+        },
+        "Password": {
+          "heading1": "Password",
+          "heading2": "Change password",
+          "description1": "Changing the old password",
+          "btn1": "Cancel",
+          "btn2": "Save",
+          "formFields": [
+            "Current password",
+            "New password",
+            "Repeat new password"
+          ]
+        },
+        "PrivacyTab": {
+          "heading1": "Privacy",
+          "heading2": "Cookie settings",
+          "heading3": "Download your data",
+          "description1": "Cookie settings, downloading your data, etc.",
+          "description2": "You can download your personal data. This will take up to 3 business days.",
+          "btn1": "Cancel",
+          "btn2": "Save",
+          "btn3": "Export data",
+          "btn4": "Learn more",
+          "dropDown": "Would you like to download your personal data?",
+          "formFields": [
+            "Necessary",
+            "Analytics",
+            "Allow all"
+          ]
+        },
+        "Preferen": {
+          "heading1": "Preferences",
+          "heading2": "Language preferences",
+          "heading3": "Login status",
+          "description1": "Language preferences, login status, etc.",
+          "btn1": "Cancel",
+          "btn2": "Save",
+          "lable1": "Language",
+          "lable2": "Stay logged in",
+          "option1": "Select"
+        },
+        "Notifications": {
+          "heading1": "Notifications",
+          "heading2": "General notification",
+          "heading3": "Newsletter",
+          "description1": "General notification, newsletter, etc.",
+          "description2": "You can download your personal data. This will take up to 3 business days.",
+          "btn1": "Cancel",
+          "btn2": "Save",
+          "btn3": "Export data",
+          "btn4": "Learn more",
+          "formFieldsOn": [
+            "Booked appointments",
+            "News",
+            "Driving license office registered"
+          ],
+          "formFieldsOff": [
+            "Genereller Newsletter",
+            "Offers and advertising"
+          ]
+        }
+      }
+    },
     "leftSideTab": {
       "textTab": [
         "Active",

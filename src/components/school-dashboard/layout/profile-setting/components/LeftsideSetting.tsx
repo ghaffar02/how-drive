@@ -2,6 +2,7 @@ import localFont from '@/utils/themes';
 import {Box, Typography} from '@mui/material';
 import arrow from '@/assets/svgs/dashboard-student/arrowsetting.svg';
 import {useTranslations} from 'next-intl';
+import {motion} from 'framer-motion';
 
 export default function Leftside({
   activeIndexes,
@@ -10,7 +11,7 @@ export default function Leftside({
   activeIndexes: number;
   setActiveIndexes: React.Dispatch<React.SetStateAction<number>>;
 }) {
-  const t = useTranslations('Dashboard.Settings.leftSide');
+  const t = useTranslations('SchoolDashboard.Settings.leftSide');
 
   const handleClick = (i: number) => {
     // setActiveIndexes((prev) =>
@@ -45,7 +46,6 @@ export default function Leftside({
           ...localFont.inter16,
           fontSize: {xs: '14px', md: '15px', lg: '16px'},
           fontWeight: '500',
-          // colo
           fontFamily: '"Inter", sans-serif !important'
         }}
       >
@@ -54,6 +54,15 @@ export default function Leftside({
 
       {data.map((items: string, i: number) => (
         <Box
+          component={motion.div}
+          initial={{opacity: 0, y: 40}}
+          animate={{opacity: 1, y: 0}}
+          transition={{
+            type: 'spring',
+            stiffness: 70,
+            damping: 15,
+            delay: i * 0.2
+          }}
           key={i}
           onClick={() => handleClick(i)}
           sx={{
@@ -66,21 +75,23 @@ export default function Leftside({
             flexDirection: 'row',
             gap: '10px',
             cursor: 'pointer',
+            overflow: 'hidden',
             boxShadow:
               activeIndexes === i
-                ? '0px 0px 4px 0px #4611f5'
+                ? '0px 0px 2px 0px #4611f5'
                 : '0px 0px 2px 0px #a1a1aa51',
             transition: 'all 0.3s ease',
             '&:hover': {
               boxShadow:
                 activeIndexes === i
-                  ? '0px 0px 4px 0px #4611f5'
+                  ? '0px 0px 2px 0px #4611f5'
                   : '0px 0px 2px 0px #d4d4d8',
               background: 'rgba(255, 255, 255, 0.85)'
             },
             '&:hover .hoverArrow': {
               opacity: 1,
-              transform: 'translateX(1px)'
+              transform: 'translateX(1px)',
+              overflow: 'hidden'
               // transition: 'transform 0.3s ease-in-out'
             }
           }}
@@ -95,8 +106,10 @@ export default function Leftside({
           >
             <Typography
               sx={{
-                lineHeight: '1.8em',
-                fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                ...localFont.inter14,
+
+                lineHeight: '1.9em',
+                // fontSize: {xs: '14px', md: '15px', lg: '16px'},
                 color: activeIndexes === i ? '#4611f5' : '#2d3748',
                 fontFamily: '"Inter", sans-serif !important',
                 fontWeight: activeIndexes === i ? '500' : '400'

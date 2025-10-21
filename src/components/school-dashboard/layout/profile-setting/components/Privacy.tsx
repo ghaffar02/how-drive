@@ -1,7 +1,6 @@
-import CustomButton from '@/components/student-dashboard/CustomButton';
 import CustomCard from '@/components/student-dashboard/layout/profile-setting/Dropdown';
 import localFont from '@/utils/themes';
-import {Box, Divider, Typography} from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import {useTranslations} from 'next-intl';
 import {AnimatePresence, motion} from 'framer-motion';
 import {
@@ -13,6 +12,8 @@ import {
   useRef,
   useState
 } from 'react';
+import GradientDivider from '../GradientDivider';
+import CustomButton from '@/components/school-dashboard/CustomButton';
 
 export default function Privacy() {
   const [activeIndex, setActiveIndex] = useState<number | 0>(0);
@@ -50,7 +51,7 @@ export default function Privacy() {
       sx={{
         width: '100%',
         // height: '100%',
-        mt: '32px',
+        // mt: '32px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -107,14 +108,7 @@ export default function Privacy() {
           <CustomButton label={t('btn2')} sx={{}} />
         </Box>
       </Box>
-      <Box width="100%">
-        <Divider
-          sx={{
-            borderImage:
-              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
-          }}
-        />
-      </Box>
+      <GradientDivider />
 
       <Box sx={{width: '100%'}}>
         <Typography
@@ -267,33 +261,9 @@ export default function Privacy() {
           </Box>
         </Box>
       </Box>
-      <Box width="100%">
-        <motion.div
-          initial={{opacity: 0, y: 130}}
-          animate={{opacity: 1, y: 0}}
-          transition={{
-            duration: 0.8,
-            ease: 'easeOut'
-          }}
-        >
-          <Divider
-            sx={{
-              borderImage:
-                'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
-            }}
-          />
-        </motion.div>
-      </Box>
 
+      <GradientDivider />
       <Box
-        component={motion.div}
-        initial={{opacity: 0, y: 130}}
-        animate={{opacity: 1, y: 0}}
-        transition={{
-          duration: 0.8,
-          delay: 0.3,
-          ease: 'easeOut'
-        }}
         sx={{
           position: 'relative',
           zIndex: 4,
@@ -337,6 +307,7 @@ export default function Privacy() {
             gap: '10px',
             alignItems: 'center',
             justifyContent: 'flex-end'
+
             // justifyContent: 'space-between'
           }}
         >
@@ -345,7 +316,6 @@ export default function Privacy() {
               label={t('btn3')}
               bgColor="#0D9488"
               hoverColor="#0C5C72"
-              sx={{}}
               onClick={() => setOpenDropdown(() => !openDropdown)}
             />
 
@@ -388,12 +358,15 @@ export default function Privacy() {
                     position: 'absolute',
                     right: {xs: '-70%', sm: 0},
                     mt: '8px',
+                    mb: '8px',
                     left: 'auto',
-                    width: {xs: '280px', sm: '302px', lg: '333px'},
+                    bottom: {xs: '100%', md: 'unset'},
+                    width: {xs: '280px', sm: '349px', lg: '405px'},
                     zIndex: 33,
                     overflow: 'visible',
                     border: '1px solid rgb(255, 255, 255)',
                     backgroundColor: '#f0f0fa99',
+
                     backdropFilter: 'blur(12px)',
                     // borderRadius: "12px",
                     boxShadow: `
@@ -402,12 +375,12 @@ export default function Privacy() {
     0px 1px 1px 0px rgba(0, 0, 0, 0.25)
   `,
                     borderRadius: '12px',
-                    transformOrigin: 'top right'
+                    transformOrigin: {xs: 'bottom right', md: 'top right'}
                   }}
                 >
                   <CustomCard
                     text={t('dropDown')}
-                    onClose={() => setOpenDropdown(false)}
+                    // onClose={() => setOpenDropdown(false)}
                   />
                 </Box>
               )}

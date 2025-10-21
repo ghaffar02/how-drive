@@ -2160,6 +2160,130 @@
     }
   },
   "SchoolDashboard": {
+    "Settings": {
+      "leftSide": {
+        "title": "Einstellungen",
+        "SettingsArray": [
+          "Fahrschulprofil",
+          "Konto",
+          "Benachrichtigung",
+          "Zahlung",
+          "Datenschutz",
+          "Präferenzen",
+          "Passwort"
+        ],
+        "RightSideArray": [
+          "Profil",
+          "Konto",
+          "Benach",
+          "Zahlung",
+          "Datenschutz",
+          "Präferenz",
+          "Passwort"
+        ]
+      },
+      "RightSide": {
+        "AccountTab": {
+          "heading1": "Konto",
+          "heading2": "Persönliche Daten",
+          "heading3": "Konto löschen",
+          "description1": "Persönliche Daten, Konto löschen, etc.",
+          "description2": "Wenn du dein Konto löschst, verlierst du den Zugriff auf deine Daten und den Führerscheinprozess. Wir werden deine persönlichen Daten dauerhaft löschen.",
+          "btn1": "Abbrechen",
+          "btn2": "Speichern",
+          "btn3": "Konto löschen",
+          "btn4": "Mehr erfahren",
+          "btn6": "nein",
+          "btn5": "ja",
+          "dropDown": "Möchtest du dein Konto wirklich löschen?",
+          "formFields": [
+            {
+              "label": "Vorname",
+              "placeholder": "Daniel"
+            },
+            {
+              "label": "Nachname",
+              "placeholder": "Mustermann"
+            },
+            {
+              "label": "E-Mail",
+              "placeholder": "d.mustermann@gmail.com"
+            },
+            {
+              "label": "Wohnort",
+              "placeholder": "Hamburg"
+            },
+            {
+              "label": "Telefonnummer",
+              "placeholder": "01518745692"
+            },
+            {
+              "label": "Fahrschule",
+              "placeholder": "Mundsburg"
+            }
+          ]
+        },
+        "PrivacyTab": {
+          "heading1": "Datenschutz",
+          "heading2": "Cookie-Einstellungen",
+          "heading3": "Daten herunterladen",
+          "description1": "Cookie-Einstellungen, Daten herunterladen, etc.",
+          "description2": "Du kannst deine persönlichen Daten herunterladen. Das dauert bis zu 3 Werktagen.",
+          "btn1": "Abbrechen",
+          "btn2": "Speichern",
+          "btn3": "Daten exportieren",
+          "btn4": "Mehr erfahren",
+          "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
+          "formFields": [
+            "Notwendige",
+            "Analytics",
+            "Alle zulassen"
+          ]
+        },
+        "Password": {
+          "heading1": "Passwort",
+          "heading2": "Passwort ändern",
+          "description1": "Änderung des alten Passworts",
+          "btn1": "Abbrechen",
+          "btn2": "Speichern",
+          "formFields": [
+            "Jetziges Passwort",
+            "Neues Passwort",
+            "Neues Passwort wiederholen"
+          ]
+        },
+        "Preferen": {
+          "heading1": "Präferenzen",
+          "heading2": "Sprachpräferenzen",
+          "heading3": "Einloggen Status",
+          "description1": "Sprachpräferenzen, Einloggen Status, etc.",
+          "btn1": "Abbrechen",
+          "btn2": "Speichern",
+          "lable1": "Sprache",
+          "lable2": "Eingeloggt bleiben",
+          "option1": "wähle aus"
+        },
+        "Notifications": {
+          "heading1": "Benachrichtigung",
+          "heading2": "Allgemeine Benachrichtigung",
+          "heading3": "Newsletter",
+          "description1": "Allgemeine Benachrichtigungen, Newsletter, etc.",
+          "btn1": "Abbrechen",
+          "btn2": "Speichern",
+          "btn3": "Daten exportieren",
+          "btn4": "Mehr erfahren",
+          "formFieldsOn": [
+            "Gebuchte Termine",
+            "Nachrichten",
+            "Führerscheinstelle angemeldet"
+          ],
+          "formFieldsOff": [
+            "News und Update",
+            "Angebote und Werbung"
+          ]
+        }
+      }
+    },
     "leftSideTab": {
       "textTab": [
         "Aktiv",

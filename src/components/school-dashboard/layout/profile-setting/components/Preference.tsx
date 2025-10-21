@@ -1,9 +1,10 @@
-import CustomButton from '@/components/student-dashboard/CustomButton';
 import localFont from '@/utils/themes';
-import {Box, Divider, MenuItem, TextField, Typography} from '@mui/material';
+import {Box, MenuItem, TextField, Typography} from '@mui/material';
 import {ToggleSwitch} from './ToggleSwitch';
 import {useTranslations} from 'next-intl';
 import {useState} from 'react';
+import GradientDivider from '../GradientDivider';
+import CustomButton from '@/components/school-dashboard/CustomButton';
 
 // const formFields = ['Current password', 'New password', 'repeat password'];
 export default function Preference() {
@@ -16,7 +17,7 @@ export default function Preference() {
       sx={{
         width: '100%',
         // height: '100%',
-        mt: '32px',
+        // mt: '32px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
@@ -73,14 +74,7 @@ export default function Preference() {
           <CustomButton label={t('btn2')} sx={{}} />
         </Box>
       </Box>
-      <Box width="100%">
-        <Divider
-          sx={{
-            borderImage:
-              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
-          }}
-        />
-      </Box>
+      <GradientDivider />
 
       <Box sx={{width: '100%'}}>
         <Typography
@@ -131,15 +125,13 @@ export default function Preference() {
               select
               fullWidth
               variant="outlined"
-              value={selectedCategory} // e.g. from useState
+              value={selectedCategory}
               onChange={(e) => setSelectedCategory(e.target.value)}
               SelectProps={{
                 displayEmpty: true
               }}
-              // error={!!errors.category}
-              // helperText={errors.category?.message}
               sx={{
-                background: '#ffffff99',
+                background: '#ffffffff',
                 height: 40,
                 maxWidth: {lg: '402px'},
                 width: '100%',
@@ -149,16 +141,18 @@ export default function Preference() {
                   height: '100%',
                   fontSize: '14px',
                   padding: '12px',
-                  borderRadius: '12px',
+                  borderRadius: '10px',
+                  fontFamily: '"Inter", sans-serif !important',
                   boxShadow:
                     '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
                 },
-                '&:hover .MuiOutlinedInput-notchedOutline': {
-                  border: 'none !important'
+                '& .MuiOutlinedInput-notchedOutline': {
+                  borderRadius: '10px'
                 },
-                '& fieldset': {
-                  borderColor: '#e2e8f00a'
-                },
+
+                // '&:hover .MuiOutlinedInput-notchedOutline': {
+                //   borderColor: '#82828210'
+                // },
                 '& .MuiSelect-select': {
                   padding: 0,
                   fontSize: '16px',
@@ -169,20 +163,13 @@ export default function Preference() {
               <MenuItem value="" disabled>
                 {t('option1')}...
               </MenuItem>
-              <MenuItem value="malfunction">Malfunction</MenuItem>
-              <MenuItem value="question">Question</MenuItem>
+              <MenuItem value="german">Deutsch</MenuItem>
+              <MenuItem value="english">English</MenuItem>
             </TextField>
           </Box>
         </Box>
       </Box>
-      <Box width="100%">
-        <Divider
-          sx={{
-            borderImage:
-              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
-          }}
-        />
-      </Box>
+      <GradientDivider />
 
       <Box sx={{width: '100%'}}>
         <Typography

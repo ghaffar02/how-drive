@@ -1,6 +1,4 @@
-import localFont from '@/utils/themes';
 import {Box, Typography} from '@mui/material';
-import {useState} from 'react';
 import Account from './Account';
 import Password from './Password';
 import Preference from './Preference';
@@ -15,7 +13,7 @@ export default function RightSide({
   activeIndex: number;
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
 }) {
-  const t = useTranslations('Dashboard.Settings.leftSide');
+  const t = useTranslations('SchoolDashboard.Settings.leftSide');
   // const [activeIndex, setActiveIndex] = useState<number | 0>(0);
   const data = t.raw('RightSideArray');
 
@@ -40,6 +38,8 @@ export default function RightSide({
   `,
         // boxShadow:
         //   '0px 0px 0px 1px #ffffff), 0px 1px 0px 0px rgba(0, 0, 0, 0.25),  0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
+        overflow: 'hidden',
+
         backdropFilter: 'blur(15px)',
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
         // borderRadius: '0px 24px 24px 0px',
@@ -62,7 +62,7 @@ export default function RightSide({
         <Box
           sx={{
             bgcolor: '#ffffff99',
-            display: 'flex',
+            display: {xs: 'flex', md: 'none'},
             p: '4px',
             alignItems: 'center',
             justifyContent: 'space-between',
@@ -101,12 +101,14 @@ export default function RightSide({
         </Box>
 
         {/* Pages */}
-        <Box>
+        <Box sx={{}}>
           {activeIndex === 0 && <Account />}
-          {activeIndex === 1 && <Notification />}
-          {activeIndex === 2 && <Privacy />}
-          {activeIndex === 3 && <Preference />}
-          {activeIndex === 4 && <Password />}
+          {activeIndex === 1 && <Account />}
+          {activeIndex === 2 && <Notification />}
+          {activeIndex === 3 && <Notification />}
+          {activeIndex === 4 && <Privacy />}
+          {activeIndex === 5 && <Preference />}
+          {activeIndex === 6 && <Password />}
         </Box>
       </Box>
     </Box>

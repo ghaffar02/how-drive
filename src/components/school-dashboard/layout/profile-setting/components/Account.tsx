@@ -1,8 +1,6 @@
-import CustomButton from '@/components/student-dashboard/CustomButton';
 import CustomCard from '@/components/student-dashboard/layout/profile-setting/Dropdown';
-import CustomTextField from '@/components/student-dashboard/InputField';
 import localFont from '@/utils/themes';
-import {Box, Divider, Typography} from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import {
   JSXElementConstructor,
   ReactElement,
@@ -14,6 +12,9 @@ import {
 } from 'react';
 import {useTranslations} from 'next-intl';
 import {AnimatePresence, motion} from 'framer-motion';
+import CustomButton from '@/components/school-dashboard/CustomButton';
+import CustomTextField from '@/components/school-dashboard/InputField';
+import GradientDivider from '../GradientDivider';
 
 export default function Account() {
   const [openDropdown, setOpenDropdown] = useState(false);
@@ -43,14 +44,18 @@ export default function Account() {
   return (
     <Box
       sx={{
+        position: 'relative',
         width: '100%',
         // height: '100%',
-        mt: '32px',
+        // mt: '32px',
+        // padding:3,
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'space-around',
-        gap: '32px'
+        gap: '32px',
+        overflow: 'hidden'
+        // bgcolor: 'red'
       }}
     >
       <Box
@@ -60,7 +65,8 @@ export default function Account() {
           flexDirection: {xs: 'column', lg: 'row'},
           gap: '16px',
           alignItems: 'center',
-          justifyContent: 'space-between'
+          justifyContent: 'space-between',
+          overflow: 'hidden'
         }}
       >
         <Box sx={{width: '100%', p: '4px'}}>
@@ -103,15 +109,7 @@ export default function Account() {
           <CustomButton label={t('btn2')} sx={{}} />
         </Box>
       </Box>
-      <Box width="100%">
-        <Divider
-          sx={{
-            borderImage:
-              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
-          }}
-        />
-      </Box>
-
+      <GradientDivider />
       <Box sx={{width: '100%'}}>
         <Typography
           sx={{
@@ -192,7 +190,10 @@ export default function Account() {
                   </Typography>
                   <CustomTextField
                     labal={items.placeholder}
-                    sx={{textAlign: 'end', maxWidth: {lg: '403px'}}}
+                    sx={{
+                      textAlign: 'end',
+                      maxWidth: {lg: '403px ', width: '100%'}
+                    }}
                   />
                 </Box>
               );
@@ -200,14 +201,7 @@ export default function Account() {
           )}
         </Box>
       </Box>
-      <Box width="100%">
-        <Divider
-          sx={{
-            borderImage:
-              'linear-gradient(90deg, #E4E4E7 0%, #D4D4D8 50%, #E4E4E7 100%) 1'
-          }}
-        />
-      </Box>
+      <GradientDivider />
 
       <Box
         sx={{
@@ -298,7 +292,7 @@ export default function Account() {
                     bottom: '100%',
                     right: {xs: '-70%', sm: 0},
                     mb: '8px',
-                    width: {xs: '280px', sm: '302px', lg: '333px'},
+                    width: {xs: '280px', sm: '322px', lg: '333px'},
                     zIndex: 178879,
                     // overflow: 'visible',
                     border: '1px solid rgb(255, 255, 255)',
