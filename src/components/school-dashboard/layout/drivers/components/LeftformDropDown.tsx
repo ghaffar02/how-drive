@@ -134,6 +134,32 @@ export default function LeftformDropDown({onClose}: CustomCardProps) {
             textTransform: 'capitalize'
           }}
         >
+          {t('inputTitle5')}
+
+          <CustomTextField />
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: {xs: 'column'},
+          gap: {xs: '4px'},
+          alignItems: 'start',
+          justifyContent: 'space-between'
+        }}
+      >
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            width: '100%',
+
+            fontFamily: '"Inter", sans-serif !important',
+            fontWeight: 400,
+            textAlign: 'left',
+            textTransform: 'capitalize'
+          }}
+        >
           {t('inputTitle4')}
 
           <CustomTextField />
