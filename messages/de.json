@@ -2198,28 +2198,17 @@
           "dropDown": "Möchtest du dein Konto wirklich löschen?",
           "formFields": [
             {
-              "label": "Vorname",
-              "placeholder": "Daniel"
-            },
-            {
-              "label": "Nachname",
-              "placeholder": "Mustermann"
-            },
-            {
               "label": "E-Mail",
-              "placeholder": "d.mustermann@gmail.com"
-            },
-            {
-              "label": "Wohnort",
-              "placeholder": "Hamburg"
+              "placeholder": "info@mundsburg-fahrschule.de"
             },
             {
               "label": "Telefonnummer",
               "placeholder": "01518745692"
             },
             {
-              "label": "Fahrschule",
-              "placeholder": "Mundsburg"
+              "isbool": true,
+              "label": "Fahrschulerlaubnis bzw. Gewerbeanmeldung",
+              "placeholder": "Ziehe die Datei hierher oder klicke, um sie zu durchsuchen."
             }
           ]
         },

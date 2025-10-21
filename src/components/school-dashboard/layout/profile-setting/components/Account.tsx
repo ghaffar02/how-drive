@@ -1,6 +1,6 @@
 import CustomCard from '@/components/student-dashboard/layout/profile-setting/Dropdown';
 import localFont from '@/utils/themes';
-import {Box, Typography} from '@mui/material';
+import {Box, TextField, Typography} from '@mui/material';
 import {
   JSXElementConstructor,
   ReactElement,
@@ -13,14 +13,14 @@ import {
 import {useTranslations} from 'next-intl';
 import {AnimatePresence, motion} from 'framer-motion';
 import CustomButton from '@/components/school-dashboard/CustomButton';
-import CustomTextField from '@/components/school-dashboard/InputField';
+import CustomTextField from '@/components/student-dashboard/InputField';
 import GradientDivider from '../GradientDivider';
 
 export default function Account() {
   const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const iconRef = useRef<HTMLDivElement | null>(null);
-  const t = useTranslations('Dashboard.Settings.RightSide.AccountTab');
+  const t = useTranslations('SchoolDashboard.Settings.RightSide.AccountTab');
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -135,6 +135,7 @@ export default function Account() {
           {formFields.map(
             (
               items: {
+                isbool: any;
                 label:
                   | string
                   | number
@@ -188,13 +189,38 @@ export default function Account() {
                   >
                     {items.label}
                   </Typography>
-                  <CustomTextField
-                    labal={items.placeholder}
-                    sx={{
-                      textAlign: 'end',
-                      maxWidth: {lg: '403px ', width: '100%'}
-                    }}
-                  />
+                  {!items.isbool ? (
+                    <CustomTextField
+                      labal={items.placeholder}
+                      sx={{
+                        textAlign: 'end',
+                        maxWidth: {lg: '403px', xs: '100%'}
+                      }}
+                    />
+                  ) : (
+                    <TextField
+                      placeholder={items.placeholder}
+                      multiline
+                      rows={4}
+                      fullWidth
+                      variant="outlined"
+                      sx={{
+                        maxWidth: {lg: '403px'},
+                        width: '100%',
+                        '& .MuiOutlinedInput-root': {
+                          borderRadius: '8px',
+                          background: '#ffffff',
+                          height: '100%',
+                          fontSize: '14px',
+                          padding: '12px'
+                        },
+                        '& .MuiInputBase-input': {
+                          padding: 0,
+                          fontSize: '14px'
+                        }
+                      }}
+                    />
+                  )}
                 </Box>
               );
             }

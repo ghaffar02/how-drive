@@ -2199,28 +2199,17 @@
           "dropDown": "Do you really want to delete your account?",
           "formFields": [
             {
-              "label": "First name",
-              "placeholder": "Daniel"
-            },
-            {
-              "label": "Last name",
-              "placeholder": "Mustermann"
-            },
-            {
               "label": "Email",
-              "placeholder": "d.mustermann@gmail.com"
-            },
-            {
-              "label": "Place of residence",
-              "placeholder": "Hamburg"
+              "placeholder": "info@mundsburg-fahrschule.de"
             },
             {
               "label": "Phone number",
               "placeholder": "01518745692"
             },
             {
-              "label": "Driving school",
-              "placeholder": "Mundsburg"
+              "isbool": true,
+              "label": "Driving school license or business registration",
+              "placeholder": "Drag the file here or click to browse it."
             }
           ]
         },
