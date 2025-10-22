@@ -29,7 +29,7 @@ export default function CustomTextField({
         height: '40px',
         borderRadius: '10px',
         '& .MuiInputBase-root': {
-          // background: '#ffffff',
+          background: '#ffffff',
           height: '100%',
           fontSize: '14px',
           color: '#000000',
@@ -49,13 +49,11 @@ export default function CustomTextField({
         }),
 
         '& .MuiOutlinedInput-notchedOutline': {
-          background: '#ffffff',
           borderRadius: '10px'
         },
 
         '& .MuiInputBase-input': {
           padding: 0,
-
           fontSize: '14px',
           fontFamily: '"Inter", sans-serif !important',
           color: '#000000' // 👈 ensure input text is black
