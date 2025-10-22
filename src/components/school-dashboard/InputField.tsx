@@ -46,8 +46,17 @@ export default function CustomTextField({
         // for date/time pickers (make icon grey)
         ...(type !== 'number' && {
           [`& input[type="${type}"]::-webkit-calendar-picker-indicator`]: {
-            filter: 'invert(36%) sepia(88%) saturate(23%) hue-rotate(180deg)',
-            cursor: 'pointer'
+            ...(type === 'time'
+              ? {
+                  opacity: 0,
+                  width: '10%',
+                  cursor: 'pointer'
+                }
+              : {
+                  filter:
+                    'invert(36%) sepia(88%) saturate(23%) hue-rotate(180deg)',
+                  cursor: 'pointer'
+                })
           }
         }),
 
