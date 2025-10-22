@@ -6,6 +6,7 @@ import Image from 'next/image';
 import CustomTextField from '@/components/school-dashboard/InputField';
 import HoursComponent from './HoursComponent';
 import CustomButton from '@/components/school-dashboard/CustomButton';
+import MiniFramerCalendar from './MiniFramerCalendar';
 
 export default function SchedulerSidebar() {
   const [activeIndex, setActiveIndex] = useState<number | 0>(0);
@@ -296,6 +297,26 @@ function SelectAppointmentType() {
               unavailable={data.unavailable}
             />
           ))}
+        </Box>
+      </Box>
+      {/* Date specific availability */}
+      <Box sx={{width: '100%'}}>
+        <Typography sx={{...localFont.inter14}}>
+          Date-specific availability
+        </Typography>
+        <Typography sx={{...localFont.inter14, fontWeight: '200', mb: '6px'}}>
+          Select a day to set a different time slot.
+        </Typography>
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '10px'
+          }}
+        >
+          <MiniFramerCalendar />
+          <HoursComponent day="Thu" />
         </Box>
       </Box>
       {/* Maximum Time in Advance for Booking */}
