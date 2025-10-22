@@ -2214,7 +2214,7 @@
         },
         "BussinessTab": {
           "heading1": "Konto",
-          "heading2": "Persönliche Daten",
+          "heading2": "Basisinformationen",
           "heading3": "Konto löschen",
           "description1": "Persönliche Daten, Konto löschen, etc.",
           "description2": "Wenn du dein Konto löschst, verlierst du den Zugriff auf deine Daten und den Führerscheinprozess. Wir werden deine persönlichen Daten dauerhaft löschen.",
@@ -2227,44 +2227,48 @@
           "dropDown": "Möchtest du dein Konto wirklich löschen?",
           "formFields": [
             {
-              "label": "Vorname",
-              "placeholder": "Daniel"
+              "label": "Name der Fahrschule",
+              "placeholder": "z.B. Fahrschule Mustermann"
             },
             {
-              "label": "Nachname",
-              "placeholder": "Mustermann"
+              "label": "Adresse",
+              "placeholder": "z.B. Berliner Straße 12"
             },
             {
-              "label": "E-Mail",
-              "placeholder": "d.mustermann@gmail.com"
+              "label": "Stadt",
+              "placeholder": "z.B. Hamburg"
             },
             {
-              "label": "Wohnort",
-              "placeholder": "Hamburg"
+              "label": "Telefonnummer (inkl. Vorwahl)",
+              "placeholder": "z.B. 040-123456"
             },
             {
-              "label": "Telefonnummer",
-              "placeholder": "01518745692"
+              "label": " E-Mail (Fahrschule)",
+              "placeholder": "z.B. info@fahrschule-mustermann.de"
             },
             {
-              "isbool": true,
-              "label": "Fahrschule",
-              "placeholder": "Mundsburg"
-            },
-            {
-              "label": "Fahrschule",
-              "checkBox1": "Mundsburg",
-              "checkBox2": "Eppendorf"
+              "label": " Website",
+              "placeholder": "z.B. http: //fahrschule-mustermann.de/"
             },
             {
               "isbool": true,
-              "label": "Fahrschule",
-              "placeholder": "Mundsburg"
+              "label": "Gesprochene Sprachen",
+              "placeholder": "z.B. Deutsch, Englisch, Polnisch, Arabisch, Turkisch, ...Unterstützte Klassen"
+            },
+            {
+              "label": "Unterstützte Klassen",
+              "checkBox1": "Führerscheinklasse A",
+              "checkBox2": "Führerscheinklasse B"
             },
             {
               "isbool": true,
-              "label": "Fahrschule",
-              "placeholder": "Mundsburg"
+              "label": "Logo der Fahrschule",
+              "placeholder": "Ziehe die Datei hierher oder klicke, um sie zu durchsuchen."
+            },
+            {
+              "isbool": true,
+              "label": "Beschreibung der Fahrschule",
+              "placeholder": "z.B. Kurzbeschreibung deiner Fahrschule"
             }
           ]
         },

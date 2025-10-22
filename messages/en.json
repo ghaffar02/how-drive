@@ -2215,7 +2215,7 @@
         },
         "BussinessTab": {
           "heading1": "Account",
-          "heading2": "Personal data",
+          "heading2": "Basic information",
           "heading3": "Delete account",
           "description1": "Personal data, delete account, etc.",
           "description2": "If you delete your account, you will lose access to your data and the driver's license process. We will permanently delete your personal data.",
@@ -2228,44 +2228,48 @@
           "dropDown": "Do you really want to delete your account?",
           "formFields": [
             {
-              "label": "Vorname",
-              "placeholder": "Daniel"
+              "label": "Driving school name",
+              "placeholder": "e.g. Fahrschule Mustermann"
             },
             {
-              "label": "Nachname",
-              "placeholder": "Mustermann"
+              "label": "Address",
+              "placeholder": "e.g. Berliner Straß 12"
             },
             {
-              "label": "E-Mail",
-              "placeholder": "d.mustermann@gmail.com"
+              "label": "City",
+              "placeholder": "e.g. Hamburg"
             },
             {
-              "label": "Wohnort",
-              "placeholder": "Hamburg"
+              "label": "Phone number",
+              "placeholder": "e.g. 040-123456"
             },
             {
-              "label": "Telefonnummer",
-              "placeholder": "01518745692"
+              "label": "Email (driving school)",
+              "placeholder": "e.g. info@fahrschule-Mustermann.de"
             },
             {
-              "isbool": true,
-              "label": "Fahrschule",
-              "placeholder": "Mundsburg"
-            },
-            {
-              "label": "Fahrschule",
-              "checkBox1": "Mundsburg",
-              "checkBox2": "Eppendorf"
+              "label": "Website",
+              "placeholder": "e.g. http: //fahrschule-mustermann.de/"
             },
             {
               "isbool": true,
-              "label": "Fahrschule",
-              "placeholder": "Mundsburg"
+              "label": "Spoken languages",
+              "placeholder": "e.g. Deutsch, Englisch, Polnisch, Arabisch, Turkisch, ...Supported classes"
+            },
+            {
+              "label": "Supported classes",
+              "checkBox1": "Diving license class A",
+              "checkBox2": "Diving license class B"
             },
             {
               "isbool": true,
-              "label": "Fahrschule",
-              "placeholder": "Mundsburg"
+              "label": "Logo of driving school",
+              "placeholder": "Drag the file here or click to browse it."
+            },
+            {
+              "isbool": true,
+              "label": "Description of driving school",
+              "placeholder": "e.g. Short description about your driving school"
             }
           ]
         },
