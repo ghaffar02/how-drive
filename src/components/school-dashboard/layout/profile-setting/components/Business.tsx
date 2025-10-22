@@ -1,4 +1,3 @@
-import CustomCard from '@/components/student-dashboard/layout/profile-setting/Dropdown';
 import localFont from '@/utils/themes';
 import {Box, TextField, Typography} from '@mui/material';
 import {
@@ -12,7 +11,6 @@ import {
   useState
 } from 'react';
 import {useTranslations} from 'next-intl';
-import {AnimatePresence, motion} from 'framer-motion';
 import CustomButton from '@/components/school-dashboard/CustomButton';
 import CustomTextField from '@/components/student-dashboard/InputField';
 import GradientDivider from '../GradientDivider';
@@ -22,7 +20,10 @@ export default function Business() {
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const iconRef = useRef<HTMLDivElement | null>(null);
   const [checkedA, setCheckedA] = useState(false);
-  const [checkedB, setCheckedB] = useState(true);
+  const [checkedValues, setCheckedValues] = useState<{[key: string]: boolean}>(
+    {}
+  );
+
   const t = useTranslations('SchoolDashboard.Settings.RightSide.BussinessTab');
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -49,16 +50,13 @@ export default function Business() {
       sx={{
         position: 'relative',
         width: '100%',
-        // height: '100%',
-        // mt: '32px',
-        // padding:3,
+
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'space-around',
         gap: '32px',
         overflow: 'hidden'
-        // bgcolor: 'red'
       }}
     >
       <Box
@@ -172,7 +170,7 @@ export default function Business() {
               i: Key | null | undefined
             ) => {
               const hasCheckbox =
-                items.checkBox1 || items.checkBox2 || items.checkBox3; // ✅ detect checkbox fields
+                items.checkBox1 || items.checkBox2 || items.checkBox3;
 
               return (
                 <Box
@@ -240,6 +238,7 @@ export default function Business() {
                   {/* ✅ 3️⃣ Checkbox group */}
                   {hasCheckbox && (
                     <Box
+                      onClick={() => setCheckedA(!checkedA)}
                       sx={{
                         display: 'flex',
                         flexDirection: 'column',
@@ -249,8 +248,13 @@ export default function Business() {
                       }}
                     >
                       {Object.keys(items)
+                        //["label", "checkBox1", "checkBox2", "checkBox3"]
                         .filter((key) => key.startsWith('checkBox'))
+                        //["checkBox1", "checkBox2", "checkBox3"]
                         .map((key, idx) => (
+                          //1st loop → key = "checkBox1"
+                          // // 2nd loop → key = "checkBox2"
+                          // // 3rd loop → key = "checkBox3"
                           <Box
                             key={idx}
                             sx={{
@@ -260,7 +264,18 @@ export default function Business() {
                               cursor: 'pointer'
                             }}
                           >
-                            <input type="checkbox" />
+                            <input
+                              type="checkbox"
+                              checked={checkedValues[key] || false}
+                              //{ checkBox1: true, checkBox2: false }
+
+                              onChange={() =>
+                                setCheckedValues((prev) => ({
+                                  ...prev,
+                                  [key]: !prev[key]
+                                }))
+                              }
+                            />
                             <Typography
                               sx={{
                                 ...localFont.inter14,
