@@ -4,9 +4,8 @@ import {useState} from 'react';
 import crossIcon from '@/assets/svgs/dashboard-student/crossicon.svg';
 import Image from 'next/image';
 import CustomTextField from '@/components/school-dashboard/InputField';
-import arrowIcon from '@/assets/svgs/dashboard-student/arrow.svg';
-import circleAdd from '@/assets/svgs/circleadd.svg';
-import circleCross from '@/assets/svgs/dashboard-student/crosscircle.svg';
+import HoursComponent from './HoursComponent';
+import CustomButton from '@/components/school-dashboard/CustomButton';
 
 export default function SchedulerSidebar() {
   const [activeIndex, setActiveIndex] = useState<number | 0>(0);
@@ -29,7 +28,13 @@ export default function SchedulerSidebar() {
         display: {xs: 'none', md: 'flex'},
         alignItems: 'center',
         flexDirection: {xs: 'column'},
-        gap: '16px'
+        gap: '16px',
+        overflow: 'scroll',
+        scrollbarWidth: 'none',
+        msOverflowStyle: 'none',
+        '&::-webkit-scrollbar': {
+          display: 'none'
+        }
       }}
     >
       <Typography
@@ -124,11 +129,19 @@ export default function SchedulerSidebar() {
 
 function SelectAppointmentType() {
   const [value, setValue] = useState('');
+  const days = [
+    {day: 'Mo', unavailable: false},
+    {day: 'Di', unavailable: false},
+    {day: 'Mi', unavailable: false},
+    {day: 'Do', unavailable: false},
+    {day: 'Fr', unavailable: false},
+    {day: 'Sa', unavailable: true},
+    {day: 'So', unavailable: true}
+  ];
   return (
     <Box
       sx={{
         width: '100%',
-        border: '1px solid red',
         display: 'flex',
         flexDirection: 'column',
         gap: '32px'
@@ -275,39 +288,141 @@ function SelectAppointmentType() {
         <Typography sx={{...localFont.inter14, mb: '10px'}}>
           Weekly hours
         </Typography>
-        <Box>
-          <Box sx={{display: 'flex', gap: '10px', alignItems: 'center'}}>
-            <Typography sx={{...localFont.inter14}}>Mo</Typography>
-            <Box sx={{display: 'flex', alignItems: 'center', gap: '4px'}}>
-              <CustomTextField type="time" />
-              <Image src={arrowIcon} alt="arrowIcon" height={14} width={14} />
-              <CustomTextField
-                type="time"
-                sx={{
-                  // '& input::-webkit-calendar-picker-indicator': {
-                  //   display: 'none',
-                  //   WebkitAppearance: 'none'
-                  // }
-                  '& input::-webkit-calendar-picker-indicator': {
-                    opacity: 0, // hides it visually
-                    cursor: 'pointer' // still clickable
-                  }
-                }}
-              />
-            </Box>
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'space-between'
-                // gap: '15px'
-              }}
-            >
-              <Image src={circleCross} alt="cross" height={20} width={20} />
-              <Image src={circleAdd} alt="add" height={20} width={20} />
-            </Box>
-          </Box>
+        <Box sx={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
+          {days.map((data, i) => (
+            <HoursComponent
+              key={i}
+              day={data.day}
+              unavailable={data.unavailable}
+            />
+          ))}
         </Box>
       </Box>
+      {/* Maximum Time in Advance for Booking */}
+      <Box sx={{width: '100%'}}>
+        <Typography sx={{...localFont.inter14, mb: '6px'}}>
+          Maximum time in advance for booking appointments (days)
+        </Typography>
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            padding: '10px',
+            borderRadius: '12px',
+            height: '38px',
+            alignItems: 'center',
+            background: '#ffffffbf',
+            boxShadow: '0px 0px 2px 0px #D4D4D8'
+          }}
+        >
+          <Select
+            sx={{
+              flex: 1,
+              borderRadius: 0,
+              '& fieldset': {border: 'none'},
+              '&:hover fieldset': {border: 'none'},
+              '&.Mui-focused fieldset': {border: 'none'},
+              '& .MuiSelect-select': {
+                padding: '0px',
+                height: 'auto'
+              },
+              '& .MuiOutlinedInput-root': {
+                borderRadius: 0
+              }
+            }}
+          >
+            <MenuItem value="30">30</MenuItem>
+            <MenuItem value="60">60</MenuItem>
+            <MenuItem value="90">90</MenuItem>
+          </Select>
+        </Box>
+      </Box>
+      {/* Minimum time in advance for booking */}
+      <Box sx={{width: '100%'}}>
+        <Typography sx={{...localFont.inter14, mb: '6px'}}>
+          Minimum time in advance for booking an appointment (hours)
+        </Typography>
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            padding: '10px',
+            borderRadius: '12px',
+            height: '38px',
+            alignItems: 'center',
+            background: '#ffffffbf',
+            boxShadow: '0px 0px 2px 0px #D4D4D8'
+          }}
+        >
+          <Select
+            sx={{
+              flex: 1,
+              borderRadius: 0,
+              '& fieldset': {border: 'none'},
+              '&:hover fieldset': {border: 'none'},
+              '&.Mui-focused fieldset': {border: 'none'},
+              '& .MuiSelect-select': {
+                padding: '0px',
+                height: 'auto'
+              },
+              '& .MuiOutlinedInput-root': {
+                borderRadius: 0
+              }
+            }}
+          >
+            <MenuItem value="1">1</MenuItem>
+            <MenuItem value="2">2</MenuItem>
+            <MenuItem value="3">3</MenuItem>
+            <MenuItem value="4">4</MenuItem>
+            <MenuItem value="12">12</MenuItem>
+            <MenuItem value="24">24</MenuItem>
+          </Select>
+        </Box>
+      </Box>
+      {/* Cancellation limit (hours) */}
+      <Box sx={{width: '100%'}}>
+        <Typography sx={{...localFont.inter14, mb: '6px'}}>
+          Cancellation limit (hours)
+        </Typography>
+        <Box
+          sx={{
+            width: '100%',
+            display: 'flex',
+            padding: '10px',
+            borderRadius: '12px',
+            height: '38px',
+            alignItems: 'center',
+            background: '#ffffffbf',
+            boxShadow: '0px 0px 2px 0px #D4D4D8'
+          }}
+        >
+          <Select
+            sx={{
+              flex: 1,
+              borderRadius: 0,
+              '& fieldset': {border: 'none'},
+              '&:hover fieldset': {border: 'none'},
+              '&.Mui-focused fieldset': {border: 'none'},
+              '& .MuiSelect-select': {
+                padding: '0px',
+                height: 'auto'
+              },
+              '& .MuiOutlinedInput-root': {
+                borderRadius: 0
+              }
+            }}
+          >
+            <MenuItem value="1">1</MenuItem>
+            <MenuItem value="2">2</MenuItem>
+            <MenuItem value="3">3</MenuItem>
+            <MenuItem value="4">4</MenuItem>
+            <MenuItem value="12">12</MenuItem>
+            <MenuItem value="24">24</MenuItem>
+          </Select>
+        </Box>
+      </Box>
+      {/* Button */}
+      <CustomButton label="Apply" />
     </Box>
   );
 }

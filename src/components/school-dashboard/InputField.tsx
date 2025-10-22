@@ -7,6 +7,7 @@ interface CustomTextFieldProps {
   type?: string;
   name?: string;
   id?: string;
+  disabled?: boolean;
 }
 
 export default function CustomTextField({
@@ -15,6 +16,7 @@ export default function CustomTextField({
   type,
   name,
   id,
+  disabled = false,
   ...rest
 }: CustomTextFieldProps) {
   return (
@@ -23,6 +25,7 @@ export default function CustomTextField({
       id={id}
       name={name}
       placeholder={labal}
+      disabled={disabled}
       {...rest}
       sx={{
         width: '100%',
