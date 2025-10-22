@@ -5,7 +5,10 @@ import localFont from '@/utils/themes';
 import CustomButton from '@/components/student-dashboard/CustomButton';
 // import CustomTextField from '@/components/school-dashboard/InputField';
 import MiniFramerCalendar from '../../calander/components/MiniFramerCalendar';
-import HoursComponent from '../../calander/components/HoursComponent';
+import arrowIcon from '@/assets/svgs/dashboard-student/arrow.svg';
+
+import CustomTextField from '@/components/school-dashboard/InputField';
+import Image from 'next/image';
 interface CustomCardProps {
   text?: string;
   onClose?: () => void;
@@ -106,7 +109,45 @@ export default function TheoryexamDropDown({
         >
           time
         </Typography>
-        <HoursComponent day="" />
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '4px',
+            width: '100%'
+            // maxWidth: {md: '100px', lg: '170px'}
+          }}
+        >
+          <CustomTextField
+            type="time"
+            sx={{
+              '& .MuiInputBase-root': {
+                background: '#ffffff',
+                height: '100%',
+                fontSize: '14px',
+                color: '#000000',
+                padding: '12px',
+                borderRadius: '10px',
+                fontFamily: '"Inter", sans-serif !important'
+              }
+            }}
+          />
+          <Image src={arrowIcon} alt="arrowIcon" height={14} width={14} />
+          <CustomTextField
+            type="time"
+            sx={{
+              '& .MuiInputBase-root': {
+                background: '#ffffff',
+                height: '100%',
+                fontSize: '14px',
+                color: '#000000',
+                padding: '12px',
+                borderRadius: '10px',
+                fontFamily: '"Inter", sans-serif !important'
+              }
+            }}
+          />
+        </Box>
       </Box>
       <Box
         sx={{
