@@ -89,9 +89,35 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
                 maxWidth: {md: '100px', lg: '170px'}
               }}
             >
-              <CustomTextField type="time" />
+              <CustomTextField
+                type="time"
+                sx={{
+                  '& .MuiInputBase-root': {
+                    background: '#ffffff',
+                    height: '100%',
+                    fontSize: '14px',
+                    color: '#000000',
+                    padding: '12px 4px',
+                    borderRadius: '10px',
+                    fontFamily: '"Inter", sans-serif !important'
+                  }
+                }}
+              />
               <Image src={arrowIcon} alt="arrowIcon" height={14} width={14} />
-              <CustomTextField type="time" />
+              <CustomTextField
+                type="time"
+                sx={{
+                  '& .MuiInputBase-root': {
+                    background: '#ffffff',
+                    height: '100%',
+                    fontSize: '14px',
+                    color: '#000000',
+                    padding: '12px 4px',
+                    borderRadius: '10px',
+                    fontFamily: '"Inter", sans-serif !important'
+                  }
+                }}
+              />
             </Box>
 
             {/* Action icons */}
