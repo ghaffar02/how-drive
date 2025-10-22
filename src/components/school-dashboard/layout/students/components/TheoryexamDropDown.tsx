@@ -1,22 +1,19 @@
 import {Box, Typography} from '@mui/material';
-import {ReactNode} from 'react';
 import tick from '@/assets/svgs/dashboard-student/tick.svg';
 import cross from '@/assets/svgs/dashboard-student/btncross.svg';
 import localFont from '@/utils/themes';
 import CustomButton from '@/components/student-dashboard/CustomButton';
-import CustomTextField from '@/components/school-dashboard/InputField';
+// import CustomTextField from '@/components/school-dashboard/InputField';
+import MiniFramerCalendar from '../../calander/components/MiniFramerCalendar';
+import HoursComponent from '../../calander/components/HoursComponent';
 interface CustomCardProps {
-  children?: ReactNode;
-  padding?: number | string;
-
-  bgColor?: string;
   text?: string;
   onClose?: () => void;
 }
 
 export default function TheoryexamDropDown({
   onClose,
-  padding = '16px',
+
   text
 }: CustomCardProps) {
   return (
@@ -28,7 +25,7 @@ export default function TheoryexamDropDown({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        padding,
+        padding: '16px',
 
         gap: '24px'
         // borderRadius: radius
@@ -82,7 +79,7 @@ export default function TheoryexamDropDown({
           Day
         </Typography>
 
-        <CustomTextField type="date" id="appt" name="appt" />
+        <MiniFramerCalendar />
       </Box>
       <Box
         sx={{
@@ -109,7 +106,7 @@ export default function TheoryexamDropDown({
         >
           time
         </Typography>
-        <CustomTextField type="time" id="appt" name="appt" />
+        <HoursComponent day="" />
       </Box>
       <Box
         sx={{
