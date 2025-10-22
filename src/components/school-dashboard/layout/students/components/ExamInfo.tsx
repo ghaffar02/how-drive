@@ -238,6 +238,7 @@ function Card({
                 <Box
                   ref={dropdownRef}
                   component={motion.div}
+                  onClick={(e) => e.stopPropagation()}
                   initial={{
                     opacity: 0,
                     scale: 0.5,

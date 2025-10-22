@@ -21,7 +21,6 @@ export default function TheoryexamDropDown({
 }: CustomCardProps) {
   return (
     <Box
-      onClick={onClose}
       sx={{
         width: '100%',
         maxWidth: {xs: '300px'},
