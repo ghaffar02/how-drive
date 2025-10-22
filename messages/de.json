@@ -2182,6 +2182,11 @@
           "Passwort"
         ]
       },
+      "mainDropdown": {
+        "heading": "Dein Fahrschulprofil!",
+        "des": "Bitte fülle die Formulare auf dieser Seite aus. Die von dir hier angegebenen Informationen werden in deinem Fahrschulprofil auf unserer Website angezeigt. Die Informationen deines Fahrschulprofils sind dann für alle sichtbar. Dies ist insbesondere für Fahrschüler hilfreich, um deine Fahrschule zu suchen, zu finden und wiederzuerkennen. Du kannst das Formular auch später ausfüllen, das Profil ist dann jedoch erst sichtbar, wenn die Basisinformationen angegeben sind.",
+        "title": "Verstanden!"
+      },
       "RightSide": {
         "AccountTab": {
           "heading1": "Konto",
