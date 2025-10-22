@@ -2183,6 +2183,11 @@
           "Password"
         ]
       },
+      "mainDropdown": {
+        "heading": "Your driving school profile!",
+        "des": "Please fill out the forms on this page. The information you provide here will be displayed in your driving school profile on our website. Your driving school profile information will then be visible to everyone. This is especially helpful for driving students to search for, find, and recognize your driving school. You can also complete the form later, but your profile will not be visible until the basic information has been provided.",
+        "title": "Got it!"
+      },
       "RightSide": {
         "AccountTab": {
           "heading1": "Account",

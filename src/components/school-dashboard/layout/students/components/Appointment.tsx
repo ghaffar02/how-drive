@@ -129,6 +129,7 @@ export default function Appointment() {
               <Box
                 ref={dropdownRef}
                 component={motion.div}
+                onClick={(e) => e.stopPropagation()}
                 initial={{
                   opacity: 0,
                   scale: 0.5,
@@ -286,6 +287,7 @@ function Card({name, barColor, date, time}: CardProps) {
           <Box
             ref={dropdownRef}
             component={motion.div}
+            onClick={(e) => e.stopPropagation()}
             initial={{
               opacity: 0,
               scale: 0.5,
