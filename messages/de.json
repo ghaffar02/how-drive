@@ -2218,11 +2218,11 @@
           ]
         },
         "BussinessTab": {
-          "heading1": "Konto",
+          "heading1": "Fahrschulprofil",
           "heading2": "Basisinformationen",
-          "heading3": "Konto löschen",
-          "description1": "Persönliche Daten, Konto löschen, etc.",
-          "description2": "Wenn du dein Konto löschst, verlierst du den Zugriff auf deine Daten und den Führerscheinprozess. Wir werden deine persönlichen Daten dauerhaft löschen.",
+          "heading3": "Öffnungszeiten",
+          "description1": "Basisinformationen, Öffnungszeiten, etc.",
+          "description2": "Wochenstunden",
           "btn1": "Abbrechen",
           "btn2": "Speichern",
           "btn3": "Konto löschen",

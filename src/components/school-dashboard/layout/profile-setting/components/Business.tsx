@@ -16,6 +16,7 @@ import CustomTextField from '@/components/student-dashboard/InputField';
 import GradientDivider from '../GradientDivider';
 import {AnimatePresence, motion} from 'framer-motion';
 import MainDropdown from './MainDropdown';
+import HoursComponent from './HoursComponent';
 
 export default function Business() {
   const [openDropdown, setOpenDropdown] = useState(true);
@@ -46,7 +47,15 @@ export default function Business() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
   const formFields = t.raw('formFields');
-
+  const days = [
+    {day: 'Mon', unavailable: false},
+    {day: 'Tue', unavailable: false},
+    {day: 'Wed', unavailable: false},
+    {day: 'Thu', unavailable: false},
+    {day: 'Fri', unavailable: false},
+    {day: 'Sat', unavailable: true},
+    {day: 'Sun', unavailable: true}
+  ];
   return (
     <Box
       sx={{
@@ -297,7 +306,46 @@ export default function Business() {
           )}
         </Box>
       </Box>
-
+      <Box sx={{width: '100%'}}>
+        <Typography
+          sx={{
+            ...localFont.inter16,
+            fontWeight: 500,
+            fontFamily: '"Inter", sans-serif !important',
+            mb: '32px',
+            p: '4px'
+          }}
+        >
+          {t('heading3')}
+        </Typography>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            // fontWeight: 500,
+            fontFamily: '"Inter", sans-serif !important',
+            mb: '10px',
+            p: '4px'
+          }}
+        >
+          {t('description2')}
+        </Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-end',
+            gap: '20px'
+          }}
+        >
+          {days.map((data, i) => (
+            <HoursComponent
+              key={i}
+              day={data.day}
+              unavailable={data.unavailable}
+            />
+          ))}
+        </Box>
+      </Box>
       <AnimatePresence>
         {openDropdown && (
           <Box

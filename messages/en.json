@@ -2219,11 +2219,11 @@
           ]
         },
         "BussinessTab": {
-          "heading1": "Account",
+          "heading1": "Business profile",
           "heading2": "Basic information",
-          "heading3": "Delete account",
-          "description1": "Personal data, delete account, etc.",
-          "description2": "If you delete your account, you will lose access to your data and the driver's license process. We will permanently delete your personal data.",
+          "heading3": "Opening hours",
+          "description1": "Basic information, opening hours, etc.",
+          "description2": "Weekly hours",
           "btn1": "Cancel",
           "btn2": "Save",
           "btn3": "Delete account",
