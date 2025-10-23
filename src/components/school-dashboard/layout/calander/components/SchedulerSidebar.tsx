@@ -7,6 +7,7 @@ import CustomTextField from '@/components/school-dashboard/InputField';
 import HoursComponent from './HoursComponent';
 import CustomButton from '@/components/school-dashboard/CustomButton';
 import MiniFramerCalendar from './MiniFramerCalendar';
+import CategoryComponent from './CategoryComponent';
 
 export default function SchedulerSidebar() {
   const [activeIndex, setActiveIndex] = useState<number | 0>(0);
@@ -30,7 +31,8 @@ export default function SchedulerSidebar() {
         alignItems: 'center',
         flexDirection: {xs: 'column'},
         gap: '16px',
-        overflow: 'scroll',
+        overflowY: 'auto',
+        overflowX: 'hidden',
         scrollbarWidth: 'none',
         msOverflowStyle: 'none',
         '&::-webkit-scrollbar': {
@@ -148,93 +150,7 @@ function SelectAppointmentType() {
         gap: '32px'
       }}
     >
-      <Box>
-        <Box sx={{display: 'flex', gap: '6px', mb: '6px'}}>
-          <Box
-            sx={{
-              width: '6px',
-              height: '22px',
-              background: 'red',
-              borderRadius: '999px'
-            }}
-          />
-          <Typography sx={{...localFont.inter14}}>Category</Typography>
-        </Box>
-        <Box
-          sx={{
-            width: '100%',
-            display: 'flex',
-            gap: '6px'
-          }}
-        >
-          <Box
-            sx={{
-              width: '100%',
-              display: 'flex',
-              padding: '10px',
-              borderRadius: '12px',
-              height: '38px',
-              alignItems: 'center',
-              background: '#ffffffbf',
-              boxShadow: '0px 0px 2px 0px #D4D4D8'
-            }}
-          >
-            <Select
-              displayEmpty
-              value={value}
-              onChange={(e) => setValue(e.target.value)}
-              sx={{
-                flex: 1,
-                borderRadius: 0,
-                '& fieldset': {border: 'none'},
-                '&:hover fieldset': {border: 'none'},
-                '&.Mui-focused fieldset': {border: 'none'},
-                '& .MuiSelect-select': {
-                  padding: '0px',
-                  height: 'auto'
-                },
-                '& .MuiOutlinedInput-root': {
-                  borderRadius: 0
-                }
-              }}
-              variant="outlined"
-              renderValue={
-                value !== ''
-                  ? undefined
-                  : () => <span style={{color: '#999'}}>Select type</span>
-              }
-            >
-              <MenuItem value="driving">Driving Lesson</MenuItem>
-              <MenuItem value="theory">Theory Class</MenuItem>
-              <MenuItem value="test">Final Test</MenuItem>
-            </Select>
-          </Box>
-          <Box
-            sx={{
-              height: '36px',
-              width: '36px',
-              background: '#ffffffbf',
-              padding: '8px',
-              borderRadius: '50%',
-              position: 'relative',
-              cursor: 'pointer',
-              overflow: 'visible !important',
-              '&:hover': {
-                bgcolor: '#E4E4E7'
-              }
-            }}
-          >
-            <Image
-              src={crossIcon}
-              alt="addIcon"
-              height={20}
-              width={20}
-              style={{position: 'relative'}}
-              // onClick={() => setOpenDropdown((prev) => !prev)}
-            />
-          </Box>
-        </Box>
-      </Box>
+      <CategoryComponent />
       {/* Capacity Persons */}
       <Box sx={{width: '100%'}}>
         <Typography sx={{...localFont.inter14, mb: '6px'}}>
