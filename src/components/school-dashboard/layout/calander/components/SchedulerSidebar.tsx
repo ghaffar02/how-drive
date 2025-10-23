@@ -1,8 +1,7 @@
 import localFont from '@/utils/themes';
-import {Box, MenuItem, Select, TextField, Typography} from '@mui/material';
+import {Box, MenuItem, Select, Typography} from '@mui/material';
 import {useState} from 'react';
-import crossIcon from '@/assets/svgs/dashboard-student/crossicon.svg';
-import Image from 'next/image';
+
 import CustomTextField from '@/components/school-dashboard/InputField';
 import HoursComponent from './HoursComponent';
 import CustomButton from '@/components/school-dashboard/CustomButton';
@@ -124,14 +123,15 @@ export default function SchedulerSidebar() {
             </Box>
           ))}
         </Box>
-        <SelectAppointmentType />
+        <SelectAppointmentType index={activeIndex} />
       </Box>
     </Box>
   );
 }
-
-function SelectAppointmentType() {
-  const [value, setValue] = useState('');
+type AppointmentProp = {
+  index: number;
+};
+function SelectAppointmentType({index}: AppointmentProp) {
   const days = [
     {day: 'Mo', unavailable: false},
     {day: 'Di', unavailable: false},
@@ -150,7 +150,50 @@ function SelectAppointmentType() {
         gap: '32px'
       }}
     >
-      <CategoryComponent />
+      {index === 0 && (
+        <CategoryComponent
+          color="#9333ea"
+          title2="Add category"
+          title="Category"
+          place="wahle..."
+          modalPlace="e.g. General meeting"
+          options={[
+            {label: 'driving-lesson', value: 'Driving Lesson'},
+            {label: 'theory-class', value: 'Theory Class'},
+            {label: 'final-test', value: 'Final Test'}
+          ]}
+        />
+      )}
+      {index === 1 && (
+        <CategoryComponent
+          color="#2563eb"
+          title2="Gruppe hinzufugen"
+          title="Group"
+          place="wahle..."
+          modalPlace="Z.B. Gruppe1"
+          options={[
+            {label: 'group1', value: 'Group 1'},
+            {label: 'group2', value: 'Group 2'},
+            {label: 'group3', value: 'Group 3'}
+          ]}
+        />
+      )}
+
+      {index === 2 && (
+        <CategoryComponent
+          color="#0891b2"
+          title2="Fahrlehrer hinzufugen"
+          title="Trainers"
+          place="wahle..."
+          modalPlace="Name"
+          options={[
+            {label: 'tom', value: 'Tom'},
+            {label: 'fabian', value: 'Fabian'},
+            {label: 'sophia', value: 'Sophia'}
+          ]}
+        />
+      )}
+
       {/* Capacity Persons */}
       <Box sx={{width: '100%'}}>
         <Typography sx={{...localFont.inter14, mb: '6px'}}>

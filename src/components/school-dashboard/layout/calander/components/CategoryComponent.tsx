@@ -8,7 +8,23 @@ import CustomButton from '@/components/school-dashboard/CustomButton';
 import send from '@/assets/svgs/dashboard-student/send.svg';
 import cross from '@/assets/svgs/dashboard-student/cross2.svg';
 
-export default function CategoryComponent() {
+type CardProps = {
+  color?: string;
+  title?: string;
+  place?: string;
+  options?: {label: string; value: string}[];
+  title2?: string;
+  modalPlace?: string;
+};
+
+export default function CategoryComponent({
+  color,
+  title,
+  place,
+  options,
+  title2,
+  modalPlace
+}: CardProps) {
   const [value, setValue] = useState('');
   const [openModal, setOpenModal] = useState(false);
   const modalRef = useRef<HTMLDivElement | null>(null);
@@ -46,11 +62,11 @@ export default function CategoryComponent() {
           sx={{
             width: '6px',
             height: '22px',
-            background: 'red',
+            background: color,
             borderRadius: '999px'
           }}
         />
-        <Typography sx={{...localFont.inter14}}>Category</Typography>
+        <Typography sx={{...localFont.inter14}}>{title}</Typography>
       </Box>
 
       {/* Select + Icon */}
@@ -89,12 +105,17 @@ export default function CategoryComponent() {
             renderValue={
               value !== ''
                 ? undefined
-                : () => <span style={{color: '#999'}}>Select type</span>
+                : () => <span style={{color: '#999'}}>{place}</span>
             }
           >
-            <MenuItem value="driving">Driving Lesson</MenuItem>
+            {options?.map((data) => (
+              <MenuItem key={data.label} value={data.label}>
+                {data.value}
+              </MenuItem>
+            ))}
+            {/* <MenuItem value="driving">Driving Lesson</MenuItem>
             <MenuItem value="theory">Theory Class</MenuItem>
-            <MenuItem value="test">Final Test</MenuItem>
+            <MenuItem value="test">Final Test</MenuItem> */}
           </Select>
         </Box>
 
@@ -145,9 +166,9 @@ export default function CategoryComponent() {
             >
               <Box>
                 <Typography sx={{...localFont.inter14, mb: '6px'}}>
-                  Add category
+                  {title2}
                 </Typography>
-                <CustomTextField type="text" labal="e.g. General meeting" />
+                <CustomTextField type="text" labal={modalPlace} />
               </Box>
 
               <Box
