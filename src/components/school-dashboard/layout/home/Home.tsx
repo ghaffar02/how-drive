@@ -11,6 +11,7 @@ import ActiveIcon from '@/assets/svgs/dashboard-student/active.svg';
 import InactiveIcon from '@/assets/svgs/dashboard-student/inactive.svg';
 import Messages from './components/Message';
 import Drivers from './components/Drivers';
+import {DayDetailView} from '../calander/components/big-calander/DayDetailView';
 
 export default function Home() {
   // const t = useTranslations('Dashboard.home.MessageLesson');
@@ -96,7 +97,7 @@ export default function Home() {
             gridRow: {xs: '5 / span 1', md: '4 / span 2', lg: '4 / span 2'}
           }}
         >
-          <Drivers title="Drivers" />
+          <Drivers title="Trainers" />
         </Box>
       </Box>
     </>

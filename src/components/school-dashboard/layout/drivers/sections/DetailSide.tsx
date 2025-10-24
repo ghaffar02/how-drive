@@ -392,18 +392,19 @@ export default function DetailSide() {
                 flexDirection: 'row',
                 gap: '10px',
                 cursor: 'pointer',
-                boxShadow: items.isRequest
-                  ? '0px 0px 2px 0px  #f97316'
-                  : activeIndexes.includes(i)
-                    ? '0px 0px 2px 0px #4611f5'
-                    : '0px 0px 2px 0px #D4D4D8',
+                // boxShadow: items.isRequest
+                //   ? '0px 0px 2px 0px  #f97316'
+                //   : activeIndexes.includes(i)
+                //     ? '0px 0px 2px 0px #4611f5'
+                //     : '0px 0px 2px 0px #D4D4D8',
+                boxShadow: activeIndexes.includes(i)
+                  ? '0px 0px 2px 0px #4611f5'
+                  : '0px 0px 2px 0px #D4D4D8',
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  boxShadow: items.isRequest
-                    ? '#f97316'
-                    : activeIndexes.includes(i)
-                      ? '0px 0px 2px 0px #4611f5'
-                      : '0px 0px 4px 0px #D4D4D8',
+                  boxShadow: activeIndexes.includes(i)
+                    ? '0px 0px 2px 0px #4611f5'
+                    : '0px 0px 4px 0px #D4D4D8',
                   background: '#ffffff'
                 },
                 '&:hover .hoverArrow': {
@@ -440,11 +441,7 @@ export default function DetailSide() {
                   sx={{
                     ...localFont.inter14,
                     textAlign: 'start',
-                    color: items.isRequest
-                      ? '#f97316'
-                      : activeIndexes.includes(i)
-                        ? '#4611f5'
-                        : '#4A5568',
+                    color: activeIndexes.includes(i) ? '#4611f5' : '#4A5568',
                     fontFamily: '"Inter", sans-serif !important',
                     fontWeight: activeIndexes.includes(i) ? '500' : '400'
                   }}
@@ -456,11 +453,7 @@ export default function DetailSide() {
                     fontSize: {xs: '10.8px', md: '11.8px', lg: '12.8px'},
                     textAlign: 'end',
 
-                    color: items.isRequest
-                      ? '#f97316'
-                      : activeIndexes.includes(i)
-                        ? '#4611f5'
-                        : '#4A5568',
+                    color: activeIndexes.includes(i) ? '#4611f5' : '#4A5568',
                     fontFamily: '"Inter", sans-serif !important',
                     fontWeight: activeIndexes.includes(i) ? '500' : '400'
                   }}

@@ -86,7 +86,7 @@ export default function MobileTabs({
     // },
     {
       key: '7',
-      label: 'driver',
+      label: 'Trainer',
       iconBlack: driver_black,
       iconBlue: driver_blue,
       iconHover: driver_bold

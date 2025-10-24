@@ -463,10 +463,7 @@ export default function Inbox() {
                 maxWidth: '80%',
                 width: '100%',
                 padding: '12px',
-                background:
-                  data.sender === 'user'
-                    ? 'linear-gradient(to left, rgba(191,202,255,1), rgba(191,234,255,1))'
-                    : 'linear-gradient(to left, rgba(165,243,252,1), rgba(130,255,236,1))',
+                background: data.sender === 'user' ? '#6348fa' : '#f0f0fa',
                 borderRadius:
                   data.sender === 'user'
                     ? '18px 2px 18px 18px'
@@ -478,7 +475,7 @@ export default function Inbox() {
                   ...localFont.inter14,
                   fontWeight: '400',
                   fontFamily: '"Inter", sans-serif !important',
-                  color: '#1a202c'
+                  color: data.sender === 'user' ? '#fff' : '#1a202c'
                 }}
               >
                 {data.message}
@@ -517,7 +514,14 @@ export default function Inbox() {
               }
             }}
           />
-          <Box sx={{height: '24px', width: '24px', cursor: 'pointer'}}>
+          <Box
+            sx={{
+              height: '24px',
+              width: '24px',
+              cursor: 'pointer',
+              display: 'none'
+            }}
+          >
             <Image src={attachIcon} alt="attachIcon" height={24} width={24} />
           </Box>
         </Box>

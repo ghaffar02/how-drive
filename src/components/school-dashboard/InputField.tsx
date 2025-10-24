@@ -49,7 +49,7 @@ export default function CustomTextField({
             ...(type === 'time'
               ? {
                   opacity: 0,
-                  width: '10%',
+                  width: '20%',
                   cursor: 'pointer'
                 }
               : {
