@@ -7,6 +7,7 @@ import {enUS} from 'date-fns/locale';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import styles from './BigCalander.module.css';
 import {DayDetailView} from './DayDetailView';
+import {Box} from '@mui/material';
 
 const locales = {'en-US': enUS};
 const localizer = dateFnsLocalizer({
@@ -58,12 +59,8 @@ const EventComponent: React.FC<{event: any}> = ({event}) => (
 
 export default function BigCalendar() {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [selectedAppointments, setSelectedAppointments] = useState<any[]>([]);
 
-  const handleDateClick = (slotInfo: any) => {
-    setSelectedDate(slotInfo.start);
-  };
-
-  // transform events into simpler structure for the DayDetailView
   const appointments = events.map((e, i) => ({
     id: i + 1,
     title: e.title,
@@ -77,41 +74,50 @@ export default function BigCalendar() {
     dateKey: `${e.start.getFullYear()}-${e.start.getMonth()}-${e.start.getDate()}`
   }));
 
-  // Filter appointments by the selected date
-  const selectedAppointments =
-    selectedDate !== null
-      ? appointments.filter(
-          (a) =>
-            a.dateKey ===
-            `${selectedDate.getFullYear()}-${selectedDate.getMonth()}-${selectedDate.getDate()}`
-        )
-      : [];
+  const handleSelectDate = (date: Date) => {
+    const dateKey = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+    const filteredAppointments = appointments.filter(
+      (a) => a.dateKey === dateKey
+    );
+
+    setSelectedAppointments(filteredAppointments);
+    setSelectedDate(date);
+  };
 
   return (
-    <div className={styles.calendarWrapper}>
-      <div className={styles.calendarContainer}>
+    <>
+      <div className={styles.calendarWrapper}>
         {selectedDate ? (
           <DayDetailView
+            key={selectedDate.toISOString()}
             date={selectedDate}
             appointments={selectedAppointments}
             onClose={() => setSelectedDate(null)}
           />
         ) : (
-          <Calendar
-            localizer={localizer}
-            events={events}
-            startAccessor="start"
-            endAccessor="end"
-            components={{event: EventComponent}}
-            views={['month']}
-            selectable
-            onSelectSlot={handleDateClick}
-            onSelectEvent={(event) => setSelectedDate(event.start)}
-            toolbar
-            style={{flex: 1, height: '100%', width: '100%'}}
-          />
+          <div className={styles.calendarContainer}>
+            <Calendar
+              localizer={localizer}
+              events={events}
+              startAccessor="start"
+              endAccessor="end"
+              components={{event: EventComponent}}
+              views={['month']}
+              selectable
+              toolbar
+              onSelectSlot={(slotInfo) => handleSelectDate(slotInfo.start)}
+              onSelectEvent={(event) => handleSelectDate(event.start)}
+              onDrillDown={(date) => handleSelectDate(date)} // 🔥 captures clicks on date numbers
+              style={{
+                flex: 1,
+                height: '100%',
+                width: '100%',
+                cursor: 'pointer'
+              }}
+            />
+          </div>
         )}
       </div>
-    </div>
+    </>
   );
 }

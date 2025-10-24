@@ -1,8 +1,19 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
-import {Box, Typography} from '@mui/material';
+import {
+  Box,
+  Typography,
+  TableContainer,
+  Table,
+  TableHead,
+  TableRow,
+  TableCell,
+  TableBody,
+  Paper
+} from '@mui/material';
 import cross from '@/assets/svgs/dashboard-student/crossicon.svg';
+import localFont from '@/utils/themes';
 
 interface Appointment {
   id: number;
@@ -24,9 +35,11 @@ export function DayDetailView({
   onClose
 }: DayDetailViewProps) {
   const startHour = 6;
-  const endHour = 23;
-  const totalRows = endHour - startHour; // 17 rows
-  const totalColumns = 4; // 4 categories
+  const endHour = 24;
+  const hours = Array.from(
+    {length: endHour - startHour},
+    (_, i) => startHour + i
+  );
 
   const categories = [
     {label: 'Gespräch', color: '#A855F7'},
@@ -35,16 +48,17 @@ export function DayDetailView({
     {label: 'Prüfungen', color: '#DC2626'}
   ];
 
+  // Each column has a flexible width but a min width (dynamic + scrollable)
+  const CAT_MIN_W = 230;
+  const TIME_COL_W = 64;
+
   return (
     <Box
       sx={{
-        background: 'linear-gradient(180deg, #f5f4ff 0%, #ebeafc 100%)',
-        borderRadius: '20px',
-        boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.05)',
-        padding: 2,
-        minHeight: '100%',
         display: 'flex',
         flexDirection: 'column',
+        height: '100%',
+        minHeight: 0,
         overflow: 'hidden'
       }}
     >
@@ -54,8 +68,8 @@ export function DayDetailView({
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          borderBottom: '1px solid rgba(255,255,255,0.5)',
-          pb: 1.5,
+          borderBottom: '1px solid rgba(255,255,255,0.6)',
+          pb: 1.25,
           mb: 2
         }}
       >
@@ -81,120 +95,153 @@ export function DayDetailView({
           width={20}
           height={20}
           onClick={onClose}
-          style={{cursor: 'pointer'}}
+          style={{
+            cursor: 'pointer',
+            transform: 'rotate(45deg)',
+            marginRight: '12px'
+          }}
         />
       </Box>
 
-      {/* Table Grid */}
-      <Box
+      {/* Table with Scroll */}
+      <TableContainer
+        component={Paper}
         sx={{
           flex: 1,
-          display: 'grid',
-          gridTemplateRows: `40px repeat(${totalRows}, 1fr)`, // extra row for headers
-          gridTemplateColumns: `60px repeat(${totalColumns}, 1fr)`,
-          gap: '4px',
+          minHeight: 0,
+          overflowX: 'auto',
           overflowY: 'auto',
-          pr: 1
+          borderRadius: '16px',
+          background: 'transparent',
+          boxShadow: 'none',
+          '&::-webkit-scrollbar': {
+            height: '8px',
+            width: '8px'
+          },
+          '&::-webkit-scrollbar-thumb': {
+            background: '#ccc',
+            borderRadius: '4px'
+          }
         }}
       >
-        {/* === Header Row === */}
-        <Box /> {/* Empty time column header */}
-        {categories.map((cat, idx) => (
-          <Box
-            key={idx}
-            sx={{
-              background: cat.color,
-              borderRadius: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#fff',
-              fontWeight: 500,
-              fontSize: '13px',
-              height: '30px'
-              // marginBottom: '54px',
-              // padding: '40px'
-            }}
-          >
-            {cat.label}
-          </Box>
-        ))}
-        {/* === Time Rows + Cells === */}
-        {Array.from({length: totalRows}, (_, rowIndex) => {
-          const hour = startHour + rowIndex;
-          const label = `${hour.toString().padStart(2, '0')}`;
-
-          return (
-            <React.Fragment key={hour}>
-              {/* Time Label Cell */}
-              <Box
+        <Table
+          sx={{
+            borderCollapse: 'separate',
+            borderSpacing: '6px',
+            minWidth: `${TIME_COL_W + categories.length * CAT_MIN_W}px`
+          }}
+        >
+          {/* === Header Row === */}
+          <TableHead>
+            <TableRow>
+              <TableCell
                 sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  fontSize: '14px',
-                  color: '#4B5563',
-                  fontWeight: 500
+                  width: TIME_COL_W,
+                  borderRadius: '10px',
+                  textAlign: 'center',
+                  backgroundColor: 'transparent',
+                  border: 0
                 }}
-              >
-                {label}
-              </Box>
+              />
+              {categories.map((c) => (
+                <TableCell
+                  key={c.label}
+                  sx={{
+                    minWidth: CAT_MIN_W,
+                    width: 'auto',
+                    background: c.color,
+                    color: '#fff',
+                    fontWeight: 700,
+                    fontSize: 13,
+                    textAlign: 'center',
+                    height: '28px',
+                    padding: '0px',
+                    borderRadius: '999px',
+                    whiteSpace: 'nowrap'
+                  }}
+                >
+                  {c.label}
+                </TableCell>
+              ))}
+            </TableRow>
+          </TableHead>
 
-              {/* Appointment Cells */}
-              {Array.from({length: totalColumns}).map((_, colIndex) => {
-                const category = categories[colIndex];
-                const cellAppointments = appointments.filter(
-                  (a) =>
-                    parseInt(a.startTime.split(':')[0]) === hour &&
-                    a.color.toLowerCase() === category.color.toLowerCase()
-                );
-
-                return (
-                  <Box
-                    key={`${hour}-${colIndex}`}
+          {/* === Body Rows === */}
+          <TableBody>
+            {hours.map((hour) => {
+              const hh = String(hour).padStart(2, '0');
+              return (
+                <TableRow key={hour}>
+                  {/* Time Column */}
+                  <TableCell
                     sx={{
-                      background: 'rgba(255,255,255,0.6)',
-                      border: '1px solid rgba(255,255,255,0.4)',
-                      borderRadius: '8px',
-                      minHeight: '48px',
-                      padding: '4px 6px',
-                      position: 'relative'
+                      width: TIME_COL_W,
+                      textAlign: 'center',
+                      fontWeight: 500,
+                      color: '#4a5568',
+                      padding: 0,
+                      height: '48px',
+                      border: 'unset',
+                      background: 'transparent'
                     }}
                   >
-                    {cellAppointments.map((a) => (
-                      <Box
-                        key={a.id}
+                    {hh}
+                  </TableCell>
+
+                  {/* Dynamic Columns */}
+                  {categories.map((cat) => {
+                    const cellAppointments = appointments.filter(
+                      (a) =>
+                        parseInt(a.startTime.split(':')[0]) === hour &&
+                        a.color.toLowerCase() === cat.color.toLowerCase()
+                    );
+
+                    return (
+                      <TableCell
+                        key={`${hour}-${cat.label}`}
                         sx={{
-                          background: `${a.color}20`,
-                          border: `1px solid ${a.color}`,
-                          borderRadius: '8px',
-                          padding: '4px 8px',
-                          color: '#1f2937',
-                          fontSize: '13px',
-                          fontWeight: 500,
-                          height: '100%',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          justifyContent: 'center',
-                          boxShadow:
-                            '0px 0px 2px 0px var(--token-46fa6e04-aa50-4324-8a35-fd1170036322, rgb(212, 212, 216))'
+                          minWidth: CAT_MIN_W,
+                          width: 'auto',
+                          background: 'rgba(255,255,255,0.7)',
+                          border: '1px solid rgba(255,255,255,0.6)',
+                          borderRadius: '12px',
+                          verticalAlign: 'middle',
+                          padding: '0'
                         }}
                       >
-                        <Typography sx={{fontWeight: 600, fontSize: '13px'}}>
-                          {a.title}
-                        </Typography>
-                        <Typography sx={{fontSize: '12px', opacity: 0.9}}>
-                          {a.startTime} - {a.endTime}
-                        </Typography>
-                      </Box>
-                    ))}
-                  </Box>
-                );
-              })}
-            </React.Fragment>
-          );
-        })}
-      </Box>
+                        {cellAppointments.map((a) => (
+                          <Box
+                            key={a.id}
+                            sx={{
+                              background: `${a.color}1A`,
+                              border: `1px solid ${a.color}`,
+                              borderRadius: '10px',
+                              px: '4px',
+                              py: '2px',
+                              mb: '2px'
+                            }}
+                          >
+                            <Typography
+                              sx={{...localFont.inter14, fontWeight: 700}}
+                            >
+                              {a.title}
+                            </Typography>
+                            <Typography
+                              sx={{...localFont.inter14, fontWeight: 400}}
+                            >
+                              {a.startTime} - {a.endTime}
+                            </Typography>
+                          </Box>
+                        ))}
+                      </TableCell>
+                    );
+                  })}
+                </TableRow>
+              );
+            })}
+          </TableBody>
+        </Table>
+      </TableContainer>
     </Box>
   );
 }

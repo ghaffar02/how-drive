@@ -38,11 +38,12 @@ export default function EventsCalendar() {
       {/* ther header there  */}
       <Box
         sx={{
-          overflowY: 'scroll',
+          overflow: 'visible',
+          // overflowY: 'scroll',
           // height: '100%',
-          overflow: 'hidden auto',
-          msOverflowStyle: 'none',
-          scrollbarWidth: 'none',
+          // overflow: 'hidden auto',
+          // msOverflowStyle: 'none',
+          // scrollbarWidth: 'none',
           paddingBottom: '24px'
         }}
       >
