@@ -86,7 +86,7 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '4px',
-                maxWidth: {md: '100px', lg: '170px'}
+                maxWidth: {md: '155px', lg: '170px'}
               }}
             >
               <CustomTextField

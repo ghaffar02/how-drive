@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import DrivingStudents from '../components/DrivingStudents';
 import Messages from '../components/Messages';
 import {useTranslations} from 'next-intl';
+import EventsCalendar from '../../calander/components/EventsCalendar';
 
 export default function DriverDetail() {
   const t = useTranslations('SchoolDashboard.Drivers.DriverDetail');
@@ -45,8 +46,9 @@ export default function DriverDetail() {
           <Messages />
         </Box>
       </Box>
-      <DrivingStudents title={t('drivingTitle')} />
-      <Messages />
+      <Box sx={{height: '700px'}}>
+        <EventsCalendar />
+      </Box>
     </Box>
   );
 }

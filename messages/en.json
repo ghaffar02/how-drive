@@ -2087,7 +2087,8 @@
         "btn1": "Yes"
       },
       "formDropDown": {
-        "label1": "To",
+        "label1": "From",
+        "label2": "To",
         "option1": "Fahrschule Mundsburg",
         "option2": "Fabian - Fahrer",
         "placeholder": "select ...",

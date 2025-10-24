@@ -101,6 +101,53 @@ export default function MessagesDropDown({onClose}: CustomCardProps) {
           }}
         />
       </Box>
+      <Box
+        onClick={handleContainerClick}
+        sx={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: {xs: 'column'},
+          gap: {xs: '8px'},
+          alignItems: 'start',
+          justifyContent: 'space-between'
+        }}
+      >
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            width: '100%',
+
+            fontFamily: '"Inter", sans-serif !important',
+            fontWeight: 400,
+            textAlign: 'left'
+          }}
+        >
+          Upload file
+        </Typography>
+
+        <TextField
+          multiline
+          rows={4}
+          fullWidth
+          variant="outlined"
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              borderRadius: '8px',
+              background: '#ffffff',
+              // boxShadow:
+              //   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
+              height: '100%',
+              fontSize: '14px',
+              padding: '12px'
+            },
+
+            '& .MuiInputBase-input': {
+              padding: 0,
+              fontSize: '14px'
+            }
+          }}
+        />
+      </Box>
 
       <Box
         sx={{

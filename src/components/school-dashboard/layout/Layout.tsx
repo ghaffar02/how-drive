@@ -15,6 +15,7 @@ import Calander from './calander/Calander';
 import Support from './support/Support';
 import Students from './students/Students';
 import Drivers from './drivers/Drivers';
+import Message from './messages/Message';
 
 export default function StudentDashboard() {
   const [activeKey, setActiveKey] = React.useState<string>('2');
@@ -24,7 +25,7 @@ export default function StudentDashboard() {
   const anchorRef = useRef<HTMLDivElement | null>(null);
   // logout function here
   useEffect(() => {
-    if (activeKey === '7') {
+    if (activeKey === '8') {
       console.log('logout function here');
     }
   }, [activeKey]);
@@ -108,7 +109,8 @@ export default function StudentDashboard() {
           {activeKey === '1' && <Home />}
           {activeKey === '2' && <Students />}
           {activeKey === '3' && <Calander />}
-          {activeKey === '4' && <Drivers />}
+          {activeKey === '4' && <Message />}
+          {activeKey === '7' && <Drivers />}
           {activeKey === '5' && <Setting />}
           {activeKey === '6' && <Support />}
         </Box>
@@ -177,7 +179,7 @@ function HomeMobileHeader({
             items={[
               {id: '5', label: 'Einstellungen', menuIcon: settingsIcon},
               {id: '6', label: 'Support', menuIcon: supportIcon},
-              {id: '7', label: 'Abmelden', menuIcon: logoutIcon}
+              {id: '8', label: 'Abmelden', menuIcon: logoutIcon}
             ]}
             open={open}
             setOpen={setOpen}

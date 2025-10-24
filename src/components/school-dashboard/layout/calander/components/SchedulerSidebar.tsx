@@ -17,7 +17,7 @@ export default function SchedulerSidebar() {
   return (
     <Box
       sx={{
-        maxWidth: {md: '230px', lg: '300px'},
+        maxWidth: {md: '280px', lg: '300px'},
         width: '100%',
         // height: '100%',
         background: 'rgba(248,250,252,0.3)',
