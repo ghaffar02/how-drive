@@ -1993,11 +1993,7 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": [
-            "Necessary",
-            "Analytics",
-            "Allow all"
-          ]
+          "formFields": ["Necessary", "Analytics", "Allow all"]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2025,10 +2021,7 @@
             "News",
             "Driving license office registered"
           ],
-          "formFieldsOff": [
-            "Genereller Newsletter",
-            "Offers and advertising"
-          ]
+          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
         }
       }
     },
@@ -2042,7 +2035,7 @@
       },
       "processform": {
         "title": "Please fill in the following information!",
-        "des": "By filling out the following information, a new guide for obtaining a driving license will be created. Connecting a driving school is also possible later in the \"Settings\".",
+        "des": "By filling out the following information, a new guide for obtaining a driving license will be created. Connecting a driving school is also possible later in the \"Settings\". This connection must first be confirmed by the driving school. After confirmation, the selected driving school will appear in your account.",
         "opt1": "Driving license class",
         "opt2": "Place of residence",
         "opt3": "Phone number",
@@ -2054,7 +2047,7 @@
         "err3": "Phone number is required"
       },
       "processSteps": {
-        "para": "Click on this icon to change the status of steps and mark them as done or not. If your account is linked to a driving school, some steps will be marked as completed by your driving school (e.g., if the driving license application is submitted to the driving license office through your driving school). Please note that the changes you make here will be shown to your driving school.",
+        "para": "Click on this icon to change the status of steps and mark them as done or not. You are only able to change the status of the steps 3, 5, and 7. Please change the status of the step 3 only when your driving school is not responsible for completing this step. If your account is linked to a driving school, other steps will be marked as completed by your driving school. Please note that the changes you make here will be shown to your driving school.",
         "step1": "Driving school registeration",
         "des1": "Find driving school",
         "points1": "<ul><li>Choose a certified driving school.</li><li>Sign training contract with driving school.</li></ul>",
@@ -2301,11 +2294,7 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": [
-            "Necessary",
-            "Analytics",
-            "Allow all"
-          ]
+          "formFields": ["Necessary", "Analytics", "Allow all"]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2333,18 +2322,12 @@
             "News",
             "Driving license office registered"
           ],
-          "formFieldsOff": [
-            "Genereller Newsletter",
-            "Offers and advertising"
-          ]
+          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
         }
       }
     },
     "leftSideTab": {
-      "textTab": [
-        "Active",
-        "Inactive"
-      ],
+      "textTab": ["Active", "Inactive"],
       "search": "Search"
     },
     "studentHeader": {

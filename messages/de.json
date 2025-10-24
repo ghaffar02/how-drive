@@ -1981,11 +1981,7 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": [
-            "Notwendige",
-            "Analytics",
-            "Alle zulassen"
-          ]
+          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2024,10 +2020,7 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": [
-            "News und Update",
-            "Angebote und Werbung"
-          ]
+          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
         }
       }
     },
@@ -2041,7 +2034,7 @@
       },
       "processform": {
         "title": "Fülle die folgenden Informationen aus!",
-        "des": "Beim Ausfüllen der folgenden Informationen wird einen neuen Leitfaden zum Erwerb des Führerscheins erstellt. Die Verbindung einer Fahrschule ist auch später im Bereich \"Einstellungen\" möglich.",
+        "des": "Beim Ausfüllen der folgenden Informationen wird einen neuen Leitfaden zum Erwerb des Führerscheins erstellt. Die Verbindung einer Fahrschule ist auch später im Bereich \"Einstellungen\" möglich. Diese Verbindung muss zunächst von der Fahrschule bestätigt werden. Nach der Bestätigung erscheint die ausgewählte Fahrschule in Ihrem Konto.",
         "opt1": "Führerscheinklasse",
         "opt2": "Wohnsitz",
         "opt3": "Handynummer",
@@ -2053,7 +2046,7 @@
         "err3": "Telefonnummer ist erforderlich"
       },
       "processSteps": {
-        "para": "Klicke auf dieses Symbol, um den Status von Schritten zu ändern und diese als erledigt zu markieren. Ist deiner Account mit einer Fahrschule verknüpft, werden einige Schritte von deiner Fahrschule als erledigt markiert (z.B. wenn der Führerscheinantrag über deine Fahrschule bei der Fahrerlaubnisbehörde eingereicht wird). Bitte beachte, dass die hier vorgenommenen Änderungen deiner Fahrschule angezeigt werden.",
+        "para": "Klicke auf dieses Symbol, um den Status von Schritten zu ändern und diese als erledigt zu markieren. Du kannst nur den Status der Schritte 3, 5 und 7 ändern. Bitte ändere den Status von Schritt 3 nur, wenn deine Fahrschule nicht für die Durchführung dieses Schrittes verantwortlich ist. Ist deiner Account mit einer Fahrschule verknüpft, werden andere Schritte von deiner Fahrschule als erledigt markiert. Bitte beachte, dass die hier vorgenommenen Änderungen deiner Fahrschule angezeigt werden.",
         "step1": "Anmeldung Fahrschule",
         "des1": "Fahrschule finden",
         "points1": "<ul><li>Wähle eine zertifizierte Fahrschule.</li><li>Unterschreibe Ausbildungsvertrag bei der Fahrschule.</li></ul>",
@@ -2288,11 +2281,7 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": [
-            "Notwendige",
-            "Analytics",
-            "Alle zulassen"
-          ]
+          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2331,18 +2320,12 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": [
-            "News und Update",
-            "Angebote und Werbung"
-          ]
+          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
         }
       }
     },
     "leftSideTab": {
-      "textTab": [
-        "Aktiv",
-        "Inaktiv"
-      ],
+      "textTab": ["Aktiv", "Inaktiv"],
       "search": "Suchen"
     },
     "studentHeader": {
