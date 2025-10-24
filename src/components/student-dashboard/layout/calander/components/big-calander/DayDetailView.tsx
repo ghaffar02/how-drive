@@ -35,7 +35,7 @@ export function DayDetailView({
   onClose
 }: DayDetailViewProps) {
   const startHour = 6;
-  const endHour = 24;
+  const endHour = 25;
   const hours = Array.from(
     {length: endHour - startHour},
     (_, i) => startHour + i
@@ -59,7 +59,9 @@ export function DayDetailView({
         flexDirection: 'column',
         height: '100%',
         minHeight: 0,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        // width: '40vw',
+        maxWidth: '978px'
       }}
     >
       {/* Header */}
@@ -111,24 +113,25 @@ export function DayDetailView({
           minHeight: 0,
           overflowX: 'auto',
           overflowY: 'auto',
-          borderRadius: '16px',
           background: 'transparent',
-          boxShadow: 'none',
-          '&::-webkit-scrollbar': {
-            height: '8px',
-            width: '8px'
-          },
-          '&::-webkit-scrollbar-thumb': {
-            background: '#ccc',
-            borderRadius: '4px'
-          }
+          boxShadow: 'none'
+          // '&::-webkit-scrollbar': {
+          //   height: '8px',
+          //   width: '8px'
+          // },
+          // '&::-webkit-scrollbar-thumb': {
+          //   // background: '#ccc',
+          //   borderRadius: '4px'
+          // }
+          // // width: '40vw',
+          // maxWidth: '978px'
         }}
       >
         <Table
           sx={{
             borderCollapse: 'separate',
-            borderSpacing: '6px',
-            minWidth: `${TIME_COL_W + categories.length * CAT_MIN_W}px`
+            borderSpacing: '6px'
+            // minWidth: `${TIME_COL_W + categories.length * CAT_MIN_W}px`
           }}
         >
           {/* === Header Row === */}
