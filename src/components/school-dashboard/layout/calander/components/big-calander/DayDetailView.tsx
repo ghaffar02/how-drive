@@ -38,14 +38,10 @@ export function DayDetailView({
   return (
     <Box
       sx={{
-        background: 'linear-gradient(180deg, #f5f4ff 0%, #ebeafc 100%)',
-        borderRadius: '20px',
-        boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.05)',
         padding: 2,
         minHeight: '100%',
         display: 'flex',
-        flexDirection: 'column',
-        overflow: 'hidden'
+        flexDirection: 'column'
       }}
     >
       {/* Header */}
@@ -55,8 +51,7 @@ export function DayDetailView({
           justifyContent: 'space-between',
           alignItems: 'center',
           borderBottom: '1px solid rgba(255,255,255,0.5)',
-          pb: 1.5,
-          mb: 2
+          pb: 3.5
         }}
       >
         <Typography
@@ -94,15 +89,16 @@ export function DayDetailView({
         sx={{
           flex: 1,
           display: 'grid',
-          gridTemplateRows: `40px repeat(${totalRows}, 1fr)`, // extra row for headers
-          gridTemplateColumns: `60px repeat(${totalColumns}, 1fr)`,
+          gridTemplateRows: `75px repeat(${totalRows}, 1fr)`, // extra row for headers
+          gridTemplateColumns: `26px repeat(${totalColumns}, 1fr)`,
           gap: '4px',
           overflowY: 'auto',
           pr: 1
         }}
       >
         {/* === Header Row === */}
-        <Box /> {/* Empty time column header */}
+        <Box sx={{backgroundColor: 'red', width: 'fit-content'}} />{' '}
+        {/* Empty time column header */}
         {categories.map((cat, idx) => (
           <Box
             key={idx}
@@ -138,7 +134,8 @@ export function DayDetailView({
                   alignItems: 'center',
                   fontSize: '14px',
                   color: '#4B5563',
-                  fontWeight: 500
+                  fontWeight: 500,
+                  width: 'fit-content'
                 }}
               >
                 {label}
@@ -161,7 +158,6 @@ export function DayDetailView({
                       border: '1px solid rgba(255,255,255,0.4)',
                       borderRadius: '8px',
                       minHeight: '48px',
-                      padding: '4px 6px',
                       position: 'relative'
                     }}
                   >
