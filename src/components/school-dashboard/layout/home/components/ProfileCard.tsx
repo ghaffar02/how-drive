@@ -22,7 +22,7 @@ export default function ProfileCard({
   const value2 = 100 - value1;
 
   const size = 70;
-  const strokeWidth = 10;
+  const strokeWidth = 7;
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
   const offset1 = circumference * (1 - value1 / 100);
@@ -49,7 +49,13 @@ export default function ProfileCard({
         <Typography sx={{...localFont.inter24, fontWeight: '500'}}>
           {students}
         </Typography>
-        <Typography sx={{...localFont.inter14, fontWeight: '300'}}>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontFamily: '"Inter", sans-serif !important',
+            fontWeight: '300'
+          }}
+        >
           {title}
         </Typography>
       </Box>

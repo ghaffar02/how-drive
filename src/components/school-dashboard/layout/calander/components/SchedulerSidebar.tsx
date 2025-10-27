@@ -196,14 +196,26 @@ function SelectAppointmentType({index}: AppointmentProp) {
 
       {/* Capacity Persons */}
       <Box sx={{width: '100%'}}>
-        <Typography sx={{...localFont.inter14, mb: '6px'}}>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
+            mb: '6px'
+          }}
+        >
           Capacity (persons)
         </Typography>
         <CustomTextField type="number" />
       </Box>
       {/* Duration Minutes */}
       <Box sx={{width: '100%'}}>
-        <Typography sx={{...localFont.inter14, mb: '6px'}}>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
+            mb: '6px'
+          }}
+        >
           Duration (minutes)
         </Typography>
         <Box
@@ -245,7 +257,13 @@ function SelectAppointmentType({index}: AppointmentProp) {
       </Box>
       {/* Weekly Hours */}
       <Box>
-        <Typography sx={{...localFont.inter14, mb: '10px'}}>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
+            mb: '10px'
+          }}
+        >
           Weekly hours
         </Typography>
         <Box sx={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
@@ -260,10 +278,22 @@ function SelectAppointmentType({index}: AppointmentProp) {
       </Box>
       {/* Date specific availability */}
       <Box sx={{width: '100%'}}>
-        <Typography sx={{...localFont.inter14}}>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontFamily: '"Inter", "Inter Placeholder", sans-serif !important'
+          }}
+        >
           Date-specific availability
         </Typography>
-        <Typography sx={{...localFont.inter14, fontWeight: '200', mb: '6px'}}>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
+            fontWeight: '200',
+            mb: '6px'
+          }}
+        >
           Select a day to set a different time slot.
         </Typography>
         <Box
@@ -280,7 +310,13 @@ function SelectAppointmentType({index}: AppointmentProp) {
       </Box>
       {/* Maximum Time in Advance for Booking */}
       <Box sx={{width: '100%'}}>
-        <Typography sx={{...localFont.inter14, mb: '6px'}}>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
+            mb: '6px'
+          }}
+        >
           Maximum time in advance for booking appointments (days)
         </Typography>
         <Box
@@ -319,7 +355,13 @@ function SelectAppointmentType({index}: AppointmentProp) {
       </Box>
       {/* Minimum time in advance for booking */}
       <Box sx={{width: '100%'}}>
-        <Typography sx={{...localFont.inter14, mb: '6px'}}>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
+            mb: '6px'
+          }}
+        >
           Minimum time in advance for booking an appointment (hours)
         </Typography>
         <Box
@@ -361,7 +403,13 @@ function SelectAppointmentType({index}: AppointmentProp) {
       </Box>
       {/* Cancellation limit (hours) */}
       <Box sx={{width: '100%'}}>
-        <Typography sx={{...localFont.inter14, mb: '6px'}}>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
+            mb: '6px'
+          }}
+        >
           Cancellation limit (hours)
         </Typography>
         <Box

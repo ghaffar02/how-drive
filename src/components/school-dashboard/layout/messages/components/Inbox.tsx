@@ -339,6 +339,7 @@ export default function Inbox() {
           width: '100%',
           background: '#ffffffbf',
           padding: {xs: '16px', md: '24px'},
+          border: '2px solid #fff',
           borderRadius: '18px',
           display: 'flex',
           flexDirection: 'column',
@@ -371,92 +372,95 @@ export default function Inbox() {
               >
                 {currentDate}
               </Typography>
-              {data.sender !== 'user' && (
-                <>
-                  <Box
-                    onClick={handleClick}
-                    sx={{
-                      height: '20px',
-                      width: '20px',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    <Image
-                      src={dots}
-                      alt="dots"
-                      style={{height: '100%', width: '100%'}}
-                    />
-                  </Box>
-                  <Menu
-                    id="long-menu"
-                    anchorEl={anchorEl}
-                    open={open}
-                    onClose={handleClose}
-                    slotProps={{
-                      paper: {
-                        sx: {
-                          width: '150px',
-                          p: '8px',
-                          borderRadius: '12px',
-                          border: '1px solid #fff',
-                          boxShadow:
-                            '0px 0px 0px 1px rgb(255,255,255), 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
-                          background:
-                            'linear-gradient(145deg, rgba(227, 227, 255, 0.4) 0%, rgba(255, 240, 227, 0.4) 100%);',
-                          backdropFilter: 'blur(15px)',
-                          '& .MuiMenuItem-root': {
-                            p: 0,
-                            borderRadius: '12px'
-                          }
-                        }
-                      },
-                      list: {
-                        'aria-labelledby': 'long-button',
-                        sx: {
-                          display: 'flex',
-                          flexDirection: 'column',
-                          gap: '10px'
+              {/* {data.sender !== 'user' && ( */}
+              <>
+                <Box
+                  onClick={handleClick}
+                  sx={{
+                    height: '20px',
+                    width: '20px',
+                    cursor: 'pointer'
+                  }}
+                >
+                  <Image
+                    src={dots}
+                    alt="dots"
+                    style={{height: '100%', width: '100%'}}
+                  />
+                </Box>
+                <Menu
+                  id="long-menu"
+                  anchorEl={anchorEl}
+                  open={open}
+                  onClose={handleClose}
+                  slotProps={{
+                    paper: {
+                      sx: {
+                        width: '150px',
+                        p: '8px',
+                        borderRadius: '12px',
+                        border: '1px solid #fff',
+                        backgroundColor: '#f0f0fa99',
+                        backdropFilter: 'blur(8px)',
+                        boxShadow: `
+          0px 0px 0px 1px rgb(255, 255, 255),
+          0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+          0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+        `,
+                        '& .MuiMenuItem-root': {
+                          p: 0,
+                          borderRadius: '12px'
                         }
                       }
-                    }}
-                  >
-                    {options.map((option, i) => (
-                      <MenuItem key={i} onClick={handleClose}>
-                        <Box
+                    },
+                    list: {
+                      'aria-labelledby': 'long-button',
+                      sx: {
+                        padding: '0px',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '8px'
+                      }
+                    }
+                  }}
+                >
+                  {options.map((option, i) => (
+                    <MenuItem key={i} onClick={handleClose}>
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                          width: '100%',
+                          padding: '8px',
+                          borderRadius: '8px',
+                          '&:hover': {
+                            backgroundColor: 'rgba(48,88,255,.1)'
+                          }
+                        }}
+                      >
+                        {/* Example: add icon or image */}
+                        <Image
+                          src={option.icon}
+                          alt={option.title}
+                          width={18}
+                          height={18}
+                        />
+                        <Typography
                           sx={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '8px',
-                            width: '100%',
-                            padding: '8px',
-                            borderRadius: '8px',
-                            '&:hover': {
-                              backgroundColor: 'rgba(191,234,255,.5)'
-                            }
+                            ...localFont.inter14,
+                            fontFamily: '"Inter", sans-serif !important',
+                            color: '#1a202c'
                           }}
                         >
-                          {/* Example: add icon or image */}
-                          <Image
-                            src={option.icon}
-                            alt={option.title}
-                            width={18}
-                            height={18}
-                          />
-                          <Typography
-                            sx={{
-                              ...localFont.inter14,
-                              fontFamily: '"Inter", sans-serif !important',
-                              color: '#1a202c'
-                            }}
-                          >
-                            {option.title}
-                          </Typography>
-                        </Box>
-                      </MenuItem>
-                    ))}
-                  </Menu>
-                </>
-              )}
+                          {option.title}
+                        </Typography>
+                      </Box>
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </>
+              {/* )} */}
             </Box>
             <Box
               sx={{
