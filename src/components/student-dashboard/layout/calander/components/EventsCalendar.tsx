@@ -32,7 +32,11 @@ export default function EventsCalendar() {
           'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
         backdropFilter: 'blur(15px)',
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
-        maxWidth: {md: 'calc( 100vw - 372px )', xl: '1002px'}
+        maxWidth: {
+          md: 'calc( 100vw - 372px )',
+          lg: 'calc( 100vw - 445px )',
+          xl: '1002px'
+        }
       }}
     >
       {/* ther header there  */}
