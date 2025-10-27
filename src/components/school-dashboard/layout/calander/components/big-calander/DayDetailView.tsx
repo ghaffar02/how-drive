@@ -167,6 +167,7 @@ export function DayDetailView({
                         sx={{
                           background: `${a.color}20`,
                           border: `1px solid ${a.color}`,
+                          borderLeftWidth: '3px',
                           borderRadius: '8px',
                           padding: '4px 8px',
                           color: '#1f2937',
