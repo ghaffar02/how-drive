@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import DrivingStudents from '../components/DrivingStudents';
 import Messages from '../components/Messages';
 import {useTranslations} from 'next-intl';
-import EventsCalendar from '../../calander/components/EventsCalendar';
+import BigCalendar from '../../calander/components/big-calander/BigCalander';
 
 export default function DriverDetail() {
   const t = useTranslations('SchoolDashboard.Drivers.DriverDetail');
@@ -13,7 +13,7 @@ export default function DriverDetail() {
     <Box
       sx={{
         width: '100%',
-        height: '100%',
+        height: 'calc( 100vh - 40px )',
         padding: {xs: '16px', md: '24px'},
         background: 'rgba(248,250,252,0.3)',
         backdropFilter: 'blur(15px)',
@@ -23,7 +23,7 @@ export default function DriverDetail() {
         display: 'flex',
         flexDirection: 'column',
         gap: {xs: '20px', md: '24px', lg: '28px'},
-        overflow: 'auto',
+        overflow: 'scroll',
         '&::-webkit-scrollbar': {
           display: 'none'
         },
@@ -46,8 +46,18 @@ export default function DriverDetail() {
           <Messages />
         </Box>
       </Box>
-      <Box sx={{height: '700px'}}>
-        <EventsCalendar />
+      <Box sx={{height: '100%'}}>
+        <Box
+          sx={{
+            width: '100%',
+            height: {xs: '516px', md: '520px', lg: '550px'},
+            '& > :first-child': {
+              height: {xs: '516px', md: '520px', lg: '550px'}
+            }
+          }}
+        >
+          <BigCalendar />
+        </Box>
       </Box>
     </Box>
   );
