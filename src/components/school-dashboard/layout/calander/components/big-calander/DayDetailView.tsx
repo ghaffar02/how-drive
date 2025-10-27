@@ -81,7 +81,11 @@ export function DayDetailView({
           width={20}
           height={20}
           onClick={onClose}
-          style={{cursor: 'pointer'}}
+          style={{
+            cursor: 'pointer',
+            transform: 'rotate(45deg)',
+            marginRight: '6px'
+          }}
         />
       </Box>
 
