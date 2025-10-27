@@ -77,6 +77,7 @@ export default function DriveMessagesDropD({onClose}: CustomCardProps) {
         >
           {t('messLable2')}
         </Typography>
+        <CustomTextField />
       </Box>
       <Box
         onClick={handleContainerClick}
@@ -101,8 +102,8 @@ export default function DriveMessagesDropD({onClose}: CustomCardProps) {
         >
           {t('messLable3')}
         </Typography>
-
-        <TextField
+        <CustomTextField type="file" />
+        {/* <TextField
           multiline
           rows={4}
           fullWidth
@@ -123,7 +124,7 @@ export default function DriveMessagesDropD({onClose}: CustomCardProps) {
               fontSize: '14px'
             }
           }}
-        />
+        /> */}
       </Box>
 
       <Box
