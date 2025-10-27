@@ -55,10 +55,6 @@
   transition: background 0.3s ease;
 }
 
-.calendarWrapper :global(.rbc-day-bg:hover) {
-  background: rgba(255, 255, 255, 0.8);
-}
-
 /* Base calendar overrides */
 .calendarWrapper :global(.rbc-month-view) {
   border: none;
