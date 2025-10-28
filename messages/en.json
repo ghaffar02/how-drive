@@ -1993,7 +1993,11 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": ["Necessary", "Analytics", "Allow all"]
+          "formFields": [
+            "Necessary",
+            "Analytics",
+            "Allow all"
+          ]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2021,7 +2025,10 @@
             "News",
             "Driving license office registered"
           ],
-          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
+          "formFieldsOff": [
+            "Genereller Newsletter",
+            "Offers and advertising"
+          ]
         }
       }
     },
@@ -2155,6 +2162,12 @@
     }
   },
   "SchoolDashboard": {
+    "studentRightSideDD": {
+      "heading": "Please confirm!",
+      "des": "The driving student would like to be linked to your driving school. The request must first be confirmed. We recommend confirming the request after signing the driving school contract. After confirmation, the driving student will be listed as one of your students. In case of rejection, the request will be deleted and the student notified.",
+      "btn1": "Confirm",
+      "btn2": "Reject"
+    },
     "Settings": {
       "leftSide": {
         "title": "Settings",
@@ -2295,7 +2308,11 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": ["Necessary", "Analytics", "Allow all"]
+          "formFields": [
+            "Necessary",
+            "Analytics",
+            "Allow all"
+          ]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2323,12 +2340,18 @@
             "News",
             "Driving license office registered"
           ],
-          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
+          "formFieldsOff": [
+            "Genereller Newsletter",
+            "Offers and advertising"
+          ]
         }
       }
     },
     "leftSideTab": {
-      "textTab": ["Active", "Inactive"],
+      "textTab": [
+        "Active",
+        "Inactive"
+      ],
       "search": "Search"
     },
     "studentHeader": {

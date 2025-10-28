@@ -1981,7 +1981,11 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
+          "formFields": [
+            "Notwendige",
+            "Analytics",
+            "Alle zulassen"
+          ]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2020,7 +2024,10 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
+          "formFieldsOff": [
+            "News und Update",
+            "Angebote und Werbung"
+          ]
         }
       }
     },
@@ -2154,6 +2161,12 @@
     }
   },
   "SchoolDashboard": {
+    "studentRightSideDD": {
+      "heading": "Bitte bestätigen!",
+      "des": "Der/die Fahrschüler*in möchte mit deiner Fahrschule verknüpft werden. Die Anfrage muss zunächst bestätigt werden. Wir empfehlen, die Anfrage nach Unterzeichnung des Fahrschulvertrags zu bestätigen. Nach der Bestätigung wird er/sie als einer deiner Fahrschüler aufgelistet. Im Falle einer Ablehnung wird die Anfrage gelöscht und der Fahrschüler benachrichtigt.",
+      "btn1": "Bestätigen",
+      "btn2": "Ablehnen"
+    },
     "Settings": {
       "leftSide": {
         "title": "Einstellungen",
@@ -2282,7 +2295,11 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
+          "formFields": [
+            "Notwendige",
+            "Analytics",
+            "Alle zulassen"
+          ]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2321,12 +2338,18 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
+          "formFieldsOff": [
+            "News und Update",
+            "Angebote und Werbung"
+          ]
         }
       }
     },
     "leftSideTab": {
-      "textTab": ["Aktiv", "Inaktiv"],
+      "textTab": [
+        "Aktiv",
+        "Inaktiv"
+      ],
       "search": "Suchen"
     },
     "studentHeader": {

@@ -12,11 +12,7 @@ export default function MainDropdown({onClose}: CustomCardProps) {
     <Box
       onClick={onClose}
       sx={{
-        position: 'relative',
-        width: '100%',
-
-        padding: '16px',
-        zIndex: 23333
+        width: '100%'
       }}
     >
       <Typography

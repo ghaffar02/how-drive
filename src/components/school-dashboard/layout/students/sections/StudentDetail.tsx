@@ -1,5 +1,5 @@
 import {Box} from '@mui/material';
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Header from '../components/Header';
 import ExamInfo from '../components/ExamInfo';
 import Process from '../components/Process';
@@ -7,13 +7,39 @@ import LessonCard from '../components/LessonCard';
 import Messages from '../components/Message';
 import Appointment from '../components/Appointment';
 import {useTranslations} from 'next-intl';
+import MainDropdown from '../components/MainDropdown';
+import {AnimatePresence, motion} from 'framer-motion';
 
 export default function StudentDetail() {
   const t = useTranslations('SchoolDashboard.MessageLesson');
+
+  const [openDropdown, setOpenDropdown] = useState(true);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const iconRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
+
+      setOpenDropdown(false);
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
   return (
     <Box
       sx={{
         width: '100%',
+        position: 'relative',
         height: {xs: '100%', md: '100%'},
         padding: {xs: '16px', md: '24px'},
         background: 'rgba(248,250,252,0.3)',
@@ -79,6 +105,78 @@ export default function StudentDetail() {
         }}
       >
         <Messages />
+      </Box>
+      <Box
+        sx={{
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        }}
+      >
+        <AnimatePresence>
+          {openDropdown && (
+            <Box
+              component={motion.div}
+              initial={{
+                opacity: 0,
+                scale: 0.5,
+                y: 70,
+                x: 20,
+                originX: 1,
+                originY: 0
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+                y: 0,
+                x: 0,
+                originX: 1,
+                originY: 0
+              }}
+              exit={{
+                opacity: 0,
+                scale: 0.5,
+                // dur: 1,
+                y: 60,
+                x: 20,
+                originX: 1,
+                originY: 0
+              }}
+              transition={{
+                duration: 0.5,
+                type: 'spring',
+                stiffness: 300,
+                damping: 25
+              }}
+              sx={{
+                position: 'absolute',
+                p: {xs: '48px 24px'},
+                right: '5%',
+                top: 150,
+                width: '90%',
+                margin: 'auto',
+
+                zIndex: 178879,
+                overflow: 'visible',
+                border: '1px solid #ffffffff',
+                backgroundColor: '#fff',
+                // bgcolor: 'red',
+                backdropFilter: 'blur(10px)',
+                boxShadow: `
+      0px 0px 0px 2px rgba(0, 0, 0, 0.02),
+      0px 2px 9px 0px rgba(0, 0, 0, 0.09),
+      0px 10px 42px 0px rgba(0, 0, 0, 0.4)
+       
+    `,
+                borderRadius: '18px',
+                transformOrigin: ' bottom'
+              }}
+            >
+              <MainDropdown />
+            </Box>
+          )}
+        </AnimatePresence>
       </Box>
     </Box>
   );
