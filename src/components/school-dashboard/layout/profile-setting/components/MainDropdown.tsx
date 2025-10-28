@@ -10,7 +10,6 @@ export default function MainDropdown({onClose}: CustomCardProps) {
   const t = useTranslations('SchoolDashboard.Settings.mainDropdown');
   return (
     <Box
-      onClick={onClose}
       sx={{
         width: '100%'
       }}
@@ -41,7 +40,9 @@ export default function MainDropdown({onClose}: CustomCardProps) {
       </Typography>
 
       <Typography
+        onClick={onClose}
         sx={{
+          cursor: 'pointer',
           ...localFont.inter16,
           fontWeight: 500,
           fontFamily: '"Inter", sans-serif !important',
