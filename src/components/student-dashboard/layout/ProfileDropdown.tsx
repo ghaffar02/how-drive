@@ -1,5 +1,5 @@
 'use client';
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {Box, Typography, Paper, Popper, Grow, Divider} from '@mui/material';
 import {SxProps, Theme} from '@mui/material';
 import Image, {StaticImageData} from 'next/image';
@@ -51,6 +51,28 @@ export default function ProfileDropdown({
 }: ProfileDropdownProps) {
   const initials = getInitials(fullName);
   const [hoveredItemId, setHoveredItemId] = useState<string | null>(null);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  // ✅ Close dropdown on outside click
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      const target = e.target as Node;
+      if (
+        open &&
+        anchorRef.current &&
+        !anchorRef.current.contains(target) &&
+        dropdownRef.current &&
+        !dropdownRef.current.contains(target)
+      ) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [open, setOpen, anchorRef]);
 
   const textStyle = {
     color: '#000000',
@@ -126,6 +148,7 @@ export default function ProfileDropdown({
         {({TransitionProps}) => (
           <Grow {...TransitionProps} style={{transformOrigin: 'bottom center'}}>
             <Paper
+              ref={dropdownRef}
               elevation={8}
               sx={{
                 borderRadius: '12px',
