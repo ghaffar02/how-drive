@@ -13,7 +13,7 @@ import GradientDivider from '../GradientDivider';
 import CustomButton from '@/components/school-dashboard/CustomButton';
 
 export default function Notification() {
-  const t = useTranslations('Dashboard.Settings.RightSide.Notifications');
+  const t = useTranslations('SchoolDashboard.Settings.RightSide.Notifications');
   const formFieldsOn = t.raw('formFieldsOn');
   const formFieldsOff = t.raw('formFieldsOff');
   return (
