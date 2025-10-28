@@ -5,7 +5,7 @@ import TabStudentLayout from './DesktopTabs';
 import TabStudentLayoutMobile from './MobileTabs';
 import Home from './home/Home';
 import localFont from '@/utils/themes';
-import ProfileDropdown from './ProfileDropdown';
+import ProfileDropdown from '../../student-dashboard/layout/ProfileDropdown';
 // ProfileDropdown relative icons
 import settingsIcon from '@/assets/svgs/dashboard-student/setting.svg';
 import supportIcon from '@/assets/svgs/dashboard-student/email.svg';

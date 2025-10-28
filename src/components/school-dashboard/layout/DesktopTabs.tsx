@@ -27,7 +27,7 @@ import email from '@/assets/svgs/dashboard-student/email.svg';
 import login from '@/assets/svgs/dashboard-student/login.svg';
 
 // your independent dropdown
-import ProfileDropdown from './ProfileDropdown';
+import ProfileDropdown from '../../student-dashboard/layout/ProfileDropdown';
 type Props = {
   activeKey: string;
   setActiveKey: React.Dispatch<React.SetStateAction<string>>;

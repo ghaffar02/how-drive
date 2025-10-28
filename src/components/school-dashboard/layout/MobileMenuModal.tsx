@@ -4,7 +4,7 @@ import {Box} from '@mui/material';
 import Image from 'next/image';
 import cross from '@/assets/svgs/dashboard-student/cross.svg';
 import logo from '@/assets/pngs/logo.png';
-import ProfileDropdown from './ProfileDropdown';
+import ProfileDropdown from '../../student-dashboard/layout/ProfileDropdown';
 // dropdown icons
 import setting from '@/assets/svgs/dashboard-student/setting.svg';
 import email from '@/assets/svgs/dashboard-student/email.svg';
