@@ -6,6 +6,7 @@ import CustomButton from '@/components/student-dashboard/CustomButton';
 // import CustomTextField from '@/components/school-dashboard/InputField';
 import MiniFramerCalendar from '../../calander/components/MiniFramerCalendar';
 import arrowIcon from '@/assets/svgs/dashboard-student/arrow.svg';
+import {useTranslations} from 'next-intl';
 
 import CustomTextField from '@/components/school-dashboard/InputField';
 import Image from 'next/image';
@@ -19,11 +20,12 @@ export default function TheoryexamDropDown({
 
   text
 }: CustomCardProps) {
+  const t = useTranslations('SchoolDashboard.header');
   return (
     <Box
       sx={{
         width: '100%',
-        maxWidth: {xs: '300px'},
+        // maxWidth: {xs: '300px'},
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
@@ -79,7 +81,7 @@ export default function TheoryexamDropDown({
             // mt: {xs: '8px', lg: '0px'}
           }}
         >
-          Day
+          {t('lable1')}
         </Typography>
 
         <MiniFramerCalendar />
@@ -107,7 +109,7 @@ export default function TheoryexamDropDown({
             // mt: {xs: '8px', lg: '0px'}
           }}
         >
-          time
+          {t('lable2')}
         </Typography>
         <Box
           sx={{
@@ -153,37 +155,41 @@ export default function TheoryexamDropDown({
         sx={{
           width: {xs: '100%'},
 
+          textWrap: 'nowrap',
+
           p: '8px 0px',
           display: 'flex',
-          gap: '16px',
+          gap: '4px',
           alignItems: 'center',
-          justifyContent: 'center'
+          justifyContent: 'space-between'
         }}
       >
         <CustomButton
           onClick={onClose}
-          label="Not registered"
+          label={t('btn1')}
           bgColor="rgb(220, 38, 38)"
           hoverColor="#991919"
           hoverTextcolor="#fff"
           imgSrc={cross}
           sx={{
             gap: '7px',
-            maxWidth: '182px',
+            maxWidth: '232px',
+            // textWrap: 'nowrap',
+            // fontSize: '12px',
             width: '100%',
-            justifyContent: 'start'
+            justifyContent: 'center'
           }}
         />
         <CustomButton
-          label="seve"
+          label={t('btn2')}
           bgColor="#0D9488"
           hoverColor="#0C5C72"
           imgSrc={tick}
           sx={{
-            gap: '8px',
-            maxWidth: '99px',
+            gap: '7px',
+            maxWidth: '106px',
             width: '100%',
-            justifyContent: 'start'
+            justifyContent: 'center'
           }}
           onClick={onClose}
         />

@@ -2410,6 +2410,10 @@
       }
     },
     "header": {
+      "btn1": "Not registered",
+      "btn2": "Save",
+      "lable1": "Day",
+      "lable2": "Time",
       "data": [
         {
           "title1": "Driving license office",

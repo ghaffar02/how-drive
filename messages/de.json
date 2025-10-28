@@ -2367,24 +2367,28 @@
       "btn": "Einladung senden"
     },
     "header": {
+      "btn1": "Nicht angemeldet",
+      "btn2": "Speichern",
+      "lable1": "Tag",
+      "lable2": "Uhrzeit",
       "data": [
         {
           "title1": "Führerscheinstelle",
           "title2": "Nicht angemeldet",
           "title3": "Angemeldet",
-          "tooltip": "Is the student registered by the responsible driving license office?"
+          "tooltip": "Ist der/die Fahrschuler:in bei der zuständigen Führerscheinstelle angemeldet?"
         },
         {
           "title1": "Theorieprüfung",
           "title2": "Nicht angemeldet",
           "title3": "25.07.2025",
-          "tooltip": "Is the theory exam already registered? Select the day and time for it. These will be displayed to the student."
+          "tooltip": "Ist die Theorieprüfung schon angemeldet? Wähle den Tag und die Uhrzeit. Diese werden dem/der Schuler:in angezeit."
         },
         {
           "title1": "Praktische Prüfung",
           "title2": "Nicht angemeldet",
           "title3": "25.07.2025",
-          "tooltip": "Is the practical exam already registered? Select the day and time for it. These will be displayed to the student."
+          "tooltip": "Ist die praktische Prüfung schon angemeldet? Wähle den Tag und die Uhrzeit. Diese werden dem/der Schuler:in angezeit."
         }
       ]
     },

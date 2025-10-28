@@ -273,10 +273,9 @@ function Card({
                     position: 'absolute',
                     zIndex: 9999,
 
-                    bgcolor: 'red',
                     left: {xs: 40, sm: 100},
                     mt: '10px',
-                    width: {xs: '300px'},
+                    width: {xs: '304px'},
                     overflow: 'visible',
                     border: '1px solid rgb(255, 255, 255)',
                     backgroundColor: '#f0f0fa99',
