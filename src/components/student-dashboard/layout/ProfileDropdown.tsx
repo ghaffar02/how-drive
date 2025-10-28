@@ -73,13 +73,13 @@ export default function ProfileDropdown({
           cursor: 'pointer',
           height: '40px',
           width: '40px',
-          backgroundColor: '#FFFFFF',
+          backgroundColor: '#DDE0F0',
           borderRadius: '50%',
           margin: 'auto',
-          '&:hover': {backgroundColor: '#DDE0F0'},
+          '&:hover': {backgroundColor: '#CED5F5'},
           '&:active': {backgroundColor: '#B9C2EB'},
           transition: 'all 0.1s ease-in',
-          overflow: 'hidden'
+          boxShadow: '0px 0px 2px 0px #D4D4D8'
         }}
       >
         {profileIcon ? (
