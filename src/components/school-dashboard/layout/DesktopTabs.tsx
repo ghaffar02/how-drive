@@ -2,7 +2,7 @@
 import React from 'react';
 import {Box, Divider, Typography} from '@mui/material';
 import Image from 'next/image';
-import logo from '@/assets/pngs/logo.png';
+import logo from '@/assets/pngs/logo.svg';
 
 // tab icons
 import home_black from '@/assets/svgs/dashboard-student/home_black.svg';
