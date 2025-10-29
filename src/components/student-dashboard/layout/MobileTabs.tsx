@@ -88,6 +88,7 @@ export default function MobileTabs({
     ...item,
     label: titles[index]?.label || item.label
   }));
+
   return (
     <>
       <Box
