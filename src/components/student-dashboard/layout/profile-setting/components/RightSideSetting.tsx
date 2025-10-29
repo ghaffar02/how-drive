@@ -33,11 +33,8 @@ export default function RightSide({
         width: '100%',
         background: '#f8fafc4d',
         border: '2px solid #FFFFFF',
-        boxShadow: `
-    0px 0px 0px 1px #FFFFFF,
-    0px 1px 0px 0px #FAFAFA,
-    0px 1px 1px 0px #00000025,
-  `,
+        boxShadow:
+          'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
         // boxShadow:
         //   '0px 0px 0px 1px #ffffff), 0px 1px 0px 0px rgba(0, 0, 0, 0.25),  0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
         overflow: 'hidden',

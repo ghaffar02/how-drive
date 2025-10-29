@@ -16,6 +16,12 @@ import Support from './support/Support';
 import Students from './students/Students';
 import Drivers from './drivers/Drivers';
 import Message from './messages/Message';
+import {useTranslations} from 'next-intl';
+const data = [
+  {id: '5', label: 'Einstellungen', menuIcon: settingsIcon},
+  {id: '6', label: 'Support', menuIcon: supportIcon},
+  {id: '8', label: 'Abmelden', menuIcon: logoutIcon}
+];
 
 export default function StudentDashboard() {
   const [activeKey, setActiveKey] = React.useState<string>('1');
@@ -23,6 +29,7 @@ export default function StudentDashboard() {
   // ProfileDropdown relative states
   const [open, setOpen] = useState(false);
   const anchorRef = useRef<HTMLDivElement | null>(null);
+
   // logout function here
   useEffect(() => {
     if (activeKey === '8') {
@@ -153,6 +160,13 @@ function MobileHeader({
   activeKey,
   setActiveKey
 }: MobileHeaderProps) {
+  const t = useTranslations('Dashboard.DesktopTabs');
+  const ADdata = t.raw('data2');
+
+  const profileData = data.map((item, index) => ({
+    ...item,
+    label: ADdata[index]?.label || item.label
+  }));
   return (
     <>
       {/* the profile tab for mobile  */}
@@ -192,11 +206,7 @@ function MobileHeader({
           <ProfileDropdown
             anchorRef={anchorRef}
             fullName="Daniel Mustermann"
-            items={[
-              {id: '5', label: 'Einstellungen', menuIcon: settingsIcon},
-              {id: '6', label: 'Support', menuIcon: supportIcon},
-              {id: '8', label: 'Abmelden', menuIcon: logoutIcon}
-            ]}
+            items={profileData}
             open={open}
             setOpen={setOpen}
             positionSx={{
