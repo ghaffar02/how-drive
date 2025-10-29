@@ -14,6 +14,7 @@ import backIcon from '@/assets/svgs/dashboard-student/backIcon.svg';
 import deleteIcon2 from '@/assets/svgs/dashboard-student/deleteIcon2.svg';
 import copyIcon from '@/assets/svgs/dashboard-student/copyIcon.svg';
 import CustomCard from './DropDown';
+import {useTranslations} from 'next-intl';
 import {AnimatePresence, motion} from 'framer-motion';
 
 const messages = [
@@ -119,27 +120,28 @@ const messages = [
   }
 ];
 
-const options = [
-  {
-    icon: backIcon,
-    title: 'Antworten'
-  },
-  {
-    icon: copyIcon,
-    title: 'Kopien'
-  },
-  {
-    icon: deleteIcon2,
-    title: 'Löschen'
-  }
-];
-
 export default function Inbox() {
+  const t = useTranslations('Dashboard.Messages.options');
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const open = Boolean(anchorEl);
   const iconRef = useRef<HTMLDivElement | null>(null);
+
+  const options = [
+    {
+      icon: backIcon,
+      title: t('reply')
+    },
+    {
+      icon: copyIcon,
+      title: t('copy')
+    },
+    {
+      icon: deleteIcon2,
+      title: t('delete')
+    }
+  ];
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -165,12 +167,32 @@ export default function Inbox() {
     setAnchorEl(null);
   };
   const date = new Date();
-  const currentDate = date.toLocaleString('de-DE', {
-    day: '2-digit',
-    month: 'long',
-    hour: '2-digit',
-    minute: '2-digit'
-  });
+  const currentDate = date
+    .toLocaleString('de-DE', {
+      day: '2-digit',
+      month: 'long',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: false
+    })
+    .replace('um', '');
+
+  // File upload function, right now just opening selection
+  const handleFileClick = () => {
+    const input = document.getElementById('hiddenFileInput');
+    if (input) {
+      input.click();
+    }
+  };
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      console.log('Selected file:', file.name);
+      // you can also store it in state or upload it directly here
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -180,7 +202,7 @@ export default function Inbox() {
         flexDirection: 'column',
         gap: '16px',
         background: 'rgba(248,250,252,0.3)',
-        border: '1px solid #fff',
+        border: '2px solid #fff',
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'}
         // marginBottom: {xs: '65px', md: '0px'}
       }}
@@ -189,7 +211,7 @@ export default function Inbox() {
         sx={{
           width: '100%',
           padding: {xs: '16px', md: '24px'},
-          border: '1px solid #fff',
+          border: '2px solid #fff',
           borderRadius: '18px',
           background: '#FAF8FE',
           display: 'flex',
@@ -210,7 +232,13 @@ export default function Inbox() {
         >
           <Image src={car} alt="car" height={24} width={24} />
         </Box>
-        <Box>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between'
+          }}
+        >
           <Typography
             sx={{
               ...localFont.inter18,
@@ -237,7 +265,7 @@ export default function Inbox() {
           sx={{
             display: 'flex',
             flexDirection: 'column',
-            gap: '18px',
+            gap: '14px',
             marginLeft: 'auto'
           }}
         >
@@ -305,7 +333,6 @@ export default function Inbox() {
                   border: '1px solid rgb(255, 255, 255)',
                   backgroundColor: '#f0f0fa99',
                   backdropFilter: 'blur(8px)',
-                  // borderRadius: "12px",
                   boxShadow: `
     0px 0px 0px 1px rgb(255, 255, 255),
     0px 1px 0px 0px rgba(0, 0, 0, 0.25),
@@ -315,10 +342,7 @@ export default function Inbox() {
                   transformOrigin: 'top right'
                 }}
               >
-                <CustomCard
-                  text="jhuy wmqnjq qmwjhiwu  wmfbw"
-                  onClose={() => setOpenDropdown(false)}
-                />
+                <CustomCard onClose={() => setOpenDropdown(false)} />
               </Box>
             )}
             {/* <AnimatePresence/> */}
@@ -403,10 +427,10 @@ export default function Inbox() {
                         backgroundColor: '#f0f0fa99',
                         backdropFilter: 'blur(8px)',
                         boxShadow: `
-          0px 0px 0px 1px rgb(255, 255, 255),
-          0px 1px 0px 0px rgba(0, 0, 0, 0.25),
-          0px 1px 1px 0px rgba(0, 0, 0, 0.25)
-        `,
+    0px 0px 0px 1px rgb(255, 255, 255),
+    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+  `,
                         '& .MuiMenuItem-root': {
                           p: 0,
                           borderRadius: '12px'
@@ -497,6 +521,7 @@ export default function Inbox() {
             gap: '10px',
             alignItems: 'center',
             padding: '8px 16px',
+            border: '1px solid #fff',
             borderRadius: '18px',
             background: '#ffffffbf'
           }}
@@ -519,6 +544,7 @@ export default function Inbox() {
             }}
           />
           <Box
+            onClick={handleFileClick}
             sx={{
               height: '24px',
               width: '24px',
@@ -528,17 +554,27 @@ export default function Inbox() {
           >
             <Image src={attachIcon} alt="attachIcon" height={24} width={24} />
           </Box>
+          {/* Input for the file */}
+          {/* <input
+            type="file"
+            id="hiddenFileInput"
+            style={{display: 'none'}}
+            onChange={handleFileChange}
+          /> */}
         </Box>
         <Box
           sx={{
             height: '48px',
-            width: '48px',
+            maxWidth: '48px',
+            minWidth: '48px',
+            width: '100%',
             background: 'rgba(255,255,255,0.75)',
             borderRadius: '18px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            border: '2px solid #fff'
           }}
         >
           <Image src={sendIcon} alt="sendIcon" height={24} width={24} />

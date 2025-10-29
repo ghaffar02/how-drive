@@ -7,7 +7,7 @@ import crossIcon from '@/assets/svgs/dashboard-student/crossicon.svg';
 
 import car from '@/assets/svgs/dashboard-student/home/car.svg';
 import fabian from '@/assets/svgs/dashboard-student/home/fabian.svg';
-import logo from '@/assets/svgs/dashboard-student/home/logo.svg';
+import logo from '@/assets/pngs/logo.avif';
 
 const emails = [
   {
@@ -115,6 +115,7 @@ export default function Notifications() {
       ) {
         return;
       }
+
       if (iconRef.current && iconRef.current.contains(event.target as Node)) {
         return;
       }
@@ -128,13 +129,13 @@ export default function Notifications() {
   return (
     <Box
       sx={{
-        minWidth: '300px',
-        maxWidth: '300px',
+        minWidth: {md: '230px', lg: '300px'},
+        maxWidth: {md: '230px', lg: '300px'},
         width: '100%',
         height: '100%',
         background: 'rgba(248,250,252,0.3)',
         padding: '24px 12px',
-        border: '1px solid #fff',
+        border: '2px solid #fff',
         display: {xs: 'none', md: 'flex'},
         flexDirection: 'column',
         gap: '8px'
@@ -186,6 +187,7 @@ export default function Notifications() {
           />
         </Box>
         <Box
+          onClick={() => setOpenDropdown((prev) => !prev)}
           ref={iconRef}
           sx={{
             height: '36px',
@@ -194,7 +196,14 @@ export default function Notifications() {
             padding: '8px',
             borderRadius: '50%',
             position: 'relative',
-            overflow: 'visible !important'
+            overflow: 'visible !important',
+            cursor: 'pointer',
+            '&:hover': {
+              background: 'rgba(228,228,231,0.75)'
+            },
+            '&:active': {
+              background: 'rgba(212,212,216,0.75)'
+            }
             // bgcolor: '#d80909ff'
           }}
         >
@@ -204,13 +213,13 @@ export default function Notifications() {
             height={20}
             width={20}
             style={{position: 'relative'}}
-            onClick={() => setOpenDropdown((prev) => !prev)}
           />
           <AnimatePresence>
             {openDropdown && (
               <Box
                 ref={dropdownRef}
                 component={motion.div}
+                onClick={(e) => e.stopPropagation()}
                 initial={{
                   opacity: 0,
                   scale: 0.5,
@@ -279,10 +288,11 @@ export default function Notifications() {
           flexDirection: 'column',
           gap: '10px',
           alignItems: 'center',
-
           // maxHeight: {xs: '188px', xl: '100%'},
-          overflow: 'auto',
-          p: '4px 2px',
+          overflowX: 'visible',
+          overflowY: 'auto',
+          py: '1px',
+          // p: '4px 2px',
 
           '&::-webkit-scrollbar': {
             display: 'none'
@@ -300,22 +310,24 @@ export default function Notifications() {
               onClick={() => setSelectedIndex(index)}
               key={index}
               sx={{
-                width: '100%',
+                width: '99%',
                 // maxWidth: '309px',
-                background: '#fff',
+                background:
+                  selectedIndex === index ? 'rgba(255,255,255,1)' : '#ffffffb3',
                 padding: '8px',
                 borderRadius: '8px',
                 display: 'flex',
                 flexDirection: 'row',
                 gap: '10px',
                 cursor: 'pointer',
-
+                overflowX: 'visible',
                 boxShadow:
                   selectedIndex === index
                     ? '0px 0px 2px 0px  #3058ffff'
-                    : ' 0px 0px 2px 0px #d4d4d8ff',
+                    : ' 0px 0px 2px 0px rgb(212,212,216)',
                 '&:hover': {
-                  boxShadow: '0px 0px 2px 0px  #3058ffff'
+                  boxShadow: '0px 0px 2px 0px  #3058ffff',
+                  background: 'rgba(255,255,255,0.85)'
                 }
 
                 //
@@ -340,7 +352,14 @@ export default function Notifications() {
                     justifyContent: 'center'
                   }}
                 >
-                  <Box sx={{width: '100%', maxWidth: '30px', height: '30px'}}>
+                  <Box
+                    sx={{
+                      width: '100%',
+                      minWidth: '30px',
+                      maxWidth: '30px',
+                      height: '30px'
+                    }}
+                  >
                     <Image
                       src={item.icon}
                       alt="car"
@@ -354,10 +373,9 @@ export default function Notifications() {
                   </Box>
                 </Box>
               </Box>
-              <Box width="100%">
+              <Box sx={{width: '100%', overflow: 'hidden'}}>
                 <Box
                   sx={{
-                    // bgcolor: '#888',
                     width: '100%',
                     display: 'flex',
                     gap: '8px',
@@ -394,7 +412,10 @@ export default function Notifications() {
                     fontSize: {xs: '9.6px', md: '11px', lg: '13px'},
                     color: '#718096',
                     fontFamily: '"Inter", sans-serif !important',
-                    fontWeight: '400'
+                    fontWeight: '400',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis'
                   }}
                 >
                   {item.subject}

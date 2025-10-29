@@ -1,5 +1,5 @@
 import {Box, MenuItem, TextField, Typography} from '@mui/material';
-import {ReactNode, useState} from 'react';
+import {useState} from 'react';
 
 import localFont from '@/utils/themes';
 import tick from '@/assets/svgs/dashboard-student/send.svg';
