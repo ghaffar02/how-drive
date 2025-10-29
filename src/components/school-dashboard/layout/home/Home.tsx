@@ -14,7 +14,7 @@ import Drivers from './components/Drivers';
 import {DayDetailView} from '../calander/components/big-calander/DayDetailView';
 
 export default function Home() {
-  // const t = useTranslations('Dashboard.home.MessageLesson');
+  const t = useTranslations('SchoolDashboard.Home');
   const activeStudents = 164;
   const inactiveStudents = 1300;
   const totalStudents = activeStudents + inactiveStudents;
@@ -54,7 +54,7 @@ export default function Home() {
         >
           <ProfileCard
             imgSrc={ActiveIcon}
-            title="Active students"
+            title={t('profileCard.active')}
             students={activeStudents}
           />
         </Box>
@@ -66,7 +66,7 @@ export default function Home() {
         >
           <ProfileCard
             imgSrc={InactiveIcon}
-            title="Inactive students"
+            title={t('profileCard.inactive')}
             students={inactiveStudents}
           />
         </Box>
@@ -77,7 +77,7 @@ export default function Home() {
           }}
         >
           <ProfileCard
-            title="All students"
+            title={t('profileCard.all')}
             students={totalStudents}
             progressBar={true}
             activePercentage={percentageValueActive}
@@ -97,7 +97,7 @@ export default function Home() {
             gridRow: {xs: '5 / span 1', md: '4 / span 2', lg: '4 / span 2'}
           }}
         >
-          <Drivers title="Trainers" />
+          <Drivers title={t('trainers')} />
         </Box>
       </Box>
     </>

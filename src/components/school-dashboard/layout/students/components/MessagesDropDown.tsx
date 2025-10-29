@@ -126,8 +126,9 @@ export default function MessagesDropDown({onClose}: CustomCardProps) {
         </Typography>
 
         <TextField
-          multiline
-          rows={4}
+          type="file"
+          // multiline
+          // rows={4}
           fullWidth
           variant="outlined"
           sx={{
@@ -136,14 +137,15 @@ export default function MessagesDropDown({onClose}: CustomCardProps) {
               background: '#ffffff',
               // boxShadow:
               //   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
-              height: '100%',
+              height: '40px',
               fontSize: '14px',
-              padding: '12px'
+              padding: '8px 12px'
             },
 
             '& .MuiInputBase-input': {
               padding: 0,
-              fontSize: '14px'
+              fontSize: '14px',
+              height: '22px'
             }
           }}
         />

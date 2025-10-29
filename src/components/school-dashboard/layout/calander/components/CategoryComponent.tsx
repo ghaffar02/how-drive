@@ -15,6 +15,8 @@ type CardProps = {
   options?: {label: string; value: string}[];
   title2?: string;
   modalPlace?: string;
+  cancel: string;
+  save: string;
 };
 
 export default function CategoryComponent({
@@ -23,7 +25,9 @@ export default function CategoryComponent({
   place,
   options,
   title2,
-  modalPlace
+  modalPlace,
+  cancel,
+  save
 }: CardProps) {
   const [value, setValue] = useState('');
   const [openModal, setOpenModal] = useState(false);
@@ -66,7 +70,14 @@ export default function CategoryComponent({
             borderRadius: '999px'
           }}
         />
-        <Typography sx={{...localFont.inter14}}>{title}</Typography>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontFamily: '"Inter", sans-serif !important'
+          }}
+        >
+          {title}
+        </Typography>
       </Box>
 
       {/* Select + Icon */}
@@ -165,25 +176,35 @@ export default function CategoryComponent({
               }}
             >
               <Box>
-                <Typography sx={{...localFont.inter14, mb: '6px'}}>
+                <Typography
+                  sx={{
+                    ...localFont.inter14,
+                    fontFamily: '"Inter", sans-serif !important',
+                    mb: '6px'
+                  }}
+                >
                   {title2}
                 </Typography>
                 <CustomTextField type="text" labal={modalPlace} />
               </Box>
 
               <Box
-                sx={{display: 'flex', justifyContent: 'center', gap: '16px'}}
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  gap: {md: '12px', lg: '16px'}
+                }}
               >
                 <Box onClick={() => setOpenModal(false)}>
                   <CustomButton
-                    label="Cancel"
+                    label={cancel}
                     imgSrc={cross}
                     sx={{
                       display: 'flex',
                       justifyContent: 'start',
                       gap: '8px',
                       background: '#dc2626',
-                      width: '110px',
+                      width: '120px',
                       '&:hover': {
                         background: 'rgb(153,25,25)'
                       },
@@ -195,14 +216,14 @@ export default function CategoryComponent({
                 </Box>
                 <Box onClick={() => setOpenModal(false)}>
                   <CustomButton
-                    label="Save"
+                    label={save}
                     imgSrc={send}
                     sx={{
                       display: 'flex',
                       justifyContent: 'start',
                       gap: '8px',
                       background: '#0d9488',
-                      width: '110px',
+                      width: '120px',
                       '&:hover': {
                         background: 'rgb(12,93,86)'
                       },
