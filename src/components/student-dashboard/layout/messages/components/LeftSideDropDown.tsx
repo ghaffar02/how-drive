@@ -1,5 +1,5 @@
 import {Box, MenuItem, TextField, Typography} from '@mui/material';
-import {ReactNode, useState} from 'react';
+import {useState} from 'react';
 
 import localFont from '@/utils/themes';
 import tick from '@/assets/svgs/dashboard-student/send.svg';
@@ -9,20 +9,14 @@ import CustomTextField from '@/components/student-dashboard/InputField';
 import {useTranslations} from 'next-intl';
 
 interface CustomCardProps {
-  children?: ReactNode;
-  padding?: number | string;
-
-  bgColor?: string;
-  text?: string;
   onClose?: () => void;
 }
 
-export default function LeftSideDropDown({
-  onClose,
-  padding = '16px'
-}: CustomCardProps) {
+export default function LeftSideDropDown({onClose}: CustomCardProps) {
   const [selectedCategory, setSelectedCategory] = useState('');
   const t = useTranslations('Dashboard.Messages.formDropDown');
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
   const handleContainerClick = (event: React.MouseEvent) => {
     // Yeh prevent karega ke andar ke elements par click karne se onClose trigger na ho
     event.stopPropagation();
@@ -38,7 +32,7 @@ export default function LeftSideDropDown({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        padding,
+        padding: '16px',
 
         gap: '24px'
         // borderRadius: radius
@@ -261,44 +255,50 @@ export default function LeftSideDropDown({
           {t('label5')}
         </Typography>
 
-        <TextField
-          multiline
-          rows={4}
-          fullWidth
-          variant="outlined"
+        <Box
           sx={{
-            '& .MuiOutlinedInput-root': {
-              borderRadius: '8px',
-              background: '#ffffff',
-              boxShadow:
-                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
-              height: '100%',
-              fontSize: '14px',
-              padding: '12px',
-
-              // Default border (none or light)
-              '& fieldset': {
-                borderColor: '#e2e8f00a'
-              },
-
-              // On hover
-              '&:hover fieldset': {
-                borderColor: '#e2e8f00a'
-              },
-
-              // ✅ On focus
-              '&.Mui-focused fieldset': {
-                borderColor: '#3850ff',
-                borderWidth: '1.5px'
-              }
-            },
-
-            '& .MuiInputBase-input': {
-              padding: 0,
-              fontSize: '14px'
+            maxWidth: {lg: '403px', xs: '100%'},
+            width: '100%',
+            border: 'none',
+            borderRadius: '10px',
+            fontSize: '14px',
+            padding: '23px ',
+            textAlign: 'start',
+            background: '#ffffff',
+            cursor: 'pointer',
+            '&:hover': {
+              border: '1px solid black',
+              padding: '22px '
             }
           }}
-        />
+          onClick={() => document.getElementById('fileInput')?.click()}
+        >
+          <input
+            type="file"
+            id="fileInput"
+            style={{display: 'none'}}
+            onChange={(e) => {
+              if (e.target.files && e.target.files[0]) {
+                setSelectedFile(e.target.files[0]);
+              }
+            }}
+          />
+
+          {selectedFile && (
+            <Box sx={{mt: 2}}>
+              <img
+                src={URL.createObjectURL(selectedFile)}
+                alt="Preview"
+                style={{
+                  maxWidth: '100px',
+                  maxHeight: '100px',
+                  borderRadius: '8px',
+                  objectFit: 'contain'
+                }}
+              />
+            </Box>
+          )}
+        </Box>
       </Box>
 
       <Box
