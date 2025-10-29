@@ -14,6 +14,7 @@ import backIcon from '@/assets/svgs/dashboard-student/backIcon.svg';
 import deleteIcon2 from '@/assets/svgs/dashboard-student/deleteIcon2.svg';
 import copyIcon from '@/assets/svgs/dashboard-student/copyIcon.svg';
 import CustomCard from './DropDown';
+import {useTranslations} from 'next-intl';
 import {AnimatePresence, motion} from 'framer-motion';
 
 const messages = [
@@ -119,27 +120,28 @@ const messages = [
   }
 ];
 
-const options = [
-  {
-    icon: backIcon,
-    title: 'Antworten'
-  },
-  {
-    icon: copyIcon,
-    title: 'Kopien'
-  },
-  {
-    icon: deleteIcon2,
-    title: 'Löschen'
-  }
-];
-
 export default function Inbox() {
+  const t = useTranslations('Dashboard.Messages.options');
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const open = Boolean(anchorEl);
   const iconRef = useRef<HTMLDivElement | null>(null);
+
+  const options = [
+    {
+      icon: backIcon,
+      title: t('reply')
+    },
+    {
+      icon: copyIcon,
+      title: t('copy')
+    },
+    {
+      icon: deleteIcon2,
+      title: t('delete')
+    }
+  ];
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
