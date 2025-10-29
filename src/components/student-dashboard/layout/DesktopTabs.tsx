@@ -57,7 +57,7 @@ export default function DesktopTabs({
     },
     {
       key: '2',
-      label: 'timer',
+      label: 'process',
       iconBlack: timer_black,
       iconBlue: timer_blue,
       iconHover: timer_bold

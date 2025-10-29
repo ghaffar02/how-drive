@@ -108,7 +108,7 @@ export default function StudentDashboard() {
               activeKey === '1'
                 ? 'Home'
                 : activeKey === '2'
-                  ? 'Timer'
+                  ? 'Process'
                   : activeKey === '3'
                     ? 'Calendar'
                     : activeKey === '4'

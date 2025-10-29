@@ -174,7 +174,7 @@ const SupportAccordion = ({openFaq}: InputProp) => {
                         className="accordion-title"
                         sx={{
                           ...localFont.inter14,
-                          fontWeight: 400,
+                          fontWeight: 500,
                           fontFamily: '"Inter", sans-serif  !important',
                           cursor: 'pointer',
                           transition: 'color 0.3s ease'
@@ -200,7 +200,7 @@ const SupportAccordion = ({openFaq}: InputProp) => {
                       <Typography
                         sx={{
                           ...localFont.inter14,
-                          fontWeight: '300',
+                          fontWeight: '400',
                           fontFamily: '"Inter", sans-serif  !important',
                           lineHeight: '1.5em'
                         }}

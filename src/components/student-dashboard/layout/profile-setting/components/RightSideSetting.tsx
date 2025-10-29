@@ -32,7 +32,7 @@ export default function RightSide({
         zIndex: 1,
         width: '100%',
         background: '#f8fafc4d',
-        border: '1px solid #FFFFFF',
+        border: '2px solid #FFFFFF',
         boxShadow: `
     0px 0px 0px 1px #FFFFFF,
     0px 1px 0px 0px #FAFAFA,

@@ -1,6 +1,6 @@
 import localFont from '@/utils/themes';
 import {Box, keyframes, Typography} from '@mui/material';
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 
 import Image from 'next/image';
 import pen from '@/assets/svgs/dashboard-student/pen.svg';
@@ -19,6 +19,7 @@ export default function ProcessSteps() {
   const t = useTranslations('Dashboard.Process.processSteps');
 
   const [open, setOpen] = useState(false);
+  const modalRef = useRef<HTMLDivElement | null>(null);
   const [activeBoxes, setActiveBoxes] = useState<{[key: number]: boolean}>({});
 
   const handleToggle = (id: number) => {
@@ -86,48 +87,25 @@ export default function ProcessSteps() {
     }
   ];
 
-  const steps = [
-    {
-      id: 1,
-      title: t('step1'),
-      status: true
-    },
-    {
-      id: 2,
-      title: t('step2'),
-      status: true
-    },
-    {
-      id: 3,
-      title: t('step3'),
-      status: true
-    },
-    {
-      id: 4,
-      title: t('step4'),
-      status: true
-    },
-    {
-      id: 5,
-      title: t('step5'),
-      status: false
-    },
-    {
-      id: 6,
-      title: t('step6'),
-      status: false
-    },
-    {
-      id: 7,
-      title: t('step7'),
-      status: false
-    },
-    {
-      id: 8,
-      title: t('step8'),
-      status: false
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false);
+      }
     }
-  ];
+    if (open) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [open]);
 
   function openModal() {
     setOpen((prev) => !prev);
@@ -166,6 +144,7 @@ export default function ProcessSteps() {
       >
         <Box
           onClick={openModal}
+          ref={modalRef}
           sx={{
             minWidth: '20px',
             height: '20px',
@@ -415,7 +394,9 @@ export function Steps({
             padding: '6px 16px',
             background:
               'linear-gradient(145deg, rgba(248,250,252,1)), rgba(255,255,255,1)',
-            borderRadius: '999px'
+            borderRadius: '999px',
+            display: 'flex',
+            alignItems: 'center'
           }}
         >
           <Typography

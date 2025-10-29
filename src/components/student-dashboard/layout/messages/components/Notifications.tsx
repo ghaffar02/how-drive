@@ -326,7 +326,8 @@ export default function Notifications() {
                     ? '0px 0px 2px 0px  #3058ffff'
                     : ' 0px 0px 2px 0px rgb(212,212,216)',
                 '&:hover': {
-                  boxShadow: '0px 0px 2px 0px  #3058ffff'
+                  boxShadow: '0px 0px 2px 0px  #3058ffff',
+                  background: 'rgba(255,255,255,0.85)'
                 }
 
                 //
@@ -372,10 +373,9 @@ export default function Notifications() {
                   </Box>
                 </Box>
               </Box>
-              <Box width="100%">
+              <Box sx={{width: '100%', overflow: 'hidden'}}>
                 <Box
                   sx={{
-                    // bgcolor: '#888',
                     width: '100%',
                     display: 'flex',
                     gap: '8px',
@@ -412,7 +412,10 @@ export default function Notifications() {
                     fontSize: {xs: '9.6px', md: '11px', lg: '13px'},
                     color: '#718096',
                     fontFamily: '"Inter", sans-serif !important',
-                    fontWeight: '400'
+                    fontWeight: '400',
+                    whiteSpace: 'nowrap',
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis'
                   }}
                 >
                   {item.subject}
