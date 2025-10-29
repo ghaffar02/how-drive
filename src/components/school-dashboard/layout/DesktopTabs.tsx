@@ -15,7 +15,6 @@ import calander_black from '@/assets/svgs/dashboard-student/calander_black.svg';
 import calander_bold from '@/assets/svgs/dashboard-student/calander_bold.svg';
 import calander_blue from '@/assets/svgs/dashboard-student/calander_blue.svg';
 import message_black from '@/assets/svgs/dashboard-student/message_black.svg';
-import message_bold from '@/assets/svgs/dashboard-student/message_bold.svg';
 import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
 import driver_black from '@/assets/svgs/dashboard-student/driver_black.svg';
 import driver_blue from '@/assets/svgs/dashboard-student/driver_blue.svg';
@@ -23,8 +22,11 @@ import driver_bold from '@/assets/svgs/dashboard-student/driver_bold.svg';
 
 // dropdown icons
 import setting from '@/assets/svgs/dashboard-student/setting.svg';
+import settingsIconBold from '@/assets/svgs/dashboard-student/settingsIconBold.svg';
 import email from '@/assets/svgs/dashboard-student/email.svg';
+import supportIconBold from '@/assets/svgs/dashboard-student/supportIconBold.svg';
 import login from '@/assets/svgs/dashboard-student/login.svg';
+import logoutIconBold from '@/assets/svgs/dashboard-student/logoutIconBold.svg';
 
 // your independent dropdown
 import ProfileDropdown from '../../student-dashboard/layout/ProfileDropdown';
@@ -77,7 +79,7 @@ export default function DesktopTabs({
       label: 'message',
       iconBlack: message_black,
       iconBlue: message_blue,
-      iconHover: message_bold
+      iconHover: supportIconBold
     },
     {
       key: '7',
@@ -91,9 +93,19 @@ export default function DesktopTabs({
   // profile initials
   const initials = 'aohn zoe example';
   const Azdata = [
-    {id: '5', label: 'Einstellungen', menuIcon: setting},
-    {id: '6', label: 'Support', menuIcon: email},
-    {id: '7', label: 'Abmelden', menuIcon: login}
+    {
+      id: '5',
+      label: 'Einstellungen',
+      menuIcon: setting,
+      menuIconHover: settingsIconBold
+    },
+    {
+      id: '6',
+      label: 'Support',
+      menuIcon: email,
+      menuIconHover: supportIconBold
+    },
+    {id: '7', label: 'Abmelden', menuIcon: login, menuIconHover: logoutIconBold}
   ];
   const t = useTranslations('SchoolDashboard.DesktopTabs');
   const data = t.raw('data');

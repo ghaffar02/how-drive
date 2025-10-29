@@ -2567,6 +2567,73 @@
         "btn1": "Yes",
         "btn": "No"
       }
+    },
+    "Home": {
+      "profileCard": {
+        "active": "Active Students",
+        "inactive": "Inactive Students",
+        "all": "All Students"
+      },
+      "trainers": "Trainers"
+    },
+    "Calendar": {
+      "Sidebar": {
+        "title": "Set appointment schedules",
+        "tabs": ["Talk", "Theory", "Driving"],
+        "tab1": {
+          "title": "Category",
+          "title2": "Add category",
+          "place": "wähle...",
+          "modalPlace": "e.g. General Meeting",
+          "options": [
+            {"label": "anmeldung-fahrschule", "value": "Anmeldung Fahrschule"},
+            {"label": "besprechung", "value": "Besprechung"},
+            {"label": "kategorie-hinzufügen", "value": "Kategorie Hinzufügen"}
+          ]
+        },
+        "tab2": {
+          "title": "Group",
+          "title2": "Add Group",
+          "place": "wähle...",
+          "modalPlace": "e.g. Group 1",
+          "options": [
+            {"label": "gruppe-1", "value": "Gruppe 1"},
+            {"label": "gruppe-2", "value": "Gruppe 2"},
+            {"label": "gruppe-hinzufügen", "value": "Gruppe Hinzufügen"}
+          ]
+        },
+        "tab3": {
+          "title": "Trainers",
+          "title2": "Add trainers",
+          "place": "wähle...",
+          "modalPlace": "Name",
+          "options": [
+            {"label": "tom", "value": "Tom"},
+            {"label": "fabian", "value": "Fabian"},
+            {"label": "sophia", "value": "Sophia"}
+          ]
+        },
+        "capacity": "Capacity (persons)",
+        "duration": "Duration (minutes)",
+        "weekly": "Weekly hours",
+        "date": "Date-specific availability",
+        "dateDes": "Select a day to set a different time slot.",
+        "maximum": "Maximum time in advance for booking appointments (days)",
+        "minimum": "Minimum time in advance for booking an appointment (hours)",
+        "cancel": "Cancellation limit (hours)",
+        "btn": "Apply",
+        "cancelBtn": "Cancel",
+        "saveBtn": "Save",
+        "days": [
+          {"day": "Mo", "unavailable": false},
+          {"day": "Tu", "unavailable": false},
+          {"day": "We", "unavailable": false},
+          {"day": "Th", "unavailable": false},
+          {"day": "Fr", "unavailable": false},
+          {"day": "Sa", "unavailable": true},
+          {"day": "Su", "unavailable": true}
+        ]
+      }
     }
   }
 }

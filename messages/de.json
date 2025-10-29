@@ -2554,6 +2554,74 @@
         "btn1": "Ja",
         "btn": "Nein"
       }
+    },
+    "Home": {
+      "profileCard": {
+        "active": "Aktive Schüler",
+        "inactive": "Inaktive Schüler",
+        "all": "Alle Schüler"
+      },
+      "trainers": "Fahrschüler"
+    },
+    "Calendar": {
+      "Sidebar": {
+        "title": "Terminpläne festlegen",
+        "tabs": ["Gespräch", "Theorie", "Fahren"],
+        "tab1": {
+          "title": "Kategorie",
+          "title2": "Kategorie hinzufügen",
+          "place": "wähle...",
+          "modalPlace": "Z.B. Allgemeine Besprechung",
+          "options": [
+            {"label": "anmeldung-fahrschule", "value": "Anmeldung Fahrschule"},
+            {"label": "besprechung", "value": "Besprechung"},
+            {"label": "kategorie-hinzufügen", "value": "Kategorie Hinzufügen"}
+          ]
+        },
+        "tab2": {
+          "title": "Gruppe",
+          "title2": "Gruppe hinzufügen",
+          "place": "wähle...",
+          "modalPlace": "Z.B. Gruppe 1",
+          "options": [
+            {"label": "gruppe-1", "value": "Gruppe 1"},
+            {"label": "gruppe-2", "value": "Gruppe 2"},
+            {"label": "gruppe-hinzufügen", "value": "Gruppe Hinzufügen"}
+          ]
+        },
+        "tab3": {
+          "title": "Fahrlehrer",
+          "title2": "Fahrlehrer hinzufügen",
+          "place": "wähle...",
+          "modalPlace": "Name",
+          "options": [
+            {"label": "tom", "value": "Tom"},
+            {"label": "fabian", "value": "Fabian"},
+            {"label": "sophia", "value": "Sophia"},
+            {"label": "fahrlehrer-hinzufügen", "value": "Fahrlehrer hinzufügen"}
+          ]
+        },
+        "capacity": "Kapazität (Personen)",
+        "duration": "Dauer (Minuten)",
+        "weekly": "Wochenstunden",
+        "date": "Datumsspezifische Verfügbarkeit",
+        "dateDes": "Wähle einen Tag aus, um ein abweichendes Zeitfenster für ihn festzulegen.",
+        "maximum": "Maximale Zeit im Voraus für die Terminbuchung (Tage)",
+        "minimum": "Mindestzeit im Voraus für die Terminbuchung (Stunden)",
+        "cancel": "Stornierungslimit (Stunden)",
+        "btn": "Anwenden",
+        "cancelBtn": "Abbrechen",
+        "saveBtn": "Speichern",
+        "days": [
+    {"day": "Mo", "unavailable": false},
+    {"day": "Di", "unavailable": false},
+    {"day": "Mi", "unavailable": false},
+    {"day": "Do", "unavailable": false},
+    {"day": "Fr", "unavailable": false},
+    {"day": "Sa", "unavailable": true},
+    {"day": "So", "unavailable": true}
+  ]
+      }
     }
   }
 }

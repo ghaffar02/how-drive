@@ -7,9 +7,12 @@ import HoursComponent from './HoursComponent';
 import CustomButton from '@/components/school-dashboard/CustomButton';
 import MiniFramerCalendar from './MiniFramerCalendar';
 import CategoryComponent from './CategoryComponent';
+import {useTranslations} from 'next-intl';
 
 export default function SchedulerSidebar() {
   const [activeIndex, setActiveIndex] = useState<number | 0>(0);
+  const t = useTranslations('SchoolDashboard.Calendar.Sidebar');
+  const tabs = t.raw('tabs');
 
   const handleClickTab = (i: number) => {
     setActiveIndex(i);
@@ -48,7 +51,7 @@ export default function SchedulerSidebar() {
           fontFamily: '"Inter", sans-serif !important'
         }}
       >
-        Set appointment schedules
+        {t('title')}
       </Typography>
 
       {/* Tab Section */}
@@ -96,7 +99,7 @@ export default function SchedulerSidebar() {
             }}
           />
 
-          {['Talk', 'Theory', 'Driving'].map((item, i) => (
+          {tabs.map((item: any, i: number) => (
             <Box
               key={i}
               onClick={() => handleClickTab(i)}
@@ -132,15 +135,11 @@ type AppointmentProp = {
   index: number;
 };
 function SelectAppointmentType({index}: AppointmentProp) {
-  const days = [
-    {day: 'Mo', unavailable: false},
-    {day: 'Di', unavailable: false},
-    {day: 'Mi', unavailable: false},
-    {day: 'Do', unavailable: false},
-    {day: 'Fr', unavailable: false},
-    {day: 'Sa', unavailable: true},
-    {day: 'So', unavailable: true}
-  ];
+  const t = useTranslations('SchoolDashboard.Calendar.Sidebar');
+  const options1 = t.raw('tab1.options');
+  const options2 = t.raw('tab2.options');
+  const options3 = t.raw('tab3.options');
+  const days = t.raw('days');
   return (
     <Box
       sx={{
@@ -153,44 +152,38 @@ function SelectAppointmentType({index}: AppointmentProp) {
       {index === 0 && (
         <CategoryComponent
           color="#9333ea"
-          title2="Add category"
-          title="Category"
-          place="wahle..."
-          modalPlace="e.g. General meeting"
-          options={[
-            {label: 'driving-lesson', value: 'Driving Lesson'},
-            {label: 'theory-class', value: 'Theory Class'},
-            {label: 'final-test', value: 'Final Test'}
-          ]}
+          title2={t('tab1.title2')}
+          title={t('tab1.title')}
+          place={t('tab1.place')}
+          modalPlace={t('tab1.modalPlace')}
+          options={options1}
+          cancel={t('cancelBtn')}
+          save={t('saveBtn')}
         />
       )}
       {index === 1 && (
         <CategoryComponent
           color="#2563eb"
-          title2="Gruppe hinzufugen"
-          title="Group"
-          place="wahle..."
-          modalPlace="Z.B. Gruppe1"
-          options={[
-            {label: 'group1', value: 'Group 1'},
-            {label: 'group2', value: 'Group 2'},
-            {label: 'group3', value: 'Group 3'}
-          ]}
+          title2={t('tab2.title2')}
+          title={t('tab2.title')}
+          place={t('tab2.place')}
+          modalPlace={t('tab2.modalPlace')}
+          options={options2}
+          cancel={t('cancelBtn')}
+          save={t('saveBtn')}
         />
       )}
 
       {index === 2 && (
         <CategoryComponent
           color="#0891b2"
-          title2="Fahrlehrer hinzufugen"
-          title="Trainers"
-          place="wahle..."
-          modalPlace="Name"
-          options={[
-            {label: 'tom', value: 'Tom'},
-            {label: 'fabian', value: 'Fabian'},
-            {label: 'sophia', value: 'Sophia'}
-          ]}
+          title2={t('tab3.title2')}
+          title={t('tab3.title')}
+          place={t('tab3.place')}
+          modalPlace={t('tab3.modalPlace')}
+          options={options3}
+          cancel={t('cancelBtn')}
+          save={t('saveBtn')}
         />
       )}
 
@@ -203,7 +196,7 @@ function SelectAppointmentType({index}: AppointmentProp) {
             mb: '6px'
           }}
         >
-          Capacity (persons)
+          {t('capacity')}
         </Typography>
         <CustomTextField type="number" />
       </Box>
@@ -216,7 +209,7 @@ function SelectAppointmentType({index}: AppointmentProp) {
             mb: '6px'
           }}
         >
-          Duration (minutes)
+          {t('duration')}
         </Typography>
         <Box
           sx={{
@@ -264,10 +257,10 @@ function SelectAppointmentType({index}: AppointmentProp) {
             mb: '10px'
           }}
         >
-          Weekly hours
+          {t('weekly')}
         </Typography>
         <Box sx={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
-          {days.map((data, i) => (
+          {days.map((data: any, i: number) => (
             <HoursComponent
               key={i}
               day={data.day}
@@ -284,7 +277,7 @@ function SelectAppointmentType({index}: AppointmentProp) {
             fontFamily: '"Inter", "Inter Placeholder", sans-serif !important'
           }}
         >
-          Date-specific availability
+          {t('date')}
         </Typography>
         <Typography
           sx={{
@@ -294,7 +287,7 @@ function SelectAppointmentType({index}: AppointmentProp) {
             mb: '6px'
           }}
         >
-          Select a day to set a different time slot.
+          {t('dateDes')}
         </Typography>
         <Box
           sx={{
@@ -317,7 +310,7 @@ function SelectAppointmentType({index}: AppointmentProp) {
             mb: '6px'
           }}
         >
-          Maximum time in advance for booking appointments (days)
+          {t('maximum')}
         </Typography>
         <Box
           sx={{
@@ -362,7 +355,7 @@ function SelectAppointmentType({index}: AppointmentProp) {
             mb: '6px'
           }}
         >
-          Minimum time in advance for booking an appointment (hours)
+          {t('minimum')}
         </Typography>
         <Box
           sx={{
@@ -410,7 +403,7 @@ function SelectAppointmentType({index}: AppointmentProp) {
             mb: '6px'
           }}
         >
-          Cancellation limit (hours)
+          {t('cancel')}
         </Typography>
         <Box
           sx={{
@@ -450,7 +443,7 @@ function SelectAppointmentType({index}: AppointmentProp) {
         </Box>
       </Box>
       {/* Button */}
-      <CustomButton label="Apply" />
+      <CustomButton label={t('btn')} />
     </Box>
   );
 }

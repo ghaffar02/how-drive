@@ -46,7 +46,13 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
       {/* Case 3: "Not available" view */}
       {isUnavailable && (
         <Box sx={{display: 'flex', alignItems: 'center', gap: '10px'}}>
-          <Typography sx={{...localFont.inter14, width: '24px'}}>
+          <Typography
+            sx={{
+              ...localFont.inter14,
+              fontFamily: '"Inter", sans-serif !important',
+              width: '24px'
+            }}
+          >
             {day}
           </Typography>
           <CustomTextField labal="Nicht verfügbar" disabled={true} />
@@ -75,7 +81,13 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
           >
             {/* Show 'Mo' only in the first row */}
             {index === 0 && (
-              <Typography sx={{...localFont.inter14, width: '24px'}}>
+              <Typography
+                sx={{
+                  ...localFont.inter14,
+                  fontFamily: '"Inter", sans-serif !important',
+                  width: '24px'
+                }}
+              >
                 {day}
               </Typography>
             )}
