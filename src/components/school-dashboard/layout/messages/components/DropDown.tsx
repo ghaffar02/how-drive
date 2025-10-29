@@ -8,21 +8,10 @@ import CustomButton from '@/components/student-dashboard/CustomButton';
 import {useTranslations} from 'next-intl';
 
 interface CustomCardProps {
-  children?: ReactNode;
-  padding?: number | string;
-  radius?: number | string;
-  bgColor?: string;
-  text?: string;
   onClose?: () => void;
 }
 
-export default function CustomCard({
-  onClose,
-  padding = '16px',
-  radius = '10px',
-
-  text
-}: CustomCardProps) {
+export default function CustomCard({onClose}: CustomCardProps) {
   const t = useTranslations('Dashboard.Messages.dropDown');
 
   return (
@@ -35,7 +24,7 @@ export default function CustomCard({
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-        padding,
+        padding: '16px',
 
         gap: '24px'
       }}
