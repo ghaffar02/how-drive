@@ -2545,6 +2545,7 @@
       "btn1": "save ",
       "messLable1": "Topic",
       "messLable2": "Message",
+      "messLable3": "Upload file",
       "messBtn": "Send message"
     },
     "Drivers": {

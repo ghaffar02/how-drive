@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import CustomCard from '@/components/student-dashboard/layout/profile-setting/Dropdown';
 import localFont from '@/utils/themes';
 import {Box, TextField, Typography} from '@mui/material';
@@ -10,17 +11,21 @@ import {
   useRef,
   useState
 } from 'react';
+
 import {useTranslations} from 'next-intl';
 import {AnimatePresence, motion} from 'framer-motion';
 import CustomButton from '@/components/school-dashboard/CustomButton';
 import CustomTextField from '@/components/student-dashboard/InputField';
 import GradientDivider from '../GradientDivider';
+import {watch} from 'fs';
 
 export default function Account() {
   const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const iconRef = useRef<HTMLDivElement | null>(null);
   const t = useTranslations('SchoolDashboard.Settings.RightSide.AccountTab');
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -198,28 +203,70 @@ export default function Account() {
                       }}
                     />
                   ) : (
-                    <TextField
-                      placeholder={items.placeholder}
-                      multiline
-                      rows={4}
-                      fullWidth
-                      variant="outlined"
+                    <Box
                       sx={{
-                        maxWidth: {lg: '403px'},
+                        maxWidth: {lg: '403px', xs: '100%'},
                         width: '100%',
-                        '& .MuiOutlinedInput-root': {
-                          borderRadius: '8px',
-                          background: '#ffffff',
-                          height: '100%',
-                          fontSize: '14px',
-                          padding: '12px'
-                        },
-                        '& .MuiInputBase-input': {
-                          padding: 0,
-                          fontSize: '14px'
+                        border: 'none',
+                        borderRadius: '10px',
+                        fontSize: '14px',
+                        padding: '12px 12px 22px ',
+                        textAlign: 'start',
+                        background: '#ffffff',
+                        cursor: 'pointer',
+                        '&:hover': {
+                          border: '1px solid black',
+                          padding: '11px 11px 21px '
                         }
                       }}
-                    />
+                      onClick={() =>
+                        document.getElementById('fileInput')?.click()
+                      }
+                    >
+                      <input
+                        type="file"
+                        id="fileInput"
+                        style={{display: 'none'}}
+                        onChange={(e) => {
+                          if (e.target.files && e.target.files[0]) {
+                            setSelectedFile(e.target.files[0]);
+                          }
+                        }}
+                      />
+
+                      <Typography
+                        sx={{
+                          fontSize: '14px',
+                          color: '#666',
+                          fontFamily: '"Inter", sans-serif !important'
+                        }}
+                      >
+                        {items.placeholder}
+                        {/* <span
+                          style={{
+                            color: '#4615ff',
+                            fontWeight: 500,
+                            fontFamily: '"Inter", sans-serif !important'
+                          }}
+                        >
+                          
+                        </span> */}
+                      </Typography>
+                      {selectedFile && (
+                        <Box sx={{mt: 2}}>
+                          <img
+                            src={URL.createObjectURL(selectedFile)}
+                            alt="Preview"
+                            style={{
+                              maxWidth: '100px',
+                              maxHeight: '100px',
+                              borderRadius: '8px',
+                              objectFit: 'contain'
+                            }}
+                          />
+                        </Box>
+                      )}
+                    </Box>
                   )}
                 </Box>
               );
