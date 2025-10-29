@@ -7,8 +7,11 @@ import logo from '@/assets/pngs/logo.png';
 import ProfileDropdown from '../../student-dashboard/layout/ProfileDropdown';
 // dropdown icons
 import setting from '@/assets/svgs/dashboard-student/setting.svg';
+import settingsIconBold from '@/assets/svgs/dashboard-student/settingsIconBold.svg';
 import email from '@/assets/svgs/dashboard-student/email.svg';
+import supportIconBold from '@/assets/svgs/dashboard-student/supportIconBold.svg';
 import login from '@/assets/svgs/dashboard-student/login.svg';
+import logoutIconBold from '@/assets/svgs/dashboard-student/logoutIconBold.svg';
 import {useTranslations} from 'next-intl';
 
 type Props = {
@@ -16,9 +19,14 @@ type Props = {
 };
 
 const Azdata = [
-  {id: '', label: 'Einstellungen', menuIcon: setting},
-  {id: '', label: 'Support', menuIcon: email},
-  {id: '', label: 'Abmelden', menuIcon: login}
+  {
+    id: '',
+    label: 'Einstellungen',
+    menuIcon: setting,
+    iconHover: settingsIconBold
+  },
+  {id: '', label: 'Support', menuIcon: email, iconHover: supportIconBold},
+  {id: '', label: 'Abmelden', menuIcon: login, iconHover: logoutIconBold}
 ];
 export default function MobileMenuModal({onClose}: Props) {
   // dropdown state + ref
@@ -37,8 +45,8 @@ export default function MobileMenuModal({onClose}: Props) {
       <Box
         sx={{
           height: '400px',
-          width: '100%'
-          // backgroundColor: 'red',
+          width: '100%',
+          backgroundColor: 'red'
         }}
       >
         <Box

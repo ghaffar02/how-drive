@@ -20,8 +20,11 @@ import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
 
 // dropdown icons
 import setting from '@/assets/svgs/dashboard-student/setting.svg';
+import settingsIconBold from '@/assets/svgs/dashboard-student/settingsIconBold.svg';
 import email from '@/assets/svgs/dashboard-student/email.svg';
+import infos_bold from '@/assets/svgs/dashboard-student/infos_bold.svg';
 import login from '@/assets/svgs/dashboard-student/login.svg';
+import logoutIconBold from '@/assets/svgs/dashboard-student/logoutIconBold.svg';
 
 // your independent dropdown
 import ProfileDropdown from './ProfileDropdown';
@@ -79,9 +82,14 @@ export default function DesktopTabs({
   ];
 
   const Azdata = [
-    {id: '5', label: 'Einstellungen', menuIcon: setting},
-    {id: '6', label: 'Support', menuIcon: email},
-    {id: '7', label: 'Abmelden', menuIcon: login}
+    {
+      id: '5',
+      label: 'Einstellungen',
+      menuIcon: setting,
+      iconHover: settingsIconBold
+    },
+    {id: '6', label: 'Support', menuIcon: email, iconHover: infos_bold},
+    {id: '7', label: 'Abmelden', menuIcon: login, iconHover: logoutIconBold}
   ];
   // profile initials
   const initials = 'aohn zoe example';
