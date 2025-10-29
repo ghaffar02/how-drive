@@ -269,7 +269,10 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
               textAlign: 'center',
               background: '#ffffff',
               cursor: 'pointer',
-              '&:hover': {border: '1px solid black'}
+              '&:hover': {
+                border: '1px solid black',
+                p: {xs: '11px', md: '19px'}
+              }
             }}
             onClick={() => document.getElementById('fileInput')?.click()}
           >
