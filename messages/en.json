@@ -2020,11 +2020,7 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": [
-            "Necessary",
-            "Analytics",
-            "Allow all"
-          ]
+          "formFields": ["Necessary", "Analytics", "Allow all"]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2052,10 +2048,7 @@
             "News",
             "Driving license office registered"
           ],
-          "formFieldsOff": [
-            "Genereller Newsletter",
-            "Offers and advertising"
-          ]
+          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
         }
       }
     },
@@ -2131,6 +2124,11 @@
         "label5": "Upload file",
         "btn": "Cancel",
         "btn1": "Send"
+      },
+      "options": {
+        "delete": "Delete",
+        "reply": "Reply",
+        "copy": "Copy"
       }
     },
     "Support": {
@@ -2335,11 +2333,7 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": [
-            "Necessary",
-            "Analytics",
-            "Allow all"
-          ]
+          "formFields": ["Necessary", "Analytics", "Allow all"]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2367,18 +2361,12 @@
             "News",
             "New students' request"
           ],
-          "formFieldsOff": [
-            "Genereller Newsletter",
-            "Offers and advertising"
-          ]
+          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
         }
       }
     },
     "leftSideTab": {
-      "textTab": [
-        "Active",
-        "Inactive"
-      ],
+      "textTab": ["Active", "Inactive"],
       "search": "Search"
     },
     "studentHeader": {

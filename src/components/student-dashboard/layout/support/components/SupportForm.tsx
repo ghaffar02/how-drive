@@ -85,13 +85,12 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
           // margin: 'auto',
           maxWidth: '70px',
           width: '100%',
-          padding: '5px 0px 3px',
+          padding: '5px 3px',
           cursor: 'pointer',
           borderRadius: '8px',
           '&:hover': {
             backgroundColor: 'rgba(48, 88, 255, 0.1)'
           }
-          // gap: '6px'
         }}
       >
         <Typography
