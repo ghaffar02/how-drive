@@ -18,7 +18,27 @@ import Process from './process/Process';
 import Calander from './calander/Calander';
 import Support from './support/Support';
 import Message from './messages/Message';
-
+import {useTranslations} from 'next-intl';
+const Azdata = [
+  {
+    id: '5',
+    label: 'Einstellungen',
+    menuIcon: settingsIcon,
+    menuIconHover: settingsIconBold
+  },
+  {
+    id: '6',
+    label: 'Support',
+    menuIcon: supportIcon,
+    menuIconHover: supportIconBold
+  },
+  {
+    id: '7',
+    label: 'Abmelden',
+    menuIcon: logoutIcon,
+    menuIconHover: logoutIconBold
+  }
+];
 export default function StudentDashboard() {
   const [activeKey, setActiveKey] = React.useState<string>('3');
   const [hoverKey, setHoverKey] = React.useState<string | null>(null);
@@ -152,6 +172,12 @@ function MobileHeader({
   activeKey,
   setActiveKey
 }: MobileHeaderProps) {
+  const t = useTranslations('Dashboard.DesktopTabs');
+  const ADdata = t.raw('data2');
+  const profileData = Azdata.map((item, index) => ({
+    ...item,
+    label: ADdata[index]?.label || item.label
+  }));
   return (
     <>
       {/* the profile tab for mobile  */}
@@ -191,26 +217,7 @@ function MobileHeader({
           <ProfileDropdown
             anchorRef={anchorRef}
             fullName="Daniel Mustermann"
-            items={[
-              {
-                id: '5',
-                label: 'Einstellungen',
-                menuIcon: settingsIcon,
-                menuIconHover: settingsIconBold
-              },
-              {
-                id: '6',
-                label: 'Support',
-                menuIcon: supportIcon,
-                menuIconHover: supportIconBold
-              },
-              {
-                id: '7',
-                label: 'Abmelden',
-                menuIcon: logoutIcon,
-                menuIconHover: logoutIconBold
-              }
-            ]}
+            items={profileData}
             open={open}
             setOpen={setOpen}
             positionSx={{
