@@ -1,5 +1,6 @@
+'use client';
 import {Box} from '@mui/material';
-import React from 'react';
+import React, {useState} from 'react';
 // import Header from './components/Header';
 // import Appointment from './components/Appointment';
 // import LessonCard from './components/LessonCard';
@@ -21,6 +22,28 @@ export default function Home() {
   const percentageValueActive = parseFloat(
     ((activeStudents / totalStudents) * 100).toFixed(1)
   );
+
+  // the day detail comp relative data
+  const [showDetail, setShowDetail] = useState(false);
+
+  // sample date and appointments (you can use real data instead)
+  const sampleDate = new Date(2025, 9, 17);
+  const sampleAppointments = [
+    {
+      id: 1,
+      title: 'Fahrstunden',
+      startTime: '09:00',
+      endTime: '10:30',
+      color: '#0891B2'
+    },
+    {
+      id: 2,
+      title: 'Theorieprüfung',
+      startTime: '11:00',
+      endTime: '11:30',
+      color: '#DC2626'
+    }
+  ];
 
   return (
     <>
@@ -81,6 +104,32 @@ export default function Home() {
             students={totalStudents}
             progressBar={true}
             activePercentage={percentageValueActive}
+          />
+        </Box>
+
+        {/* new red box to fill empty space */}
+        <Box
+          sx={{
+            gridColumn: {xs: '1 / span 6', md: '1 / span 6', lg: '1 / span 4'},
+            gridRow: {xs: '4 / span 6', md: '2 / span 2', lg: '2 / span 4'},
+            overflow: 'auto',
+            border: '1px solid #fff',
+            borderRadius: '18px',
+            padding: {xs: '16px', md: '24px'},
+            background: '#ffffffbf',
+            boxShadow:
+              '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0,0,0,0.25), 0px 1px 1px 0px rgba(0,0,0,0.25)',
+            '&::-webkit-scrollbar': {
+              display: 'none'
+            },
+            msOverflowStyle: 'none',
+            scrollbarWidth: 'none'
+          }}
+        >
+          <DayDetailView
+            date={sampleDate}
+            appointments={sampleAppointments}
+            onClose={() => setShowDetail(false)}
           />
         </Box>
         <Box
