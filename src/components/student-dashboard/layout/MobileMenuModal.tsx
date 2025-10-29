@@ -9,16 +9,29 @@ import ProfileDropdown from './ProfileDropdown';
 import setting from '@/assets/svgs/dashboard-student/setting.svg';
 import email from '@/assets/svgs/dashboard-student/email.svg';
 import login from '@/assets/svgs/dashboard-student/login.svg';
+import {useTranslations} from 'next-intl';
 
 type Props = {
   onClose: () => void;
 };
+
+const Azdata = [
+  {id: '', label: 'Einstellungen', menuIcon: setting},
+  {id: '', label: 'Support', menuIcon: email},
+  {id: '', label: 'Abmelden', menuIcon: login}
+];
 
 export default function MobileMenuModal({onClose}: Props) {
   // dropdown state + ref
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLDivElement>(null!);
   const initials = 'Hans zustermann';
+  const t = useTranslations('Dashboard.DesktopTabs');
+  const ADdata = t.raw('data2');
+  const profileData = Azdata.map((item, index) => ({
+    ...item,
+    label: ADdata[index]?.label || item.label
+  }));
   return (
     <>
       <Box
@@ -53,11 +66,7 @@ export default function MobileMenuModal({onClose}: Props) {
           <Box sx={{height: '40px', width: '40px'}}>
             <ProfileDropdown
               fullName={initials}
-              items={[
-                {id: '', label: 'Einstellungen', menuIcon: setting},
-                {id: '', label: 'Support', menuIcon: email},
-                {id: '', label: 'Abmelden', menuIcon: login}
-              ]}
+              items={profileData}
               open={open}
               setOpen={setOpen}
               anchorRef={anchorRef}
