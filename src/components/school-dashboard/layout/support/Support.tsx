@@ -9,15 +9,12 @@ export default function Support() {
     <Box
       sx={{
         background: 'transparent',
-        // maxHeight: '75vh',
         height: {xs: '100%', md: '100%'},
         width: '100%',
         display: 'flex',
         gap: '16px',
         position: 'relative',
-        overflow: 'auto',
-
-        // marginBottom: {xs: '70px', md: '0px'}
+        overflow: 'auto'
       }}
     >
       <SupportAccordion openFaq={openFaq} />

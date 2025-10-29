@@ -82,16 +82,16 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
             xs: 'flex',
             md: 'none'
           },
-          // margin: 'auto',
+          alignItems: 'center',
           maxWidth: '70px',
           width: '100%',
-          padding: '5px 0px 3px',
+          // padding: '5px 0px 3px',
+          padding: '3px 0px 3px 5px',
           cursor: 'pointer',
           borderRadius: '8px',
           '&:hover': {
             backgroundColor: 'rgba(48, 88, 255, 0.1)'
           }
-          // gap: '6px'
         }}
       >
         <Typography
