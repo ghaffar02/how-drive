@@ -95,11 +95,16 @@ export default function DesktopTabs({
     {id: '6', label: 'Support', menuIcon: email},
     {id: '7', label: 'Abmelden', menuIcon: login}
   ];
-  const t = useTranslations('Dashboard.DesktopTabs');
+  const t = useTranslations('SchoolDashboard.DesktopTabs');
+  const data = t.raw('data');
   const ADdata = t.raw('data2');
   const profileData = Azdata.map((item, index) => ({
     ...item,
     label: ADdata[index]?.label || item.label
+  }));
+  const updateItems = navItems.map((item, index) => ({
+    ...item,
+    label: data[index]?.label || item.label
   }));
   // dropdown state + ref
   const [open, setOpen] = React.useState(false);
@@ -163,7 +168,7 @@ export default function DesktopTabs({
             }
           }}
         >
-          {navItems.map((item) => {
+          {updateItems.map((item) => {
             const isActive = activeKey === item.key;
             const isHover = hoverKey === item.key;
             const iconSrc = isActive

@@ -24,6 +24,7 @@ import driver_bold from '@/assets/svgs/dashboard-student/driver_bold.svg';
 // import menu from '@/assets/svgs/dashboard-student/menu.svg';
 
 import InfoMenuModal from './InfoMenuModal';
+import {useTranslations} from 'next-intl';
 
 type Props = {
   activeKey: string;
@@ -40,6 +41,50 @@ type NavItem = {
   iconHover: string;
 };
 
+const navItems: NavItem[] = [
+  {
+    key: '1',
+    label: 'home',
+    iconBlack: home_black,
+    iconBlue: home_blue,
+    iconHover: home_bold
+  },
+  {
+    key: '2',
+    label: 'timer',
+    iconBlack: timer_black,
+    iconBlue: timer_blue,
+    iconHover: timer_bold
+  },
+  {
+    key: '3',
+    label: 'calendar',
+    iconBlack: calander_black,
+    iconBlue: calander_blue,
+    iconHover: calander_bold
+  },
+  {
+    key: '4',
+    label: 'message',
+    iconBlack: message_black,
+    iconBlue: message_blue,
+    iconHover: message_bold
+  },
+  // {
+  //   key: '5',
+  //   label: 'Infos',
+  //   iconBlack: infos_black,
+  //   iconBlue: infos_black,
+  //   iconHover: infos_black
+  // },
+  {
+    key: '7',
+    label: 'Trainer',
+    iconBlack: driver_black,
+    iconBlue: driver_blue,
+    iconHover: driver_bold
+  }
+];
 export default function MobileTabs({
   activeKey,
   setActiveKey,
@@ -47,51 +92,13 @@ export default function MobileTabs({
   setHoverKey
 }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const t = useTranslations('SchoolDashboard.DesktopTabs');
+  const data = t.raw('data');
 
-  const navItems: NavItem[] = [
-    {
-      key: '1',
-      label: 'home',
-      iconBlack: home_black,
-      iconBlue: home_blue,
-      iconHover: home_bold
-    },
-    {
-      key: '2',
-      label: 'timer',
-      iconBlack: timer_black,
-      iconBlue: timer_blue,
-      iconHover: timer_bold
-    },
-    {
-      key: '3',
-      label: 'calendar',
-      iconBlack: calander_black,
-      iconBlue: calander_blue,
-      iconHover: calander_bold
-    },
-    {
-      key: '4',
-      label: 'message',
-      iconBlack: message_black,
-      iconBlue: message_blue,
-      iconHover: message_bold
-    },
-    // {
-    //   key: '5',
-    //   label: 'Infos',
-    //   iconBlack: infos_black,
-    //   iconBlue: infos_black,
-    //   iconHover: infos_black
-    // },
-    {
-      key: '7',
-      label: 'Trainer',
-      iconBlack: driver_black,
-      iconBlue: driver_blue,
-      iconHover: driver_bold
-    }
-  ];
+  const updateItems = navItems.map((item, index) => ({
+    ...item,
+    label: data[index]?.label || item.label
+  }));
 
   return (
     <>
@@ -121,7 +128,7 @@ export default function MobileTabs({
             display: 'flex'
           }}
         >
-          {navItems.map((item) => {
+          {updateItems.map((item) => {
             const isActive = activeKey === item.key;
             const isHover = hoverKey === item.key;
             const iconSrc = isActive
