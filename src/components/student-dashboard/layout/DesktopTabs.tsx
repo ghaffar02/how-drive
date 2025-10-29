@@ -25,6 +25,7 @@ import login from '@/assets/svgs/dashboard-student/login.svg';
 
 // your independent dropdown
 import ProfileDropdown from './ProfileDropdown';
+import {useTranslations} from 'next-intl';
 type Props = {
   activeKey: string;
   setActiveKey: React.Dispatch<React.SetStateAction<string>>;
@@ -77,6 +78,11 @@ export default function DesktopTabs({
     }
   ];
 
+  const Azdata = [
+    {id: '5', label: 'Einstellungen', menuIcon: setting},
+    {id: '6', label: 'Support', menuIcon: email},
+    {id: '7', label: 'Abmelden', menuIcon: login}
+  ];
   // profile initials
   const initials = 'aohn zoe example';
 
@@ -84,6 +90,21 @@ export default function DesktopTabs({
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLDivElement>(null!);
 
+  const t = useTranslations('Dashboard.DesktopTabs');
+  const ADdata = t.raw('data2');
+  const titles = t.raw('data');
+  const profileData = Azdata.map((item, index) => ({
+    ...item,
+    label: ADdata[index]?.label || item.label
+  }));
+
+  const updatedData = navItems.map((item, index) => ({
+    ...item,
+    label: titles[index]?.label || item.label
+  }));
+
+  // ✅ Apply translation to menu items
+  console.log('updated data array: ', updatedData);
   return (
     <>
       <Box
@@ -142,7 +163,7 @@ export default function DesktopTabs({
             }
           }}
         >
-          {navItems.map((item) => {
+          {updatedData.map((item) => {
             const isActive = activeKey === item.key;
             const isHover = hoverKey === item.key;
             const iconSrc = isActive
@@ -208,11 +229,7 @@ export default function DesktopTabs({
           <Box sx={{margin: 'auto', width: 'fit-content'}}>
             <ProfileDropdown
               fullName={initials}
-              items={[
-                {id: '5', label: 'Einstellungen', menuIcon: setting},
-                {id: '6', label: 'Support', menuIcon: email},
-                {id: '7', label: 'Abmelden', menuIcon: login}
-              ]}
+              items={profileData}
               open={open}
               setOpen={setOpen}
               anchorRef={anchorRef}

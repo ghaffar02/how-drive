@@ -1865,6 +1865,33 @@
     "button": "To Homepage"
   },
   "Dashboard": {
+    "DesktopTabs": {
+      "data": [
+        {
+          "label": "Home"
+        },
+        {
+          "label": "History"
+        },
+        {
+          "label": "Calendar"
+        },
+        {
+          "label": "Message"
+        }
+      ],
+      "data2": [
+        {
+          "label": "Settings"
+        },
+        {
+          "label": "Support"
+        },
+        {
+          "label": "Logout"
+        }
+      ]
+    },
     "home": {
       "header": {
         "data": [

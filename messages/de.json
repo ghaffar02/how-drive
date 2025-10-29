@@ -1865,6 +1865,33 @@
     "button": "Zur Homepage"
   },
   "Dashboard": {
+    "DesktopTabs": {
+      "data": [
+        {
+          "label": "Home"
+        },
+        {
+          "label": "Verlauf"
+        },
+        {
+          "label": "Kalender"
+        },
+        {
+          "label": "Nachricht"
+        }
+      ],
+      "data2": [
+        {
+          "label": "Einstellungen"
+        },
+        {
+          "label": "Support"
+        },
+        {
+          "label": "Abmelden"
+        }
+      ]
+    },
     "home": {
       "header": {
         "data": [
