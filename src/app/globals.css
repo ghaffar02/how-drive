@@ -167,3 +167,16 @@ a {
   background: #ccc;
   border-radius: 6px;
 }
+
+.rbc-btn-group {
+  /* background-color: red; */
+  position: absolute;
+  left: 0px;
+}
+
+@media screen and (max-width: 600px) {
+  .rbc-toolbar-label {
+    width: 100%;
+    text-align: right !important;
+  }
+}
