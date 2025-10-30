@@ -6,7 +6,7 @@ import Image from 'next/image';
 import React, {useEffect, useRef, useState} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
 import car from '@/assets/svgs/dashboard-student/home/car.svg';
-import fabian from '@/assets/svgs/dashboard-student/home/fabian.svg';
+import steering from '@/assets/svgs/steering.svg';
 import logo from '@/assets/pngs/logo.avif';
 import {useTranslations} from 'next-intl';
 import addIcon from '@/assets/svgs/circleadd.svg';
@@ -30,11 +30,11 @@ export default function Messages() {
       bgcolor: '#450ff51a'
     },
     {
-      icon: fabian,
+      icon: steering,
       sender: 'Fabian',
       date: '01.06.2025',
       subject: 'Das ist das Thema der Email.',
-      bgcolor: '#ffa60026'
+      bgcolor: '#06b6d41a'
     },
     {
       icon: car,
@@ -58,11 +58,11 @@ export default function Messages() {
       bgcolor: '#450ff51a'
     },
     {
-      icon: fabian,
+      icon: steering,
       sender: 'Fabian',
       date: '01.06.2025',
       subject: 'Das ist das Thema der Email.',
-      bgcolor: '#ffa60026'
+      bgcolor: '#06b6d41a'
     },
     {
       icon: car,

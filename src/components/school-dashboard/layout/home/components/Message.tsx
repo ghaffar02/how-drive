@@ -5,8 +5,8 @@ import Image from 'next/image';
 import React, {useState} from 'react';
 
 import car from '@/assets/svgs/dashboard-student/home/car.svg';
-import fabian from '@/assets/svgs/dashboard-student/home/fabian.svg';
-import logo from '@/assets/svgs/dashboard-student/home/logo.svg';
+import steering from '@/assets/svgs/steering.svg';
+import logo from '@/assets/pngs/logo.avif';
 import {useTranslations} from 'next-intl';
 
 import {motion} from 'framer-motion';
@@ -25,11 +25,39 @@ export default function Messages() {
       bgcolor: '#450ff51a'
     },
     {
-      icon: fabian,
+      icon: steering,
       sender: 'Fabian',
       date: '01.06.2025',
       subject: 'Das ist das Thema der Email.',
-      bgcolor: '#ffa60026'
+      bgcolor: 'rgba(6,182,212,0.1)'
+    },
+    {
+      icon: car,
+      sender: 'Fahrschule',
+      date: '27.05.2025',
+      subject: 'Termin deiner Theorieprüfung',
+      bgcolor: 'rgba(70, 17, 245, 0.1)'
+    },
+    {
+      icon: logo,
+      sender: 'WieFührerschein',
+      date: '20.05.2025',
+      subject: 'Das ist das Thema der Email.',
+      bgcolor: 'rgba(234, 0, 255, 0.08)'
+    },
+    {
+      icon: car,
+      sender: 'Fahrschule',
+      date: '25.05.2025',
+      subject: 'Das ist das Thema der Email.',
+      bgcolor: '#450ff51a'
+    },
+    {
+      icon: steering,
+      sender: 'Fabian',
+      date: '01.06.2025',
+      subject: 'Das ist das Thema der Email.',
+      bgcolor: 'rgba(6,182,212,0.1)'
     },
     {
       icon: car,
@@ -82,7 +110,7 @@ export default function Messages() {
           gap: '10px',
           alignItems: 'center',
 
-          maxHeight: {xs: '188px', xl: '100%'},
+          maxHeight: {xs: '195px', xl: '100%'},
           overflow: 'auto',
           p: '4px 2px',
 

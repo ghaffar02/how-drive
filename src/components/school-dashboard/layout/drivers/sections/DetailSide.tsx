@@ -8,7 +8,7 @@ import {AnimatePresence, motion} from 'framer-motion';
 import localFont from '@/utils/themes';
 // import LeftSideDropDown from '../components/LeftSideDropDown';
 // import AppointmentsDropDown from '../components/AppointmentsDropDown';
-import profile from '@/assets/svgs/dashboard-student/profile.svg';
+import steering from '@/assets/svgs/steering.svg';
 import LeftformDropDown from '../components/LeftformDropDown';
 import {useTranslations} from 'next-intl';
 
@@ -404,7 +404,7 @@ export default function DetailSide() {
                 '&:hover': {
                   boxShadow: activeIndexes.includes(i)
                     ? '0px 0px 2px 0px #4611f5'
-                    : '0px 0px 4px 0px #D4D4D8',
+                    : '0px 0px 2px 0px #4611f5',
                   background: '#ffffff'
                 },
                 '&:hover .hoverArrow': {
@@ -418,7 +418,7 @@ export default function DetailSide() {
                 sx={{
                   height: '40px',
                   minWidth: '40px',
-                  background: '#2563eb1a',
+                  background: '#06b6d41a',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -426,7 +426,7 @@ export default function DetailSide() {
                   borderRadius: '8px'
                 }}
               >
-                <Image src={profile} alt="profile" height={24} width={24} />
+                <Image src={steering} alt="steering" height={24} width={24} />
               </Box>
               <Box
                 sx={{

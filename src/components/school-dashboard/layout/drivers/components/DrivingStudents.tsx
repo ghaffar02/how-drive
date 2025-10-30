@@ -309,12 +309,12 @@ function Card({name, drivingClass}: CardProps) {
       <Box
         sx={{
           height: '40px',
-          width: '40px',
+          minWidth: '40px',
           background: '#2563eb1a',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          border: '1px solid rgba(37,99,235,0.1)',
+          // border: '1px solid rgba(37,99,235,0.1)',
           borderRadius: '8px'
         }}
       >

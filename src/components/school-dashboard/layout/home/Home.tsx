@@ -56,24 +56,28 @@ export default function Home() {
           background: 'rgba(21, 31, 42, 0.3)',
           borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
           backgroundColor: 'rgba(248, 250, 252, 0.3)',
-          border: {xs: '1px solid #fff', md: 'none'},
-          boxShadow: {
-            xs: 'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
-            md: 'none'
-          },
+          border: {xs: '2px solid #fff', md: 'none'},
+          // boxShadow: {
+          //   xs: 'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
+          //   md: 'none'
+          // },
           backdropFilter: {xs: 'blur(15px)', md: 'none'},
           zIndex: '1',
           display: 'grid',
-          gridTemplateColumns: 'repeat(6, minmax(0px, 1fr))',
+          gridTemplateColumns: {
+            xs: 'repeat(6, minmax(0px, 1fr))',
+            md: 'repeat(8, minmax(0px, 1fr))',
+            lg: 'repeat(6, minmax(0px, 1fr))'
+          },
           gridTemplateRows: {xs: 'auto', md: 'repeat(5, minmax(50px, 1fr))'},
-          gap: {xs: '20px', md: '28px'}
+          gap: {xs: '16px', md: '24px'}
         }}
       >
         <Box
           sx={{
-            gridColumn: {xs: '1 / span 6', md: '1 / span 2'},
+            gridColumn: {xs: '1 / span 6', md: '1 / span 2', lg: '1 / span 2'},
             gridRow: {xs: '1 / span 1', md: '1 / span 1'},
-            height: {xs: '75px', md: 'unset'}
+            height: {xs: '85px', md: 'unset'}
           }}
         >
           <ProfileCard
@@ -84,22 +88,23 @@ export default function Home() {
         </Box>
         <Box
           sx={{
-            gridColumn: {xs: '1 / span 6', md: '3 / span 2'},
+            gridColumn: {xs: '1 / span 6', md: '3 / span 2', lg: '3 / span 2'},
             gridRow: {xs: '2 / span 1', md: '1 / span 1'},
-            height: {xs: '75px', md: 'unset'}
+            height: {xs: '85px', md: 'unset'}
           }}
         >
           <ProfileCard
             imgSrc={InactiveIcon}
             title={t('profileCard.inactive')}
             students={inactiveStudents}
+            iconBg={true}
           />
         </Box>
         <Box
           sx={{
-            gridColumn: {xs: '1 / span 6', md: '5 / span 2'},
+            gridColumn: {xs: '1 / span 6', md: '5 / span 4', lg: '5 / span 2'},
             gridRow: {xs: '3 / span 1', md: '1 / span 1'},
-            height: {xs: '90px', md: 'unset'}
+            height: {xs: '110px', md: 'unset'}
           }}
         >
           <ProfileCard
@@ -113,7 +118,7 @@ export default function Home() {
         {/* new red box to fill empty space */}
         <Box
           sx={{
-            gridColumn: {xs: '1 / span 6', md: '1 / span 6', lg: '1 / span 4'},
+            gridColumn: {xs: '1 / span 6', md: '1 / span 8', lg: '1 / span 4'},
             gridRow: {xs: '4 / span 2', md: '2 / span 2', lg: '2 / span 4'},
             overflowY: 'auto',
             border: '1px solid #fff',
@@ -138,7 +143,7 @@ export default function Home() {
 
         <Box
           sx={{
-            gridColumn: {xs: '1 / span 6', md: '1 / span 3', lg: '5 / span 2'},
+            gridColumn: {xs: '1 / span 6', md: '1 / span 4', lg: '5 / span 2'},
             gridRow: {xs: '6 / span 1', md: '4 / span 2', lg: '2 / span 2'}
           }}
         >
@@ -146,12 +151,12 @@ export default function Home() {
         </Box>
         <Box
           sx={{
-            gridColumn: {xs: '1 / span 6', md: '4 / span 3', lg: '5 / span 2'},
+            gridColumn: {xs: '1 / span 6', md: '5 / span 4', lg: '5 / span 2'},
             gridRow: {xs: '7 / span 1', md: '4 / span 2', lg: '4 / span 2'},
             height: {xs: '245px', md: 'unset'}
           }}
         >
-          <Drivers title={t('trainers')} />
+          <Drivers title={t('trainers')} showIcon={false} />
         </Box>
       </Box>
     </>

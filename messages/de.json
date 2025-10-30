@@ -2008,11 +2008,7 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": [
-            "Notwendige",
-            "Analytics",
-            "Alle zulassen"
-          ]
+          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2051,10 +2047,7 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": [
-            "News und Update",
-            "Angebote und Werbung"
-          ]
+          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
         }
       }
     },
@@ -2357,11 +2350,7 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": [
-            "Notwendige",
-            "Analytics",
-            "Alle zulassen"
-          ]
+          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2400,18 +2389,12 @@
             "Nachrichten",
             "Neue Schüler Anfrage"
           ],
-          "formFieldsOff": [
-            "News und Update",
-            "Angebote und Werbung"
-          ]
+          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
         }
       }
     },
     "leftSideTab": {
-      "textTab": [
-        "Aktiv",
-        "Inaktiv"
-      ],
+      "textTab": ["Aktiv", "Inaktiv"],
       "search": "Suchen"
     },
     "studentHeader": {
@@ -2561,7 +2544,7 @@
         "inactive": "Inaktive Schüler",
         "all": "Alle Schüler"
       },
-      "trainers": "Fahrschüler"
+      "trainers": "Fahrlehrer"
     },
     "Calendar": {
       "Sidebar": {
@@ -2613,14 +2596,14 @@
         "cancelBtn": "Abbrechen",
         "saveBtn": "Speichern",
         "days": [
-    {"day": "Mo", "unavailable": false},
-    {"day": "Di", "unavailable": false},
-    {"day": "Mi", "unavailable": false},
-    {"day": "Do", "unavailable": false},
-    {"day": "Fr", "unavailable": false},
-    {"day": "Sa", "unavailable": true},
-    {"day": "So", "unavailable": true}
-  ]
+          {"day": "Mo", "unavailable": false},
+          {"day": "Di", "unavailable": false},
+          {"day": "Mi", "unavailable": false},
+          {"day": "Do", "unavailable": false},
+          {"day": "Fr", "unavailable": false},
+          {"day": "Sa", "unavailable": true},
+          {"day": "So", "unavailable": true}
+        ]
       }
     }
   }

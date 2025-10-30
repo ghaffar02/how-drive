@@ -9,6 +9,7 @@ type ProfileProps = {
   imgSrc?: StaticImageData | string;
   progressBar?: boolean;
   activePercentage?: number;
+  iconBg?: boolean;
 };
 
 export default function ProfileCard({
@@ -16,12 +17,13 @@ export default function ProfileCard({
   title,
   imgSrc,
   progressBar = false,
-  activePercentage
+  activePercentage,
+  iconBg
 }: ProfileProps) {
   const value1 = activePercentage || 0;
   const value2 = 100 - value1;
 
-  const size = 70;
+  const size = 80;
   const strokeWidth = 7;
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
@@ -116,7 +118,8 @@ export default function ProfileCard({
               top: '25%',
               left: '20%',
               //   transform: 'translate(-50%, -50%)',
-              fontSize: '10px',
+              fontSize: '11px',
+              fontFamily: '"Inter", sans-serif !important',
               fontWeight: 500,
               color: '#00bcd1'
             }}
@@ -129,7 +132,8 @@ export default function ProfileCard({
               bottom: '25%',
               right: '20%',
               //   transform: 'translate(-50%, -50%)',
-              fontSize: '10px',
+              fontFamily: '"Inter", sans-serif !important',
+              fontSize: '11px',
               fontWeight: 500,
               color: '#1a3478'
             }}
@@ -142,11 +146,11 @@ export default function ProfileCard({
           sx={{
             height: '60px',
             width: '60px',
-            display: 'flex',
+            display: {xs: 'flex', md: 'none', lg: 'flex'},
             alignItems: 'center',
             justifyContent: 'center',
             borderRadius: '50%',
-            background: '#00bcd11a'
+            background: iconBg ? 'rgba(37,99,235,0.1)' : '#00bcd11a'
           }}
         >
           {imgSrc && (

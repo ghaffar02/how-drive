@@ -3,13 +3,14 @@ import {Box, Typography} from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import addIcon from '@/assets/svgs/circleadd.svg';
-import profile from '@/assets/svgs/dashboard-student/profile.svg';
+import steering from '@/assets/svgs/steering.svg';
 
 type Props = {
   title: string;
+  showIcon?: boolean;
 };
 
-export default function Drivers({title}: Props) {
+export default function Drivers({title, showIcon = true}: Props) {
   const cardArray = [
     {
       name: 'Daniel Mustermann 2',
@@ -49,7 +50,7 @@ export default function Drivers({title}: Props) {
       sx={{
         width: '100%',
         height: '100%',
-        padding: {xs: '16px 0px', lg: '24px 0px'},
+        padding: {xs: '16px 0px', md: '24px 0px'},
         border: '1px solid #fff',
         borderRadius: '18px',
         background: '#ffffffbf',
@@ -64,7 +65,7 @@ export default function Drivers({title}: Props) {
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
-          padding: {xs: '0px 16px', lg: '0px 24px'}
+          padding: {xs: '0px 16px', md: '0px 24px'}
         }}
       >
         <Typography
@@ -76,13 +77,15 @@ export default function Drivers({title}: Props) {
         >
           {title}
         </Typography>
-        <Box sx={{height: '24px', width: '24px'}}>
-          <Image
-            src={addIcon}
-            alt="addIcon"
-            style={{height: '100%', width: '100%'}}
-          />
-        </Box>
+        {showIcon && (
+          <Box sx={{height: '24px', width: '24px'}}>
+            <Image
+              src={addIcon}
+              alt="addIcon"
+              style={{height: '100%', width: '100%'}}
+            />
+          </Box>
+        )}
       </Box>
       <Box
         sx={{
@@ -90,7 +93,7 @@ export default function Drivers({title}: Props) {
           flexDirection: 'column',
           gap: '10px',
           overflow: 'hidden auto',
-          padding: {xs: '4px 16px', lg: '4px 24px'},
+          padding: {xs: '4px 16px', md: '4px 24px'},
           '&::-webkit-scrollbar': {
             display: 'none'
           },
@@ -132,16 +135,15 @@ function Card({name, drivingClass}: CardProps) {
       <Box
         sx={{
           height: '40px',
-          width: '40px',
-          background: '#2563eb1a',
+          minWidth: '40px',
+          background: '#06b6d41a',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          border: '1px solid rgba(37,99,235,0.1)',
           borderRadius: '8px'
         }}
       >
-        <Image src={profile} alt="profile" height={24} width={24} />
+        <Image src={steering} alt="steering" height={24} width={24} />
       </Box>
       <Box sx={{width: '100%'}}>
         <Typography
