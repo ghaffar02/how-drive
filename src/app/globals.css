@@ -180,9 +180,27 @@ a {
   }
 } */
 .rbc-toolbar {
+  /* display: flex; */
   flex-direction: row-reverse !important;
   justify-content: space-between;
 }
+.rbc-btn-group {
+  display: flex !important;
+}
+.rbc-btn-group :nth-child(1) {
+  order: 2;
+  border-radius: 8px !important;
+}
+.rbc-btn-group :nth-child(2) {
+  order: 1;
+  border-radius: 8px !important;
+  border-bottom-right-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+.rbc-btn-group :nth-child(3) {
+  order: 3;
+}
+
 .rbc-toolbar-label {
   text-align: left !important;
 }
