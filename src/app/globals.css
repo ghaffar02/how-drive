@@ -168,8 +168,7 @@ a {
   border-radius: 6px;
 }
 
-.rbc-btn-group {
-  /* background-color: red; */
+/* .rbc-btn-group {
   position: absolute;
   left: 0px;
 }
@@ -179,4 +178,11 @@ a {
     width: 100%;
     text-align: right !important;
   }
+} */
+.rbc-toolbar {
+  flex-direction: row-reverse !important;
+  justify-content: space-between;
+}
+.rbc-toolbar-label {
+  text-align: left !important;
 }
