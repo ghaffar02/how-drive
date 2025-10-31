@@ -82,6 +82,8 @@ export default function StudentDetail() {
       <Box sx={{gridRow: {xs: '5', lg: '4'}, gridColumn: '1'}}>
         <LessonCard
           isbool={true}
+          Label1={t('lable1')}
+          Label2={t('lable2')}
           title={t('card1Title')}
           completedHours={11}
           totalHours={14}
@@ -90,6 +92,8 @@ export default function StudentDetail() {
       </Box>
       <Box sx={{gridRow: '5', gridColumn: {xs: '2 / span 1', lg: '1'}}}>
         <LessonCard
+          Label1={t('lable3')}
+          Label2={t('lable4')}
           title={t('card2Title')}
           completedHours={11}
           totalHours={14}

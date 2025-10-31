@@ -2020,7 +2020,11 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": ["Necessary", "Analytics", "Allow all"]
+          "formFields": [
+            "Necessary",
+            "Analytics",
+            "Allow all"
+          ]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2048,7 +2052,10 @@
             "News",
             "Driving license office registered"
           ],
-          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
+          "formFieldsOff": [
+            "Genereller Newsletter",
+            "Offers and advertising"
+          ]
         }
       }
     },
@@ -2363,7 +2370,11 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": ["Necessary", "Analytics", "Allow all"]
+          "formFields": [
+            "Necessary",
+            "Analytics",
+            "Allow all"
+          ]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2391,12 +2402,18 @@
             "News",
             "New students' request"
           ],
-          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
+          "formFieldsOff": [
+            "Genereller Newsletter",
+            "Offers and advertising"
+          ]
         }
       }
     },
     "leftSideTab": {
-      "textTab": ["Active", "Inactive"],
+      "textTab": [
+        "Active",
+        "Inactive"
+      ],
       "search": "Search"
     },
     "studentHeader": {
@@ -2526,6 +2543,8 @@
       "hours": "hours",
       "lable1": "Completed hours",
       "lable2": "Required hours",
+      "lable3": "Completed hours",
+      "lable4": "Required hours",
       "btn": "Cancel",
       "btn1": "save ",
       "messLable1": "Topic",
@@ -2564,7 +2583,11 @@
     "Calendar": {
       "Sidebar": {
         "title": "Set appointment schedules",
-        "tabs": ["Talk", "Theory", "Driving"],
+        "tabs": [
+          "Talk",
+          "Theory",
+          "Driving"
+        ],
         "tab1": {
           "title": "Category",
           "title2": "Add category",

@@ -8,6 +8,7 @@ interface CustomTextFieldProps {
   name?: string;
   id?: string;
   disabled?: boolean;
+  onClick?: () => void;
 }
 
 export default function CustomTextField({
@@ -17,8 +18,16 @@ export default function CustomTextField({
   name,
   id,
   disabled = false,
+  onClick,
   ...rest
 }: CustomTextFieldProps) {
+  // ✅ Prevent negative numbers
+  const handleInput = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (type === 'number' && Number(event.target.value) < 0) {
+      event.target.value = '0';
+    }
+  };
+
   return (
     <TextField
       type={type}
@@ -26,6 +35,8 @@ export default function CustomTextField({
       name={name}
       placeholder={labal}
       disabled={disabled}
+      onClick={onClick}
+      onInput={handleInput}
       {...rest}
       sx={{
         width: '100%',
@@ -39,8 +50,6 @@ export default function CustomTextField({
           padding: '12px',
           borderRadius: '10px',
           fontFamily: '"Inter", sans-serif !important'
-          // boxShadow:
-          //   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
         },
 
         // for date/time pickers (make icon grey)
@@ -68,11 +77,11 @@ export default function CustomTextField({
           padding: 0,
           fontSize: '14px',
           fontFamily: '"Inter", sans-serif !important',
-          color: '#000000' // 👈 ensure input text is black
+          color: '#000000'
         },
 
         '&::placeholder': {
-          color: '#999999' // placeholder color (grey)
+          color: '#999999'
         },
 
         '& .MuiInputLabel-root': {

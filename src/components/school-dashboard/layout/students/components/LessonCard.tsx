@@ -17,6 +17,8 @@ import LessonDropDown from './LessonDropDown';
 
 interface LessonCardProps {
   isbool?: boolean;
+  Label1?: string;
+  Label2?: string;
   title: string;
   completedHours: number;
   totalHours: number;
@@ -25,6 +27,8 @@ interface LessonCardProps {
 
 export default function LessonCard({
   title,
+  Label1,
+  Label2,
   isbool,
   completedHours,
   totalHours,
@@ -148,8 +152,8 @@ export default function LessonCard({
               ...localFont.inter14,
               fontSize: {xs: '12px', md: '13px', lg: '14px'},
               fontFamily: '"Inter", sans-serif !important',
-              color: '#2D3748',
-              fontWeight: '300'
+              color: '#4A5568',
+              fontWeight: '400'
             }}
           >
             <Typography
@@ -252,7 +256,7 @@ export default function LessonCard({
                     transformOrigin: 'top right'
                   }}
                 >
-                  <LessonDropDown Label1={t('lable1')} Label2={t('lable2')} />
+                  <LessonDropDown Label1={Label1} Label2={Label2} />
                 </Box>
               )}
             </AnimatePresence>
