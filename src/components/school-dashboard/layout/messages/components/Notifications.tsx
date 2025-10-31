@@ -6,7 +6,7 @@ import searchIcon from '@/assets/svgs/dashboard-student/searchIcon.svg';
 import crossIcon from '@/assets/svgs/dashboard-student/crossicon.svg';
 
 import car from '@/assets/svgs/dashboard-student/home/car.svg';
-import fabian from '@/assets/svgs/dashboard-student/home/fabian.svg';
+import fabian from '@/assets/svgs/steering.svg';
 import logo from '@/assets/pngs/logo.avif';
 
 const emails = [
@@ -22,7 +22,7 @@ const emails = [
     sender: 'Fabian',
     date: '01.06.2025',
     subject: 'Das ist das Thema der Email.',
-    bgcolor: '#ffa60026'
+    bgcolor: '#06b6d41a'
   },
   {
     icon: car,
@@ -50,7 +50,7 @@ const emails = [
     sender: 'Fabian',
     date: '01.06.2025',
     subject: 'Das ist das Thema der Email.',
-    bgcolor: '#ffa60026'
+    bgcolor: '#06b6d41a'
   },
   {
     icon: car,
@@ -78,7 +78,7 @@ const emails = [
     sender: 'Fabian',
     date: '01.06.2025',
     subject: 'Das ist das Thema der Email.',
-    bgcolor: '#ffa60026'
+    bgcolor: '#06b6d41a'
   },
   {
     icon: car,

@@ -35,35 +35,35 @@ export default function Appointment() {
   const cardArray = [
     {
       id: 1,
-      barColor: 'red',
+      barColor: '#9333ea',
       name: 'Besprechung',
       date: '17.10.2025',
       time: '12:30 - 13:00'
     },
     {
       id: 2,
-      barColor: 'purple',
+      barColor: '#2563eb',
       name: 'Besprechung',
       date: '18.10.2025',
       time: '13:30 - 14:00'
     },
     {
       id: 3,
-      barColor: 'orange',
+      barColor: '#0891b2',
       name: 'Besprechung',
       date: '20.10.2025',
       time: '11:30 - 12:00'
     },
     {
       id: 4,
-      barColor: 'green',
+      barColor: '#dc2626',
       name: 'Besprechung',
       date: '17.11.2025',
       time: '12:30 - 13:00'
     },
     {
       id: 5,
-      barColor: 'yellow',
+      barColor: '#0891b2',
       name: 'Besprechung',
       date: '17.10.2025',
       time: '12:30 - 13:00'
