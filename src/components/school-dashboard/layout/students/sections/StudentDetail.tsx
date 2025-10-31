@@ -8,8 +8,6 @@ import Messages from '../components/Message';
 import Appointment from '../components/Appointment';
 import {useTranslations} from 'next-intl';
 import MainDropdown from '../components/MainDropdown';
-import {AnimatePresence, motion} from 'framer-motion';
-
 export default function StudentDetail() {
   const t = useTranslations('SchoolDashboard.MessageLesson');
 
@@ -114,69 +112,35 @@ export default function StudentDetail() {
           alignItems: 'center'
         }}
       >
-        <AnimatePresence>
-          {openDropdown && (
-            <Box
-              component={motion.div}
-              initial={{
-                opacity: 0,
-                scale: 0.5,
-                y: 70,
-                x: 20,
-                originX: 1,
-                originY: 0
-              }}
-              animate={{
-                opacity: 1,
-                scale: 1,
-                y: 0,
-                x: 0,
-                originX: 1,
-                originY: 0
-              }}
-              exit={{
-                opacity: 0,
-                scale: 0.5,
-                // dur: 1,
-                y: 60,
-                x: 20,
-                originX: 1,
-                originY: 0
-              }}
-              transition={{
-                duration: 0.5,
-                type: 'spring',
-                stiffness: 300,
-                damping: 25
-              }}
-              sx={{
-                position: 'absolute',
-                p: {xs: '48px 24px'},
-                right: '5%',
-                top: 150,
-                width: '90%',
-                margin: 'auto',
+        {openDropdown && (
+          <Box
+            sx={{
+              position: 'absolute',
+              p: {xs: '48px 24px'},
+              right: '2.5%',
+              top: 150,
+              width: '95%',
+              margin: 'auto',
 
-                zIndex: 178879,
-                overflow: 'visible',
-                border: '1px solid #ffffffff',
-                backgroundColor: '#fff',
-                // bgcolor: 'red',
-                backdropFilter: 'blur(10px)',
-                boxShadow: `
+              zIndex: 178879,
+              overflow: 'visible',
+              border: '1px solid #ffffffff',
+              backgroundColor: '#fff',
+              // bgcolor: 'red',
+              backdropFilter: 'blur(10px)',
+              boxShadow: `
       0px 0px 0px 2px rgba(0, 0, 0, 0.02),
       0px 2px 9px 0px rgba(0, 0, 0, 0.09),
       0px 10px 42px 0px rgba(0, 0, 0, 0.4)
        
     `,
-                borderRadius: '18px',
-                transformOrigin: ' bottom'
-              }}
-            >
-              <MainDropdown />
-            </Box>
-          )}
-        </AnimatePresence>
+              borderRadius: '18px',
+              transformOrigin: ' bottom'
+            }}
+          >
+            <MainDropdown />
+          </Box>
+        )}
       </Box>
     </Box>
   );
