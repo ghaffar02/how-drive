@@ -101,7 +101,8 @@ export default function EmailDropdown({onClose}: CustomCardProps) {
           onClick={onClose}
           label={t('btn')}
           bgColor="rgb(220, 38, 38)"
-          hoverColor="#991919"
+          hoverColor="rgb(135,25,25)"
+          activeColor="rgb(82,82,91)"
           hoverTextcolor="#fff"
           imgSrc={cross}
           sx={{
@@ -114,7 +115,8 @@ export default function EmailDropdown({onClose}: CustomCardProps) {
         <CustomButton
           label={t('btn1')}
           bgColor="#0D9488"
-          hoverColor="#0C5C72"
+          hoverColor="rgb(12,93,86)"
+          activeColor="rgb(82,82,91)"
           imgSrc={tick}
           sx={{
             gap: '8px',

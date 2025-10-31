@@ -150,7 +150,7 @@ export default function Header() {
                   sx={{
                     position: 'absolute',
                     zIndex: 99,
-
+                    cursor: 'default',
                     left: {xs: 40, sm: 100},
                     mt: '10px',
                     width: {xs: '300px'},
@@ -167,7 +167,7 @@ export default function Header() {
                     transformOrigin: 'top right'
                   }}
                 >
-                  <EmailDropdown onClose={() => setOpenDropdown(false)} />
+                  <EmailDropdown  />
                 </Box>
               )}
             </AnimatePresence>
