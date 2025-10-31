@@ -2008,7 +2008,11 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
+          "formFields": [
+            "Notwendige",
+            "Analytics",
+            "Alle zulassen"
+          ]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2047,7 +2051,10 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
+          "formFieldsOff": [
+            "News und Update",
+            "Angebote und Werbung"
+          ]
         }
       }
     },
@@ -2350,7 +2357,11 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
+          "formFields": [
+            "Notwendige",
+            "Analytics",
+            "Alle zulassen"
+          ]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2389,15 +2400,22 @@
             "Nachrichten",
             "Neue Schüler Anfrage"
           ],
-          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
+          "formFieldsOff": [
+            "News und Update",
+            "Angebote und Werbung"
+          ]
         }
       }
     },
     "leftSideTab": {
-      "textTab": ["Aktiv", "Inaktiv"],
+      "textTab": [
+        "Aktiv",
+        "Inaktiv"
+      ],
       "search": "Suchen"
     },
     "studentHeader": {
+      "class": "Klasse B",
       "lable1": "Vorname",
       "input1": "Daniel",
       "lable2": "Nachname",
@@ -2549,16 +2567,29 @@
     "Calendar": {
       "Sidebar": {
         "title": "Terminpläne festlegen",
-        "tabs": ["Gespräch", "Theorie", "Fahren"],
+        "tabs": [
+          "Gespräch",
+          "Theorie",
+          "Fahren"
+        ],
         "tab1": {
           "title": "Kategorie",
           "title2": "Kategorie hinzufügen",
           "place": "wähle...",
           "modalPlace": "Z.B. Allgemeine Besprechung",
           "options": [
-            {"label": "anmeldung-fahrschule", "value": "Anmeldung Fahrschule"},
-            {"label": "besprechung", "value": "Besprechung"},
-            {"label": "kategorie-hinzufügen", "value": "Kategorie Hinzufügen"}
+            {
+              "label": "anmeldung-fahrschule",
+              "value": "Anmeldung Fahrschule"
+            },
+            {
+              "label": "besprechung",
+              "value": "Besprechung"
+            },
+            {
+              "label": "kategorie-hinzufügen",
+              "value": "Kategorie Hinzufügen"
+            }
           ]
         },
         "tab2": {
@@ -2567,9 +2598,18 @@
           "place": "wähle...",
           "modalPlace": "Z.B. Gruppe 1",
           "options": [
-            {"label": "gruppe-1", "value": "Gruppe 1"},
-            {"label": "gruppe-2", "value": "Gruppe 2"},
-            {"label": "gruppe-hinzufügen", "value": "Gruppe Hinzufügen"}
+            {
+              "label": "gruppe-1",
+              "value": "Gruppe 1"
+            },
+            {
+              "label": "gruppe-2",
+              "value": "Gruppe 2"
+            },
+            {
+              "label": "gruppe-hinzufügen",
+              "value": "Gruppe Hinzufügen"
+            }
           ]
         },
         "tab3": {
@@ -2578,10 +2618,22 @@
           "place": "wähle...",
           "modalPlace": "Name",
           "options": [
-            {"label": "tom", "value": "Tom"},
-            {"label": "fabian", "value": "Fabian"},
-            {"label": "sophia", "value": "Sophia"},
-            {"label": "fahrlehrer-hinzufügen", "value": "Fahrlehrer hinzufügen"}
+            {
+              "label": "tom",
+              "value": "Tom"
+            },
+            {
+              "label": "fabian",
+              "value": "Fabian"
+            },
+            {
+              "label": "sophia",
+              "value": "Sophia"
+            },
+            {
+              "label": "fahrlehrer-hinzufügen",
+              "value": "Fahrlehrer hinzufügen"
+            }
           ]
         },
         "capacity": "Kapazität (Personen)",
@@ -2596,13 +2648,34 @@
         "cancelBtn": "Abbrechen",
         "saveBtn": "Speichern",
         "days": [
-          {"day": "Mo", "unavailable": false},
-          {"day": "Di", "unavailable": false},
-          {"day": "Mi", "unavailable": false},
-          {"day": "Do", "unavailable": false},
-          {"day": "Fr", "unavailable": false},
-          {"day": "Sa", "unavailable": true},
-          {"day": "So", "unavailable": true}
+          {
+            "day": "Mo",
+            "unavailable": false
+          },
+          {
+            "day": "Di",
+            "unavailable": false
+          },
+          {
+            "day": "Mi",
+            "unavailable": false
+          },
+          {
+            "day": "Do",
+            "unavailable": false
+          },
+          {
+            "day": "Fr",
+            "unavailable": false
+          },
+          {
+            "day": "Sa",
+            "unavailable": true
+          },
+          {
+            "day": "So",
+            "unavailable": true
+          }
         ]
       }
     }

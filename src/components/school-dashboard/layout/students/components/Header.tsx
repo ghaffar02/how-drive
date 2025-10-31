@@ -6,6 +6,7 @@ import {AnimatePresence, motion} from 'framer-motion';
 
 import pen from '@/assets/svgs/dashboard-student/pen.svg';
 import EmailDropdown from './EmailDropdown';
+import {useTranslations} from 'next-intl';
 // import DrivinglicenseDropdown from './DrivinglicenseDropdown';
 // import TheoryexamDropDown from './TheoryexamDropDown';
 // import AppointmentsDropDown from './AppointmentsDropDown';
@@ -18,7 +19,7 @@ export default function Header() {
   const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const iconRef = useRef<HTMLDivElement | null>(null);
-
+  const t = useTranslations('SchoolDashboard.studentHeader');
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -166,30 +167,7 @@ export default function Header() {
                     transformOrigin: 'top right'
                   }}
                 >
-                  {/* <MessagesDropDown /> */}
-                  {/* <LessonDropDown Label1="Driver" Label2="Day" /> */}
-                  {/* <AppointmentsDropDown /> */}
-                  {/* <EditappointmentDropDown
-                    title="Edit appointment"
-                    driverLabel="Driver"
-                    dayLabel="Day"
-                    beginLabel="Begin"
-                    endLabel="End"
-                    participantsLabel="Participants"
-                    participantName="Daniel Mustermann 1"
-                    cancelHeading="Cancel appointment"
-                    cancelDescription="To cancel the appointment remove all participants from the list and click Save."
-                    cancelBtnLabel="Cancel"
-                    saveBtnLabel="Save"
-                    dropdownOptions={[
-                      {value: 'malfunction', label: 'Malfunction'},
-                      {value: 'question', label: 'Question'}
-                    ]}
-                  /> */}
-
                   <EmailDropdown onClose={() => setOpenDropdown(false)} />
-                  {/* <DrivinglicenseDropdown /> */}
-                  {/* <TheoryexamDropDown text="Is the theory exam already registered? Select the day and time for it. These will be displayed to the student." /> */}
                 </Box>
               )}
             </AnimatePresence>
@@ -218,7 +196,7 @@ export default function Header() {
       </Box>
       <Box
         sx={{
-          width: '66px',
+          width: '78px',
           padding: '4px',
           height: '100%',
           display: 'flex',
@@ -270,11 +248,13 @@ export default function Header() {
         />
         <Typography
           sx={{
+            width: '100%',
+            textAlign: 'end',
             ...localFont.inter16,
             fontFamily: '"Inter", sans-serif !important'
           }}
         >
-          Class B
+          {t('class')}
         </Typography>
       </Box>
     </Box>

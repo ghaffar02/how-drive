@@ -2417,6 +2417,7 @@
       "search": "Search"
     },
     "studentHeader": {
+      "class": "Class B",
       "lable1": "First name",
       "input1": "Daniel",
       "lable2": "Last name",
@@ -2579,16 +2580,29 @@
     "Calendar": {
       "Sidebar": {
         "title": "Set appointment schedules",
-        "tabs": ["Talk", "Theory", "Driving"],
+        "tabs": [
+          "Talk",
+          "Theory",
+          "Driving"
+        ],
         "tab1": {
           "title": "Category",
           "title2": "Add category",
           "place": "wähle...",
           "modalPlace": "e.g. General Meeting",
           "options": [
-            {"label": "anmeldung-fahrschule", "value": "Anmeldung Fahrschule"},
-            {"label": "besprechung", "value": "Besprechung"},
-            {"label": "kategorie-hinzufügen", "value": "Kategorie Hinzufügen"}
+            {
+              "label": "anmeldung-fahrschule",
+              "value": "Anmeldung Fahrschule"
+            },
+            {
+              "label": "besprechung",
+              "value": "Besprechung"
+            },
+            {
+              "label": "kategorie-hinzufügen",
+              "value": "Kategorie Hinzufügen"
+            }
           ]
         },
         "tab2": {
@@ -2597,9 +2611,18 @@
           "place": "wähle...",
           "modalPlace": "e.g. Group 1",
           "options": [
-            {"label": "gruppe-1", "value": "Gruppe 1"},
-            {"label": "gruppe-2", "value": "Gruppe 2"},
-            {"label": "gruppe-hinzufügen", "value": "Gruppe Hinzufügen"}
+            {
+              "label": "gruppe-1",
+              "value": "Gruppe 1"
+            },
+            {
+              "label": "gruppe-2",
+              "value": "Gruppe 2"
+            },
+            {
+              "label": "gruppe-hinzufügen",
+              "value": "Gruppe Hinzufügen"
+            }
           ]
         },
         "tab3": {
@@ -2608,9 +2631,18 @@
           "place": "wähle...",
           "modalPlace": "Name",
           "options": [
-            {"label": "tom", "value": "Tom"},
-            {"label": "fabian", "value": "Fabian"},
-            {"label": "sophia", "value": "Sophia"}
+            {
+              "label": "tom",
+              "value": "Tom"
+            },
+            {
+              "label": "fabian",
+              "value": "Fabian"
+            },
+            {
+              "label": "sophia",
+              "value": "Sophia"
+            }
           ]
         },
         "capacity": "Capacity (persons)",
@@ -2625,13 +2657,34 @@
         "cancelBtn": "Cancel",
         "saveBtn": "Save",
         "days": [
-          {"day": "Mo", "unavailable": false},
-          {"day": "Tu", "unavailable": false},
-          {"day": "We", "unavailable": false},
-          {"day": "Th", "unavailable": false},
-          {"day": "Fr", "unavailable": false},
-          {"day": "Sa", "unavailable": true},
-          {"day": "Su", "unavailable": true}
+          {
+            "day": "Mo",
+            "unavailable": false
+          },
+          {
+            "day": "Tu",
+            "unavailable": false
+          },
+          {
+            "day": "We",
+            "unavailable": false
+          },
+          {
+            "day": "Th",
+            "unavailable": false
+          },
+          {
+            "day": "Fr",
+            "unavailable": false
+          },
+          {
+            "day": "Sa",
+            "unavailable": true
+          },
+          {
+            "day": "Su",
+            "unavailable": true
+          }
         ]
       }
     }
