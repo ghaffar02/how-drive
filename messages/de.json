@@ -2415,6 +2415,7 @@
       "search": "Suchen"
     },
     "studentHeader": {
+      "apptmt": "Termine",
       "class": "Klasse B",
       "lable1": "Vorname",
       "input1": "Daniel",

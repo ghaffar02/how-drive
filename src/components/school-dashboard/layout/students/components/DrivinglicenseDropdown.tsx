@@ -44,7 +44,7 @@ export default function DrivinglicenseDropdown({
         <Typography
           sx={{
             ...localFont.inter14,
-            fontWeight: 400,
+            fontWeight: 500,
             fontFamily: '"Inter", sans-serif !important',
             textAlign: 'center',
             color: '#4A5568'

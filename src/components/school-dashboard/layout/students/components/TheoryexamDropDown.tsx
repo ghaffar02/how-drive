@@ -49,7 +49,7 @@ export default function TheoryexamDropDown({
         <Typography
           sx={{
             ...localFont.inter14,
-            fontWeight: 400,
+            fontWeight: 500,
             fontFamily: '"Inter", sans-serif !important',
             textAlign: 'center',
             color: '#4A5568'
@@ -167,7 +167,7 @@ export default function TheoryexamDropDown({
         <CustomButton
           onClick={onClose}
           label={t('btn1')}
-           bgColor="rgb(220, 38, 38)"
+          bgColor="rgb(220, 38, 38)"
           hoverColor="rgb(135,25,25)"
           activeColor="rgb(82,82,91)"
           hoverTextcolor="#fff"

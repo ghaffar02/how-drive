@@ -6,11 +6,14 @@ import {AnimatePresence, motion} from 'framer-motion';
 import addIcon from '@/assets/svgs/circleadd.svg';
 import AppointmentsDropDown from './AppointmentsDropDown';
 import EditappointmentDropDown from './EditappointmentDropDown';
+import {useTranslations} from 'next-intl';
 
 export default function Appointment() {
   const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const iconRef = useRef<HTMLDivElement | null>(null);
+  const t = useTranslations('SchoolDashboard.studentHeader');
+
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
       if (
@@ -99,7 +102,7 @@ export default function Appointment() {
             fontFamily: '"Inter", sans-serif !important'
           }}
         >
-          Appointments
+          {t('apptmt')}
         </Typography>
         {/* <Box sx={{height: '24px', width: '24px'}}>
           <Image
