@@ -73,7 +73,7 @@ export default function ExamInfo() {
     <Box
       sx={{
         width: '100%',
-        height: '100%',
+        height: 'auto',
         background: 'rgba(255,255,255,0.75)',
         padding: {xs: '16px', md: '8px'},
         borderRadius: '18px',
@@ -152,7 +152,7 @@ function Card({
           flexDirection: 'column',
           justifyContent: 'space-around',
           width: '100%',
-          padding: {xs: '0px', md: '16px'}
+          padding: {xs: '0px', md: '3px 16px'}
         }}
       >
         {/* Header Section */}
@@ -174,21 +174,36 @@ function Card({
               justifyContent: 'center'
             }}
           >
-            <Box sx={{display: {xs: 'none', sm: 'block'}}}>
+            <Box
+              sx={{
+                display: {
+                  xs: 'none',
+                  sm: 'block'
+                },
+                height: '20px',
+                width: '20px'
+              }}
+            >
               <Image src={imgSrc} alt="icon" width={20} height={20} />
             </Box>
-            <Box sx={{display: {xs: 'block', sm: 'none'}}}>
+            <Box
+              sx={{
+                display: {xs: 'block', sm: 'none'},
+                height: '16px',
+                width: '16px'
+              }}
+            >
               <Image src={imgSrc1} alt="icon" width={16} height={16} />
             </Box>
           </Box>
 
           <Typography
             sx={{
-              ...localFont.inter16,
               fontSize: {xs: '12px', md: '14px', lg: '16px'},
               color: '#3f3f46',
               fontWeight: '300',
-              lineHeight: '1.5em'
+              lineHeight: '1.5em',
+              fontFamily: '"Inter", sans-serif !important'
             }}
           >
             {title1}
@@ -216,12 +231,12 @@ function Card({
         >
           <Typography
             sx={{
-              ...localFont.inter16,
               fontSize: {xs: '12px', md: '14px', lg: '16px'},
               color: show ? '#07a66b' : '#d93a32',
               fontWeight: '600',
               cursor: 'pointer',
-              lineHeight: '1.4em'
+              lineHeight: '1.4em',
+              fontFamily: '"Inter", sans-serif !important'
             }}
           >
             {show ? title3 : title2}

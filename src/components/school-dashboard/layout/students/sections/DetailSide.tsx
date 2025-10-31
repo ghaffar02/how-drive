@@ -158,7 +158,7 @@ export default function DetailSide() {
         border: '2px solid #fff',
         display: {xs: 'none', md: 'flex'},
         flexDirection: 'column',
-        gap: '8px'
+        gap: '10px'
       }}
     >
       {/* search bar */}
@@ -202,6 +202,7 @@ export default function DetailSide() {
                 '&.Mui-focused fieldset': {border: 'none'}
               },
               '& .MuiInputBase-input': {
+                fontFamily: '"Inter", sans-serif !important',
                 height: 'auto',
                 padding: '0px'
               }
@@ -304,6 +305,7 @@ export default function DetailSide() {
         sx={{
           // bgcolor: '#000',
           width: '100%',
+          mt: '14px',
           display: 'flex',
           flexDirection: {xs: 'column'},
           gap: '20px',
@@ -409,6 +411,7 @@ export default function DetailSide() {
                 padding: '8px',
                 borderRadius: '8px',
                 display: 'flex',
+                alignItems: 'center',
                 flexDirection: 'row',
                 gap: '10px',
                 cursor: 'pointer',
@@ -424,7 +427,7 @@ export default function DetailSide() {
                     : activeIndexes.includes(i)
                       ? '0px 0px 2px 0px #4611f5'
                       : '0px 0px 4px 0px #D4D4D8',
-                  background: '#ffffff'
+                  background: 'rgba(255,255,255,0.85)'
                 },
                 '&:hover .hoverArrow': {
                   opacity: 1,
@@ -457,7 +460,15 @@ export default function DetailSide() {
                     justifyContent: 'center'
                   }}
                 >
-                  <Box sx={{width: '100%', maxWidth: '30px', height: '30px'}}>
+                  <Box
+                    sx={{
+                      width: '100%',
+                      maxWidth: '24px',
+                      maxHeight: '24px',
+                      minHeight: '24px',
+                      minWidth: '24px'
+                    }}
+                  >
                     <Image
                       src={items.icon}
                       alt="
@@ -499,7 +510,7 @@ iconnave"
                 </Typography>
                 <Typography
                   sx={{
-                    ...localFont.inter14,
+                    fontSize: {xs: '10.8px', md: '11.8px', lg: '12.8px'},
                     textAlign: 'end',
 
                     color: items.isRequest

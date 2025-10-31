@@ -77,7 +77,7 @@ export default function Appointment() {
         position: 'relative',
 
         width: '100%',
-        height: '100%',
+        height: 'auto',
         padding: {xs: '16px', lg: '24px'},
         display: 'flex',
         flexDirection: 'column',
@@ -198,12 +198,13 @@ export default function Appointment() {
           display: 'flex',
           flexDirection: 'column',
           gap: '10px',
-          height: {xs: '190px', md: '270px', lg: '280px'},
+          height: {xs: '190px', md: '190px', lg: '190px'},
           padding: '4px',
           '&::-webkit-scrollbar': {
             display: 'none'
           },
-          msOverflowStyle: 'none'
+          msOverflowStyle: 'none',
+          scrollbarWidth: 'none'
         }}
       >
         {show ? (

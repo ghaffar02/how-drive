@@ -49,7 +49,7 @@ export default function LeftSideDropDown({onClose}: CustomCardProps) {
             width: '100%',
 
             fontFamily: '"Inter", sans-serif !important',
-            fontWeight: 400,
+            fontWeight: 500,
             textAlign: 'center'
           }}
         >
@@ -84,7 +84,7 @@ export default function LeftSideDropDown({onClose}: CustomCardProps) {
           imgSrc={send}
           bgColor="#4611f5"
           hoverColor="rgb(48,12,168)"
-          sx={{gap: '8px'}}
+          sx={{gap: '8px', textTransform: 'unset'}}
         />
       </Box>
     </Box>

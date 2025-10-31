@@ -107,7 +107,7 @@ export default function StudentDetail() {
       <Box
         sx={{
           width: '100%',
-          display: 'flex',
+          display: openDropdown ? 'flex' : 'none',
           justifyContent: 'center',
           alignItems: 'center'
         }}
