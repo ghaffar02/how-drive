@@ -87,7 +87,7 @@ export default function Messages() {
           '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)'
       }}
     >
-      <Box sx={{display: 'flex', justifyContent: 'space-between'}}>
+      <Box sx={{display: 'flex', justifyContent: 'space-between', p: '4px'}}>
         <Typography
           sx={{
             ...localFont.inter16,

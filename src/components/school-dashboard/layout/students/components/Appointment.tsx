@@ -93,7 +93,8 @@ export default function Appointment() {
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center'
+          alignItems: 'center',
+          p: '4px'
         }}
       >
         <Typography
@@ -379,7 +380,7 @@ function Card({name, barColor, date, time}: CardProps) {
           sx={{
             ...localFont.inter14,
             fontFamily: '"Inter", sans-serif !important',
-            fontWeight: '500'
+            fontWeight: '600'
           }}
         >
           {name}
@@ -389,7 +390,8 @@ function Card({name, barColor, date, time}: CardProps) {
         <Typography
           sx={{
             ...localFont.inter14,
-            fontFamily: '"Inter", sans-serif !important'
+            fontFamily: '"Inter", sans-serif !important',
+            fontWeight: '300'
           }}
         >
           {time}
@@ -397,7 +399,8 @@ function Card({name, barColor, date, time}: CardProps) {
         <Typography
           sx={{
             ...localFont.inter14,
-            fontFamily: '"Inter", sans-serif !important'
+            fontFamily: '"Inter", sans-serif !important',
+            fontWeight: '300'
           }}
         >
           {date}

@@ -2008,7 +2008,11 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
+          "formFields": [
+            "Notwendige",
+            "Analytics",
+            "Alle zulassen"
+          ]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2047,7 +2051,10 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
+          "formFieldsOff": [
+            "News und Update",
+            "Angebote und Werbung"
+          ]
         }
       }
     },
@@ -2350,7 +2357,11 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
+          "formFields": [
+            "Notwendige",
+            "Analytics",
+            "Alle zulassen"
+          ]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2389,12 +2400,18 @@
             "Nachrichten",
             "Neue Schüler Anfrage"
           ],
-          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
+          "formFieldsOff": [
+            "News und Update",
+            "Angebote und Werbung"
+          ]
         }
       }
     },
     "leftSideTab": {
-      "textTab": ["Aktiv", "Inaktiv"],
+      "textTab": [
+        "Aktiv",
+        "Inaktiv"
+      ],
       "search": "Suchen"
     },
     "studentHeader": {
@@ -2483,6 +2500,8 @@
       "hours": "Stunden",
       "lable1": "Erledigte Theoriestunden",
       "lable2": "Vorgeschriebene Theoriestunden",
+      "lable3": "Erledigte Fahrstunden",
+      "lable4": "Vorgeschriebene Fahrstunden",
       "btn": "Abbrechen",
       "btn1": "Speichern ",
       "messLable1": "Betreff",
@@ -2551,7 +2570,11 @@
     "Calendar": {
       "Sidebar": {
         "title": "Terminpläne festlegen",
-        "tabs": ["Gespräch", "Theorie", "Fahren"],
+        "tabs": [
+          "Gespräch",
+          "Theorie",
+          "Fahren"
+        ],
         "tab1": {
           "title": "Kategorie",
           "title2": "Kategorie hinzufügen",
