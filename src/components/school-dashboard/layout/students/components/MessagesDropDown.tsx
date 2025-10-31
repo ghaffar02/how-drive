@@ -194,7 +194,8 @@ export default function MessagesDropDown({onClose}: CustomCardProps) {
             gap: '8px',
             maxWidth: '174px',
             width: '100%',
-            justifyContent: 'start'
+            justifyContent: 'start',
+            textTransform: 'none'
           }}
           onClick={onClose}
         />

@@ -98,11 +98,11 @@ export default function LessonCard({
         width: '100%',
         height: '100%',
         background: 'rgba(255,255,255,0.75)',
-        padding: {xs: '16px', md: '24px 16px 24px 24px '},
+        padding: {xs: '16px', lg: '24px 16px 24px 24px '},
         borderRadius: '18px',
         display: 'flex',
-        flexDirection: {xs: 'column', md: 'row'},
-        alignItems: {xs: 'end', md: 'start'},
+        flexDirection: {xs: 'column', lg: 'row'},
+        alignItems: {xs: 'end', lg: 'start'},
         justifyContent: 'space-between',
         // height: {xs: '138px', sm: 'auto', lg: '100%'},
         border: '1px solid #fff',
@@ -121,7 +121,7 @@ export default function LessonCard({
           flexDirection: 'column',
           // alignItems: 'start',
           // justifyContent: 'start',
-          gap: {xs: '4px', md: '24px'}
+          gap: {xs: '4px', lg: '24px'}
         }}
       >
         <Typography
@@ -139,7 +139,7 @@ export default function LessonCard({
         {/* Progress text + tooltip */}
         <Box
           sx={{
-            pl: {xs: '0px', md: '24px'},
+            pl: {xs: '0px', lg: '24px'},
             display: 'flex',
             alignItems: 'center',
             gap: '4px',
@@ -169,7 +169,8 @@ export default function LessonCard({
             >
               {completedHours}
             </Typography>
-            / {totalHours} <span></span>
+            / {totalHours}
+            <span style={{marginLeft: '4px'}}></span>
             {t('hours')}
           </Typography>
           {/* <Box sx={{}}>
@@ -284,12 +285,11 @@ export default function LessonCard({
             zIndex: 0,
             transform: {
               xs: 'scale(1)',
-              md: 'scale(1.3)',
               lg: 'scale(1.6)'
             },
-            mt: {md: 1, lg: '20px'},
+            mt: {lg: '20px'},
             // bgcolor: '#000',
-            ml: {xs: '1%', md: '-20%', lg: '-75px'}
+            ml: {xs: '1%', lg: '-75px'}
           }}
         >
           <CircularProgress

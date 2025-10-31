@@ -101,8 +101,8 @@ export default function Messages() {
         <Box
           ref={iconRef}
           sx={{
-            height: '20px',
-            width: '20px',
+            height: '24px',
+            width: '24px',
             cursor: 'pointer',
             position: 'relative'
           }}
