@@ -130,8 +130,8 @@ export default function Messages() {
           onClick={() => setOpenDropdown((prev) => !prev)}
           ref={iconRef}
           sx={{
-            height: '20px',
-            width: '20px',
+            height: '24px',
+            width: '24px',
             cursor: 'pointer',
             position: 'relative'
           }}
@@ -235,11 +235,13 @@ export default function Messages() {
               key={index}
               sx={{
                 width: '100%',
+                minHeight: '60px',
                 // maxWidth: '309px',
-                background: '#fff',
+                background: '#ffffff99',
                 padding: '8px',
                 borderRadius: '8px',
                 display: 'flex',
+                alignItems: 'center',
                 flexDirection: 'row',
                 gap: '10px',
                 cursor: 'pointer',
@@ -251,7 +253,8 @@ export default function Messages() {
                     ? '0px 0px 2px 0px  #3058ffff'
                     : ' 0px 0px 2px 0px #d4d4d8ff',
                 '&:hover': {
-                  boxShadow: '0px 0px 2px 0px  #3058ffff'
+                  boxShadow: '0px 0px 2px 0px  #3058ffff',
+                  background: 'rgba(255,255,255,0.85)'
                 }
 
                 //
@@ -265,7 +268,9 @@ export default function Messages() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  height: '40px'
+                  height: '40px',
+                  minWidth: '40px',
+                  maxWidth: '40px'
                 }}
               >
                 <Box
@@ -276,7 +281,7 @@ export default function Messages() {
                     justifyContent: 'center'
                   }}
                 >
-                  <Box sx={{width: '100%', maxWidth: '30px', height: '30px'}}>
+                  <Box sx={{width: '100%', maxWidth: '24px', height: '24px'}}>
                     <Image
                       src={item.icon}
                       alt="car"

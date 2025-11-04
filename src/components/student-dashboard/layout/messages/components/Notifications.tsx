@@ -316,7 +316,9 @@ export default function Notifications() {
                 minHeight: '60px',
                 // maxWidth: '309px',
                 background:
-                  selectedIndex === index ? 'rgba(255,255,255,1)' : '#ffffffb3',
+                  selectedIndex === index
+                    ? 'rgba(255,255,255,0.85)'
+                    : '#ffffffb3',
                 padding: '8px',
                 borderRadius: '8px',
                 display: 'flex',

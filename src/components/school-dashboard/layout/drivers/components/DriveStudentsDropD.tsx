@@ -73,7 +73,8 @@ export default function DriveStudentsDropD({onClose}: CustomCardProps) {
             gap: '8px',
             maxWidth: '204px',
             width: '100%',
-            justifyContent: 'start'
+            justifyContent: 'start',
+            textTransform: 'unset'
           }}
           onClick={onClose}
         />

@@ -231,9 +231,11 @@ function Card({name, drivingClass}: CardProps) {
       sx={{
         // position: 'relative',
         width: '100%',
+        minHeight: '60px',
         background: '#ffffff99',
         padding: '8px',
         display: 'flex',
+        alignItems: 'center',
         gap: '8px',
         borderRadius: '8px',
         boxShadow: '0px 0px 2px 0px rgb(212,212,216)',

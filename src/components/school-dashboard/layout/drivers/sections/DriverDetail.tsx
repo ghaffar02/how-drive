@@ -22,7 +22,7 @@ export default function DriverDetail() {
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
         display: 'flex',
         flexDirection: 'column',
-        gap: {xs: '20px', md: '24px', lg: '28px'},
+        gap: {xs: '16px', md: '24px'},
         overflow: 'scroll',
         '&::-webkit-scrollbar': {
           display: 'none'
@@ -36,7 +36,7 @@ export default function DriverDetail() {
         sx={{
           display: 'flex',
           flexDirection: {xs: 'column', lg: 'row'},
-          gap: {xs: '20px', md: '24px', lg: '28px'}
+          gap: {xs: '16px', md: '24px'}
         }}
       >
         <Box sx={{flex: 1}}>
@@ -50,9 +50,9 @@ export default function DriverDetail() {
         <Box
           sx={{
             width: '100%',
-            height: {xs: '516px', md: '520px', lg: '550px'},
+            height: {xs: '640px', md: '650px', lg: '866px'},
             '& > :first-child': {
-              height: {xs: '516px', md: '520px', lg: '550px'}
+              height: {xs: '640px', md: '650px', lg: '866px'}
             }
           }}
         >

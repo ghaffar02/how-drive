@@ -291,7 +291,8 @@ export default function DetailSide() {
           flexDirection: {xs: 'column'},
           gap: '20px',
           alignItems: 'end',
-          justifyContent: 'end'
+          justifyContent: 'end',
+          mt: '16px'
         }}
       >
         <Box
@@ -383,6 +384,7 @@ export default function DetailSide() {
               onClick={() => handleClick(i)}
               sx={{
                 width: '100%',
+                height: '60px',
                 background: activeIndexes.includes(i)
                   ? '#ffffffd9'
                   : '#ffffff99',
@@ -405,7 +407,7 @@ export default function DetailSide() {
                   boxShadow: activeIndexes.includes(i)
                     ? '0px 0px 2px 0px #4611f5'
                     : '0px 0px 2px 0px #4611f5',
-                  background: '#ffffff'
+                  background: 'rgba(255,255,255,0.85)'
                 },
                 '&:hover .hoverArrow': {
                   opacity: 1,
@@ -422,7 +424,7 @@ export default function DetailSide() {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  border: '1px solid rgba(37,99,235,0.1)',
+                  // border: '1px solid rgba(37,99,235,0.1)',
                   borderRadius: '8px'
                 }}
               >
