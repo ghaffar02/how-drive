@@ -28,26 +28,10 @@ export default function Business() {
   );
 
   const t = useTranslations('SchoolDashboard.Settings.RightSide.BussinessTab');
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        dropdownRef.current.contains(event.target as Node)
-      ) {
-        return;
-      }
-      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
-        return;
-      }
 
-      setOpenDropdown(false);
-    }
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
   const formFields = t.raw('formFields');
   const days = t.raw('days');
+  const f = useTranslations('Dashboard.Support');
 
   return (
     <Box
@@ -275,12 +259,22 @@ export default function Business() {
                       <Typography
                         sx={{
                           fontSize: '14px',
-                          color: '#999',
-                          fontFamily: '"Inter", sans-serif !important',
-                          textAlign: 'center'
+                          color: '#666',
+                          textAlign: 'center',
+
+                          fontFamily: '"Inter", sans-serif !important'
                         }}
                       >
-                        {items.placeholder}
+                        {f('placeholder3')}{' '}
+                        <span
+                          style={{
+                            color: '#4615ff',
+                            fontWeight: 500,
+                            fontFamily: '"Inter", sans-serif !important'
+                          }}
+                        >
+                          {f('browse')}
+                        </span>
                       </Typography>
                       {selectedFile && (
                         <Box sx={{mt: 2}}>
@@ -426,7 +420,7 @@ export default function Business() {
             transformOrigin: ' bottom'
           }}
         >
-          <MainDropdown />
+          <MainDropdown onClose={() => setOpenDropdown(false)} />
         </Box>
       )}
     </Box>
