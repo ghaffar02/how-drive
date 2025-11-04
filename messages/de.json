@@ -2008,7 +2008,11 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
+          "formFields": [
+            "Notwendige",
+            "Analytics",
+            "Alle zulassen"
+          ]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2047,7 +2051,10 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
+          "formFieldsOff": [
+            "News und Update",
+            "Angebote und Werbung"
+          ]
         }
       }
     },
@@ -2296,6 +2303,36 @@
           "btn6": "nein",
           "btn5": "ja",
           "dropDown": "Möchtest du dein Konto wirklich löschen?",
+          "days": [
+            {
+              "day": "Mo",
+              "unavailable": false
+            },
+            {
+              "day": "Di",
+              "unavailable": false
+            },
+            {
+              "day": "Mi",
+              "unavailable": false
+            },
+            {
+              "day": "Do",
+              "unavailable": false
+            },
+            {
+              "day": "Fr",
+              "unavailable": false
+            },
+            {
+              "day": "Sa",
+              "unavailable": true
+            },
+            {
+              "day": "So",
+              "unavailable": true
+            }
+          ],
           "formFields": [
             {
               "label": "Name der Fahrschule",
@@ -2324,7 +2361,7 @@
             {
               "isbool": true,
               "label": "Gesprochene Sprachen",
-              "placeholder": "z.B. Deutsch, Englisch, Polnisch, Arabisch, Turkisch, ...Unterstützte Klassen"
+              "placeholder": "z.B. Deutsch, Englisch, Polnisch, Arabisch, Turkisch, ..."
             },
             {
               "label": "Unterstützte Klassen",
@@ -2332,7 +2369,7 @@
               "checkBox2": "Führerscheinklasse B"
             },
             {
-              "isbool": true,
+              "isfile": true,
               "label": "Logo der Fahrschule",
               "placeholder": "Ziehe die Datei hierher oder klicke, um sie zu durchsuchen."
             },
@@ -2354,7 +2391,11 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
+          "formFields": [
+            "Notwendige",
+            "Analytics",
+            "Alle zulassen"
+          ]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2393,12 +2434,18 @@
             "Nachrichten",
             "Neue Schüler Anfrage"
           ],
-          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
+          "formFieldsOff": [
+            "News und Update",
+            "Angebote und Werbung"
+          ]
         }
       }
     },
     "leftSideTab": {
-      "textTab": ["Aktiv", "Inaktiv"],
+      "textTab": [
+        "Aktiv",
+        "Inaktiv"
+      ],
       "search": "Suchen"
     },
     "studentHeader": {
@@ -2557,7 +2604,11 @@
     "Calendar": {
       "Sidebar": {
         "title": "Terminpläne festlegen",
-        "tabs": ["Gespräch", "Theorie", "Fahren"],
+        "tabs": [
+          "Gespräch",
+          "Theorie",
+          "Fahren"
+        ],
         "tab1": {
           "title": "Kategorie",
           "title2": "Kategorie hinzufügen",

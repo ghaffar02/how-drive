@@ -14,7 +14,6 @@ import {useTranslations} from 'next-intl';
 import CustomButton from '@/components/school-dashboard/CustomButton';
 import CustomTextField from '@/components/student-dashboard/InputField';
 import GradientDivider from '../GradientDivider';
-import {AnimatePresence, motion} from 'framer-motion';
 import MainDropdown from './MainDropdown';
 import HoursComponent from './HoursComponent';
 
@@ -22,6 +21,7 @@ export default function Business() {
   const [openDropdown, setOpenDropdown] = useState(true);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const iconRef = useRef<HTMLDivElement | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [checkedA, setCheckedA] = useState(false);
   const [checkedValues, setCheckedValues] = useState<{[key: string]: boolean}>(
     {}
@@ -47,15 +47,8 @@ export default function Business() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
   const formFields = t.raw('formFields');
-  const days = [
-    {day: 'Mon', unavailable: false},
-    {day: 'Tue', unavailable: false},
-    {day: 'Wed', unavailable: false},
-    {day: 'Thu', unavailable: false},
-    {day: 'Fri', unavailable: false},
-    {day: 'Sat', unavailable: true},
-    {day: 'Sun', unavailable: true}
-  ];
+  const days = t.raw('days');
+
   return (
     <Box
       sx={{
@@ -210,7 +203,7 @@ export default function Business() {
                   </Typography>
 
                   {/* ✅ 1️⃣ Normal TextField */}
-                  {!items.isbool && !hasCheckbox && (
+                  {!items.isbool && !hasCheckbox && !items.isfile && (
                     <CustomTextField
                       labal={items.placeholder}
                       sx={{
@@ -221,7 +214,7 @@ export default function Business() {
                   )}
 
                   {/* ✅ 2️⃣ TextArea Field */}
-                  {items.isbool && (
+                  {items.isbool && !items.isfile && (
                     <TextField
                       placeholder={items.placeholder}
                       multiline
@@ -245,7 +238,66 @@ export default function Business() {
                       }}
                     />
                   )}
-
+                  {items.isfile && !items.isbool && (
+                    <Box
+                      sx={{
+                        boxShadow:
+                          '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
+                        border: '1px solid  rgba(0, 0, 0, 0.24)',
+                        maxWidth: {lg: '403px', xs: '100%'},
+                        width: '100%',
+                        // border: 'none',
+                        borderRadius: '10px',
+                        fontSize: '14px',
+                        padding: '23px ',
+                        textAlign: 'start',
+                        background: '#ffffff',
+                        cursor: 'pointer',
+                        '&:hover': {
+                          border: '1px solid black',
+                          padding: '23px '
+                        }
+                      }}
+                      onClick={() =>
+                        document.getElementById('fileInput')?.click()
+                      }
+                    >
+                      <input
+                        type="file"
+                        id="fileInput"
+                        style={{display: 'none'}}
+                        onChange={(e) => {
+                          if (e.target.files && e.target.files[0]) {
+                            setSelectedFile(e.target.files[0]);
+                          }
+                        }}
+                      />
+                      <Typography
+                        sx={{
+                          fontSize: '14px',
+                          color: '#999',
+                          fontFamily: '"Inter", sans-serif !important',
+                          textAlign: 'center'
+                        }}
+                      >
+                        {items.placeholder}
+                      </Typography>
+                      {selectedFile && (
+                        <Box sx={{mt: 2}}>
+                          <img
+                            src={URL.createObjectURL(selectedFile)}
+                            alt="Preview"
+                            style={{
+                              maxWidth: '100px',
+                              maxHeight: '100px',
+                              borderRadius: '8px',
+                              objectFit: 'contain'
+                            }}
+                          />
+                        </Box>
+                      )}
+                    </Box>
+                  )}
                   {/* ✅ 3️⃣ Checkbox group */}
                   {hasCheckbox && (
                     <Box
@@ -337,75 +389,46 @@ export default function Business() {
             gap: '20px'
           }}
         >
-          {days.map((data, i) => (
-            <HoursComponent
-              key={i}
-              day={data.day}
-              unavailable={data.unavailable}
-            />
-          ))}
+          {days.map(
+            (
+              data: {day: string; unavailable: boolean | undefined},
+              i: Key | null | undefined
+            ) => (
+              <HoursComponent
+                key={i}
+                day={data.day}
+                unavailable={data.unavailable}
+              />
+            )
+          )}
         </Box>
       </Box>
-      <AnimatePresence>
-        {openDropdown && (
-          <Box
-            component={motion.div}
-            initial={{
-              opacity: 0,
-              scale: 0.5,
-              y: 70,
-              x: 20,
-              originX: 1,
-              originY: 0
-            }}
-            animate={{
-              opacity: 1,
-              scale: 1,
-              y: 0,
-              x: 0,
-              originX: 1,
-              originY: 0
-            }}
-            exit={{
-              opacity: 0,
-              scale: 0.5,
-              // dur: 1,
-              y: 60,
-              x: 20,
-              originX: 1,
-              originY: 0
-            }}
-            transition={{
-              duration: 0.5,
-              type: 'spring',
-              stiffness: 300,
-              damping: 25
-            }}
-            sx={{
-              position: 'absolute',
-              p: {xs: '48px 24px'},
-              top: '10%',
+      {openDropdown && (
+        <Box
+          sx={{
+            position: 'absolute',
+            p: {xs: '48px 24px'},
+            top: '10%',
 
-              zIndex: 178879,
-              overflow: 'visible',
-              border: '1px solid #ffffffff',
-              backgroundColor: '#fff',
-              // bgcolor: 'red',
-              backdropFilter: 'blur(10px)',
-              boxShadow: `
+            zIndex: 178879,
+            overflow: 'visible',
+            border: '1px solid #ffffffff',
+            backgroundColor: '#fff',
+            // bgcolor: 'red',
+            backdropFilter: 'blur(10px)',
+            boxShadow: `
       0px 0px 0px 2px rgba(0, 0, 0, 0.02),
       0px 2px 9px 0px rgba(0, 0, 0, 0.09),
       0px 10px 42px 0px rgba(0, 0, 0, 0.4)
        
     `,
-              borderRadius: '18px',
-              transformOrigin: ' bottom'
-            }}
-          >
-            <MainDropdown />
-          </Box>
-        )}
-      </AnimatePresence>
+            borderRadius: '18px',
+            transformOrigin: ' bottom'
+          }}
+        >
+          <MainDropdown />
+        </Box>
+      )}
     </Box>
   );
 }

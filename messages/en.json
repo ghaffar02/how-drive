@@ -2020,7 +2020,11 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": ["Necessary", "Analytics", "Allow all"]
+          "formFields": [
+            "Necessary",
+            "Analytics",
+            "Allow all"
+          ]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2048,7 +2052,10 @@
             "News",
             "Driving license office registered"
           ],
-          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
+          "formFieldsOff": [
+            "Genereller Newsletter",
+            "Offers and advertising"
+          ]
         }
       }
     },
@@ -2297,6 +2304,36 @@
           "btn5": "yes",
           "btn6": "no",
           "dropDown": "Do you really want to delete your account?",
+          "days": [
+            {
+              "day": "Mon",
+              "unavailable": false
+            },
+            {
+              "day": "Tue",
+              "unavailable": false
+            },
+            {
+              "day": "Wed",
+              "unavailable": false
+            },
+            {
+              "day": "Thu",
+              "unavailable": false
+            },
+            {
+              "day": "Fri",
+              "unavailable": false
+            },
+            {
+              "day": "Sat",
+              "unavailable": true
+            },
+            {
+              "day": "Sun",
+              "unavailable": true
+            }
+          ],
           "formFields": [
             {
               "label": "Driving school name",
@@ -2325,7 +2362,7 @@
             {
               "isbool": true,
               "label": "Spoken languages",
-              "placeholder": "e.g. Deutsch, Englisch, Polnisch, Arabisch, Turkisch, ...Supported classes"
+              "placeholder": "e.g. Deutsch, Englisch, Polnisch, Arabisch, Turkisch, ..."
             },
             {
               "label": "Supported classes",
@@ -2333,7 +2370,7 @@
               "checkBox2": "Diving license class B"
             },
             {
-              "isbool": true,
+              "isfile": true,
               "label": "Logo of driving school",
               "placeholder": "Drag the file here or click to browse it."
             },
@@ -2367,7 +2404,11 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": ["Necessary", "Analytics", "Allow all"]
+          "formFields": [
+            "Necessary",
+            "Analytics",
+            "Allow all"
+          ]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2395,12 +2436,18 @@
             "News",
             "New students' request"
           ],
-          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
+          "formFieldsOff": [
+            "Genereller Newsletter",
+            "Offers and advertising"
+          ]
         }
       }
     },
     "leftSideTab": {
-      "textTab": ["Active", "Inactive"],
+      "textTab": [
+        "Active",
+        "Inactive"
+      ],
       "search": "Search"
     },
     "studentHeader": {
@@ -2570,7 +2617,11 @@
     "Calendar": {
       "Sidebar": {
         "title": "Set appointment schedules",
-        "tabs": ["Talk", "Theory", "Driving"],
+        "tabs": [
+          "Talk",
+          "Theory",
+          "Driving"
+        ],
         "tab1": {
           "title": "Category",
           "title2": "Add category",

@@ -205,18 +205,21 @@ export default function Account() {
                   ) : (
                     <Box
                       sx={{
+                        boxShadow:
+                          '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
+                        border: '1px solid  rgba(0, 0, 0, 0.24)',
                         maxWidth: {lg: '403px', xs: '100%'},
                         width: '100%',
-                        border: 'none',
+                        // border: 'none',
                         borderRadius: '10px',
                         fontSize: '14px',
-                        padding: '12px 12px 22px ',
+                        padding: '23px ',
                         textAlign: 'start',
                         background: '#ffffff',
                         cursor: 'pointer',
                         '&:hover': {
                           border: '1px solid black',
-                          padding: '11px 11px 21px '
+                          padding: '23px '
                         }
                       }}
                       onClick={() =>
@@ -233,24 +236,15 @@ export default function Account() {
                           }
                         }}
                       />
-
                       <Typography
                         sx={{
                           fontSize: '14px',
-                          color: '#666',
-                          fontFamily: '"Inter", sans-serif !important'
+                          color: '#999',
+                          fontFamily: '"Inter", sans-serif !important',
+                          textAlign: 'center'
                         }}
                       >
                         {items.placeholder}
-                        {/* <span
-                          style={{
-                            color: '#4615ff',
-                            fontWeight: 500,
-                            fontFamily: '"Inter", sans-serif !important'
-                          }}
-                        >
-                          
-                        </span> */}
                       </Typography>
                       {selectedFile && (
                         <Box sx={{mt: 2}}>
