@@ -47,7 +47,6 @@ export default function LeftSideDropDown({onClose}: CustomCardProps) {
           sx={{
             ...localFont.inter16,
             width: '100%',
-
             fontFamily: '"Inter", sans-serif !important',
             fontWeight: 500,
             textAlign: 'center'
@@ -59,7 +58,6 @@ export default function LeftSideDropDown({onClose}: CustomCardProps) {
           sx={{
             ...localFont.inter14,
             width: '100%',
-
             fontFamily: '"Inter", sans-serif !important',
             fontWeight: 400,
             textAlign: 'center'
