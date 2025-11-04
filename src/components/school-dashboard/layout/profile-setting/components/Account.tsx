@@ -45,7 +45,7 @@ export default function Account() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
   const formFields = t.raw('formFields');
-
+  const f = useTranslations('Dashboard.Support');
   return (
     <Box
       sx={{
@@ -217,6 +217,7 @@ export default function Account() {
                         textAlign: 'start',
                         background: '#ffffff',
                         cursor: 'pointer',
+
                         '&:hover': {
                           border: '1px solid black',
                           padding: '23px '
@@ -239,12 +240,21 @@ export default function Account() {
                       <Typography
                         sx={{
                           fontSize: '14px',
-                          color: '#999',
-                          fontFamily: '"Inter", sans-serif !important',
-                          textAlign: 'center'
+                          color: '#666',
+                          textAlign: 'center',
+                          fontFamily: '"Inter", sans-serif !important'
                         }}
                       >
-                        {items.placeholder}
+                        {f('placeholder3')}{' '}
+                        <span
+                          style={{
+                            color: '#4615ff',
+                            fontWeight: 500,
+                            fontFamily: '"Inter", sans-serif !important'
+                          }}
+                        >
+                          {f('browse')}
+                        </span>
                       </Typography>
                       {selectedFile && (
                         <Box sx={{mt: 2}}>
