@@ -99,10 +99,12 @@ const emails = [
 import {AnimatePresence, motion} from 'framer-motion';
 import localFont from '@/utils/themes';
 import LeftSideDropDown from './LeftSideDropDown';
+import { useTranslations } from 'next-intl';
 
 const MotionBox = motion(Box);
 
 export default function Notifications() {
+  const t = useTranslations('Dashboard.Messages.placeholder');
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
@@ -169,7 +171,7 @@ export default function Notifications() {
             />
           </Box>
           <TextField
-            placeholder="Search"
+            placeholder={t('search')}
             variant="outlined"
             sx={{
               flex: 1,
@@ -311,12 +313,14 @@ export default function Notifications() {
               key={index}
               sx={{
                 width: '99%',
+                minHeight: '60px',
                 // maxWidth: '309px',
                 background:
                   selectedIndex === index ? 'rgba(255,255,255,1)' : '#ffffffb3',
                 padding: '8px',
                 borderRadius: '8px',
                 display: 'flex',
+                alignItems: 'center',
                 flexDirection: 'row',
                 gap: '10px',
                 cursor: 'pointer',
@@ -341,7 +345,8 @@ export default function Notifications() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  height: '40px'
+                  height: '40px',
+                  width: '40px'
                 }}
               >
                 <Box
@@ -355,9 +360,9 @@ export default function Notifications() {
                   <Box
                     sx={{
                       width: '100%',
-                      minWidth: '30px',
-                      maxWidth: '30px',
-                      height: '30px'
+                      minWidth: '24px',
+                      maxWidth: '24px',
+                      height: '24px'
                     }}
                   >
                     <Image
