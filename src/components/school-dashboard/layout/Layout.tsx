@@ -43,7 +43,7 @@ export default function StudentDashboard() {
         width: '100%',
         height: {
           xs: '100svh',
-          md: 'calc(100svh - 40px)'
+          md: 'calc(100svh - 48px)'
         },
         borderRadius: '24px'
       }}
