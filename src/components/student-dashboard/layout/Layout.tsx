@@ -40,7 +40,7 @@ const Azdata = [
   }
 ];
 export default function StudentDashboard() {
-  const [activeKey, setActiveKey] = React.useState<string>('3');
+  const [activeKey, setActiveKey] = React.useState<string>('1');
   const [hoverKey, setHoverKey] = React.useState<string | null>(null);
   // ProfileDropdown relative states
   const [open, setOpen] = useState(false);
