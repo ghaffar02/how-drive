@@ -14,6 +14,7 @@ import backIcon from '@/assets/svgs/dashboard-student/backIcon.svg';
 import deleteIcon2 from '@/assets/svgs/dashboard-student/deleteIcon2.svg';
 import copyIcon from '@/assets/svgs/dashboard-student/copyIcon.svg';
 import CustomCard from './DropDown';
+import download from '@/assets/svgs/downloadIcon.svg';
 import {useTranslations} from 'next-intl';
 import {AnimatePresence, motion} from 'framer-motion';
 
@@ -31,7 +32,8 @@ const messages = [
   {
     sender: 'system',
     message:
-      'No matter how small the step, moving forward will always bring you closer to your goals. Every challenge you face is an opportunity to grow stronger and smarter than before.'
+      'No matter how small the step, moving forward will always bring you closer to your goals. Every challenge you face is an opportunity to grow stronger and smarter than before.',
+    file: true
   },
   {
     sender: 'user',
@@ -46,7 +48,8 @@ const messages = [
   {
     sender: 'system',
     message:
-      'Failure is not the opposite of success; it’s a part of the journey that teaches you valuable lessons. Every challenge you face is an opportunity to grow stronger and smarter than before.'
+      'Failure is not the opposite of success; it’s a part of the journey that teaches you valuable lessons. Every challenge you face is an opportunity to grow stronger and smarter than before.',
+    file: true
   },
   {
     sender: 'system',
@@ -56,7 +59,8 @@ const messages = [
   {
     sender: 'user',
     message:
-      'Learning a skill takes time, but each mistake you make is a step closer to mastery.'
+      'Learning a skill takes time, but each mistake you make is a step closer to mastery.',
+    file: true
   },
   {
     sender: 'system',
@@ -101,7 +105,8 @@ const messages = [
   {
     sender: 'system',
     message:
-      'Hard work beats talent when talent doesn’t work hard, so never underestimate persistence.'
+      'Hard work beats talent when talent doesn’t work hard, so never underestimate persistence.',
+    file: true
   },
   {
     sender: 'system',
@@ -489,6 +494,64 @@ export default function Inbox() {
               </>
               {/* )} */}
             </Box>
+            {/* Below is the code for file */}
+            {data?.file && (
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  p: '12px',
+                  background: data.sender === 'user' ? '#6348fa' : '#f0f0fa',
+                  borderRadius:
+                    data.sender === 'user'
+                      ? '18px 2px 18px 18px'
+                      : '2px 18px 18px 18px'
+                }}
+              >
+                <Box
+                  sx={{
+                    height: '42px',
+                    width: '42px',
+                    borderRadius: '50%',
+                    background: '#fff',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <Image
+                    src={download}
+                    alt="downloadIcon"
+                    height={20}
+                    width={20}
+                  />
+                </Box>
+                <Box>
+                  <Typography
+                    sx={{
+                      ...localFont.inter14,
+                      fontFamily: '"Inter", sans-serif !important',
+                      color: data.sender === 'user' ? '#fff' : '#1a202c'
+                    }}
+                  >
+                    Registeration Driving License
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: {xs: '10px', md: '11px', lg: '12px'},
+                      fontFamily: '"Inter", sans-serif !important',
+                      fontWeight: 300,
+                      color: data.sender === 'user' ? '#fff' : '#1a202c',
+                      mt: '4px'
+                    }}
+                  >
+                    517 KB - PDF
+                  </Typography>
+                </Box>
+              </Box>
+            )}
+            {/* File code end */}
             <Box
               sx={{
                 maxWidth: '80%',
