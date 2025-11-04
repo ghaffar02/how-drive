@@ -6,6 +6,7 @@ import {AnimatePresence, motion} from 'framer-motion';
 import HeaderDropDown from './HeaderDropDown';
 
 import pen from '@/assets/svgs/dashboard-student/pen.svg';
+import {useTranslations} from 'next-intl';
 
 export default function Header() {
   const [checked, setChecked] = React.useState(true);
@@ -16,6 +17,7 @@ export default function Header() {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(event.target.checked);
   };
+  const t = useTranslations('SchoolDashboard.studentHeader');
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -194,7 +196,7 @@ export default function Header() {
       </Box>
       <Box
         sx={{
-          width: '66px',
+          width: '78px',
           padding: '4px',
           height: '100%',
           display: 'flex',
@@ -250,7 +252,7 @@ export default function Header() {
             fontFamily: '"Inter", sans-serif !important'
           }}
         >
-          Class B
+          {t('class')}
         </Typography>
       </Box>
     </Box>
