@@ -2120,8 +2120,7 @@
         "btn1": "Ja"
       },
       "formDropDown": {
-        "label1": "Von",
-        "label2": "An",
+        "label1": "An",
         "placeholder": "wähle ...",
         "option1": "Fahrschule Mundsburg",
         "option2": "Fabian - Fahrer",
@@ -2129,7 +2128,8 @@
         "label4": "Nachricht",
         "label5": "Datei hochladen",
         "btn": "Abbrechen",
-        "btn1": "Senden "
+        "btn1": "Senden ",
+        "placeholder3": "durchsuchen"
       },
       "options": {
         "delete": "Löschen",

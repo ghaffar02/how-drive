@@ -15,6 +15,7 @@ interface CustomCardProps {
 export default function LeftSideDropDown({onClose}: CustomCardProps) {
   const [selectedCategory, setSelectedCategory] = useState('');
   const t = useTranslations('Dashboard.Messages.formDropDown');
+  const f = useTranslations('Dashboard.Support');
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
   const handleContainerClick = (event: React.MouseEvent) => {
@@ -24,7 +25,7 @@ export default function LeftSideDropDown({onClose}: CustomCardProps) {
 
   return (
     <Box
-      onClick={onClose}
+      // onClick={onClose}
       sx={{
         width: '100%',
         // maxWidth: {xs: '323px', sm: '333px'},
@@ -84,27 +85,14 @@ export default function LeftSideDropDown({onClose}: CustomCardProps) {
               padding: '12px',
               // border: '1px solid  rgba(0, 0, 0, 0.24)'
 
-              boxShadow: '0px 0px 0px 1px #0000000f, 0px 1px 0px #00000011  '
-            },
-            '&:hover .MuiOutlinedInput-notchedOutline': {
-              border: 'none !important'
-            },
-            '& .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline':
-              {
-                border: ' 1px solid #3058ff'
-              },
-            '& fieldset': {
-              borderColor: '#e2e8f010'
+              boxShadow:
+                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
             },
 
             '& .MuiSelect-select': {
               padding: 0,
               fontSize: '14px',
               color: selectedCategory ? '#000' : '#aaa'
-            },
-            '&.Mui-focused ': {
-              borderColor: '#3058ff',
-              borderWidth: '1px'
             }
           }}
         >
@@ -176,7 +164,10 @@ export default function LeftSideDropDown({onClose}: CustomCardProps) {
         <CustomTextField
           bgColor="#fff"
           // labal={items}
-          sx={{textAlign: 'end', maxWidth: {lg: '403px'}}}
+          sx={{
+            textAlign: 'end',
+            maxWidth: {lg: '403px'}
+          }}
         />
       </Box>
 
@@ -211,23 +202,7 @@ export default function LeftSideDropDown({onClose}: CustomCardProps) {
                 '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
               height: '100%',
               fontSize: '14px',
-              padding: '12px',
-
-              // Default border (none or light)
-              '& fieldset': {
-                borderColor: '#e2e8f00a'
-              },
-
-              // On hover
-              '&:hover fieldset': {
-                borderColor: '#e2e8f00a'
-              },
-
-              // ✅ On focus
-              '&.Mui-focused fieldset': {
-                borderColor: '#3850ff',
-                borderWidth: '1.5px'
-              }
+              padding: '12px'
             },
 
             '& .MuiInputBase-input': {
@@ -257,9 +232,12 @@ export default function LeftSideDropDown({onClose}: CustomCardProps) {
 
         <Box
           sx={{
+            boxShadow:
+              '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
+            border: '1px solid  rgba(0, 0, 0, 0.24)',
             maxWidth: {lg: '403px', xs: '100%'},
             width: '100%',
-            border: 'none',
+            // border: 'none',
             borderRadius: '10px',
             fontSize: '14px',
             padding: '23px ',
@@ -268,7 +246,7 @@ export default function LeftSideDropDown({onClose}: CustomCardProps) {
             cursor: 'pointer',
             '&:hover': {
               border: '1px solid black',
-              padding: '22px '
+              padding: '23px '
             }
           }}
           onClick={() => document.getElementById('fileInput')?.click()}
@@ -283,7 +261,16 @@ export default function LeftSideDropDown({onClose}: CustomCardProps) {
               }
             }}
           />
-
+          <Typography
+            sx={{
+              fontSize: '14px',
+              color: '#666',
+              fontFamily: '"Inter", sans-serif !important',
+              textAlign: 'center'
+            }}
+          >
+            {t('placeholder3')}{' '}
+          </Typography>
           {selectedFile && (
             <Box sx={{mt: 2}}>
               <img
