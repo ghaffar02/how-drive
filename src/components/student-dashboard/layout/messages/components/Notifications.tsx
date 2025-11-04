@@ -6,7 +6,7 @@ import searchIcon from '@/assets/svgs/dashboard-student/searchIcon.svg';
 import crossIcon from '@/assets/svgs/dashboard-student/crossicon.svg';
 
 import car from '@/assets/svgs/dashboard-student/home/car.svg';
-import fabian from '@/assets/svgs/dashboard-student/home/fabian.svg';
+import fabian from '@/assets/svgs/steering.svg';
 import logo from '@/assets/pngs/logo.avif';
 
 const emails = [
@@ -22,7 +22,7 @@ const emails = [
     sender: 'Fabian',
     date: '01.06.2025',
     subject: 'Das ist das Thema der Email.',
-    bgcolor: '#ffa60026'
+    bgcolor: '#06b6d41a'
   },
   {
     icon: car,
@@ -50,7 +50,7 @@ const emails = [
     sender: 'Fabian',
     date: '01.06.2025',
     subject: 'Das ist das Thema der Email.',
-    bgcolor: '#ffa60026'
+    bgcolor: '#06b6d41a'
   },
   {
     icon: car,
@@ -78,7 +78,7 @@ const emails = [
     sender: 'Fabian',
     date: '01.06.2025',
     subject: 'Das ist das Thema der Email.',
-    bgcolor: '#ffa60026'
+    bgcolor: '#06b6d41a'
   },
   {
     icon: car,
@@ -311,12 +311,14 @@ export default function Notifications() {
               key={index}
               sx={{
                 width: '99%',
+                minHeight: '60px',
                 // maxWidth: '309px',
                 background:
                   selectedIndex === index ? 'rgba(255,255,255,1)' : '#ffffffb3',
                 padding: '8px',
                 borderRadius: '8px',
                 display: 'flex',
+                alignItems: 'center',
                 flexDirection: 'row',
                 gap: '10px',
                 cursor: 'pointer',
@@ -341,7 +343,8 @@ export default function Notifications() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  height: '40px'
+                  height: '40px',
+                  width: '40px'
                 }}
               >
                 <Box
@@ -355,9 +358,9 @@ export default function Notifications() {
                   <Box
                     sx={{
                       width: '100%',
-                      minWidth: '30px',
-                      maxWidth: '30px',
-                      height: '30px'
+                      minWidth: '24px',
+                      maxWidth: '24px',
+                      height: '24px'
                     }}
                   >
                     <Image
@@ -389,7 +392,8 @@ export default function Notifications() {
                       // fontWeight: selectedIndex === index ? '700' : '400'
                       color: selectedIndex === index ? '#000' : '#718096',
                       fontFamily: '"Inter", sans-serif !important',
-                      fontWeight: selectedIndex === index ? '500' : '400'
+                      fontWeight: selectedIndex === index ? '500' : '400',
+                      lineHeight: '1.6em'
                     }}
                   >
                     {item.sender}
@@ -399,7 +403,8 @@ export default function Notifications() {
                       fontSize: {xs: '8.4px', md: '10px', lg: '11px'},
                       color: selectedIndex === index ? '#000' : '#718096',
                       fontFamily: '"Inter", sans-serif !important',
-                      fontWeight: selectedIndex === index ? '500' : '400'
+                      fontWeight: selectedIndex === index ? '500' : '400',
+                      lineHeight: '1.6em'
                     }}
                   >
                     {item.date}
@@ -415,7 +420,8 @@ export default function Notifications() {
                     fontWeight: '400',
                     whiteSpace: 'nowrap',
                     overflow: 'hidden',
-                    textOverflow: 'ellipsis'
+                    textOverflow: 'ellipsis',
+                    lineHeight: '1.6em'
                   }}
                 >
                   {item.subject}
