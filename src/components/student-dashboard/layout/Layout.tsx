@@ -52,6 +52,13 @@ export default function StudentDashboard() {
     }
   }, [activeKey]);
 
+  const t = useTranslations('Dashboard.DesktopTabs');
+  const data = t.raw('data');
+  const ADdata = t.raw('data2');
+
+  const tabs = [...data, ...ADdata];
+  const title = tabs[Number(activeKey) - 1]?.label ?? '';
+
   return (
     <Box
       sx={{
@@ -124,21 +131,22 @@ export default function StudentDashboard() {
             anchorRef={anchorRef}
             open={open}
             setOpen={setOpen}
-            title={
-              activeKey === '1'
-                ? 'Home'
-                : activeKey === '2'
-                  ? 'Process'
-                  : activeKey === '3'
-                    ? 'Calendar'
-                    : activeKey === '4'
-                      ? 'Messages'
-                      : activeKey === '5'
-                        ? 'Settings'
-                        : activeKey === '6'
-                          ? 'Support'
-                          : ''
-            }
+            // title={
+            //   activeKey === '1'
+            //     ? 'Home'
+            //     : activeKey === '2'
+            //       ? 'Process'
+            //       : activeKey === '3'
+            //         ? 'Calendar'
+            //         : activeKey === '4'
+            //           ? 'Messages'
+            //           : activeKey === '5'
+            //             ? 'Settings'
+            //             : activeKey === '6'
+            //               ? 'Support'
+            //               : ''
+            // }
+            title={title}
             activeKey={activeKey}
             setActiveKey={setActiveKey}
           />
@@ -208,6 +216,7 @@ function MobileHeader({
         <Typography
           sx={{
             ...localFont.inter20,
+            fontWeight: 500,
             fontSize: '16px'
           }}
         >
