@@ -151,9 +151,10 @@ export default function DesktopTabs({
           </Box>
           <Divider
             sx={{
-              borderTop: '1px solid transparent',
-              borderImage:
-                'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1'
+              height: '2px',
+              border: 'none',
+              background:
+                'linear-gradient(90deg, rgb(228, 228, 231) 0%, rgb(212, 212, 216) 50%, rgb(228, 228, 231) 100%)'
             }}
           />
         </Box>
@@ -228,9 +229,10 @@ export default function DesktopTabs({
         <Box>
           <Divider
             sx={{
-              borderTop: '1px solid transparent',
-              borderImage:
-                'linear-gradient(90deg, rgba(245,245,245,0.6) 0%, rgba(203,203,203,1) 50%, rgba(245,245,245,0.6) 100%) 1',
+              height: '2px',
+              border: 'none',
+              background:
+                'linear-gradient(90deg, rgb(228, 228, 231) 0%, rgb(212, 212, 216) 50%, rgb(228, 228, 231) 100%)',
               marginBottom: '24px'
             }}
           />

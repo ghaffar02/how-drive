@@ -161,7 +161,7 @@ export default function ProfileDropdown({
                 width: '256px',
                 gap: '4px',
                 backgroundColor: 'rgba(240, 240, 250, 0.6)',
-                border: '1px solid #fff'
+                border: '2px solid #fff'
               }}
             >
               <Box
