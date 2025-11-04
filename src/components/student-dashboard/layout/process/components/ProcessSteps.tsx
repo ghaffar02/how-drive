@@ -171,8 +171,12 @@ export default function ProcessSteps() {
               display: open ? 'flex' : 'none',
               flexDirection: 'column',
               gap: '24px',
-              background: '#f0f0fa99',
-              backdropFilter: 'blur(8px)',
+              // background: '#f0f0fa99',
+              background:
+                'linear-gradient(145deg, rgba(227, 227, 255, 0.4) 0%, rgba(255, 240, 227, 0.4) 100%)',
+              boxShadow:
+                '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
+              backdropFilter: 'blur(15px)',
               zIndex: 9,
               cursor: 'default'
             }}
