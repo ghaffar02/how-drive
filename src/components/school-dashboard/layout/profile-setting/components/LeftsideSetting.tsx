@@ -31,9 +31,9 @@ export default function Leftside({
         // height: '100%',
         background: 'rgba(248,250,252,0.3)',
         padding: {xs: '8px', md: '24px 12px'},
-        border: '1px solid #fff',
-        boxShadow:
-          'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
+        border: '2px solid #fff',
+
+        boxShadow: '0px 0px 2px 0px #D4D4D8',
         backdropFilter: 'blur(15px)',
         display: {xs: 'none', md: 'flex'},
         alignItems: 'center',
