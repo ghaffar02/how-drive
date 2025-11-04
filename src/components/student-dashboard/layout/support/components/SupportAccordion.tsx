@@ -200,7 +200,7 @@ const SupportAccordion = ({openFaq}: InputProp) => {
                       <Typography
                         sx={{
                           ...localFont.inter14,
-                          fontWeight: '400',
+                          fontWeight: 300,
                           fontFamily: '"Inter", sans-serif  !important',
                           lineHeight: '1.5em'
                         }}
