@@ -97,7 +97,7 @@ export default function Home() {
           <Grid
             container
             size={{xs: 12, md: 12, lg: 4}}
-            sx={{height: {xs: 'auto', lg: '80%'}}}
+            sx={{height: {xs: 'auto', lg: 'calc( 100% - 16vh - 24px )'}}}
             // sx={{height: {xs: 'auto', lg: '80%', xl: '80%'}}}
             spacing={3}
           >
@@ -105,14 +105,24 @@ export default function Home() {
               size={{md: 6, lg: 12}}
               sx={{
                 display: {xs: 'none', md: 'block'},
-                height: {xs: 'auto', lg: '48%', xl: '47.5%'}
+                height: {
+                  xs: 'auto',
+                  lg: 'calc( 50% - 12px )',
+                  xl: 'calc( 50% - 12px )'
+                }
               }}
             >
               <Appointment />
             </Grid>
             <Grid
               size={{xs: 12, md: 6, lg: 12}}
-              sx={{height: {xs: 'auto', lg: '48%', xl: '47.5%'}}}
+              sx={{
+                height: {
+                  xs: 'auto',
+                  lg: 'calc( 50% - 12px )',
+                  xl: 'calc( 50% - 12px )'
+                }
+              }}
             >
               <Messages />
             </Grid>
