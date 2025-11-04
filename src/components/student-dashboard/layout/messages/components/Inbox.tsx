@@ -530,7 +530,7 @@ export default function Inbox() {
           }}
         >
           <TextField
-            placeholder="Nachricht"
+            placeholder={t('message')}
             variant="outlined"
             sx={{
               flex: 1,

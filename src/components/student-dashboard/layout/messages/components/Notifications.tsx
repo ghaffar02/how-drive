@@ -99,10 +99,12 @@ const emails = [
 import {AnimatePresence, motion} from 'framer-motion';
 import localFont from '@/utils/themes';
 import LeftSideDropDown from './LeftSideDropDown';
+import {useTranslations} from 'next-intl';
 
 const MotionBox = motion(Box);
 
 export default function Notifications() {
+  const t = useTranslations('Dashboard.Messages.placeholder');
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [openDropdown, setOpenDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
@@ -169,7 +171,7 @@ export default function Notifications() {
             />
           </Box>
           <TextField
-            placeholder="Search"
+            placeholder={t('search')}
             variant="outlined"
             sx={{
               flex: 1,
