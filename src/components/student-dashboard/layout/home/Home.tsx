@@ -42,10 +42,7 @@ export default function Home() {
           columnSpacing={{xs: 2, sm: 3, md: 3}}
           rowSpacing={{xs: 2, sm: 3, md: 3, lg: 3}}
         >
-          <Grid
-            size={{xs: 6, md: 12}}
-            sx={{height: {xs: 'auto', lg: '18%', xl: '17%'}}}
-          >
+          <Grid size={{xs: 6, md: 12}} sx={{height: {xs: 'auto', lg: '16vh'}}}>
             <Header />
           </Grid>
           <Grid size={6} sx={{display: {xs: 'block', md: 'none'}}}>
@@ -54,13 +51,33 @@ export default function Home() {
           <Grid
             container
             size={{md: 12, lg: 8}}
-            sx={{height: {xs: 'auto', lg: '78%', xl: '80%'}}}
-            spacing={{xs: 2, sm: 3, md: 3}}
+            sx={{
+              height: {
+                xs: 'auto',
+                // lg: '78%',
+                // xl: '80%',
+                // gap: {xs: '16px', sm: '24px'},
+                lg: 'calc( 100% - 16vh - 24px )'
+              },
+              rowGap: {xs: '16px', sm: '24px'},
+              columnGap: {xs: '16px', sm: '24px'}
+            }}
+            // spacing={{xs: 2, sm: 3, md: 3}}
           >
-            <Grid size={12} sx={{height: {xs: 'auto', lg: '70%', xl: '70%'}}}>
+            <Grid
+              size={12}
+              sx={{
+                height: {
+                  xs: 'auto',
+                  // lg: 'calc(100% - 13.1vh)',
+                  lg: 'calc(100% - 16vh - 32px)'
+                  // xl: 'calc(100% - 14.87vh)'
+                }
+              }}
+            >
               <Process />
             </Grid>
-            <Grid size={6} sx={{height: {xs: 'auto', lg: '26%', xl: '25%'}}}>
+            <Grid size={6} sx={{height: {xs: 'auto', lg: '16vh'}}}>
               <LessonCard
                 title={t('card1Title')}
                 completedHours={11}
@@ -68,7 +85,7 @@ export default function Home() {
                 progressValue={80}
               />
             </Grid>
-            <Grid size={6} sx={{height: {xs: 'auto', lg: '26%', xl: '25%'}}}>
+            <Grid size={6} sx={{height: {xs: 'auto', lg: '16vh'}}}>
               <LessonCard
                 title={t('card2Title')}
                 completedHours={4}
@@ -80,7 +97,8 @@ export default function Home() {
           <Grid
             container
             size={{xs: 12, md: 12, lg: 4}}
-            sx={{height: {xs: 'auto', lg: '78%', xl: '80%'}}}
+            sx={{height: {xs: 'auto', lg: '80%'}}}
+            // sx={{height: {xs: 'auto', lg: '80%', xl: '80%'}}}
             spacing={3}
           >
             <Grid
