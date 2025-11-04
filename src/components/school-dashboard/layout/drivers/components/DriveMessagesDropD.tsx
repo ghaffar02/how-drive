@@ -1,10 +1,11 @@
-import {Box, TextField, Typography} from '@mui/material';
+import {Box, Typography} from '@mui/material';
 import tick from '@/assets/svgs/dashboard-student/send.svg';
 
 import localFont from '@/utils/themes';
 import CustomButton from '@/components/student-dashboard/CustomButton';
 import CustomTextField from '@/components/school-dashboard/InputField';
 import {useTranslations} from 'next-intl';
+import {useState} from 'react';
 interface CustomCardProps {
   onClose?: () => void;
 }
@@ -14,6 +15,9 @@ export default function DriveMessagesDropD({onClose}: CustomCardProps) {
     event.stopPropagation();
   };
   const t = useTranslations('SchoolDashboard.Drivers.DriverDetailMessages');
+  const f = useTranslations('Dashboard.Messages.formDropDown');
+
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
   return (
     <Box
@@ -102,7 +106,62 @@ export default function DriveMessagesDropD({onClose}: CustomCardProps) {
         >
           {t('messLable3')}
         </Typography>
-        <CustomTextField type="file" />
+        <Box
+          sx={{
+            boxShadow:
+              '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
+            border: '1px solid  rgba(0, 0, 0, 0.24)',
+            maxWidth: {lg: '403px', xs: '100%'},
+            width: '100%',
+            // border: 'none',
+            borderRadius: '10px',
+            fontSize: '14px',
+            padding: '23px ',
+            textAlign: 'start',
+            background: '#ffffff',
+            cursor: 'pointer',
+            '&:hover': {
+              border: '1px solid black',
+              padding: '23px '
+            }
+          }}
+          onClick={() => document.getElementById('fileInput')?.click()}
+        >
+          <input
+            type="file"
+            id="fileInput"
+            style={{display: 'none'}}
+            onChange={(e) => {
+              if (e.target.files && e.target.files[0]) {
+                setSelectedFile(e.target.files[0]);
+              }
+            }}
+          />
+          <Typography
+            sx={{
+              fontSize: '14px',
+              color: '#666',
+              fontFamily: '"Inter", sans-serif !important',
+              textAlign: 'center'
+            }}
+          >
+            {f('placeholder3')}{' '}
+          </Typography>
+          {selectedFile && (
+            <Box sx={{mt: 2}}>
+              <img
+                src={URL.createObjectURL(selectedFile)}
+                alt="Preview"
+                style={{
+                  maxWidth: '100px',
+                  maxHeight: '100px',
+                  borderRadius: '8px',
+                  objectFit: 'contain'
+                }}
+              />
+            </Box>
+          )}
+        </Box>
         {/* <TextField
           multiline
           rows={4}
