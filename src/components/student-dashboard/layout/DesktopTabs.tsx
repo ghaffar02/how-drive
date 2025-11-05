@@ -135,8 +135,8 @@ export default function DesktopTabs({
         <Box>
           <Box
             sx={{
-              height: '50px',
-              width: '50px',
+              height: '44px',
+              width: '44px',
               margin: 'auto',
               marginBottom: '24px',
               cursor: 'pointer'
