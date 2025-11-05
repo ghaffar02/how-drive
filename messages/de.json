@@ -2554,7 +2554,9 @@
         "lable4": "015128746528",
         "checkText1": "Führerscheinklasse A",
         "checkText2": "Führerscheinklasse B",
-        "btn": "Hinzufügen"
+        "btn": "Hinzufügen",
+        "titleTrainer": "Fahrlehrer hinzufügen",
+        "desTrainer": "Du hast die maximal zulässige Anzahl aktiver Fahrlehrer für deinen aktuellen Tarif erreicht. Bitte upgrade deinen Tarif unter \"Einstellungen=>Zahlung\" oder deaktiviere einen Fahrlehrer, um neue Fahrlehrer hinzufügen zu können."
       }
     },
     "Drivers": {

@@ -2477,7 +2477,9 @@
         "lable4": "015128746528",
         "checkText1": "Driving license class A",
         "checkText2": "Driving license class B",
-        "btn": "Add"
+        "btn": "Add",
+        "titleTrainer": "Add trainer",
+        "desTrainer": "You have reached the maximum number of active trainers for your current plan. Please upgrade your plan under \"Settings => Payment\" or deactivate a trainer to be able to add new trainers."
       },
       "Drivers": {
         "DriverDetail": {
