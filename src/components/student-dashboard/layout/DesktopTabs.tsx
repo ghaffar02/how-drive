@@ -86,10 +86,10 @@ export default function DesktopTabs({
       id: '5',
       label: 'Einstellungen',
       menuIcon: setting,
-      iconHover: settingsIconBold
+      iconHover: message_blue
     },
-    {id: '6', label: 'Support', menuIcon: email, iconHover: infos_bold},
-    {id: '7', label: 'Abmelden', menuIcon: login, iconHover: logoutIconBold}
+    {id: '6', label: 'Support', menuIcon: email, iconHover: message_blue},
+    {id: '7', label: 'Abmelden', menuIcon: login, iconHover: message_blue}
   ];
   // profile initials
   const initials = 'aohn zoe example';
@@ -135,8 +135,8 @@ export default function DesktopTabs({
         <Box>
           <Box
             sx={{
-              height: '50px',
-              width: '50px',
+              height: '44px',
+              width: '44px',
               margin: 'auto',
               marginBottom: '24px',
               cursor: 'pointer'
@@ -197,14 +197,30 @@ export default function DesktopTabs({
                   width: '100%'
                 }}
               >
-                <Image
-                  src={iconSrc}
-                  alt={item.label}
-                  width={25}
-                  height={25}
-                  unoptimized
-                  style={{display: 'block', margin: 'auto'}}
-                />
+                <Box sx={{position: 'relative'}}>
+                  <Image
+                    src={iconSrc}
+                    alt={item.label}
+                    width={25}
+                    height={25}
+                    unoptimized
+                    style={{display: 'block', margin: 'auto'}}
+                  />
+
+                  {item.label?.toLowerCase() === 'message' && (
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: '-4px',
+                        right: '17px',
+                        backgroundColor: '#4611F5',
+                        height: '8px',
+                        width: '8px',
+                        borderRadius: '50%'
+                      }}
+                    ></Box>
+                  )}
+                </Box>
                 <Typography
                   sx={{
                     color: isActive ? '#4611F5' : '#000000',

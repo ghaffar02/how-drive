@@ -28,10 +28,7 @@ export default function Home() {
           },
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
-          // boxShadow: {
-          //   xs: 'rgb(255, 255, 255) 1px 1px 1px 1px, rgba(0, 0, 0, 0.25) 0px 1px 1px 1px, rgba(0, 0, 0, 0.25) 1px 1px 1px 1px',
-          //   md: 'none'
-          // },
+
           backdropFilter: {xs: 'blur(15px)', md: 'none'},
           zIndex: '1'
         }}
@@ -54,9 +51,7 @@ export default function Home() {
             sx={{
               height: {
                 xs: 'auto',
-                // lg: '78%',
-                // xl: '80%',
-                // gap: {xs: '16px', sm: '24px'},
+
                 lg: 'calc( 100% - 16vh - 24px )'
               },
               rowGap: {xs: '16px', sm: '24px'},
@@ -69,9 +64,7 @@ export default function Home() {
               sx={{
                 height: {
                   xs: 'auto',
-                  // lg: 'calc(100% - 13.1vh)',
-                  lg: 'calc(100% - 16vh - 32px)'
-                  // xl: 'calc(100% - 14.87vh)'
+                  lg: 'calc(100% - 16vh - 24px)'
                 }
               }}
             >
@@ -98,7 +91,6 @@ export default function Home() {
             container
             size={{xs: 12, md: 12, lg: 4}}
             sx={{height: {xs: 'auto', lg: 'calc( 100% - 16vh - 24px )'}}}
-            // sx={{height: {xs: 'auto', lg: '80%', xl: '80%'}}}
             spacing={3}
           >
             <Grid
