@@ -206,14 +206,29 @@ export default function DesktopTabs({
                   width: '100%'
                 }}
               >
-                <Image
-                  src={iconSrc}
-                  alt={item.label}
-                  width={25}
-                  height={25}
-                  unoptimized
-                  style={{display: 'block', margin: 'auto'}}
-                />
+                <Box sx={{position: 'relative'}}>
+                  <Image
+                    src={iconSrc}
+                    alt={item.label}
+                    width={25}
+                    height={25}
+                    unoptimized
+                    style={{display: 'block', margin: 'auto'}}
+                  />
+                  {item.label?.toLowerCase() === 'message' && (
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: '-4px',
+                        right: '17px',
+                        backgroundColor: '#4611F5',
+                        height: '8px',
+                        width: '8px',
+                        borderRadius: '50%'
+                      }}
+                    ></Box>
+                  )}
+                </Box>
                 <Typography
                   sx={{
                     color: isActive ? '#4611F5' : '#000000',
