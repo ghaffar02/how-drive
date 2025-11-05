@@ -254,7 +254,7 @@ export default function Messages() {
                     : ' 0px 0px 2px 0px #d4d4d8ff',
                 '&:hover': {
                   boxShadow: '0px 0px 2px 0px  #3058ffff',
-                  background: 'rgba(255,255,255,0.85)'
+                  background: 'rgba(255,255,255,0.85) !important'
                 }
 
                 //
