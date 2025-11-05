@@ -103,8 +103,12 @@ export default function Messages() {
               key={index}
               sx={{
                 width: '100%',
+                minHeight: '60px',
                 // maxWidth: '309px',
-                background: '#fff',
+                background:
+                  selectedIndex === index
+                    ? 'rgba(255,255,255,0.85)'
+                    : '#ffffffb3',
                 padding: '8px',
                 borderRadius: '8px',
                 display: 'flex',
@@ -118,7 +122,8 @@ export default function Messages() {
                     ? '0px 0px 2px 0px  #3058ffff'
                     : ' 0px 0px 2px 0px #d4d4d8ff',
                 '&:hover': {
-                  boxShadow: '0px 0px 2px 0px  #3058ffff'
+                  boxShadow: '0px 0px 2px 0px  #3058ffff',
+                  background: 'rgba(255,255,255,0.85) !important'
                 }
 
                 //
@@ -132,7 +137,8 @@ export default function Messages() {
                   display: 'inline-flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  height: '40px'
+                  height: '40px',
+                  minWidth: '40px'
                 }}
               >
                 <Box
@@ -143,7 +149,7 @@ export default function Messages() {
                     justifyContent: 'center'
                   }}
                 >
-                  <Box sx={{width: '100%', maxWidth: '30px', height: '30px'}}>
+                  <Box sx={{width: '100%', maxWidth: '24px', height: '24px'}}>
                     <Image
                       src={item.icon}
                       alt="car"
