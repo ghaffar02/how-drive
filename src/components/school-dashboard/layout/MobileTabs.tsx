@@ -161,14 +161,35 @@ export default function MobileTabs({
                     width: '100%'
                   }}
                 >
-                  <Image
-                    src={iconSrc}
-                    alt={item.label}
-                    width={25}
-                    height={25}
-                    unoptimized
-                    style={{display: 'block', margin: 'auto'}}
-                  />
+                  <Box
+                    sx={{
+                      position: 'relative',
+                      width: 'fit-content',
+                      margin: 'auto'
+                    }}
+                  >
+                    <Image
+                      src={iconSrc}
+                      alt={item.label}
+                      width={25}
+                      height={25}
+                      unoptimized
+                      style={{display: 'block', margin: 'auto'}}
+                    />
+                    {item.label?.toLowerCase() === 'message' && (
+                      <Box
+                        sx={{
+                          position: 'absolute',
+                          top: '-4px',
+                          right: '-4px',
+                          backgroundColor: '#4611F5',
+                          height: '8px',
+                          width: '8px',
+                          borderRadius: '50%'
+                        }}
+                      ></Box>
+                    )}
+                  </Box>
                 </Box>
                 <Typography
                   sx={{
