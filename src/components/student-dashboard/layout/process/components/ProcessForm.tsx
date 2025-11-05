@@ -267,6 +267,10 @@ export function DrivingLicenseForm() {
               },
               '& .MuiInputLabel-shrink': {
                 top: '0px'
+              },
+              '& .MuiFormHelperText-root': {
+                fontFamily: '"Inter", sans-serif !important',
+                fontSize: '12px'
               }
             }}
           />

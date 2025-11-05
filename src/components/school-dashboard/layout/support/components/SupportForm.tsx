@@ -185,6 +185,10 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
                   '& .MuiSelect-select': {
                     padding: 0,
                     fontSize: '14px'
+                  },
+                  '& .MuiFormHelperText-root': {
+                    fontFamily: '"Inter", sans-serif !important',
+                    fontSize: '12px'
                   }
                 }}
               >
@@ -243,6 +247,10 @@ export default function SupportForm({setOpenFaq, openFaq}: Props) {
               },
               '& .MuiInputLabel-shrink': {
                 top: '0px'
+              },
+              '& .MuiFormHelperText-root': {
+                fontFamily: '"Inter", sans-serif !important',
+                fontSize: '12px'
               }
             }}
           />
