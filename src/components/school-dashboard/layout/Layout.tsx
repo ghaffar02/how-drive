@@ -36,6 +36,12 @@ export default function StudentDashboard() {
       console.log('logout function here');
     }
   }, [activeKey]);
+  const t = useTranslations('SchoolDashboard.DesktopTabs');
+  const data = t.raw('data');
+  const ADdata = t.raw('data2');
+
+  const tabs = [...data, ...ADdata];
+  const title = tabs[Number(activeKey) - 1]?.label ?? '';
 
   return (
     <Box
@@ -111,19 +117,19 @@ export default function StudentDashboard() {
             setOpen={setOpen}
             title={
               activeKey === '1'
-                ? 'Home'
+                ? (tabs[Number(activeKey) - 1]?.label ?? '')
                 : activeKey === '2'
-                  ? 'Timer'
+                  ? (tabs[Number(activeKey) - 1]?.label ?? '')
                   : activeKey === '3'
-                    ? 'Calendar'
+                    ? (tabs[Number(activeKey) - 1]?.label ?? '')
                     : activeKey === '4'
-                      ? 'Messages'
+                      ? (tabs[Number(activeKey) - 1]?.label ?? '')
                       : activeKey === '5'
-                        ? 'Settings'
+                        ? (tabs[Number(activeKey)]?.label ?? '')
                         : activeKey === '6'
-                          ? 'Support'
+                          ? (tabs[Number(activeKey)]?.label ?? '')
                           : activeKey === '7'
-                            ? 'Trainer'
+                            ? (tabs[Number(activeKey) - 3]?.label ?? '')
                             : ''
             }
             activeKey={activeKey}
