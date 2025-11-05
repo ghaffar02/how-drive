@@ -12,6 +12,7 @@ import LeftSideDropDown from '../components/LeftSideDropDown';
 import iconpurple from '@/assets/svgs/dashboard-student/purple.svg';
 import iconorange from '@/assets/svgs/dashboard-student/orange.svg';
 import iconnave from '@/assets/svgs/dashboard-student/nave.svg';
+import alertIcon from '@/assets/svgs/alertIcon.svg';
 import {useTranslations} from 'next-intl';
 
 const MotionBox = motion(Box);
@@ -161,6 +162,24 @@ export default function DetailSide() {
         gap: '10px'
       }}
     >
+      <Box sx={{mb: '16px'}}>
+        <Box
+          sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
+        >
+          <Image src={alertIcon} alt="alert" height={24} width={24} />
+        </Box>
+        <Typography
+          sx={{
+            ...localFont.inter16,
+            fontFamily: '"Inter", sans-serif !important',
+            textAlign: 'center',
+            fontWeight: 300,
+            mt: '8px'
+          }}
+        >
+          {t('title')}
+        </Typography>
+      </Box>
       {/* search bar */}
       <Box
         sx={{

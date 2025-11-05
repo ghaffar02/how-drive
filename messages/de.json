@@ -2008,11 +2008,7 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": [
-            "Notwendige",
-            "Analytics",
-            "Alle zulassen"
-          ]
+          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2051,10 +2047,7 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": [
-            "News und Update",
-            "Angebote und Werbung"
-          ]
+          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
         }
       }
     },
@@ -2391,11 +2384,7 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": [
-            "Notwendige",
-            "Analytics",
-            "Alle zulassen"
-          ]
+          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2434,19 +2423,14 @@
             "Nachrichten",
             "Neue Schüler Anfrage"
           ],
-          "formFieldsOff": [
-            "News und Update",
-            "Angebote und Werbung"
-          ]
+          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
         }
       }
     },
     "leftSideTab": {
-      "textTab": [
-        "Aktiv",
-        "Inaktiv"
-      ],
-      "search": "Suchen"
+      "textTab": ["Aktiv", "Inaktiv"],
+      "search": "Suchen",
+      "title": "Die maximal zulässige Anzahl aktiver Fahrschüler ist erreicht. Bitte upgrade deinen Tarif unter \"Einstellungen=>Zahlung\" oder deaktiviere einen Fahrschüler."
     },
     "studentHeader": {
       "apptmt": "Termine",
@@ -2604,11 +2588,7 @@
     "Calendar": {
       "Sidebar": {
         "title": "Terminpläne festlegen",
-        "tabs": [
-          "Gespräch",
-          "Theorie",
-          "Fahren"
-        ],
+        "tabs": ["Gespräch", "Theorie", "Fahren"],
         "tab1": {
           "title": "Kategorie",
           "title2": "Kategorie hinzufügen",
