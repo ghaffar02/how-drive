@@ -61,6 +61,17 @@ export default function LessonCard({
     return () => unsub();
   }, [progressValue, motionProgress]);
 
+  const [winHeight, setWinHeight] = useState(0);
+
+  useEffect(() => {
+    const updateHeight = () => setWinHeight(window.innerHeight);
+
+    updateHeight(); // initial height
+    window.addEventListener('resize', updateHeight);
+
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
+
   return (
     <Box
       sx={{
@@ -163,11 +174,11 @@ export default function LessonCard({
             // alignItems: 'center',
             zIndex: 0,
             transform: {
-              xs: 'scale(1)',
-              md: 'scale(1.3)',
-              lg: 'scale(1.6)'
+              xs: `scale(1)`,
+              md: `scale(1.3)`,
+              lg: `scale(${winHeight * 0.0017})`
             },
-            mt: {md: 1, lg: '20px'},
+            mt: {md: 1, lg: '10px'},
             // bgcolor: '#000',
             ml: {xs: '1%', md: '-20%', lg: '-75px'}
           }}
