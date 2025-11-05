@@ -5,8 +5,8 @@ import Image from 'next/image';
 import React, {useState} from 'react';
 
 import car from '@/assets/svgs/dashboard-student/home/car.svg';
-import fabian from '@/assets/svgs/dashboard-student/home/fabian.svg';
-import logo from '@/assets/svgs/dashboard-student/home/logo.svg';
+import fabian from '@/assets/svgs/steering.svg';
+import logo from '@/assets/pngs/logo.avif';
 import {useTranslations} from 'next-intl';
 
 import {motion} from 'framer-motion';
@@ -29,7 +29,7 @@ export default function Messages() {
       sender: 'Fabian',
       date: '01.06.2025',
       subject: 'Das ist das Thema der Email.',
-      bgcolor: '#ffa60026'
+      bgcolor: '#06b6d41a'
     },
     {
       icon: car,
