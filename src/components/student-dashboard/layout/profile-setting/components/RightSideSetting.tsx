@@ -1,6 +1,5 @@
-import localFont from '@/utils/themes';
 import {Box, Typography} from '@mui/material';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Account from './Account';
 import Password from './Password';
 import Preference from './Preference';
@@ -17,7 +16,7 @@ export default function RightSide({
 }) {
   const t = useTranslations('Dashboard.Settings.leftSide');
   // const [activeIndex, setActiveIndex] = useState<number | 0>(0);
-  const data = t.raw('RightSideArray');
+  const data = t.raw('SettingsArray');
 
   const handleClick = (i: number) => {
     if (window.innerWidth <= 900) {
@@ -25,6 +24,19 @@ export default function RightSide({
     }
   };
 
+  const [tabBarHeight, setTabBarHeight] = useState(0);
+
+  useEffect(() => {
+    const handleHeight = () => {
+      const height = document.getElementById('tabBar')?.clientHeight || 0;
+      setTabBarHeight(height);
+    };
+
+    handleHeight();
+    window.addEventListener('resize', handleHeight);
+
+    return () => window.removeEventListener('resize', handleHeight);
+  }, []);
   return (
     <Box
       sx={{
@@ -33,10 +45,7 @@ export default function RightSide({
         width: '100%',
         background: '#f8fafc4d',
         border: '2px solid #FFFFFF',
-        // boxShadow:
-        //   'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
-        // boxShadow:
-        //   '0px 0px 0px 1px #ffffff), 0px 1px 0px 0px rgba(0, 0, 0, 0.25),  0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
+
         overflow: 'hidden',
 
         backdropFilter: 'blur(15px)',
@@ -59,14 +68,35 @@ export default function RightSide({
       >
         {/* Tabs */}
         <Box
+          id="tabBar"
           sx={{
             bgcolor: '#ffffff99',
+            opacity: 1,
+            boxShadow: `0px 0px 0px 1px rgb(255, 255, 255, rgb(255, 255, 255)), 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)`,
+            border: '2px solid #fff',
+            backdropFilter: 'blur(15px)',
+            // : {xs: '96.5%', sm: '97.7%'},
+
+            width: '97.7%',
+
+            '@media (max-width: 728px)': {
+              width: '97.5%'
+            },
+            '@media (max-width: 588px)': {
+              width: '97%'
+            },
+
+            '@media (max-width: 460px)': {
+              width: '96.1%'
+            },
             display: {xs: 'flex', md: 'none'},
-            p: '4px',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            boxShadow: '0px 0px 2px 0px #a1a1aa',
-            borderRadius: '999px'
+            p: '12px',
+            flexWrap: 'wrap',
+
+            gap: '12px',
+            position: 'fixed',
+            zIndex: 121,
+            borderRadius: '24px'
           }}
         >
           {data.map((items: string, i: number) => (
@@ -74,23 +104,22 @@ export default function RightSide({
               key={i}
               onClick={() => handleClick(i)}
               sx={{
-                background: activeIndex === i ? '#ffff' : 'transprant',
-                padding: '4px 8px',
-                borderRadius: '999px',
-                cursor: 'pointer',
-                boxShadow:
-                  activeIndex === i
-                    ? '0px 1px 2px 0px #00000040'
-                    : '0px 0px 0px 0px #000000'
+                background: activeIndex === i ? '#2d3748' : '#DDE0F0',
+                padding: '8px',
+                borderRadius: '8px',
+                cursor: 'pointer'
               }}
             >
               <Typography
                 sx={{
+                  // ...localFont.inter16,
                   lineHeight: '1.6em',
+                  textAlign: 'center',
+
                   fontSize: {xs: '12px', md: '13px', lg: '14px'},
-                  color: '#4A5568',
+                  color: activeIndex === i ? '#fff' : '#4A5568',
                   fontFamily: '"Inter", sans-serif !important',
-                  fontWeight: activeIndex === i ? '500' : '400'
+                  fontWeight: 400
                 }}
               >
                 {items}
@@ -100,7 +129,13 @@ export default function RightSide({
         </Box>
 
         {/* Pages */}
-        <Box sx={{}}>
+        <Box
+          sx={{
+            '@media (max-width:900px)': {
+              mt: {xs: `calc(${tabBarHeight}px + 36px)`}
+            }
+          }}
+        >
           {activeIndex === 0 && <Account />}
           {activeIndex === 1 && <Notification />}
           {activeIndex === 2 && <Privacy />}

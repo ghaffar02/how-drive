@@ -6,7 +6,6 @@ import Privacy from './Privacy';
 import {useTranslations} from 'next-intl';
 import Notification from './Notification';
 import Business from './Business';
-import localFont from '@/utils/themes';
 import {useEffect, useState} from 'react';
 
 export default function RightSide({
@@ -25,16 +24,18 @@ export default function RightSide({
       setActiveIndex(i);
     }
   };
-
-  const [winHeight, setWinHeight] = useState(0);
+  const [tabBarHeight, setTabBarHeight] = useState(0);
 
   useEffect(() => {
-    const updateHeight = () => setWinHeight(window.innerHeight);
+    const handleHeight = () => {
+      const height = document.getElementById('tabBar')?.clientHeight || 0;
+      setTabBarHeight(height);
+    };
 
-    updateHeight(); // initial height
-    window.addEventListener('resize', updateHeight);
+    handleHeight();
+    window.addEventListener('resize', handleHeight);
 
-    return () => window.removeEventListener('resize', updateHeight);
+    return () => window.removeEventListener('resize', handleHeight);
   }, []);
 
   return (
@@ -69,6 +70,7 @@ export default function RightSide({
       >
         {/* Tabs */}
         <Box
+          id="tabBar"
           sx={{
             bgcolor: '#ffffff99',
             opacity: 1,
@@ -119,7 +121,7 @@ export default function RightSide({
                   fontSize: {xs: '12px', md: '13px', lg: '14px'},
                   color: activeIndex === i ? '#fff' : '#4A5568',
                   fontFamily: '"Inter", sans-serif !important',
-                  fontWeight: activeIndex === i ? '500' : '400'
+                  fontWeight: 400
                 }}
               >
                 {items}
@@ -132,13 +134,7 @@ export default function RightSide({
         <Box
           sx={{
             '@media (max-width:900px)': {
-              mt: '96px'
-            },
-            '@media (max-width: 728px)': {
-              mt: '142px'
-            },
-            '@media (max-width: 420px)': {
-              mt: '190px'
+              mt: {xs: `calc(${tabBarHeight}px + 36px)`}
             }
           }}
         >
