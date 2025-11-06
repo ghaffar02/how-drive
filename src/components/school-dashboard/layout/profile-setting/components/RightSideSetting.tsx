@@ -6,6 +6,8 @@ import Privacy from './Privacy';
 import {useTranslations} from 'next-intl';
 import Notification from './Notification';
 import Business from './Business';
+import localFont from '@/utils/themes';
+import {useEffect, useState} from 'react';
 
 export default function RightSide({
   activeIndex,
@@ -16,13 +18,24 @@ export default function RightSide({
 }) {
   const t = useTranslations('SchoolDashboard.Settings.leftSide');
   // const [activeIndex, setActiveIndex] = useState<number | 0>(0);
-  const data = t.raw('RightSideArray');
-
+  // const data = t.raw('RightSideArray');
+  const data = t.raw('SettingsArray');
   const handleClick = (i: number) => {
     if (window.innerWidth <= 900) {
       setActiveIndex(i);
     }
   };
+
+  const [winHeight, setWinHeight] = useState(0);
+
+  useEffect(() => {
+    const updateHeight = () => setWinHeight(window.innerHeight);
+
+    updateHeight(); // initial height
+    window.addEventListener('resize', updateHeight);
+
+    return () => window.removeEventListener('resize', updateHeight);
+  }, []);
 
   return (
     <Box
@@ -39,7 +52,7 @@ export default function RightSide({
         backdropFilter: 'blur(15px)',
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
         // borderRadius: '0px 24px 24px 0px',
-        height: {xs: '100%', md: '100%'}
+        height: {xs: '100%'}
       }}
     >
       <Box
@@ -47,7 +60,7 @@ export default function RightSide({
           p: {xs: '8px', md: '24px'},
           overflowY: 'scroll',
 
-          height: {xs: '100%', lg: '100%'},
+          height: {xs: '100%'},
 
           overflow: ' hidden auto',
           msOverflowStyle: 'none',
@@ -58,12 +71,32 @@ export default function RightSide({
         <Box
           sx={{
             bgcolor: '#ffffff99',
+            opacity: 1,
+            boxShadow: `0px 0px 0px 1px rgb(255, 255, 255, rgb(255, 255, 255)), 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)`,
+            border: '2px solid #fff',
+            backdropFilter: 'blur(15px)',
+            // : {xs: '96.5%', sm: '97.7%'},
+
+            width: '97.7%',
+
+            '@media (max-width: 728px)': {
+              width: '97.5%'
+            },
+            '@media (max-width: 588px)': {
+              width: '97%'
+            },
+
+            '@media (max-width: 460px)': {
+              width: '96.1%'
+            },
             display: {xs: 'flex', md: 'none'},
-            p: '4px',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            boxShadow: '0px 0px 2px 0px #a1a1aa',
-            borderRadius: '999px'
+            p: '12px',
+            flexWrap: 'wrap',
+
+            gap: '12px',
+            position: 'fixed',
+            zIndex: 121,
+            borderRadius: '24px'
           }}
         >
           {data.map((items: string, i: number) => (
@@ -71,21 +104,20 @@ export default function RightSide({
               key={i}
               onClick={() => handleClick(i)}
               sx={{
-                background: activeIndex === i ? '#ffff' : 'transprant',
-                padding: '4px 8px',
-                borderRadius: '999px',
-                cursor: 'pointer',
-                boxShadow:
-                  activeIndex === i
-                    ? '0px 1px 2px 0px #00000040'
-                    : '0px 0px 0px 0px #000000'
+                background: activeIndex === i ? '#2d3748' : '#DDE0F0',
+                padding: '8px',
+                borderRadius: '8px',
+                cursor: 'pointer'
               }}
             >
               <Typography
                 sx={{
+                  // ...localFont.inter16,
                   lineHeight: '1.6em',
+                  textAlign: 'center',
+
                   fontSize: {xs: '12px', md: '13px', lg: '14px'},
-                  color: '#4A5568',
+                  color: activeIndex === i ? '#fff' : '#4A5568',
                   fontFamily: '"Inter", sans-serif !important',
                   fontWeight: activeIndex === i ? '500' : '400'
                 }}
@@ -95,9 +127,21 @@ export default function RightSide({
             </Box>
           ))}
         </Box>
-
         {/* Pages */}
-        <Box sx={{}}>
+
+        <Box
+          sx={{
+            '@media (max-width:900px)': {
+              mt: '96px'
+            },
+            '@media (max-width: 728px)': {
+              mt: '142px'
+            },
+            '@media (max-width: 420px)': {
+              mt: '190px'
+            }
+          }}
+        >
           {activeIndex === 0 && <Business />}
           {activeIndex === 1 && <Account />}
           {activeIndex === 2 && <Notification />}

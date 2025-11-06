@@ -402,9 +402,9 @@ export default function Business() {
           sx={{
             position: 'absolute',
             p: {xs: '48px 24px'},
-            top: '10%',
+            top: {xs: '2%', md: '10%'},
 
-            zIndex: 178879,
+            zIndex: 17,
             overflow: 'visible',
             border: '1px solid #ffffffff',
             backgroundColor: '#fff',
