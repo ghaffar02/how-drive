@@ -176,7 +176,8 @@ export default function ProcessSteps({setActiveKey}: Props) {
               display: open ? 'flex' : 'none',
               flexDirection: 'column',
               gap: '24px',
-              background: '#f0f0fada', //this is different color to trigger it
+              // background: '#f0f0fada', //this is different color to trigger it
+              background: '#f0f0faef',
               backdropFilter: 'blur(8px)',
               boxShadow: `
     0px 0px 0px 1px rgb(255, 255, 255),

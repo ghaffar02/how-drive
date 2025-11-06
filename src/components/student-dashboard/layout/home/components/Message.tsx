@@ -113,6 +113,7 @@ export default function Messages() {
                 borderRadius: '8px',
                 display: 'flex',
                 flexDirection: 'row',
+                alignItems: 'center',
                 gap: '10px',
                 cursor: 'pointer',
                 // fontWeight: selectedIndex === index ? '700' : '400'
