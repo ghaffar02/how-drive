@@ -151,7 +151,7 @@ export default function StudentDashboard() {
             setActiveKey={setActiveKey}
           />
           {activeKey === '1' && <Home />}
-          {activeKey === '2' && <Process />}
+          {activeKey === '2' && <Process setActiveKey={setActiveKey} />}
           {activeKey === '3' && <Calander />}
           {activeKey === '4' && <Message />}
           {activeKey === '5' && <Setting />}

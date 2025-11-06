@@ -12,10 +12,15 @@ import cross1 from '@/assets/svgs/dashboard-student/cross2.svg';
 import tick from '@/assets/svgs/dashboard-student/tick.svg';
 
 import {useTranslations} from 'next-intl';
+import Support from '../../support/Support';
 
 const fillAnimation = keyframes`0%{height:0%} 100%{height:100%}`;
 
-export default function ProcessSteps() {
+type Props = {
+  setActiveKey: React.Dispatch<React.SetStateAction<string>>;
+};
+
+export default function ProcessSteps({setActiveKey}: Props) {
   const t = useTranslations('Dashboard.Process.processSteps');
 
   const [open, setOpen] = useState(false);
@@ -171,7 +176,8 @@ export default function ProcessSteps() {
               display: open ? 'flex' : 'none',
               flexDirection: 'column',
               gap: '24px',
-              background: '#f0f0fada',//this is different color to trigger it 
+              // background: '#f0f0fada', //this is different color to trigger it
+              background: '#f0f0faef',
               backdropFilter: 'blur(8px)',
               boxShadow: `
     0px 0px 0px 1px rgb(255, 255, 255),
@@ -333,7 +339,7 @@ export default function ProcessSteps() {
       {/* Below Box */}
       <Box sx={{width: '100%'}}>
         {data.map((data) => (
-          <Steps key={data.id} {...data} />
+          <Steps key={data.id} {...data} setActiveKey={setActiveKey} />
         ))}
       </Box>
     </Box>
@@ -347,6 +353,7 @@ type PropsData = {
   link?: string;
   width?: string;
   complete: boolean;
+  setActiveKey: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export function Steps({
@@ -355,7 +362,8 @@ export function Steps({
   points,
   link,
   width = '190px',
-  complete
+  complete,
+  setActiveKey
 }: PropsData) {
   const t = useTranslations('Dashboard.Process.processSteps');
   return id === 8 ? (
@@ -490,6 +498,10 @@ export function Steps({
           }}
         >
           <Box
+            onClick={(e) => {
+              e.stopPropagation();
+              setActiveKey('6');
+            }}
             sx={{
               width: 'fit-content',
               cursor: 'pointer',
@@ -521,6 +533,10 @@ export function Steps({
           </Box>
           {/* Second Button */}
           <Box
+            onClick={(e) => {
+              e.stopPropagation();
+              setActiveKey('6');
+            }}
             sx={{
               width: 'fit-content',
               cursor: 'pointer',
@@ -699,6 +715,13 @@ export function Steps({
           </Box>
           {link && (
             <Box
+              onClick={(e) => {
+                e.stopPropagation();
+                if (id === 1 || id === 2 || id === 8) return;
+                if (id === 3) setActiveKey('6');
+                if (id === 4 || id === 6) setActiveKey('3');
+                if (id === 5 || id === 7) setActiveKey('4');
+              }}
               sx={{
                 flex: 1,
                 //   border: '1px solid red',
@@ -714,7 +737,8 @@ export function Steps({
                   background: '#fff',
                   borderRadius: '18px',
                   maxWidth: width,
-                  width: '100%'
+                  width: '100%',
+                  cursor: 'pointer'
                 }}
               >
                 <Typography

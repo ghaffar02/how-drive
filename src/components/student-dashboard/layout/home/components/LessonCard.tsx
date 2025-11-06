@@ -87,7 +87,8 @@ export default function LessonCard({
         height: {xs: '138px', sm: 'auto', lg: '100%'},
         border: '1px solid #fff',
         boxShadow:
-          '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)'
+          '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
+        overflow: 'hidden'
       }}
     >
       {/* Icon + Title */}
