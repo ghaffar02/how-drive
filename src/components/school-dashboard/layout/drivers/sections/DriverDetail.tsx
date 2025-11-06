@@ -13,7 +13,8 @@ export default function DriverDetail() {
     <Box
       sx={{
         width: '100%',
-        height: 'calc( 100vh - 40px )',
+        // height: 'calc( 100vh - 40px )',
+        height: 'auto',
         padding: {xs: '16px', md: '24px'},
         background: 'rgba(248,250,252,0.3)',
         backdropFilter: 'blur(15px)',
@@ -46,11 +47,17 @@ export default function DriverDetail() {
           <Messages />
         </Box>
       </Box>
-      <Box sx={{height: '100%'}}>
+      <Box
+        sx={
+          {
+            // height: '100%'
+          }
+        }
+      >
         <Box
           sx={{
             width: '100%',
-            height: {xs: '640px', md: '650px', lg: '866px'},
+            // height: {xs: '640px', md: '650px', lg: '866px'},
             '& > :first-child': {
               height: {xs: '640px', md: '650px', lg: '866px'}
             }
