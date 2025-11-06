@@ -5,9 +5,7 @@ import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs';
 import {TimePicker} from '@mui/x-date-pickers/TimePicker';
 
 export default function TimePickerValue() {
-  const [value, setValue] = React.useState<Dayjs | null>(
-    dayjs('2022-04-17T15:30')
-  );
+  const [value, setValue] = React.useState<Dayjs | null>(dayjs('2022-04-17T'));
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -16,6 +14,8 @@ export default function TimePickerValue() {
         minutesStep={15}
         value={value}
         onChange={(newValue) => setValue(newValue)}
+        // defaultValue={dayjs('--:-- --')}
+
         slotProps={{
           // openPickerIcon: null,
           textField: {
