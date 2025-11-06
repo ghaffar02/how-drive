@@ -5,7 +5,11 @@ import DetailSide from './components/DetailSide';
 import ProcessForm from './components/ProcessForm';
 import ProcessSteps from './components/ProcessSteps';
 
-export default function Process() {
+type Props = {
+  setActiveKey: React.Dispatch<React.SetStateAction<string>>;
+};
+
+export default function Process({setActiveKey}: Props) {
   const [show, setShow] = useState(false);
 
   return (
@@ -20,7 +24,7 @@ export default function Process() {
     >
       <DetailSide show={show} />
       {/* <ProcessForm /> */}
-      <ProcessSteps />
+      <ProcessSteps setActiveKey={setActiveKey} />
     </Box>
   );
 }

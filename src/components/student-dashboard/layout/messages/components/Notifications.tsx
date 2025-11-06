@@ -332,7 +332,7 @@ export default function Notifications() {
                     ? '0px 0px 2px 0px  #3058ffff'
                     : ' 0px 0px 2px 0px rgb(212,212,216)',
                 '&:hover': {
-                  boxShadow: '0px 0px 2px 0px  #3058ffff',
+                  boxShadow: '0px 0px 2px 0px rgb(70,17,245)',
                   background: 'rgba(255,255,255,0.85) !important'
                 }
 
