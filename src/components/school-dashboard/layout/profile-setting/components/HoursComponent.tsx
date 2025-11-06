@@ -6,6 +6,7 @@ import arrowIcon from '@/assets/svgs/dashboard-student/arrow.svg';
 import circleAdd from '@/assets/svgs/circleadd2.svg';
 import circleCross from '@/assets/svgs/dashboard-student/crosscircle.svg';
 import localFont from '@/utils/themes';
+import TimePickerValue from './TimePicker';
 
 type HourProps = {
   unavailable?: boolean;
@@ -51,6 +52,7 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
         gap: '8px'
       }}
     >
+      <TimePickerValue />
       {/* Case 3: "Not available" view */}
       {isUnavailable && (
         <Box
@@ -90,7 +92,6 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
           />
         </Box>
       )}
-
       {/* Case 1 & 2: Time input rows */}
       {!isUnavailable &&
         rows.map((row, index) => (
