@@ -135,7 +135,7 @@ export default function StudentDashboard() {
             activeKey={activeKey}
             setActiveKey={setActiveKey}
           />
-          {activeKey === '1' && <Home />}
+          {activeKey === '1' && <Home setActiveKey={setActiveKey} />}
           {activeKey === '2' && <Students />}
           {activeKey === '3' && <Calander />}
           {activeKey === '4' && <Message />}
@@ -203,7 +203,8 @@ function MobileHeader({
         <Typography
           sx={{
             ...localFont.inter20,
-            fontSize: '16px'
+            fontSize: '16px',
+            fontWeight: '500'
           }}
         >
           {title}

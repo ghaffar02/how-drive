@@ -2,6 +2,7 @@ import localFont from '@/utils/themes';
 import {Box, Typography} from '@mui/material';
 import Image, {StaticImageData} from 'next/image';
 import React from 'react';
+import {usePathname} from 'next/navigation';
 
 type ProfileProps = {
   students: number;
@@ -20,16 +21,18 @@ export default function ProfileCard({
   activePercentage,
   iconBg
 }: ProfileProps) {
+  const pathname = usePathname();
+  const locale = pathname.split('/')[1];
   const value1 = activePercentage || 0;
   const value2 = 100 - value1;
 
-  const size = 80;
+  const size = 85;
   const strokeWidth = 7;
   const radius = (size - strokeWidth) / 2;
   const circumference = 2 * Math.PI * radius;
   const offset1 = circumference * (1 - value1 / 100);
   const offset2 = circumference * (1 - value2 / 100);
-
+  const formatter = new Intl.NumberFormat(locale === 'de' ? 'de-DE' : 'en-US');
   return (
     <Box
       sx={{
@@ -49,7 +52,8 @@ export default function ProfileCard({
     >
       <Box sx={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
         <Typography sx={{...localFont.inter24, fontWeight: '500'}}>
-          {students}
+          {/* {students} */}
+          {formatter.format(students)}
         </Typography>
         <Typography
           sx={{
