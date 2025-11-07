@@ -90,7 +90,7 @@ export default function StudentDetail() {
         sx={{
           gridRow: {xs: '6', lg: '4 / span 2'},
           gridColumn: {xs: '1 /span 2', lg: '2'},
-          height: {xs: '240px', md: '280px', lg: '292px', xl: '360px'}
+          height: {xs: '240px', md: '280px', lg: '292px', xl: '366px'}
         }}
       >
         <Messages />
