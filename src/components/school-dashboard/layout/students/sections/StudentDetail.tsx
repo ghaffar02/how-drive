@@ -56,7 +56,13 @@ export default function StudentDetail() {
       >
         <Appointment />
       </Box>
-      <Box sx={{gridRow: {xs: '4', lg: '3'}, gridColumn: '1 / span 2'}}>
+      <Box
+        sx={{
+          gridRow: {xs: '4', lg: '3'},
+          gridColumn: '1 / span 2',
+          height: {xs: 'auto', md: '400px', lg: 'auto'}
+        }}
+      >
         <Process />
       </Box>
       <Box sx={{gridRow: {xs: '5', lg: '4'}, gridColumn: '1'}}>
@@ -83,7 +89,8 @@ export default function StudentDetail() {
       <Box
         sx={{
           gridRow: {xs: '6', lg: '4 / span 2'},
-          gridColumn: {xs: '1 /span 2', lg: '2'}
+          gridColumn: {xs: '1 /span 2', lg: '2'},
+          height: {xs: '240px', md: '280px', lg: '292px', xl: '460px'}
         }}
       >
         <Messages />

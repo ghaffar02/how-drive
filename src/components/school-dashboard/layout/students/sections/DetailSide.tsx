@@ -36,7 +36,7 @@ const emails = [
     isRequest: true
   },
   {
-    icon: iconpurple,
+    icon: iconnave,
     subject: 'Das ist das ',
     class: 'B'
   },
@@ -441,11 +441,10 @@ export default function DetailSide() {
                     : '0px 0px 2px 0px #D4D4D8',
                 transition: 'all 0.3s ease',
                 '&:hover': {
-                  boxShadow: items.isRequest
-                    ? '#f97316'
-                    : activeIndexes.includes(i)
-                      ? '0px 0px 2px 0px #4611f5'
-                      : '0px 0px 4px 0px #D4D4D8',
+                  boxShadow: '0px 0px 2px 0px #4611f5',
+                  // : activeIndexes.includes(i)
+                  //   ? '0px 0px 2px 0px #4611f5'
+                  //   : '0px 0px 4px 0px #D4D4D8',
                   background: 'rgba(255,255,255,0.85)'
                 },
                 '&:hover .hoverArrow': {
@@ -489,7 +488,7 @@ export default function DetailSide() {
                     }}
                   >
                     <Image
-                      src={items.icon}
+                      src={activeIndexes.includes(i) ? iconpurple : items.icon}
                       alt="
 iconnave"
                       style={{

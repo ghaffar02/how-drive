@@ -10,6 +10,7 @@ import localFont from '@/utils/themes';
 // import AppointmentsDropDown from '../components/AppointmentsDropDown';
 import steering from '@/assets/svgs/steering.svg';
 import LeftformDropDown from '../components/LeftformDropDown';
+import purpleSteering from '@/assets/svgs/purpleSteering.svg';
 import {useTranslations} from 'next-intl';
 
 const MotionBox = motion(Box);
@@ -420,7 +421,9 @@ export default function DetailSide() {
                 sx={{
                   height: '40px',
                   minWidth: '40px',
-                  background: '#06b6d41a',
+                  background: activeIndexes.includes(i)
+                    ? '#4611f51a'
+                    : '#06b6d41a',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -428,7 +431,12 @@ export default function DetailSide() {
                   borderRadius: '8px'
                 }}
               >
-                <Image src={steering} alt="steering" height={24} width={24} />
+                <Image
+                  src={activeIndexes.includes(i) ? purpleSteering : steering}
+                  alt="steering"
+                  height={24}
+                  width={24}
+                />
               </Box>
               <Box
                 sx={{
