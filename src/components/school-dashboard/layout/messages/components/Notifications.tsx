@@ -8,6 +8,7 @@ import crossIcon from '@/assets/svgs/dashboard-student/crossicon.svg';
 import car from '@/assets/svgs/dashboard-student/home/car.svg';
 import fabian from '@/assets/svgs/steering.svg';
 import logo from '@/assets/pngs/logo.avif';
+import userIcon from '@/assets/svgs/userIcon.svg';
 
 const emails = [
   {
@@ -40,11 +41,25 @@ const emails = [
     bgcolor: 'rgba(234, 0, 255, 0.08)'
   },
   {
+    icon: userIcon,
+    sender: 'Tomas Schulz',
+    date: '20.05.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: '#2563eb1a'
+  },
+  {
     icon: car,
     sender: 'Fahrschule',
     date: '25.05.2025',
     subject: 'Das ist das Thema der Email.',
     bgcolor: '#450ff51a'
+  },
+  {
+    icon: userIcon,
+    sender: 'Tomas Schulz',
+    date: '20.05.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: '#2563eb1a'
   },
   {
     icon: fabian,
@@ -66,6 +81,13 @@ const emails = [
     date: '20.05.2025',
     subject: 'Das ist das Thema der Email.',
     bgcolor: 'rgba(234, 0, 255, 0.08)'
+  },
+  {
+    icon: userIcon,
+    sender: 'Tomas Schulz',
+    date: '20.05.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: '#2563eb1a'
   },
   {
     icon: car,
