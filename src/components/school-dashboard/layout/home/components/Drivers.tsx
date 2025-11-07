@@ -8,9 +8,10 @@ import steering from '@/assets/svgs/steering.svg';
 type Props = {
   title: string;
   showIcon?: boolean;
+  setActiveKey: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export default function Drivers({title, showIcon = true}: Props) {
+export default function Drivers({title, showIcon = true, setActiveKey}: Props) {
   const cardArray = [
     {
       name: 'Daniel Mustermann 2',
@@ -102,7 +103,12 @@ export default function Drivers({title, showIcon = true}: Props) {
         }}
       >
         {cardArray.map((data, i) => (
-          <Card key={i} name={data.name} drivingClass={data.drivingClass} />
+          <Card
+            setActiveKey={setActiveKey}
+            key={i}
+            name={data.name}
+            drivingClass={data.drivingClass}
+          />
         ))}
       </Box>
     </Box>
@@ -112,11 +118,16 @@ export default function Drivers({title, showIcon = true}: Props) {
 type CardProps = {
   name: string;
   drivingClass: string;
+  setActiveKey: React.Dispatch<React.SetStateAction<string>>;
 };
 
-function Card({name, drivingClass}: CardProps) {
+function Card({name, drivingClass, setActiveKey}: CardProps) {
   return (
     <Box
+      onClick={(e) => {
+        e.stopPropagation();
+        setActiveKey('7');
+      }}
       sx={{
         width: '100%',
         background: '#ffffff99',

@@ -14,7 +14,11 @@ import Messages from './components/Message';
 import Drivers from './components/Drivers';
 import {DayDetailView} from '../calander/components/big-calander/DayDetailView';
 
-export default function Home() {
+type Props = {
+  setActiveKey: React.Dispatch<React.SetStateAction<string>>;
+};
+
+export default function Home({setActiveKey}: Props) {
   const t = useTranslations('SchoolDashboard.Home');
   const activeStudents = 164;
   const inactiveStudents = 1300;
@@ -144,10 +148,11 @@ export default function Home() {
         <Box
           sx={{
             gridColumn: {xs: '1 / span 6', md: '1 / span 4', lg: '5 / span 2'},
-            gridRow: {xs: '6 / span 1', md: '4 / span 2', lg: '2 / span 2'}
+            gridRow: {xs: '6 / span 1', md: '4 / span 2', lg: '2 / span 2'},
+            height: {xs: '245px', md: 'unset'}
           }}
         >
-          <Messages />
+          <Messages setActiveKey={setActiveKey} />
         </Box>
         <Box
           sx={{
@@ -156,7 +161,11 @@ export default function Home() {
             height: {xs: '245px', md: 'unset'}
           }}
         >
-          <Drivers title={t('trainers')} showIcon={false} />
+          <Drivers
+            title={t('trainers')}
+            showIcon={false}
+            setActiveKey={setActiveKey}
+          />
         </Box>
       </Box>
     </>
