@@ -12,27 +12,7 @@ export default function StudentDetail() {
   const t = useTranslations('SchoolDashboard.MessageLesson');
 
   const [openDropdown, setOpenDropdown] = useState(true);
-  const dropdownRef = useRef<HTMLDivElement | null>(null);
-  const iconRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        dropdownRef.current &&
-        dropdownRef.current.contains(event.target as Node)
-      ) {
-        return;
-      }
-      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
-        return;
-      }
-
-      setOpenDropdown(false);
-    }
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
   return (
     <Box
       sx={{
@@ -142,7 +122,7 @@ export default function StudentDetail() {
               transformOrigin: ' bottom'
             }}
           >
-            <MainDropdown />
+            <MainDropdown onClose={() => setOpenDropdown(false)} />
           </Box>
         )}
       </Box>

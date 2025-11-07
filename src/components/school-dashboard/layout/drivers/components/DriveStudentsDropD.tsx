@@ -45,7 +45,7 @@ export default function DriveStudentsDropD({onClose}: CustomCardProps) {
             width: '100%',
 
             fontFamily: '"Inter", sans-serif !important',
-            fontWeight: 400,
+            fontWeight: 500,
             textAlign: 'left'
           }}
         >

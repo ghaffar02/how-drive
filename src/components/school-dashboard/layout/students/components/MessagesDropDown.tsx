@@ -19,6 +19,7 @@ export default function MessagesDropDown({onClose}: CustomCardProps) {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
 
   const t = useTranslations('SchoolDashboard.MessageLesson');
+  const f = useTranslations('Dashboard.Messages.formDropDown');
 
   return (
     <Box
@@ -132,9 +133,12 @@ export default function MessagesDropDown({onClose}: CustomCardProps) {
 
         <Box
           sx={{
+            boxShadow:
+              '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
+            border: '1px solid  rgba(0, 0, 0, 0.24)',
             maxWidth: {lg: '403px', xs: '100%'},
             width: '100%',
-            border: 'none',
+            // border: 'none',
             borderRadius: '10px',
             fontSize: '14px',
             padding: '23px ',
@@ -143,7 +147,7 @@ export default function MessagesDropDown({onClose}: CustomCardProps) {
             cursor: 'pointer',
             '&:hover': {
               border: '1px solid black',
-              padding: '22px '
+              padding: '23px '
             }
           }}
           onClick={() => document.getElementById('fileInput')?.click()}
@@ -158,7 +162,16 @@ export default function MessagesDropDown({onClose}: CustomCardProps) {
               }
             }}
           />
-
+          <Typography
+            sx={{
+              fontSize: '14px',
+              color: '#666',
+              fontFamily: '"Inter", sans-serif !important',
+              textAlign: 'center'
+            }}
+          >
+            {f('placeholder3')}{' '}
+          </Typography>
           {selectedFile && (
             <Box sx={{mt: 2}}>
               <img

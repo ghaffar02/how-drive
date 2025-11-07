@@ -19,8 +19,7 @@ import HoursComponent from './HoursComponent';
 
 export default function Business() {
   const [openDropdown, setOpenDropdown] = useState(true);
-  const dropdownRef = useRef<HTMLDivElement | null>(null);
-  const iconRef = useRef<HTMLDivElement | null>(null);
+
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [checkedA, setCheckedA] = useState(false);
   const [checkedValues, setCheckedValues] = useState<{[key: string]: boolean}>(

@@ -249,6 +249,7 @@ export default function Header() {
         <Typography
           sx={{
             ...localFont.inter16,
+            textAlign: 'end',
             fontFamily: '"Inter", sans-serif !important'
           }}
         >
