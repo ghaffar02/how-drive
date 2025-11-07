@@ -8,13 +8,14 @@ import logo from '@/assets/pngs/logo.svg';
 import home_black from '@/assets/svgs/dashboard-student/home_black.svg';
 import home_bold from '@/assets/svgs/dashboard-student/home_bold.svg';
 import home_blue from '@/assets/svgs/dashboard-student/home_blue.svg';
-import timer_black from '@/assets/svgs/dashboard-student/timer_black.svg';
-import timer_bold from '@/assets/svgs/dashboard-student/timer_bold.svg';
-import timer_blue from '@/assets/svgs/dashboard-student/timer_blue.svg';
+import timer_black from '@/assets/svgs/stdIcon.svg';
+import timer_bold from '@/assets/svgs/users-bold.svg';
+import timer_blue from '@/assets/svgs/activeStdIcon.svg';
 import calander_black from '@/assets/svgs/dashboard-student/calander_black.svg';
 import calander_bold from '@/assets/svgs/dashboard-student/calander_bold.svg';
 import calander_blue from '@/assets/svgs/dashboard-student/calander_blue.svg';
 import message_black from '@/assets/svgs/dashboard-student/message_black.svg';
+import message_bold from '@/assets/svgs/messagehover.svg';
 import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
 import driver_black from '@/assets/svgs/dashboard-student/driver_black.svg';
 import driver_blue from '@/assets/svgs/dashboard-student/driver_blue.svg';
@@ -79,7 +80,7 @@ export default function DesktopTabs({
       label: 'message',
       iconBlack: message_black,
       iconBlue: message_blue,
-      iconHover: supportIconBold
+      iconHover: message_bold
     },
     {
       key: '7',
