@@ -147,7 +147,7 @@ export default function BigCalendar() {
           />
         ) : (
           <Box sx={{height: '100%', width: '100%', position: 'relative'}}>
-            <Box sx={{position: 'absolute', top: '0px', right: '16px'}}>
+            <Box sx={{position: 'absolute', top: '0px', right: '0px'}}>
               <Box
                 onClick={handleClick}
                 sx={{
@@ -157,7 +157,10 @@ export default function BigCalendar() {
                   background: '#fff',
                   borderRadius: '50%',
                   cursor: 'pointer',
-                  position: 'relative'
+                  position: 'relative',
+                  '&:hover': {backgroundColor: '#CED5F5'},
+                  '&:active': {backgroundColor: '#B9C2EB'},
+                  transition: 'all 0.1s ease-in'
                 }}
               >
                 <Image height={20} width={20} src={plus} alt="plus" />

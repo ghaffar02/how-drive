@@ -211,21 +211,55 @@ a {
   width: 150px;
 }
 
+@media (max-width: 600px) {
+  .rbc-toolbar-label {
+    width: 100px;
+  }
+}
+
 .rbc-btn-group {
   display: flex !important;
 }
+
+.rbc-btn-group button {
+  transition: all 0.1s ease-in;
+}
+
+.rbc-btn-group button:hover {
+  background-color: #ced5f5 !important;
+}
+
+.rbc-btn-group button:active {
+  background-color: #b9c2eb !important;
+}
+
 .rbc-btn-group :nth-child(1) {
   order: 2;
-  border-radius: 8px !important;
+  border-radius: 0px !important;
+  margin: 0 3px !important;
+  box-shadow:
+    0px 0.3010936508871964px 1.505468254435982px -1.5px rgba(0, 0, 0, 0.21),
+    0px 1.1442666516217286px 5.7213332581086425px -3px rgba(0, 0, 0, 0.18),
+    0px 5px 25px -4.5px rgba(0, 0, 0, 0.02);
 }
 .rbc-btn-group :nth-child(2) {
   order: 1;
   border-radius: 8px !important;
   border-bottom-right-radius: 0px !important;
   border-top-right-radius: 0px !important;
+  margin: 0 3px !important;
+  box-shadow:
+    0px 0.3010936508871964px 1.505468254435982px -1.5px rgba(0, 0, 0, 0.21),
+    0px 1.1442666516217286px 5.7213332581086425px -3px rgba(0, 0, 0, 0.18),
+    0px 5px 25px -4.5px rgba(0, 0, 0, 0.02);
 }
 .rbc-btn-group :nth-child(3) {
   order: 3;
+  margin: 0 3px !important;
+  box-shadow:
+    0px 0.3010936508871964px 1.505468254435982px -1.5px rgba(0, 0, 0, 0.21),
+    0px 1.1442666516217286px 5.7213332581086425px -3px rgba(0, 0, 0, 0.18),
+    0px 5px 25px -4.5px rgba(0, 0, 0, 0.02);
 }
 
 .rbc-toolbar-label {
@@ -257,4 +291,9 @@ a {
 
 .BigCalander_calendarWrapper__G2_Zu .rbc-toolbar {
   justify-content: flex-end !important;
+}
+
+.rbc-toolbar-label {
+  padding: 0 6px 0 0 !important;
+  font-family: 'Inter', sans-serif !important;
 }
