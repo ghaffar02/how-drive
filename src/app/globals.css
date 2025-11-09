@@ -213,7 +213,7 @@ a {
 
 @media (max-width: 600px) {
   .rbc-toolbar-label {
-    width: 100px;
+    width: 140px;
   }
 }
 
@@ -223,6 +223,10 @@ a {
 
 .rbc-btn-group button {
   transition: all 0.1s ease-in;
+  color: #4a5568 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 300 !important;
+  font-size: 12px !important;
 }
 
 .rbc-btn-group button:hover {
