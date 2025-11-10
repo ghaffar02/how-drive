@@ -71,6 +71,7 @@ export default function LessonCard({
 
     return () => window.removeEventListener('resize', updateHeight);
   }, []);
+  console.log(winHeight);
 
   return (
     <Box
@@ -179,8 +180,13 @@ export default function LessonCard({
               md: `scale(1.3)`,
               lg: `scale(${winHeight * 0.0017})`
             },
-            mt: {md: 1, lg: '10px'},
-            // bgcolor: '#000',
+            mt: {md: 1, lg: `${winHeight * 0.015}px`},
+
+            // ✅ lg + height < 800px
+            '@media (min-width:1200px) and (max-height:730px)': {
+              mt: `${winHeight * 0.001}px`
+            },
+
             ml: {xs: '1%', md: '-20%', lg: '-75px'}
           }}
         >

@@ -17,14 +17,18 @@ export default function Process({setActiveKey}: Props) {
       sx={{
         width: '100%',
         // background: 'red',
-        height: {xs: 'auto', md: '100%'},
+        // height: {xs: 'auto', md: '100%'},
         display: {md: 'flex'},
-        gap: {md: '16px'}
+        gap: {md: '16px'},
+        height: {
+          xs: 'calc(100svh - 194px)',
+          md: 'calc(100svh - 40px)'
+        }
       }}
     >
       <DetailSide show={show} />
-      {/* <ProcessForm /> */}
-      <ProcessSteps setActiveKey={setActiveKey} />
+      <ProcessForm />
+      {/* <ProcessSteps setActiveKey={setActiveKey} /> */}
     </Box>
   );
 }
