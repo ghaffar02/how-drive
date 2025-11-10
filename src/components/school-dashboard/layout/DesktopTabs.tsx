@@ -216,7 +216,20 @@ export default function DesktopTabs({
                     unoptimized
                     style={{display: 'block', margin: 'auto'}}
                   />
-                  {item.label?.toLowerCase() === 'message' && (
+                  {item.key?.toLowerCase() === '2' && (
+                    <Box
+                      sx={{
+                        position: 'absolute',
+                        top: '-4px',
+                        right: '17px',
+                        backgroundColor: '#4611F5',
+                        height: '8px',
+                        width: '8px',
+                        borderRadius: '50%'
+                      }}
+                    ></Box>
+                  )}
+                  {item.key?.toLowerCase() === '4' && (
                     <Box
                       sx={{
                         position: 'absolute',
