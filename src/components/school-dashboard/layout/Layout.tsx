@@ -24,7 +24,7 @@ const data = [
   {id: '8', label: 'Abmelden', menuIcon: logoutIcon}
 ];
 
-export default function StudentDashboard() {
+export default function SchoolDashboard() {
   const [activeKey, setActiveKey] = React.useState<string>('3');
   const [hoverKey, setHoverKey] = React.useState<string | null>(null);
   // ProfileDropdown relative states
