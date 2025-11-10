@@ -126,7 +126,15 @@ import {useTranslations} from 'next-intl';
 
 const MotionBox = motion(Box);
 
-export default function Notifications() {
+type Prop = {
+  display?: string;
+  setOpenMessage?: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function Notifications({
+  display = 'none',
+  setOpenMessage
+}: Prop) {
   const t = useTranslations('Dashboard.Messages.placeholder');
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [openDropdown, setOpenDropdown] = useState(false);
@@ -161,7 +169,7 @@ export default function Notifications() {
         background: 'rgba(248,250,252,0.3)',
         padding: '24px 12px',
         border: '2px solid #fff',
-        display: {xs: 'none', md: 'flex'},
+        display: {xs: display, md: 'flex'},
         flexDirection: 'column',
         gap: '8px'
       }}
@@ -169,7 +177,7 @@ export default function Notifications() {
       <Box
         sx={{
           width: '100%',
-          height: '62px',
+          minHeight: '62px',
           display: 'flex',
           gap: '10px'
         }}
@@ -332,7 +340,10 @@ export default function Notifications() {
         {emails.map((item, index) => {
           return (
             <Box
-              onClick={() => setSelectedIndex(index)}
+              onClick={() => {
+                setSelectedIndex(index);
+                setOpenMessage?.(false);
+              }}
               key={index}
               sx={{
                 width: '99%',

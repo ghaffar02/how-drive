@@ -191,7 +191,7 @@ export default function Notifications({
       <Box
         sx={{
           width: '100%',
-          height: '62px',
+          minHeight: '62px',
           display: 'flex',
           gap: '10px'
         }}

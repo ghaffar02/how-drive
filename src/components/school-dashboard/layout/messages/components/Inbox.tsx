@@ -17,6 +17,8 @@ import CustomCard from './DropDown';
 import {useTranslations} from 'next-intl';
 import download from '@/assets/svgs/downloadIcon.svg';
 import {AnimatePresence, motion} from 'framer-motion';
+import Notifications from './Notifications';
+import back from '@/assets/svgs/dashboard-student/arrowsetting.svg';
 
 const messages = [
   {
@@ -132,6 +134,7 @@ export default function Inbox() {
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   const open = Boolean(anchorEl);
   const iconRef = useRef<HTMLDivElement | null>(null);
+  const [openMessage, setOpenMessage] = useState(true);
 
   const options = [
     {
@@ -199,306 +202,398 @@ export default function Inbox() {
   };
 
   return (
-    <Box
-      sx={{
-        width: '100%',
-        padding: {xs: '8px', md: '24px'},
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '16px',
-        background: 'rgba(248,250,252,0.3)',
-        border: '2px solid #fff',
-        borderRadius: {xs: '24px', md: '0px 24px 24px 0px'}
-        // marginBottom: {xs: '65px', md: '0px'}
-      }}
-    >
+    <>
       <Box
         sx={{
           width: '100%',
-          padding: {xs: '16px', md: '24px'},
+          height: '100%',
+          display: openMessage ? {xs: 'block', md: 'none'} : 'none',
+          background: '#faf8fc4d',
+          backdropFilter: 'blur(20px)',
+          borderRadius: '24px'
+        }}
+      >
+        <Notifications display="flex" setOpenMessage={setOpenMessage} />
+      </Box>
+      <Box
+        sx={{
+          width: '100%',
+          padding: {xs: '8px', md: '24px'},
+          display: openMessage ? {xs: 'none', md: 'flex'} : 'flex',
+          flexDirection: 'column',
+          gap: '16px',
+          background: 'rgba(248,250,252,0.3)',
           border: '2px solid #fff',
-          borderRadius: '18px',
-          background: '#FAF8FE',
-          display: 'flex',
-          gap: '16px'
-          // height: '84px'
+          borderRadius: {xs: '24px', md: '0px 24px 24px 0px'}
+          // marginBottom: {xs: '65px', md: '0px'}
         }}
       >
         <Box
+          onClick={(e) => {
+            e.stopPropagation();
+            setOpenMessage(true);
+          }}
           sx={{
-            width: '52px',
-            height: '52px',
-            background: 'rgba(70,17,245,0.1)',
-            borderRadius: '8px',
-            display: 'flex',
+            minHeight: '36px',
+            width: '36px',
+            borderRadius: '50%',
+            background: '#faf8fe',
+            display: {xs: 'flex', md: 'none'},
             alignItems: 'center',
             justifyContent: 'center'
           }}
         >
-          <Image src={car} alt="car" height={24} width={24} />
+          <Image
+            src={back}
+            alt="back"
+            height={24}
+            width={24}
+            style={{transform: 'rotate(180deg)'}}
+          />
         </Box>
         <Box
           sx={{
+            width: '100%',
+            padding: {xs: '16px', md: '24px'},
+            border: '2px solid #fff',
+            borderRadius: '18px',
+            background: '#FAF8FE',
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between'
-          }}
-        >
-          <Typography
-            sx={{
-              ...localFont.inter18,
-              fontFamily: '"Inter", sans-serif !important',
-              fontWeight: '500',
-              lineHeight: '1.4em'
-            }}
-          >
-            Fahrschule Mundsburg
-          </Typography>
-          <Typography
-            sx={{
-              ...localFont.inter14,
-              fontFamily: '"Inter", sans-serif !important',
-              fontWeight: '400',
-              lineHeight: '1.6em'
-            }}
-          >
-            Termin deiner Theorieprüfung
-          </Typography>
-        </Box>
-        {/* Delete and Print Icon */}
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '14px',
-            marginLeft: 'auto'
+            gap: '16px'
+            // height: '84px'
           }}
         >
           <Box
-            ref={iconRef}
             sx={{
-              height: '20px',
-              width: '20px',
-              cursor: 'pointer',
-              position: 'relative'
+              width: '52px',
+              height: '52px',
+              background: 'rgba(70,17,245,0.1)',
+              borderRadius: '8px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
             }}
           >
-            <Image
-              src={deleteIcon}
-              alt="delete"
-              style={{height: '100%', width: '100%'}}
-              onClick={() => setOpenDropdown((prev) => !prev)}
-            />
-
-            {/* <AnimatePresence mode="wait"> */}
-            {openDropdown && (
-              <Box
-                //  key="dropdown"
-                component={motion.div}
-                initial={{
-                  opacity: 0,
-                  scale: 0.5,
-                  y: -20,
-                  x: 20,
-                  originX: 1,
-                  originY: 0
-                }}
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                  y: 0,
-                  x: 0,
-                  originX: 1,
-                  originY: 0
-                }}
-                exit={{
-                  opacity: 0,
-                  scale: 0.5,
-                  // dur: 1,
-                  y: -20,
-                  x: 20,
-                  originX: 1,
-                  originY: 0
-                }}
-                transition={{
-                  duration: 0.5,
-                  type: 'spring',
-                  stiffness: 300,
-                  damping: 25
-                }}
-                sx={{
-                  position: 'absolute',
-                  // bottom: '100%',
-                  // left: {xs: '10%', sm: 'unset'},
-                  right: {xs: '-10%', sm: 0},
-                  mt: '8px',
-                  width: {xs: '283px', sm: '300px'},
-                  zIndex: 10,
-                  overflow: 'visible',
-                  border: '1px solid rgb(255, 255, 255)',
-                  backgroundColor: '#f0f0fa99',
-                  backdropFilter: 'blur(8px)',
-                  boxShadow: `
-    0px 0px 0px 1px rgb(255, 255, 255),
-    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
-  `,
-                  borderRadius: '12px',
-                  transformOrigin: 'top right'
-                }}
-              >
-                <CustomCard onClose={() => setOpenDropdown(false)} />
-              </Box>
-            )}
-            {/* <AnimatePresence/> */}
+            <Image src={car} alt="car" height={24} width={24} />
           </Box>
-
-          <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
-            <Image
-              src={printIcon}
-              alt="print"
-              style={{height: '100%', width: '100%'}}
-            />
-          </Box>
-        </Box>
-      </Box>
-      {/* Message Box */}
-      <Box
-        sx={{
-          width: '100%',
-          background: '#ffffffbf',
-          padding: {xs: '16px', md: '24px'},
-          border: '2px solid #fff',
-          borderRadius: '18px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '24px',
-          overflow: 'auto',
-          '&::-webkit-scrollbar': {
-            display: 'none'
-          },
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none'
-        }}
-      >
-        {messages.map((data, i) => (
           <Box
-            key={i}
             sx={{
               display: 'flex',
               flexDirection: 'column',
-              gap: '6px',
-              alignItems: data.sender === 'user' ? 'flex-end' : 'flex-start'
+              justifyContent: 'space-between'
             }}
           >
-            <Box sx={{display: 'flex', alignItems: 'center', gap: '4px'}}>
-              <Typography
-                sx={{
-                  ...localFont.inter14,
-                  fontWeight: '300',
-                  fontFamily: '"Inter", sans-serif !important'
-                }}
-              >
-                {currentDate}
-              </Typography>
-              {/* {data.sender !== 'user' && ( */}
-              <>
+            <Typography
+              sx={{
+                ...localFont.inter18,
+                fontFamily: '"Inter", sans-serif !important',
+                fontWeight: '500',
+                lineHeight: '1.4em'
+              }}
+            >
+              Fahrschule Mundsburg
+            </Typography>
+            <Typography
+              sx={{
+                ...localFont.inter14,
+                fontFamily: '"Inter", sans-serif !important',
+                fontWeight: '400',
+                lineHeight: '1.6em'
+              }}
+            >
+              Termin deiner Theorieprüfung
+            </Typography>
+          </Box>
+          {/* Delete and Print Icon */}
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '14px',
+              marginLeft: 'auto'
+            }}
+          >
+            <Box
+              ref={iconRef}
+              sx={{
+                height: '20px',
+                width: '20px',
+                cursor: 'pointer',
+                position: 'relative'
+              }}
+            >
+              <Image
+                src={deleteIcon}
+                alt="delete"
+                style={{height: '100%', width: '100%'}}
+                onClick={() => setOpenDropdown((prev) => !prev)}
+              />
+
+              {/* <AnimatePresence mode="wait"> */}
+              {openDropdown && (
                 <Box
-                  onClick={handleClick}
-                  sx={{
-                    height: '20px',
-                    width: '20px',
-                    cursor: 'pointer'
+                  //  key="dropdown"
+                  component={motion.div}
+                  initial={{
+                    opacity: 0,
+                    scale: 0.5,
+                    y: -20,
+                    x: 20,
+                    originX: 1,
+                    originY: 0
                   }}
-                >
-                  <Image
-                    src={dots}
-                    alt="dots"
-                    style={{height: '100%', width: '100%'}}
-                  />
-                </Box>
-                <Menu
-                  id="long-menu"
-                  anchorEl={anchorEl}
-                  open={open}
-                  onClose={handleClose}
-                  slotProps={{
-                    paper: {
-                      sx: {
-                        width: '150px',
-                        p: '8px',
-                        borderRadius: '12px',
-                        border: '1px solid #fff',
-                        backgroundColor: '#f0f0fa99',
-                        backdropFilter: 'blur(8px)',
-                        boxShadow: `
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    x: 0,
+                    originX: 1,
+                    originY: 0
+                  }}
+                  exit={{
+                    opacity: 0,
+                    scale: 0.5,
+                    // dur: 1,
+                    y: -20,
+                    x: 20,
+                    originX: 1,
+                    originY: 0
+                  }}
+                  transition={{
+                    duration: 0.5,
+                    type: 'spring',
+                    stiffness: 300,
+                    damping: 25
+                  }}
+                  sx={{
+                    position: 'absolute',
+                    // bottom: '100%',
+                    // left: {xs: '10%', sm: 'unset'},
+                    right: {xs: '-10%', sm: 0},
+                    mt: '8px',
+                    width: {xs: '283px', sm: '300px'},
+                    zIndex: 10,
+                    overflow: 'visible',
+                    border: '1px solid rgb(255, 255, 255)',
+                    backgroundColor: '#f0f0fa99',
+                    backdropFilter: 'blur(8px)',
+                    boxShadow: `
     0px 0px 0px 1px rgb(255, 255, 255),
     0px 1px 0px 0px rgba(0, 0, 0, 0.25),
     0px 1px 1px 0px rgba(0, 0, 0, 0.25)
   `,
-                        '& .MuiMenuItem-root': {
-                          p: 0,
-                          borderRadius: '12px'
-                        }
-                      }
-                    },
-                    list: {
-                      'aria-labelledby': 'long-button',
-                      sx: {
-                        padding: '0px',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '8px'
-                      }
-                    }
+                    borderRadius: '12px',
+                    transformOrigin: 'top right'
                   }}
                 >
-                  {options.map((option, i) => (
-                    <MenuItem key={i} onClick={handleClose}>
-                      <Box
-                        sx={{
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '8px',
-                          width: '100%',
-                          padding: '8px',
-                          borderRadius: '8px',
-                          '&:hover': {
-                            backgroundColor: 'rgba(48,88,255,.1)'
+                  <CustomCard onClose={() => setOpenDropdown(false)} />
+                </Box>
+              )}
+              {/* <AnimatePresence/> */}
+            </Box>
+
+            <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
+              <Image
+                src={printIcon}
+                alt="print"
+                style={{height: '100%', width: '100%'}}
+              />
+            </Box>
+          </Box>
+        </Box>
+        {/* Message Box */}
+        <Box
+          sx={{
+            width: '100%',
+            background: '#ffffffbf',
+            padding: {xs: '16px', md: '24px'},
+            border: '2px solid #fff',
+            borderRadius: '18px',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '24px',
+            overflow: 'auto',
+            '&::-webkit-scrollbar': {
+              display: 'none'
+            },
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none'
+          }}
+        >
+          {messages.map((data, i) => (
+            <Box
+              key={i}
+              sx={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '6px',
+                alignItems: data.sender === 'user' ? 'flex-end' : 'flex-start'
+              }}
+            >
+              <Box sx={{display: 'flex', alignItems: 'center', gap: '4px'}}>
+                <Typography
+                  sx={{
+                    ...localFont.inter14,
+                    fontWeight: '300',
+                    fontFamily: '"Inter", sans-serif !important'
+                  }}
+                >
+                  {currentDate}
+                </Typography>
+                {/* {data.sender !== 'user' && ( */}
+                <>
+                  <Box
+                    onClick={handleClick}
+                    sx={{
+                      height: '20px',
+                      width: '20px',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <Image
+                      src={dots}
+                      alt="dots"
+                      style={{height: '100%', width: '100%'}}
+                    />
+                  </Box>
+                  <Menu
+                    id="long-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    slotProps={{
+                      paper: {
+                        sx: {
+                          width: '150px',
+                          p: '8px',
+                          borderRadius: '12px',
+                          border: '1px solid #fff',
+                          backgroundColor: '#f0f0fa99',
+                          backdropFilter: 'blur(8px)',
+                          boxShadow: `
+    0px 0px 0px 1px rgb(255, 255, 255),
+    0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+  `,
+                          '& .MuiMenuItem-root': {
+                            p: 0,
+                            borderRadius: '12px'
                           }
-                        }}
-                      >
-                        {/* Example: add icon or image */}
-                        <Image
-                          src={option.icon}
-                          alt={option.title}
-                          width={18}
-                          height={18}
-                        />
-                        <Typography
+                        }
+                      },
+                      list: {
+                        'aria-labelledby': 'long-button',
+                        sx: {
+                          padding: '0px',
+                          display: 'flex',
+                          flexDirection: 'column',
+                          gap: '8px'
+                        }
+                      }
+                    }}
+                  >
+                    {options.map((option, i) => (
+                      <MenuItem key={i} onClick={handleClose}>
+                        <Box
                           sx={{
-                            ...localFont.inter14,
-                            fontFamily: '"Inter", sans-serif !important',
-                            color: '#1a202c'
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            width: '100%',
+                            padding: '8px',
+                            borderRadius: '8px',
+                            '&:hover': {
+                              backgroundColor: 'rgba(48,88,255,.1)'
+                            }
                           }}
                         >
-                          {option.title}
-                        </Typography>
-                      </Box>
-                    </MenuItem>
-                  ))}
-                </Menu>
-              </>
-              {/* )} */}
-            </Box>
-            {/* Below is the code for file */}
-            {data?.file && (
+                          {/* Example: add icon or image */}
+                          <Image
+                            src={option.icon}
+                            alt={option.title}
+                            width={18}
+                            height={18}
+                          />
+                          <Typography
+                            sx={{
+                              ...localFont.inter14,
+                              fontFamily: '"Inter", sans-serif !important',
+                              color: '#1a202c'
+                            }}
+                          >
+                            {option.title}
+                          </Typography>
+                        </Box>
+                      </MenuItem>
+                    ))}
+                  </Menu>
+                </>
+                {/* )} */}
+              </Box>
+              {/* Below is the code for file */}
+              {data?.file && (
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    p: '12px',
+                    background: data.sender === 'user' ? '#6348fa' : '#f0f0fa',
+                    borderRadius:
+                      data.sender === 'user'
+                        ? '18px 2px 18px 18px'
+                        : '2px 18px 18px 18px'
+                  }}
+                >
+                  <Box
+                    sx={{
+                      height: '42px',
+                      width: '42px',
+                      borderRadius: '50%',
+                      background: '#fff',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <Image
+                      src={download}
+                      alt="downloadIcon"
+                      height={20}
+                      width={20}
+                    />
+                  </Box>
+                  <Box>
+                    <Typography
+                      sx={{
+                        ...localFont.inter14,
+                        fontFamily: '"Inter", sans-serif !important',
+                        color: data.sender === 'user' ? '#fff' : '#1a202c'
+                      }}
+                    >
+                      Registeration Driving License
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: {xs: '10px', md: '11px', lg: '12px'},
+                        fontFamily: '"Inter", sans-serif !important',
+                        fontWeight: 300,
+                        color: data.sender === 'user' ? '#fff' : '#1a202c',
+                        mt: '4px'
+                      }}
+                    >
+                      517 KB - PDF
+                    </Typography>
+                  </Box>
+                </Box>
+              )}
+              {/* File code end */}
               <Box
                 sx={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '12px',
-                  p: '12px',
+                  maxWidth: '80%',
+                  width: '100%',
+                  padding: '12px',
                   background: data.sender === 'user' ? '#6348fa' : '#f0f0fa',
                   borderRadius:
                     data.sender === 'user'
@@ -506,144 +601,89 @@ export default function Inbox() {
                       : '2px 18px 18px 18px'
                 }}
               >
-                <Box
+                <Typography
                   sx={{
-                    height: '42px',
-                    width: '42px',
-                    borderRadius: '50%',
-                    background: '#fff',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    cursor: 'pointer'
+                    ...localFont.inter14,
+                    fontWeight: '400',
+                    fontFamily: '"Inter", sans-serif !important',
+                    color: data.sender === 'user' ? '#fff' : '#1a202c'
                   }}
                 >
-                  <Image
-                    src={download}
-                    alt="downloadIcon"
-                    height={20}
-                    width={20}
-                  />
-                </Box>
-                <Box>
-                  <Typography
-                    sx={{
-                      ...localFont.inter14,
-                      fontFamily: '"Inter", sans-serif !important',
-                      color: data.sender === 'user' ? '#fff' : '#1a202c'
-                    }}
-                  >
-                    Registeration Driving License
-                  </Typography>
-                  <Typography
-                    sx={{
-                      fontSize: {xs: '10px', md: '11px', lg: '12px'},
-                      fontFamily: '"Inter", sans-serif !important',
-                      fontWeight: 300,
-                      color: data.sender === 'user' ? '#fff' : '#1a202c',
-                      mt: '4px'
-                    }}
-                  >
-                    517 KB - PDF
-                  </Typography>
-                </Box>
+                  {data.message}
+                </Typography>
               </Box>
-            )}
-            {/* File code end */}
-            <Box
-              sx={{
-                maxWidth: '80%',
-                width: '100%',
-                padding: '12px',
-                background: data.sender === 'user' ? '#6348fa' : '#f0f0fa',
-                borderRadius:
-                  data.sender === 'user'
-                    ? '18px 2px 18px 18px'
-                    : '2px 18px 18px 18px'
-              }}
-            >
-              <Typography
-                sx={{
-                  ...localFont.inter14,
-                  fontWeight: '400',
-                  fontFamily: '"Inter", sans-serif !important',
-                  color: data.sender === 'user' ? '#fff' : '#1a202c'
-                }}
-              >
-                {data.message}
-              </Typography>
             </Box>
-          </Box>
-        ))}
-      </Box>
-      {/* Typing Box */}
-      <Box sx={{width: '100%', height: '48px', display: 'flex', gap: '10px'}}>
-        <Box
-          sx={{
-            width: '100%',
-            display: 'flex',
-            gap: '10px',
-            alignItems: 'center',
-            padding: '8px 16px',
-            border: '1px solid #fff',
-            borderRadius: '18px',
-            background: '#ffffffbf'
-          }}
-        >
-          <TextField
-            placeholder={t('message')}
-            variant="outlined"
-            sx={{
-              flex: 1,
-              '& .MuiOutlinedInput-root': {
-                borderRadius: 0,
-                '& fieldset': {border: 'none'}, // remove border
-                '&:hover fieldset': {border: 'none'}, // remove on hover
-                '&.Mui-focused fieldset': {border: 'none'} // remove on focus
-              },
-              '& .MuiInputBase-input': {
-                height: 'auto',
-                padding: '0px'
-              }
-            }}
-          />
+          ))}
+        </Box>
+        {/* Typing Box */}
+        <Box sx={{width: '100%', height: '48px', display: 'flex', gap: '10px'}}>
           <Box
-            onClick={handleFileClick}
             sx={{
-              height: '24px',
-              width: '24px',
-              cursor: 'pointer',
-              display: 'none'
+              width: '100%',
+              display: 'flex',
+              gap: '10px',
+              alignItems: 'center',
+              padding: '8px 16px',
+              border: '1px solid #fff',
+              borderRadius: '18px',
+              background: '#ffffffbf'
             }}
           >
-            <Image src={attachIcon} alt="attachIcon" height={24} width={24} />
-          </Box>
-          {/* Input for the file */}
-          {/* <input
+            <TextField
+              placeholder={t('message')}
+              variant="outlined"
+              sx={{
+                flex: 1,
+                '& .MuiOutlinedInput-root': {
+                  borderRadius: 0,
+                  '& fieldset': {border: 'none'}, // remove border
+                  '&:hover fieldset': {border: 'none'}, // remove on hover
+                  '&.Mui-focused fieldset': {border: 'none'} // remove on focus
+                },
+                '& .MuiInputBase-input': {
+                  height: 'auto',
+                  padding: '0px'
+                }
+              }}
+            />
+            <Box
+              onClick={handleFileClick}
+              sx={{
+                height: '24px',
+                width: '24px',
+                cursor: 'pointer',
+                display: 'none'
+              }}
+            >
+              <Image src={attachIcon} alt="attachIcon" height={24} width={24} />
+            </Box>
+            {/* Input for the file */}
+            {/* <input
             type="file"
             id="hiddenFileInput"
             style={{display: 'none'}}
             onChange={handleFileChange}
           /> */}
-        </Box>
-        <Box
-          sx={{
-            height: '48px',
-            maxWidth: '48px',
-            minWidth: '48px',
-            width: '100%',
-            background: 'rgba(255,255,255,0.75)',
-            borderRadius: '18px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            cursor: 'pointer',
-            border: '2px solid #fff'
-          }}
-        >
-          <Image src={sendIcon} alt="sendIcon" height={24} width={24} />
+          </Box>
+          <Box
+            sx={{
+              height: '48px',
+              maxWidth: '48px',
+              minWidth: '48px',
+              width: '100%',
+              background: 'rgba(255,255,255,0.75)',
+              borderRadius: '18px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              border: '2px solid #fff'
+            }}
+          >
+            <Image src={sendIcon} alt="sendIcon" height={24} width={24} />
+          </Box>
         </Box>
       </Box>
-    </Box>
+    </>
   );
 }
