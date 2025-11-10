@@ -94,6 +94,41 @@ const emails = [
     date: '20.05.2025',
     subject: 'Das ist das Thema der Email.',
     bgcolor: 'rgba(234, 0, 255, 0.08)'
+  },
+  {
+    icon: fabian,
+    sender: 'Fabian',
+    date: '01.06.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: '#06b6d41a'
+  },
+  {
+    icon: car,
+    sender: 'Fahrschule',
+    date: '27.05.2025',
+    subject: 'Termin deiner Theorieprüfung',
+    bgcolor: 'rgba(70, 17, 245, 0.1)'
+  },
+  {
+    icon: logo,
+    sender: 'WieFührerschein',
+    date: '20.05.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: 'rgba(234, 0, 255, 0.08)'
+  },
+  {
+    icon: car,
+    sender: 'Fahrschule',
+    date: '25.05.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: '#450ff51a'
+  },
+  {
+    icon: fabian,
+    sender: 'Fabian',
+    date: '01.06.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: '#06b6d41a'
   }
 ];
 
@@ -104,7 +139,15 @@ import {useTranslations} from 'next-intl';
 
 const MotionBox = motion(Box);
 
-export default function Notifications() {
+type Prop = {
+  display?: string;
+  setOpenMessage?: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function Notifications({
+  display = 'none',
+  setOpenMessage
+}: Prop) {
   const t = useTranslations('Dashboard.Messages.placeholder');
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [openDropdown, setOpenDropdown] = useState(false);
@@ -139,7 +182,8 @@ export default function Notifications() {
         background: 'rgba(248,250,252,0.3)',
         padding: '24px 12px',
         border: '2px solid #fff',
-        display: {xs: 'none', md: 'flex'},
+        borderRadius: {xs: '24px', md: 'unset'},
+        display: {xs: display, md: 'flex'},
         flexDirection: 'column',
         gap: '8px'
       }}
@@ -310,7 +354,10 @@ export default function Notifications() {
         {emails.map((item, index) => {
           return (
             <Box
-              onClick={() => setSelectedIndex(index)}
+              onClick={() => {
+                setSelectedIndex(index);
+                setOpenMessage?.(false);
+              }}
               key={index}
               sx={{
                 width: '99%',
