@@ -2135,7 +2135,8 @@
         "delete": "Löschen",
         "reply": "Antworten",
         "copy": "Kopien",
-        "message": "Nachricht"
+        "message": "Nachricht",
+        "back":"Zurück"
       },
       "placeholder": {
         "search": "Suchen"
@@ -2553,7 +2554,8 @@
       "messLable1": "Betreff",
       "messLable2": "Nachricht",
       "messLable3": "Datei hochladen",
-      "messBtn": "Nachricht senden"
+      "messBtn": "Nachricht senden",
+      "back": "Zurück"
     },
     "DriversDa": {
       "HeaderDropDown": {
@@ -2595,7 +2597,8 @@
         "messageTitle": "Nachrichten",
         "messageDes": "Keine Nachrichten!",
         "label": "Fahrschüler*in",
-        "btn": "Fahrschüler zuweisen"
+        "btn": "Fahrschüler zuweisen",
+        "back": "Zurück"
       },
       "DriverDetailMessages": {
         "messLable1": "Betreff",

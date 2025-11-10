@@ -97,7 +97,12 @@ const emails = [
   }
 ];
 
-export default function DetailSide() {
+type Prop = {
+  display?: string;
+  setOpenStudents?: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function DetailSide({display = 'none', setOpenStudents}: Prop) {
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
 
   const [openDropdown, setOpenDropdown] = useState(false);
@@ -157,9 +162,10 @@ export default function DetailSide() {
         background: 'rgba(248,250,252,0.3)',
         padding: '24px 12px',
         border: '2px solid #fff',
-        display: {xs: 'none', md: 'flex'},
+        display: {xs: display, md: 'flex'},
         flexDirection: 'column',
-        gap: '10px'
+        gap: '10px',
+        borderRadius: {xs: '24px', md: '0px'}
       }}
     >
       <Box sx={{mb: '16px'}}>
@@ -421,7 +427,10 @@ export default function DetailSide() {
           return (
             <Box
               key={i}
-              onClick={() => handleClick(i)}
+              onClick={() => {
+                handleClick(i);
+                setOpenStudents?.(false);
+              }}
               sx={{
                 width: '100%',
                 background: activeIndexes.includes(i)

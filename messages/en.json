@@ -2136,7 +2136,8 @@
         "delete": "Delete",
         "reply": "Reply",
         "copy": "Copy",
-        "message": "Message"
+        "message": "Message",
+        "back": "Back"
       },
       "placeholder": {
         "search": "Search"
@@ -2598,7 +2599,8 @@
       "messLable1": "Topic",
       "messLable2": "Message",
       "messLable3": "Upload file",
-      "messBtn": "Send message"
+      "messBtn": "Send message",
+      "back": "Back"
     },
     "Drivers": {
       "DriverDetail": {
@@ -2608,7 +2610,8 @@
         "messageTitle": "Messages",
         "messageDes": "No messages!",
         "label": "Student name",
-        "btn": "Assign student"
+        "btn": "Assign student",
+        "back": "Back"
       },
       "DriverDetailMessages": {
         "messLable1": "Subject",
