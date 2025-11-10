@@ -8,6 +8,7 @@ import crossIcon from '@/assets/svgs/dashboard-student/crossicon.svg';
 import car from '@/assets/svgs/dashboard-student/home/car.svg';
 import fabian from '@/assets/svgs/steering.svg';
 import logo from '@/assets/pngs/logo.avif';
+import userIcon from '@/assets/svgs/userIcon.svg';
 
 const emails = [
   {
@@ -15,7 +16,8 @@ const emails = [
     sender: 'Fahrschule',
     date: '25.05.2025',
     subject: 'Das ist das Thema der Email.',
-    bgcolor: '#450ff51a'
+    bgcolor: '#450ff51a',
+    unread: true
   },
   {
     icon: fabian,
@@ -37,6 +39,13 @@ const emails = [
     date: '20.05.2025',
     subject: 'Das ist das Thema der Email.',
     bgcolor: 'rgba(234, 0, 255, 0.08)'
+  },
+  {
+    icon: userIcon,
+    sender: 'Tomas Schulz',
+    date: '20.05.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: '#2563eb1a'
   },
   {
     icon: car,
@@ -46,6 +55,13 @@ const emails = [
     bgcolor: '#450ff51a'
   },
   {
+    icon: userIcon,
+    sender: 'Tomas Schulz',
+    date: '20.05.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: '#2563eb1a'
+  },
+  {
     icon: fabian,
     sender: 'Fabian',
     date: '01.06.2025',
@@ -65,6 +81,13 @@ const emails = [
     date: '20.05.2025',
     subject: 'Das ist das Thema der Email.',
     bgcolor: 'rgba(234, 0, 255, 0.08)'
+  },
+  {
+    icon: userIcon,
+    sender: 'Tomas Schulz',
+    date: '20.05.2025',
+    subject: 'Das ist das Thema der Email.',
+    bgcolor: '#2563eb1a'
   },
   {
     icon: car,
@@ -394,9 +417,13 @@ export default function Notifications() {
                     sx={{
                       ...localFont.inter14,
                       // fontWeight: selectedIndex === index ? '700' : '400'
-                      color: selectedIndex === index ? '#000' : '#718096',
+                      color: item?.unread
+                        ? '#000'
+                        : selectedIndex === index
+                          ? '#4611f5'
+                          : '#718096',
                       fontFamily: '"Inter", sans-serif !important',
-                      fontWeight: selectedIndex === index ? '500' : '400'
+                      fontWeight: item?.unread ? '500' : '400'
                     }}
                   >
                     {item.sender}
@@ -404,9 +431,13 @@ export default function Notifications() {
                   <Typography
                     sx={{
                       fontSize: {xs: '8.4px', md: '10px', lg: '11px'},
-                      color: selectedIndex === index ? '#000' : '#718096',
+                      color: item?.unread
+                        ? '#000'
+                        : selectedIndex === index
+                          ? '#4611f5'
+                          : '#718096',
                       fontFamily: '"Inter", sans-serif !important',
-                      fontWeight: selectedIndex === index ? '500' : '400'
+                      fontWeight: item?.unread ? '500' : '400'
                     }}
                   >
                     {item.date}
@@ -417,7 +448,11 @@ export default function Notifications() {
                   sx={{
                     // ...localFont.i,
                     fontSize: {xs: '9.6px', md: '11px', lg: '13px'},
-                    color: '#718096',
+                    color: item?.unread
+                      ? '#718096'
+                      : selectedIndex === index
+                        ? '#4611f5'
+                        : '#718096',
                     fontFamily: '"Inter", sans-serif !important',
                     fontWeight: '400',
                     whiteSpace: 'nowrap',

@@ -84,10 +84,8 @@ export default function EventsCalendar() {
       </Box>
       {/* Anchored Modal */}
       <EventAddPopover anchorEl={anchorEl} open={open} onClose={handleClose} />
-      {/* the big calander there  */}
-      {/* <Box> */}
+
       <BigCalendar />
-      {/* </Box> */}
     </Box>
   );
 }

@@ -112,7 +112,7 @@ export default function Process() {
         width: '100%',
         height: '100%',
         // height: {xs: 'auto', lg: '100%'},
-        display: {xs: 'block', lg: 'flex'},
+        display: {xs: 'block', md: 'flex'},
         flexDirection: 'column',
         justifyContent: 'space-between',
         boxShadow:
@@ -169,7 +169,9 @@ export default function Process() {
               background: '#f0f0fa99',
               backdropFilter: 'blur(8px)',
               zIndex: 999,
-              cursor: 'default'
+              cursor: 'default',
+              boxShadow:
+                '0px 0px 0px 1px #fff, 0px 1px 0px 0px rgba(0,0,0,0.25), 0px 1px 1px 0px rgba(0,0,0,0.25)'
             }}
           >
             <Typography

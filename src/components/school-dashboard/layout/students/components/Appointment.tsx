@@ -94,7 +94,7 @@ export default function Appointment() {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          p: '4px'
+          p: '1px 4px'
         }}
       >
         <Typography

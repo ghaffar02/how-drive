@@ -108,22 +108,38 @@ a {
 
 .rdp-day_button {
   font-size: 14px !important;
+  font-family: 'Inter', sans-serif;
 }
 .rdp-weekday {
   font-size: 14px !important;
+  font-family: 'Inter', sans-serif !important;
 }
-.rdp-day_button {
+.rdp-caption_label {
+  font-family: 'Inter', sans-serif !important;
+}
+.rbc-header {
+  font-family: 'Inter', sans-serif;
+}
+.rbc-btn-group button {
+  font-family: 'Inter', sans-serif !important;
+}
+.rbc-toolbar-label {
+  font-family: 'Inter', sans-serif !important;
+}
+.rbc-row .rbc-month-header .rbc-header {
+  font-family: 'Inter', sans-serif !important;
+}
+.BigCalander_calendarWrapper__G2_Zu .rbc-header {
+  font-family: 'Inter', sans-serif !important;
+}
+.columnheader .rdp-day_button {
   height: 28px !important;
-  width: 32.57px !important;
+  width: 28px !important;
 }
 
 .rdp-weekday {
   height: 28px !important;
-  width: 32.57px !important;
-}
-
-.rdp-week > *:not(:last-child) {
-  /* margin-right: 4px !important; */
+  width: 28px !important;
 }
 
 .rdp-selected .rdp-day_button {
@@ -162,6 +178,7 @@ a {
 .MuiMultiSectionDigitalClockSection-item {
   font-size: 16px !important;
   padding: 6px 0 !important;
+  font-family: 'Inter', sans-serif;
 }
 
 .MuiMultiSectionDigitalClock-root::-webkit-scrollbar {
@@ -171,6 +188,12 @@ a {
 .MuiMultiSectionDigitalClock-root::-webkit-scrollbar-thumb {
   background: #ccc;
   border-radius: 6px;
+}
+
+.mini-framer-calendar_calendar__oXcMt .rdp-day .rdp-day_button {
+  width: 30px !important;
+  height: 28px !important;
+  font-family: 'Inter', sans-serif !important;
 }
 
 /* .rbc-btn-group {
@@ -189,6 +212,10 @@ a {
   flex-direction: row-reverse !important;
   justify-content: space-between;
 }
+.rbc-toolbar-label {
+  width: 150px;
+}
+
 .rbc-btn-group {
   display: flex !important;
 }
@@ -208,4 +235,31 @@ a {
 
 .rbc-toolbar-label {
   text-align: left !important;
+}
+
+/* border at day box in calander  */
+
+/* .rbc-day-bg {
+  border: 1px solid black;
+  box-shadow:
+    rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.05) 0px 1px 0px 0px;
+}
+.rbc-off-range-bg {
+  border: 1px solid #ff0000;
+} */
+
+.BigCalander_calendarWrapper__G2_Zu {
+  background: transparent !important;
+  box-shadow: unset !important;
+  backdrop-filter: unset !important;
+  padding: 0px !important;
+}
+
+.rbc-toolbar .rbc-toolbar-label {
+  flex-grow: unset !important;
+}
+
+.BigCalander_calendarWrapper__G2_Zu .rbc-toolbar {
+  justify-content: flex-end !important;
 }

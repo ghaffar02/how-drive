@@ -10,6 +10,7 @@ import steering from '@/assets/svgs/steering.svg';
 import logo from '@/assets/pngs/logo.avif';
 import {useTranslations} from 'next-intl';
 import addIcon from '@/assets/svgs/circleadd.svg';
+import userIcon from '@/assets/svgs/userIcon.svg';
 
 import DriveMessagesDropD from './DriveMessagesDropD';
 
@@ -44,6 +45,13 @@ export default function Messages() {
       bgcolor: 'rgba(70, 17, 245, 0.1)'
     },
     {
+      icon: userIcon,
+      sender: 'Tomas Schulz',
+      date: '20.05.2025',
+      subject: 'Das ist das Thema der Email.',
+      bgcolor: '#2563eb1a'
+    },
+    {
       icon: logo,
       sender: 'WieFührerschein',
       date: '20.05.2025',
@@ -63,6 +71,13 @@ export default function Messages() {
       date: '01.06.2025',
       subject: 'Das ist das Thema der Email.',
       bgcolor: '#06b6d41a'
+    },
+    {
+      icon: userIcon,
+      sender: 'Tomas Schulz',
+      date: '20.05.2025',
+      subject: 'Das ist das Thema der Email.',
+      bgcolor: '#2563eb1a'
     },
     {
       icon: car,

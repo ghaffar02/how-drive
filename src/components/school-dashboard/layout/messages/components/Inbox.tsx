@@ -514,7 +514,8 @@ export default function Inbox() {
                     background: '#fff',
                     display: 'flex',
                     alignItems: 'center',
-                    justifyContent: 'center'
+                    justifyContent: 'center',
+                    cursor: 'pointer'
                   }}
                 >
                   <Image
