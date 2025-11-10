@@ -52,7 +52,7 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
         gap: '8px'
       }}
     >
-      <TimePickerValue />
+      {/* <TimePickerValue /> */}
       {/* Case 3: "Not available" view */}
       {isUnavailable && (
         <Box
@@ -118,6 +118,7 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
               {day}
             </Typography>
 
+            {/* <TimePickerValue sx={{maxWidth: '200px'}} /> */}
             {/* Time input fields */}
             <Box
               sx={{
@@ -128,9 +129,11 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
                 maxWidth: {xs: '100%', lg: '311px'}
               }}
             >
-              <CustomTextField type="time" />
+              {/* <CustomTextField type="time" /> */}
+              <TimePickerValue sx={{}} />
+
               <Image src={arrowIcon} alt="arrowIcon" height={14} width={14} />
-              <CustomTextField type="time" />
+              <TimePickerValue sx={{}} />
             </Box>
 
             {/* Action icons */}

@@ -5,6 +5,12 @@
   /* background-color: #000; */
   /* gap: 1; */
 }
+.css-10o2lyd-MuiStack-root {
+  width: 100% !important;
+  max-width: 100% !important;
+
+  /* max-width: 700; */
+}
 a {
   text-decoration: none;
 }

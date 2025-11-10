@@ -2020,7 +2020,11 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": ["Necessary", "Analytics", "Allow all"]
+          "formFields": [
+            "Necessary",
+            "Analytics",
+            "Allow all"
+          ]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2048,7 +2052,10 @@
             "News",
             "Driving license office registered"
           ],
-          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
+          "formFieldsOff": [
+            "Genereller Newsletter",
+            "Offers and advertising"
+          ]
         }
       }
     },
@@ -2288,6 +2295,7 @@
           "heading1": "Business profile",
           "heading2": "Basic information",
           "heading3": "Opening hours",
+          "heading4": "Competent authority",
           "description1": "Basic information, opening hours, etc.",
           "description2": "Weekly hours",
           "btn1": "Cancel",
@@ -2297,6 +2305,16 @@
           "btn5": "yes",
           "btn6": "no",
           "dropDown": "Do you really want to delete your account?",
+          "formFields2": [
+            {
+              "label": "Competent driving license office",
+              "placeholder": "Search ..."
+            },
+            {
+              "label": "Competent TÜV/DEKRA",
+              "placeholder": "Search ..."
+            }
+          ],
           "days": [
             {
               "day": "Mon",
@@ -2397,7 +2415,11 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": ["Necessary", "Analytics", "Allow all"]
+          "formFields": [
+            "Necessary",
+            "Analytics",
+            "Allow all"
+          ]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2425,12 +2447,18 @@
             "News",
             "New students' request"
           ],
-          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
+          "formFieldsOff": [
+            "Genereller Newsletter",
+            "Offers and advertising"
+          ]
         }
       }
     },
     "leftSideTab": {
-      "textTab": ["Active", "Inactive"],
+      "textTab": [
+        "Active",
+        "Inactive"
+      ],
       "search": "Search",
       "title": "The maximum number of active students is reached. Please upgrade under \"Settings => Payment\" or deactivate a student."
     },
@@ -2603,7 +2631,11 @@
     "Calendar": {
       "Sidebar": {
         "title": "Set appointment schedules",
-        "tabs": ["Talk", "Theory", "Driving"],
+        "tabs": [
+          "Talk",
+          "Theory",
+          "Driving"
+        ],
         "tab1": {
           "title": "Category",
           "title2": "Add category",

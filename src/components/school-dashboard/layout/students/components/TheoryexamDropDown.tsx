@@ -8,8 +8,8 @@ import MiniFramerCalendar from '../../calander/components/MiniFramerCalendar';
 import arrowIcon from '@/assets/svgs/dashboard-student/arrow.svg';
 import {useTranslations} from 'next-intl';
 
-import CustomTextField from '@/components/school-dashboard/InputField';
 import Image from 'next/image';
+import TimePickerValue from '../../profile-setting/components/TimePicker';
 interface CustomCardProps {
   text?: string;
   onClose?: () => void;
@@ -120,35 +120,10 @@ export default function TheoryexamDropDown({
             // maxWidth: {md: '100px', lg: '170px'}
           }}
         >
-          <CustomTextField
-            type="time"
-            sx={{
-              '& .MuiInputBase-root': {
-                background: '#ffffff',
-                height: '100%',
-                fontSize: '14px',
-                color: '#000000',
-                padding: '12px',
-                borderRadius: '10px',
-                fontFamily: '"Inter", sans-serif !important'
-              }
-            }}
-          />
+          <TimePickerValue />
+
           <Image src={arrowIcon} alt="arrowIcon" height={14} width={14} />
-          <CustomTextField
-            type="time"
-            sx={{
-              '& .MuiInputBase-root': {
-                background: '#ffffff',
-                height: '100%',
-                fontSize: '14px',
-                color: '#000000',
-                padding: '12px',
-                borderRadius: '10px',
-                fontFamily: '"Inter", sans-serif !important'
-              }
-            }}
-          />
+          <TimePickerValue />
         </Box>
       </Box>
       <Box

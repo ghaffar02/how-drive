@@ -8,9 +8,8 @@ interface Props {
   sx?: object;
 }
 export default function TimePickerValue({sx = {}}: Props) {
-  const [value, setValue] = React.useState<Dayjs | null>(
-    dayjs('2022-04-17T00:00')
-  );
+  // const [value, setValue] = React.useState<Dayjs | null>(null);
+  const [value, setValue] = React.useState<Dayjs | null>(dayjs('2022-04-17T'));
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -39,12 +38,14 @@ export default function TimePickerValue({sx = {}}: Props) {
                 readOnly: true,
                 onKeyDown: (e: any) => e.preventDefault()
               },
+              size: 'small',
               sx: {
-                ...sx,
                 overflow: 'hidden',
                 borderRadius: '10px !important',
-                maxWidth: '120px',
                 width: '100%',
+                minWidth: '10px !important',
+                backgroundColor: 'white',
+                ...sx,
 
                 '& .css-vycme6-MuiPickersInputBase-root-MuiPickersOutlinedInput-root':
                   {
@@ -63,8 +64,6 @@ export default function TimePickerValue({sx = {}}: Props) {
                   borderRadius: '10px !important'
                 },
 
-                backgroundColor: 'white',
-
                 '& .MuiInputBase-root': {
                   borderRadius: '10px',
                   backgroundColor: 'white'
@@ -79,9 +78,12 @@ export default function TimePickerValue({sx = {}}: Props) {
 
                 '& .MuiPickersSectionList-root': {
                   py: '8.5px !important'
-                }
+                },
 
-                // ✅ << Yahan hona chahiye
+                '& .css-gfka5e-MuiPickersSectionList-root-MuiPickersInputBase-sectionsContainer-MuiPickersOutlinedInput-sectionsContainer':
+                  {
+                    width: '100% !important'
+                  }
               }
             }
           }}

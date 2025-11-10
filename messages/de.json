@@ -2008,7 +2008,11 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
+          "formFields": [
+            "Notwendige",
+            "Analytics",
+            "Alle zulassen"
+          ]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2047,7 +2051,10 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
+          "formFieldsOff": [
+            "News und Update",
+            "Angebote und Werbung"
+          ]
         }
       }
     },
@@ -2287,6 +2294,7 @@
           "heading1": "Fahrschulprofil",
           "heading2": "Basisinformationen",
           "heading3": "Öffnungszeiten",
+          "heading4": "Zuständige Behörde",
           "description1": "Basisinformationen, Öffnungszeiten, etc.",
           "description2": "Wochenstunden",
           "btn1": "Abbrechen",
@@ -2296,6 +2304,16 @@
           "btn6": "nein",
           "btn5": "ja",
           "dropDown": "Möchtest du dein Konto wirklich löschen?",
+          "formFields2": [
+            {
+              "label": "Zuständige Fahrerlaubnisbehörde",
+              "placeholder": "Suche ..."
+            },
+            {
+              "label": "Zuständige TÜV/DEKRA",
+              "placeholder": "Suche ..."
+            }
+          ],
           "days": [
             {
               "day": "Mo",
@@ -2384,7 +2402,11 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
+          "formFields": [
+            "Notwendige",
+            "Analytics",
+            "Alle zulassen"
+          ]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2423,12 +2445,18 @@
             "Nachrichten",
             "Neue Schüler Anfrage"
           ],
-          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
+          "formFieldsOff": [
+            "News und Update",
+            "Angebote und Werbung"
+          ]
         }
       }
     },
     "leftSideTab": {
-      "textTab": ["Aktiv", "Inaktiv"],
+      "textTab": [
+        "Aktiv",
+        "Inaktiv"
+      ],
       "search": "Suchen",
       "title": "Die maximal zulässige Anzahl aktiver Fahrschüler ist erreicht. Bitte upgrade deinen Tarif unter \"Einstellungen=>Zahlung\" oder deaktiviere einen Fahrschüler."
     },
@@ -2590,7 +2618,11 @@
     "Calendar": {
       "Sidebar": {
         "title": "Terminpläne festlegen",
-        "tabs": ["Gespräch", "Theorie", "Fahren"],
+        "tabs": [
+          "Gespräch",
+          "Theorie",
+          "Fahren"
+        ],
         "tab1": {
           "title": "Kategorie",
           "title2": "Kategorie hinzufügen",

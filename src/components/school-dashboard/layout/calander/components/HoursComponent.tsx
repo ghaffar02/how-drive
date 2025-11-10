@@ -6,6 +6,7 @@ import arrowIcon from '@/assets/svgs/dashboard-student/arrow.svg';
 import circleAdd from '@/assets/svgs/circleadd2.svg';
 import circleCross from '@/assets/svgs/dashboard-student/crosscircle.svg';
 import localFont from '@/utils/themes';
+import TimePickerValue from '../../profile-setting/components/TimePicker';
 
 type HourProps = {
   unavailable?: boolean;
@@ -73,8 +74,9 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
           <Box
             key={row.id}
             sx={{
+              // bgcolor: 'red',
               display: 'flex',
-              gap: '10px',
+              gap: '8px',
               alignItems: 'center',
               justifyContent: index > 0 ? 'center' : 'unset'
             }}
@@ -97,39 +99,21 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
               sx={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '4px',
-                maxWidth: {md: '155px', lg: '170px'}
+                justifyContent: 'center',
+
+                gap: '2px',
+                maxWidth: {md: '155px', lg: '180px'}
               }}
             >
-              <CustomTextField
-                type="time"
-                sx={{
-                  '& .MuiInputBase-root': {
-                    background: '#ffffff',
-                    height: '100%',
-                    fontSize: '14px',
-                    color: '#000000',
-                    padding: '12px 4px',
-                    borderRadius: '10px',
-                    fontFamily: '"Inter", sans-serif !important'
-                  }
-                }}
+              <TimePickerValue />
+              <Image
+                src={arrowIcon}
+                alt="arrowIcon"
+                height={14}
+                width={14}
+                style={{marginTop: '6px'}}
               />
-              <Image src={arrowIcon} alt="arrowIcon" height={14} width={14} />
-              <CustomTextField
-                type="time"
-                sx={{
-                  '& .MuiInputBase-root': {
-                    background: '#ffffff',
-                    height: '100%',
-                    fontSize: '14px',
-                    color: '#000000',
-                    padding: '12px 4px',
-                    borderRadius: '10px',
-                    fontFamily: '"Inter", sans-serif !important'
-                  }
-                }}
-              />
+              <TimePickerValue />
             </Box>
 
             {/* Action icons */}
