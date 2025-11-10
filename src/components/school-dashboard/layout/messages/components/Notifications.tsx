@@ -171,7 +171,8 @@ export default function Notifications({
         border: '2px solid #fff',
         display: {xs: display, md: 'flex'},
         flexDirection: 'column',
-        gap: '8px'
+        gap: '8px',
+        borderRadius: {xs: '24px', md: '0px'}
       }}
     >
       <Box

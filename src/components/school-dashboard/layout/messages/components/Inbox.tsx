@@ -234,22 +234,35 @@ export default function Inbox() {
             setOpenMessage(true);
           }}
           sx={{
-            minHeight: '36px',
-            width: '36px',
-            borderRadius: '50%',
-            background: '#faf8fe',
+            minHeight: '24px',
+            width: '100%',
+            borderRadius: '18px',
+            background: '#ffffffbf',
             display: {xs: 'flex', md: 'none'},
+            p: '2px',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            gap: '8px',
+            boxShadow:
+              '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)'
           }}
         >
           <Image
             src={back}
             alt="back"
-            height={24}
-            width={24}
+            height={16}
+            width={16}
             style={{transform: 'rotate(180deg)'}}
           />
+          <Typography
+            sx={{
+              ...localFont.inter14,
+              fontFamily: '"Inter", sans-serif !important',
+              fontWeight: '400'
+            }}
+          >
+            {t('back')}
+          </Typography>
         </Box>
         <Box
           sx={{

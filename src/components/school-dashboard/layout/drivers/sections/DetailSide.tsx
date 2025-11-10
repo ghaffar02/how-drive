@@ -80,7 +80,12 @@ const emails = [
   }
 ];
 
-export default function DetailSide() {
+type Prop = {
+  display?: string;
+  setOpenTrainers?: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+export default function DetailSide({display = 'none', setOpenTrainers}: Prop) {
   const [activeIndexes, setActiveIndexes] = useState<number[]>([]);
 
   const [openDropdown, setOpenDropdown] = useState(false);
@@ -140,9 +145,10 @@ export default function DetailSide() {
         background: 'rgba(248,250,252,0.3)',
         padding: '24px 12px',
         border: '2px solid #fff',
-        display: {xs: 'none', md: 'flex'},
+        display: {xs: display, md: 'flex'},
         flexDirection: 'column',
-        gap: '8px'
+        gap: '8px',
+        borderRadius: {xs: '24px', md: '0px'}
       }}
     >
       {/* search bar */}
@@ -382,7 +388,10 @@ export default function DetailSide() {
           return (
             <Box
               key={i}
-              onClick={() => handleClick(i)}
+              onClick={() => {
+                handleClick(i);
+                setOpenTrainers?.(false);
+              }}
               sx={{
                 width: '100%',
                 height: '60px',
