@@ -306,3 +306,13 @@ a {
   padding: 0 6px 0 0 !important;
   font-family: 'Inter', sans-serif !important;
 }
+
+/* the specific date for curretn date   */
+
+.rbc-now :first-child {
+  background-color: #000 !important;
+  border-radius: 4px;
+  color: #fff !important;
+  padding: 0 3px 0 3px;
+  font-weight: 500 !important;
+}
