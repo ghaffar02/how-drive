@@ -24,7 +24,7 @@ const data = [
 ];
 
 export default function StudentDashboard() {
-  const [activeKey, setActiveKey] = React.useState<string>('1');
+  const [activeKey, setActiveKey] = React.useState<string>('5');
   const [hoverKey, setHoverKey] = React.useState<string | null>(null);
   // ProfileDropdown relative states
   const [open, setOpen] = useState(false);

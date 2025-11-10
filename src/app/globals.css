@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+.css-1y6l765-MuiPickersLayout-root .MuiPickersLayout-actionBar {
+  display: flex;
+  justify-content: center !important;
+  /* background-color: #000; */
+  /* gap: 1; */
+}
 a {
   text-decoration: none;
 }
