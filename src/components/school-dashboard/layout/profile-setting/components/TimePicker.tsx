@@ -3,57 +3,90 @@ import dayjs, {Dayjs} from 'dayjs';
 import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs';
 import {TimePicker} from '@mui/x-date-pickers/TimePicker';
-
-export default function TimePickerValue() {
-  const [value, setValue] = React.useState<Dayjs | null>(dayjs('2022-04-17T'));
+import {DemoContainer} from '@mui/x-date-pickers/internals/demo';
+interface Props {
+  sx?: object;
+}
+export default function TimePickerValue({sx = {}}: Props) {
+  const [value, setValue] = React.useState<Dayjs | null>(
+    dayjs('2022-04-17T00:00')
+  );
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <TimePicker
-        ampm={false}
-        minutesStep={15}
-        value={value}
-        onChange={(newValue) => setValue(newValue)}
-        // defaultValue={dayjs('--:-- --')}
-
-        slotProps={{
-          // openPickerIcon: null,
-          textField: {
-            placeholder: 'Select time',
-            sx: {
-              // ✅ Main wrapper
-              '& .MuiOutlinedInput-root': {
-                borderRadius: '12px !important',
-                paddingRight: '0px !important'
+      <DemoContainer components={['TimePicker']}>
+        <TimePicker
+          ampm={false}
+          minutesStep={15}
+          value={value}
+          onChange={(newValue) => setValue(newValue)}
+          slotProps={{
+            actionBar: {
+              sx: {
+                '& .MuiButton-root': {
+                  padding: '0 !important',
+                  pl: '4px !important',
+                  minWidth: '40px !important', // ✅ width reduce
+                  width: '40px !important'
+                }
               },
+              actions: ['cancel', 'accept'] // ✅ OK + Cancel dono
+            },
 
-              // ✅ Border outline
-              '& .MuiOutlinedInput-notchedOutline': {
-                borderRadius: '12px !important'
+            textField: {
+              placeholder: 'Select time',
+              InputProps: {
+                readOnly: true,
+                onKeyDown: (e: any) => e.preventDefault()
               },
+              sx: {
+                ...sx,
+                overflow: 'hidden',
+                borderRadius: '10px !important',
+                maxWidth: '120px',
+                width: '100%',
 
-              borderRadius: '12px',
-              width: '140px',
-              backgroundColor: 'white',
-              // height: '40px',
-              '& .MuiInputBase-root': {
-                borderRadius: '12px',
+                '& .css-vycme6-MuiPickersInputBase-root-MuiPickersOutlinedInput-root':
+                  {
+                    borderRadius: '10px'
+                  },
 
-                // height: '40px',
-                backgroundColor: 'white'
-              },
-              '& input': {
-                borderRadius: '12px',
+                '& .MuiSvgIcon-root': {
+                  fontSize: '18px'
+                },
 
-                backgroundColor: 'white' // ✅ white BG
-              },
-              '& .MuiPickersSectionList-root': {
-                py: '8.5px !important'
+                '& .MuiOutlinedInput-root': {
+                  borderRadius: '10px !important'
+                },
+
+                '& .MuiOutlinedInput-notchedOutline': {
+                  borderRadius: '10px !important'
+                },
+
+                backgroundColor: 'white',
+
+                '& .MuiInputBase-root': {
+                  borderRadius: '10px',
+                  backgroundColor: 'white'
+                },
+
+                '& input': {
+                  cursor: 'pointer',
+                  userSelect: 'none',
+                  borderRadius: '10px !important',
+                  backgroundColor: 'white'
+                },
+
+                '& .MuiPickersSectionList-root': {
+                  py: '8.5px !important'
+                }
+
+                // ✅ << Yahan hona chahiye
               }
             }
-          }
-        }}
-      />
+          }}
+        />
+      </DemoContainer>
     </LocalizationProvider>
   );
 }
