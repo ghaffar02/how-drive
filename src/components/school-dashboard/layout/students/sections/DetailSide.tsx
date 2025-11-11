@@ -110,9 +110,9 @@ export default function DetailSide({display = 'none', setOpenStudents}: Prop) {
   const iconRef = useRef<HTMLDivElement | null>(null);
   // const [value, setValue] = useState('active');
 
-  const [activeIndex, setActiveIndex] = useState<number | 0>(0);
   const t = useTranslations('SchoolDashboard.leftSideTab');
   const textTab = t.raw('textTab');
+  const [activeIndex, setActiveIndex] = useState<number | 0>(0);
   const handleClickTab = (i: number) => {
     setActiveIndex(i);
   };
