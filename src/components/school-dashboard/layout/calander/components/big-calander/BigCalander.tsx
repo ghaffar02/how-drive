@@ -547,7 +547,15 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
           justifyContent: 'space-between'
         }}
       >
-        <MiniFramerCalendar />
+        <MiniFramerCalendar
+          datesArray={[
+            '2025-11-16',
+            '2025-11-18',
+            '2025-11-20',
+            '2025-11-22',
+            '2025-11-25'
+          ]}
+        />
       </Box>
 
       <Box
