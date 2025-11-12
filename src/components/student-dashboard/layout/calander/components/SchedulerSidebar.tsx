@@ -74,6 +74,7 @@ export default function SchedulerSidebar() {
           ease: 'easeOut',
           delay: 0.2
         }}
+        viewport={{once: true}}
         sx={{
           marginTop: '32px',
           width: '100%',
