@@ -63,17 +63,19 @@
 }
 
 /* Selected day (filled blue circle) */
-.calendar :global(.rdp-day_selected) {
-  background: var(--rdp-accent-color);
-  color: white;
+.calendar :global(.rdp-selected) {
+  background: #4611f5;
+  color: #fff;
 }
 .calendar :global(.rdp-day_selected:hover) {
   background: var(--rdp-accent-color);
 }
 /* Grey “badges” on specific days */
 .event {
-  background: rgba(145, 158, 171, 0.25);
-  color: #111827;
+  /* background: rgba(145, 158, 171, 0.25); */
+  background: #dbeafe;
+  /* color: #111827; */
+  color: #173da6;
 }
 
 /* Navigation arrows */

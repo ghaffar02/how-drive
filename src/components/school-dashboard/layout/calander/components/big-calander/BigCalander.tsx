@@ -534,7 +534,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
           transition={{
             duration: 0.2,
             ease: 'easeOut',
-            delay: 0.1
+            delay: 0.3
           }}
           sx={{
             // bgcolor: '#000',
@@ -618,7 +618,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
           transition={{
             duration: 0.2,
             ease: 'easeOut',
-            delay: 0.2
+            delay: 0.3
           }}
         >
           <TextField
@@ -708,7 +708,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
         transition={{
           duration: 0.2,
           ease: 'easeOut',
-          delay: 0.4
+          delay: 0.3
         }}
         sx={{
           display: 'flex',
@@ -786,7 +786,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
         transition={{
           duration: 0.2,
           ease: 'easeOut',
-          delay: 0.5
+          delay: 0.3
         }}
         sx={{width: '100%'}}
       >
@@ -820,6 +820,14 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
       )}
 
       <Box
+        component={motion.div}
+        initial={{y: 50, opacity: 0}}
+        whileInView={{y: 0, opacity: 1}}
+        transition={{
+          duration: 0.2,
+          ease: 'easeOut',
+          delay: 0.3
+        }}
         sx={{
           width: {xs: '100%'},
 
