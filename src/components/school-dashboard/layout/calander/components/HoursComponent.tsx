@@ -57,14 +57,29 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
             {day}
           </Typography>
           <CustomTextField labal="Nicht verfügbar" disabled={true} />
-          <Image
-            src={circleAdd}
-            alt="add"
-            height={20}
-            width={20}
-            style={{margin: '4px', cursor: 'pointer'}}
+          <Box
             onClick={handleUnavailableAdd}
-          />
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              height: '28px',
+              width: '28px',
+              p: '4px',
+              borderRadius: '50%',
+              cursor: 'pointer',
+              '&:hover': {
+                background: 'rgba(48,88,255,0.1)'
+              }
+            }}
+          >
+            <Image
+              src={circleAdd}
+              alt="add"
+              height={20}
+              width={20}
+              // style={{margin: '4px', cursor: 'pointer'}}
+            />
+          </Box>
         </Box>
       )}
 
@@ -118,24 +133,48 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
 
             {/* Action icons */}
             <Box sx={{display: 'flex'}}>
-              <Image
-                src={circleCross}
-                alt="cross"
-                height={20}
-                width={20}
-                style={{margin: '4px', cursor: 'pointer'}}
+              <Box
                 onClick={() => handleRemove(row.id)}
-              />
-              {/* Show add only if: first row AND total rows < 2 */}
-              {index === 0 && rows.length < 2 && (
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  height: '28px',
+                  width: '28px',
+                  p: '4px',
+                  borderRadius: '50%',
+                  cursor: 'pointer',
+                  '&:hover': {
+                    background: 'rgba(48,88,255,0.1)'
+                  }
+                }}
+              >
                 <Image
-                  src={circleAdd}
-                  alt="add"
+                  src={circleCross}
+                  alt="cross"
                   height={20}
                   width={20}
-                  style={{margin: '4px', cursor: 'pointer'}}
-                  onClick={handleAdd}
+                  // style={{margin: '4px', cursor: 'pointer'}}
                 />
+              </Box>
+              {/* Show add only if: first row AND total rows < 2 */}
+              {index === 0 && rows.length < 2 && (
+                <Box
+                  onClick={handleAdd}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    height: '28px',
+                    width: '28px',
+                    p: '4px',
+                    borderRadius: '50%',
+                    cursor: 'pointer',
+                    '&:hover': {
+                      background: 'rgba(48,88,255,0.1)'
+                    }
+                  }}
+                >
+                  <Image src={circleAdd} alt="add" height={20} width={20} />
+                </Box>
               )}
             </Box>
           </Box>

@@ -2008,11 +2008,7 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": [
-            "Notwendige",
-            "Analytics",
-            "Alle zulassen"
-          ]
+          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2051,10 +2047,7 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOff": [
-            "News und Update",
-            "Angebote und Werbung"
-          ]
+          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
         }
       }
     },
@@ -2136,7 +2129,7 @@
         "reply": "Antworten",
         "copy": "Kopien",
         "message": "Nachricht",
-        "back":"Zurück"
+        "back": "Zurück"
       },
       "placeholder": {
         "search": "Suchen"
@@ -2403,11 +2396,7 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": [
-            "Notwendige",
-            "Analytics",
-            "Alle zulassen"
-          ]
+          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2446,18 +2435,12 @@
             "Nachrichten",
             "Neue Schüler Anfrage"
           ],
-          "formFieldsOff": [
-            "News und Update",
-            "Angebote und Werbung"
-          ]
+          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
         }
       }
     },
     "leftSideTab": {
-      "textTab": [
-        "Aktiv",
-        "Inaktiv"
-      ],
+      "textTab": ["Aktiv", "Inaktiv"],
       "search": "Suchen",
       "title": "Die maximal zulässige Anzahl aktiver Fahrschüler ist erreicht. Bitte upgrade deinen Tarif unter \"Einstellungen=>Zahlung\" oder deaktiviere einen Fahrschüler."
     },
@@ -2621,11 +2604,7 @@
     "Calendar": {
       "Sidebar": {
         "title": "Terminpläne festlegen",
-        "tabs": [
-          "Gespräch",
-          "Theorie",
-          "Fahren"
-        ],
+        "tabs": ["Gespräch", "Theorie", "Fahren"],
         "tab1": {
           "title": "Kategorie",
           "title2": "Kategorie hinzufügen",
@@ -2731,6 +2710,50 @@
             "unavailable": true
           }
         ]
+      },
+      "popup": {
+        "title": "Termin für einen/eine Fahrschüler*in buchen",
+        "input1": "Fahrschüler*in",
+        "tabs": ["Gespräch", "Theorie", "Fahren", "Prüfung"],
+        "tabsOptions": {
+          "options": [
+            [
+              {
+                "label": "wähle Kategorie",
+                "value": ""
+              },
+              {
+                "label": "Anmeldung Fahrschule",
+                "value": "anmeldung-fahrschule"
+              },
+              {
+                "label": "Besprechung",
+                "value": "besprechung"
+              }
+            ],
+            [
+              {"value": "", "label": "wähle Gruppe"},
+              {"value": "gruppe-1", "label": "Gruppe 1"},
+              {"value": "gruppe-2", "label": "Gruppe 2"}
+            ],
+            [
+              {"value": "", "label": "wähle Fahrlehrer"},
+              {"value": "tom", "label": "Tom"},
+              {"value": "fabian", "label": "Fabian"},
+              {"value": "sophia", "label": "Sophia"}
+            ],
+            [
+              {"value": "", "label": "wähle Prüfung"},
+              {"value": "theorieprüfung", "label": "Theorieprüfung"},
+              {"value": "praktisch-prüfung", "label": "Praktisch Prüfung"}
+            ]
+          ]
+        },
+        "title1": "Wähle einen Tag!",
+        "des1": "Die Tage mit verfügbaren Zeitfenstern sind hervorgehoben. Die anderen Tage können aber auch frei gewählt werden, um einen Termin mit einem abweichenden Zeitfenster zu buchen.",
+        "input2": "Zeitfenster",
+        "des2": "Der Termin für die praktische Prüfung wird nicht automatisch für den/die zugewiesenen Fahrlehrer*in reserviert. Bitte buche denselben Termin auch für Fahrlehrer, die an der praktischen Prüfung teilnehmen.",
+        "btn": "Buchen"
       }
     },
     "studentProcess": {

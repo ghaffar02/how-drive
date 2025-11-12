@@ -19,6 +19,7 @@ import whiteArrow from '@/assets/svgs/whiteArrow.svg';
 import CustomTextField from '@/components/school-dashboard/InputField';
 import crossCircle from '@/assets/svgs/dashboard-student/crosscircle.svg';
 import {motion} from 'framer-motion';
+import {useTranslations} from 'next-intl';
 
 const locales = {'en-US': enUS, de: de};
 
@@ -387,32 +388,11 @@ const timeArray = [
   }
 ];
 
-const tabOptions = [
-  [
-    {value: '', label: 'select category'},
-    {value: 'anmeldung-fahrschule', label: 'Anmeldung Fahrschule'},
-    {value: 'besprechung', label: 'Besprechung'}
-  ],
-  [
-    {value: '', label: 'select group'},
-    {value: 'gruppe-1', label: 'Gruppe 1'},
-    {value: 'gruppe-2', label: 'Gruppe 2'}
-  ],
-  [
-    {value: '', label: 'select trainer'},
-    {value: 'tom', label: 'Tom'},
-    {value: 'fabian', label: 'Fabian'},
-    {value: 'sophia', label: 'Sophia'}
-  ],
-  [
-    {value: '', label: 'select exam'},
-    {value: 'theorieprüfung', label: 'Theorieprüfung'},
-    {value: 'praktisch-prüfung', label: 'Praktisch Prüfung'}
-  ]
-];
-
 function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
   // const [activeIndex, setActiveIndex] = React.useState(0);
+  const t = useTranslations('SchoolDashboard.Calendar.popup');
+  const tabs = t.raw('tabs');
+  const tabOptions = t.raw('tabsOptions.options');
   const [selectedCategory, setSelectedCategory] = useState('');
   const handleContainerClick = (event: React.MouseEvent) => {
     event.stopPropagation();
@@ -447,7 +427,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
           backdropFilter: 'blur(15px)',
           boxShadow:
             '0px 0px 0px 1px rgb(255,255,255), 0px 1px 0px 0px rgba(0,0,0,0.25), 0px 1px 1px 0px rgba(0,0,0,0.25)',
-          top: '16px !important',
+          top: '30px !important',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
           '&::-webkit-scrollbar': {
@@ -480,7 +460,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
             textAlign: 'center'
           }}
         >
-          Book an appointment for a driving student
+          {t('title')}
         </Typography>
 
         <Box sx={{width: '100%'}}>
@@ -492,7 +472,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
               mt: '16px'
             }}
           >
-            Driving student
+            {t('input1')}
           </Typography>
           <CustomTextField />
           <Box
@@ -585,34 +565,32 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
               }}
             />
 
-            {['Talk', 'Theory', 'Driving', 'Exam'].map(
-              (item: string, i: number) => (
-                <Box
-                  key={i}
-                  onClick={() => handleClickTab(i)}
+            {tabs.map((item: string, i: number) => (
+              <Box
+                key={i}
+                onClick={() => handleClickTab(i)}
+                sx={{
+                  flex: 1,
+                  textAlign: 'center',
+                  p: '4px 8px',
+                  cursor: 'pointer',
+                  zIndex: 2
+                }}
+              >
+                <Typography
                   sx={{
-                    flex: 1,
-                    textAlign: 'center',
-                    p: '4px 8px',
-                    cursor: 'pointer',
-                    zIndex: 2
+                    lineHeight: '1.6em',
+                    fontSize: {xs: '12px', md: '13px', lg: '14px'},
+                    color: activeIndex === i ? '#fff' : '#4A5568',
+                    fontWeight: activeIndex === i ? '400' : '400',
+                    transition: 'all 0.3s ease-in-out',
+                    fontFamily: '"Inter", sans-serif !important'
                   }}
                 >
-                  <Typography
-                    sx={{
-                      lineHeight: '1.6em',
-                      fontSize: {xs: '12px', md: '13px', lg: '14px'},
-                      color: activeIndex === i ? '#fff' : '#4A5568',
-                      fontWeight: activeIndex === i ? '400' : '400',
-                      transition: 'all 0.3s ease-in-out',
-                      fontFamily: '"Inter", sans-serif !important'
-                    }}
-                  >
-                    {item}
-                  </Typography>
-                </Box>
-              )
-            )}
+                  {item}
+                </Typography>
+              </Box>
+            ))}
           </Box>
         </Box>
 
@@ -669,7 +647,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
             {/* <MenuItem value="" disabled>
             select...
           </MenuItem> */}
-            {tabOptions[activeIndex].map((option) =>
+            {tabOptions[activeIndex].map((option: any) =>
               option.value === '' ? (
                 <MenuItem key={option.label} value={option.value} disabled>
                   {option.label}
@@ -732,7 +710,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
               fontWeight: 400
             }}
           >
-            Select a day!
+            {t('title1')}
           </Typography>
           <Typography
             sx={{
@@ -741,9 +719,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
               fontWeight: 300
             }}
           >
-            The days with available time slots are highlighted. However, you can
-            freely select a day to book an appointment with a different time
-            slot.
+            {t('des1')}
           </Typography>
         </Box>
       )}
@@ -829,7 +805,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
             fontFamily: '"Inter", sans-serif !important'
           }}
         >
-          Different time slot
+          {t('input2')}
         </Typography>
         <Box sx={{display: 'flex', gap: '4px', alignItems: 'center'}}>
           <TimePickerValue
@@ -868,9 +844,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
             textAlign: 'center'
           }}
         >
-          The appointment for practical exam will not automatically be reserved
-          for the assigned trainer. Please book the same time slot for the
-          trainer participating the practical exam as well.
+          {t('des2')}
         </Typography>
       )}
 
@@ -887,7 +861,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
       >
         <CustomButton
           onClick={onClose}
-          label="Book"
+          label={t('btn')}
           sx={{
             gap: '8px',
             maxWidth: '100%',
