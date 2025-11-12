@@ -10,9 +10,7 @@ type Prop = {
   datesArray?: string[];
 };
 export default function MiniFramerCalendar({datesArray}: Prop) {
-  const [selected, setSelected] = React.useState<Date | undefined>(
-    new Date(2025, 10, 14)
-  );
+  const [selected, setSelected] = React.useState<Date | undefined>();
 
   // Grey “badge” days like in your screenshot
   const eventDays: Date[] = datesArray?.map((date) => new Date(date)) ?? [];
