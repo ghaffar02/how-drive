@@ -83,14 +83,26 @@ export default function SchedulerSidebar() {
           gap: '12px'
         }}
       >
-        {appointments.map((appt) => (
-          <AppointmentCard
+        {appointments.map((appt, i) => (
+          <Box
             key={appt.id}
-            color={appt.color}
-            title={appt.title}
-            time={appt.time}
-            date={appt.date}
-          />
+            component={motion.div}
+            initial={{y: 50, opacity: 0}}
+            whileInView={{y: 0, opacity: 1}}
+            transition={{
+              duration: 0.3,
+              ease: 'easeOut',
+              delay: i * 0.2 // 👈 delay multiplied by index
+            }}
+            viewport={{once: true}} // 👈 run only once
+          >
+            <AppointmentCard
+              color={appt.color}
+              title={appt.title}
+              time={appt.time}
+              date={appt.date}
+            />
+          </Box>
         ))}
       </Box>
     </Box>
