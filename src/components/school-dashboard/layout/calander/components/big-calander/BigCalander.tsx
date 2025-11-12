@@ -389,19 +389,23 @@ const timeArray = [
 
 const tabOptions = [
   [
+    {value: '', label: 'select category'},
     {value: 'anmeldung-fahrschule', label: 'Anmeldung Fahrschule'},
     {value: 'besprechung', label: 'Besprechung'}
   ],
   [
+    {value: '', label: 'select group'},
     {value: 'gruppe-1', label: 'Gruppe 1'},
     {value: 'gruppe-2', label: 'Gruppe 2'}
   ],
   [
+    {value: '', label: 'select trainer'},
     {value: 'tom', label: 'Tom'},
     {value: 'fabian', label: 'Fabian'},
     {value: 'sophia', label: 'Sophia'}
   ],
   [
+    {value: '', label: 'select exam'},
     {value: 'theorieprüfung', label: 'Theorieprüfung'},
     {value: 'praktisch-prüfung', label: 'Praktisch Prüfung'}
   ]
@@ -434,15 +438,15 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
       }}
       PaperProps={{
         sx: {
-          maxWidth: '300px',
-          height: '95vh',
+          maxWidth: '310px',
+          height: '80vh',
           borderRadius: '10px',
           border: '1px solid #fff',
           p: '16px',
           background: 'rgba(248, 250, 252, 0.3)',
           backdropFilter: 'blur(15px)',
           boxShadow:
-            '0px 0px 2px 0px var(--token-46fa6e04-aa50-4324-8a35-fd1170036322, rgb(212, 212, 216))',
+            '0px 0px 0px 1px rgb(255,255,255), 0px 1px 0px 0px rgba(0,0,0,0.25), 0px 1px 1px 0px rgba(0,0,0,0.25)',
           top: '16px !important',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
@@ -476,7 +480,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
             textAlign: 'center'
           }}
         >
-          Book an appointment for the student
+          Book an appointment for a driving student
         </Typography>
 
         <Box sx={{width: '100%'}}>
@@ -484,7 +488,8 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
             sx={{
               ...localFont.inter14,
               fontFamily: '"Inter", sans-serif !important',
-              mb: '6px'
+              mb: '6px',
+              mt: '16px'
             }}
           >
             Driving student
@@ -492,7 +497,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
           <CustomTextField />
           <Box
             sx={{
-              mt: '24px',
+              mt: '16px',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
@@ -534,12 +539,12 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
           transition={{
             duration: 0.2,
             ease: 'easeOut',
-            delay: 0.3
+            delay: 0.1
           }}
           sx={{
             // bgcolor: '#000',
             width: '100%',
-            mt: '14px',
+            mt: '16px',
             display: 'flex',
             flexDirection: {xs: 'column'},
             gap: '20px',
@@ -551,7 +556,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
             sx={{
               width: '100%',
               // maxWidth: '828px',
-              bgcolor: '#ffffff99',
+              bgcolor: '#ffffff',
               display: 'flex',
               p: '4px',
               alignItems: 'center',
@@ -597,7 +602,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
                     sx={{
                       lineHeight: '1.6em',
                       fontSize: {xs: '12px', md: '13px', lg: '14px'},
-                      color: activeIndex === i ? '#ffff' : '#4A5568',
+                      color: activeIndex === i ? '#fff' : '#4A5568',
                       fontWeight: activeIndex === i ? '400' : '400',
                       transition: 'all 0.3s ease-in-out',
                       fontFamily: '"Inter", sans-serif !important'
@@ -618,7 +623,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
           transition={{
             duration: 0.2,
             ease: 'easeOut',
-            delay: 0.3
+            delay: 0.2
           }}
         >
           <TextField
@@ -633,7 +638,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
             // error={!!errors.category}
             // helperText={errors.category?.message}
             sx={{
-              background: '#ffffff99',
+              background: '#ffffff',
               height: 40,
               maxWidth: {lg: '402px'},
               width: '100%',
@@ -661,14 +666,20 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
               }
             }}
           >
-            <MenuItem value="" disabled>
-              select...
-            </MenuItem>
-            {tabOptions[activeIndex].map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
+            {/* <MenuItem value="" disabled>
+            select...
+          </MenuItem> */}
+            {tabOptions[activeIndex].map((option) =>
+              option.value === '' ? (
+                <MenuItem key={option.label} value={option.value} disabled>
+                  {option.label}
+                </MenuItem>
+              ) : (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              )
+            )}
           </TextField>
         </motion.div>
       </Box>
@@ -701,31 +712,62 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
         />
       </Box>
 
-      <Box
-        component={motion.div}
-        initial={{y: 50, opacity: 0}}
-        whileInView={{y: 0, opacity: 1}}
-        transition={{
-          duration: 0.2,
-          ease: 'easeOut',
-          delay: 0.3
-        }}
-        sx={{
-          display: 'flex',
-          flex: '0 0 auto',
-          flexWrap: 'wrap',
-          gap: '10px',
-          alignItems: 'flex-start',
-          justifyContent: 'center',
-          alignContent: 'flex-start'
-        }}
-      >
-        {activeIndex < 3 &&
-          timeArray.map((data) => (
+      {activeIndex < 3 && (
+        <Box
+          component={motion.div}
+          initial={{y: 50, opacity: 0}}
+          whileInView={{y: 0, opacity: 1}}
+          transition={{
+            duration: 0.2,
+            ease: 'easeOut',
+            delay: 0.4
+          }}
+          sx={{width: '100%', textAlign: 'center'}}
+        >
+          <Typography
+            sx={{
+              ...localFont.inter16,
+              fontFamily: '"Inter", sans-serif !important',
+              mb: '10px',
+              fontWeight: 400
+            }}
+          >
+            Select a day!
+          </Typography>
+          <Typography
+            sx={{
+              ...localFont.inter14,
+              fontFamily: '"Inter", sans-serif !important',
+              fontWeight: 300
+            }}
+          >
+            The days with available time slots are highlighted. However, you can
+            freely select a day to book an appointment with a different time
+            slot.
+          </Typography>
+        </Box>
+      )}
+      {activeIndex < 3 && (
+        <Box
+          sx={{
+            display: 'flex',
+            flex: '0 0 auto',
+            flexWrap: 'wrap',
+            gap: '10px',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            alignContent: 'flex-start'
+          }}
+        >
+          {timeArray.map((data) => (
             <Box
               onClick={() => {
                 if (!data.select) return;
-                setUpdateTime(data.id);
+                if (updateTime === data.id) {
+                  setUpdateTime(0);
+                } else {
+                  setUpdateTime(data.id);
+                }
               }}
               key={data.id}
               sx={{
@@ -742,7 +784,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
                 gap: '6px',
                 minHeight: '38px',
                 minWidth: '128px',
-                cursor: 'pointer',
+                cursor: data.select ? 'pointer' : 'unset',
                 borderRadius: '8px',
                 boxShadow: '0px 0px 2px 0px rgb(212,212,216)',
                 '&:hover': {
@@ -778,18 +820,9 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
               </Typography>
             </Box>
           ))}
-      </Box>
-      <Box
-        component={motion.div}
-        initial={{y: 50, opacity: 0}}
-        whileInView={{y: 0, opacity: 1}}
-        transition={{
-          duration: 0.2,
-          ease: 'easeOut',
-          delay: 0.3
-        }}
-        sx={{width: '100%'}}
-      >
+        </Box>
+      )}
+      <Box sx={{width: '100%'}}>
         <Typography
           sx={{
             ...localFont.inter14,
@@ -799,9 +832,31 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
           Different time slot
         </Typography>
         <Box sx={{display: 'flex', gap: '4px', alignItems: 'center'}}>
-          <TimePickerValue />
-          <Image src={arrow} alt="arrow" height={14} width={14} />
-          <TimePickerValue />
+          <TimePickerValue
+            sx={{
+              ...(updateTime !== 0 && {
+                opacity: 0.5,
+                pointerEvents: 'none',
+                userSelect: 'none'
+              })
+            }}
+          />
+          <Image
+            src={arrow}
+            alt="arrow"
+            height={14}
+            width={14}
+            style={{marginTop: '8px'}}
+          />
+          <TimePickerValue
+            sx={{
+              ...(updateTime !== 0 && {
+                opacity: 0.5,
+                pointerEvents: 'none',
+                userSelect: 'none'
+              })
+            }}
+          />
         </Box>
       </Box>
 
@@ -820,14 +875,6 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
       )}
 
       <Box
-        component={motion.div}
-        initial={{y: 50, opacity: 0}}
-        whileInView={{y: 0, opacity: 1}}
-        transition={{
-          duration: 0.2,
-          ease: 'easeOut',
-          delay: 0.3
-        }}
         sx={{
           width: {xs: '100%'},
 
