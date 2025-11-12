@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React from 'react';
 import addIcon from '@/assets/svgs/circleadd.svg';
 import steering from '@/assets/svgs/steering.svg';
+import {motion} from 'framer-motion';
 
 type Props = {
   title: string;
@@ -124,6 +125,10 @@ type CardProps = {
 function Card({name, drivingClass, setActiveKey}: CardProps) {
   return (
     <Box
+      component={motion.div}
+      initial={{opacity: 0}}
+      animate={{opacity: 1}}
+      transition={{duration: 0.4, delay: 0.4, ease: 'easeInOut'}}
       onClick={(e) => {
         e.stopPropagation();
         setActiveKey('7');

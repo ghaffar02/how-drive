@@ -18,6 +18,7 @@ import arrow from '@/assets/svgs/dashboard-student/arrowsetting.svg';
 import whiteArrow from '@/assets/svgs/whiteArrow.svg';
 import CustomTextField from '@/components/school-dashboard/InputField';
 import crossCircle from '@/assets/svgs/dashboard-student/crosscircle.svg';
+import {motion} from 'framer-motion';
 
 const locales = {'en-US': enUS, de: de};
 
@@ -527,6 +528,14 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
         {/* Area for the tab */}
 
         <Box
+          component={motion.div}
+          initial={{y: 50, opacity: 0}}
+          whileInView={{y: 0, opacity: 1}}
+          transition={{
+            duration: 0.2,
+            ease: 'easeOut',
+            delay: 0.1
+          }}
           sx={{
             // bgcolor: '#000',
             width: '100%',
@@ -603,58 +612,75 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
         </Box>
 
         {/* Ending Area for the tab */}
-
-        <TextField
-          select
-          fullWidth
-          variant="outlined"
-          value={selectedCategory} // e.g. from useState
-          onChange={(e) => setSelectedCategory(e.target.value)}
-          SelectProps={{
-            displayEmpty: true
-          }}
-          // error={!!errors.category}
-          // helperText={errors.category?.message}
-          sx={{
-            background: '#ffffff99',
-            height: 40,
-            maxWidth: {lg: '402px'},
-            width: '100%',
-
-            borderRadius: '8px',
-            '& .MuiInputBase-root': {
-              height: '100%',
-              fontSize: '14px',
-              padding: '12px',
-              borderRadius: '12px',
-
-              boxShadow:
-                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
-            },
-            '&:hover .MuiOutlinedInput-notchedOutline': {
-              border: 'none !important'
-            },
-            '& fieldset': {
-              borderColor: '#e2e8f00a'
-            },
-            '& .MuiSelect-select': {
-              padding: 0,
-              fontSize: '16px',
-              color: selectedCategory ? '#000' : '#aaa'
-            }
+        <motion.div
+          initial={{y: 50, opacity: 0}}
+          whileInView={{y: 0, opacity: 1}}
+          transition={{
+            duration: 0.2,
+            ease: 'easeOut',
+            delay: 0.2
           }}
         >
-          <MenuItem value="" disabled>
-            select...
-          </MenuItem>
-          {tabOptions[activeIndex].map((option) => (
-            <MenuItem key={option.value} value={option.value}>
-              {option.label}
+          <TextField
+            select
+            fullWidth
+            variant="outlined"
+            value={selectedCategory} // e.g. from useState
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            SelectProps={{
+              displayEmpty: true
+            }}
+            // error={!!errors.category}
+            // helperText={errors.category?.message}
+            sx={{
+              background: '#ffffff99',
+              height: 40,
+              maxWidth: {lg: '402px'},
+              width: '100%',
+
+              borderRadius: '8px',
+              '& .MuiInputBase-root': {
+                height: '100%',
+                fontSize: '14px',
+                padding: '12px',
+                borderRadius: '12px',
+
+                boxShadow:
+                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+              },
+              '&:hover .MuiOutlinedInput-notchedOutline': {
+                border: 'none !important'
+              },
+              '& fieldset': {
+                borderColor: '#e2e8f00a'
+              },
+              '& .MuiSelect-select': {
+                padding: 0,
+                fontSize: '16px',
+                color: selectedCategory ? '#000' : '#aaa'
+              }
+            }}
+          >
+            <MenuItem value="" disabled>
+              select...
             </MenuItem>
-          ))}
-        </TextField>
+            {tabOptions[activeIndex].map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+        </motion.div>
       </Box>
       <Box
+        component={motion.div}
+        initial={{y: 50, opacity: 0}}
+        whileInView={{y: 0, opacity: 1}}
+        transition={{
+          duration: 0.2,
+          ease: 'easeOut',
+          delay: 0.3
+        }}
         sx={{
           width: '100%',
           display: 'flex',
@@ -676,6 +702,14 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
       </Box>
 
       <Box
+        component={motion.div}
+        initial={{y: 50, opacity: 0}}
+        whileInView={{y: 0, opacity: 1}}
+        transition={{
+          duration: 0.2,
+          ease: 'easeOut',
+          delay: 0.4
+        }}
         sx={{
           display: 'flex',
           flex: '0 0 auto',
@@ -745,7 +779,17 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
             </Box>
           ))}
       </Box>
-      <Box sx={{width: '100%'}}>
+      <Box
+        component={motion.div}
+        initial={{y: 50, opacity: 0}}
+        whileInView={{y: 0, opacity: 1}}
+        transition={{
+          duration: 0.2,
+          ease: 'easeOut',
+          delay: 0.5
+        }}
+        sx={{width: '100%'}}
+      >
         <Typography
           sx={{
             ...localFont.inter14,

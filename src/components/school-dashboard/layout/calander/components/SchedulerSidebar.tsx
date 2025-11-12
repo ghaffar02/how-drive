@@ -8,6 +8,7 @@ import CustomButton from '@/components/school-dashboard/CustomButton';
 import MiniFramerCalendar from './MiniFramerCalendar';
 import CategoryComponent from './CategoryComponent';
 import {useTranslations} from 'next-intl';
+import {motion} from 'framer-motion';
 
 export default function SchedulerSidebar() {
   const [activeIndex, setActiveIndex] = useState<number | 0>(0);
@@ -188,7 +189,18 @@ function SelectAppointmentType({index}: AppointmentProp) {
       )}
 
       {/* Capacity Persons */}
-      <Box sx={{width: '100%'}}>
+      <Box
+        component={motion.div}
+        initial={{y: 50, opacity: 0}}
+        whileInView={{y: 0, opacity: 1}}
+        transition={{
+          duration: 0.2,
+          ease: 'easeOut',
+          delay: 0.2
+          // duration: 0.2
+        }}
+        sx={{width: '100%'}}
+      >
         <Typography
           sx={{
             ...localFont.inter14,
@@ -201,7 +213,17 @@ function SelectAppointmentType({index}: AppointmentProp) {
         <CustomTextField type="number" />
       </Box>
       {/* Duration Minutes */}
-      <Box sx={{width: '100%'}}>
+      <Box
+        component={motion.div}
+        initial={{y: 50, opacity: 0}}
+        whileInView={{y: 0, opacity: 1}}
+        transition={{
+          duration: 0.2,
+          ease: 'easeOut',
+          delay: 0.3
+        }}
+        sx={{width: '100%'}}
+      >
         <Typography
           sx={{
             ...localFont.inter14,
@@ -249,7 +271,16 @@ function SelectAppointmentType({index}: AppointmentProp) {
         </Box>
       </Box>
       {/* Weekly Hours */}
-      <Box>
+      <Box
+        component={motion.div}
+        initial={{y: 50, opacity: 0}}
+        whileInView={{y: 0, opacity: 1}}
+        transition={{
+          duration: 0.2,
+          ease: 'easeOut',
+          delay: 0.4
+        }}
+      >
         <Typography
           sx={{
             ...localFont.inter14,

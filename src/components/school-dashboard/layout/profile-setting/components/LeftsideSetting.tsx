@@ -55,13 +55,13 @@ export default function Leftside({
       {data.map((items: string, i: number) => (
         <Box
           component={motion.div}
-          initial={{opacity: 0, y: 40}}
-          animate={{opacity: 1, y: 0}}
+          initial={{y: 50, opacity: 0}}
+          whileInView={{y: 0, opacity: 1}}
           transition={{
-            type: 'spring',
-            stiffness: 70,
-            damping: 15,
-            delay: i * 0.2
+            // type: 'spring',
+            duration: 0.2,
+            ease: 'easeOut',
+            delay: i * 0.11
           }}
           key={i}
           onClick={() => handleClick(i)}

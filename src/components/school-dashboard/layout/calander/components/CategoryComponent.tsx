@@ -7,6 +7,7 @@ import CustomTextField from '@/components/school-dashboard/InputField';
 import CustomButton from '@/components/school-dashboard/CustomButton';
 import send from '@/assets/svgs/dashboard-student/send.svg';
 import cross from '@/assets/svgs/dashboard-student/cross2.svg';
+import {motion} from 'framer-motion';
 
 type CardProps = {
   color?: string;
@@ -59,7 +60,16 @@ export default function CategoryComponent({
   }, [openModal]);
 
   return (
-    <Box>
+    <Box
+      component={motion.div}
+      initial={{y: 50, opacity: 0}}
+      whileInView={{y: 0, opacity: 1}}
+      transition={{
+        duration: 0.2,
+        ease: 'easeOut',
+        delay: 0.1
+      }}
+    >
       {/* Title */}
       <Box sx={{display: 'flex', gap: '6px', mb: '6px'}}>
         <Box

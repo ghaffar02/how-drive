@@ -3,6 +3,7 @@ import {Box, Typography} from '@mui/material';
 import Image, {StaticImageData} from 'next/image';
 import React from 'react';
 import {usePathname} from 'next/navigation';
+import {motion} from 'framer-motion';
 
 type ProfileProps = {
   students: number;
@@ -67,7 +68,13 @@ export default function ProfileCard({
       </Box>
 
       {progressBar ? (
-        <Box sx={{position: 'relative', width: size, height: size}}>
+        <Box
+          component={motion.div}
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          transition={{duration: 0.4, delay: 0.4, ease: 'easeInOut'}}
+          sx={{position: 'relative', width: size, height: size}}
+        >
           <svg width={size} height={size}>
             {/* Background */}
             <circle
@@ -147,6 +154,10 @@ export default function ProfileCard({
         </Box>
       ) : (
         <Box
+          component={motion.div}
+          initial={{opacity: 0}}
+          animate={{opacity: 1}}
+          transition={{duration: 0.4, delay: 0.4, ease: 'easeInOut'}}
           sx={{
             height: '60px',
             width: '60px',

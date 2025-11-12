@@ -419,13 +419,19 @@ export default function DetailSide({display = 'none', setOpenStudents}: Prop) {
           msOverflowStyle: 'none',
           scrollbarWidth: 'none'
         }}
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        transition={{duration: 0.4, delay: 0.4, ease: 'easeInOut'}}
       >
         {emails.map((items, i) => {
           return (
             <Box
+              component={motion.div}
+              initial={{y: 50, opacity: 0}}
+              whileInView={{y: 0, opacity: 1}}
+              transition={{
+                duration: 0.2,
+                ease: 'easeOut',
+                delay: i * 0.1
+              }}
+              // viewport={{once: true, amount: 0.5}}
               key={i}
               onClick={() => {
                 handleClick(i);
