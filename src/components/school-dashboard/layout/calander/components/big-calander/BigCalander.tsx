@@ -603,6 +603,10 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
             ease: 'easeOut',
             delay: 0.2
           }}
+          style={{
+            maxWidth: '402px',
+            width: '100%'
+          }}
         >
           <TextField
             select

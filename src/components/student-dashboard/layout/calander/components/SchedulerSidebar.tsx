@@ -1,6 +1,7 @@
 'use client';
 import localFont from '@/utils/themes';
 import {Box, Typography} from '@mui/material';
+import {motion} from 'framer-motion';
 
 export default function SchedulerSidebar() {
   const appointments = [
@@ -65,6 +66,14 @@ export default function SchedulerSidebar() {
 
       {/* List of Appointments */}
       <Box
+        component={motion.div}
+        initial={{y: 50, opacity: 0}}
+        whileInView={{y: 0, opacity: 1}}
+        transition={{
+          duration: 0.2,
+          ease: 'easeOut',
+          delay: 0.2
+        }}
         sx={{
           marginTop: '32px',
           width: '100%',

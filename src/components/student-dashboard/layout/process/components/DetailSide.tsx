@@ -10,6 +10,7 @@ import link from '@/assets/svgs/dashboard-student/link.svg';
 import time from '@/assets/svgs/dashboard-student/time.svg';
 
 import {useTranslations} from 'next-intl';
+import {motion} from 'framer-motion';
 
 type DetailProps = {
   show: boolean;
@@ -47,7 +48,17 @@ export default function DetailSide({show}: DetailProps) {
     >
       {/* Content box */}
       <Box sx={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
-        <Box sx={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
+        <Box
+          component={motion.div}
+          initial={{y: 50, opacity: 0}}
+          whileInView={{y: 0, opacity: 1}}
+          transition={{
+            duration: 0.2,
+            ease: 'easeOut',
+            delay: 0.1
+          }}
+          sx={{display: 'flex', flexDirection: 'column', gap: '10px'}}
+        >
           <Typography
             sx={{
               ...localFont.inter16,
@@ -187,7 +198,17 @@ type InfoCardProps = {
 
 function InfoCard({title, value}: InfoCardProps) {
   return (
-    <Box sx={{display: 'flex', flexDirection: 'column', gap: '10px'}}>
+    <Box
+      component={motion.div}
+      initial={{y: 50, opacity: 0}}
+      whileInView={{y: 0, opacity: 1}}
+      transition={{
+        duration: 0.2,
+        ease: 'easeOut',
+        delay: 0.2
+      }}
+      sx={{display: 'flex', flexDirection: 'column', gap: '10px'}}
+    >
       <Typography
         sx={{
           ...localFont.inter16,

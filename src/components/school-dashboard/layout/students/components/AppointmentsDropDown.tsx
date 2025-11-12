@@ -8,6 +8,7 @@ import Image from 'next/image';
 import arrow from '@/assets/svgs/dashboard-student/arrowsetting.svg';
 import whiteArrow from '@/assets/svgs/whiteArrow.svg';
 import TimePickerValue from '../../profile-setting/components/TimePicker';
+import {motion} from 'framer-motion';
 
 interface CustomCardProps {
   children?: ReactNode;
@@ -149,6 +150,14 @@ export default function AppointmentsDropDown({
           }}
         >
           <Box
+            component={motion.div}
+            initial={{y: 50, opacity: 0}}
+            whileInView={{y: 0, opacity: 1}}
+            transition={{
+              duration: 0.2,
+              ease: 'easeOut',
+              delay: 0.1
+            }}
             sx={{
               width: '100%',
               // maxWidth: '828px',
@@ -213,57 +222,75 @@ export default function AppointmentsDropDown({
         </Box>
 
         {/* Ending Area for the tab */}
-
-        <TextField
-          select
-          fullWidth
-          variant="outlined"
-          value={selectedCategory} // e.g. from useState
-          onChange={(e) => setSelectedCategory(e.target.value)}
-          SelectProps={{
-            displayEmpty: true
+        <motion.div
+          initial={{y: 50, opacity: 0}}
+          whileInView={{y: 0, opacity: 1}}
+          transition={{
+            duration: 0.2,
+            ease: 'easeOut',
+            delay: 0.2
           }}
-          // error={!!errors.category}
-          // helperText={errors.category?.message}
-          sx={{
-            background: '#ffffff99',
-            height: 40,
-            maxWidth: {lg: '402px'},
-            width: '100%',
-
-            borderRadius: '8px',
-            '& .MuiInputBase-root': {
-              height: '100%',
-              fontSize: '14px',
-              padding: '12px',
-              borderRadius: '12px',
-
-              boxShadow:
-                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
-            },
-            '&:hover .MuiOutlinedInput-notchedOutline': {
-              border: 'none !important'
-            },
-            '& fieldset': {
-              borderColor: '#e2e8f00a'
-            },
-            '& .MuiSelect-select': {
-              padding: 0,
-              fontSize: '16px',
-              color: selectedCategory ? '#000' : '#aaa'
-            }
-          }}
+          style={{width: '100%', maxWidth: '402px'}}
         >
-          <MenuItem value="" disabled>
-            select...
-          </MenuItem>
-          <MenuItem value="malfunction">Malfunction</MenuItem>
-          <MenuItem value="malfunction">Malfunction</MenuItem>
-          <MenuItem value="malfunction">Malfunction</MenuItem>
-          <MenuItem value="question">Question</MenuItem>
-        </TextField>
+          <TextField
+            select
+            fullWidth
+            variant="outlined"
+            value={selectedCategory} // e.g. from useState
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            SelectProps={{
+              displayEmpty: true
+            }}
+            // error={!!errors.category}
+            // helperText={errors.category?.message}
+            sx={{
+              background: '#ffffff99',
+              height: 40,
+              maxWidth: {lg: '402px'},
+              width: '100%',
+
+              borderRadius: '8px',
+              '& .MuiInputBase-root': {
+                height: '100%',
+                fontSize: '14px',
+                padding: '12px',
+                borderRadius: '12px',
+
+                boxShadow:
+                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+              },
+              '&:hover .MuiOutlinedInput-notchedOutline': {
+                border: 'none !important'
+              },
+              '& fieldset': {
+                borderColor: '#e2e8f00a'
+              },
+              '& .MuiSelect-select': {
+                padding: 0,
+                fontSize: '16px',
+                color: selectedCategory ? '#000' : '#aaa'
+              }
+            }}
+          >
+            <MenuItem value="" disabled>
+              select...
+            </MenuItem>
+            <MenuItem value="malfunction">Malfunction</MenuItem>
+            <MenuItem value="malfunction">Malfunction</MenuItem>
+            <MenuItem value="malfunction">Malfunction</MenuItem>
+            <MenuItem value="question">Question</MenuItem>
+          </TextField>
+        </motion.div>
       </Box>
       <Box
+        component={motion.div}
+        initial={{y: 50, opacity: 0}}
+        whileInView={{y: 0, opacity: 1}}
+        transition={{
+          duration: 0.2,
+          ease: 'easeOut',
+          delay: 0.3
+        }}
         sx={{
           width: '100%',
           display: 'flex',
@@ -277,6 +304,14 @@ export default function AppointmentsDropDown({
       </Box>
 
       <Box
+        component={motion.div}
+        initial={{y: 50, opacity: 0}}
+        whileInView={{y: 0, opacity: 1}}
+        transition={{
+          duration: 0.2,
+          ease: 'easeOut',
+          delay: 0.4
+        }}
         sx={{
           display: 'flex',
           flex: '0 0 auto',
