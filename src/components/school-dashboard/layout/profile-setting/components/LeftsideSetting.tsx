@@ -63,6 +63,7 @@ export default function Leftside({
             ease: 'easeOut',
             delay: i * 0.11
           }}
+          viewport={{once: true}}
           key={i}
           onClick={() => handleClick(i)}
           sx={{

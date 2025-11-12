@@ -57,6 +57,7 @@ export default function DetailSide({show}: DetailProps) {
             ease: 'easeOut',
             delay: 0.1
           }}
+          viewport={{once: true}}
           sx={{display: 'flex', flexDirection: 'column', gap: '10px'}}
         >
           <Typography

@@ -349,6 +349,7 @@ export default function Notifications({
                 ease: 'easeOut',
                 delay: index * 0.11
               }}
+              viewport={{once: true}}
               onClick={() => {
                 setSelectedIndex(index);
                 setOpenMessage?.(false);

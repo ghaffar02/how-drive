@@ -395,6 +395,7 @@ export default function DetailSide({display = 'none', setOpenTrainers}: Prop) {
                 ease: 'easeOut',
                 delay: i * 0.11
               }}
+              viewport={{once: true}}
               key={i}
               onClick={() => {
                 handleClick(i);
