@@ -72,7 +72,7 @@ export default function ProfileCard({
           component={motion.div}
           initial={{opacity: 0}}
           animate={{opacity: 1}}
-          transition={{duration: 0.4, delay: 0.4, ease: 'easeInOut'}}
+          transition={{duration: 0.6, delay: 0.6, ease: 'easeInOut'}}
           sx={{position: 'relative', width: size, height: size}}
         >
           <svg width={size} height={size}>

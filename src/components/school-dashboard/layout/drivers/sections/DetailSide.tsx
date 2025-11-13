@@ -364,7 +364,7 @@ export default function DetailSide({display = 'none', setOpenTrainers}: Prop) {
       </Box>
 
       {/* Below is the part which we will show when we have the data */}
-      <MotionBox
+      <Box
         sx={{
           display: 'flex',
           width: '100%',
@@ -380,23 +380,43 @@ export default function DetailSide({display = 'none', setOpenTrainers}: Prop) {
           msOverflowStyle: 'none',
           scrollbarWidth: 'none'
         }}
-        // initial={{opacity: 0}}
-        // animate={{opacity: 1}}
-        // transition={{duration: 0.4, delay: 0.4, ease: 'easeInOut'}}
       >
         {emails.map((items, i) => {
           return (
             <Box
-              component={motion.div}
-              initial={{y: 50, opacity: 0}}
-              whileInView={{y: 0, opacity: 1}}
-              transition={{
-                duration: 0.2,
-                ease: 'easeOut',
-                delay: i * 0.11
-              }}
-              viewport={{once: true}}
               key={i}
+              component={motion.div}
+              // initial={{opacity: 0, y: 50}}
+              // animate={{opacity: 1, y: 0}}
+              // transition={{
+              //   y: {type: 'spring', stiffness: 70, damping: 15, delay: i * 0.1},
+              //   opacity: {duration: 0.3, delay: i * 0.1}
+              // }}
+              initial={{opacity: 0, y: 60}}
+              animate={{opacity: 1, y: 0}}
+              transition={{
+                duration: 0.4,
+                delay: i * 0.09,
+                ease: 'backInOut'
+              }}
+              // initial={{opacity: 0, y: 50, scale: 0.98}}
+              // animate={{opacity: 1, y: 0, scale: 1}}
+              // transition={{
+              //   type: 'spring',
+              //   bounce: 0,
+              //   ease: 'backInOut',
+              //   stiffness: 120,
+              //   damping: 18,
+              //   duration: 0.4,
+              //   delay: i * 0.09,
+              //   time: 0.4
+              // }}
+              // transition={{
+              //   type: 'spring',
+              //   stiffness: 30,
+              //   damping: 10,
+              //   delay: i * 0.15
+              // }}
               onClick={() => {
                 handleClick(i);
                 setOpenTrainers?.(false);
@@ -492,7 +512,7 @@ export default function DetailSide({display = 'none', setOpenTrainers}: Prop) {
             </Box>
           );
         })}
-      </MotionBox>
+      </Box>
     </Box>
   );
 }
