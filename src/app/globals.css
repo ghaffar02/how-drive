@@ -323,3 +323,7 @@ a {
   padding: 0 3px 0 3px;
   font-weight: 500 !important;
 }
+.rdp-button_next,
+.rdp-button_previous {
+  width: unset !important;
+}
