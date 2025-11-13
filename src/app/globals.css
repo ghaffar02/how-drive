@@ -167,7 +167,8 @@ a {
   margin-bottom: 4px;
 }
 .rdp-month_caption {
-  padding: 8px;
+  padding: 8px 0;
+  padding-left: 3px;
 }
 
 /* icon color   */
