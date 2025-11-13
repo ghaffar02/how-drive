@@ -46,7 +46,7 @@
   margin: 4px 0 8px;
 }
 .calendar :global(.rdp-caption_label) {
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
 }
 
