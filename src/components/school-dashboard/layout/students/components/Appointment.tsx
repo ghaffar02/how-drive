@@ -172,7 +172,7 @@ export default function Appointment() {
                   // bottom: '100%',
                   right: 0,
                   mb: '8px',
-                  width: {xs: '300px'},
+                  width: {xs: '310px'},
                   overflow: 'visible',
                   border: '1px solid rgb(255, 255, 255)',
                   backgroundColor: '#f0f0fa99',

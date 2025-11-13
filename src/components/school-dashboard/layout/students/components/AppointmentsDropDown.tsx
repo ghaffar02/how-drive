@@ -9,6 +9,9 @@ import arrow from '@/assets/svgs/dashboard-student/arrowsetting.svg';
 import whiteArrow from '@/assets/svgs/whiteArrow.svg';
 import TimePickerValue from '../../profile-setting/components/TimePicker';
 import {motion} from 'framer-motion';
+import {useTranslations} from 'next-intl';
+import CustomTextField from '@/components/school-dashboard/InputField';
+import crossCircle from '@/assets/svgs/dashboard-student/crosscircle.svg';
 
 interface CustomCardProps {
   children?: ReactNode;
@@ -86,6 +89,9 @@ export default function AppointmentsDropDown({
   onClose,
   padding = '16px'
 }: CustomCardProps) {
+  const t = useTranslations('SchoolDashboard.Calendar.popup');
+  const tabs = t.raw('tabs');
+  const tabOptions = t.raw('tabsOptions.options');
   const [selectedCategory, setSelectedCategory] = useState('');
   const handleContainerClick = (event: React.MouseEvent) => {
     event.stopPropagation();
@@ -132,8 +138,55 @@ export default function AppointmentsDropDown({
             textAlign: 'center'
           }}
         >
-          Book an appointment for the student
+          {t('title2')}
         </Typography>
+
+        <Box sx={{width: '100%'}}>
+          <Typography
+            sx={{
+              ...localFont.inter14,
+              fontFamily: '"Inter", sans-serif !important',
+              mb: '6px',
+              mt: '16px'
+            }}
+          >
+            {t('input1')}
+          </Typography>
+          <CustomTextField />
+          <Box
+            sx={{
+              mt: '16px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              width: '100%',
+              maxHeight: '36px'
+            }}
+          >
+            <Typography
+              sx={{
+                ...localFont.inter14,
+                fontFamily: '"Inter", sans-serif !important'
+              }}
+            >
+              Daniel Mustermann 1
+            </Typography>
+            <Box
+              sx={{
+                height: '36px',
+                width: 'min-content',
+                padding: '8px',
+                cursor: 'pointer',
+                borderRadius: '50%',
+                '&:hover': {
+                  background: 'rgba(48,88,255,0.1)'
+                }
+              }}
+            >
+              <Image src={crossCircle} alt="cancel" height={20} width={20} />
+            </Box>
+          </Box>
+        </Box>
 
         {/* Area for the tab */}
 
@@ -141,7 +194,7 @@ export default function AppointmentsDropDown({
           sx={{
             // bgcolor: '#000',
             width: '100%',
-            mt: '14px',
+            mt: '16px',
             display: 'flex',
             flexDirection: {xs: 'column'},
             gap: '20px',
@@ -161,7 +214,7 @@ export default function AppointmentsDropDown({
             sx={{
               width: '100%',
               // maxWidth: '828px',
-              bgcolor: '#ffffff99',
+              bgcolor: '#ffffff',
               display: 'flex',
               p: '4px',
               alignItems: 'center',
@@ -179,8 +232,8 @@ export default function AppointmentsDropDown({
                 position: 'absolute',
                 top: 4,
                 bottom: 4,
-                left: 4,
-                width: `calc((100% - 8px) / 4)`,
+                // left: 4,
+                width: `calc((100% - 6px) / 4)`,
                 borderRadius: '999px',
                 background: '#4611F5',
                 // boxShadow: '0px 2px 6px 0px #fe0909ff',
@@ -190,34 +243,32 @@ export default function AppointmentsDropDown({
               }}
             />
 
-            {['Talk', 'Theory', 'Driving', 'Exam'].map(
-              (item: string, i: number) => (
-                <Box
-                  key={i}
-                  onClick={() => handleClickTab(i)}
+            {tabs.map((item: string, i: number) => (
+              <Box
+                key={i}
+                onClick={() => handleClickTab(i)}
+                sx={{
+                  flex: 1,
+                  textAlign: 'center',
+                  p: '4px 0px',
+                  cursor: 'pointer',
+                  zIndex: 2
+                }}
+              >
+                <Typography
                   sx={{
-                    flex: 1,
-                    textAlign: 'center',
-                    p: '4px 8px',
-                    cursor: 'pointer',
-                    zIndex: 2
+                    lineHeight: '1.6em',
+                    fontSize: {xs: '12px', md: '13px', lg: '14px'},
+                    color: activeIndex === i ? '#ffff' : '#4A5568',
+                    fontWeight: activeIndex === i ? '400' : '400',
+                    transition: 'all 0.3s ease-in-out',
+                    fontFamily: '"Inter", sans-serif !important'
                   }}
                 >
-                  <Typography
-                    sx={{
-                      lineHeight: '1.6em',
-                      fontSize: {xs: '12px', md: '13px', lg: '14px'},
-                      color: activeIndex === i ? '#ffff' : '#4A5568',
-                      fontWeight: activeIndex === i ? '400' : '400',
-                      transition: 'all 0.3s ease-in-out',
-                      fontFamily: '"Inter", sans-serif !important'
-                    }}
-                  >
-                    {item}
-                  </Typography>
-                </Box>
-              )
-            )}
+                  {item}
+                </Typography>
+              </Box>
+            ))}
           </Box>
         </Box>
 
@@ -244,7 +295,7 @@ export default function AppointmentsDropDown({
             // error={!!errors.category}
             // helperText={errors.category?.message}
             sx={{
-              background: '#ffffff99',
+              background: '#ffffff',
               height: 40,
               maxWidth: {lg: '402px'},
               width: '100%',
@@ -272,13 +323,17 @@ export default function AppointmentsDropDown({
               }
             }}
           >
-            <MenuItem value="" disabled>
-              select...
-            </MenuItem>
-            <MenuItem value="malfunction">Malfunction</MenuItem>
-            <MenuItem value="malfunction">Malfunction</MenuItem>
-            <MenuItem value="malfunction">Malfunction</MenuItem>
-            <MenuItem value="question">Question</MenuItem>
+            {tabOptions[activeIndex].map((option: any) =>
+              option.value === '' ? (
+                <MenuItem key={option.label} value={option.value} disabled>
+                  {option.label}
+                </MenuItem>
+              ) : (
+                <MenuItem key={option.value} value={option.value}>
+                  {option.label}
+                </MenuItem>
+              )
+            )}
           </TextField>
         </motion.div>
       </Box>
@@ -296,90 +351,135 @@ export default function AppointmentsDropDown({
           display: 'flex',
           flexDirection: {xs: 'column'},
           gap: {xs: '4px'},
-          alignItems: 'start',
+          alignItems: 'center',
           justifyContent: 'space-between'
         }}
       >
-        <MiniFramerCalendar />
+        {activeIndex < 3 ? (
+          <MiniFramerCalendar
+            datesArray={[
+              '2025-11-16',
+              '2025-11-18',
+              '2025-11-20',
+              '2025-11-22',
+              '2025-11-25'
+            ]}
+          />
+        ) : (
+          <MiniFramerCalendar />
+        )}
       </Box>
 
-      <Box
-        component={motion.div}
-        initial={{y: 50, opacity: 0}}
-        whileInView={{y: 0, opacity: 1}}
-        transition={{
-          duration: 0.2,
-          ease: 'easeOut',
-          delay: 0.4
-        }}
-        sx={{
-          display: 'flex',
-          flex: '0 0 auto',
-          flexWrap: 'wrap',
-          gap: '10px',
-          alignItems: 'flex-start',
-          justifyContent: 'center',
-          alignContent: 'flex-start'
-        }}
-      >
-        {timeArray.map((data) => (
-          <Box
-            onClick={() => {
-              if (!data.select) return;
-              setUpdateTime(data.id);
-            }}
-            key={data.id}
+      {activeIndex < 3 && (
+        <Box
+          component={motion.div}
+          initial={{y: 50, opacity: 0}}
+          whileInView={{y: 0, opacity: 1}}
+          transition={{
+            duration: 0.2,
+            ease: 'easeOut',
+            delay: 0.4
+          }}
+          sx={{width: '100%', textAlign: 'center'}}
+        >
+          <Typography
             sx={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              background:
-                updateTime === data.id
-                  ? 'rgb(70,17,245)'
-                  : data.select
-                    ? '#fff'
-                    : '#e6e6e8',
-              p: '8px',
-              gap: '6px',
-              minHeight: '38px',
-              minWidth: '128px',
-              cursor: 'pointer',
-              borderRadius: '8px',
-              boxShadow: '0px 0px 2px 0px rgb(212,212,216)',
-              '&:hover': {
-                boxShadow: data.select
-                  ? '0px 0px 2px 0px rgb(70,17,245)'
-                  : 'unset'
-              }
+              ...localFont.inter16,
+              fontFamily: '"Inter", sans-serif !important',
+              mb: '10px',
+              fontWeight: 400
             }}
           >
-            <Typography
+            {t('title1')}
+          </Typography>
+          <Typography
+            sx={{
+              ...localFont.inter14,
+              fontFamily: '"Inter", sans-serif !important',
+              fontWeight: 300
+            }}
+          >
+            {t('des1')}
+          </Typography>
+        </Box>
+      )}
+
+      {activeIndex < 3 && (
+        <Box
+          sx={{
+            display: 'flex',
+            flex: '0 0 auto',
+            flexWrap: 'wrap',
+            gap: '10px',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            alignContent: 'flex-start'
+          }}
+        >
+          {timeArray.map((data) => (
+            <Box
+              onClick={() => {
+                if (!data.select) return;
+                if (updateTime === data.id) {
+                  setUpdateTime(0);
+                } else {
+                  setUpdateTime(data.id);
+                }
+              }}
+              key={data.id}
               sx={{
-                ...localFont.inter14,
-                fontFamily: '"Inter", sans-serif !important',
-                color: updateTime === data.id ? '#fff' : '#4a5568'
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                background:
+                  updateTime === data.id
+                    ? 'rgb(70,17,245)'
+                    : data.select
+                      ? '#fff'
+                      : '#e6e6e8',
+                p: '8px',
+                gap: '6px',
+                minHeight: '38px',
+                minWidth: '128px',
+                cursor: data.select ? 'pointer' : 'unset',
+                borderRadius: '8px',
+                boxShadow: '0px 0px 2px 0px rgb(212,212,216)',
+                '&:hover': {
+                  boxShadow: data.select
+                    ? '0px 0px 2px 0px rgb(70,17,245)'
+                    : 'unset'
+                }
               }}
             >
-              {data.from}
-            </Typography>
-            <Image
-              src={updateTime === data.id ? whiteArrow : arrow}
-              alt="to"
-              height={14}
-              width={14}
-            />
-            <Typography
-              sx={{
-                ...localFont.inter14,
-                fontFamily: '"Inter", sans-serif !important',
-                color: updateTime === data.id ? '#fff' : '#4a5568'
-              }}
-            >
-              {data.to}
-            </Typography>
-          </Box>
-        ))}
-      </Box>
+              <Typography
+                sx={{
+                  ...localFont.inter14,
+                  fontFamily: '"Inter", sans-serif !important',
+                  color: updateTime === data.id ? '#fff' : '#4a5568'
+                }}
+              >
+                {data.from}
+              </Typography>
+              <Image
+                src={updateTime === data.id ? whiteArrow : arrow}
+                alt="to"
+                height={14}
+                width={14}
+              />
+              <Typography
+                sx={{
+                  ...localFont.inter14,
+                  fontFamily: '"Inter", sans-serif !important',
+                  color: updateTime === data.id ? '#fff' : '#4a5568'
+                }}
+              >
+                {data.to}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+      )}
+
       <Box sx={{width: '100%'}}>
         <Typography
           sx={{
@@ -387,14 +487,48 @@ export default function AppointmentsDropDown({
             fontFamily: '"Inter", sans-serif !important'
           }}
         >
-          Different time slot
+          {t('input2')}
         </Typography>
         <Box sx={{display: 'flex', gap: '4px', alignItems: 'center'}}>
-          <TimePickerValue />
-          <Image src={arrow} alt="arrow" height={14} width={14} />
-          <TimePickerValue />
+          <TimePickerValue
+            sx={{
+              ...(updateTime !== 0 && {
+                opacity: 0.5,
+                pointerEvents: 'none',
+                userSelect: 'none'
+              })
+            }}
+          />
+          <Image
+            src={arrow}
+            alt="arrow"
+            height={14}
+            width={14}
+            style={{marginTop: '8px'}}
+          />
+          <TimePickerValue
+            sx={{
+              ...(updateTime !== 0 && {
+                opacity: 0.5,
+                pointerEvents: 'none',
+                userSelect: 'none'
+              })
+            }}
+          />
         </Box>
       </Box>
+
+      {activeIndex === 3 && (
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontFamily: '"Inter", sans-serif !important',
+            textAlign: 'center'
+          }}
+        >
+          {t('des2')}
+        </Typography>
+      )}
 
       <Box
         sx={{
@@ -409,7 +543,7 @@ export default function AppointmentsDropDown({
       >
         <CustomButton
           onClick={onClose}
-          label="Book"
+          label={t('btn')}
           sx={{
             gap: '8px',
             maxWidth: '100%',

@@ -418,7 +418,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
       }}
       PaperProps={{
         sx: {
-          maxWidth: '310px',
+          maxWidth: '320px',
           height: '80vh',
           borderRadius: '10px',
           border: '1px solid #fff',
@@ -427,7 +427,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
           backdropFilter: 'blur(15px)',
           boxShadow:
             '0px 0px 0px 1px rgb(255,255,255), 0px 1px 0px 0px rgba(0,0,0,0.25), 0px 1px 1px 0px rgba(0,0,0,0.25)',
-          top: '30px !important',
+          top: '90px !important',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
           '&::-webkit-scrollbar': {
@@ -534,7 +534,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
         >
           <Box
             sx={{
-              width: '100%',
+              width: '99%',
               // maxWidth: '828px',
               bgcolor: '#ffffff',
               display: 'flex',
@@ -554,8 +554,8 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
                 position: 'absolute',
                 top: 4,
                 bottom: 4,
-                left: 4,
-                width: `calc((100% - 8px) / 4)`,
+                // left: 4,
+                width: `calc((100% - 6px ) / 4)`,
                 borderRadius: '999px',
                 background: '#4611F5',
                 // boxShadow: '0px 2px 6px 0px #fe0909ff',
@@ -572,7 +572,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
                 sx={{
                   flex: 1,
                   textAlign: 'center',
-                  p: '4px 8px',
+                  p: '4px 0px',
                   cursor: 'pointer',
                   zIndex: 2
                 }}
@@ -679,19 +679,23 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
           display: 'flex',
           flexDirection: {xs: 'column'},
           gap: {xs: '4px'},
-          alignItems: 'start',
+          alignItems: 'center',
           justifyContent: 'space-between'
         }}
       >
-        <MiniFramerCalendar
-          datesArray={[
-            '2025-11-16',
-            '2025-11-18',
-            '2025-11-20',
-            '2025-11-22',
-            '2025-11-25'
-          ]}
-        />
+        {activeIndex < 3 ? (
+          <MiniFramerCalendar
+            datesArray={[
+              '2025-11-16',
+              '2025-11-18',
+              '2025-11-20',
+              '2025-11-22',
+              '2025-11-25'
+            ]}
+          />
+        ) : (
+          <MiniFramerCalendar />
+        )}
       </Box>
 
       {activeIndex < 3 && (

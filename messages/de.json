@@ -2713,6 +2713,7 @@
       },
       "popup": {
         "title": "Termin für einen/eine Fahrschüler*in buchen",
+        "title2": "Termin für den/die Schüler*in buchen",
         "input1": "Fahrschüler*in",
         "tabs": ["Gespräch", "Theorie", "Fahren", "Prüfung"],
         "tabsOptions": {

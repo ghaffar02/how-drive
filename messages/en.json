@@ -2722,6 +2722,7 @@
       },
       "popup": {
         "title": "Book an appointment for a driving student",
+        "title2": "Book an appointment for the student",
         "input1": "Driving student",
         "tabs": ["Talk", "Theory", "Driving", "Exam"],
         "tabsOptions": {
