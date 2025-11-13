@@ -83,7 +83,8 @@ export default function CategoryComponent({
         <Typography
           sx={{
             ...localFont.inter14,
-            fontFamily: '"Inter", sans-serif !important'
+            fontFamily: '"Inter", sans-serif !important',
+            fontWeight: '500'
           }}
         >
           {title}

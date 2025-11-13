@@ -2621,7 +2621,7 @@
         "tab1": {
           "title": "Category",
           "title2": "Add category",
-          "place": "wähle...",
+          "place": "select...",
           "modalPlace": "e.g. General Meeting",
           "options": [
             {
@@ -2641,7 +2641,7 @@
         "tab2": {
           "title": "Group",
           "title2": "Add Group",
-          "place": "wähle...",
+          "place": "select...",
           "modalPlace": "e.g. Group 1",
           "options": [
             {
@@ -2661,7 +2661,7 @@
         "tab3": {
           "title": "Trainers",
           "title2": "Add trainers",
-          "place": "wähle...",
+          "place": "select...",
           "modalPlace": "Name",
           "options": [
             {
@@ -2689,6 +2689,7 @@
         "btn": "Apply",
         "cancelBtn": "Cancel",
         "saveBtn": "Save",
+        "notAvailable": "Not available",
         "days": [
           {
             "day": "Mo",
@@ -2718,7 +2719,8 @@
             "day": "Su",
             "unavailable": true
           }
-        ]
+        ],
+        "select": "select..."
       },
       "popup": {
         "title": "Book an appointment for a driving student",

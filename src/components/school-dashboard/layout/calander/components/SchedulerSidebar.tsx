@@ -141,6 +141,22 @@ function SelectAppointmentType({index}: AppointmentProp) {
   const options2 = t.raw('tab2.options');
   const options3 = t.raw('tab3.options');
   const days = t.raw('days');
+
+  const [formValues, setFormValues] = useState({
+    capacityPerson: '',
+    durationMinutes: '',
+    maximumTime: '',
+    minimumTime: '',
+    cancelTime: ''
+  });
+
+  const handleChange = (event: any) => {
+    const {name, value} = event.target;
+    setFormValues((prev) => ({
+      ...prev,
+      [name]: value
+    }));
+  };
   return (
     <Box
       sx={{
@@ -205,6 +221,7 @@ function SelectAppointmentType({index}: AppointmentProp) {
           sx={{
             ...localFont.inter14,
             fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
+            fontWeight: '500',
             mb: '6px'
           }}
         >
@@ -228,6 +245,7 @@ function SelectAppointmentType({index}: AppointmentProp) {
           sx={{
             ...localFont.inter14,
             fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
+            fontWeight: '500',
             mb: '6px'
           }}
         >
@@ -246,6 +264,17 @@ function SelectAppointmentType({index}: AppointmentProp) {
           }}
         >
           <Select
+            displayEmpty
+            name="durationMinutes"
+            value={formValues.durationMinutes}
+            onChange={handleChange}
+            renderValue={(selected) =>
+              selected ? (
+                selected
+              ) : (
+                <span style={{color: '#999'}}>{t('select')}</span>
+              )
+            }
             sx={{
               flex: 1,
               borderRadius: 0,
@@ -285,7 +314,8 @@ function SelectAppointmentType({index}: AppointmentProp) {
           sx={{
             ...localFont.inter14,
             fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
-            mb: '10px'
+            fontWeight: '500'
+            // mb: '10px'
           }}
         >
           {t('weekly')}
@@ -305,7 +335,8 @@ function SelectAppointmentType({index}: AppointmentProp) {
         <Typography
           sx={{
             ...localFont.inter14,
-            fontFamily: '"Inter", "Inter Placeholder", sans-serif !important'
+            fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
+            fontWeight: '500'
           }}
         >
           {t('date')}
@@ -314,7 +345,7 @@ function SelectAppointmentType({index}: AppointmentProp) {
           sx={{
             ...localFont.inter14,
             fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
-            fontWeight: '200',
+            fontWeight: '300',
             mb: '6px'
           }}
         >
@@ -338,6 +369,7 @@ function SelectAppointmentType({index}: AppointmentProp) {
           sx={{
             ...localFont.inter14,
             fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
+            fontWeight: '500',
             mb: '6px'
           }}
         >
@@ -356,6 +388,17 @@ function SelectAppointmentType({index}: AppointmentProp) {
           }}
         >
           <Select
+            displayEmpty
+            name="maximumTime"
+            value={formValues.maximumTime}
+            onChange={handleChange}
+            renderValue={(selected) =>
+              selected ? (
+                selected
+              ) : (
+                <span style={{color: '#999'}}>{t('select')}</span>
+              )
+            }
             sx={{
               flex: 1,
               borderRadius: 0,
@@ -383,6 +426,7 @@ function SelectAppointmentType({index}: AppointmentProp) {
           sx={{
             ...localFont.inter14,
             fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
+            fontWeight: '500',
             mb: '6px'
           }}
         >
@@ -401,6 +445,17 @@ function SelectAppointmentType({index}: AppointmentProp) {
           }}
         >
           <Select
+            displayEmpty
+            name="minimumTime"
+            value={formValues.minimumTime}
+            onChange={handleChange}
+            renderValue={(selected) =>
+              selected ? (
+                selected
+              ) : (
+                <span style={{color: '#999'}}>{t('select')}</span>
+              )
+            }
             sx={{
               flex: 1,
               borderRadius: 0,
@@ -431,6 +486,7 @@ function SelectAppointmentType({index}: AppointmentProp) {
           sx={{
             ...localFont.inter14,
             fontFamily: '"Inter", "Inter Placeholder", sans-serif !important',
+            fontWeight: '500',
             mb: '6px'
           }}
         >
@@ -449,6 +505,17 @@ function SelectAppointmentType({index}: AppointmentProp) {
           }}
         >
           <Select
+            displayEmpty
+            name="cancelTime"
+            value={formValues.cancelTime}
+            onChange={handleChange}
+            renderValue={(selected) =>
+              selected ? (
+                selected
+              ) : (
+                <span style={{color: '#999'}}>{t('select')}</span>
+              )
+            }
             sx={{
               flex: 1,
               borderRadius: 0,
@@ -474,7 +541,10 @@ function SelectAppointmentType({index}: AppointmentProp) {
         </Box>
       </Box>
       {/* Button */}
-      <CustomButton label={t('btn')} />
+      <CustomButton
+        label={t('btn')}
+        sx={{fontSize: {xs: '14px', md: '15px', lg: '16px'}, fontWeight: '500'}}
+      />
     </Box>
   );
 }
