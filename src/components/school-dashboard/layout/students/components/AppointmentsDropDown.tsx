@@ -233,7 +233,7 @@ export default function AppointmentsDropDown({
                 top: 4,
                 bottom: 4,
                 // left: 4,
-                width: `calc((100% - 6px) / 4)`,
+                width: `calc((100% - 8px) / 4)`,
                 borderRadius: '999px',
                 background: '#4611F5',
                 // boxShadow: '0px 2px 6px 0px #fe0909ff',

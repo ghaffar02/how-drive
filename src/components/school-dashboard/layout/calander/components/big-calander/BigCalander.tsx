@@ -534,13 +534,13 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
         >
           <Box
             sx={{
-              width: '99%',
+              width: '100%',
               // maxWidth: '828px',
               bgcolor: '#ffffff',
               display: 'flex',
-              p: '4px',
               alignItems: 'center',
               justifyContent: 'space-between',
+              p: '4px',
               boxShadow: '0px 0px 2px 0px #D4D4D8',
               borderRadius: '999px',
               position: 'relative',
@@ -555,7 +555,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
                 top: 4,
                 bottom: 4,
                 // left: 4,
-                width: `calc((100% - 6px ) / 4)`,
+                width: `calc((100% - 8px ) / 4)`,
                 borderRadius: '999px',
                 background: '#4611F5',
                 // boxShadow: '0px 2px 6px 0px #fe0909ff',
@@ -575,6 +575,7 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
                   p: '4px 0px',
                   cursor: 'pointer',
                   zIndex: 2
+                  // background: 'red'
                 }}
               >
                 <Typography
