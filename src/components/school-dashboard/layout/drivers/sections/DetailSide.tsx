@@ -392,13 +392,15 @@ export default function DetailSide({display = 'none', setOpenTrainers}: Prop) {
               //   y: {type: 'spring', stiffness: 70, damping: 15, delay: i * 0.1},
               //   opacity: {duration: 0.3, delay: i * 0.1}
               // }}
-              initial={{opacity: 0, y: 60}}
-              animate={{opacity: 1, y: 0}}
-              transition={{
-                duration: 0.4,
-                delay: i * 0.09,
-                ease: 'backInOut'
-              }}
+
+              // initial={{opacity: 0, y: 60}}
+              // animate={{opacity: 1, y: 0}}
+              // transition={{
+              //   duration: 0.4,
+              //   delay: i * 0.09,
+              //   ease: 'backInOut'
+              // }}
+
               // initial={{opacity: 0, y: 50, scale: 0.98}}
               // animate={{opacity: 1, y: 0, scale: 1}}
               // transition={{

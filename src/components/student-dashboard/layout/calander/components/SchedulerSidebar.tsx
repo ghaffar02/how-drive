@@ -66,15 +66,15 @@ export default function SchedulerSidebar() {
 
       {/* List of Appointments */}
       <Box
-        component={motion.div}
-        initial={{y: 50, opacity: 0}}
-        whileInView={{y: 0, opacity: 1}}
-        transition={{
-          duration: 0.2,
-          ease: 'easeOut',
-          delay: 0.2
-        }}
-        viewport={{once: true}}
+        // component={motion.div}
+        // initial={{y: 50, opacity: 0}}
+        // whileInView={{y: 0, opacity: 1}}
+        // transition={{
+        //   duration: 0.2,
+        //   ease: 'easeOut',
+        //   delay: 0.2
+        // }}
+        // viewport={{once: true}}
         sx={{
           marginTop: '32px',
           width: '100%',
@@ -86,15 +86,15 @@ export default function SchedulerSidebar() {
         {appointments.map((appt, i) => (
           <Box
             key={appt.id}
-            component={motion.div}
-            initial={{y: 50, opacity: 0}}
-            whileInView={{y: 0, opacity: 1}}
-            transition={{
-              duration: 0.3,
-              ease: 'easeOut',
-              delay: i * 0.2 // 👈 delay multiplied by index
-            }}
-            viewport={{once: true}} // 👈 run only once
+            // component={motion.div}
+            // initial={{y: 50, opacity: 0}}
+            // whileInView={{y: 0, opacity: 1}}
+            // transition={{
+            //   duration: 0.3,
+            //   ease: 'easeOut',
+            //   delay: i * 0.2 // 👈 delay multiplied by index
+            // }}
+            // viewport={{once: true}} // 👈 run only once
           >
             <AppointmentCard
               color={appt.color}

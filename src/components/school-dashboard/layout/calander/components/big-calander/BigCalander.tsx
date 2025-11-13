@@ -515,12 +515,13 @@ function EventAddPopover({open, anchorEl, onClose}: EventAddPopoverProps) {
         <Box
           component={motion.div}
           initial={{y: 50, opacity: 0}}
-          whileInView={{y: 0, opacity: 1}}
+          animate={{y: 0, opacity: 1}}
           transition={{
             duration: 0.2,
             ease: 'easeOut',
             delay: 0.1
           }}
+          viewport={{once: true}}
           sx={{
             // bgcolor: '#000',
             width: '100%',

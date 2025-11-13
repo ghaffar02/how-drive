@@ -314,7 +314,7 @@ export default function Notifications({
         </Box>
       </Box>
       {/* Below part of notification screen */}
-      <MotionBox
+      <Box
         sx={{
           display: 'flex',
 
@@ -341,15 +341,15 @@ export default function Notifications({
         {emails.map((item, index) => {
           return (
             <Box
-              component={motion.div}
-              initial={{y: 50, opacity: 0}}
-              whileInView={{y: 0, opacity: 1}}
-              transition={{
-                duration: 0.2,
-                ease: 'easeOut',
-                delay: index * 0.11
-              }}
-              viewport={{once: true}}
+              // component={motion.div}
+              // initial={{y: 50, opacity: 0}}
+              // animate={{y: 0, opacity: 1}}
+              // transition={{
+              //   duration: 0.2,
+              //   ease: 'easeOut',
+              //   delay: index * 0.11
+              // }}
+              // viewport={{once: true}}
               onClick={() => {
                 setSelectedIndex(index);
                 setOpenMessage?.(false);
@@ -487,7 +487,7 @@ export default function Notifications({
             </Box>
           );
         })}
-      </MotionBox>
+      </Box>
     </Box>
   );
 }
