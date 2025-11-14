@@ -63,8 +63,7 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
             display: 'flex',
             alignItems: 'center',
             // justifyContent: 'flex-end',
-            gap: '10px',
-            pt: '8px'
+            gap: '10px'
           }}
         >
           <Typography
@@ -78,7 +77,8 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
             sx={{
               width: '100%',
               maxWidth: {xs: '100%', lg: '311px'},
-              textAlign: 'left'
+              textAlign: 'left',
+              mt: '8px'
             }}
           />
           <Image
