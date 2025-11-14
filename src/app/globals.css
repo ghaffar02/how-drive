@@ -334,3 +334,21 @@ a {
 .css-v2k0zy {
   padding: 0px !important;
 }
+
+@media screen and (max-width: 1450px) {
+  .daydetail-container {
+    max-width: calc(100vw - 518px) !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .daydetail-container {
+    max-width: calc(100vw - 466px) !important;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .daydetail-container {
+    max-width: calc(100vw - 50px) !important;
+  }
+}

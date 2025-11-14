@@ -7,9 +7,9 @@ import cross from '@/assets/svgs/dashboard-student/crossicon.svg';
 interface Appointment {
   id: number;
   title: string;
-  startTime: string;
-  endTime: string;
-  color: string;
+  hour: number;
+  duration: number;
+  category: string;
 }
 
 interface DayDetailViewProps {
@@ -25,14 +25,13 @@ export function DayDetailView({
 }: DayDetailViewProps) {
   const startHour = 6;
   const endHour = 23;
-  const totalRows = endHour - startHour; // 17 rows
-  const totalColumns = 4; // 4 categories
+  const totalRows = endHour - startHour;
 
   const categories = [
-    {label: 'Gespräch', color: '#A855F7'},
-    {label: 'Theoriestunden', color: '#2563EB'},
-    {label: 'Fahrstunden', color: '#0891B2'},
-    {label: 'Prüfungen', color: '#DC2626'}
+    {key: 'purple', label: 'Gespräch', color: '#A855F7'},
+    {key: 'blue', label: 'Theoriestunden', color: '#2563EB'},
+    {key: 'cyan', label: 'Fahrstunden', color: '#0891B2'},
+    {key: 'red', label: 'Prüfungen', color: '#DC2626'}
   ];
 
   return (
@@ -84,109 +83,99 @@ export function DayDetailView({
         />
       </Box>
 
-      {/* Table Grid */}
+      {/* GRID */}
       <Box
+        className="daydetail-container"
         sx={{
           flex: 1,
           display: 'grid',
-          gridTemplateRows: `75px repeat(${totalRows}, 1fr)`, // extra row for headers
-          gridTemplateColumns: `26px repeat(${totalColumns}, 1fr)`,
-          gap: '4px',
-          overflowY: 'auto',
-          pr: 1
+          // prev value
+          gridTemplateRows: `75px repeat(${totalRows}, 1fr)`,
+          // gridTemplateColumns: `26px repeat(${totalColumns}, 1fr)`,
+          // new value
+          // gridTemplateRows: `75px repeat(${totalRows}, 1fr)`,
+          gridTemplateColumns: `26px repeat(4, 234px)`,
+          gap: '8px',
+          // backgroundColor: 'red',
+          overflow: 'scroll',
+          maxWidth: '930px'
         }}
       >
-        {/* === Header Row === */}
-        <Box sx={{backgroundColor: 'red', width: 'fit-content'}} />{' '}
-        {/* Empty time column header */}
-        {categories.map((cat, idx) => (
+        {/* Header Row */}
+        <Box />
+
+        {categories.map((cat) => (
           <Box
-            key={idx}
+            key={cat.key}
             sx={{
               background: cat.color,
+              color: '#fff',
               borderRadius: '8px',
               display: 'flex',
-              alignItems: 'center',
               justifyContent: 'center',
-              color: '#fff',
+              alignItems: 'center',
               fontWeight: 500,
               fontSize: '13px',
               height: '30px'
-              // marginBottom: '54px',
-              // padding: '40px'
             }}
           >
             {cat.label}
           </Box>
         ))}
-        {/* === Time Rows + Cells === */}
-        {Array.from({length: totalRows}, (_, rowIndex) => {
-          const hour = startHour + rowIndex;
-          const label = `${hour.toString().padStart(2, '0')}`;
+
+        {/* Hours + Appointments */}
+        {Array.from({length: totalRows}, (_, i) => {
+          const hour = startHour + i;
 
           return (
             <React.Fragment key={hour}>
-              {/* Time Label Cell */}
+              {/* Time Label */}
               <Box
                 sx={{
-                  display: 'flex',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                  fontSize: '14px',
+                  textAlign: 'center',
+                  paddingTop: '10px',
                   color: '#4B5563',
-                  fontWeight: 500,
-                  width: 'fit-content'
+                  fontSize: '14px',
+                  fontWeight: 500
                 }}
               >
-                {label}
+                {hour.toString().padStart(2, '0')}
               </Box>
 
-              {/* Appointment Cells */}
-              {Array.from({length: totalColumns}).map((_, colIndex) => {
-                const category = categories[colIndex];
-                const cellAppointments = appointments.filter(
-                  (a) =>
-                    parseInt(a.startTime.split(':')[0]) === hour &&
-                    a.color.toLowerCase() === category.color.toLowerCase()
+              {categories.map((cat) => {
+                const cellEvents = appointments.filter(
+                  (a) => a.hour === hour && a.category === cat.key
                 );
 
                 return (
                   <Box
-                    key={`${hour}-${colIndex}`}
+                    key={cat.key}
                     sx={{
                       background: 'rgba(255,255,255,0.6)',
-                      border: '1px solid rgba(255,255,255,0.4)',
                       borderRadius: '8px',
-                      minHeight: '48px',
-                      position: 'relative'
+                      position: 'relative',
+                      height: '48px',
+                      width: '234px'
+                      // backgroundColor: 'red'
                     }}
                   >
-                    {cellAppointments.map((a) => (
+                    {cellEvents.map((e) => (
                       <Box
-                        key={a.id}
+                        key={e.id}
                         sx={{
-                          background: `${a.color}20`,
-                          border: `1px solid ${a.color}`,
-                          borderLeftWidth: '3px',
+                          background: `${cat.color}20`,
+                          border: `1px solid ${cat.color}`,
+                          borderLeft: `4px solid ${cat.color}`,
                           borderRadius: '8px',
-                          padding: '4px 8px',
-                          color: '#1f2937',
+                          padding: '6px',
                           fontSize: '13px',
-                          fontWeight: 500,
-                          height: '100%',
-                          display: 'flex',
-                          flexDirection: 'column',
-                          justifyContent: 'center',
-                          boxShadow:
-                            '0px 0px 2px 0px var(--token-46fa6e04-aa50-4324-8a35-fd1170036322, rgb(212, 212, 216))'
+                          position: 'absolute',
+                          inset: 0
                         }}
                       >
-                        <Typography sx={{fontWeight: 600, fontSize: '13px'}}>
-                          {a.title}
-                        </Typography>
-                        <Typography sx={{fontSize: '12px', opacity: 0.9}}>
-                          {a.startTime} - {a.endTime}
-                        </Typography>
+                        <strong>{e.title}</strong>
+                        <br />
+                        {e.hour}:00 - {e.hour + e.duration}:00
                       </Box>
                     ))}
                   </Box>
