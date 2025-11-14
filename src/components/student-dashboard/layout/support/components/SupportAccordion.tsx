@@ -99,13 +99,13 @@ const SupportAccordion = ({openFaq}: InputProp) => {
               {PricingData.map((item: any, index: number) => (
                 <motion.div
                   key={index}
-                  initial={{y: 50, opacity: 0}}
-                  animate={{y: 0, opacity: 1}}
-                  transition={{
-                    duration: 0.2,
-                    ease: 'easeOut',
-                    delay: index * 0.1
-                  }}
+                  // initial={{y: 50, opacity: 0}}
+                  // animate={{y: 0, opacity: 1}}
+                  // transition={{
+                  //   duration: 0.2,
+                  //   ease: 'easeOut',
+                  //   delay: index * 0.1
+                  // }}
                   style={{
                     marginBottom: expanded.includes(index) ? '16px' : '16px'
                   }}

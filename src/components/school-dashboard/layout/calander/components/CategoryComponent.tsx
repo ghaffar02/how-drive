@@ -60,17 +60,7 @@ export default function CategoryComponent({
   }, [openModal]);
 
   return (
-    <Box
-      component={motion.div}
-      initial={{y: 50, opacity: 0}}
-      animate={{y: 0, opacity: 1}}
-      transition={{
-        duration: 0.2,
-        ease: 'easeOut',
-        delay: 0.1
-      }}
-      viewport={{once: true}}
-    >
+    <Box>
       {/* Title */}
       <Box sx={{display: 'flex', gap: '6px', mb: '6px'}}>
         <Box

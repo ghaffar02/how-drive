@@ -41,6 +41,7 @@ export default function SchedulerSidebar() {
         '&::-webkit-scrollbar': {
           display: 'none'
         }
+        // bgcolor: 'red'
       }}
     >
       <Typography
@@ -159,11 +160,21 @@ function SelectAppointmentType({index}: AppointmentProp) {
   };
   return (
     <Box
+      // component={motion.div}
+      // initial={{y: 50, opacity: 0}}
+      // animate={{y: 0, opacity: 1}}
+      // transition={{
+      //   duration: 0.5,
+      //   ease: 'easeOut',
+      //   delay: 0.1
+      // }}
+      // viewport={{once: true}}
       sx={{
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
         gap: '32px'
+        // bgcolor: 'green'
       }}
     >
       {index === 0 && (
@@ -206,16 +217,16 @@ function SelectAppointmentType({index}: AppointmentProp) {
 
       {/* Capacity Persons */}
       <Box
-        component={motion.div}
-        initial={{y: 50, opacity: 0}}
-        animate={{y: 0, opacity: 1}}
-        transition={{
-          duration: 0.2,
-          ease: 'easeOut',
-          delay: 0.2
-          // duration: 0.2
-        }}
-        viewport={{once: true}}
+        // component={motion.div}
+        // initial={{y: 50, opacity: 0}}
+        // animate={{y: 0, opacity: 1}}
+        // transition={{
+        //   duration: 0.5,
+        //   ease: 'easeOut',
+        //   delay: 0.2
+        //   // duration: 0.2
+        // }}
+        // viewport={{once: true}}
         sx={{width: '100%'}}
       >
         <Typography
@@ -232,14 +243,14 @@ function SelectAppointmentType({index}: AppointmentProp) {
       </Box>
       {/* Duration Minutes */}
       <Box
-        component={motion.div}
-        initial={{y: 50, opacity: 0}}
-        whileInView={{y: 0, opacity: 1}}
-        transition={{
-          duration: 0.2,
-          ease: 'easeOut',
-          delay: 0.3
-        }}
+        // component={motion.div}
+        // initial={{y: 50, opacity: 0}}
+        // animate={{y: 0, opacity: 1}}
+        // transition={{
+        //   duration: 0.5,
+        //   ease: 'easeOut',
+        //   delay: 0.3
+        // }}
         sx={{width: '100%'}}
       >
         <Typography
@@ -302,14 +313,14 @@ function SelectAppointmentType({index}: AppointmentProp) {
       </Box>
       {/* Weekly Hours */}
       <Box
-        component={motion.div}
-        initial={{y: 50, opacity: 0}}
-        whileInView={{y: 0, opacity: 1}}
-        transition={{
-          duration: 0.2,
-          ease: 'easeOut',
-          delay: 0.4
-        }}
+      // component={motion.div}
+      // initial={{y: 50, opacity: 0}}
+      // animate={{y: 0, opacity: 1}}
+      // transition={{
+      //   duration: 0.5,
+      //   ease: 'easeOut',
+      //   delay: 0.4
+      // }}
       >
         <Typography
           sx={{
