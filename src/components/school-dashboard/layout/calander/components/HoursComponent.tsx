@@ -92,6 +92,7 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
               alignItems: 'center',
               height: '28px',
               width: '28px',
+              // bgcolor: 'red',
               p: '4px',
               borderRadius: '50%',
               cursor: 'pointer',
@@ -117,11 +118,13 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
           <Box
             key={row.id}
             sx={{
+              // width: '100%',
               display: 'flex',
               gap: '8px',
+              // bgcolor: 'red',
               alignItems: 'center',
-              justifyContent: index > 0 ? 'center' : 'unset'
-              // marginLeft: index > 0 ? '5px' : '0px'
+              justifyContent: index > 0 ? 'center' : 'unset',
+              pl: index > 0 ? '5px' : '0px'
             }}
           >
             {/* Show 'Mo' only in the first row */}
@@ -144,7 +147,7 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-
+                // marginLeft: index > 0 ? '0px' : '0px',
                 gap: '2px',
                 maxWidth: {md: '155px', lg: '180px'}
               }}

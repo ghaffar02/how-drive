@@ -60,7 +60,8 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
             display: 'flex',
             alignItems: 'center',
             // justifyContent: 'flex-end',
-            gap: '10px'
+            gap: '10px',
+            pt: '8px'
           }}
         >
           <Typography
