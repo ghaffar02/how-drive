@@ -239,7 +239,20 @@ function SelectAppointmentType({index}: AppointmentProp) {
         >
           {t('capacity')}
         </Typography>
-        <CustomTextField type="number" />
+        <CustomTextField
+          type="number"
+          sx={{
+            '& .MuiInputBase-root': {
+              background: 'rgba(255, 255, 255, 0.75)',
+              height: '100%',
+              fontSize: '14px',
+              color: '#000000',
+              padding: '12px',
+              borderRadius: '10px',
+              fontFamily: '"Inter", sans-serif !important'
+            }
+          }}
+        />
       </Box>
       {/* Duration Minutes */}
       <Box

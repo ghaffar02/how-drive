@@ -53,7 +53,14 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
     >
       {/* Case 3: "Not available" view */}
       {isUnavailable && (
-        <Box sx={{display: 'flex', alignItems: 'center', gap: '10px'}}>
+        <Box
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '10px',
+            pt: '8px'
+          }}
+        >
           <Typography
             sx={{
               ...localFont.inter14,
@@ -63,7 +70,21 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
           >
             {day}
           </Typography>
-          <CustomTextField labal={t('notAvailable')} disabled={true} />
+          <CustomTextField
+            labal={t('notAvailable')}
+            disabled={true}
+            sx={{
+              '& .MuiInputBase-root': {
+                background: 'rgba(255, 255, 255, 0.75)',
+                height: '100%',
+                fontSize: '14px',
+                color: '#000000',
+                padding: '12px',
+                borderRadius: '10px',
+                fontFamily: '"Inter", sans-serif !important'
+              }
+            }}
+          />
           <Box
             onClick={handleUnavailableAdd}
             sx={{
@@ -99,8 +120,8 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
               display: 'flex',
               gap: '8px',
               alignItems: 'center',
-              justifyContent: index > 0 ? 'center' : 'unset',
-              marginLeft: index > 0 ? '5px' : '0px'
+              justifyContent: index > 0 ? 'center' : 'unset'
+              // marginLeft: index > 0 ? '5px' : '0px'
             }}
           >
             {/* Show 'Mo' only in the first row */}
