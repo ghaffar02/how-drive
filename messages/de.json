@@ -2680,6 +2680,7 @@
         "btn": "Anwenden",
         "cancelBtn": "Abbrechen",
         "saveBtn": "Speichern",
+        "notAvailable": "Nicht verfügbar",
         "days": [
           {
             "day": "Mo",
@@ -2709,7 +2710,8 @@
             "day": "So",
             "unavailable": true
           }
-        ]
+        ],
+        "select": "wähle..."
       },
       "popup": {
         "title": "Termin für einen/eine Fahrschüler*in buchen",

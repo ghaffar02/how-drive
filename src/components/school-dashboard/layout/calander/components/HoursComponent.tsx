@@ -7,6 +7,7 @@ import circleAdd from '@/assets/svgs/circleadd2.svg';
 import circleCross from '@/assets/svgs/dashboard-student/crosscircle.svg';
 import localFont from '@/utils/themes';
 import TimePickerValue from '../../profile-setting/components/TimePicker';
+import {useTranslations} from 'next-intl';
 
 type HourProps = {
   unavailable?: boolean;
@@ -14,6 +15,7 @@ type HourProps = {
 };
 
 export default function HoursComponent({unavailable = false, day}: HourProps) {
+  const t = useTranslations('SchoolDashboard.Calendar.Sidebar');
   const [rows, setRows] = useState([{id: 1}]);
   const [isUnavailable, setIsUnavailable] = useState(unavailable);
 
@@ -43,7 +45,12 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
   };
 
   return (
-    <Box sx={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
+    <Box
+      sx={{
+        display: 'flex',
+        flexDirection: 'column'
+      }}
+    >
       {/* Case 3: "Not available" view */}
       {isUnavailable && (
         <Box sx={{display: 'flex', alignItems: 'center', gap: '10px'}}>
@@ -56,7 +63,7 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
           >
             {day}
           </Typography>
-          <CustomTextField labal="Nicht verfügbar" disabled={true} />
+          <CustomTextField labal={t('notAvailable')} disabled={true} />
           <Box
             onClick={handleUnavailableAdd}
             sx={{
@@ -89,11 +96,11 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
           <Box
             key={row.id}
             sx={{
-              // bgcolor: 'red',
               display: 'flex',
               gap: '8px',
               alignItems: 'center',
-              justifyContent: index > 0 ? 'center' : 'unset'
+              justifyContent: index > 0 ? 'center' : 'unset',
+              marginLeft: index > 0 ? '5px' : '0px'
             }}
           >
             {/* Show 'Mo' only in the first row */}
@@ -102,7 +109,8 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
                 sx={{
                   ...localFont.inter14,
                   fontFamily: '"Inter", sans-serif !important',
-                  width: '24px'
+                  width: '24px',
+                  mt: '8px'
                 }}
               >
                 {day}
@@ -120,7 +128,7 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
                 maxWidth: {md: '155px', lg: '180px'}
               }}
             >
-              <TimePickerValue />
+              <TimePickerValue sx={{background: '#ffffffbf'}} />
               <Image
                 src={arrowIcon}
                 alt="arrowIcon"
@@ -128,11 +136,11 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
                 width={14}
                 style={{marginTop: '6px'}}
               />
-              <TimePickerValue />
+              <TimePickerValue sx={{background: '#ffffffbf'}} />
             </Box>
 
             {/* Action icons */}
-            <Box sx={{display: 'flex'}}>
+            <Box sx={{display: 'flex', mt: '8px'}}>
               <Box
                 onClick={() => handleRemove(row.id)}
                 sx={{
