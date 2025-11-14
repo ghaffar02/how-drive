@@ -208,13 +208,14 @@ function SelectAppointmentType({index}: AppointmentProp) {
       <Box
         component={motion.div}
         initial={{y: 50, opacity: 0}}
-        whileInView={{y: 0, opacity: 1}}
+        animate={{y: 0, opacity: 1}}
         transition={{
           duration: 0.2,
           ease: 'easeOut',
           delay: 0.2
           // duration: 0.2
         }}
+        viewport={{once: true}}
         sx={{width: '100%'}}
       >
         <Typography

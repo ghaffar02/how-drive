@@ -423,15 +423,15 @@ export default function DetailSide({display = 'none', setOpenStudents}: Prop) {
         {emails.map((items, i) => {
           return (
             <Box
-              component={motion.div}
-              initial={{y: 50, opacity: 0}}
-              whileInView={{y: 0, opacity: 1}}
-              transition={{
-                duration: 0.2,
-                ease: 'easeOut',
-                delay: i * 0.1
-              }}
-            viewport={{once: true}}
+              // component={motion.div}
+              // initial={{y: 50, opacity: 0}}
+              // whileInView={{y: 0, opacity: 1}}
+              // transition={{
+              //   duration: 0.2,
+              //   ease: 'easeOut',
+              //   delay: i * 0.1
+              // }}
+            // viewport={{once: true}}
               key={i}
               onClick={() => {
                 handleClick(i);

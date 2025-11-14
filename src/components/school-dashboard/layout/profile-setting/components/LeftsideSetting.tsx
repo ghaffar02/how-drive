@@ -54,16 +54,16 @@ export default function Leftside({
 
       {data.map((items: string, i: number) => (
         <Box
-          component={motion.div}
-          initial={{y: 50, opacity: 0}}
-          whileInView={{y: 0, opacity: 1}}
-          transition={{
-            // type: 'spring',
-            duration: 0.2,
-            ease: 'easeOut',
-            delay: i * 0.11
-          }}
-          viewport={{once: true}}
+          // component={motion.div}
+          // initial={{y: 50, opacity: 0}}
+          // whileInView={{y: 0, opacity: 1}}
+          // transition={{
+          //   // type: 'spring',
+          //   duration: 0.2,
+          //   ease: 'easeOut',
+          //   delay: i * 0.11
+          // }}
+          // viewport={{once: true}}
           key={i}
           onClick={() => handleClick(i)}
           sx={{

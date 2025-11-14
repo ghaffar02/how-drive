@@ -205,12 +205,13 @@ export default function AppointmentsDropDown({
           <Box
             component={motion.div}
             initial={{y: 50, opacity: 0}}
-            whileInView={{y: 0, opacity: 1}}
+            animate={{y: 0, opacity: 1}}
             transition={{
               duration: 0.2,
               ease: 'easeOut',
               delay: 0.1
             }}
+            viewport={{once: true}}
             sx={{
               width: '100%',
               // maxWidth: '828px',
@@ -275,12 +276,13 @@ export default function AppointmentsDropDown({
         {/* Ending Area for the tab */}
         <motion.div
           initial={{y: 50, opacity: 0}}
-          whileInView={{y: 0, opacity: 1}}
+          animate={{y: 0, opacity: 1}}
           transition={{
             duration: 0.2,
             ease: 'easeOut',
             delay: 0.2
           }}
+          viewport={{once: true}}
           style={{width: '100%', maxWidth: '402px'}}
         >
           <TextField
@@ -340,12 +342,13 @@ export default function AppointmentsDropDown({
       <Box
         component={motion.div}
         initial={{y: 50, opacity: 0}}
-        whileInView={{y: 0, opacity: 1}}
+        animate={{y: 0, opacity: 1}}
         transition={{
           duration: 0.2,
           ease: 'easeOut',
           delay: 0.3
         }}
+        viewport={{once: true}}
         sx={{
           width: '100%',
           display: 'flex',
@@ -374,12 +377,13 @@ export default function AppointmentsDropDown({
         <Box
           component={motion.div}
           initial={{y: 50, opacity: 0}}
-          whileInView={{y: 0, opacity: 1}}
+          animate={{y: 0, opacity: 1}}
           transition={{
             duration: 0.2,
             ease: 'easeOut',
             delay: 0.4
           }}
+          viewport={{once: true}}
           sx={{width: '100%', textAlign: 'center'}}
         >
           <Typography
