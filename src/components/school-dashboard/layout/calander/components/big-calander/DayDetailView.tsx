@@ -58,7 +58,8 @@ export function DayDetailView({
             fontWeight: 600,
             fontSize: '18px',
             color: '#2d3748',
-            textTransform: 'capitalize'
+            textTransform: 'capitalize',
+            fontFamily: '"Inter", sans-serif  !important'
           }}
         >
           {date.toLocaleDateString('de-DE', {
@@ -114,9 +115,11 @@ export function DayDetailView({
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
-              fontWeight: 500,
-              fontSize: '13px',
-              height: '30px'
+              fontWeight: 600,
+              height: '30px',
+              fontFamily: '"Inter", sans-serif  !important',
+              fontSize: {xs: '12px', md: '13px', lg: '14px'},
+              lineHeight: '1.6em'
             }}
           >
             {cat.label}
@@ -131,12 +134,15 @@ export function DayDetailView({
             <React.Fragment key={hour}>
               {/* Time Label */}
               <Box
+                className="fontFamilyInter"
                 sx={{
                   textAlign: 'center',
                   paddingTop: '10px',
                   color: '#4B5563',
-                  fontSize: '14px',
-                  fontWeight: 500
+                  fontWeight: 500,
+                  fontSize: {xs: '12px', md: '13px', lg: '14px'},
+                  // fontFamily: '"Inter", sans-serif  !important',
+                  lineHeight: '1.6em'
                 }}
               >
                 {hour.toString().padStart(2, '0')}
@@ -154,7 +160,7 @@ export function DayDetailView({
                       background: 'rgba(255,255,255,0.6)',
                       borderRadius: '8px',
                       position: 'relative',
-                      height: '48px',
+                      height: '56px',
                       width: '234px'
                       // backgroundColor: 'red'
                     }}
@@ -167,15 +173,31 @@ export function DayDetailView({
                           border: `1px solid ${cat.color}`,
                           borderLeft: `4px solid ${cat.color}`,
                           borderRadius: '8px',
-                          padding: '6px',
-                          fontSize: '13px',
+                          padding: '2px 8px',
+                          fontSize: {xs: '12px', md: '13px', lg: '14px'},
+                          fontFamily: '"Inter", sans-serif  !important',
+                          color: '#4a5568',
+                          lineHeight: '1.6em',
                           position: 'absolute',
                           inset: 0
                         }}
                       >
-                        <strong>{e.title}</strong>
+                        <span
+                          className="fontFamilyInter"
+                          style={{
+                            fontFamily: '"Inter", sans-serif  !important',
+                            fontWeight: '400'
+                          }}
+                        >
+                          {e.title}
+                        </span>
                         <br />
-                        {e.hour}:00 - {e.hour + e.duration}:00
+                        <span
+                          className="fontFamilyInter"
+                          style={{paddingTop: '0px', fontWeight: 300}}
+                        >
+                          {e.hour}:00 - {e.hour + e.duration}:00
+                        </span>
                       </Box>
                     ))}
                   </Box>
