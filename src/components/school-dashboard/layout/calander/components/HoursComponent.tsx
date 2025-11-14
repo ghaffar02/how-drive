@@ -152,7 +152,7 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
                 maxWidth: {md: '155px', lg: '180px'}
               }}
             >
-              <TimePickerValue sx={{background: '#ffffffbf'}} />
+              <TimePickerValue sx={{background: 'rgba(255, 255, 255, 0.75)'}} />
               <Image
                 src={arrowIcon}
                 alt="arrowIcon"

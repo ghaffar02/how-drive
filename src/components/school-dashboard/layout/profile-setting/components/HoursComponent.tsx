@@ -7,6 +7,7 @@ import circleAdd from '@/assets/svgs/circleadd2.svg';
 import circleCross from '@/assets/svgs/dashboard-student/crosscircle.svg';
 import localFont from '@/utils/themes';
 import TimePickerValue from './TimePicker';
+import {useTranslations} from 'next-intl';
 
 type HourProps = {
   unavailable?: boolean;
@@ -14,6 +15,8 @@ type HourProps = {
 };
 
 export default function HoursComponent({unavailable = false, day}: HourProps) {
+  const t = useTranslations('SchoolDashboard.Calendar.Sidebar');
+
   const [rows, setRows] = useState([{id: 1}]);
   const [isUnavailable, setIsUnavailable] = useState(unavailable);
 
@@ -70,7 +73,7 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
             {day}
           </Typography>
           <CustomTextField
-            labal="Nicht verfügbar"
+            labal={t('notAvailable')}
             disabled={true}
             sx={{
               width: '100%',
