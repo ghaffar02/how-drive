@@ -31,21 +31,44 @@ export default function Home({setActiveKey}: Props) {
   const [showDetail, setShowDetail] = useState(false);
 
   // sample date and appointments (you can use real data instead)
-  const sampleDate = new Date(2025, 9, 17);
+  // const sampleDate = new Date(2025, 9, 17);
+  // const sampleAppointments = [
+  //   {
+  //     id: 1,
+  //     title: 'Fahrstunden',
+  //     startTime: '09:00',
+  //     endTime: '10:30',
+  //     color: '#0891B2'
+  //   },
+  //   {
+  //     id: 2,
+  //     title: 'Theorieprüfung',
+  //     startTime: '11:00',
+  //     endTime: '11:30',
+  //     color: '#DC2626'
+  //   }
+  // ];
+
+  // const t = useTranslations('SchoolDashboard.Home');
+
+  // Correct sample date
+  const sampleDate = new Date('2025-11-17');
+
+  // FIX: Appointments MUST match DayDetailView interface
   const sampleAppointments = [
     {
       id: 1,
       title: 'Fahrstunden',
-      startTime: '09:00',
-      endTime: '10:30',
-      color: '#0891B2'
+      hour: 9,
+      duration: 1,
+      category: 'cyan' // '#0891B2'
     },
     {
       id: 2,
       title: 'Theorieprüfung',
-      startTime: '11:00',
-      endTime: '11:30',
-      color: '#DC2626'
+      hour: 11,
+      duration: 1,
+      category: 'red' // '#DC2626'
     }
   ];
 
@@ -141,7 +164,7 @@ export default function Home({setActiveKey}: Props) {
           <DayDetailView
             date={sampleDate}
             appointments={sampleAppointments}
-            onClose={() => setShowDetail(false)}
+            onClose={() => {}}
           />
         </Box>
 
