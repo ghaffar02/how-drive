@@ -13,7 +13,7 @@ export default function Calander() {
           width: '100%',
           height: {
             xs: 'calc(100svh - 194px)',
-            md: 'calc(100svh - 40px)'
+            md: 'calc(100svh - 48px)'
           }
         }}
       >

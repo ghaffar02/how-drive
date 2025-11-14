@@ -126,9 +126,7 @@ a {
 .rbc-header {
   font-family: 'Inter', sans-serif;
 }
-.rbc-btn-group button {
-  font-family: 'Inter', sans-serif !important;
-}
+
 .rbc-toolbar-label {
   font-family: 'Inter', sans-serif !important;
 }
@@ -237,7 +235,8 @@ a {
   transition: all 0.1s ease-in;
   color: #4a5568 !important;
   font-family: 'Inter', sans-serif !important;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
+  height: 28px !important;
   font-size: 12px !important;
 }
 
@@ -307,6 +306,8 @@ a {
 
 .BigCalander_calendarWrapper__G2_Zu .rbc-toolbar {
   justify-content: flex-end !important;
+  margin-top: 0px !important;
+  margin-bottom: 28px !important;
 }
 
 .rbc-toolbar-label {
@@ -326,4 +327,7 @@ a {
 .rdp-button_next,
 .rdp-button_previous {
   width: unset !important;
+}
+.BigCalander_calendarWrapper__G2_Zu .rbc-button-link {
+  font-weight: 400 !important;
 }
