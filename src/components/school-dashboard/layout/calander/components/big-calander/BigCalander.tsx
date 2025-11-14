@@ -22,47 +22,55 @@ const localizer = dateFnsLocalizer({
   locales
 });
 
-// 🎯 Only 5 days in November 2025 will have activities
-const demoActivities: Record<number, any> = {
-  3: {purple: 4, blue: 1},
-  7: {red: 2},
-  12: {cyan: 3, purple: 1},
-  19: {blue: 5},
-  25: {purple: 2, red: 1}
+// ⭐ UNIFIED MASTER OBJECT FOR BOTH CALENDAR & DAY VIEW
+const scheduleData: Record<string, any[]> = {
+  '2025-11-03': [
+    {id: 1, category: 'purple', hour: 6, duration: 1, title: 'Gespräch'},
+    {id: 2, category: 'purple', hour: 11, duration: 1, title: 'Gespräch'},
+    {id: 3, category: 'purple', hour: 14, duration: 1, title: 'Gespräch'},
+    {id: 4, category: 'purple', hour: 17, duration: 1, title: 'Gespräch'},
+    {id: 5, category: 'blue', hour: 9, duration: 1, title: 'Theoriestunde'}
+  ],
+
+  '2025-11-07': [
+    {id: 1, category: 'red', hour: 10, duration: 1, title: 'Prüfung'},
+    {id: 2, category: 'red', hour: 18, duration: 1, title: 'Prüfung'}
+  ],
+
+  '2025-11-12': [
+    {id: 1, category: 'cyan', hour: 8, duration: 1, title: 'Fahrstunde'},
+    {id: 2, category: 'cyan', hour: 10, duration: 1, title: 'Fahrstunde'},
+    {id: 3, category: 'cyan', hour: 12, duration: 1, title: 'Fahrstunde'},
+    {id: 4, category: 'purple', hour: 16, duration: 1, title: 'Gespräch'}
+  ]
+};
+
+// Map category → color
+const categoryColors: any = {
+  purple: '#A855F7',
+  blue: '#2563EB',
+  cyan: '#0891B2',
+  red: '#DC2626'
 };
 
 // -------------------------
 // Custom Date Cell Wrapper
 // -------------------------
-const CustomDateCell: React.FC<any> = ({
-  children,
-  value,
-  currentMonth,
-  currentYear
-}) => {
+const CustomDateCell = ({children, value, currentMonth, currentYear}: any) => {
   const isOffRange =
     value.getMonth() !== currentMonth || value.getFullYear() !== currentYear;
 
-  const isDemoMonth = currentYear === 2025 && currentMonth === 10; // November 2025
+  const key = value.toISOString().split('T')[0];
+  const events = scheduleData[key] || [];
 
-  const day = value.getDate();
+  const counts: any = {
+    purple: events.filter((e) => e.category === 'purple').length,
+    blue: events.filter((e) => e.category === 'blue').length,
+    cyan: events.filter((e) => e.category === 'cyan').length,
+    red: events.filter((e) => e.category === 'red').length
+  };
 
-  let counts;
-
-  if (isDemoMonth && demoActivities[day]) {
-    const {
-      purple = null,
-      blue = null,
-      cyan = null,
-      red = null
-    } = demoActivities[day];
-
-    counts = {purple, blue, cyan, red};
-  } else {
-    counts = {purple: null, blue: null, cyan: null, red: null};
-  }
-
-  const hasData = Object.values(counts).some(Boolean);
+  const hasData = Object.values(counts).some((v) => v > 0);
 
   return (
     <Box
@@ -77,7 +85,7 @@ const CustomDateCell: React.FC<any> = ({
         overflowY: 'hidden'
       }}
     >
-      {/* White background */}
+      {/* Background */}
       <Box
         sx={{
           position: 'absolute',
@@ -101,7 +109,7 @@ const CustomDateCell: React.FC<any> = ({
           alignItems: 'center'
         }}
       >
-        {/* Day number */}
+        {/* Day Number */}
         <Typography
           sx={{
             mt: 0.5,
@@ -117,74 +125,31 @@ const CustomDateCell: React.FC<any> = ({
         {hasData && !isOffRange && (
           <Box
             sx={{
-              mt: {xs: '31px', sm: '31.5px', md: '33px'},
+              pt: {xs: '31px', sm: '31.5px', md: '33px'},
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'flex-start',
               gap: '3px',
-              ml: '16px',
+              pl: '8px',
               width: '100%'
             }}
           >
-            {counts.purple && (
-              <Box sx={{display: 'flex', alignItems: 'center', gap: '3px'}}>
-                <Box
-                  sx={{
-                    width: '5px',
-                    height: '14px',
-                    borderRadius: '999px',
-                    backgroundColor: '#A855F7'
-                  }}
-                />
-                <Typography sx={{fontSize: '10px', color: '#4A5568'}}>
-                  {counts.purple}
-                </Typography>
-              </Box>
-            )}
-            {counts.blue && (
-              <Box sx={{display: 'flex', alignItems: 'center', gap: '3px'}}>
-                <Box
-                  sx={{
-                    width: '5px',
-                    height: '14px',
-                    borderRadius: '999px',
-                    backgroundColor: '#2563EB'
-                  }}
-                />
-                <Typography sx={{fontSize: '10px', color: '#4A5568'}}>
-                  {counts.blue}
-                </Typography>
-              </Box>
-            )}
-            {counts.cyan && (
-              <Box sx={{display: 'flex', alignItems: 'center', gap: '3px'}}>
-                <Box
-                  sx={{
-                    width: '5px',
-                    height: '14px',
-                    borderRadius: '999px',
-                    backgroundColor: '#0891B2'
-                  }}
-                />
-                <Typography sx={{fontSize: '10px', color: '#4A5568'}}>
-                  {counts.cyan}
-                </Typography>
-              </Box>
-            )}
-            {counts.red && (
-              <Box sx={{display: 'flex', alignItems: 'center', gap: '3px'}}>
-                <Box
-                  sx={{
-                    width: '5px',
-                    height: '14px',
-                    borderRadius: '999px',
-                    backgroundColor: '#DC2626'
-                  }}
-                />
-                <Typography sx={{fontSize: '10px', color: '#4A5568'}}>
-                  {counts.red}
-                </Typography>
-              </Box>
+            {Object.entries(counts).map(([cat, count]) =>
+              count > 0 ? (
+                <Box key={cat} sx={{display: 'flex', gap: '4px'}}>
+                  <Box
+                    sx={{
+                      width: '6px',
+                      height: '14px',
+                      borderRadius: '999px',
+                      backgroundColor: categoryColors[cat]
+                    }}
+                  />
+                  <Typography sx={{fontSize: '10px', color: '#4A5568'}}>
+                    {count}
+                  </Typography>
+                </Box>
+              ) : null
             )}
           </Box>
         )}
@@ -206,7 +171,7 @@ export default function BigCalendar() {
   const handleClose = () => setAnchorEl(null);
   const open = Boolean(anchorEl);
 
-  const handleDateClick = (slotInfo: any) => setSelectedDate(slotInfo.start);
+  // const handleDateClick = (slotInfo: any) => setSelectedDate(slotInfo.start);
 
   const pathname = usePathname();
   const isGerman = pathname.startsWith('/de');
@@ -217,18 +182,19 @@ export default function BigCalendar() {
         today: 'Heute',
         previous: 'Zurück',
         next: 'Weiter',
-        month: 'Monat',
-        week: 'Woche',
-        day: 'Tag'
+        month: 'Monat'
       }
     : {
         today: 'Today',
         previous: 'Back',
         next: 'Next',
-        month: 'Month',
-        week: 'Week',
-        day: 'Day'
+        month: 'Month'
       };
+
+  const handleDateClick = (slot: any) => setSelectedDate(slot.start);
+
+  const key = selectedDate?.toISOString().split('T')[0] || '';
+  const dayAppointments = scheduleData[key] || [];
 
   return (
     <div className={styles.calendarWrapper}>
@@ -236,11 +202,12 @@ export default function BigCalendar() {
         {selectedDate ? (
           <DayDetailView
             date={selectedDate}
-            appointments={[]}
+            appointments={dayAppointments}
             onClose={() => setSelectedDate(null)}
           />
         ) : (
           <Box sx={{height: '100%', width: '100%', position: 'relative'}}>
+            {' '}
             {/* PLUS BUTTON */}
             <Box sx={{position: 'absolute', top: '0px', right: '0px'}}>
               <Box
@@ -267,14 +234,11 @@ export default function BigCalendar() {
                 onClose={handleClose}
               />
             </Box>
-
             {/* MAIN CALENDAR */}
             <Calendar
               localizer={localizer}
               culture={currentLocale}
               messages={calendarMessages}
-              startAccessor="start"
-              endAccessor="end"
               components={{
                 dateCellWrapper: (props) => (
                   <CustomDateCell
@@ -284,10 +248,9 @@ export default function BigCalendar() {
                   />
                 )
               }}
-              onSelectSlot={handleDateClick}
               views={['month']}
               selectable
-              toolbar
+              onSelectSlot={handleDateClick}
               onNavigate={(date) => setVisibleDate(date)}
               style={{flex: 1, height: '100%', width: '100%'}}
             />
