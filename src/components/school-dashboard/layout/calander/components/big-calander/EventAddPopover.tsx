@@ -212,14 +212,15 @@ export default function EventAddPopover({
         {/* Area for the tab */}
 
         <Box
-          component={motion.div}
-          initial={{y: 50, opacity: 0}}
-          whileInView={{y: 0, opacity: 1}}
-          transition={{
-            duration: 0.2,
-            ease: 'easeOut',
-            delay: 0.1
-          }}
+          // component={motion.div}
+          // initial={{y: 50, opacity: 0}}
+          // animate={{y: 0, opacity: 1}}
+          // transition={{
+          //   duration: 0.2,
+          //   ease: 'easeOut',
+          //   delay: 0.1
+          // }}
+          // viewport={{once: true}}
           sx={{
             // bgcolor: '#000',
             width: '100%',
@@ -295,7 +296,7 @@ export default function EventAddPopover({
         </Box>
 
         {/* Ending Area for the tab */}
-        <motion.div
+        {/* <motion.div
           initial={{y: 50, opacity: 0}}
           whileInView={{y: 0, opacity: 1}}
           transition={{
@@ -307,73 +308,73 @@ export default function EventAddPopover({
             maxWidth: '402px',
             width: '100%'
           }}
+        > */}
+        <TextField
+          select
+          fullWidth
+          variant="outlined"
+          value={selectedCategory} // e.g. from useState
+          onChange={(e) => setSelectedCategory(e.target.value)}
+          SelectProps={{
+            displayEmpty: true
+          }}
+          // error={!!errors.category}
+          // helperText={errors.category?.message}
+          sx={{
+            background: '#ffffff',
+            height: 40,
+            maxWidth: {lg: '402px'},
+            width: '100%',
+
+            borderRadius: '8px',
+            '& .MuiInputBase-root': {
+              height: '100%',
+              fontSize: '14px',
+              padding: '12px',
+              borderRadius: '12px',
+
+              boxShadow:
+                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+            },
+            '&:hover .MuiOutlinedInput-notchedOutline': {
+              border: 'none !important'
+            },
+            '& fieldset': {
+              borderColor: '#e2e8f00a'
+            },
+            '& .MuiSelect-select': {
+              padding: 0,
+              fontSize: '16px',
+              color: selectedCategory ? '#000' : '#aaa'
+            }
+          }}
         >
-          <TextField
-            select
-            fullWidth
-            variant="outlined"
-            value={selectedCategory} // e.g. from useState
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            SelectProps={{
-              displayEmpty: true
-            }}
-            // error={!!errors.category}
-            // helperText={errors.category?.message}
-            sx={{
-              background: '#ffffff',
-              height: 40,
-              maxWidth: {lg: '402px'},
-              width: '100%',
-
-              borderRadius: '8px',
-              '& .MuiInputBase-root': {
-                height: '100%',
-                fontSize: '14px',
-                padding: '12px',
-                borderRadius: '12px',
-
-                boxShadow:
-                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
-              },
-              '&:hover .MuiOutlinedInput-notchedOutline': {
-                border: 'none !important'
-              },
-              '& fieldset': {
-                borderColor: '#e2e8f00a'
-              },
-              '& .MuiSelect-select': {
-                padding: 0,
-                fontSize: '16px',
-                color: selectedCategory ? '#000' : '#aaa'
-              }
-            }}
-          >
-            {/* <MenuItem value="" disabled>
+          {/* <MenuItem value="" disabled>
             select...
           </MenuItem> */}
-            {tabOptions[activeIndex].map((option: any) =>
-              option.value === '' ? (
-                <MenuItem key={option.label} value={option.value} disabled>
-                  {option.label}
-                </MenuItem>
-              ) : (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              )
-            )}
-          </TextField>
-        </motion.div>
+          {tabOptions[activeIndex].map((option: any) =>
+            option.value === '' ? (
+              <MenuItem key={option.label} value={option.value} disabled>
+                {option.label}
+              </MenuItem>
+            ) : (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            )
+          )}
+        </TextField>
+        {/* </motion.div> */}
       </Box>
       <Box
-        component={motion.div}
-        initial={{y: 50, opacity: 0}}
-        whileInView={{y: 0, opacity: 1}}
-        transition={{
-          duration: 0.2,
-          ease: 'easeOut',
-          delay: 0.3
-        }}
+        // component={motion.div}
+        // initial={{y: 50, opacity: 0}}
+        // whileInView={{y: 0, opacity: 1}}
+        // transition={{
+        //   duration: 0.2,
+        //   ease: 'easeOut',
+        //   delay: 0.3
+        // }}
         sx={{
           width: '100%',
           display: 'flex',
@@ -400,14 +401,14 @@ export default function EventAddPopover({
 
       {activeIndex < 3 && (
         <Box
-          component={motion.div}
-          initial={{y: 50, opacity: 0}}
-          whileInView={{y: 0, opacity: 1}}
-          transition={{
-            duration: 0.2,
-            ease: 'easeOut',
-            delay: 0.4
-          }}
+          // component={motion.div}
+          // initial={{y: 50, opacity: 0}}
+          // whileInView={{y: 0, opacity: 1}}
+          // transition={{
+          //   duration: 0.2,
+          //   ease: 'easeOut',
+          //   delay: 0.4
+          // }}
           sx={{width: '100%', textAlign: 'center'}}
         >
           <Typography
@@ -467,7 +468,8 @@ export default function EventAddPopover({
                 p: '8px',
                 gap: '6px',
                 minHeight: '38px',
-                minWidth: '128px',
+                minWidth: '138px',
+                // width:"100%",
                 cursor: data.select ? 'pointer' : 'unset',
                 borderRadius: '8px',
                 boxShadow: '0px 0px 2px 0px rgb(212,212,216)',
