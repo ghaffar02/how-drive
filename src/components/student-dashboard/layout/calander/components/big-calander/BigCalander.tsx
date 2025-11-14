@@ -2,14 +2,19 @@
 import React, {useState} from 'react';
 import {Calendar, dateFnsLocalizer} from 'react-big-calendar';
 import {format, parse, startOfWeek, getDay} from 'date-fns';
-// import enUS from 'date-fns/locale/en-US';
-import {enUS} from 'date-fns/locale';
+import {enUS, de} from 'date-fns/locale';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import styles from './BigCalander.module.css';
 import {DayDetailView} from './DayDetailView';
-import {Box} from '@mui/material';
+import {Box, Typography} from '@mui/material';
+import Image from 'next/image';
+import plus from '@/assets/svgs/dashboard-student/calander/plus.svg';
+import {usePathname} from 'next/navigation';
+// import EventAddPopover from './EventAddPopover';
+import EventAddPopoverFDb from './EventAddPopoverFDb';
 
-const locales = {'en-US': enUS};
+const locales = {'en-US': enUS, de: de};
+
 const localizer = dateFnsLocalizer({
   format,
   parse,
@@ -18,106 +23,241 @@ const localizer = dateFnsLocalizer({
   locales
 });
 
-const events = [
-  {
-    title: 'Gespräch',
-    start: new Date(2025, 9, 17, 9, 0),
-    end: new Date(2025, 9, 17, 10, 30),
-    color: '#A855F7'
-  },
-  {
-    title: 'Theoriestunden',
-    start: new Date(2025, 9, 17, 13, 30),
-    end: new Date(2025, 9, 17, 14, 45),
-    color: '#2563EB'
-  },
-  {
-    title: 'Fahrstunden',
-    start: new Date(2025, 9, 17, 15, 0),
-    end: new Date(2025, 9, 17, 16, 0),
-    color: '#0891B2'
-  },
-  {
-    title: 'Theorieprüfung',
-    start: new Date(2025, 9, 17, 10, 15),
-    end: new Date(2025, 9, 17, 10, 35),
-    color: '#DC2626'
-  }
-];
+// ⭐ UNIFIED MASTER OBJECT FOR BOTH CALENDAR & DAY VIEW
+const scheduleData: Record<string, any[]> = {
+  '2025-11-03': [
+    {id: 1, category: 'purple', hour: 6, duration: 1, title: 'Gespräch'},
+    {id: 2, category: 'purple', hour: 11, duration: 1, title: 'Gespräch'},
+    {id: 3, category: 'purple', hour: 14, duration: 1, title: 'Gespräch'},
+    {id: 4, category: 'purple', hour: 17, duration: 1, title: 'Gespräch'},
+    {id: 5, category: 'blue', hour: 9, duration: 1, title: 'Theoriestunde'}
+  ],
 
-const EventComponent: React.FC<{event: any}> = ({event}) => (
-  <div
-    style={{
-      width: '6px',
-      height: '18px',
-      borderRadius: '999px',
-      margin: '2px 0 2px 15%',
-      backgroundColor: event.color
-    }}
-  />
-);
+  '2025-11-07': [
+    {id: 1, category: 'red', hour: 10, duration: 1, title: 'Prüfung'},
+    {id: 2, category: 'red', hour: 18, duration: 1, title: 'Prüfung'}
+  ],
 
-export default function BigCalendar() {
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-  const [selectedAppointments, setSelectedAppointments] = useState<any[]>([]);
+  '2025-11-12': [
+    {id: 1, category: 'cyan', hour: 8, duration: 1, title: 'Fahrstunde'},
+    {id: 2, category: 'cyan', hour: 10, duration: 1, title: 'Fahrstunde'},
+    {id: 3, category: 'cyan', hour: 12, duration: 1, title: 'Fahrstunde'},
+    {id: 4, category: 'purple', hour: 16, duration: 1, title: 'Gespräch'}
+  ]
+};
 
-  const appointments = events.map((e, i) => ({
-    id: i + 1,
-    title: e.title,
-    startTime: `${String(e.start.getHours()).padStart(2, '0')}:${String(
-      e.start.getMinutes()
-    ).padStart(2, '0')}`,
-    endTime: `${String(e.end.getHours()).padStart(2, '0')}:${String(
-      e.end.getMinutes()
-    ).padStart(2, '0')}`,
-    color: e.color,
-    dateKey: `${e.start.getFullYear()}-${e.start.getMonth()}-${e.start.getDate()}`
-  }));
+// Map category → color
+const categoryColors: any = {
+  purple: '#A855F7',
+  blue: '#2563EB',
+  cyan: '#0891B2',
+  red: '#DC2626'
+};
 
-  const handleSelectDate = (date: Date) => {
-    const dateKey = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
-    const filteredAppointments = appointments.filter(
-      (a) => a.dateKey === dateKey
-    );
+// -------------------------
+// Custom Date Cell Wrapper
+// -------------------------
+const CustomDateCell = ({children, value, currentMonth, currentYear}: any) => {
+  const isOffRange =
+    value.getMonth() !== currentMonth || value.getFullYear() !== currentYear;
 
-    setSelectedAppointments(filteredAppointments);
-    setSelectedDate(date);
+  const key = value.toISOString().split('T')[0];
+  const events = scheduleData[key] || [];
+
+  const counts = {
+    purple: events?.filter((e) => e.category === 'purple')?.length || 0,
+    blue: events?.filter((e) => e.category === 'blue')?.length || 0,
+    cyan: events?.filter((e) => e.category === 'cyan')?.length || 0,
+    red: events?.filter((e) => e.category === 'red')?.length || 0
   };
 
+  const hasData = Object.values(counts).some((v) => v > 0);
+
   return (
-    <>
-      <div className={styles.calendarWrapper}>
+    <Box
+      sx={{
+        position: 'relative',
+        height: '100%',
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        overflowY: 'hidden'
+      }}
+    >
+      {/* Background */}
+      <Box
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          backgroundColor: isOffRange ? 'transparent' : '#FFFFFFBF',
+          borderRadius: '10px',
+          transition: 'background 0.3s ease',
+          zIndex: 1,
+          border: isOffRange ? 'none' : '2px solid #fff'
+        }}
+      />
+
+      {/* Foreground */}
+      <Box
+        sx={{
+          position: 'relative',
+          zIndex: 2,
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center'
+        }}
+      >
+        {/* Day Number */}
+        <Typography
+          sx={{
+            mt: 0.5,
+            fontSize: '13px',
+            fontFamily: 'Inter, sans-serif',
+            color: isOffRange ? '#A0AEC0' : '#000'
+          }}
+        >
+          {children}
+        </Typography>
+
+        {/* Activity Lines */}
+        {hasData && !isOffRange && (
+          <Box
+            sx={{
+              pt: {xs: '31px', sm: '31.5px', md: '33px'},
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
+              gap: '3px',
+              pl: '8px',
+              width: '100%'
+            }}
+          >
+            {Object.entries(counts).map(([cat, count]) =>
+              count > 0 ? (
+                <Box key={cat} sx={{display: 'flex', gap: '4px'}}>
+                  <Box
+                    sx={{
+                      width: '6px',
+                      height: '14px',
+                      borderRadius: '999px',
+                      backgroundColor: categoryColors[cat]
+                    }}
+                  />
+                  <Typography sx={{fontSize: '10px', color: '#4A5568'}}>
+                    {count}
+                  </Typography>
+                </Box>
+              ) : null
+            )}
+          </Box>
+        )}
+      </Box>
+    </Box>
+  );
+};
+
+// =======================
+// MAIN COMPONENT
+// =======================
+export default function BigCalendar() {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [visibleDate, setVisibleDate] = useState(new Date());
+
+  const handleClick = (event: React.MouseEvent<HTMLElement>) =>
+    setAnchorEl(event.currentTarget);
+  const handleClose = () => setAnchorEl(null);
+  const open = Boolean(anchorEl);
+
+  // const handleDateClick = (slotInfo: any) => setSelectedDate(slotInfo.start);
+
+  const pathname = usePathname();
+  const isGerman = pathname.startsWith('/de');
+  const currentLocale = isGerman ? 'de' : 'en-US';
+
+  const calendarMessages = isGerman
+    ? {
+        today: 'Heute',
+        previous: 'Zurück',
+        next: 'Weiter',
+        month: 'Monat'
+      }
+    : {
+        today: 'Today',
+        previous: 'Back',
+        next: 'Next',
+        month: 'Month'
+      };
+
+  const handleDateClick = (slot: any) => setSelectedDate(slot.start);
+
+  const key = selectedDate?.toISOString().split('T')[0] || '';
+  const dayAppointments = scheduleData[key] || [];
+
+  return (
+    <div className={styles.calendarWrapper}>
+      <div className={styles.calendarContainer}>
         {selectedDate ? (
           <DayDetailView
-            key={selectedDate.toISOString()}
             date={selectedDate}
-            appointments={selectedAppointments}
+            appointments={dayAppointments}
             onClose={() => setSelectedDate(null)}
           />
         ) : (
-          <div className={styles.calendarContainer}>
+          <Box sx={{height: '100%', width: '100%', position: 'relative'}}>
+            {' '}
+            {/* PLUS BUTTON */}
+            <Box sx={{position: 'absolute', top: '0px', right: '0px'}}>
+              <Box
+                onClick={handleClick}
+                sx={{
+                  padding: '8px',
+                  height: '36px',
+                  width: '36px',
+                  background: '#fff',
+                  borderRadius: '50%',
+                  cursor: 'pointer',
+                  position: 'relative',
+                  '&:hover': {backgroundColor: '#CED5F5'},
+                  '&:active': {backgroundColor: '#B9C2EB'},
+                  transition: 'all 0.1s ease-in'
+                }}
+              >
+                <Image height={20} width={20} src={plus} alt="plus" />
+              </Box>
+
+              <EventAddPopoverFDb
+                anchorEl={anchorEl}
+                open={open}
+                onClose={handleClose}
+              />
+            </Box>
+            {/* MAIN CALENDAR */}
             <Calendar
               localizer={localizer}
-              events={events}
-              startAccessor="start"
-              endAccessor="end"
-              components={{event: EventComponent}}
+              culture={currentLocale}
+              messages={calendarMessages}
+              components={{
+                dateCellWrapper: (props) => (
+                  <CustomDateCell
+                    {...props}
+                    currentMonth={visibleDate.getMonth()}
+                    currentYear={visibleDate.getFullYear()}
+                  />
+                )
+              }}
               views={['month']}
               selectable
-              toolbar
-              onSelectSlot={(slotInfo) => handleSelectDate(slotInfo.start)}
-              onSelectEvent={(event) => handleSelectDate(event.start)}
-              onDrillDown={(date) => handleSelectDate(date)} // 🔥 captures clicks on date numbers
-              style={{
-                flex: 1,
-                height: '100%',
-                width: '100%',
-                cursor: 'pointer'
-              }}
+              onSelectSlot={handleDateClick}
+              onNavigate={(date) => setVisibleDate(date)}
+              style={{flex: 1, height: '100%', width: '100%'}}
             />
-          </div>
+          </Box>
         )}
       </div>
-    </>
+    </div>
   );
 }

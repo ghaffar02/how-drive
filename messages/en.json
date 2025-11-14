@@ -1892,6 +1892,83 @@
         }
       ]
     },
+    "calendar": {
+      "popup": {
+        "title": "Book an appointment with your driving school",
+        "title2": "Book an appointment for the student",
+        "input1": "Driving student",
+        "tabs": [
+          "Talk",
+          "Theory",
+          "Driving"
+        ],
+        "tabsOptions": {
+          "options": [
+            [
+              {
+                "label": "select category",
+                "value": ""
+              },
+              {
+                "label": "Anmeldung Fahrschule",
+                "value": "anmeldung-fahrschule"
+              },
+              {
+                "label": "Besprechung",
+                "value": "besprechung"
+              }
+            ],
+            [
+              {
+                "value": "",
+                "label": "select group"
+              },
+              {
+                "value": "gruppe-1",
+                "label": "Gruppe 1"
+              },
+              {
+                "value": "gruppe-2",
+                "label": "Gruppe 2"
+              }
+            ],
+            [
+              {
+                "value": "",
+                "label": "select trainer"
+              },
+              {
+                "value": "tom",
+                "label": "Tom"
+              },
+              {
+                "value": "fabian",
+                "label": "Fabian"
+              },
+              {
+                "value": "sophia",
+                "label": "Sophia"
+              }
+            ],
+            [
+              {
+                "value": "",
+                "label": "select exam"
+              },
+              {
+                "value": "theorieprüfung",
+                "label": "Theorieprüfung"
+              },
+              {
+                "value": "praktisch-prüfung",
+                "label": "Praktisch Prüfung"
+              }
+            ]
+          ]
+        },
+        "btn": "Book"
+      }
+    },
     "home": {
       "header": {
         "data": [
@@ -2020,7 +2097,11 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": ["Necessary", "Analytics", "Allow all"]
+          "formFields": [
+            "Necessary",
+            "Analytics",
+            "Allow all"
+          ]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2048,7 +2129,10 @@
             "News",
             "Driving license office registered"
           ],
-          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
+          "formFieldsOff": [
+            "Genereller Newsletter",
+            "Offers and advertising"
+          ]
         }
       }
     },
@@ -2409,7 +2493,11 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": ["Necessary", "Analytics", "Allow all"]
+          "formFields": [
+            "Necessary",
+            "Analytics",
+            "Allow all"
+          ]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2437,12 +2525,18 @@
             "News",
             "New students' request"
           ],
-          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
+          "formFieldsOff": [
+            "Genereller Newsletter",
+            "Offers and advertising"
+          ]
         }
       }
     },
     "leftSideTab": {
-      "textTab": ["Active", "Inactive"],
+      "textTab": [
+        "Active",
+        "Inactive"
+      ],
       "search": "Search",
       "title": "The maximum number of active students is reached. Please upgrade under \"Settings => Payment\" or deactivate a student."
     },
@@ -2617,7 +2711,11 @@
     "Calendar": {
       "Sidebar": {
         "title": "Set appointment schedules",
-        "tabs": ["Talk", "Theory", "Driving"],
+        "tabs": [
+          "Talk",
+          "Theory",
+          "Driving"
+        ],
         "tab1": {
           "title": "Category",
           "title2": "Add category",
@@ -2726,7 +2824,12 @@
         "title": "Book an appointment for a driving student",
         "title2": "Book an appointment for the student",
         "input1": "Driving student",
-        "tabs": ["Talk", "Theory", "Driving", "Exam"],
+        "tabs": [
+          "Talk",
+          "Theory",
+          "Driving",
+          "Exam"
+        ],
         "tabsOptions": {
           "options": [
             [
@@ -2744,20 +2847,50 @@
               }
             ],
             [
-              {"value": "", "label": "select group"},
-              {"value": "gruppe-1", "label": "Gruppe 1"},
-              {"value": "gruppe-2", "label": "Gruppe 2"}
+              {
+                "value": "",
+                "label": "select group"
+              },
+              {
+                "value": "gruppe-1",
+                "label": "Gruppe 1"
+              },
+              {
+                "value": "gruppe-2",
+                "label": "Gruppe 2"
+              }
             ],
             [
-              {"value": "", "label": "select trainer"},
-              {"value": "tom", "label": "Tom"},
-              {"value": "fabian", "label": "Fabian"},
-              {"value": "sophia", "label": "Sophia"}
+              {
+                "value": "",
+                "label": "select trainer"
+              },
+              {
+                "value": "tom",
+                "label": "Tom"
+              },
+              {
+                "value": "fabian",
+                "label": "Fabian"
+              },
+              {
+                "value": "sophia",
+                "label": "Sophia"
+              }
             ],
             [
-              {"value": "", "label": "select exam"},
-              {"value": "theorieprüfung", "label": "Theorieprüfung"},
-              {"value": "praktisch-prüfung", "label": "Praktisch Prüfung"}
+              {
+                "value": "",
+                "label": "select exam"
+              },
+              {
+                "value": "theorieprüfung",
+                "label": "Theorieprüfung"
+              },
+              {
+                "value": "praktisch-prüfung",
+                "label": "Praktisch Prüfung"
+              }
             ]
           ]
         },
