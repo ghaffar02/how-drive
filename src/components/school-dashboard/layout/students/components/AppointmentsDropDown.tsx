@@ -141,7 +141,7 @@ export default function AppointmentsDropDown({
           {t('title2')}
         </Typography>
 
-        <Box sx={{width: '100%'}}>
+        {/* <Box sx={{width: '100%'}}>
           <Typography
             sx={{
               ...localFont.inter14,
@@ -186,7 +186,7 @@ export default function AppointmentsDropDown({
               <Image src={crossCircle} alt="cancel" height={20} width={20} />
             </Box>
           </Box>
-        </Box>
+        </Box> */}
 
         {/* Area for the tab */}
 
@@ -203,15 +203,15 @@ export default function AppointmentsDropDown({
           }}
         >
           <Box
-            component={motion.div}
-            initial={{y: 50, opacity: 0}}
-            animate={{y: 0, opacity: 1}}
-            transition={{
-              duration: 0.2,
-              ease: 'easeOut',
-              delay: 0.1
-            }}
-            viewport={{once: true}}
+            // component={motion.div}
+            // initial={{y: 50, opacity: 0}}
+            // animate={{y: 0, opacity: 1}}
+            // transition={{
+            //   duration: 0.2,
+            //   ease: 'easeOut',
+            //   delay: 0.1
+            // }}
+            // viewport={{once: true}}
             sx={{
               width: '100%',
               // maxWidth: '828px',
@@ -274,7 +274,7 @@ export default function AppointmentsDropDown({
         </Box>
 
         {/* Ending Area for the tab */}
-        <motion.div
+        {/* <motion.div
           initial={{y: 50, opacity: 0}}
           animate={{y: 0, opacity: 1}}
           transition={{
@@ -284,71 +284,71 @@ export default function AppointmentsDropDown({
           }}
           viewport={{once: true}}
           style={{width: '100%', maxWidth: '402px'}}
+        > */}
+        <TextField
+          select
+          fullWidth
+          variant="outlined"
+          value={selectedCategory} // e.g. from useState
+          onChange={(e) => setSelectedCategory(e.target.value)}
+          SelectProps={{
+            displayEmpty: true
+          }}
+          // error={!!errors.category}
+          // helperText={errors.category?.message}
+          sx={{
+            background: '#ffffff',
+            height: 40,
+            maxWidth: {lg: '402px'},
+            width: '100%',
+
+            borderRadius: '8px',
+            '& .MuiInputBase-root': {
+              height: '100%',
+              fontSize: '14px',
+              padding: '12px',
+              borderRadius: '12px',
+
+              boxShadow:
+                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+            },
+            '&:hover .MuiOutlinedInput-notchedOutline': {
+              border: 'none !important'
+            },
+            '& fieldset': {
+              borderColor: '#e2e8f00a'
+            },
+            '& .MuiSelect-select': {
+              padding: 0,
+              fontSize: '16px',
+              color: selectedCategory ? '#000' : '#aaa'
+            }
+          }}
         >
-          <TextField
-            select
-            fullWidth
-            variant="outlined"
-            value={selectedCategory} // e.g. from useState
-            onChange={(e) => setSelectedCategory(e.target.value)}
-            SelectProps={{
-              displayEmpty: true
-            }}
-            // error={!!errors.category}
-            // helperText={errors.category?.message}
-            sx={{
-              background: '#ffffff',
-              height: 40,
-              maxWidth: {lg: '402px'},
-              width: '100%',
-
-              borderRadius: '8px',
-              '& .MuiInputBase-root': {
-                height: '100%',
-                fontSize: '14px',
-                padding: '12px',
-                borderRadius: '12px',
-
-                boxShadow:
-                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
-              },
-              '&:hover .MuiOutlinedInput-notchedOutline': {
-                border: 'none !important'
-              },
-              '& fieldset': {
-                borderColor: '#e2e8f00a'
-              },
-              '& .MuiSelect-select': {
-                padding: 0,
-                fontSize: '16px',
-                color: selectedCategory ? '#000' : '#aaa'
-              }
-            }}
-          >
-            {tabOptions[activeIndex].map((option: any) =>
-              option.value === '' ? (
-                <MenuItem key={option.label} value={option.value} disabled>
-                  {option.label}
-                </MenuItem>
-              ) : (
-                <MenuItem key={option.value} value={option.value}>
-                  {option.label}
-                </MenuItem>
-              )
-            )}
-          </TextField>
-        </motion.div>
+          {tabOptions[activeIndex].map((option: any) =>
+            option.value === '' ? (
+              <MenuItem key={option.label} value={option.value} disabled>
+                {option.label}
+              </MenuItem>
+            ) : (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            )
+          )}
+        </TextField>
+        {/* </motion.div> */}
       </Box>
       <Box
-        component={motion.div}
-        initial={{y: 50, opacity: 0}}
-        animate={{y: 0, opacity: 1}}
-        transition={{
-          duration: 0.2,
-          ease: 'easeOut',
-          delay: 0.3
-        }}
-        viewport={{once: true}}
+        // component={motion.div}
+        // initial={{y: 50, opacity: 0}}
+        // animate={{y: 0, opacity: 1}}
+        // transition={{
+        //   duration: 0.2,
+        //   ease: 'easeOut',
+        //   delay: 0.3
+        // }}
+        // viewport={{once: true}}
         sx={{
           width: '100%',
           display: 'flex',
@@ -375,15 +375,15 @@ export default function AppointmentsDropDown({
 
       {activeIndex < 3 && (
         <Box
-          component={motion.div}
-          initial={{y: 50, opacity: 0}}
-          animate={{y: 0, opacity: 1}}
-          transition={{
-            duration: 0.2,
-            ease: 'easeOut',
-            delay: 0.4
-          }}
-          viewport={{once: true}}
+          // component={motion.div}
+          // initial={{y: 50, opacity: 0}}
+          // animate={{y: 0, opacity: 1}}
+          // transition={{
+          //   duration: 0.2,
+          //   ease: 'easeOut',
+          //   delay: 0.4
+          // }}
+          // viewport={{once: true}}
           sx={{width: '100%', textAlign: 'center'}}
         >
           <Typography

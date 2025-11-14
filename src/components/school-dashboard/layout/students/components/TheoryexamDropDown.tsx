@@ -153,6 +153,8 @@ export default function TheoryexamDropDown({
             // textWrap: 'nowrap',
             // fontSize: '12px',
             width: '100%',
+            textTransform: 'none',
+
             justifyContent: 'center'
           }}
         />
@@ -166,7 +168,8 @@ export default function TheoryexamDropDown({
             gap: '7px',
             maxWidth: '106px',
             width: '100%',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            textTransform: 'none'
           }}
           onClick={onClose}
         />
