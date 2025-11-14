@@ -63,11 +63,11 @@ const CustomDateCell = ({children, value, currentMonth, currentYear}: any) => {
   const key = value.toISOString().split('T')[0];
   const events = scheduleData[key] || [];
 
-  const counts: any = {
-    purple: events.filter((e) => e.category === 'purple').length,
-    blue: events.filter((e) => e.category === 'blue').length,
-    cyan: events.filter((e) => e.category === 'cyan').length,
-    red: events.filter((e) => e.category === 'red').length
+  const counts = {
+    purple: events?.filter((e) => e.category === 'purple')?.length || 0,
+    blue: events?.filter((e) => e.category === 'blue')?.length || 0,
+    cyan: events?.filter((e) => e.category === 'cyan')?.length || 0,
+    red: events?.filter((e) => e.category === 'red')?.length || 0
   };
 
   const hasData = Object.values(counts).some((v) => v > 0);
