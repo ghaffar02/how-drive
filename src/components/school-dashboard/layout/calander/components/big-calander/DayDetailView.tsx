@@ -30,10 +30,30 @@ export function DayDetailView({
   const totalRows = endHour - startHour;
 
   const categories = [
-    {key: 'purple', label: 'Gespräch', color: '#A855F7'},
-    {key: 'blue', label: 'Theoriestunden', color: '#2563EB'},
-    {key: 'cyan', label: 'Fahrstunden', color: '#0891B2'},
-    {key: 'red', label: 'Prüfungen', color: '#DC2626'}
+    {
+      key: 'purple',
+      label: 'Gespräch',
+      borderColor: 'rgb(147, 51, 234)',
+      backgroundColor: 'rgb(237, 225, 250)'
+    },
+    {
+      key: 'blue',
+      label: 'Theoriestunden',
+      borderColor: 'rgb(37, 99, 235)',
+      backgroundColor: 'rgb(227, 236, 255)'
+    },
+    {
+      key: 'cyan',
+      label: 'Fahrstunden',
+      borderColor: 'rgb(8, 145, 178)',
+      backgroundColor: 'rgb(222, 248, 250)'
+    },
+    {
+      key: 'red',
+      label: 'Prüfungen',
+      borderColor: 'rgb(220, 38, 38)',
+      backgroundColor: 'rgb(250, 222, 222)'
+    }
   ];
 
   return (
@@ -111,7 +131,7 @@ export function DayDetailView({
           <Box
             key={cat.key}
             sx={{
-              background: cat.color,
+              background: cat.borderColor,
               color: '#fff',
               borderRadius: '8px',
               display: 'flex',
@@ -164,16 +184,15 @@ export function DayDetailView({
                       position: 'relative',
                       height: '56px',
                       width: '234px'
-                      // backgroundColor: 'red'
                     }}
                   >
                     {cellEvents.map((e) => (
                       <Box
                         key={e.id}
                         sx={{
-                          background: `${cat.color}20`,
-                          border: `1px solid ${cat.color}`,
-                          borderLeft: `4px solid ${cat.color}`,
+                          background: `${cat.backgroundColor}`,
+                          border: `1px solid ${cat.borderColor}`,
+                          borderLeft: `4px solid ${cat.borderColor}`,
                           borderRadius: '8px',
                           padding: '2px 8px',
                           fontSize: {xs: '12px', md: '13px', lg: '14px'},

@@ -130,6 +130,24 @@ const scheduleData: Record<string, any[]> = {
       hour: 16,
       duration: 1,
       title: 'Gespräch'
+    },
+    {
+      id: 5,
+      category: 'red',
+      startTime: '16:00',
+      endTime: '17:00',
+      hour: 16,
+      duration: 1,
+      title: 'Gespräch'
+    },
+    {
+      id: 5,
+      category: 'blue',
+      startTime: '16:00',
+      endTime: '17:00',
+      hour: 16,
+      duration: 1,
+      title: 'Gespräch'
     }
   ]
 };
