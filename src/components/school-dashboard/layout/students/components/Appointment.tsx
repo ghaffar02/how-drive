@@ -331,10 +331,16 @@ function Card({name, barColor, date, time}: CardProps) {
               right: 0,
               mb: '8px',
               width: {xs: '300px'},
-              overflow: 'visible',
+              height: '80vh',
+              overflow: 'auto',
               border: '1px solid rgb(255, 255, 255)',
               backgroundColor: '#f0f0fa99',
               backdropFilter: 'blur(8px)',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              '&::-webkit-scrollbar': {
+                display: 'none'
+              },
 
               boxShadow: `
             0px 0px 0px 1px rgb(255, 255, 255),
@@ -361,6 +367,7 @@ function Card({name, barColor, date, time}: CardProps) {
                 {value: 'malfunction', label: 'Malfunction'},
                 {value: 'question', label: 'Question'}
               ]}
+              barColor={barColor}
             />
           </Box>
         )}
