@@ -26,7 +26,7 @@ export function DayDetailView({
   onClose
 }: DayDetailViewProps) {
   const startHour = 6;
-  const endHour = 23;
+  const endHour = 25;
   const totalRows = endHour - startHour;
 
   const categories = [
@@ -55,6 +55,17 @@ export function DayDetailView({
       backgroundColor: 'rgb(250, 222, 222)'
     }
   ];
+  const getTranslateForStartTime = (time: string) => {
+    // example: "14:15" → "15"
+    const minuteString = time.slice(-2); // last two chars
+
+    if (minuteString === '15') return 'translateY(25%)';
+    if (minuteString === '30') return 'translateY(50%)';
+    if (minuteString === '45') return 'translateY(75%)';
+
+    // default case: "00" or anything else
+    return 'translateY(0%)';
+  };
 
   return (
     <Box
@@ -200,7 +211,9 @@ export function DayDetailView({
                           color: '#4a5568',
                           lineHeight: '1.6em',
                           position: 'absolute',
-                          inset: 0
+                          zIndex: '100',
+                          inset: 0,
+                          transform: getTranslateForStartTime(e.startTime)
                         }}
                       >
                         <span
