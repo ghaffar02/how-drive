@@ -77,12 +77,12 @@ export function DayDetailView({
 
     const duration = totalEnd - totalStart;
 
-    if (duration === 60) return '56px';
-    if (duration === 75) return '70px';
-    if (duration === 90) return '84px';
-    if (duration === 120) return '121px';
+    if (duration === 60) return '48px';
+    if (duration === 75) return '60px';
+    if (duration === 90) return '71px';
+    if (duration === 120) return '96px';
 
-    return '56px';
+    return '48px';
   };
 
   return (
@@ -201,7 +201,7 @@ export function DayDetailView({
                       background: 'rgba(255,255,255,0.6)',
                       borderRadius: '8px',
                       position: 'relative',
-                      height: '56px',
+                      height: '48px',
                       width: '234px'
                     }}
                   >
@@ -220,12 +220,40 @@ export function DayDetailView({
                           width: '100%',
                           height: getHeightForDuration(e.startTime, e.endTime),
                           transform: getTranslateForStartTime(e.startTime),
-                          transition: '0.2s linear'
+                          transition: '0.2s linear',
+                          overflowX: 'hidden',
+                          fontSize: {xs: '12px', md: '13px', lg: '14px'}
                         }}
                       >
-                        <span style={{fontWeight: 400}}>{e.title}</span>
+                        <Box sx={{display: 'inline'}}>
+                          <span
+                            style={{
+                              fontWeight: 400,
+                              textWrap: 'nowrap',
+                              fontSize: 'inherit'
+                            }}
+                          >
+                            {e.title}
+                          </span>
+                          <span
+                            style={{
+                              fontWeight: 400,
+                              float: 'right',
+                              textWrap: 'nowrap',
+                              fontSize: 'inherit'
+                            }}
+                          >
+                            (B17)
+                          </span>
+                        </Box>
                         <br />
-                        <span style={{fontWeight: 300}}>
+                        <span
+                          style={{
+                            fontWeight: 300,
+                            textWrap: 'nowrap',
+                            fontSize: 'inherit'
+                          }}
+                        >
                           {e.startTime} - {e.endTime}
                         </span>
                       </Box>
