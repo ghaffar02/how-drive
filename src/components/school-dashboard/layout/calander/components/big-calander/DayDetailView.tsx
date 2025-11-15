@@ -77,6 +77,7 @@ export function DayDetailView({
 
     const duration = totalEnd - totalStart;
 
+    if (duration === 15) return '24px';
     if (duration === 30) return '24px';
     if (duration === 45) return '36px';
     if (duration === 60) return '48px';
