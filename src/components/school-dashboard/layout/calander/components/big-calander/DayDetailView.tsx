@@ -56,7 +56,7 @@ export function DayDetailView({
     }
   ];
 
-  // 1 — translate based on minutes
+  // translateY based on start minute
   const getTranslateForStartTime = (time: string) => {
     const minuteString = time.slice(-2);
 
@@ -64,10 +64,10 @@ export function DayDetailView({
     if (minuteString === '30') return 'translateY(28px)';
     if (minuteString === '45') return 'translateY(42px)';
 
-    return 'translateY(0%)';
+    return 'translateY(0px)';
   };
 
-  // 2 — height based on duration
+  // height based on duration
   const getHeightForDuration = (start: string, end: string) => {
     const [sh, sm] = start.split(':').map(Number);
     const [eh, em] = end.split(':').map(Number);
@@ -83,6 +83,21 @@ export function DayDetailView({
     if (duration === 120) return '96px';
 
     return '48px';
+  };
+
+  // group events by minute for horizontal stacking
+  const groupByMinute = (
+    events: Appointment[]
+  ): Record<string, Appointment[]> => {
+    return events.reduce(
+      (acc, e) => {
+        const minute = e.startTime.slice(-2);
+        if (!acc[minute]) acc[minute] = [];
+        acc[minute].push(e);
+        return acc;
+      },
+      {} as Record<string, Appointment[]>
+    );
   };
 
   return (
@@ -148,7 +163,7 @@ export function DayDetailView({
           maxWidth: '930px'
         }}
       >
-        {/* Header Row */}
+        {/* Header row empty space */}
         <Box />
 
         {categories.map((cat) => (
@@ -170,13 +185,13 @@ export function DayDetailView({
           </Box>
         ))}
 
-        {/* Hours + Appointments */}
+        {/* Hours */}
         {Array.from({length: totalRows}, (_, i) => {
           const hour = startHour + i;
 
           return (
             <React.Fragment key={hour}>
-              {/* Time Label */}
+              {/* Time label */}
               <Box
                 className="fontFamilyInter"
                 sx={{
@@ -194,6 +209,9 @@ export function DayDetailView({
                   (a) => a.hour === hour && a.category === cat.key
                 );
 
+                // group events by minute
+                const grouped = groupByMinute(cellEvents);
+
                 return (
                   <Box
                     key={cat.key}
@@ -202,60 +220,80 @@ export function DayDetailView({
                       borderRadius: '8px',
                       position: 'relative',
                       height: '48px',
-                      width: '234px'
+                      width: '234px',
+                      overflow: 'visible'
                     }}
                   >
-                    {cellEvents.map((e) => (
+                    {Object.entries(grouped).map(([minute, eventsInGroup]) => (
                       <Box
-                        key={e.id}
+                        key={minute}
                         sx={{
-                          background: cat.backgroundColor,
-                          border: `1px solid ${cat.borderColor}`,
-                          borderLeft: `4px solid ${cat.borderColor}`,
-                          borderRadius: '8px',
-                          padding: '2px 8px',
-                          fontFamily: '"Inter", sans-serif  !important',
-                          position: 'relative',
-                          zIndex: 100,
-                          width: '100%',
-                          height: getHeightForDuration(e.startTime, e.endTime),
-                          transform: getTranslateForStartTime(e.startTime),
-                          transition: '0.2s linear',
-                          overflowX: 'hidden',
-                          fontSize: {xs: '12px', md: '13px', lg: '14px'}
+                          position: 'absolute',
+                          left: 0,
+                          right: 0,
+                          top: 0,
+                          transform: getTranslateForStartTime(`00:${minute}`),
+                          display: 'flex',
+                          gap: '4px',
+                          zIndex: 200
                         }}
                       >
-                        <Box sx={{display: 'inline'}}>
-                          <span
-                            style={{
-                              fontWeight: 400,
-                              textWrap: 'nowrap',
-                              fontSize: 'inherit'
+                        {eventsInGroup.map((e) => (
+                          <Box
+                            key={e.id}
+                            sx={{
+                              background: cat.backgroundColor,
+                              border: `1px solid ${cat.borderColor}`,
+                              borderLeft: `4px solid ${cat.borderColor}`,
+                              borderRadius: '8px',
+                              padding: '2px 8px',
+                              fontFamily: '"Inter", sans-serif  !important',
+                              width: '100%',
+                              // minWidth: '100px',
+                              height: getHeightForDuration(
+                                e.startTime,
+                                e.endTime
+                              ),
+                              fontSize: {
+                                xs: '12px',
+                                md: '13px',
+                                lg: '14px'
+                              },
+                              overflow: 'hidden'
                             }}
                           >
-                            {e.title}
-                          </span>
-                          <span
-                            style={{
-                              fontWeight: 400,
-                              float: 'right',
-                              textWrap: 'nowrap',
-                              fontSize: 'inherit'
-                            }}
-                          >
-                            (B17)
-                          </span>
-                        </Box>
-                        <br />
-                        <span
-                          style={{
-                            fontWeight: 300,
-                            textWrap: 'nowrap',
-                            fontSize: 'inherit'
-                          }}
-                        >
-                          {e.startTime} - {e.endTime}
-                        </span>
+                            <Box
+                              sx={{display: 'inline-flex', flexWrap: 'nowrap'}}
+                            >
+                              <span
+                                style={{
+                                  fontWeight: 400,
+                                  textWrap: 'nowrap'
+                                }}
+                              >
+                                {e.title}
+                              </span>
+                              <span
+                                style={{
+                                  fontWeight: 400,
+                                  float: 'right',
+                                  textWrap: 'nowrap'
+                                }}
+                              >
+                                (B17)
+                              </span>
+                            </Box>
+                            <br />
+                            <span
+                              style={{
+                                fontWeight: 300,
+                                textWrap: 'nowrap'
+                              }}
+                            >
+                              {e.startTime} - {e.endTime}
+                            </span>
+                          </Box>
+                        ))}
                       </Box>
                     ))}
                   </Box>
