@@ -55,16 +55,34 @@ export function DayDetailView({
       backgroundColor: 'rgb(250, 222, 222)'
     }
   ];
+
+  // 1 — translate based on minutes
   const getTranslateForStartTime = (time: string) => {
-    // example: "14:15" → "15"
-    const minuteString = time.slice(-2); // last two chars
+    const minuteString = time.slice(-2);
 
-    if (minuteString === '15') return 'translateY(25%)';
-    if (minuteString === '30') return 'translateY(50%)';
-    if (minuteString === '45') return 'translateY(75%)';
+    if (minuteString === '15') return 'translateY(14px)';
+    if (minuteString === '30') return 'translateY(28px)';
+    if (minuteString === '45') return 'translateY(42px)';
 
-    // default case: "00" or anything else
     return 'translateY(0%)';
+  };
+
+  // 2 — height based on duration
+  const getHeightForDuration = (start: string, end: string) => {
+    const [sh, sm] = start.split(':').map(Number);
+    const [eh, em] = end.split(':').map(Number);
+
+    const totalStart = sh * 60 + sm;
+    const totalEnd = eh * 60 + em;
+
+    const duration = totalEnd - totalStart;
+
+    if (duration === 60) return '56px';
+    if (duration === 75) return '70px';
+    if (duration === 90) return '84px';
+    if (duration === 120) return '121px';
+
+    return '56px';
   };
 
   return (
@@ -123,14 +141,9 @@ export function DayDetailView({
         sx={{
           flex: 1,
           display: 'grid',
-          // prev value
           gridTemplateRows: `75px repeat(${totalRows}, 1fr)`,
-          // gridTemplateColumns: `26px repeat(${totalColumns}, 1fr)`,
-          // new value
-          // gridTemplateRows: `75px repeat(${totalRows}, 1fr)`,
           gridTemplateColumns: `26px repeat(4, 234px)`,
           gap: '8px',
-          // backgroundColor: 'red',
           overflow: 'scroll',
           maxWidth: '930px'
         }}
@@ -150,9 +163,7 @@ export function DayDetailView({
               alignItems: 'center',
               fontWeight: 600,
               height: '30px',
-              fontFamily: '"Inter", sans-serif  !important',
-              fontSize: {xs: '12px', md: '13px', lg: '14px'},
-              lineHeight: '1.6em'
+              fontFamily: '"Inter", sans-serif  !important'
             }}
           >
             {cat.label}
@@ -172,10 +183,7 @@ export function DayDetailView({
                   textAlign: 'center',
                   paddingTop: '10px',
                   color: '#4B5563',
-                  fontWeight: 500,
-                  fontSize: {xs: '12px', md: '13px', lg: '14px'},
-                  // fontFamily: '"Inter", sans-serif  !important',
-                  lineHeight: '1.6em'
+                  fontWeight: 500
                 }}
               >
                 {hour.toString().padStart(2, '0')}
@@ -201,35 +209,23 @@ export function DayDetailView({
                       <Box
                         key={e.id}
                         sx={{
-                          background: `${cat.backgroundColor}`,
+                          background: cat.backgroundColor,
                           border: `1px solid ${cat.borderColor}`,
                           borderLeft: `4px solid ${cat.borderColor}`,
                           borderRadius: '8px',
                           padding: '2px 8px',
-                          fontSize: {xs: '12px', md: '13px', lg: '14px'},
                           fontFamily: '"Inter", sans-serif  !important',
-                          color: '#4a5568',
-                          lineHeight: '1.6em',
-                          position: 'absolute',
-                          zIndex: '100',
-                          inset: 0,
-                          transform: getTranslateForStartTime(e.startTime)
+                          position: 'relative',
+                          zIndex: 100,
+                          width: '100%',
+                          height: getHeightForDuration(e.startTime, e.endTime),
+                          transform: getTranslateForStartTime(e.startTime),
+                          transition: '0.2s linear'
                         }}
                       >
-                        <span
-                          className="fontFamilyInter"
-                          style={{
-                            fontFamily: '"Inter", sans-serif  !important',
-                            fontWeight: '400'
-                          }}
-                        >
-                          {e.title}
-                        </span>
+                        <span style={{fontWeight: 400}}>{e.title}</span>
                         <br />
-                        <span
-                          className="fontFamilyInter"
-                          style={{paddingTop: '0px', fontWeight: 300}}
-                        >
+                        <span style={{fontWeight: 300}}>
                           {e.startTime} - {e.endTime}
                         </span>
                       </Box>

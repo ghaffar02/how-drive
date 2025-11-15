@@ -85,8 +85,44 @@ const scheduleData: Record<string, any[]> = {
     },
     {
       id: 2,
-      category: 'red',
+      category: 'blue',
       startTime: '18:30',
+      endTime: '19:15',
+      hour: 18,
+      duration: 1,
+      title: 'Prüfung'
+    },
+    {
+      id: 3,
+      category: 'seyan',
+      startTime: '18:30',
+      endTime: '19:15',
+      hour: 18,
+      duration: 1,
+      title: 'Prüfung'
+    },
+    {
+      id: 4,
+      category: 'red',
+      startTime: '14:00',
+      endTime: '16:00',
+      hour: 14,
+      duration: 1,
+      title: 'Prüfung'
+    },
+    {
+      id: 5,
+      category: 'red',
+      startTime: '17:00',
+      endTime: '18:15',
+      hour: 17,
+      duration: 1,
+      title: 'Prüfung'
+    },
+    {
+      id: 6,
+      category: 'red',
+      startTime: '18:45',
       endTime: '19:15',
       hour: 18,
       duration: 1,
@@ -108,7 +144,7 @@ const scheduleData: Record<string, any[]> = {
       id: 2,
       category: 'cyan',
       startTime: '10:15',
-      endTime: '11:00',
+      endTime: '11:15',
       hour: 10,
       duration: 1,
       title: 'Fahrstunde'
