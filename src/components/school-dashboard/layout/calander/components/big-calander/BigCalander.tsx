@@ -97,6 +97,15 @@ const scheduleData: Record<string, any[]> = {
       hour: 9,
       duration: 1,
       title: 'Theoriestunde'
+    },
+    {
+      id: 9,
+      category: 'blue',
+      startTime: '10:15',
+      endTime: '11:00',
+      hour: 10,
+      duration: 1,
+      title: 'Theoriestunde'
     }
   ],
 

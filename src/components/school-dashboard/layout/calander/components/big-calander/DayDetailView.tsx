@@ -77,6 +77,8 @@ export function DayDetailView({
 
     const duration = totalEnd - totalStart;
 
+    if (duration === 30) return '24px';
+    if (duration === 45) return '36px';
     if (duration === 60) return '48px';
     if (duration === 75) return '60px';
     if (duration === 90) return '71px';
@@ -263,7 +265,12 @@ export function DayDetailView({
                             }}
                           >
                             <Box
-                              sx={{display: 'inline-flex', flexWrap: 'nowrap'}}
+                              sx={{
+                                display: 'inline-flex',
+                                flexWrap: 'nowrap',
+                                width: '100%',
+                                justifyContent: 'space-between'
+                              }}
                             >
                               <span
                                 style={{
