@@ -123,8 +123,8 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
               gap: '8px',
               // bgcolor: 'red',
               alignItems: 'center',
-              justifyContent: index > 0 ? 'center' : 'unset',
-              pl: index > 0 ? '5px' : '0px'
+              justifyContent: index > 0 ? 'center' : 'unset'
+              // pl: index > 0 ? '2px' : '0px'
             }}
           >
             {/* Show 'Mo' only in the first row */}
@@ -133,7 +133,8 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
                 sx={{
                   ...localFont.inter14,
                   fontFamily: '"Inter", sans-serif !important',
-                  width: '24px',
+                  maxWidth: '23px',
+                  minWidth: '23px',
                   mt: '8px'
                 }}
               >
@@ -147,7 +148,7 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                // marginLeft: index > 0 ? '0px' : '0px',
+                // marginLeft: index > 0 ? '5px' : '0px',
                 gap: '2px',
                 maxWidth: {md: '155px', lg: '180px'}
               }}
