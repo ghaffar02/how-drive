@@ -7,9 +7,11 @@ import cross from '@/assets/svgs/dashboard-student/crossicon.svg';
 interface Appointment {
   id: number;
   title: string;
+  startTime: string;
+  endTime: string;
   hour: number;
-  duration: number;
   category: string;
+  duration: number;
 }
 
 interface DayDetailViewProps {
@@ -196,7 +198,7 @@ export function DayDetailView({
                           className="fontFamilyInter"
                           style={{paddingTop: '0px', fontWeight: 300}}
                         >
-                          {e.hour}:00 - {e.hour + e.duration}:00
+                          {e.startTime} - {e.endTime}
                         </span>
                       </Box>
                     ))}

@@ -23,25 +23,114 @@ const localizer = dateFnsLocalizer({
 });
 
 // ⭐ UNIFIED MASTER OBJECT FOR BOTH CALENDAR & DAY VIEW
+
 const scheduleData: Record<string, any[]> = {
   '2025-11-03': [
-    {id: 1, category: 'purple', hour: 6, duration: 1, title: 'Gespräch'},
-    {id: 2, category: 'purple', hour: 11, duration: 1, title: 'Gespräch'},
-    {id: 3, category: 'purple', hour: 14, duration: 1, title: 'Gespräch'},
-    {id: 4, category: 'purple', hour: 17, duration: 1, title: 'Gespräch'},
-    {id: 5, category: 'blue', hour: 9, duration: 1, title: 'Theoriestunde'}
+    {
+      id: 1,
+      category: 'purple',
+      startTime: '06:00',
+      endTime: '07:00',
+      hour: 6,
+      duration: 1,
+      title: 'Gespräch'
+    },
+    {
+      id: 2,
+      category: 'purple',
+      startTime: '11:00',
+      endTime: '12:00',
+      hour: 11,
+      duration: 1,
+      title: 'Gespräch'
+    },
+    {
+      id: 3,
+      category: 'purple',
+      startTime: '14:00',
+      endTime: '15:00',
+      hour: 14,
+      duration: 1,
+      title: 'Gespräch'
+    },
+    {
+      id: 4,
+      category: 'purple',
+      startTime: '17:00',
+      endTime: '18:00',
+      hour: 17,
+      duration: 1,
+      title: 'Gespräch'
+    },
+    {
+      id: 5,
+      category: 'blue',
+      startTime: '09:00',
+      endTime: '10:00',
+      hour: 9,
+      duration: 1,
+      title: 'Theoriestunde'
+    }
   ],
 
   '2025-11-07': [
-    {id: 1, category: 'red', hour: 10, duration: 1, title: 'Prüfung'},
-    {id: 2, category: 'red', hour: 18, duration: 1, title: 'Prüfung'}
+    {
+      id: 1,
+      category: 'red',
+      startTime: '10:15',
+      endTime: '11:00',
+      hour: 10,
+      duration: 1,
+      title: 'Prüfung'
+    },
+    {
+      id: 2,
+      category: 'red',
+      startTime: '18:30',
+      endTime: '19:15',
+      hour: 18,
+      duration: 1,
+      title: 'Prüfung'
+    }
   ],
 
   '2025-11-12': [
-    {id: 1, category: 'cyan', hour: 8, duration: 1, title: 'Fahrstunde'},
-    {id: 2, category: 'cyan', hour: 10, duration: 1, title: 'Fahrstunde'},
-    {id: 3, category: 'cyan', hour: 12, duration: 1, title: 'Fahrstunde'},
-    {id: 4, category: 'purple', hour: 16, duration: 1, title: 'Gespräch'}
+    {
+      id: 1,
+      category: 'cyan',
+      startTime: '08:00',
+      endTime: '09:00',
+      hour: 8,
+      duration: 1,
+      title: 'Fahrstunde'
+    },
+    {
+      id: 2,
+      category: 'cyan',
+      startTime: '10:15',
+      endTime: '11:00',
+      hour: 10,
+      duration: 1,
+      title: 'Fahrstunde'
+    },
+    {
+      id: 3,
+      category: 'cyan',
+      startTime: '12:45',
+      endTime: '13:30',
+      hour: 12,
+      duration: 1,
+      title: 'Fahrstunde'
+    },
+    {
+      id: 4,
+      category: 'purple',
+      startTime: '16:00',
+      endTime: '17:00',
+      hour: 16,
+      duration: 1,
+      title: 'Gespräch'
+    }
   ]
 };
 

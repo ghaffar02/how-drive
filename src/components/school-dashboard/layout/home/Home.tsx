@@ -58,17 +58,48 @@ export default function Home({setActiveKey}: Props) {
   const sampleAppointments = [
     {
       id: 1,
-      title: 'Fahrstunden',
-      hour: 9,
+      category: 'purple',
+      startTime: '06:00',
+      endTime: '07:00',
+      hour: 6,
       duration: 1,
-      category: 'cyan' // '#0891B2'
+      title: 'Gespräch'
     },
     {
       id: 2,
-      title: 'Theorieprüfung',
+      category: 'purple',
+      startTime: '11:00',
+      endTime: '12:00',
       hour: 11,
       duration: 1,
-      category: 'red' // '#DC2626'
+      title: 'Gespräch'
+    },
+    {
+      id: 3,
+      category: 'purple',
+      startTime: '14:00',
+      endTime: '15:00',
+      hour: 14,
+      duration: 1,
+      title: 'Gespräch'
+    },
+    {
+      id: 4,
+      category: 'purple',
+      startTime: '17:00',
+      endTime: '18:00',
+      hour: 17,
+      duration: 1,
+      title: 'Gespräch'
+    },
+    {
+      id: 5,
+      category: 'blue',
+      startTime: '09:00',
+      endTime: '10:00',
+      hour: 9,
+      duration: 1,
+      title: 'Theoriestunde'
     }
   ];
 
