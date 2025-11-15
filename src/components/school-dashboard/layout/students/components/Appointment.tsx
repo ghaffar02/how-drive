@@ -60,13 +60,6 @@ export default function Appointment() {
       name: 'Besprechung',
       date: '17.11.2025',
       time: '12:30 - 13:00'
-    },
-    {
-      id: 5,
-      barColor: '#0891b2',
-      name: 'Besprechung',
-      date: '17.10.2025',
-      time: '12:30 - 13:00'
     }
   ];
   const show = true;
@@ -173,7 +166,7 @@ export default function Appointment() {
                   right: 0,
                   mb: '8px',
                   width: {xs: '310px'},
-                  overflow: 'visible',
+                  overflow: 'auto',
                   border: '1px solid rgb(255, 255, 255)',
                   backgroundColor: '#f0f0fa99',
                   backdropFilter: 'blur(8px)',
@@ -184,7 +177,13 @@ export default function Appointment() {
             0px 1px 1px 0px rgba(0, 0, 0, 0.25)
           `,
                   borderRadius: '12px',
-                  transformOrigin: 'top right'
+                  transformOrigin: 'top right',
+                  height: '80vh',
+                  scrollbarWidth: 'none',
+                  msOverflowStyle: 'none',
+                  '&::-webkit-scrollbar': {
+                    display: 'none'
+                  }
                 }}
               >
                 <AppointmentsDropDown />
