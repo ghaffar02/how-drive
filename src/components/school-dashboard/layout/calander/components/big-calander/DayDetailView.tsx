@@ -56,13 +56,24 @@ export function DayDetailView({
     }
   ];
 
-  // translateY based on start minute
-  const getTranslateForStartTime = (time: string) => {
-    const minuteString = time.slice(-2);
+  // translateY based on start minute (with special rule)
+  const getTranslateForStartTime = (start: string, end: string) => {
+    const minute = start.slice(-2);
+    const endMinute = end.slice(-2);
 
-    if (minuteString === '15') return 'translateY(14px)';
-    if (minuteString === '30') return 'translateY(28px)';
-    if (minuteString === '45') return 'translateY(42px)';
+    // SPECIAL CASE:
+    // If event is XX:45 → (nextHour):00 → stay inside the same row
+    if (minute === '45' && endMinute === '00') {
+      return 'translateY(0px)';
+    } else if (minute === '30' && endMinute === '00') {
+      return 'translateY(0px)';
+    } else if (minute === '15' && endMinute === '00') {
+      return 'translateY(0px)';
+    }
+
+    if (minute === '15') return 'translateY(14px)';
+    if (minute === '30') return 'translateY(28px)';
+    if (minute === '45') return 'translateY(42px)';
 
     return 'translateY(0px)';
   };
@@ -77,9 +88,9 @@ export function DayDetailView({
 
     const duration = totalEnd - totalStart;
 
-    if (duration === 15) return '24px';
-    if (duration === 30) return '24px';
-    if (duration === 45) return '36px';
+    if (duration === 15) return '48px';
+    if (duration === 30) return '48px';
+    if (duration === 45) return '48px';
     if (duration === 60) return '48px';
     if (duration === 75) return '60px';
     if (duration === 90) return '71px';
@@ -166,7 +177,6 @@ export function DayDetailView({
           maxWidth: '930px'
         }}
       >
-        {/* Header row empty space */}
         <Box />
 
         {categories.map((cat) => (
@@ -188,7 +198,7 @@ export function DayDetailView({
           </Box>
         ))}
 
-        {/* Hours */}
+        {/* HOURS */}
         {Array.from({length: totalRows}, (_, i) => {
           const hour = startHour + i;
 
@@ -212,7 +222,6 @@ export function DayDetailView({
                   (a) => a.hour === hour && a.category === cat.key
                 );
 
-                // group events by minute
                 const grouped = groupByMinute(cellEvents);
 
                 return (
@@ -235,7 +244,10 @@ export function DayDetailView({
                           left: 0,
                           right: 0,
                           top: 0,
-                          transform: getTranslateForStartTime(`00:${minute}`),
+                          transform: getTranslateForStartTime(
+                            eventsInGroup[0].startTime,
+                            eventsInGroup[0].endTime
+                          ),
                           display: 'flex',
                           gap: '4px',
                           zIndex: 200
@@ -252,7 +264,6 @@ export function DayDetailView({
                               padding: '2px 8px',
                               fontFamily: '"Inter", sans-serif  !important',
                               width: '100%',
-                              // minWidth: '100px',
                               height: getHeightForDuration(
                                 e.startTime,
                                 e.endTime
@@ -273,31 +284,13 @@ export function DayDetailView({
                                 justifyContent: 'space-between'
                               }}
                             >
-                              <span
-                                style={{
-                                  fontWeight: 400,
-                                  textWrap: 'nowrap'
-                                }}
-                              >
-                                {e.title}
-                              </span>
-                              <span
-                                style={{
-                                  fontWeight: 400,
-                                  float: 'right',
-                                  textWrap: 'nowrap'
-                                }}
-                              >
-                                (B17)
-                              </span>
+                              <span style={{fontWeight: 400}}>{e.title}</span>
+                              <span style={{fontWeight: 400}}>(B17)</span>
                             </Box>
+
                             <br />
-                            <span
-                              style={{
-                                fontWeight: 300,
-                                textWrap: 'nowrap'
-                              }}
-                            >
+
+                            <span style={{fontWeight: 300}}>
                               {e.startTime} - {e.endTime}
                             </span>
                           </Box>
