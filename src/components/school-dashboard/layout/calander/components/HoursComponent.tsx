@@ -148,7 +148,7 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                // marginLeft: index > 0 ? '5px' : '0px',
+                marginLeft: index > 0 ? '5px' : '0px',
                 gap: '2px',
                 maxWidth: {md: '155px', lg: '180px'}
               }}
