@@ -119,7 +119,7 @@ export default function SchedulerSidebar() {
                   fontSize: {xs: '12px', md: '13px', lg: '14px'},
                   color: activeIndex === i ? '#ffff' : '#4A5568',
                   fontWeight: activeIndex === i ? '400' : '400',
-                  transition: 'all 0.3s ease-in-out',
+                  transition: 'all 0.4s ease-in-out',
                   fontFamily: '"Inter", sans-serif !important'
                 }}
               >

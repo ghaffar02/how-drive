@@ -111,7 +111,11 @@ export default function DriverDetail() {
               // height: {xs: '640px', md: '650px', lg: '866px'},
               '& > :first-child': {
                 height: {xs: '640px', md: '650px', lg: '866px'}
-              }
+              },
+              padding: {xs: '8px', md: '24px'},
+              backgroundColor: 'rgba(248, 250, 252, 0.6)',
+              borderRadius: '24px',
+              border: '2px solid #fff'
             }}
           >
             <BigCalendar />

@@ -11,11 +11,9 @@ export default function Process() {
     <Box
       sx={{
         width: '100%',
-        // background: 'red',
-        // height: {xs: '100%', md: '100%'},
         height: {xs: 'auto', md: '100%'},
         display: 'flex',
-        gap: '16px',
+        gap: '16px'
       }}
     >
       <DetailSide />

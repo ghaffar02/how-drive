@@ -1,8 +1,6 @@
 'use client';
 import React from 'react';
-import Image from 'next/image';
 import {Box, Typography} from '@mui/material';
-import cross from '@/assets/svgs/dashboard-student/crossicon.svg';
 
 interface Appointment {
   id: number;
@@ -149,32 +147,6 @@ export function DayDetailView({
             year: 'numeric'
           })}
         </Typography>
-
-        <Box
-          sx={{
-            padding: '6px',
-            borderRadius: '50%',
-            // marginRight: '6px',
-            '&:hover': {backgroundColor: '#CED5F5'},
-            transition: 'all 0.22s ease-in-out',
-            height: '37px',
-            width: '37px'
-          }}
-        >
-          <Image
-            src={cross}
-            alt="close"
-            // width={25}
-            // height={25}
-            onClick={onClose}
-            style={{
-              height: '25px',
-              width: '25px',
-              cursor: 'pointer',
-              transform: 'rotate(45deg)'
-            }}
-          />
-        </Box>
       </Box>
 
       {/* GRID */}

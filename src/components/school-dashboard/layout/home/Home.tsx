@@ -12,7 +12,7 @@ import ActiveIcon from '@/assets/svgs/dashboard-student/active.svg';
 import InactiveIcon from '@/assets/svgs/dashboard-student/inactive.svg';
 import Messages from './components/Message';
 import Drivers from './components/Drivers';
-import {DayDetailView} from '../calander/components/big-calander/DayDetailView';
+import {DayDetailView} from './components/DayDetailView';
 
 type Props = {
   setActiveKey: React.Dispatch<React.SetStateAction<string>>;

@@ -331,7 +331,7 @@ function Card({name, barColor, date, time}: CardProps) {
               right: 0,
               mb: '8px',
               width: {xs: '300px'},
-              height: '80vh',
+              height: '600px',
               overflow: 'auto',
               border: '1px solid rgb(255, 255, 255)',
               backgroundColor: '#f0f0fa99',
