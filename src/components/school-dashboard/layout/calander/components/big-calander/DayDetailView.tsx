@@ -1,8 +1,10 @@
 'use client';
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import Image from 'next/image';
 import {Box, Typography} from '@mui/material';
+import {AnimatePresence, motion} from 'framer-motion';
 import cross from '@/assets/svgs/dashboard-student/crossicon.svg';
+import EditappointmentDropDown from '../../../students/components/EditappointmentDropDown';
 
 interface Appointment {
   id: number;
@@ -55,6 +57,44 @@ export function DayDetailView({
       backgroundColor: 'rgb(250, 222, 222)'
     }
   ];
+
+  // 🔹 popup state
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const iconRef = useRef<HTMLElement | null>(null);
+  const [barColor, setBarColor] = useState<string>('#9333ea');
+  const [selectedEvent, setSelectedEvent] = useState<Appointment | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [popupPosition, setPopupPosition] = useState<{
+    top: number;
+    left: number;
+  }>({
+    top: 0,
+    left: 0
+  });
+
+  // 🔹 click outside handling (same pattern as Appointment component)
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
+
+      setOpenDropdown(false);
+    }
+
+    if (openDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [openDropdown]);
 
   // translateY based on start minute (with special rule)
   const getTranslateForStartTime = (start: string, end: string) => {
@@ -114,13 +154,65 @@ export function DayDetailView({
     );
   };
 
+  // 🔹 when an event box is clicked
+  const handleEventClick = (
+    event: React.MouseEvent<HTMLElement>,
+    appt: Appointment,
+    color: string
+  ) => {
+    iconRef.current = event.currentTarget; // used in click-outside
+    setSelectedEvent(appt);
+    setBarColor(color);
+
+    const container = containerRef.current;
+    const targetElement = event.currentTarget as HTMLElement;
+
+    if (container && targetElement) {
+      const containerRect = container.getBoundingClientRect();
+      const targetRect = targetElement.getBoundingClientRect();
+
+      const gap = 8;
+      const popupWidth = 300;
+      const popupHeight = 600;
+
+      let top = targetRect.bottom - containerRect.top + gap;
+      let left = targetRect.right - containerRect.left + gap;
+
+      if (top + popupHeight > containerRect.height) {
+        top = targetRect.top - containerRect.top - popupHeight - gap;
+        if (top < 0) {
+          top = containerRect.height - popupHeight - gap;
+          if (top < 0) {
+            top = 0;
+          }
+        }
+      }
+
+      if (left + popupWidth > containerRect.width) {
+        left = targetRect.left - containerRect.left - popupWidth - gap;
+        if (left < 0) {
+          left = containerRect.width - popupWidth - gap;
+          if (left < 0) {
+            left = 0;
+          }
+        }
+      }
+
+      setPopupPosition({top, left});
+    }
+
+    setOpenDropdown(true);
+  };
+
   return (
     <Box
+      ref={containerRef}
       sx={{
         padding: 2,
         minHeight: '100%',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        position: 'relative' // for absolute popup
       }}
     >
       {/* Header */}
@@ -154,7 +246,6 @@ export function DayDetailView({
           sx={{
             padding: '6px',
             borderRadius: '50%',
-            // marginRight: '6px',
             '&:hover': {backgroundColor: '#CED5F5'},
             transition: 'all 0.22s ease-in-out',
             height: '37px',
@@ -164,8 +255,6 @@ export function DayDetailView({
           <Image
             src={cross}
             alt="close"
-            // width={25}
-            // height={25}
             onClick={onClose}
             style={{
               height: '25px',
@@ -187,35 +276,22 @@ export function DayDetailView({
           gridTemplateColumns: `26px repeat(4, 234px)`,
           gap: '8px',
           paddingBottom: '12px',
-          // overflow: 'scroll',
           maxWidth: '930px',
-          // scrollbarWidth: '10px',
-          // msOverflowStyle: 'none',
-          // '&::-webkit-scrollbar': {
-          //   // display: 'none',
-          //   scrollbarWidth: '1px'
-          // }
           overflow: 'auto',
 
-          /* Firefox */
           scrollbarWidth: 'thin',
           scrollbarColor: 'rgba(0,0,0,0.25) transparent',
-
-          /* Chrome / Edge / Safari — vertical + horizontal */
           '&::-webkit-scrollbar': {
             width: '5px',
             height: '5px'
           },
-
           '&::-webkit-scrollbar-track': {
             background: 'rgba(255,255,255,0.1)'
           },
-
           '&::-webkit-scrollbar-thumb': {
             background: 'rgba(0,0,0,0.25)',
             borderRadius: '10px'
           },
-
           '&::-webkit-scrollbar-button': {
             display: 'none',
             width: 0,
@@ -292,8 +368,6 @@ export function DayDetailView({
                       overflow: 'visible',
                       border:
                         cellEvents.length === 0 ? '2px solid #fff' : 'none'
-                      // border:
-                      // border: '1px solid red'
                     }}
                   >
                     {Object.entries(grouped).map(([minute, eventsInGroup]) => (
@@ -316,6 +390,13 @@ export function DayDetailView({
                         {eventsInGroup.map((e) => (
                           <Box
                             key={e.id}
+                            onClick={(ev) =>
+                              handleEventClick(
+                                ev,
+                                e,
+                                cat.borderColor ?? cat.borderColor
+                              )
+                            }
                             sx={{
                               background: cat.backgroundColor,
                               border: `1px solid ${cat.borderColor}`,
@@ -333,7 +414,8 @@ export function DayDetailView({
                                 md: '13px',
                                 lg: '14px'
                               },
-                              overflow: 'hidden'
+                              overflow: 'hidden',
+                              cursor: 'pointer'
                             }}
                           >
                             <Box
@@ -378,6 +460,91 @@ export function DayDetailView({
           );
         })}
       </Box>
+
+      {/* 🔻 SAME POPUP YOU SHARED 🔻 */}
+      <AnimatePresence>
+        {openDropdown && (
+          <Box
+            ref={dropdownRef}
+            component={motion.div}
+            onClick={(e) => e.stopPropagation()}
+            initial={{
+              opacity: 0,
+              scale: 0.5,
+              y: -20,
+              x: 20,
+              originX: 1,
+              originY: 0
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+              x: 0,
+              originX: 1,
+              originY: 0
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.5,
+              y: -20,
+              x: 20,
+              originX: 1,
+              originY: 0
+            }}
+            transition={{
+              duration: 0.5,
+              type: 'spring',
+              stiffness: 300,
+              damping: 25
+            }}
+            sx={{
+              position: 'absolute',
+              zIndex: 99999999,
+              top: popupPosition.top,
+              left: popupPosition.left,
+              mb: '8px',
+              width: {xs: '300px'},
+              height: '600px',
+              overflow: 'auto',
+              border: '1px solid rgb(255, 255, 255)',
+              backgroundColor: '#f0f0fa99',
+              backdropFilter: 'blur(8px)',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              '&::-webkit-scrollbar': {
+                display: 'none'
+              },
+              boxShadow: `
+                0px 0px 0px 1px rgb(255, 255, 255),
+                0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+                0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+              `,
+              borderRadius: '12px',
+              transformOrigin: 'top right'
+            }}
+          >
+            <EditappointmentDropDown
+              title="Edit appointment"
+              driverLabel="Driver"
+              dayLabel="Day"
+              beginLabel="Begin"
+              endLabel="End"
+              participantsLabel="Participants"
+              participantName="Daniel Mustermann 1"
+              cancelHeading="Cancel appointment"
+              cancelDescription="To cancel the appointment remove all participants from the list and click Save."
+              cancelBtnLabel="Cancel"
+              saveBtnLabel="Save"
+              dropdownOptions={[
+                {value: 'malfunction', label: 'Malfunction'},
+                {value: 'question', label: 'Question'}
+              ]}
+              barColor={barColor}
+            />
+          </Box>
+        )}
+      </AnimatePresence>
     </Box>
   );
 }
