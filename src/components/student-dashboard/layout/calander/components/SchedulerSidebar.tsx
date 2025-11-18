@@ -1,10 +1,25 @@
 'use client';
 
-import EditappointmentDropDown from '@/components/school-dashboard/layout/students/components/EditappointmentDropDown';
+// import EditappointmentDropDown from '@/components/school-dashboard/layout/students/components/EditappointmentDropDown';
 import localFont from '@/utils/themes';
-import {Box, Typography} from '@mui/material';
+import {Box, Typography, MenuItem, TextField} from '@mui/material';
 import {motion, AnimatePresence} from 'framer-motion';
 import React, {useEffect, useRef, useState} from 'react';
+
+// popuo imports
+import tick from '@/assets/svgs/dashboard-student/tick.svg';
+import cross from '@/assets/svgs/dashboard-student/btncross.svg';
+import CustomButton from '@/components/student-dashboard/CustomButton';
+import CustomTextField from '@/components/school-dashboard/InputField';
+import Image from 'next/image';
+import crossCircle from '@/assets/svgs/dashboard-student/crosscircle.svg';
+import {useTranslations} from 'next-intl';
+// import TimePickerValue from '../../profile-setting/components/TimePicker';
+// import MiniFramerCalendar from '../../calander/components/MiniFramerCalendar';
+import arrow from '@/assets/svgs/dashboard-student/arrowsetting.svg';
+import whiteArrow from '@/assets/svgs/whiteArrow.svg';
+import TimePickerValue from '@/components/school-dashboard/layout/profile-setting/components/TimePicker';
+import MiniFramerCalendar from '@/components/school-dashboard/layout/calander/components/MiniFramerCalendar';
 
 export default function SchedulerSidebar() {
   const appointments = [
@@ -190,7 +205,6 @@ function AppointmentCard({color, title, time, date}: AppointmentCardProps) {
               right: 0,
               mb: '8px',
               width: {xs: '300px'},
-              height: '500px',
               overflow: 'auto',
               border: '1px solid rgb(255, 255, 255)',
               backgroundColor: '#f0f0fa99',
@@ -207,7 +221,7 @@ function AppointmentCard({color, title, time, date}: AppointmentCardProps) {
               transformOrigin: 'top right'
             }}
           >
-            <EditappointmentDropDown
+            <CancelAppointmentDropDown
               title="Edit appointment"
               driverLabel="Driver"
               dayLabel="Day"
@@ -282,6 +296,187 @@ function AppointmentCard({color, title, time, date}: AppointmentCardProps) {
         >
           {date}
         </Typography>
+      </Box>
+    </Box>
+  );
+}
+
+interface DropdownOption {
+  value: string;
+  label: string;
+}
+
+interface CancelAppointmentDropDownProps {
+  title?: string;
+  driverLabel?: string;
+  dayLabel?: string;
+  beginLabel?: string;
+  endLabel?: string;
+  participantsLabel?: string;
+  participantName?: string;
+  cancelHeading?: string;
+  cancelDescription?: string;
+  cancelBtnLabel?: string;
+  saveBtnLabel?: string;
+  dropdownOptions?: DropdownOption[];
+  onClose?: () => void;
+  barColor?: string;
+}
+
+export function CancelAppointmentDropDown({
+  participantsLabel = 'Participants',
+  participantName = 'Daniel Mustermann 1',
+  cancelHeading = 'Cancel appointment',
+  cancelDescription = 'To cancel the appointment, remove all participants from the list and click Save.',
+  cancelBtnLabel = 'Cancel',
+  saveBtnLabel = 'Save',
+  onClose,
+  barColor
+}: CancelAppointmentDropDownProps) {
+  const t = useTranslations('SchoolDashboard.Calendar.popup');
+  const tabs = t.raw('tabs');
+  const tabOptions = t.raw('tabsOptions.options');
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [tabsIndex, setTabsIndex] = useState(0);
+  const [updateTime, setUpdateTime] = useState<number | 0>(0);
+
+  useEffect(() => {
+    if (barColor === '#9333ea') setTabsIndex(0);
+    if (barColor === '#2563eb') setTabsIndex(1);
+    if (barColor === '#0891b2') setTabsIndex(2);
+    if (barColor === '#dc2626') setTabsIndex(3);
+  }, [barColor]);
+
+  const handleContainerClick = (event: React.MouseEvent) => {
+    event.stopPropagation();
+  };
+
+  return (
+    <Box
+      sx={{
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: '16px',
+        gap: '24px'
+      }}
+    >
+      {/* Participants */}
+      <Box sx={{width: '100%'}}>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontWeight: 400,
+            color: '#000',
+            mb: '4px',
+            fontFamily: '"Inter", sans-serif !important'
+          }}
+        >
+          {participantsLabel}
+        </Typography>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center'
+          }}
+        >
+          <Typography
+            sx={{
+              ...localFont.inter14,
+              fontWeight: 300,
+              fontFamily: '"Inter", sans-serif !important'
+            }}
+          >
+            {participantName}
+          </Typography>
+          <Box
+            sx={{
+              height: '28px',
+              width: '28px',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              '&:hover': {
+                background: 'rgba(48,88,255,0.1)'
+              }
+            }}
+          >
+            <Image
+              src={crossCircle}
+              alt="addIcon"
+              style={{height: '20px', width: '20px'}}
+            />
+          </Box>
+        </Box>
+      </Box>
+
+      {/* Cancel Info */}
+      <Box sx={{width: '100%'}}>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontWeight: 400,
+            color: '#000',
+            mb: '4px',
+            fontFamily: '"Inter", sans-serif !important'
+          }}
+        >
+          {cancelHeading}
+        </Typography>
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontWeight: 300,
+            fontFamily: '"Inter", sans-serif !important'
+          }}
+        >
+          {cancelDescription}
+        </Typography>
+      </Box>
+
+      {/* Buttons */}
+      <Box
+        sx={{
+          width: {xs: '100%'},
+          p: '8px 0px',
+          display: 'flex',
+          gap: '16px',
+          alignItems: 'center',
+          justifyContent: 'center'
+        }}
+      >
+        <CustomButton
+          onClick={onClose}
+          label={cancelBtnLabel}
+          bgColor="rgb(220, 38, 38)"
+          hoverColor="#991919"
+          hoverTextcolor="#fff"
+          imgSrc={cross}
+          sx={{
+            gap: '7px',
+            maxWidth: '122px',
+            width: '100%',
+            justifyContent: 'start'
+          }}
+        />
+        <CustomButton
+          label={saveBtnLabel}
+          bgColor="#0D9488"
+          hoverColor="#0C5C72"
+          imgSrc={tick}
+          sx={{
+            gap: '8px',
+            maxWidth: '122px',
+            width: '100%',
+            justifyContent: 'start'
+          }}
+          onClick={onClose}
+        />
       </Box>
     </Box>
   );
