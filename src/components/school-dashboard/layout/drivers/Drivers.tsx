@@ -3,7 +3,10 @@ import React from 'react';
 import DetailSide from './sections/DetailSide';
 import DriverDetail from './sections/DriverDetail';
 
-export default function Drivers() {
+type DriversProps = {
+  activeKey?: string;
+};
+export default function Drivers({activeKey}: DriversProps) {
   return (
     <Box
       sx={{
@@ -14,7 +17,7 @@ export default function Drivers() {
       }}
     >
       <DetailSide />
-      <DriverDetail />
+      <DriverDetail activeKey={activeKey} />
     </Box>
   );
 }

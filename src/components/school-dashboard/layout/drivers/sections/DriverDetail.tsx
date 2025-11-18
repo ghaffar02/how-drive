@@ -10,7 +10,10 @@ import back from '@/assets/svgs/dashboard-student/arrowsetting.svg';
 import Image from 'next/image';
 import localFont from '@/utils/themes';
 
-export default function DriverDetail() {
+type DriverDetailProps = {
+  activeKey?: string;
+};
+export default function DriverDetail({activeKey}: DriverDetailProps) {
   const t = useTranslations('SchoolDashboard.Drivers.DriverDetail');
   const [openTrainers, setOpenTrainers] = useState(true);
 
@@ -118,7 +121,7 @@ export default function DriverDetail() {
               border: '2px solid #fff'
             }}
           >
-            <BigCalendar />
+            <BigCalendar activeKey={activeKey} />
           </Box>
         </Box>
       </Box>
