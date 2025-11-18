@@ -178,7 +178,7 @@ export default function Appointment() {
           `,
                   borderRadius: '12px',
                   transformOrigin: 'top right',
-                  height: '80vh',
+                  height: '500px',
                   scrollbarWidth: 'none',
                   msOverflowStyle: 'none',
                   '&::-webkit-scrollbar': {
