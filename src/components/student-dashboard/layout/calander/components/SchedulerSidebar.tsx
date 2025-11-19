@@ -223,7 +223,8 @@ function AppointmentCard({color, title, time, date}: AppointmentCardProps) {
                 0px 1px 1px 0px rgba(0, 0, 0, 0.25)
               `,
               borderRadius: '12px',
-              transformOrigin: 'top right'
+              transformOrigin: 'top right',
+              display: color === '#DC2626' ? 'none' : ''
             }}
           >
             <CancelAppointmentDropDown
