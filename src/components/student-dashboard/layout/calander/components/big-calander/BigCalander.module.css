@@ -4,10 +4,11 @@
   padding: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(12px);
-  height: calc(100% - 60px);
+  height: calc(100%);
   display: flex;
   flex-direction: column;
   min-height: 0;
+  font-family: 'Inter', sans-serif !important;
 }
 
 .calendarContainer {
@@ -53,10 +54,6 @@
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.6);
   transition: background 0.3s ease;
-}
-
-.calendarWrapper :global(.rbc-day-bg:hover) {
-  background: rgba(255, 255, 255, 0.8);
 }
 
 /* Base calendar overrides */
@@ -161,7 +158,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 12px;
+  margin-top: 6px;
+  margin-bottom: 16px;
 }
 
 .calendarWrapper :global(.rbc-toolbar-label) {
@@ -194,19 +192,23 @@
 @media (min-width: 600px) and (max-width: 900px) {
   .calendarWrapper :global(.rbc-button-link) {
     font-size: 15px;
+    font-family: 'Inter', sans-serif;
   }
 
   .calendarWrapper :global(.rbc-header) {
     font-size: 17px;
+    font-family: 'Inter', sans-serif;
   }
 }
 
 @media (max-width: 600px) {
   .calendarWrapper :global(.rbc-button-link) {
     font-size: 14px;
+    font-family: 'Inter', sans-serif;
   }
 
   .calendarWrapper :global(.rbc-header) {
     font-size: 16px;
+    font-family: 'Inter', sans-serif;
   }
 }

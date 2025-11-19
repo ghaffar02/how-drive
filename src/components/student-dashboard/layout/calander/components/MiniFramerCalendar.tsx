@@ -4,29 +4,26 @@ import * as React from 'react';
 import {DayPicker} from 'react-day-picker';
 import {enGB} from 'date-fns/locale';
 import 'react-day-picker/style.css';
-import styles from './mini-calendar.module.css';
+import styles from './mini-framer-calendar.module.css';
 
-export default function MiniFramerCalendar() {
-  const [selected, setSelected] = React.useState<Date | undefined>(
-    new Date(2025, 9, 16)
-  ); // Oct 16, 2025
+type Prop = {
+  datesArray?: string[];
+};
+export default function MiniFramerCalendar({datesArray}: Prop) {
+  const [selected, setSelected] = React.useState<Date | undefined>();
 
   // Grey “badge” days like in your screenshot
-  const eventDays = [
-    // new Date(2025, 9, 13),
-    // new Date(2025, 9, 14),
-    // new Date(2025, 9, 16),
-    // new Date(2025, 9, 17),
-    new Date(2025, 9, 20)
-    // new Date(2025, 9, 21),
-    // new Date(2025, 9, 23),
-    // new Date(2025, 9, 24),
-    // new Date(2025, 9, 27),
-    // new Date(2025, 9, 28),
-    // new Date(2025, 9, 29),
-    // new Date(2025, 9, 30),
-    // new Date(2025, 9, 31)
-  ];
+  const eventDays: Date[] = datesArray?.map((date) => new Date(date)) ?? [];
+
+  const isAllowedDate = (date: Date) => {
+    if (!eventDays.length) return true;
+    return eventDays.some(
+      (d) =>
+        d.getFullYear() === date.getFullYear() &&
+        d.getMonth() === date.getMonth() &&
+        d.getDate() === date.getDate()
+    );
+  };
 
   return (
     <div className={styles.wrap}>
@@ -34,12 +31,17 @@ export default function MiniFramerCalendar() {
         locale={enGB}
         mode="single"
         selected={selected}
-        onSelect={setSelected}
+        onSelect={(date) => {
+          if (date && isAllowedDate(date)) {
+            setSelected(date);
+          }
+        }}
         showOutsideDays
         fixedWeeks
         className={styles.calendar}
         modifiers={{event: eventDays}}
         modifiersClassNames={{event: styles.event}}
+        disabled={eventDays.length ? (date) => !isAllowedDate(date) : undefined}
         components={
           {
             // simple ◀ ▶ arrows

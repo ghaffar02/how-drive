@@ -1,6 +1,6 @@
 'use client';
 import {Box, Popover, Typography} from '@mui/material';
-import MiniFramerCalendar from './MiniCalendar';
+import MiniFramerCalendar from './MiniFramerCalendar';
 import Image from 'next/image';
 import calander from '@/assets/svgs/dashboard-student/calander/calander.svg';
 import plus from '@/assets/svgs/dashboard-student/calander/plus.svg';
@@ -26,28 +26,23 @@ export default function EventsCalendar() {
       sx={{
         width: '100%',
         background: 'rgba(248,250,252,0.3)',
-        p: {xs: '8px', md: '24px'},
+        p: {xs: '8px', lg: '24px'},
         border: '1px solid #fff',
         boxShadow:
           'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
         backdropFilter: 'blur(15px)',
-        borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
-        maxWidth: {
-          md: 'calc( 100vw - 372px )',
-          lg: 'calc( 100vw - 445px )',
-          xl: '1002px'
-        }
+        borderRadius: {xs: '24px', md: '0px 24px 24px 0px'}
+        // height: '100%'
       }}
     >
       {/* ther header there  */}
       <Box
         sx={{
-          overflow: 'visible',
-          // overflowY: 'scroll',
+          overflowY: 'scroll',
           // height: '100%',
-          // overflow: 'hidden auto',
-          // msOverflowStyle: 'none',
-          // scrollbarWidth: 'none',
+          overflow: 'hidden auto',
+          msOverflowStyle: 'none',
+          scrollbarWidth: 'none',
           paddingBottom: '24px'
         }}
       >
@@ -89,10 +84,8 @@ export default function EventsCalendar() {
       </Box>
       {/* Anchored Modal */}
       <EventAddPopover anchorEl={anchorEl} open={open} onClose={handleClose} />
-      {/* the big calander there  */}
-      {/* <Box> */}
+
       <BigCalendar />
-      {/* </Box> */}
     </Box>
   );
 }

@@ -2,22 +2,20 @@
 import React, {useState} from 'react';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import {Box, MenuItem, Popover, TextField, Typography} from '@mui/material';
-// import MiniFramerCalendar from '../MiniFramerCalendar';
+import MiniFramerCalendar from '../MiniFramerCalendar';
 import localFont from '@/utils/themes';
 import Image from 'next/image';
 // import TimePickerValue from '../../../profile-setting/components/TimePicker';
 import CustomButton from '@/components/school-dashboard/CustomButton';
 import arrow from '@/assets/svgs/dashboard-student/arrowsetting.svg';
 import whiteArrow from '@/assets/svgs/whiteArrow.svg';
-// import CustomTextField from '@/components/school-dashboard/InputField';
-// import crossCircle from '@/assets/svgs/dashboard-student/crosscircle.svg';
-// import {motion} from 'framer-motion';
+import CustomTextField from '@/components/school-dashboard/InputField';
+import crossCircle from '@/assets/svgs/dashboard-student/crosscircle.svg';
+import {motion} from 'framer-motion';
 import {useTranslations} from 'next-intl';
-import MiniFramerCalendar from '@/components/school-dashboard/layout/calander/components/MiniFramerCalendar';
-// import TimePickerValue from '@/components/school-dashboard/layout/profile-setting/components/TimePicker';
+import TimePickerValue from '@/components/school-dashboard/layout/profile-setting/components/TimePicker';
 // 🔹 Subcomponent
 type EventAddPopoverProps = {
-  // type: 'student-dashboard' | 'school-dashboard';
   open: boolean;
   anchorEl: HTMLElement | null;
   onClose: () => void;
@@ -86,13 +84,13 @@ const timeArray = [
   }
 ];
 
-export default function EventAddPopoverFDb({
+export default function EventAddPopover({
   open,
   anchorEl,
   onClose
 }: EventAddPopoverProps) {
   // const [activeIndex, setActiveIndex] = React.useState(0);
-  const t = useTranslations('Dashboard.calendar.popup');
+  const t = useTranslations('SchoolDashboard.Calendar.popup');
   const tabs = t.raw('tabs');
   const tabOptions = t.raw('tabsOptions.options');
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -150,7 +148,6 @@ export default function EventAddPopoverFDb({
           gap: {xs: '4px'},
           alignItems: 'start',
           justifyContent: 'space-between'
-          // bgcolor: 'green'
         }}
       >
         <Typography
@@ -166,7 +163,7 @@ export default function EventAddPopoverFDb({
           {t('title')}
         </Typography>
 
-        {/* <Box sx={{width: '100%'}}>
+        <Box sx={{width: '100%'}}>
           <Typography
             sx={{
               ...localFont.inter14,
@@ -211,7 +208,7 @@ export default function EventAddPopoverFDb({
               <Image src={crossCircle} alt="cancel" height={20} width={20} />
             </Box>
           </Box>
-        </Box> */}
+        </Box>
 
         {/* Area for the tab */}
 
@@ -259,7 +256,7 @@ export default function EventAddPopoverFDb({
                 top: 4,
                 bottom: 4,
                 // left: 4,
-                width: `calc((100% - 8px ) / 3)`,
+                width: `calc((100% - 8px ) / 4)`,
                 borderRadius: '999px',
                 background: '#4611F5',
                 // boxShadow: '0px 2px 6px 0px #fe0909ff',
@@ -402,7 +399,7 @@ export default function EventAddPopoverFDb({
           <MiniFramerCalendar />
         )}
       </Box>
-      {/*
+
       {activeIndex < 3 && (
         <Box
           // component={motion.div}
@@ -413,9 +410,9 @@ export default function EventAddPopoverFDb({
           //   ease: 'easeOut',
           //   delay: 0.4
           // }}
-          // sx={{width: '100%', textAlign: 'center'}}
+          sx={{width: '100%', textAlign: 'center'}}
         >
-         <Typography
+          <Typography
             sx={{
               ...localFont.inter16,
               fontFamily: '"Inter", sans-serif !important',
@@ -433,9 +430,9 @@ export default function EventAddPopoverFDb({
             }}
           >
             {t('des1')}
-          </Typography> */}
-      {/* </Box>
-      )} */}
+          </Typography>
+        </Box>
+      )}
       {activeIndex < 3 && (
         <Box
           sx={{
@@ -512,8 +509,7 @@ export default function EventAddPopoverFDb({
           ))}
         </Box>
       )}
-
-      {/* <Box sx={{width: '100%'}}>
+      <Box sx={{width: '100%'}}>
         <Typography
           sx={{
             ...localFont.inter14,
@@ -549,9 +545,9 @@ export default function EventAddPopoverFDb({
             }}
           />
         </Box>
-      </Box> */}
+      </Box>
 
-      {/* {activeIndex === 3 && (
+      {activeIndex === 3 && (
         <Typography
           sx={{
             ...localFont.inter14,
@@ -561,7 +557,7 @@ export default function EventAddPopoverFDb({
         >
           {t('des2')}
         </Typography>
-      )} */}
+      )}
 
       <Box
         sx={{

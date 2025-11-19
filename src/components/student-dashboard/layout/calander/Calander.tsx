@@ -2,8 +2,10 @@
 import {Box} from '@mui/material';
 import React from 'react';
 import SchedulerSidebar from './components/SchedulerSidebar';
+import BigCalendar from './components/big-calander/BigCalander';
+// import BigCalendar from './components dfdf/big-calander/BigCalander';
 // import BigCalendar from './components/big-calander/BigCalander';
-import BigCalendar from '@/components/school-dashboard/layout/calander/components/big-calander/BigCalander';
+// import BigCalendar from '@/components/school-dashboard/layout/calander/components/big-calander/BigCalander';
 
 export default function Calander() {
   return (

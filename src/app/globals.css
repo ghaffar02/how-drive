@@ -311,6 +311,12 @@ a {
   margin-bottom: 28px !important;
 }
 
+.BigCalander_calendarWrapper__RyWZP .rbc-toolbar {
+  justify-content: flex-end !important;
+  margin-top: 0px !important;
+  margin-bottom: 28px !important;
+}
+
 .rbc-toolbar-label {
   padding: 0 6px 0 0 !important;
   font-family: 'Inter', sans-serif !important;
@@ -330,6 +336,9 @@ a {
   width: unset !important;
 }
 .BigCalander_calendarWrapper__G2_Zu .rbc-button-link {
+  font-weight: 400 !important;
+}
+.BigCalander_calendarWrapper__RyWZP .rbc-button-link {
   font-weight: 400 !important;
 }
 .css-v2k0zy {
@@ -358,4 +367,11 @@ a {
 }
 .fontFamilyInter {
   font-family: 'Inter', sans-serif !important;
+}
+
+.BigCalander_calendarWrapper__RyWZP {
+  background: unset !important;
+  box-shadow: unset !important;
+  padding: 0 !important;
+  backdrop-filter: unset !important;
 }
