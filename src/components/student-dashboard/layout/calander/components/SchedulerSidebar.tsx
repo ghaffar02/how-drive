@@ -20,6 +20,8 @@ import arrow from '@/assets/svgs/dashboard-student/arrowsetting.svg';
 import whiteArrow from '@/assets/svgs/whiteArrow.svg';
 import TimePickerValue from '@/components/school-dashboard/layout/profile-setting/components/TimePicker';
 import MiniFramerCalendar from '@/components/school-dashboard/layout/calander/components/MiniFramerCalendar';
+// trnaslatopn code
+// import {useTranslations} from 'next-intl';
 
 export default function SchedulerSidebar() {
   const appointments = [
@@ -374,7 +376,7 @@ export function CancelAppointmentDropDown({
             fontFamily: '"Inter", sans-serif !important'
           }}
         >
-          {participantsLabel}
+          {t('participants')}
         </Typography>
         <Box
           sx={{
@@ -426,7 +428,7 @@ export function CancelAppointmentDropDown({
             fontFamily: '"Inter", sans-serif !important'
           }}
         >
-          {cancelHeading}
+          {t('cancelAppointment')}
         </Typography>
         <Typography
           sx={{
@@ -435,7 +437,7 @@ export function CancelAppointmentDropDown({
             fontFamily: '"Inter", sans-serif !important'
           }}
         >
-          {cancelDescription}
+          {t('cancelAppointmentDescribtion')}
         </Typography>
       </Box>
 
@@ -452,7 +454,7 @@ export function CancelAppointmentDropDown({
       >
         <CustomButton
           onClick={onClose}
-          label={cancelBtnLabel}
+          label={t('cancel')}
           bgColor="rgb(220, 38, 38)"
           hoverColor="#991919"
           hoverTextcolor="#fff"
@@ -465,7 +467,7 @@ export function CancelAppointmentDropDown({
           }}
         />
         <CustomButton
-          label={saveBtnLabel}
+          label={t('save')}
           bgColor="#0D9488"
           hoverColor="#0C5C72"
           imgSrc={tick}

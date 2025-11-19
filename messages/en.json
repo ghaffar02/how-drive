@@ -2902,6 +2902,7 @@
         "btn": "Book",
         "participants": "participants",
         "cancelAppointment": "Cancel appointment",
+        "cancelAppointmentDescribtion": "To cancel the appointment remove all participants from the list and click Save.",
         "cancel": "Cancel",
         "save": "Book"
       }
