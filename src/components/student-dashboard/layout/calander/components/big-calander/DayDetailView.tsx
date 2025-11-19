@@ -393,13 +393,10 @@ export function DayDetailView({
                         {eventsInGroup.map((e) => (
                           <Box
                             key={e.id}
-                            onClick={(ev) =>
-                              handleEventClick(
-                                ev,
-                                e,
-                                cat.borderColor ?? cat.borderColor
-                              )
-                            }
+                            onClick={(ev) => {
+                              if (cat.label === 'Prüfungen') return;
+                              handleEventClick(ev, e, cat.borderColor);
+                            }}
                             sx={{
                               background: cat.backgroundColor,
                               border: `1px solid ${cat.borderColor}`,
