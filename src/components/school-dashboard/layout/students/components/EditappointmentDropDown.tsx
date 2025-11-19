@@ -156,7 +156,7 @@ export default function EditappointmentDropDown({
           textAlign: 'center'
         }}
       >
-        {title}
+        {t('header')}
       </Typography>
 
       {/* Driver Dropdown */}
@@ -164,19 +164,16 @@ export default function EditappointmentDropDown({
         select
         fullWidth
         variant="outlined"
-        value={selectedCategory} // e.g. from useState
+        value={selectedCategory}
         onChange={(e) => setSelectedCategory(e.target.value)}
         SelectProps={{
           displayEmpty: true
         }}
-        // error={!!errors.category}
-        // helperText={errors.category?.message}
         sx={{
           background: '#ffffff',
           height: 40,
           maxWidth: {lg: '402px'},
           width: '100%',
-
           borderRadius: '8px',
           '& .MuiInputBase-root': {
             height: '100%',
@@ -214,15 +211,6 @@ export default function EditappointmentDropDown({
       </TextField>
 
       <Box
-        // component={motion.div}
-        // initial={{y: 50, opacity: 0}}
-        // animate={{y: 0, opacity: 1}}
-        // transition={{
-        //   duration: 0.2,
-        //   ease: 'easeOut',
-        //   delay: 0.3
-        // }}
-        // viewport={{once: true}}
         sx={{
           width: '100%',
           display: 'flex',
@@ -248,18 +236,7 @@ export default function EditappointmentDropDown({
       </Box>
 
       {tabsIndex < 3 && (
-        <Box
-          // component={motion.div}
-          // initial={{y: 50, opacity: 0}}
-          // animate={{y: 0, opacity: 1}}
-          // transition={{
-          //   duration: 0.2,
-          //   ease: 'easeOut',
-          //   delay: 0.4
-          // }}
-          // viewport={{once: true}}
-          sx={{width: '100%', textAlign: 'center'}}
-        >
+        <Box sx={{width: '100%', textAlign: 'center'}}>
           <Typography
             sx={{
               ...localFont.inter16,
@@ -407,7 +384,7 @@ export default function EditappointmentDropDown({
             fontFamily: '"Inter", sans-serif !important'
           }}
         >
-          {participantsLabel}
+          {t('participants')}
         </Typography>
         <Box
           sx={{
@@ -459,7 +436,7 @@ export default function EditappointmentDropDown({
             fontFamily: '"Inter", sans-serif !important'
           }}
         >
-          {cancelHeading}
+          {t('cancelAppointment')}
         </Typography>
         <Typography
           sx={{
@@ -485,7 +462,7 @@ export default function EditappointmentDropDown({
       >
         <CustomButton
           onClick={onClose}
-          label={cancelBtnLabel}
+          label={t('cancel')}
           bgColor="rgb(220, 38, 38)"
           hoverColor="#991919"
           hoverTextcolor="#fff"
@@ -498,7 +475,7 @@ export default function EditappointmentDropDown({
           }}
         />
         <CustomButton
-          label={saveBtnLabel}
+          label={t('save')}
           bgColor="#0D9488"
           hoverColor="#0C5C72"
           imgSrc={tick}

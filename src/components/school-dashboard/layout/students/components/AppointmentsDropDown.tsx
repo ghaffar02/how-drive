@@ -106,15 +106,12 @@ export default function AppointmentsDropDown({
     <Box
       sx={{
         width: '100%',
-        // maxWidth: {xs: '323px', sm: '333px'},
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
         padding,
-
         gap: '24px'
-        // borderRadius: radius
       }}
     >
       <Box
@@ -140,56 +137,7 @@ export default function AppointmentsDropDown({
         >
           {t('title2')}
         </Typography>
-
-        {/* <Box sx={{width: '100%'}}>
-          <Typography
-            sx={{
-              ...localFont.inter14,
-              fontFamily: '"Inter", sans-serif !important',
-              mb: '6px',
-              mt: '16px'
-            }}
-          >
-            {t('input1')}
-          </Typography>
-          <CustomTextField />
-          <Box
-            sx={{
-              mt: '16px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              width: '100%',
-              maxHeight: '36px'
-            }}
-          >
-            <Typography
-              sx={{
-                ...localFont.inter14,
-                fontFamily: '"Inter", sans-serif !important'
-              }}
-            >
-              Daniel Mustermann 1
-            </Typography>
-            <Box
-              sx={{
-                height: '36px',
-                width: 'min-content',
-                padding: '8px',
-                cursor: 'pointer',
-                borderRadius: '50%',
-                '&:hover': {
-                  background: 'rgba(48,88,255,0.1)'
-                }
-              }}
-            >
-              <Image src={crossCircle} alt="cancel" height={20} width={20} />
-            </Box>
-          </Box>
-        </Box> */}
-
         {/* Area for the tab */}
-
         <Box
           sx={{
             // bgcolor: '#000',
@@ -203,18 +151,8 @@ export default function AppointmentsDropDown({
           }}
         >
           <Box
-            // component={motion.div}
-            // initial={{y: 50, opacity: 0}}
-            // animate={{y: 0, opacity: 1}}
-            // transition={{
-            //   duration: 0.2,
-            //   ease: 'easeOut',
-            //   delay: 0.1
-            // }}
-            // viewport={{once: true}}
             sx={{
               width: '100%',
-              // maxWidth: '828px',
               bgcolor: '#ffffff',
               display: 'flex',
               p: '4px',
@@ -233,11 +171,9 @@ export default function AppointmentsDropDown({
                 position: 'absolute',
                 top: 4,
                 bottom: 4,
-                // left: 4,
                 width: `calc((100% - 8px) / 4)`,
                 borderRadius: '999px',
                 background: '#4611F5',
-                // boxShadow: '0px 2px 6px 0px #fe0909ff',
                 transition: 'all 0.4s ease',
                 transform: `translateX(${activeIndex * 100}%)`, // move on X
                 zIndex: 1
@@ -273,29 +209,15 @@ export default function AppointmentsDropDown({
           </Box>
         </Box>
 
-        {/* Ending Area for the tab */}
-        {/* <motion.div
-          initial={{y: 50, opacity: 0}}
-          animate={{y: 0, opacity: 1}}
-          transition={{
-            duration: 0.2,
-            ease: 'easeOut',
-            delay: 0.2
-          }}
-          viewport={{once: true}}
-          style={{width: '100%', maxWidth: '402px'}}
-        > */}
         <TextField
           select
           fullWidth
           variant="outlined"
-          value={selectedCategory} // e.g. from useState
+          value={selectedCategory}
           onChange={(e) => setSelectedCategory(e.target.value)}
           SelectProps={{
             displayEmpty: true
           }}
-          // error={!!errors.category}
-          // helperText={errors.category?.message}
           sx={{
             background: '#ffffff',
             height: 40,
@@ -337,18 +259,8 @@ export default function AppointmentsDropDown({
             )
           )}
         </TextField>
-        {/* </motion.div> */}
       </Box>
       <Box
-        // component={motion.div}
-        // initial={{y: 50, opacity: 0}}
-        // animate={{y: 0, opacity: 1}}
-        // transition={{
-        //   duration: 0.2,
-        //   ease: 'easeOut',
-        //   delay: 0.3
-        // }}
-        // viewport={{once: true}}
         sx={{
           width: '100%',
           display: 'flex',
@@ -374,18 +286,7 @@ export default function AppointmentsDropDown({
       </Box>
 
       {activeIndex < 3 && (
-        <Box
-          // component={motion.div}
-          // initial={{y: 50, opacity: 0}}
-          // animate={{y: 0, opacity: 1}}
-          // transition={{
-          //   duration: 0.2,
-          //   ease: 'easeOut',
-          //   delay: 0.4
-          // }}
-          // viewport={{once: true}}
-          sx={{width: '100%', textAlign: 'center'}}
-        >
+        <Box sx={{width: '100%', textAlign: 'center'}}>
           <Typography
             sx={{
               ...localFont.inter16,

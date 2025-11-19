@@ -324,7 +324,6 @@ function Card({name, barColor, date, time}: CardProps) {
               damping: 25
             }}
             sx={{
-              // bgcolor: '#000',
               position: 'absolute',
               zIndex: 99999999,
               top: '10%',

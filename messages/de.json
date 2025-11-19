@@ -2885,11 +2885,16 @@
             ]
           ]
         },
+        "header": "Termin bearbeiten",
         "title1": "Wähle einen Tag!",
         "des1": "Die Tage mit verfügbaren Zeitfenstern sind hervorgehoben. Die anderen Tage können aber auch frei gewählt werden, um einen Termin mit einem abweichenden Zeitfenster zu buchen.",
         "input2": "Zeitfenster",
         "des2": "Der Termin für die praktische Prüfung wird nicht automatisch für den/die zugewiesenen Fahrlehrer*in reserviert. Bitte buche denselben Termin auch für Fahrlehrer, die an der praktischen Prüfung teilnehmen.",
-        "btn": "Buchen"
+        "btn": "Buchen",
+        "participants": "Teilnehmer",
+        "cancelAppointment": "Stornieren",
+        "cancel": "Abbrechen",
+        "save": "Speichern"
       }
     },
     "studentProcess": {

@@ -2894,11 +2894,16 @@
             ]
           ]
         },
+        "header": "Edit appointment",
         "title1": "Select a day!",
         "des1": "The days with available time slots are highlighted. However, you can freely select a day to book an appointment with a different time slot.",
         "input2": "Different time slot",
         "des2": "The appointment for practical exam will not automatically be reserved for the assigned trainer. Please book the same time slot for the trainer participating the practical exam as well.",
-        "btn": "Book"
+        "btn": "Book",
+        "participants": "participants",
+        "cancelAppointment": "Cancel appointment",
+        "cancel": "Cancel",
+        "save": "Book"
       }
     },
     "studentProcess": {
