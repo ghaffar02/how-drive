@@ -2895,7 +2895,8 @@
         "cancelAppointment": "Stornieren",
         "cancelAppointmentDescribtion": "Um den Termin zu stornieren, entferne alle Teilnehmer aus der Liste und klicke auf Speichern.",
         "cancel": "Abbrechen",
-        "save": "Speichern"
+        "save": "Speichern",
+        "appointments": "Deine Termine"
       }
     },
     "studentProcess": {

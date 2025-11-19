@@ -24,6 +24,9 @@ import MiniFramerCalendar from '@/components/school-dashboard/layout/calander/co
 // import {useTranslations} from 'next-intl';
 
 export default function SchedulerSidebar() {
+  const t = useTranslations('SchoolDashboard.Calendar.popup');
+  const tabs = t.raw('tabs');
+  const tabOptions = t.raw('tabsOptions.options');
   const appointments = [
     {
       id: 1,
@@ -81,7 +84,7 @@ export default function SchedulerSidebar() {
           fontFamily: '"Inter", sans-serif !important'
         }}
       >
-        Appointments
+        {t('appointments')}
       </Typography>
 
       <Box
@@ -324,6 +327,7 @@ interface CancelAppointmentDropDownProps {
   onClose?: () => void;
   barColor?: string;
 }
+2;
 
 export function CancelAppointmentDropDown({
   participantsLabel = 'Participants',
