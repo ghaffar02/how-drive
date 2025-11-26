@@ -2308,6 +2308,40 @@
           "title": "My question isn't listed here – how can I contact support?",
           "content": "If your question hasn't been answered, please use the contact form on this page or send us an email. We'll try to respond as quickly as possible."
         }
+      ],
+      "FaqData2": [
+        {
+          "title": "How can I change my profile information?",
+          "content": "Go to 'Settings => Account' on your dashboard. There you can edit your contact details, password, and other information at any time."
+        },
+        {
+          "title": "A student has canceled, but the appointment is still marked as 'booked.' How do I correct this?",
+          "content": "Go to 'Calendar' and select the appointment in question. Click the 'pencil icon' and then 'Cancel.' The slot will be automatically released."
+        },
+        {
+          "title": "How do I log in to my driving instructor dashboard?",
+          "content": "You can log in on the registration page using the login details provided by your driving school. If you don't have login details, simply ask your driving school administrator."
+        },
+        {
+          "title": "How do I view my schedule for the day or the week?",
+          "content": "Your timetable is displayed directly on the homepage. You will see any changes made by the driving school or other students immediately."
+        },
+        {
+          "title": "What do I do if a student cancels a driving lesson at short notice?",
+          "content": "You will receive a notification if a student cancels. When scheduling appointments, you can set a cancellation limit. You can also contact the student directly through the messaging system to find a new appointment time."
+        },
+        {
+          "title": "How can I report a student's progress?",
+          "content": "You can make changes to the 'student file'. Some changes are only permitted for driving schools. The changes will be displayed to both the students and the driving schools simultaneously."
+        },
+        {
+          "title": "Can I communicate with students through the platform?",
+          "content": "Yes, simply write a message in the 'Message' tab. All chats are saved so that the driving school can review them if needed."
+        },
+        {
+          "title": "How do I enter my time availability?",
+          "content": "Go to 'Calendar' and select 'Schedule'. The system will automatically update your schedule. Driving schools can also view and update your schedule. These changes will also be displayed to you."
+        }
       ]
     }
   },

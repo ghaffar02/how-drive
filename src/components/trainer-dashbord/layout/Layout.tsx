@@ -19,13 +19,14 @@ import Home from './home/Home';
 // import Setting from '../../student-dashboard/layout/profile-setting/Setting';
 import Process from '../../student-dashboard/layout/process/Process';
 import Calander from './calander/Calander';
-import Support from '../../student-dashboard/layout/support/Support';
+// import Support from '../../student-dashboard/layout/support/Support';
 import Message from '../../student-dashboard/layout/messages/Message';
 
 import {useTranslations} from 'next-intl';
 import ProfileDropdown from '@/components/student-dashboard/layout/ProfileDropdown';
 import Students from './students/Students';
 import Setting from './profile-setting/Setting';
+import Support from './support/Support';
 const Azdata = [
   {
     id: '5',
@@ -47,7 +48,7 @@ const Azdata = [
   }
 ];
 export default function TrainerDashbord() {
-  const [activeKey, setActiveKey] = React.useState<string>('5');
+  const [activeKey, setActiveKey] = React.useState<string>('6');
   const [hoverKey, setHoverKey] = React.useState<string | null>(null);
   // ProfileDropdown relative states
   const [open, setOpen] = useState(false);

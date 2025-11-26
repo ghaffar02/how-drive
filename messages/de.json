@@ -2303,6 +2303,40 @@
           "title": "Meine Frage ist hier nicht dabei – wie kann ich den Support erreichen?",
           "content": "Falls deine Frage nicht beantwortet wurde, nutze bitte das Kontaktformular auf dieser Seite oder schreibe eine E-Mail. Wir versuchen so schnell wie möglich antworten."
         }
+      ],
+      "FaqData2": [
+        {
+          "title": "Wie kann ich meine Profildaten ändern?",
+          "content": "Gehe in deinem Dashboard zu „Einstellungen => Konto“. Dort kannst du deine Kontaktdaten, Passwort und weitere Informationen jederzeit anpassen."
+        },
+        {
+          "title": "Ein Schüler hat storniert, aber der Termin ist noch als „gebucht“ markiert. Wie korrigiere ich das?",
+          "content": "Gehe zu „Kalender“ und wähle den betreffenden Termin aus. Klicke auf „Stift-Symbol“ und dann auf „Stornieren“. Der Platz wird automatisch wieder freigegeben."
+        },
+        {
+          "title": "Wie melde ich mich in meinem Fahrlehrer-Dashboard an?",
+          "content": "Du kannst dich unter Anmeldung-Seite mit den Zugangsdaten anmelden, die dir deine Fahrschule gegeben hat. Falls du keine Anmeldedaten hast, frag einfach bei deinem Fahrschul-Administrator nach."
+        },
+        {
+          "title": "Wie sehe ich meinen Stundenplan für den Tag oder die Woche?",
+          "content": "Dein Stundenplan wird direkt auf der Startseite angezeigt. Änderungen von der Fahrschule oder von Schülern siehst du sofort."
+        },
+        {
+          "title": "Was mache ich, wenn ein Schüler kurzfristig eine Fahrstunde absagt?",
+          "content": "Du bekommst eine Benachrichtigung, wenn ein Schüler absagt. Bei Terminplanung kannst du Stornierungslimit bestimmen. Außerdem kannst du den Schüler direkt über das Nachrichtensystem kontaktieren, um einen neuen Termin zu finden."
+        },
+        {
+          "title": "Wie kann ich den Fortschritt eines Schülers melden?",
+          "content": "Bei der „Schülerakte“ kannst du Änderungen vornehmen. Einige Änderungen sind nur für Fahrschulen erlaubt. Die Änderungen werden gleichzeitig den Schülern und Fahrschulen angezeigt."
+        },
+        {
+          "title": "Kann ich über die Plattform mit Schülern schreiben?",
+          "content": "Ja, einfach im Tab „Nachricht“ eine Nachricht schreiben. Alle Chats werden gespeichert, damit die Fahrschule bei Bedarf nachschauen kann."
+        },
+        {
+          "title": "Wie trage ich meine Verfügbarkeit ein?",
+          "content": "Gehe auf „Kalender“ und wähle Terminplanung aus. Das System aktualisiert automatisch deinen Plan. Fahrschulen können auch deine Terminplanung sehen und aktualisieren. Diese Änderungen werden dir auch angezeigt."
+        }
       ]
     }
   },
