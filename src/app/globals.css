@@ -375,3 +375,18 @@ a {
   padding: 0 !important;
   backdrop-filter: unset !important;
 }
+
+.BigCalander_calendarWrapper__ZFuic .rbc-toolbar {
+  justify-content: flex-end !important;
+}
+
+.BigCalander_calendarWrapper__ZFuic {
+  background: none !important;
+  padding: 0px !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+}
+.BigCalander_calendarWrapper__ZFuic .rbc-toolbar {
+  margin-bottom: 28px !important;
+  margin-top: 0px !important;
+}

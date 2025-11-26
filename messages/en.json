@@ -2790,6 +2790,18 @@
             }
           ]
         },
+        "dashboardTrainertab3": {
+          "title": "Trainers",
+          "title2": "Add trainers",
+          "place": "select...",
+          "modalPlace": "Name",
+          "options": [
+            {
+              "label": "tom",
+              "value": "Tom"
+            }
+          ]
+        },
         "capacity": "Capacity (persons)",
         "duration": "Duration (minutes)",
         "weekly": "Weekly hours",
