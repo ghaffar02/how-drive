@@ -431,7 +431,7 @@ export default function DetailSide({display = 'none', setOpenStudents}: Prop) {
               //   ease: 'easeOut',
               //   delay: i * 0.1
               // }}
-              // viewport={{once: true}}
+            // viewport={{once: true}}
               key={i}
               onClick={() => {
                 handleClick(i);
