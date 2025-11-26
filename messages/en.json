@@ -2086,6 +2086,24 @@
               "label": "Driving school",
               "placeholder": "Mundsburg"
             }
+          ],
+          "formFields2": [
+            {
+              "label": "First name",
+              "placeholder": "Daniel"
+            },
+            {
+              "label": "Last name",
+              "placeholder": "Mustermann"
+            },
+            {
+              "label": "Email",
+              "placeholder": "d.mustermann@gmail.com"
+            },
+            {
+              "label": "Phone number",
+              "placeholder": "01518745692"
+            }
           ]
         },
         "Password": {
@@ -2142,6 +2160,10 @@
             "Booked appointments",
             "News",
             "Driving license office registered"
+          ],
+          "formFieldsOn2": [
+            "Booked appointments",
+            "Messages"
           ],
           "formFieldsOff": [
             "Genereller Newsletter",

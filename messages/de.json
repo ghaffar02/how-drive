@@ -2086,6 +2086,24 @@
               "label": "Fahrschule",
               "placeholder": "Mundsburg"
             }
+          ],
+          "formFields2": [
+            {
+              "label": "Vorname",
+              "placeholder": "Daniel"
+            },
+            {
+              "label": "Nachname",
+              "placeholder": "Mustermann"
+            },
+            {
+              "label": "E-Mail",
+              "placeholder": "d.mustermann@gmail.com"
+            },
+            {
+              "label": "Telefonnummer",
+              "placeholder": "01518745692"
+            }
           ]
         },
         "PrivacyTab": {
@@ -2536,6 +2554,10 @@
             "Gebuchte Termine",
             "Nachrichten",
             "Neue Schüler Anfrage"
+          ],
+          "formFieldsOn2": [
+            "Gebuchte Termine",
+            "Nachrichten"
           ],
           "formFieldsOff": [
             "News und Update",

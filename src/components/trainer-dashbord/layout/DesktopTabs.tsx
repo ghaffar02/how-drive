@@ -100,8 +100,8 @@ export default function DesktopTabs({
   const anchorRef = React.useRef<HTMLDivElement>(null!);
 
   const t = useTranslations('Dashboard.DesktopTabs');
-  const ADdata = t.raw('data3');
-  const titles = t.raw('data3');
+  const ADdata = t.raw('data2');
+  const titles = t.raw('data2');
   const profileData = Azdata.map((item, index) => ({
     ...item,
     label: ADdata[index]?.label || item.label
