@@ -1957,6 +1957,20 @@
           "label": "Nachricht"
         }
       ],
+      "data1": [
+        {
+          "label": "Home"
+        },
+        {
+          "label": "Schüler"
+        },
+        {
+          "label": "Kalender"
+        },
+        {
+          "label": "Nachricht"
+        }
+      ],
       "data2": [
         {
           "label": "Einstellungen"
@@ -2763,7 +2777,8 @@
         "inactive": "Inaktive Schüler",
         "all": "Alle Schüler"
       },
-      "trainers": "Fahrlehrer"
+      "trainers": "Fahrlehrer",
+      "students": "Fahrschüler"
     },
     "Calendar": {
       "Sidebar": {
@@ -2903,6 +2918,10 @@
           "Fahren",
           "Prüfung"
         ],
+        "tabs2": [
+          "Fahren",
+          "Prüfung"
+        ],
         "tabsOptions": {
           "options": [
             [
@@ -2992,6 +3011,7 @@
       "step7": "Praktische Prüfung",
       "step8": "Erteilung des Führerscheins",
       "poptitle": "Klicke auf einzelne Schritte, um diese als erledigt zu markieren.",
+      "poptitle2": "Klicke auf Schritte 6 und 7, um diese als erledigt zu markieren.",
       "popdes": "Die Schritte 3 und 5 können von Fahrschülern als erledigt markiert werden. Eine solche Änderung wird dir hier ebenfalls angezeigt.",
       "cancelBtn": "Abbrechen",
       "saveBtn": "Speichern"

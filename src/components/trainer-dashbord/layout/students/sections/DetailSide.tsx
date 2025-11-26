@@ -168,24 +168,6 @@ export default function DetailSide({display = 'none', setOpenStudents}: Prop) {
         borderRadius: {xs: '24px', md: '0px'}
       }}
     >
-      <Box sx={{mb: '16px'}}>
-        <Box
-          sx={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}
-        >
-          <Image src={alertIcon} alt="alert" height={24} width={24} />
-        </Box>
-        <Typography
-          sx={{
-            ...localFont.inter16,
-            fontFamily: '"Inter", sans-serif !important',
-            textAlign: 'center',
-            fontWeight: 300,
-            mt: '8px'
-          }}
-        >
-          {t('title')}
-        </Typography>
-      </Box>
       {/* search bar */}
       <Box
         sx={{
@@ -431,7 +413,7 @@ export default function DetailSide({display = 'none', setOpenStudents}: Prop) {
               //   ease: 'easeOut',
               //   delay: i * 0.1
               // }}
-            // viewport={{once: true}}
+              // viewport={{once: true}}
               key={i}
               onClick={() => {
                 handleClick(i);

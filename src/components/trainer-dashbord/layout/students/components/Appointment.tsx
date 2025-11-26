@@ -68,7 +68,6 @@ export default function Appointment() {
     <Box
       sx={{
         position: 'relative',
-
         width: '100%',
         height: 'auto',
         padding: {xs: '16px', lg: '24px'},

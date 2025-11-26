@@ -101,7 +101,7 @@ export default function DesktopTabs({
 
   const t = useTranslations('Dashboard.DesktopTabs');
   const ADdata = t.raw('data2');
-  const titles = t.raw('data2');
+  const titles = t.raw('data1');
   const profileData = Azdata.map((item, index) => ({
     ...item,
     label: ADdata[index]?.label || item.label

@@ -1880,6 +1880,20 @@
           "label": "Message"
         }
       ],
+      "data1": [
+        {
+          "label": "Home"
+        },
+        {
+          "label": "Students"
+        },
+        {
+          "label": "Calendar"
+        },
+        {
+          "label": "Message"
+        }
+      ],
       "data2": [
         {
           "label": "Settings"
@@ -2776,7 +2790,8 @@
         "inactive": "Inactive Students",
         "all": "All Students"
       },
-      "trainers": "Trainers"
+      "trainers": "Trainers",
+      "students": "Students"
     },
     "Calendar": {
       "Sidebar": {
@@ -2912,6 +2927,10 @@
           "Driving",
           "Exam"
         ],
+        "tabs2": [
+          "Driving",
+          "Exam"
+        ],
         "tabsOptions": {
           "options": [
             [
@@ -3001,6 +3020,7 @@
       "step7": "Driving/Practical exam",
       "step8": "Issuing a driving license",
       "poptitle": "Click on individual steps to mark them as completed.",
+      "poptitle2": "Click on steps 6 and 7 to mark them as completed.",
       "popdes": "The steps of 3 and 5 can be marked as completed by students. Such a change will be shown here for you as well.",
       "cancelBtn": "Cancel",
       "saveBtn": "Save"

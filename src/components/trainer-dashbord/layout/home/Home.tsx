@@ -216,7 +216,7 @@ export default function Home({setActiveKey}: Props) {
           }}
         >
           <Drivers
-            title={t('trainers')}
+            title={t('students')}
             showIcon={false}
             setActiveKey={setActiveKey}
           />

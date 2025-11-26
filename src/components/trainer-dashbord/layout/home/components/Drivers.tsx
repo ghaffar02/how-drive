@@ -3,7 +3,7 @@ import {Box, Typography} from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import addIcon from '@/assets/svgs/circleadd.svg';
-import steering from '@/assets/svgs/steering.svg';
+import profile from '@/assets/svgs/dashboard-student/profile.svg';
 import {motion} from 'framer-motion';
 
 type Props = {
@@ -159,7 +159,7 @@ function Card({name, drivingClass, setActiveKey}: CardProps) {
           borderRadius: '8px'
         }}
       >
-        <Image src={steering} alt="steering" height={24} width={24} />
+        <Image src={profile} alt="steering" height={24} width={24} />
       </Box>
       <Box sx={{width: '100%'}}>
         <Typography

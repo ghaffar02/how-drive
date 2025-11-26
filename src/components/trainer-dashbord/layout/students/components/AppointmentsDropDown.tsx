@@ -92,7 +92,7 @@ export default function AppointmentsDropDown({
   padding = '16px'
 }: CustomCardProps) {
   const t = useTranslations('SchoolDashboard.Calendar.popup');
-  const tabs = t.raw('tabs');
+  const tabs = t.raw('tabs2');
   const tabOptions = t.raw('tabsOptions.options');
   const [selectedCategory, setSelectedCategory] = useState('');
   const handleContainerClick = (event: React.MouseEvent) => {
@@ -173,14 +173,12 @@ export default function AppointmentsDropDown({
                 position: 'absolute',
                 top: 4,
                 bottom: 4,
-                width: `calc((100% - 8px) / 4)`,
+                width: `calc((100% - 8px) / 2)`,
                 borderRadius: '999px',
                 background: '#4611F5',
                 transition: 'all 0.4s ease',
                 transform: `translateX(${activeIndex * 100}%)`, // move on X
-                zIndex: 1,
-                '&:first-child': {display: 'none'},
-                '&:nth-child(2)': {display: 'none'}
+                zIndex: 1
               }}
             />
 

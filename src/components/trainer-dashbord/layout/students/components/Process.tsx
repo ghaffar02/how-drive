@@ -182,7 +182,7 @@ export default function Process() {
                 textAlign: 'center'
               }}
             >
-              {t('poptitle')}
+              {t('poptitle2')}
             </Typography>
             <Typography
               sx={{
