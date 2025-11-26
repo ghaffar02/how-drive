@@ -178,7 +178,9 @@ export default function AppointmentsDropDown({
                 background: '#4611F5',
                 transition: 'all 0.4s ease',
                 transform: `translateX(${activeIndex * 100}%)`, // move on X
-                zIndex: 1
+                zIndex: 1,
+                '&:first-child': {display: 'none'},
+                '&:nth-child(2)': {display: 'none'}
               }}
             />
 

@@ -180,22 +180,28 @@ export default function LessonCard({
               style={{height: '100%', width: '100%'}}
             />
           </Box> */}
-
           <Box
-            ref={iconRef}
             sx={{
-              height: '20px',
-              width: '20px',
-              cursor: 'pointer',
-              position: 'relative'
+              display: title === 'Theoriestunden' ? 'none' : 'block'
             }}
           >
-            <Image
-              src={pen}
-              alt="edit"
-              style={{height: '100%', width: '100%'}}
-              onClick={() => setOpenDropdown((prev) => !prev)}
-            />
+            <Box
+              ref={iconRef}
+              sx={{
+                height: '20px',
+                width: '20px',
+                cursor: 'pointer',
+                position: 'relative',
+                display: title === 'Theory lessons' ? 'none' : 'block'
+              }}
+            >
+              <Image
+                src={pen}
+                alt="edit"
+                style={{height: '100%', width: '100%'}}
+                onClick={() => setOpenDropdown((prev) => !prev)}
+              />
+            </Box>
             <AnimatePresence>
               {openDropdown && (
                 <Box

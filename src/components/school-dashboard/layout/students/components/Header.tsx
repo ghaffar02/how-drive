@@ -107,8 +107,7 @@ export default function Header() {
             sx={{
               height: '20px',
               width: '20px',
-              cursor: 'pointer',
-              backgroundColor: 'red'
+              cursor: 'pointer'
             }}
           >
             <Image

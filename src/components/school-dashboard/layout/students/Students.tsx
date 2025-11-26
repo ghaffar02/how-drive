@@ -13,8 +13,7 @@ export default function Process() {
         width: '100%',
         height: {xs: 'auto', md: '100%'},
         display: 'flex',
-        gap: '16px',
-        backgroundColor: 'red'
+        gap: '16px'
       }}
     >
       <DetailSide />

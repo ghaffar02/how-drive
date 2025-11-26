@@ -118,7 +118,12 @@ export default function StudentDetail() {
         >
           <Process />
         </Box>
-        <Box sx={{gridRow: {xs: '6', md: '5', lg: '4'}, gridColumn: '1'}}>
+        <Box
+          sx={{
+            gridRow: {xs: '6', md: '5', lg: '4'},
+            gridColumn: '1'
+          }}
+        >
           <LessonCard
             isbool={true}
             Label1={t('lable1')}

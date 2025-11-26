@@ -242,7 +242,14 @@ function Card({
             {show ? title3 : title2}
           </Typography>
 
-          <Box sx={{height: '20px', width: '20px', cursor: 'pointer'}}>
+          <Box
+            sx={{
+              height: '20px',
+              width: '20px',
+              cursor: 'pointer',
+              display: id === 3 ? 'block' : 'none'
+            }}
+          >
             <Image
               src={Pen}
               alt="edit"

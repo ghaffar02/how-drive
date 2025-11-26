@@ -168,7 +168,6 @@ export default function Appointment() {
                   width: {xs: '310px'},
                   overflow: 'auto',
                   border: '1px solid rgb(255, 255, 255)',
-                  backgroundColor: '#f0f0fa99',
                   backdropFilter: 'blur(8px)',
 
                   boxShadow: `
@@ -324,6 +323,7 @@ function Card({name, barColor, date, time}: CardProps) {
               damping: 25
             }}
             sx={{
+              display: barColor === '#0891b2' ? 'none' : 'block',
               position: 'absolute',
               zIndex: 99999999,
               top: '10%',
