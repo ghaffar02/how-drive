@@ -5,10 +5,11 @@ import {useState} from 'react';
 import CustomTextField from '@/components/school-dashboard/InputField';
 import HoursComponent from './HoursComponent';
 import CustomButton from '@/components/school-dashboard/CustomButton';
-import MiniFramerCalendar from './MiniFramerCalendar';
+// import MiniFramerCalendar from './MiniFramerCalendar';
 import CategoryComponent from './CategoryComponent';
 import {useTranslations} from 'next-intl';
 import {motion} from 'framer-motion';
+import MiniFramerCalendar from '@/components/school-dashboard/layout/calander/components/MiniFramerCalendar';
 
 export default function SchedulerSidebar() {
   const [activeIndex, setActiveIndex] = useState<number | 0>(0);
