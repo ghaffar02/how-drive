@@ -142,7 +142,7 @@ export default function SearchInputWithSuggestions() {
                   color: '#2d3748'
                 }}
               >
-                Fahrschule Mustermann Hamburg
+                Fahrschule Mustermann
               </Typography>
 
               <Typography
@@ -154,7 +154,7 @@ export default function SearchInputWithSuggestions() {
                   textAlign: 'left'
                 }}
               >
-                Hamburg
+                Berlin
               </Typography>
             </Box>
           </Box>
