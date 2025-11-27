@@ -152,7 +152,7 @@ function Card({name, drivingClass, setActiveKey}: CardProps) {
         sx={{
           height: '40px',
           minWidth: '40px',
-          background: '#06b6d41a',
+          background: 'rgba(37, 99, 235, 0.1)',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',

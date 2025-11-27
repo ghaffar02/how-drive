@@ -2174,6 +2174,10 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
+          "formFieldsOn2": [
+            "Gebuchte Termine",
+            "Nachrichten"
+          ],
           "formFieldsOff": [
             "News und Update",
             "Angebote und Werbung"
@@ -2603,10 +2607,6 @@
             "Nachrichten",
             "Neue Schüler Anfrage"
           ],
-          "formFieldsOn2": [
-            "Gebuchte Termine",
-            "Nachrichten"
-          ],
           "formFieldsOff": [
             "News und Update",
             "Angebote und Werbung"
@@ -2952,6 +2952,40 @@
                 "label": "Gruppe 2"
               }
             ],
+            [
+              {
+                "value": "",
+                "label": "wähle Fahrlehrer"
+              },
+              {
+                "value": "tom",
+                "label": "Tom"
+              },
+              {
+                "value": "fabian",
+                "label": "Fabian"
+              },
+              {
+                "value": "sophia",
+                "label": "Sophia"
+              }
+            ],
+            [
+              {
+                "value": "",
+                "label": "wähle Prüfung"
+              },
+              {
+                "value": "theorieprüfung",
+                "label": "Theorieprüfung"
+              },
+              {
+                "value": "praktisch-prüfung",
+                "label": "Praktisch Prüfung"
+              }
+            ]
+          ],
+          "options2": [
             [
               {
                 "value": "",

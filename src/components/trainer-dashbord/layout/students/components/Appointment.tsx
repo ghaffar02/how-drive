@@ -181,7 +181,8 @@ export default function Appointment() {
                   msOverflowStyle: 'none',
                   '&::-webkit-scrollbar': {
                     display: 'none'
-                  }
+                  },
+                  backgroundColor: '#f0f0fa99 !important'
                 }}
               >
                 <AppointmentsDropDown />
@@ -322,7 +323,7 @@ function Card({name, barColor, date, time}: CardProps) {
               damping: 25
             }}
             sx={{
-              display: barColor === '#0891b2' ? 'none' : 'block',
+              display: barColor === '#0891b2' ? 'block' : 'none',
               position: 'absolute',
               zIndex: 99999999,
               top: '10%',

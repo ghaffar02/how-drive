@@ -93,7 +93,7 @@ export default function AppointmentsDropDown({
 }: CustomCardProps) {
   const t = useTranslations('SchoolDashboard.Calendar.popup');
   const tabs = t.raw('tabs2');
-  const tabOptions = t.raw('tabsOptions.options');
+  const tabOptions = t.raw('tabsOptions.option2');
   const [selectedCategory, setSelectedCategory] = useState('');
   const handleContainerClick = (event: React.MouseEvent) => {
     event.stopPropagation();

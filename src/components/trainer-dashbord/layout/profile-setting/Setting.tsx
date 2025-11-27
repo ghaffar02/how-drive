@@ -1,3 +1,4 @@
+'use client';
 import {Box} from '@mui/material';
 import React, {useState} from 'react';
 import Leftside from './components/LeftsideSetting';

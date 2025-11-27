@@ -66,13 +66,6 @@ const navItems: NavItem[] = [
     iconBlack: message_black,
     iconBlue: message_blue,
     iconHover: message_bold
-  },
-  {
-    key: '5',
-    label: 'Infos',
-    iconBlack: infos_black,
-    iconBlue: infos_black,
-    iconHover: infos_bold
   }
 ];
 export default function MobileTabs({
@@ -111,7 +104,7 @@ export default function MobileTabs({
       >
         <Box
           sx={{
-            justifyContent: 'flex-end',
+            justifyContent: 'space-between',
             width: '100%',
             gap: '8px',
             display: 'flex'

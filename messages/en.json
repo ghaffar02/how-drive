@@ -2993,6 +2993,40 @@
                 "label": "Praktisch Prüfung"
               }
             ]
+          ],
+          "option2": [
+            [
+              {
+                "value": "",
+                "label": "select trainer"
+              },
+              {
+                "value": "tom",
+                "label": "Tom"
+              },
+              {
+                "value": "fabian",
+                "label": "Fabian"
+              },
+              {
+                "value": "sophia",
+                "label": "Sophia"
+              }
+            ],
+            [
+              {
+                "value": "",
+                "label": "select exam"
+              },
+              {
+                "value": "theorieprüfung",
+                "label": "Theorieprüfung"
+              },
+              {
+                "value": "praktisch-prüfung",
+                "label": "Praktisch Prüfung"
+              }
+            ]
           ]
         },
         "header": "Edit appointment",

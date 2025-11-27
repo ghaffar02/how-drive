@@ -1,5 +1,5 @@
 import {Box, Typography} from '@mui/material';
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useState} from 'react';
 import Header from '../components/Header';
 import ExamInfo from '../components/ExamInfo';
 import Process from '../components/Process';
@@ -7,7 +7,6 @@ import LessonCard from '../components/LessonCard';
 import Messages from '../components/Message';
 import Appointment from '../components/Appointment';
 import {useTranslations} from 'next-intl';
-import MainDropdown from '../components/MainDropdown';
 import DetailSide from './DetailSide';
 import back from '@/assets/svgs/dashboard-student/arrowsetting.svg';
 import Image from 'next/image';
@@ -16,7 +15,6 @@ import localFont from '@/utils/themes';
 export default function StudentDetail() {
   const t = useTranslations('SchoolDashboard.MessageLesson');
 
-  const [openDropdown, setOpenDropdown] = useState(true);
   const [openStudents, setOpenStudents] = useState(true);
 
   return (
@@ -157,44 +155,6 @@ export default function StudentDetail() {
           }}
         >
           <Messages />
-        </Box>
-        <Box
-          sx={{
-            width: '100%',
-            display: openDropdown ? 'flex' : 'none',
-            justifyContent: 'center',
-            alignItems: 'center'
-          }}
-        >
-          {openDropdown && (
-            <Box
-              sx={{
-                position: 'absolute',
-                p: {xs: '48px 24px'},
-                right: '2.5%',
-                top: 150,
-                width: '95%',
-                margin: 'auto',
-
-                zIndex: 178879,
-                overflow: 'visible',
-                border: '1px solid #ffffffff',
-                backgroundColor: '#fff',
-                // bgcolor: 'red',
-                backdropFilter: 'blur(10px)',
-                boxShadow: `
-      0px 0px 0px 2px rgba(0, 0, 0, 0.02),
-      0px 2px 9px 0px rgba(0, 0, 0, 0.09),
-      0px 10px 42px 0px rgba(0, 0, 0, 0.4)
-       
-    `,
-                borderRadius: '18px',
-                transformOrigin: ' bottom'
-              }}
-            >
-              <MainDropdown onClose={() => setOpenDropdown(false)} />
-            </Box>
-          )}
         </Box>
       </Box>
     </>

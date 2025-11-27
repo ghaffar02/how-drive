@@ -61,7 +61,7 @@ export default function TrainerDashbord() {
   }, [activeKey]);
 
   const t = useTranslations('Dashboard.DesktopTabs');
-  const data = t.raw('data');
+  const data = t.raw('data1');
   const ADdata = t.raw('data2');
 
   const tabs = [...data, ...ADdata];

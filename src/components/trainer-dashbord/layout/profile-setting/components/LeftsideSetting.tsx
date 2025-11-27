@@ -1,3 +1,4 @@
+'use client';
 import localFont from '@/utils/themes';
 import {Box, Typography} from '@mui/material';
 import arrow from '@/assets/svgs/dashboard-student/arrowsetting.svg';
