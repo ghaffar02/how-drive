@@ -148,6 +148,7 @@ Moderne Ausbildung: Unser moderner Fuhrpark besteht aus einer vielfältigen Ausw
                     activeColor="#001959"
                     hoverTextcolor="#2D3748"
                     imgSrc={ConnectIcon}
+                    hoverImgSrc={messagebtnIcon}
                     btnSx={{
                       maxWidth: '20px',
                       height: '20px'
@@ -183,6 +184,7 @@ Moderne Ausbildung: Unser moderner Fuhrpark besteht aus einer vielfältigen Ausw
                       height: '49px'
                     }}
                     label={'Kontaktieren'}
+                    hoverImgSrc={messagebtnIcon}
                     hoverTextcolor="#fff"
                     bgColor="rgba(0, 0, 0, 0)"
                     hoverColor="#2d3748ff "

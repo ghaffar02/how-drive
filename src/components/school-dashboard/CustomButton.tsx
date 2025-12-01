@@ -2,6 +2,7 @@ import localFont from '@/utils/themes';
 import {Box, Button, ButtonProps} from '@mui/material';
 import {SxProps, Theme} from '@mui/material/styles';
 import Image, {StaticImageData} from 'next/image';
+import React from 'react';
 
 interface CustomButtonProps extends ButtonProps {
   label: string;
@@ -12,6 +13,7 @@ interface CustomButtonProps extends ButtonProps {
   imgSrc?: StaticImageData | string;
   sx?: SxProps<Theme>;
   btnSx?: SxProps<Theme>;
+  hoverImgSrc?: StaticImageData | string;
 }
 
 export default function CustomButton({
@@ -22,14 +24,17 @@ export default function CustomButton({
   hoverTextcolor = '#fff',
   imgSrc,
   btnSx = {},
-
+  hoverImgSrc, // new,
   sx = {},
   ...rest
 }: CustomButtonProps) {
+  const [isHovered, setIsHovered] = React.useState(false);
   return (
     <Button
       variant="contained"
       disableRipple
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       sx={{
         fontSize: {xs: '12px', md: '13px', lg: '14px'},
         lineHeight: '1.5em',
@@ -67,7 +72,7 @@ export default function CustomButton({
           }}
         >
           <Image
-            src={imgSrc}
+            src={isHovered && hoverImgSrc ? hoverImgSrc : imgSrc}
             alt="icon"
             style={{width: '100%', height: '100%', objectFit: 'contain'}}
           />
