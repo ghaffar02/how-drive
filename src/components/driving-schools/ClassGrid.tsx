@@ -83,19 +83,15 @@ export default function ClassGrid({
                 <BgCard
                   icon={laptop}
                   bgImage={ImageBGridInfo2School.src}
-                  title="
-Klassen
-"
-                  heading="
-A, B"
+                  title="Klassen"
+                  heading="A, B"
                 />
               </Grid>
               <Grid size={12}>
                 <BgCard
                   icon={map}
                   bgImage={ImageBGridInfo5School.src}
-                  title="
-Sprachen"
+                  title="Sprachen"
                   heading="Deutsch, Englisch, Türkisch"
                 />
               </Grid>
@@ -130,9 +126,8 @@ Sprachen"
               <Grid size={{xs: 12, md: 6, lg: 12}}>
                 <BgCard
                   icon={map}
-                  bgImage={ImageBGridInfo2School.src}
-                  title="
-Sprachen"
+                  bgImage={ImageBGridInfo5School.src}
+                  title="Sprachen"
                   heading="Deutsch, Englisch, Türkisch"
                 />
               </Grid>
@@ -149,13 +144,10 @@ Sprachen"
                 display={{xs: 'grid', md: 'none', lg: 'grid'}}
               >
                 <BgCard
+                  bgImage={ImageBGridInfo2School.src}
                   icon={laptop}
-                  bgImage={ImageBGridInfo5School.src}
-                  title="
-Klassen
-"
-                  heading="
-A, B"
+                  title="Klassen"
+                  heading="A, B"
                 />
               </Grid>
               <Grid size={{xs: 12}}>
