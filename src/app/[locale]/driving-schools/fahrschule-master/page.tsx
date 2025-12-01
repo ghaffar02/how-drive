@@ -4,13 +4,14 @@ import {Box} from '@mui/material';
 import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/Footer';
 import TrustServiceSection from '@/components/home/TrustServiceSection';
-import HeroAboutus from '@/components/about-us/Hero';
 
 import {useTranslations} from 'next-intl';
-import SearchInputWithSuggestions from '@/components/driving-schools/SearchInputWithSuggestions';
+import FahrschuleMustermann from '@/components/driving-schools/FahrschuleMustermann';
+import ClassGrid from '@/components/driving-schools/ClassGrid';
 
 export default function Page() {
-  const t = useTranslations('AboutUs');
+  // const t = useTranslations('AboutUs');
+  const t = useTranslations('licenseLT');
 
   return (
     <>
@@ -29,8 +30,9 @@ export default function Page() {
         >
           <Navbar />
         </Box>
-        <HeroAboutus title={t('Title2')} description={t('heroDes2')} />
-        <SearchInputWithSuggestions />
+        {/* <HeroAboutus title={t('Title2')} description={t('heroDes2')} /> */}
+        <FahrschuleMustermann />
+        <ClassGrid license="licenseLT" />
         <TrustServiceSection />
         <Footer />
       </Box>

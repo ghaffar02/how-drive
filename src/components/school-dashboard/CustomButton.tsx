@@ -11,6 +11,7 @@ interface CustomButtonProps extends ButtonProps {
   hoverTextcolor?: string;
   imgSrc?: StaticImageData | string;
   sx?: SxProps<Theme>;
+  btnSx?: SxProps<Theme>;
 }
 
 export default function CustomButton({
@@ -20,6 +21,7 @@ export default function CustomButton({
   activeColor = '#1A065C',
   hoverTextcolor = '#fff',
   imgSrc,
+  btnSx = {},
 
   sx = {},
   ...rest
@@ -60,7 +62,8 @@ export default function CustomButton({
             minWidth: '16px',
             maxWidth: '16px',
             height: '16px',
-            width: '100%'
+            width: '100%',
+            ...btnSx
           }}
         >
           <Image
