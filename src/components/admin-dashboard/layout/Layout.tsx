@@ -57,7 +57,7 @@ export default function AdminDashboard() {
     >
       <Box
         sx={{
-          maxWidth: '1400px',
+          maxWidth: '100%',
           margin: 'auto',
           display: 'flex',
           height: '100%',

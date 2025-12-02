@@ -171,7 +171,6 @@ export default function Home({setActiveKey}: Props) {
     <>
       <Box
         sx={{
-          maxWidth: '1300px',
           width: '100%',
           height: {xs: 'auto', md: '100%'},
           padding: {xs: '8px', md: '24px'},

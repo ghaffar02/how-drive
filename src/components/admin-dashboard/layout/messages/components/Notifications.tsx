@@ -162,8 +162,8 @@ export default function Notifications({
   return (
     <Box
       sx={{
-        minWidth: {md: '230px', lg: '300px'},
-        maxWidth: {md: '230px', lg: '300px'},
+        minWidth: {md: '230px', lg: '480px'},
+        maxWidth: {md: '230px', lg: '480px'},
         width: '100%',
         height: '100%',
         background: 'rgba(248,250,252,0.3)',
