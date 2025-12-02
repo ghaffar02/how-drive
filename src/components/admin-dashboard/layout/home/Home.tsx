@@ -1,14 +1,18 @@
 'use client';
-import {Box} from '@mui/material';
-import React, {useState} from 'react';
-// import Header from './components/Header';
-// import Appointment from './components/Appointment';
-// import LessonCard from './components/LessonCard';
-// import Messages from './components/Message';
-// import Process from './components/Process';
+import {Box, Grid} from '@mui/material';
+import React from 'react';
 import {useTranslations} from 'next-intl';
-import ActiveIcon from '@/assets/svgs/dashboard-student/active.svg';
-import InactiveIcon from '@/assets/svgs/dashboard-student/inactive.svg';
+import StatsCard from './components/StatsCard';
+import Messages from './components/Message';
+import GrowthCard from './components/GrowthCard';
+import PopularCitiesCard from './components/PopularCitiesCard';
+import BookingsCard from './components/BookingsCard';
+
+// Icons for messages
+import car from '@/assets/svgs/dashboard-student/home/car.svg';
+import steering from '@/assets/svgs/steering.svg';
+import logo from '@/assets/pngs/logo.avif';
+import userIcon from '@/assets/svgs/userIcon.svg';
 
 type Props = {
   setActiveKey: React.Dispatch<React.SetStateAction<string>>;
@@ -16,6 +20,153 @@ type Props = {
 
 export default function Home({setActiveKey}: Props) {
   const t = useTranslations('SchoolDashboard.Home');
+
+  // Sample data for messages
+  const messages = [
+    {
+      sender: 'Fahrschule',
+      subject: 'Das ist das Thema der Email...',
+      date: '02.06.2025',
+      icon: car
+    },
+    {
+      sender: 'Fabian',
+      subject: 'Das ist das Thema der Email...',
+      date: '26.05.2025',
+      icon: steering
+    },
+    {
+      sender: 'Tomas Schulz',
+      subject: 'Das ist das Thema der Email...',
+      date: '28.05.2025',
+      icon: userIcon
+    },
+    {
+      sender: 'Fahrschule',
+      subject: 'Das ist das Thema der Email...',
+      date: '25.05.2025',
+      icon: car
+    },
+    {
+      sender: 'WieFührerschein',
+      subject: 'Das ist das Thema der Email...',
+      date: '20.05.2025',
+      icon: logo
+    },
+    {
+      sender: 'Fahrschule',
+      subject: 'Das ist das Thema der Email...',
+      date: '02.06.2025',
+      icon: car
+    },
+    {
+      sender: 'Fabian',
+      subject: 'Das ist das Thema der Email...',
+      date: '26.05.2025',
+      icon: steering
+    },
+    {
+      sender: 'Tomas Schulz',
+      subject: 'Das ist das Thema der Email...',
+      date: '28.05.2025',
+      icon: userIcon
+    },
+    {
+      sender: 'Fahrschule',
+      subject: 'Das ist das Thema der Email...',
+      date: '25.05.2025',
+      icon: car
+    },
+    {
+      sender: 'WieFührerschein',
+      subject: 'Das ist das Thema der Email...',
+      date: '20.05.2025',
+      icon: logo
+    },
+    {
+      sender: 'Fabian',
+      subject: 'Das ist das Thema der Email...',
+      date: '26.05.2025',
+      icon: steering
+    },
+    {
+      sender: 'Tomas Schulz',
+      subject: 'Das ist das Thema der Email...',
+      date: '28.05.2025',
+      icon: userIcon
+    },
+    {
+      sender: 'Fahrschule',
+      subject: 'Das ist das Thema der Email...',
+      date: '25.05.2025',
+      icon: car
+    },
+    {
+      sender: 'WieFührerschein',
+      subject: 'Das ist das Thema der Email...',
+      date: '20.05.2025',
+      icon: logo
+    }
+  ];
+
+  // Sample data for growth
+  const growthMonthlyData = [
+    {month: 'Jan', stu: 100, sch: 85, tra: 125},
+    {month: 'Feb', stu: 100, sch: 85, tra: 125},
+    {month: 'Mar', stu: 100, sch: 85, tra: 125},
+    {month: 'Apr', stu: 100, sch: 85, tra: 125},
+    {month: 'May', stu: 100, sch: 85, tra: 125},
+    {month: 'Jun', stu: 100, sch: 85, tra: 125},
+    {month: 'Jul', stu: 100, sch: 85, tra: 125},
+    {month: 'Aug', stu: 100, sch: 85, tra: 125},
+    {month: 'Sep', stu: 100, sch: 85, tra: 125},
+    {month: 'Oct', stu: 100, sch: 85, tra: 125},
+    {month: 'Nov', stu: 100, sch: 85, tra: 125},
+    {month: 'Dec', stu: 100, sch: 85, tra: 125}
+  ];
+
+  const growthTotal = {stu: 1200, sch: 1020, tra: 1500};
+  const growthLastYear = {stu: 1000, sch: 950, tra: 1200};
+
+  // Sample data for popular cities
+  const popularCitiesSchools = [
+    {city: 'München', value: 1200},
+    {city: 'Berlin', value: 1100},
+    {city: 'Hamburg', value: 950},
+    {city: 'Köln', value: 850},
+    {city: 'Düsseldorf', value: 700},
+    {city: 'Frankfurt', value: 600},
+    {city: 'Dortmund', value: 500}
+  ];
+
+  const popularCitiesStudents = [
+    {city: 'München', value: 1200},
+    {city: 'Berlin', value: 1100},
+    {city: 'Hamburg', value: 950},
+    {city: 'Köln', value: 850},
+    {city: 'Düsseldorf', value: 700},
+    {city: 'Frankfurt', value: 600},
+    {city: 'Dortmund', value: 500}
+  ];
+
+  // Sample data for bookings
+  const bookingsMonthlyData = [
+    {month: 'Jan', talk: 100, theory: 85, driving: 125, exam: 125},
+    {month: 'Feb', talk: 100, theory: 85, driving: 125, exam: 125},
+    {month: 'Mar', talk: 100, theory: 85, driving: 125, exam: 125},
+    {month: 'Apr', talk: 100, theory: 85, driving: 125, exam: 125},
+    {month: 'May', talk: 100, theory: 85, driving: 125, exam: 125},
+    {month: 'Jun', talk: 100, theory: 85, driving: 125, exam: 125},
+    {month: 'Jul', talk: 100, theory: 85, driving: 125, exam: 125},
+    {month: 'Aug', talk: 100, theory: 85, driving: 125, exam: 125},
+    {month: 'Sep', talk: 100, theory: 85, driving: 125, exam: 125},
+    {month: 'Oct', talk: 100, theory: 85, driving: 125, exam: 125},
+    {month: 'Nov', talk: 100, theory: 85, driving: 125, exam: 125},
+    {month: 'Dec', talk: 100, theory: 85, driving: 125, exam: 125}
+  ];
+
+  const bookingsTotal = {talk: 1200, theory: 1020, driving: 1500, exam: 1500};
+  const bookingsLastYear = {talk: 1000, theory: 950, driving: 1200, exam: 1200};
 
   return (
     <>
@@ -29,112 +180,141 @@ export default function Home({setActiveKey}: Props) {
           borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
           backgroundColor: 'rgba(248, 250, 252, 0.3)',
           border: {xs: '2px solid #fff', md: 'none'},
-          // boxShadow: {
-          //   xs: 'rgb(255, 255, 255) 0px 0px 0px 1px, rgba(0, 0, 0, 0.25) 0px 1px 0px 0px, rgba(0, 0, 0, 0.25) 0px 1px 1px 0px',
-          //   md: 'none'
-          // },
           backdropFilter: {xs: 'blur(15px)', md: 'none'},
           zIndex: '1',
-          display: 'grid',
-          gridTemplateColumns: {
-            xs: 'repeat(6, minmax(0px, 1fr))',
-            md: 'repeat(8, minmax(0px, 1fr))',
-            lg: 'repeat(6, minmax(0px, 1fr))'
+          display: 'flex',
+          flexDirection: 'column',
+          overflowY: 'auto',
+          overflowX: 'hidden',
+          '&::-webkit-scrollbar': {
+            width: '8px'
           },
-          gridTemplateRows: {xs: 'auto', md: 'repeat(5, minmax(50px, 1fr))'},
-          gap: {xs: '16px', md: '24px'}
+          '&::-webkit-scrollbar-track': {
+            background: 'rgba(0, 0, 0, 0.1)',
+            borderRadius: '10px'
+          },
+          '&::-webkit-scrollbar-thumb': {
+            background: 'rgba(0, 0, 0, 0.3)',
+            borderRadius: '10px',
+            '&:hover': {
+              background: 'rgba(0, 0, 0, 0.5)'
+            }
+          }
         }}
       >
-        Home
-        {/* <Box
+        {/* First Row: Students, Schools, Trainers (1 col each), Messages (2 cols) */}
+        <Grid
+          container
+          spacing={3}
           sx={{
-            gridColumn: {xs: '1 / span 6', md: '1 / span 2', lg: '1 / span 2'},
-            gridRow: {xs: '1 / span 1', md: '1 / span 1'},
-            height: {xs: '85px', md: 'unset'}
+            mb: 3,
+            display: {xs: 'flex', md: 'grid'},
+            gridTemplateColumns: {md: 'repeat(5, 1fr)'}
           }}
         >
-          <ProfileCard
-            imgSrc={ActiveIcon}
-            title={t('profileCard.active')}
-            students={activeStudents}
-          />
-        </Box>
-        <Box
-          sx={{
-            gridColumn: {xs: '1 / span 6', md: '3 / span 2', lg: '3 / span 2'},
-            gridRow: {xs: '2 / span 1', md: '1 / span 1'},
-            height: {xs: '85px', md: 'unset'}
-          }}
-        >
-          <ProfileCard
-            imgSrc={InactiveIcon}
-            title={t('profileCard.inactive')}
-            students={inactiveStudents}
-            iconBg={true}
-          />
-        </Box>
-        <Box
-          sx={{
-            gridColumn: {xs: '1 / span 6', md: '5 / span 4', lg: '5 / span 2'},
-            gridRow: {xs: '3 / span 1', md: '1 / span 1'},
-            height: {xs: '110px', md: 'unset'}
-          }}
-        >
-          <ProfileCard
-            title={t('profileCard.all')}
-            students={totalStudents}
-            progressBar={true}
-            activePercentage={percentageValueActive}
-          />
-        </Box>
+          <Grid
+            size={{xs: 12}}
+            sx={{
+              gridColumn: {md: 'span 1'}
+            }}
+          >
+            <StatsCard
+              title="Students"
+              total={1000}
+              active={850}
+              percentage={85}
+              dailySignup={1}
+              weeklySignup={3}
+              monthlySignup={15}
+            />
+          </Grid>
+          <Grid
+            size={{xs: 12}}
+            sx={{
+              gridColumn: {md: 'span 1'}
+            }}
+          >
+            <StatsCard
+              title="Schools"
+              total={1500}
+              active={1000}
+              percentage={66}
+              dailySignup={5}
+              weeklySignup={15}
+              monthlySignup={25}
+            />
+          </Grid>
+          <Grid
+            size={{xs: 12}}
+            sx={{
+              gridColumn: {md: 'span 1'}
+            }}
+          >
+            <StatsCard
+              title="Trainers"
+              total={2600}
+              active={1700}
+              percentage={65}
+              dailySignup={8}
+              weeklySignup={20}
+              monthlySignup={35}
+            />
+          </Grid>
+          <Grid
+            size={{xs: 12}}
+            sx={{
+              gridColumn: {md: 'span 2'}
+            }}
+          >
+            <Messages setActiveKey={setActiveKey} messages={messages} />
+          </Grid>
+        </Grid>
 
-        <Box
+        {/* Second Row: Growth (2 cols), Popular Cities (1 col), Bookings (2 cols) */}
+        <Grid
+          container
+          spacing={3}
           sx={{
-            gridColumn: {xs: '1 / span 6', md: '1 / span 8', lg: '1 / span 4'},
-            gridRow: {xs: '4 / span 2', md: '2 / span 2', lg: '2 / span 4'},
-            overflowY: 'auto',
-            border: '1px solid #fff',
-            borderRadius: '18px',
-            padding: {xs: '16px', md: '24px'},
-            background: '#ffffffbf',
-            boxShadow:
-              '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0,0,0,0.25), 0px 1px 1px 0px rgba(0,0,0,0.25)',
-            '&::-webkit-scrollbar': {display: 'none'},
-            msOverflowStyle: 'none',
-            scrollbarWidth: 'none',
-            height: {xs: '600px', md: 'unset'}
-            // display: 'none'
+            display: {xs: 'flex', md: 'grid'},
+            gridTemplateColumns: {md: 'repeat(5, 1fr)'}
           }}
         >
-          <DayDetailView
-            date={sampleDate}
-            appointments={sampleAppointments}
-            onClose={() => {}}
-          />
-        </Box>
-
-        <Box
-          sx={{
-            gridColumn: {xs: '1 / span 6', md: '1 / span 4', lg: '5 / span 2'},
-            gridRow: {xs: '6 / span 1', md: '4 / span 2', lg: '2 / span 2'},
-            height: {xs: '245px', md: 'unset'}
-          }}
-        >
-          <Messages setActiveKey={setActiveKey} />
-        </Box>
-        <Box
-          sx={{
-            gridColumn: {xs: '1 / span 6', md: '5 / span 4', lg: '5 / span 2'},
-            gridRow: {xs: '7 / span 1', md: '4 / span 2', lg: '4 / span 2'},
-            height: {xs: '245px', md: 'unset'}
-          }}
-        >
-          <Drivers
-            title={t('trainers')}
-            showIcon={false}
-            setActiveKey={setActiveKey}
-          />
-        </Box> */}
+          <Grid
+            size={{xs: 12}}
+            sx={{
+              gridColumn: {md: 'span 2'}
+            }}
+          >
+            <GrowthCard
+              monthlyData={growthMonthlyData}
+              total={growthTotal}
+              lastYear={growthLastYear}
+            />
+          </Grid>
+          <Grid
+            size={{xs: 12}}
+            sx={{
+              gridColumn: {md: 'span 1'}
+            }}
+          >
+            <PopularCitiesCard
+              schools={popularCitiesSchools}
+              students={popularCitiesStudents}
+            />
+          </Grid>
+          <Grid
+            size={{xs: 12}}
+            sx={{
+              gridColumn: {md: 'span 2'}
+            }}
+          >
+            <BookingsCard
+              monthlyData={bookingsMonthlyData}
+              total={bookingsTotal}
+              lastYear={bookingsLastYear}
+            />
+          </Grid>
+        </Grid>
       </Box>
     </>
   );
