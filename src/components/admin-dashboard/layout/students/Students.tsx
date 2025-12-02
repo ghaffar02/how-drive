@@ -456,7 +456,8 @@ export default function Students() {
             });
           }}
           sx={{
-            minWidth: '120px',
+            width: '70px',
+            minWidth: '70px',
             '& .MuiInputBase-root': {
               background: '#ffffff',
               height: '40px',
@@ -471,7 +472,7 @@ export default function Students() {
             },
             '& .MuiSelect-select': {
               padding: '0 12px',
-              color: filters.city.length > 0 ? '#000' : '#aaa'
+              color: filters.city.length > 0 ? '#000' : '#4A5568'
             }
           }}
         >
@@ -503,7 +504,8 @@ export default function Students() {
             });
           }}
           sx={{
-            minWidth: '120px',
+            width: '90px',
+            minWidth: '90px',
             '& .MuiInputBase-root': {
               background: '#ffffff',
               height: '40px',
@@ -518,7 +520,7 @@ export default function Students() {
             },
             '& .MuiSelect-select': {
               padding: '0 12px',
-              color: filters.class.length > 0 ? '#000' : '#aaa'
+              color: filters.class.length > 0 ? '#000' : '#4A5568'
             }
           }}
         >
@@ -537,7 +539,7 @@ export default function Students() {
             displayEmpty: true,
             renderValue: (selected: unknown) => {
               const selectedArray = selected as string[];
-              if (selectedArray.length === 0) return 'Re-written';
+              if (selectedArray.length === 0) return 'Rewrite';
               return selectedArray.join(', ');
             }
           }}
@@ -550,7 +552,8 @@ export default function Students() {
             });
           }}
           sx={{
-            minWidth: '120px',
+            width: '100px',
+            minWidth: '100px',
             '& .MuiInputBase-root': {
               background: '#ffffff',
               height: '40px',
@@ -565,7 +568,7 @@ export default function Students() {
             },
             '& .MuiSelect-select': {
               padding: '0 12px',
-              color: filters.rewrite.length > 0 ? '#000' : '#aaa'
+              color: filters.rewrite.length > 0 ? '#000' : '#4A5568'
             }
           }}
         >
@@ -599,7 +602,8 @@ export default function Students() {
               )
             }}
             sx={{
-              minWidth: '180px',
+              width: '110px',
+              minWidth: '110px',
               '& .MuiInputBase-root': {
                 background: '#ffffff',
                 height: '40px',
@@ -615,8 +619,12 @@ export default function Students() {
               },
               '& .MuiInputBase-input': {
                 padding: '0 12px',
-                color: filters.school.length > 0 ? '#000' : '#aaa',
-                cursor: 'pointer'
+                color: filters.school.length > 0 ? '#000' : '#4A5568',
+                cursor: 'pointer',
+                '&::placeholder': {
+                  color: '#4A5568',
+                  opacity: 1
+                }
               }
             }}
           />
@@ -740,7 +748,8 @@ export default function Students() {
             });
           }}
           sx={{
-            minWidth: '120px',
+            width: '90px',
+            minWidth: '90px',
             '& .MuiInputBase-root': {
               background: '#ffffff',
               height: '40px',
@@ -755,7 +764,7 @@ export default function Students() {
             },
             '& .MuiSelect-select': {
               padding: '0 12px',
-              color: filters.status.length > 0 ? '#000' : '#aaa'
+              color: filters.status.length > 0 ? '#000' : '#4A5568'
             }
           }}
         >
@@ -789,7 +798,8 @@ export default function Students() {
             });
           }}
           sx={{
-            minWidth: '120px',
+            width: '90px',
+            minWidth: '90px',
             '& .MuiInputBase-root': {
               background: '#ffffff',
               height: '40px',
@@ -804,7 +814,7 @@ export default function Students() {
             },
             '& .MuiSelect-select': {
               padding: '0 12px',
-              color: filters.signup.length > 0 ? '#000' : '#aaa'
+              color: filters.signup.length > 0 ? '#000' : '#4A5568'
             }
           }}
         >
@@ -834,7 +844,8 @@ export default function Students() {
             });
           }}
           sx={{
-            minWidth: '120px',
+            width: '90px',
+            minWidth: '90px',
             '& .MuiInputBase-root': {
               background: '#ffffff',
               height: '40px',
@@ -849,7 +860,7 @@ export default function Students() {
             },
             '& .MuiSelect-select': {
               padding: '0 12px',
-              color: filters.steps.length > 0 ? '#000' : '#aaa'
+              color: filters.steps.length > 0 ? '#000' : '#4A5568'
             }
           }}
         >
