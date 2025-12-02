@@ -17,7 +17,7 @@ export default function Calander() {
           height: '100%'
         }}
       >
-        Calander
+        Bookings
         {/* <BigCalendar /> */}
       </Box>
     </>

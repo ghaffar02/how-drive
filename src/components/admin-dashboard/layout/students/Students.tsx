@@ -29,6 +29,7 @@ export default function Process() {
         msOverflowStyle: 'none'
       }}
     >
+      student
       {/* <DetailSide /> */}
       {/* <StudentDetail /> */}
     </Box>

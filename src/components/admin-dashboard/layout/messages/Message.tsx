@@ -27,6 +27,7 @@ export default function Message() {
         }
       }}
     >
+      messages
       {/* <Notifications />
       <Inbox /> */}
     </Box>

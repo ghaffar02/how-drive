@@ -27,6 +27,7 @@ export default function Schools() {
         }
       }}
     >
+      school
       {/* <Notifications />
       <Inbox /> */}
     </Box>

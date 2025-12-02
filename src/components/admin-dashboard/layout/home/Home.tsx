@@ -45,6 +45,7 @@ export default function Home({setActiveKey}: Props) {
           gap: {xs: '16px', md: '24px'}
         }}
       >
+        Home
         {/* <Box
           sx={{
             gridColumn: {xs: '1 / span 6', md: '1 / span 2', lg: '1 / span 2'},

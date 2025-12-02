@@ -30,6 +30,7 @@ export default function Drivers({activeKey}: DriversProps) {
         }
       }}
     >
+      Drivers
       {/* <DetailSide /> */}
       {/* <DriverDetail activeKey={activeKey} /> */}
     </Box>

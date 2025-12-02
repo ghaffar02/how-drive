@@ -43,7 +43,6 @@ export default function AdminDashboard() {
   const ADdata = t.raw('data2');
 
   const tabs = [...data, ...ADdata];
-  const title = tabs[Number(activeKey) - 1]?.label ?? '';
 
   return (
     <Box

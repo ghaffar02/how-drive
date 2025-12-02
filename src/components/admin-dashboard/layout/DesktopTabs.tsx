@@ -9,7 +9,9 @@ import home_black from '@/assets/svgs/dashboard-student/home_black.svg';
 import home_bold from '@/assets/svgs/dashboard-student/home_bold.svg';
 import home_blue from '@/assets/svgs/dashboard-student/home_blue.svg';
 import timer_black from '@/assets/svgs/stdIcon.svg';
+import school_black from '@/assets/svgs/dashboard-student/school-black.svg';
 import timer_bold from '@/assets/svgs/users-bold.svg';
+import school_bold from '@/assets/svgs/dashboard-student/school-bold.svg';
 import timer_blue from '@/assets/svgs/activeStdIcon.svg';
 import calander_black from '@/assets/svgs/dashboard-student/calander_black.svg';
 import calander_bold from '@/assets/svgs/dashboard-student/calander_bold.svg';
@@ -63,18 +65,19 @@ export default function DesktopTabs({
     },
     {
       key: '2',
-      label: 'timer',
+      label: 'Students',
       iconBlack: timer_black,
       iconBlue: timer_blue,
       iconHover: timer_bold
     },
     {
-      key: '3',
-      label: 'calendar',
-      iconBlack: calander_black,
-      iconBlue: calander_blue,
-      iconHover: calander_bold
+      key: '9',
+      label: 'Schools',
+      iconBlack: school_black,
+      iconBlue: driver_blue,
+      iconHover: school_bold
     },
+
     {
       key: '7',
       label: 'Trainer',
@@ -83,11 +86,11 @@ export default function DesktopTabs({
       iconHover: driver_bold
     },
     {
-      key: '9',
-      label: 'Schools',
-      iconBlack: driver_black,
-      iconBlue: driver_blue,
-      iconHover: driver_bold
+      key: '3',
+      label: 'bookings',
+      iconBlack: calander_black,
+      iconBlue: calander_blue,
+      iconHover: calander_bold
     },
     {
       key: '4',
@@ -115,17 +118,17 @@ export default function DesktopTabs({
     },
     {id: '7', label: 'Abmelden', menuIcon: login, menuIconHover: logoutIconBold}
   ];
-  const t = useTranslations('SchoolDashboard.DesktopTabs');
-  const data = t.raw('data');
-  const ADdata = t.raw('data2');
-  const profileData = Azdata.map((item, index) => ({
-    ...item,
-    label: ADdata[index]?.label || item.label
-  }));
-  const updateItems = navItems.map((item, index) => ({
-    ...item,
-    label: data[index]?.label || item.label
-  }));
+  // const t = useTranslations('SchoolDashboard.DesktopTabs');
+  // const data = t.raw('data');
+  // const ADdata = t.raw('data2');
+  // const profileData = Azdata.map((item, index) => ({
+  //   ...item,
+  //   label: ADdata[index]?.label || item.label
+  // }));
+  // const updateItems = navItems.map((item, index) => ({
+  //   ...item,
+  //   label: data[index]?.label || item.label
+  // }));
   // dropdown state + ref
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLDivElement>(null!);
@@ -189,7 +192,7 @@ export default function DesktopTabs({
             }
           }}
         >
-          {updateItems.map((item) => {
+          {navItems.map((item) => {
             const isActive = activeKey === item.key;
             const isHover = hoverKey === item.key;
             const iconSrc = isActive
@@ -285,7 +288,7 @@ export default function DesktopTabs({
           <Box sx={{margin: 'auto', width: 'fit-content'}}>
             <ProfileDropdown
               fullName={initials}
-              items={profileData}
+              items={Azdata}
               open={open}
               setOpen={setOpen}
               anchorRef={anchorRef}
