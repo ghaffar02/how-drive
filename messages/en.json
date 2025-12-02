@@ -2619,6 +2619,7 @@
       }
     },
     "leftSideTab": {
+      "messageFisrtTime": "The messages are not encrypted.<br/><br/><br/> Select a chat to start messaging <br/>or <br/> click on \"plus\" icon to start a new one.",
       "textTab": [
         "Active",
         "Inactive"

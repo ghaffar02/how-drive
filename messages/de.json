@@ -2617,6 +2617,7 @@
       }
     },
     "leftSideTab": {
+      "messageFisrtTime": "Die Nachrichten sind nicht verschlüsselt.<br/><br/><br/> Wähle einen Chat aus, um Nachrichten zu senden,<br/> oder<br/> Klicke auf „Plus-Symbol“, um eine neue Nachricht zu erstellen.",
       "textTab": [
         "Aktiv",
         "Inaktiv"
