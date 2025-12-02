@@ -55,16 +55,16 @@ export default function ClassGrid() {
                 <BgCard
                   icon={laptop}
                   bgImage={ImageBGridInfo2School.src}
-                  title={t('classesHeading')}
-                  heading={t('classesList')}
+                  title="Klassen"
+                  heading="A, B"
                 />
               </Grid>
               <Grid size={12}>
                 <BgCard
                   icon={map}
                   bgImage={ImageBGridInfo5School.src}
-                  title={t('languagesHeading')}
-                  heading={t('languages')}
+                  title="Sprachen"
+                  heading="Deutsch, Englisch, Türkisch"
                 />
               </Grid>
             </Grid>
@@ -97,19 +97,8 @@ export default function ClassGrid() {
                 <BgCard
                   icon={map}
                   bgImage={ImageBGridInfo5School.src}
-                  title={t('languagesHeading')}
-                  heading={t('languages')}
-                />
-              </Grid>
-              <Grid
-                size={{xs: 12, md: 6, lg: 12}}
-                display={{xs: 'block', lg: 'none'}}
-              >
-                <BgCard
-                  icon={laptop}
-                  bgImage={ImageBGridInfo2School.src}
-                  title={t('classesHeading')}
-                  heading={t('classesList')}
+                  title="Sprachen"
+                  heading="Deutsch, Englisch, Türkisch"
                 />
               </Grid>
             </Grid>
@@ -125,21 +114,10 @@ export default function ClassGrid() {
                 display={{xs: 'none', md: 'none', lg: 'grid'}}
               >
                 <BgCard
-                  icon={laptop}
                   bgImage={ImageBGridInfo2School.src}
-                  title={t('classesHeading')}
-                  heading={t('classesList')}
-                />
-              </Grid>
-              <Grid
-                size={{xs: 12, md: 6, lg: 12}}
-                display={{xs: 'grid', md: 'none', lg: 'none'}}
-              >
-                <BgCard
-                  icon={map}
-                  bgImage={ImageBGridInfo5School.src}
-                  title={t('languagesHeading')}
-                  heading={t('languages')}
+                  icon={laptop}
+                  title="Klassen"
+                  heading="A, B"
                 />
               </Grid>
               <Grid size={{xs: 12}}>
