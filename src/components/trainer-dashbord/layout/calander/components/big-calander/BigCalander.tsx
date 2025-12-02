@@ -25,7 +25,7 @@ const localizer = dateFnsLocalizer({
 // ⭐ UNIFIED MASTER OBJECT FOR BOTH CALENDAR & DAY VIEW
 
 const scheduleData: Record<string, any[]> = {
-  '2025-11-03': [
+  '2025-12-03': [
     {
       id: 1,
       category: 'purple',
@@ -127,7 +127,7 @@ const scheduleData: Record<string, any[]> = {
     }
   ],
 
-  '2025-11-07': [
+  '2025-12-07': [
     {
       id: 1,
       category: 'red',
@@ -184,7 +184,7 @@ const scheduleData: Record<string, any[]> = {
     }
   ],
 
-  '2025-11-12': [
+  '2025-12-12': [
     {
       id: 1,
       category: 'cyan',

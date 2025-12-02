@@ -35,26 +35,26 @@ export function DayDetailView({
     {
       key: 'purple',
       label: 'Gespräch',
-      borderColor: 'rgb(147, 51, 234)',
-      backgroundColor: 'rgb(237, 225, 250)'
+      borderColor: '#9333ea',
+      backgroundColor: '#ede1fa'
     },
     {
       key: 'blue',
       label: 'Theoriestunden',
-      borderColor: 'rgb(37, 99, 235)',
-      backgroundColor: 'rgb(227, 236, 255)'
+      borderColor: '#2563eb',
+      backgroundColor: '#e3ecff'
     },
     {
       key: 'cyan',
       label: 'Fahrstunden',
-      borderColor: 'rgb(8, 145, 178)',
-      backgroundColor: 'rgb(222, 248, 250)'
+      borderColor: '#0891b2',
+      backgroundColor: '#def8fa'
     },
     {
       key: 'red',
       label: 'Prüfungen',
-      borderColor: 'rgb(220, 38, 38)',
-      backgroundColor: 'rgb(250, 222, 222)'
+      borderColor: '#dc2626',
+      backgroundColor: '#fadede'
     }
   ];
 
