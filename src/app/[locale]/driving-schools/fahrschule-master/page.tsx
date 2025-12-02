@@ -32,7 +32,7 @@ export default function Page() {
         </Box>
         {/* <HeroAboutus title={t('Title2')} description={t('heroDes2')} /> */}
         <FahrschuleMustermann />
-        <ClassGrid license="licenseLT" />
+        <ClassGrid />
         <TrustServiceSection />
         <Footer />
       </Box>
