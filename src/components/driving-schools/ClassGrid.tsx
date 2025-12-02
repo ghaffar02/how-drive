@@ -2,7 +2,6 @@ import {Box, Grid} from '@mui/material';
 import React from 'react';
 // import TextCard from './components/TextCard';
 
-import bg1 from '@/assets/svgs/driving-license-class-A/bg1.avif';
 import ImageBGridInfo2School from '@/assets/pngs/ImageBGridInfo2School.jpg';
 import email from '@/assets/svgs/driving-schools/email.svg';
 import website from '@/assets/svgs/driving-schools/website.svg';
@@ -17,13 +16,7 @@ import {useTranslations} from 'next-intl';
 import TextCard from './components/TextCard';
 import BgCard from './components/BgCard';
 
-export default function ClassGrid({
-  license,
-  isbool = true
-}: {
-  license: string;
-  isbool?: boolean;
-}) {
+export default function ClassGrid() {
   const t = useTranslations('DrivingSchools.GridSection');
   const timings = t.raw('timings');
 

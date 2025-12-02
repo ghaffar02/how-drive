@@ -28,7 +28,6 @@ export default function TextCard({
   icon,
   description,
   headingSize = true,
-  isbool,
   background = '#f2f2f2',
   data
 }: CardProps) {
@@ -41,7 +40,7 @@ export default function TextCard({
         height: {
           xs: data ? '100%' : '164px',
           sm: data ? '100%' : '169px',
-          md: data ? '100%' : '171px'
+          md: data ? '100%' : '172px'
         },
         padding: '24px',
         gap: '24px',
