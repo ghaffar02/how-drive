@@ -1,5 +1,13 @@
 'use client';
-import {Box, Typography, Table, TableBody, TableCell, TableHead, TableRow} from '@mui/material';
+import {
+  Box,
+  Typography,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow
+} from '@mui/material';
 import React from 'react';
 import localFont from '@/utils/themes';
 import {usePathname} from 'next/navigation';
@@ -41,7 +49,7 @@ export default function TableCard({
           '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0,0,0,0.25), 0px 1px 1px 0px rgba(0,0,0,0.25)',
         display: 'flex',
         flexDirection: 'column',
-        gap: '16px',
+        gap: ' 8px',
         overflow: 'hidden'
       }}
     >
@@ -57,17 +65,16 @@ export default function TableCard({
       </Typography>
 
       <Box sx={{overflowX: 'auto', flex: 1}}>
-        <Table sx={{minWidth: 200}}>
+        <Table sx={{minWidth: 200, borderCollapse: 'collapse'}}>
           <TableHead>
             <TableRow>
               <TableCell
                 sx={{
-                  ...localFont.inter12,
+                  fontSize: '15px',
                   fontFamily: '"Inter", sans-serif !important',
                   fontWeight: '500',
                   color: '#71717a',
-                  padding: '8px',
-                  borderBottom: '1px solid #e4e4e7'
+                  border: 'none'
                 }}
               >
                 Month
@@ -75,14 +82,13 @@ export default function TableCard({
               {columns.map((column) => (
                 <TableCell
                   key={column.key}
-                  align="right"
+                  align="left"
                   sx={{
-                    ...localFont.inter12,
+                    fontSize: '15px',
                     fontFamily: '"Inter", sans-serif !important',
                     fontWeight: '500',
                     color: '#71717a',
-                    padding: '8px',
-                    borderBottom: '1px solid #e4e4e7'
+                    border: 'none'
                   }}
                 >
                   {column.label}
@@ -92,15 +98,17 @@ export default function TableCard({
           </TableHead>
           <TableBody>
             {monthlyData.map((row, index) => (
-              <TableRow key={index}>
+              <TableRow
+                key={index}
+                sx={{'& td': {paddingTop: ' 8px', paddingBottom: ' 8px'}}}
+              >
                 <TableCell
                   sx={{
-                    ...localFont.inter12,
+                    fontSize: '15px',
                     fontFamily: '"Inter", sans-serif !important',
                     fontWeight: '400',
                     color: '#3f3f46',
-                    padding: '8px',
-                    borderBottom: '1px solid #f4f4f5'
+                    border: 'none'
                   }}
                 >
                   {row.month}
@@ -108,14 +116,13 @@ export default function TableCard({
                 {columns.map((column) => (
                   <TableCell
                     key={column.key}
-                    align="right"
+                    align="left"
                     sx={{
-                      ...localFont.inter12,
+                      fontSize: '17px',
                       fontFamily: '"Inter", sans-serif !important',
-                      fontWeight: '400',
+                      fontWeight: '500',
                       color: '#3f3f46',
-                      padding: '8px',
-                      borderBottom: '1px solid #f4f4f5'
+                      border: 'none'
                     }}
                   >
                     {formatter.format(row[column.key] as number)}
@@ -123,15 +130,17 @@ export default function TableCard({
                 ))}
               </TableRow>
             ))}
-            <TableRow>
+            <TableRow
+              sx={{'& td': {paddingTop: ' 8px', paddingBottom: ' 8px'}}}
+            >
               <TableCell
                 sx={{
-                  ...localFont.inter12,
+                  fontSize: '15px',
                   fontFamily: '"Inter", sans-serif !important',
                   fontWeight: '600',
                   color: '#3f3f46',
-                  padding: '8px',
-                  borderBottom: '1px solid #e4e4e7'
+
+                  border: 'none'
                 }}
               >
                 Total
@@ -139,28 +148,29 @@ export default function TableCard({
               {columns.map((column) => (
                 <TableCell
                   key={column.key}
-                  align="right"
+                  align="left"
                   sx={{
-                    ...localFont.inter12,
+                    fontSize: '17px',
                     fontFamily: '"Inter", sans-serif !important',
-                    fontWeight: '600',
+                    fontWeight: '500',
                     color: '#3f3f46',
-                    padding: '8px',
-                    borderBottom: '1px solid #e4e4e7'
+                    border: 'none'
                   }}
                 >
                   {formatter.format(total[column.key])}
                 </TableCell>
               ))}
             </TableRow>
-            <TableRow>
+            <TableRow
+              sx={{'& td': {paddingTop: ' 8px', paddingBottom: ' 8px'}}}
+            >
               <TableCell
                 sx={{
-                  ...localFont.inter12,
+                  fontSize: '15px',
                   fontFamily: '"Inter", sans-serif !important',
                   fontWeight: '400',
                   color: '#71717a',
-                  padding: '8px'
+                  border: 'none'
                 }}
               >
                 Last Y
@@ -168,13 +178,13 @@ export default function TableCard({
               {columns.map((column) => (
                 <TableCell
                   key={column.key}
-                  align="right"
+                  align="left"
                   sx={{
-                    ...localFont.inter12,
+                    fontSize: '17px',
                     fontFamily: '"Inter", sans-serif !important',
-                    fontWeight: '400',
+                    fontWeight: '500',
                     color: '#71717a',
-                    padding: '8px'
+                    border: 'none'
                   }}
                 >
                   {formatter.format(lastYear[column.key])}
@@ -187,4 +197,3 @@ export default function TableCard({
     </Box>
   );
 }
-

@@ -186,35 +186,29 @@ export default function Home({setActiveKey}: Props) {
           overflowY: 'auto',
           overflowX: 'hidden',
           '&::-webkit-scrollbar': {
-            width: '8px'
+            display: 'none'
           },
-          '&::-webkit-scrollbar-track': {
-            background: 'rgba(0, 0, 0, 0.1)',
-            borderRadius: '10px'
-          },
-          '&::-webkit-scrollbar-thumb': {
-            background: 'rgba(0, 0, 0, 0.3)',
-            borderRadius: '10px',
-            '&:hover': {
-              background: 'rgba(0, 0, 0, 0.5)'
-            }
-          }
+          msOverflowStyle: 'none',
+          scrollbarWidth: 'none'
         }}
       >
-        {/* First Row: Students, Schools, Trainers (1 col each), Messages (2 cols) */}
+        {/* First Row: Students, Schools, Trainers (md: 3 cols, lg: 3 cols + Messages 2 cols) */}
         <Grid
           container
           spacing={3}
           sx={{
             mb: 3,
-            display: {xs: 'flex', md: 'grid'},
-            gridTemplateColumns: {md: 'repeat(5, 1fr)'}
+            display: {xs: 'flex', md: 'grid', lg: 'grid'},
+            gridTemplateColumns: {
+              md: 'repeat(3, 1fr)',
+              lg: 'repeat(5, 1fr)'
+            }
           }}
         >
           <Grid
             size={{xs: 12}}
             sx={{
-              gridColumn: {md: 'span 1'}
+              gridColumn: {md: 'span 1', lg: 'span 1'}
             }}
           >
             <StatsCard
@@ -230,7 +224,7 @@ export default function Home({setActiveKey}: Props) {
           <Grid
             size={{xs: 12}}
             sx={{
-              gridColumn: {md: 'span 1'}
+              gridColumn: {md: 'span 1', lg: 'span 1'}
             }}
           >
             <StatsCard
@@ -246,7 +240,7 @@ export default function Home({setActiveKey}: Props) {
           <Grid
             size={{xs: 12}}
             sx={{
-              gridColumn: {md: 'span 1'}
+              gridColumn: {md: 'span 1', lg: 'span 1'}
             }}
           >
             <StatsCard
@@ -262,22 +256,33 @@ export default function Home({setActiveKey}: Props) {
           <Grid
             size={{xs: 12}}
             sx={{
-              gridColumn: {md: 'span 2'}
+              gridColumn: {md: 'none', lg: 'span 2'},
+              display: {xs: 'block', md: 'none', lg: 'block'}
             }}
           >
             <Messages setActiveKey={setActiveKey} messages={messages} />
           </Grid>
         </Grid>
 
-        {/* Second Row: Growth (2 cols), Popular Cities (1 col), Bookings (2 cols) */}
+        {/* Second Row: Messages (md only), Growth */}
         <Grid
           container
           spacing={3}
           sx={{
-            display: {xs: 'flex', md: 'grid'},
-            gridTemplateColumns: {md: 'repeat(5, 1fr)'}
+            mb: 3,
+            display: {xs: 'flex', md: 'grid', lg: 'none'},
+            gridTemplateColumns: {md: 'repeat(3, 1fr)'}
           }}
         >
+          <Grid
+            size={{xs: 12}}
+            sx={{
+              gridColumn: {md: 'span 1'},
+              display: {xs: 'block', md: 'block', lg: 'none'}
+            }}
+          >
+            <Messages setActiveKey={setActiveKey} messages={messages} />
+          </Grid>
           <Grid
             size={{xs: 12}}
             sx={{
@@ -296,10 +301,43 @@ export default function Home({setActiveKey}: Props) {
               lastYear={growthLastYear}
             />
           </Grid>
+        </Grid>
+
+        {/* Third Row: Growth (lg only), Popular Cities, Bookings */}
+        <Grid
+          container
+          spacing={3}
+          sx={{
+            display: {xs: 'flex', md: 'grid', lg: 'grid'},
+            gridTemplateColumns: {
+              md: 'repeat(3, 1fr)',
+              lg: 'repeat(5, 1fr)'
+            }
+          }}
+        >
           <Grid
             size={{xs: 12}}
             sx={{
-              gridColumn: {md: 'span 1'}
+              gridColumn: {md: 'none', lg: 'span 2'},
+              display: {xs: 'block', md: 'none', lg: 'block'}
+            }}
+          >
+            <TableCard
+              title="Growth"
+              columns={[
+                {key: 'stu', label: 'Stu'},
+                {key: 'sch', label: 'Sch'},
+                {key: 'tra', label: 'Tra'}
+              ]}
+              monthlyData={growthMonthlyData}
+              total={growthTotal}
+              lastYear={growthLastYear}
+            />
+          </Grid>
+          <Grid
+            size={{xs: 12}}
+            sx={{
+              gridColumn: {md: 'span 1', lg: 'span 1'}
             }}
           >
             <PopularCitiesCard
@@ -310,7 +348,7 @@ export default function Home({setActiveKey}: Props) {
           <Grid
             size={{xs: 12}}
             sx={{
-              gridColumn: {md: 'span 2'}
+              gridColumn: {md: 'span 2', lg: 'span 2'}
             }}
           >
             <TableCard

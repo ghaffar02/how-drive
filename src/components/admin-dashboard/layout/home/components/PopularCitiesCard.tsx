@@ -14,7 +14,10 @@ type PopularCitiesCardProps = {
   students: CityData[];
 };
 
-export default function PopularCitiesCard({schools, students}: PopularCitiesCardProps) {
+export default function PopularCitiesCard({
+  schools,
+  students
+}: PopularCitiesCardProps) {
   const pathname = usePathname();
   const locale = pathname.split('/')[1];
   const formatter = new Intl.NumberFormat(locale === 'de' ? 'de-DE' : 'en-US');
@@ -47,32 +50,34 @@ export default function PopularCitiesCard({schools, students}: PopularCitiesCard
         Popular Cities
       </Typography>
 
-      <Box sx={{display: 'flex', flexDirection: 'column', gap: '20px', flex: 1}}>
-        <Box sx={{display: 'flex', flexDirection: 'column', gap: '12px'}}>
+      <Box
+        sx={{display: 'flex', flexDirection: 'column', gap: '20px', flex: 1}}
+      >
+        <Box sx={{display: 'flex', flexDirection: 'column', gap: '16px'}}>
           <Typography
             sx={{
-              ...localFont.inter14,
+              fontSize: '15px',
               fontFamily: '"Inter", sans-serif !important',
               fontWeight: '500',
-              color: '#3f3f46'
+              color: '#3f3f46',
+              textAlign: 'center'
             }}
           >
             Schools
           </Typography>
-          <Box sx={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
+          <Box sx={{display: 'flex', flexDirection: 'column', gap: '16px'}}>
             {schools.map((item, index) => (
               <Box
                 key={index}
                 sx={{
                   display: 'flex',
                   justifyContent: 'space-between',
-                  alignItems: 'center',
-                  padding: '4px 0'
+                  alignItems: 'center'
                 }}
               >
                 <Typography
                   sx={{
-                    ...localFont.inter14,
+                    fontSize: '15px',
                     fontFamily: '"Inter", sans-serif !important',
                     fontWeight: '400',
                     color: '#3f3f46'
@@ -82,7 +87,7 @@ export default function PopularCitiesCard({schools, students}: PopularCitiesCard
                 </Typography>
                 <Typography
                   sx={{
-                    ...localFont.inter14,
+                    fontSize: '17px',
                     fontFamily: '"Inter", sans-serif !important',
                     fontWeight: '500',
                     color: '#3f3f46'
@@ -95,31 +100,31 @@ export default function PopularCitiesCard({schools, students}: PopularCitiesCard
           </Box>
         </Box>
 
-        <Box sx={{display: 'flex', flexDirection: 'column', gap: '12px'}}>
+        <Box sx={{display: 'flex', flexDirection: 'column', gap: '16px'}}>
           <Typography
             sx={{
-              ...localFont.inter14,
+              fontSize: '15px',
               fontFamily: '"Inter", sans-serif !important',
               fontWeight: '500',
-              color: '#3f3f46'
+              color: '#3f3f46',
+              textAlign: 'center'
             }}
           >
             Students
           </Typography>
-          <Box sx={{display: 'flex', flexDirection: 'column', gap: '8px'}}>
+          <Box sx={{display: 'flex', flexDirection: 'column', gap: '16px'}}>
             {students.map((item, index) => (
               <Box
                 key={index}
                 sx={{
                   display: 'flex',
                   justifyContent: 'space-between',
-                  alignItems: 'center',
-                  padding: '4px 0'
+                  alignItems: 'center'
                 }}
               >
                 <Typography
                   sx={{
-                    ...localFont.inter14,
+                    fontSize: '15px',
                     fontFamily: '"Inter", sans-serif !important',
                     fontWeight: '400',
                     color: '#3f3f46'
@@ -129,7 +134,7 @@ export default function PopularCitiesCard({schools, students}: PopularCitiesCard
                 </Typography>
                 <Typography
                   sx={{
-                    ...localFont.inter14,
+                    fontSize: '17px',
                     fontFamily: '"Inter", sans-serif !important',
                     fontWeight: '500',
                     color: '#3f3f46'
@@ -145,4 +150,3 @@ export default function PopularCitiesCard({schools, students}: PopularCitiesCard
     </Box>
   );
 }
-
