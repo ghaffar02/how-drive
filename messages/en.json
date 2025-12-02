@@ -3061,5 +3061,101 @@
       "cancelBtn": "Cancel",
       "saveBtn": "Save"
     }
+  },
+  "DrivingSchools": {
+    "Hamburg": {
+      "connect": "Connect",
+      "messaging": "Messaging",
+      "moreInformation": "More information",
+      "aboutDrivingSchool": "About the driving school"
+    },
+    "GridSection": {
+      "openingHours": "Opening hours",
+      "timings": [
+        {
+          "day": "Mo",
+          "slots": [
+            {
+              "from": "14:30",
+              "to": "18:00"
+            }
+          ]
+        },
+        {
+          "day": "Tu",
+          "slots": [
+            {
+              "from": "10:30",
+              "to": "13:00"
+            },
+            {
+              "from": "14:30",
+              "to": "18:00"
+            }
+          ]
+        },
+        {
+          "day": "We",
+          "slots": [
+            {
+              "from": "16:00",
+              "to": "19:00"
+            }
+          ]
+        },
+        {
+          "day": "Th",
+          "slots": [
+            {
+              "from": "10:30",
+              "to": "13:00"
+            },
+            {
+              "from": "14:30",
+              "to": "18:00"
+            }
+          ]
+        },
+        {
+          "day": "Fr",
+          "slots": [
+            {
+              "from": "14:30",
+              "to": "18:00"
+            }
+          ]
+        },
+        {
+          "day": "Sa",
+          "slots": [
+            {
+              "from": "Not available",
+              "to": ""
+            }
+          ]
+        },
+        {
+          "day": "Su",
+          "slots": [
+            {
+              "from": "Not available",
+              "to": ""
+            }
+          ]
+        }
+      ],
+      "classesHeading": "Classes",
+      "classesList": "A, B",
+      "addressHeading": "Address",
+      "address": "Mundsburger Damm 44",
+      "telephoneHeading": "Telephone",
+      "telephone": "040-52160511",
+      "languagesHeading": "Languages",
+      "languages": "Deutsch, Englisch, Türkisch",
+      "emailHeading": "Email",
+      "email": "info@mundsburg-fahrschule.de",
+      "websiteHeading": "Website",
+      "website": "http://mundsburg-fahrschule.de/"
+    }
   }
 }

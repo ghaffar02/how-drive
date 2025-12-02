@@ -3,19 +3,22 @@ import {Box, Typography} from '@mui/material';
 
 import bg1 from '@/assets/pngs/ImageBGridInfo.jpg';
 // import file from '@/assets/svgs/FlagGermany.svg';
-import ConnectIcon from '@/assets/svgs/driving-schools/ConnectIcon.svg';
+import ConnectIcon from '@/assets/svgs/driving-schools/Connect.svg';
+import ConnectIconWhite from '@/assets/svgs/driving-schools/plug-connect-white.svg';
 import SchoolPageBGMobile from '@/assets/svgs/driving-schools/SchoolPageBGMobile.svg';
 import SchoolPageBGTablet from '@/assets/svgs/driving-schools/SchoolPageBGTablet.svg';
-import messagebtnIcon from '@/assets/svgs/driving-schools/messagebtnIcon.svg';
+import messagebtnBlack from '@/assets/svgs/driving-schools/messagebtnIcon.svg';
+import messagebtnWhite from '@/assets/svgs/driving-schools/message.svg';
 import schoolicon from '@/assets/svgs/driving-schools/schoolicon.svg';
-
 import SchoolPageBG from '@/assets/svgs/driving-schools/SchoolPageBG.svg';
 import BgCard from './components/BgCard';
 import Image from 'next/image';
 import localFont from '@/utils/themes';
 import CustomButton from '../school-dashboard/CustomButton';
+import {useTranslations} from 'next-intl';
 export default function FahrschuleMustermann() {
-  const title = `Über die Fahrschule`;
+  const t = useTranslations('DrivingSchools.Hamburg');
+
   const heading = `
 Erste Fahrstunde: Deine erste Fahrstunde beginnt mit einer herzlichen Begrüßung durch deinen Fahrlehrer und einer ausführlichen Einweisung in die Bedienelemente des Fahrzeugs. Anschließend werdet ihr gemeinsam die ersten Meter auf einem ruhigen Gelände fahren, um das Anfahren, Schalten und Bremsen zu üben. Wir legen Wert darauf, dass du dich wohlfühlst und nicht unter Druck stehst.
 <div style="margin:20px 0 0"></div>
@@ -142,13 +145,13 @@ Moderne Ausbildung: Unser moderner Fuhrpark besteht aus einer vielfältigen Ausw
                   }}
                 >
                   <CustomButton
-                    label={'Verbinden'}
+                    label={t('connect')}
                     bgColor="#2d3748ff"
                     hoverColor="rgba(0, 0, 0, 0)"
                     activeColor="#001959"
                     hoverTextcolor="#2D3748"
-                    imgSrc={ConnectIcon}
-                    hoverImgSrc={messagebtnIcon}
+                    imgSrc={ConnectIconWhite}
+                    hoverImgSrc={ConnectIcon}
                     btnSx={{
                       maxWidth: '20px',
                       height: '20px'
@@ -183,13 +186,13 @@ Moderne Ausbildung: Unser moderner Fuhrpark besteht aus einer vielfältigen Ausw
                       p: '12px',
                       height: '49px'
                     }}
-                    label={'Kontaktieren'}
-                    hoverImgSrc={messagebtnIcon}
+                    label={t('messaging')}
+                    hoverImgSrc={messagebtnWhite}
                     hoverTextcolor="#fff"
                     bgColor="rgba(0, 0, 0, 0)"
                     hoverColor="#2d3748ff "
                     activeColor="#001959"
-                    imgSrc={messagebtnIcon}
+                    imgSrc={messagebtnBlack}
                     btnSx={{
                       maxWidth: '20px',
                       height: '20px'
@@ -198,7 +201,7 @@ Moderne Ausbildung: Unser moderner Fuhrpark besteht aus einer vielfältigen Ausw
                 </Box>
               </Box>
               <CustomButton
-                label={'Weitere Informationen'}
+                label={t('moreInformation')}
                 bgColor="#fff"
                 hoverColor="#fff"
                 activeColor="#fff"
@@ -233,7 +236,7 @@ Moderne Ausbildung: Unser moderner Fuhrpark besteht aus einer vielfältigen Ausw
                 p: {xs: '24px', md: '48px'}
               }}
               bgImage={bg1.src}
-              title={title}
+              title={t('aboutDrivingSchool')}
               des={heading}
             />
           </Box>

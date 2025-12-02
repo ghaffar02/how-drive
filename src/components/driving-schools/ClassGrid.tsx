@@ -24,29 +24,8 @@ export default function ClassGrid({
   license: string;
   isbool?: boolean;
 }) {
-  const t = useTranslations(license);
-  const timings = [
-    {day: 'Mo', slots: [{from: '14:30', to: '18:00'}]},
-    {
-      day: 'Di',
-      slots: [
-        {from: '10:30', to: '13:00'},
-        {from: '14:30', to: '18:00'}
-      ]
-    },
-    {day: 'Mi', slots: [{from: '16:00', to: '19:00'}]},
-    {
-      day: 'Do',
-      slots: [
-        {from: '10:30', to: '13:00'},
-        {from: '14:30', to: '18:00'}
-      ]
-    },
-    {day: 'Fr', slots: [{from: '14:30', to: '18:00'}]},
-
-    {day: 'Sa', slots: [{from: 'Nicht verfügbar', to: ''}]},
-    {day: 'So', slots: [{from: 'Nicht verfügbar', to: ''}]}
-  ];
+  const t = useTranslations('DrivingSchools.GridSection');
+  const timings = t.raw('timings');
 
   return (
     <Box sx={{bgcolor: '#FAFAFA'}}>
@@ -55,7 +34,7 @@ export default function ClassGrid({
           maxWidth: '1400px',
           width: '100%',
           margin: 'auto',
-          padding: {xs: '60px 16px', md: '60px 24px', lg: '60px 48px'}
+          padding: {xs: '120px 8px', md: '120px 24px', lg: '120px 48px'}
         }}
       >
         {/* <Grid spacing={2} container> */}
@@ -70,7 +49,7 @@ export default function ClassGrid({
           <Grid size={6}>
             {' '}
             <TextCard
-              heading={t('grund')}
+              heading={t('openingHours')}
               data={timings}
               icon={time}
               headingSize={false}
@@ -83,30 +62,22 @@ export default function ClassGrid({
                 <BgCard
                   icon={laptop}
                   bgImage={ImageBGridInfo2School.src}
-                  title="
-Klassen
-"
-                  heading="
-A, B"
+                  title={t('classesHeading')}
+                  heading={t('classesList')}
                 />
               </Grid>
               <Grid size={12}>
                 <BgCard
                   icon={map}
                   bgImage={ImageBGridInfo5School.src}
-                  title="
-Sprachen"
-                  heading="Deutsch, Englisch, Türkisch"
+                  title={t('languagesHeading')}
+                  heading={t('languages')}
                 />
               </Grid>
             </Grid>
           </Grid>
         </Grid>
-        <Grid
-          container
-          spacing={2}
-          // display={{xs: 'grid', md: 'none', lg: 'grid'}}
-        >
+        <Grid container spacing={2}>
           <Grid
             size={{xs: 12, lg: 6}}
             display={{xs: 'grid', md: 'none', lg: 'grid'}}
@@ -119,21 +90,33 @@ Sprachen"
               <Grid size={{xs: 12, md: 6, lg: 12}}>
                 {' '}
                 <TextCard
-                  heading={t('grund')}
+                  heading={t('openingHours')}
                   icon={time}
                   data={timings}
-                  // description={t('grundDes')}
                   headingSize={false}
                   background="#edf0ff"
                 />
               </Grid>
-              <Grid size={{xs: 12, md: 6, lg: 12}}>
+              <Grid
+                size={{xs: 12, md: 6, lg: 12}}
+                display={{xs: 'none', lg: 'block'}}
+              >
                 <BgCard
                   icon={map}
+                  bgImage={ImageBGridInfo5School.src}
+                  title={t('languagesHeading')}
+                  heading={t('languages')}
+                />
+              </Grid>
+              <Grid
+                size={{xs: 12, md: 6, lg: 12}}
+                display={{xs: 'block', lg: 'none'}}
+              >
+                <BgCard
+                  icon={laptop}
                   bgImage={ImageBGridInfo2School.src}
-                  title="
-Sprachen"
-                  heading="Deutsch, Englisch, Türkisch"
+                  title={t('classesHeading')}
+                  heading={t('classesList')}
                 />
               </Grid>
             </Grid>
@@ -146,16 +129,24 @@ Sprachen"
             >
               <Grid
                 size={{xs: 12, md: 6, lg: 12}}
-                display={{xs: 'grid', md: 'none', lg: 'grid'}}
+                display={{xs: 'none', md: 'none', lg: 'grid'}}
               >
                 <BgCard
                   icon={laptop}
+                  bgImage={ImageBGridInfo2School.src}
+                  title={t('classesHeading')}
+                  heading={t('classesList')}
+                />
+              </Grid>
+              <Grid
+                size={{xs: 12, md: 6, lg: 12}}
+                display={{xs: 'grid', md: 'none', lg: 'none'}}
+              >
+                <BgCard
+                  icon={map}
                   bgImage={ImageBGridInfo5School.src}
-                  title="
-Klassen
-"
-                  heading="
-A, B"
+                  title={t('languagesHeading')}
+                  heading={t('languages')}
                 />
               </Grid>
               <Grid size={{xs: 12}}>
@@ -163,9 +154,9 @@ A, B"
                   <Grid size={{xs: 12, md: 6, lg: 6}}>
                     {' '}
                     <TextCard
-                      heading="Anschrift"
+                      heading={t('addressHeading')}
                       icon={location}
-                      description="Mundsburger Damm 44"
+                      description={t('address')}
                       headingSize={false}
                       background="#f2f2f2"
                     />
@@ -173,9 +164,9 @@ A, B"
                   <Grid size={{xs: 12, md: 6, lg: 6}}>
                     {' '}
                     <TextCard
-                      heading="Telefon"
+                      heading={t('telephoneHeading')}
                       icon={phone}
-                      description="040-52160511"
+                      description={t('telephone')}
                       headingSize={false}
                       background="#edf0ff"
                     />
@@ -183,9 +174,9 @@ A, B"
                   <Grid size={{xs: 12, md: 6, lg: 6}}>
                     {' '}
                     <TextCard
-                      heading="E-Mail"
+                      heading={t('emailHeading')}
                       icon={email}
-                      description="info@mundsburg-fahrschule.de"
+                      description={t('email')}
                       headingSize={false}
                       background="#edf0ff"
                     />
@@ -193,9 +184,9 @@ A, B"
                   <Grid size={{xs: 12, md: 6, lg: 6}}>
                     {' '}
                     <TextCard
-                      heading="Website"
+                      heading={t('websiteHeading')}
                       icon={website}
-                      description="http://mundsburg-fahrschule.de/"
+                      description={t('website')}
                       headingSize={false}
                       background="#f2f2f2"
                     />

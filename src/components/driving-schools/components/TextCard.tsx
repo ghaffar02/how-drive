@@ -41,7 +41,7 @@ export default function TextCard({
         height: {
           xs: data ? '100%' : '164px',
           sm: data ? '100%' : '169px',
-          md: data ? '100%' : '170px'
+          md: data ? '100%' : '171px'
         },
         padding: '24px',
         gap: '24px',
@@ -135,13 +135,13 @@ export default function TextCard({
                       sx={{
                         ...localFont.inter18,
                         color: '#1A202C',
-                        // color: 'red',
                         fontWeight: '400',
                         fontFamily: '"Inter", sans-serif !important'
                       }}
                     >
-                      {slot.from === 'Nicht verfügbar' ? (
-                        'Nicht verfügbar'
+                      {slot.from === 'Nicht verfügbar' ||
+                      slot.from === 'Not available' ? (
+                        slot.from
                       ) : (
                         <>
                           {slot.from}
@@ -155,6 +155,7 @@ export default function TextCard({
                           {slot.to}
                         </>
                       )}
+
                       {i !== item.slots.length - 1 ? ' , ' : ''}
                     </Typography>
                   ))}
