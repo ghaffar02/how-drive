@@ -170,7 +170,13 @@ export default function DetailSide({display = 'none', setOpenTrainers}: Prop) {
             height: '38px',
             alignItems: 'center',
             background: '#ffffffbf',
-            boxShadow: '0px 0px 2px 0px #D4D4D8'
+            boxShadow: '0px 0px 2px 0px #D4D4D8',
+            transition: 'all 0.2s ease',
+
+            '&:focus-within': {
+              border: (theme) => `2px solid ${theme.palette.primary.main}`,
+              background: '#fff'
+            }
           }}
         >
           <Box sx={{height: '16px', width: '16px'}}>

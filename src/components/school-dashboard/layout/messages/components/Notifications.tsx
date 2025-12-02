@@ -192,7 +192,13 @@ export default function Notifications({
             borderRadius: '999px',
             height: '38px',
             alignItems: 'center',
-            background: 'rgba(255,255,255,0.75)'
+            background: 'rgba(255,255,255,0.75)',
+            transition: 'all 0.2s ease',
+
+            '&:focus-within': {
+              border: (theme) => `2px solid ${theme.palette.primary.main}`,
+              background: '#fff'
+            }
           }}
         >
           <Box sx={{height: '16px', width: '16px'}}>

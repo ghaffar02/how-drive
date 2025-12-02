@@ -17,6 +17,7 @@ import HoursComponent from './HoursComponent';
 
 export default function Business() {
   const [openDropdown, setOpenDropdown] = useState(true);
+  const [lastInputValue, setLastInputValue] = useState('');
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [checkedA, setCheckedA] = useState(false);
@@ -119,235 +120,210 @@ export default function Business() {
             justifyContent: 'space-between'
           }}
         >
-          {formFields.map(
-            (
-              items: {
-                [x: string]:
-                  | string
-                  | number
-                  | bigint
-                  | boolean
-                  | ReactElement<unknown, string | JSXElementConstructor<any>>
-                  | Iterable<ReactNode>
-                  | ReactPortal
-                  | Promise<
-                      | string
-                      | number
-                      | bigint
-                      | boolean
-                      | ReactPortal
-                      | ReactElement<
-                          unknown,
-                          string | JSXElementConstructor<any>
-                        >
-                      | Iterable<ReactNode>
-                      | null
-                      | undefined
-                    >
-                  | null
-                  | undefined;
-                checkBox1?: any;
-                checkBox2?: any;
-                checkBox3?: any;
-                label?: any;
-                isbool?: any;
-                placeholder?: any;
-              },
-              i: Key | null | undefined
-            ) => {
-              const hasCheckbox =
-                items.checkBox1 || items.checkBox2 || items.checkBox3;
+          {formFields.map((items: any, i: Key | null | undefined) => {
+            const hasCheckbox =
+              items.checkBox1 || items.checkBox2 || items.checkBox3;
 
-              return (
-                <Box
-                  key={i}
+            return (
+              <Box
+                key={i}
+                sx={{
+                  width: '100%',
+                  display: 'flex',
+                  flexDirection: {xs: 'column', lg: 'row'},
+                  gap: {xs: '8px'},
+                  alignItems: 'start',
+                  justifyContent: 'space-between'
+                }}
+              >
+                {/* Label */}
+                <Typography
                   sx={{
+                    ...localFont.inter14,
                     width: '100%',
-                    display: 'flex',
-                    flexDirection: {xs: 'column', lg: 'row'},
-                    gap: {xs: '8px'},
-                    alignItems: 'start',
-                    justifyContent: 'space-between'
+                    maxWidth: '400px',
+                    fontFamily: '"Inter", sans-serif !important',
+                    fontWeight: 400,
+                    textAlign: 'left'
                   }}
                 >
-                  {/* Label */}
-                  <Typography
+                  {items.label}
+                </Typography>
+
+                {/* ✅ 1️⃣ Normal TextField */}
+                {!items.isbool && !hasCheckbox && !items.isfile && (
+                  <CustomTextField
+                    labal={items.placeholder}
                     sx={{
-                      ...localFont.inter14,
-                      width: '100%',
-                      maxWidth: '400px',
-                      fontFamily: '"Inter", sans-serif !important',
-                      fontWeight: 400,
-                      textAlign: 'left'
+                      textAlign: 'end',
+                      maxWidth: {lg: '403px', xs: '100%'}
                     }}
-                  >
-                    {items.label}
-                  </Typography>
+                  />
+                )}
 
-                  {/* ✅ 1️⃣ Normal TextField */}
-                  {!items.isbool && !hasCheckbox && !items.isfile && (
-                    <CustomTextField
-                      labal={items.placeholder}
-                      sx={{
-                        textAlign: 'end',
-                        maxWidth: {lg: '403px', xs: '100%'}
-                      }}
-                    />
-                  )}
-
-                  {/* ✅ 2️⃣ TextArea Field */}
-                  {items.isbool && !items.isfile && (
-                    <TextField
-                      placeholder={items.placeholder}
-                      multiline
-                      rows={4}
-                      fullWidth
-                      variant="outlined"
-                      sx={{
-                        maxWidth: {lg: '403px'},
-                        width: '100%',
-                        '& .MuiOutlinedInput-root': {
-                          borderRadius: '8px',
-                          background: '#ffffff',
-                          height: '100%',
-                          fontSize: '14px',
-                          padding: '12px'
-                        },
-                        '& .MuiInputBase-input': {
-                          padding: 0,
-                          fontSize: '14px'
+                {/* ✅ 2️⃣ TextArea Field */}
+                {items.isbool && !items.isfile && (
+                  <TextField
+                    value={
+                      i === formFields.length - 1 ? lastInputValue : undefined
+                    }
+                    onChange={(e) => {
+                      if (i === formFields.length - 1) {
+                        // Max 1000 letters limit
+                        if (e.target.value.length <= 1000) {
+                          setLastInputValue(e.target.value);
                         }
-                      }}
-                    />
-                  )}
-                  {items.isfile && !items.isbool && (
-                    <Box
-                      sx={{
-                        boxShadow:
-                          '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
-                        border: '1px solid  rgba(0, 0, 0, 0.24)',
-                        maxWidth: {lg: '403px', xs: '100%'},
-                        width: '100%',
-                        // border: 'none',
-                        borderRadius: '10px',
-                        fontSize: '14px',
-                        padding: '23px ',
-                        textAlign: 'start',
-                        background: '#ffffff',
-                        cursor: 'pointer',
-                        '&:hover': {
-                          border: '1px solid black',
-                          padding: '23px '
-                        }
-                      }}
-                      onClick={() =>
-                        document.getElementById('fileInput')?.click()
                       }
-                    >
-                      <input
-                        type="file"
-                        id="fileInput"
-                        style={{display: 'none'}}
-                        onChange={(e) => {
-                          if (e.target.files && e.target.files[0]) {
-                            setSelectedFile(e.target.files[0]);
-                          }
-                        }}
-                      />
-                      <Typography
-                        sx={{
-                          fontSize: '14px',
-                          color: '#666',
-                          textAlign: 'center',
+                    }}
+                    placeholder={items.placeholder}
+                    multiline
+                    rows={4}
+                    fullWidth
+                    variant="outlined"
+                    sx={{
+                      maxWidth: {lg: '403px'},
+                      width: '100%',
+                      '& .MuiOutlinedInput-root': {
+                        borderRadius: '8px',
+                        background: '#ffffff',
+                        height: '100%',
+                        fontSize: '14px',
+                        padding: '12px'
+                      },
+                      '& .MuiInputBase-input': {
+                        padding: 0,
+                        fontSize: '14px'
+                      }
+                    }}
+                  />
+                )}
+                {items.isfile && !items.isbool && (
+                  <Box
+                    sx={{
+                      boxShadow:
+                        '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
+                      border: '1px solid  rgba(0, 0, 0, 0.24)',
+                      maxWidth: {lg: '403px', xs: '100%'},
+                      width: '100%',
+                      // border: 'none',
+                      borderRadius: '10px',
+                      fontSize: '14px',
+                      padding: '23px ',
+                      textAlign: 'start',
+                      background: '#ffffff',
+                      cursor: 'pointer',
+                      '&:hover': {
+                        border: '1px solid black',
+                        padding: '23px '
+                      }
+                    }}
+                    onClick={() =>
+                      document.getElementById('fileInput')?.click()
+                    }
+                  >
+                    <input
+                      type="file"
+                      id="fileInput"
+                      style={{display: 'none'}}
+                      onChange={(e) => {
+                        if (e.target.files && e.target.files[0]) {
+                          setSelectedFile(e.target.files[0]);
+                        }
+                      }}
+                    />
+                    <Typography
+                      sx={{
+                        fontSize: '14px',
+                        color: '#666',
+                        textAlign: 'center',
 
+                        fontFamily: '"Inter", sans-serif !important'
+                      }}
+                    >
+                      {f('placeholder3')}{' '}
+                      <span
+                        style={{
+                          color: '#4615ff',
+                          fontWeight: 500,
                           fontFamily: '"Inter", sans-serif !important'
                         }}
                       >
-                        {f('placeholder3')}{' '}
-                        <span
+                        {f('browse')}
+                      </span>
+                    </Typography>
+                    {selectedFile && (
+                      <Box sx={{mt: 2}}>
+                        <img
+                          src={URL.createObjectURL(selectedFile)}
+                          alt="Preview"
                           style={{
-                            color: '#4615ff',
-                            fontWeight: 500,
-                            fontFamily: '"Inter", sans-serif !important'
+                            maxWidth: '100px',
+                            maxHeight: '100px',
+                            borderRadius: '8px',
+                            objectFit: 'contain'
+                          }}
+                        />
+                      </Box>
+                    )}
+                  </Box>
+                )}
+                {/* ✅ 3️⃣ Checkbox group */}
+                {hasCheckbox && (
+                  <Box
+                    onClick={() => setCheckedA(!checkedA)}
+                    sx={{
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '8px',
+                      maxWidth: {lg: '403px'},
+                      width: '100%'
+                    }}
+                  >
+                    {Object.keys(items)
+                      //["label", "checkBox1", "checkBox2", "checkBox3"]
+                      .filter((key) => key.startsWith('checkBox'))
+                      //["checkBox1", "checkBox2", "checkBox3"]
+                      .map((key, idx) => (
+                        //1st loop → key = "checkBox1"
+                        // // 2nd loop → key = "checkBox2"
+                        // // 3rd loop → key = "checkBox3"
+                        <Box
+                          key={idx}
+                          sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            gap: '8px',
+                            cursor: 'pointer'
                           }}
                         >
-                          {f('browse')}
-                        </span>
-                      </Typography>
-                      {selectedFile && (
-                        <Box sx={{mt: 2}}>
-                          <img
-                            src={URL.createObjectURL(selectedFile)}
-                            alt="Preview"
-                            style={{
-                              maxWidth: '100px',
-                              maxHeight: '100px',
-                              borderRadius: '8px',
-                              objectFit: 'contain'
-                            }}
+                          <input
+                            type="checkbox"
+                            checked={checkedValues[key] || false}
+                            //{ checkBox1: true, checkBox2: false }
+
+                            onChange={() =>
+                              setCheckedValues((prev) => ({
+                                ...prev,
+                                [key]: !prev[key]
+                              }))
+                            }
                           />
-                        </Box>
-                      )}
-                    </Box>
-                  )}
-                  {/* ✅ 3️⃣ Checkbox group */}
-                  {hasCheckbox && (
-                    <Box
-                      onClick={() => setCheckedA(!checkedA)}
-                      sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '8px',
-                        maxWidth: {lg: '403px'},
-                        width: '100%'
-                      }}
-                    >
-                      {Object.keys(items)
-                        //["label", "checkBox1", "checkBox2", "checkBox3"]
-                        .filter((key) => key.startsWith('checkBox'))
-                        //["checkBox1", "checkBox2", "checkBox3"]
-                        .map((key, idx) => (
-                          //1st loop → key = "checkBox1"
-                          // // 2nd loop → key = "checkBox2"
-                          // // 3rd loop → key = "checkBox3"
-                          <Box
-                            key={idx}
+                          <Typography
                             sx={{
-                              display: 'flex',
-                              alignItems: 'center',
-                              gap: '8px',
-                              cursor: 'pointer'
+                              ...localFont.inter14,
+                              fontFamily: '"Inter", sans-serif !important',
+                              fontWeight: 300
                             }}
                           >
-                            <input
-                              type="checkbox"
-                              checked={checkedValues[key] || false}
-                              //{ checkBox1: true, checkBox2: false }
-
-                              onChange={() =>
-                                setCheckedValues((prev) => ({
-                                  ...prev,
-                                  [key]: !prev[key]
-                                }))
-                              }
-                            />
-                            <Typography
-                              sx={{
-                                ...localFont.inter14,
-                                fontFamily: '"Inter", sans-serif !important',
-                                fontWeight: 300
-                              }}
-                            >
-                              {items[key]}
-                            </Typography>
-                          </Box>
-                        ))}
-                    </Box>
-                  )}
-                </Box>
-              );
-            }
-          )}
+                            {items[key]}
+                          </Typography>
+                        </Box>
+                      ))}
+                  </Box>
+                )}
+              </Box>
+            );
+          })}
         </Box>
       </Box>
       <Box sx={{width: '100%'}}>

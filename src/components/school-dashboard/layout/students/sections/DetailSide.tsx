@@ -14,6 +14,7 @@ import iconorange from '@/assets/svgs/dashboard-student/orange.svg';
 import iconnave from '@/assets/svgs/dashboard-student/nave.svg';
 import alertIcon from '@/assets/svgs/alertIcon.svg';
 import {useTranslations} from 'next-intl';
+import InputField from '@/components/school-dashboard/InputField';
 
 const MotionBox = motion(Box);
 const emails = [
@@ -205,7 +206,13 @@ export default function DetailSide({display = 'none', setOpenStudents}: Prop) {
             height: '38px',
             alignItems: 'center',
             background: '#ffffffbf',
-            boxShadow: '0px 0px 2px 0px #D4D4D8'
+            boxShadow: '0px 0px 2px 0px #D4D4D8',
+            transition: 'all 0.2s ease',
+
+            '&:focus-within': {
+              border: (theme) => `2px solid ${theme.palette.primary.main}`,
+              background: '#fff'
+            }
           }}
         >
           <Box sx={{height: '16px', width: '16px'}}>
@@ -215,6 +222,7 @@ export default function DetailSide({display = 'none', setOpenStudents}: Prop) {
               style={{height: '100%', width: '100%'}}
             />
           </Box>
+          {/* <InputField labal={t('search')} /> */}
           <TextField
             placeholder={t('search')}
             variant="outlined"
