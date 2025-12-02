@@ -1,9 +1,357 @@
 'use client';
-import React from 'react';
-import {Box} from '@mui/material';
+import React, {useState} from 'react';
+import {
+  Box,
+  TextField,
+  MenuItem,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  Typography,
+  Menu,
+  IconButton,
+  Checkbox,
+  InputAdornment
+} from '@mui/material';
+import Image from 'next/image';
+import searchIcon from '@/assets/svgs/dashboard-student/searchIcon.svg';
+import arrowDown from '@/assets/svgs/dashboard-student/arrow.svg';
+import deleteIcon from '@/assets/svgs/dashboard-student/deleteIcon.svg';
+import localFont from '@/utils/themes';
 
-export default function Process() {
-  // const [show, setShow] = useState(true);
+interface Student {
+  number: string;
+  name: string;
+  lastName: string;
+  birthday: string;
+  email: string;
+  phone: string;
+  city: string;
+  class: string;
+  rewrite: string;
+  school: string;
+  status: 'Active' | 'Inactive';
+  signup: string;
+  steps: string;
+  theory: string;
+  driving: string;
+}
+
+// Sample data - replace with actual data
+const sampleStudents: Student[] = [
+  {
+    number: 'stu-000015',
+    name: 'Sebastian',
+    lastName: 'Mustermann',
+    birthday: '10.10.1998',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'B17',
+    rewrite: 'No',
+    school: 'Fahrschule Mustermann Hamburg',
+    status: 'Active',
+    signup: '23.09.2025',
+    steps: '1,2,3,4,5,6,7,8',
+    theory: '80%',
+    driving: '30%'
+  },
+  {
+    number: 'stu-000015',
+    name: 'Sebastian',
+    lastName: 'Mustermann',
+    birthday: '10.10.1998',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'B',
+    rewrite: 'Yes',
+    school: 'Fahrschule Mustermann Hamburg',
+    status: 'Active',
+    signup: '23.09.2025',
+    steps: '1,2,3,4,5,6,7,8',
+    theory: '80%',
+    driving: '30%'
+  },
+  {
+    number: 'stu-000015',
+    name: 'Sebastian',
+    lastName: 'Mustermann',
+    birthday: '10.10.1998',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'BE',
+    rewrite: 'No',
+    school: 'Fahrschule Mustermann Hamburg',
+    status: 'Active',
+    signup: '23.09.2025',
+    steps: '1,2,3,4,5,6,7,8',
+    theory: '80%',
+    driving: '30%'
+  },
+  {
+    number: 'stu-000015',
+    name: 'Sebastian',
+    lastName: 'Mustermann',
+    birthday: '10.10.1998',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'B96',
+    rewrite: 'Yes',
+    school: 'Fahrschule Mustermann Hamburg',
+    status: 'Active',
+    signup: '23.09.2025',
+    steps: '1,2,3,4,5,6,7,8',
+    theory: '80%',
+    driving: '30%'
+  },
+  {
+    number: 'stu-000015',
+    name: 'Sebastian',
+    lastName: 'Mustermann',
+    birthday: '10.10.1998',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'A',
+    rewrite: 'No',
+    school: 'Fahrschule Mustermann Hamburg',
+    status: 'Active',
+    signup: '23.09.2025',
+    steps: '1,2,3,4,5,6,7,8',
+    theory: '80%',
+    driving: '30%'
+  },
+  {
+    number: 'stu-000015',
+    name: 'Sebastian',
+    lastName: 'Mustermann',
+    birthday: '10.10.1998',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'A2',
+    rewrite: 'No',
+    school: 'Fahrschule Mustermann Hamburg',
+    status: 'Active',
+    signup: '23.09.2025',
+    steps: '1,2,3,4,5,6,7,8',
+    theory: '80%',
+    driving: '30%'
+  },
+  {
+    number: 'stu-000015',
+    name: 'Sebastian',
+    lastName: 'Mustermann',
+    birthday: '10.10.1998',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'A1',
+    rewrite: 'Yes',
+    school: 'Fahrschule Mustermann Hamburg',
+    status: 'Active',
+    signup: '23.09.2025',
+    steps: '1,2,3,4,5,6,7,8',
+    theory: '80%',
+    driving: '30%'
+  },
+  {
+    number: 'stu-000015',
+    name: 'Sebastian',
+    lastName: 'Mustermann',
+    birthday: '10.10.1998',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'AM',
+    rewrite: 'No',
+    school: 'Fahrschule Mustermann Hamburg',
+    status: 'Active',
+    signup: '23.09.2025',
+    steps: '1,2,3,4,5,6,7,8',
+    theory: '80%',
+    driving: '30%'
+  },
+  {
+    number: 'stu-000015',
+    name: 'Sebastian',
+    lastName: 'Mustermann',
+    birthday: '10.10.1998',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'B',
+    rewrite: 'No',
+    school: 'Fahrschule Mustermann Hamburg',
+    status: 'Inactive',
+    signup: '23.09.2025',
+    steps: '1,2,3,4,5,6,7,8',
+    theory: '80%',
+    driving: '30%'
+  },
+  {
+    number: 'stu-000015',
+    name: 'Sebastian',
+    lastName: 'Mustermann',
+    birthday: '10.10.1998',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'B17',
+    rewrite: 'Yes',
+    school: 'Fahrschule Mustermann Hamburg',
+    status: 'Active',
+    signup: '23.09.2025',
+    steps: '1,2,3,4,5,6,7,8',
+    theory: '80%',
+    driving: '30%'
+  },
+  {
+    number: 'stu-000015',
+    name: 'Sebastian',
+    lastName: 'Mustermann',
+    birthday: '10.10.1998',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'BE',
+    rewrite: 'No',
+    school: 'Fahrschule Mustermann Hamburg',
+    status: 'Active',
+    signup: '23.09.2025',
+    steps: '1,2,3,4,5,6,7,8',
+    theory: '80%',
+    driving: '30%'
+  },
+  {
+    number: 'stu-000015',
+    name: 'Sebastian',
+    lastName: 'Mustermann',
+    birthday: '10.10.1998',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'A',
+    rewrite: 'Yes',
+    school: 'Fahrschule Mustermann Hamburg',
+    status: 'Active',
+    signup: '23.09.2025',
+    steps: '1,2,3,4,5,6,7,8',
+    theory: '80%',
+    driving: '30%'
+  }
+];
+
+export default function Students() {
+  const [searchQuery, setSearchQuery] = useState('');
+  const [schoolSearchQuery, setSchoolSearchQuery] = useState('');
+  const [schoolMenuAnchor, setSchoolMenuAnchor] = useState<HTMLElement | null>(
+    null
+  );
+  const [filters, setFilters] = useState({
+    city: [] as string[],
+    class: [] as string[],
+    rewrite: [] as string[],
+    school: [] as string[],
+    status: [] as string[],
+    signup: [] as string[],
+    steps: [] as string[]
+  });
+  const [currentPage, setCurrentPage] = useState(1);
+  const [anchorEl, setAnchorEl] = useState<{
+    element: HTMLElement;
+    index: number;
+  } | null>(null);
+  const rowsPerPage = 10;
+
+  // Filter and paginate students
+  const filteredStudents = sampleStudents.filter((student) => {
+    const matchesSearch =
+      searchQuery === '' ||
+      student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      student.lastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      student.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      student.number.toLowerCase().includes(searchQuery.toLowerCase());
+
+    const matchesFilters =
+      (filters.city.length === 0 || filters.city.includes(student.city)) &&
+      (filters.class.length === 0 || filters.class.includes(student.class)) &&
+      (filters.rewrite.length === 0 ||
+        filters.rewrite.includes(student.rewrite)) &&
+      (filters.school.length === 0 ||
+        filters.school.includes(student.school)) &&
+      (filters.status.length === 0 ||
+        filters.status.includes(student.status)) &&
+      (filters.signup.length === 0 ||
+        filters.signup.includes(student.signup)) &&
+      (filters.steps.length === 0 ||
+        filters.steps.some((step) => student.steps.includes(step)));
+
+    return matchesSearch && matchesFilters;
+  });
+
+  const totalPages = Math.ceil(filteredStudents.length / rowsPerPage);
+  const startIndex = (currentPage - 1) * rowsPerPage;
+  const paginatedStudents = filteredStudents.slice(
+    startIndex,
+    startIndex + rowsPerPage
+  );
+
+  const handleMenuOpen = (
+    event: React.MouseEvent<HTMLElement>,
+    index: number
+  ) => {
+    setAnchorEl({element: event.currentTarget, index});
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleDelete = (index: number) => {
+    // Handle delete action
+    console.log('Delete student at index:', index);
+    handleMenuClose();
+  };
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  // Get unique values for filter dropdowns
+  const uniqueCities = Array.from(new Set(sampleStudents.map((s) => s.city)));
+  const uniqueClasses = Array.from(new Set(sampleStudents.map((s) => s.class)));
+  const uniqueSchools = Array.from(
+    new Set(sampleStudents.map((s) => s.school))
+  );
+
+  // Filter schools based on search query
+  const filteredSchools = uniqueSchools.filter((school) =>
+    school.toLowerCase().includes(schoolSearchQuery.toLowerCase())
+  );
+
+  const handleSchoolMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setSchoolMenuAnchor(event.currentTarget);
+  };
+
+  const handleSchoolMenuClose = () => {
+    setSchoolMenuAnchor(null);
+    setSchoolSearchQuery('');
+  };
+
+  const handleSchoolToggle = (school: string) => {
+    setFilters({
+      ...filters,
+      school: filters.school.includes(school)
+        ? filters.school.filter((s) => s !== school)
+        : [...filters.school, school]
+    });
+  };
 
   return (
     <Box
@@ -17,11 +365,10 @@ export default function Process() {
         boxShadow: `0px 0px 0px 1px rgb(255, 255, 255, rgb(255, 255, 255)), 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)`,
         border: '2px solid #fff',
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
-        // display: openStudents ? {xs: 'none', md: 'grid'} : 'grid',
-        gridTemplateRows: 'auto',
-        gridTemplateColumns: 'repeat(2, 1fr)',
-        gap: 3,
-        overflow: 'scroll',
+        display: 'flex',
+        flexDirection: 'column',
+        overflowX: 'auto',
+        overflowY: 'visible',
         '&::-webkit-scrollbar': {
           display: 'none'
         },
@@ -29,9 +376,779 @@ export default function Process() {
         msOverflowStyle: 'none'
       }}
     >
-      student
-      {/* <DetailSide /> */}
-      {/* <StudentDetail /> */}
+      {/* Search and Filters Section */}
+      <Box
+        sx={{
+          display: 'flex',
+          gap: 2,
+          mb: 3,
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          minWidth: 'max-content'
+        }}
+      >
+        {/* Search Bar */}
+        <Box
+          sx={{
+            flex: 1,
+            minWidth: '200px',
+            position: 'relative',
+            display: 'flex',
+            alignItems: 'center'
+          }}
+        >
+          <Image
+            src={searchIcon}
+            alt="search"
+            width={20}
+            height={20}
+            style={{
+              position: 'absolute',
+              left: '12px',
+              zIndex: 1,
+              pointerEvents: 'none'
+            }}
+          />
+          <TextField
+            placeholder="Q Search"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            sx={{
+              width: '100%',
+              '& .MuiInputBase-root': {
+                background: '#ffffff',
+                height: '40px',
+                borderRadius: '999px',
+                paddingLeft: '40px',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important',
+                boxShadow:
+                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+              },
+              '& .MuiOutlinedInput-notchedOutline': {
+                border: 'none'
+              },
+              '& .MuiInputBase-input': {
+                padding: 0
+              }
+            }}
+          />
+        </Box>
+
+        {/* Filter Dropdowns */}
+        <TextField
+          select
+          SelectProps={{
+            multiple: true,
+            displayEmpty: true,
+            renderValue: (selected: unknown) => {
+              const selectedArray = selected as string[];
+              if (selectedArray.length === 0) return 'City';
+              return selectedArray.join(', ');
+            }
+          }}
+          value={filters.city}
+          onChange={(e) => {
+            const value = e.target.value;
+            setFilters({
+              ...filters,
+              city: typeof value === 'string' ? value.split(',') : value
+            });
+          }}
+          sx={{
+            minWidth: '120px',
+            '& .MuiInputBase-root': {
+              background: '#ffffff',
+              height: '40px',
+              borderRadius: '999px',
+              fontSize: '14px',
+              fontFamily: '"Inter", sans-serif !important',
+              boxShadow:
+                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+            },
+            '& .MuiOutlinedInput-notchedOutline': {
+              border: 'none'
+            },
+            '& .MuiSelect-select': {
+              padding: '0 12px',
+              color: filters.city.length > 0 ? '#000' : '#aaa'
+            }
+          }}
+        >
+          {uniqueCities.map((city) => (
+            <MenuItem key={city} value={city}>
+              <Checkbox checked={filters.city.indexOf(city) > -1} />
+              {city}
+            </MenuItem>
+          ))}
+        </TextField>
+
+        <TextField
+          select
+          SelectProps={{
+            multiple: true,
+            displayEmpty: true,
+            renderValue: (selected: unknown) => {
+              const selectedArray = selected as string[];
+              if (selectedArray.length === 0) return 'Class';
+              return selectedArray.join(', ');
+            }
+          }}
+          value={filters.class}
+          onChange={(e) => {
+            const value = e.target.value;
+            setFilters({
+              ...filters,
+              class: typeof value === 'string' ? value.split(',') : value
+            });
+          }}
+          sx={{
+            minWidth: '120px',
+            '& .MuiInputBase-root': {
+              background: '#ffffff',
+              height: '40px',
+              borderRadius: '999px',
+              fontSize: '14px',
+              fontFamily: '"Inter", sans-serif !important',
+              boxShadow:
+                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+            },
+            '& .MuiOutlinedInput-notchedOutline': {
+              border: 'none'
+            },
+            '& .MuiSelect-select': {
+              padding: '0 12px',
+              color: filters.class.length > 0 ? '#000' : '#aaa'
+            }
+          }}
+        >
+          {uniqueClasses.map((cls) => (
+            <MenuItem key={cls} value={cls}>
+              <Checkbox checked={filters.class.indexOf(cls) > -1} />
+              {cls}
+            </MenuItem>
+          ))}
+        </TextField>
+
+        <TextField
+          select
+          SelectProps={{
+            multiple: true,
+            displayEmpty: true,
+            renderValue: (selected: unknown) => {
+              const selectedArray = selected as string[];
+              if (selectedArray.length === 0) return 'Re-written';
+              return selectedArray.join(', ');
+            }
+          }}
+          value={filters.rewrite}
+          onChange={(e) => {
+            const value = e.target.value;
+            setFilters({
+              ...filters,
+              rewrite: typeof value === 'string' ? value.split(',') : value
+            });
+          }}
+          sx={{
+            minWidth: '120px',
+            '& .MuiInputBase-root': {
+              background: '#ffffff',
+              height: '40px',
+              borderRadius: '999px',
+              fontSize: '14px',
+              fontFamily: '"Inter", sans-serif !important',
+              boxShadow:
+                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+            },
+            '& .MuiOutlinedInput-notchedOutline': {
+              border: 'none'
+            },
+            '& .MuiSelect-select': {
+              padding: '0 12px',
+              color: filters.rewrite.length > 0 ? '#000' : '#aaa'
+            }
+          }}
+        >
+          <MenuItem value="Yes">
+            <Checkbox checked={filters.rewrite.indexOf('Yes') > -1} />
+            Yes
+          </MenuItem>
+          <MenuItem value="No">
+            <Checkbox checked={filters.rewrite.indexOf('No') > -1} />
+            No
+          </MenuItem>
+        </TextField>
+
+        <Box>
+          <TextField
+            onClick={handleSchoolMenuOpen}
+            value={filters.school.length > 0 ? filters.school.join(', ') : ''}
+            placeholder="School"
+            InputProps={{
+              readOnly: true,
+              endAdornment: (
+                <InputAdornment position="end">
+                  <Image
+                    src={arrowDown}
+                    alt="dropdown"
+                    width={16}
+                    height={16}
+                    style={{transform: 'rotate(0deg)'}}
+                  />
+                </InputAdornment>
+              )
+            }}
+            sx={{
+              minWidth: '180px',
+              '& .MuiInputBase-root': {
+                background: '#ffffff',
+                height: '40px',
+                borderRadius: '999px',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important',
+                boxShadow:
+                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
+                cursor: 'pointer'
+              },
+              '& .MuiOutlinedInput-notchedOutline': {
+                border: 'none'
+              },
+              '& .MuiInputBase-input': {
+                padding: '0 12px',
+                color: filters.school.length > 0 ? '#000' : '#aaa',
+                cursor: 'pointer'
+              }
+            }}
+          />
+          <Menu
+            anchorEl={schoolMenuAnchor}
+            open={Boolean(schoolMenuAnchor)}
+            onClose={handleSchoolMenuClose}
+            PaperProps={{
+              sx: {
+                mt: 1,
+                minWidth: '250px',
+                maxHeight: '400px',
+                borderRadius: '8px',
+                boxShadow:
+                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+              }
+            }}
+            MenuListProps={{
+              sx: {p: 0}
+            }}
+          >
+            {/* Search Input */}
+            <Box sx={{p: '12px', borderBottom: '1px solid rgba(0, 0, 0, 0.1)'}}>
+              <TextField
+                placeholder="Search"
+                value={schoolSearchQuery}
+                onChange={(e) => setSchoolSearchQuery(e.target.value)}
+                onClick={(e) => e.stopPropagation()}
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Image
+                        src={searchIcon}
+                        alt="search"
+                        width={16}
+                        height={16}
+                      />
+                    </InputAdornment>
+                  )
+                }}
+                sx={{
+                  width: '100%',
+                  '& .MuiInputBase-root': {
+                    background: '#ffffff',
+                    height: '36px',
+                    borderRadius: '8px',
+                    fontSize: '14px',
+                    fontFamily: '"Inter", sans-serif !important'
+                  },
+                  '& .MuiOutlinedInput-notchedOutline': {
+                    border: '1px solid rgba(0, 0, 0, 0.1)'
+                  },
+                  '& .MuiInputBase-input': {
+                    padding: '0 8px',
+                    fontSize: '14px'
+                  }
+                }}
+              />
+            </Box>
+            {/* School List */}
+            <Box sx={{maxHeight: '300px', overflowY: 'auto'}}>
+              {filteredSchools.length > 0 ? (
+                filteredSchools.map((school) => (
+                  <MenuItem
+                    key={school}
+                    onClick={() => handleSchoolToggle(school)}
+                    sx={{
+                      py: '8px',
+                      px: '12px',
+                      '&:hover': {
+                        backgroundColor: 'rgba(0, 0, 0, 0.04)'
+                      }
+                    }}
+                  >
+                    <Checkbox checked={filters.school.indexOf(school) > -1} />
+                    <Typography
+                      sx={{
+                        fontSize: '14px',
+                        fontFamily: '"Inter", sans-serif !important',
+                        ml: 1
+                      }}
+                    >
+                      {school}
+                    </Typography>
+                  </MenuItem>
+                ))
+              ) : (
+                <MenuItem disabled>
+                  <Typography
+                    sx={{
+                      fontSize: '14px',
+                      fontFamily: '"Inter", sans-serif !important',
+                      color: '#aaa'
+                    }}
+                  >
+                    No schools found
+                  </Typography>
+                </MenuItem>
+              )}
+            </Box>
+          </Menu>
+        </Box>
+
+        <TextField
+          select
+          SelectProps={{
+            multiple: true,
+            displayEmpty: true,
+            renderValue: (selected: unknown) => {
+              const selectedArray = selected as string[];
+              if (selectedArray.length === 0) return 'Status';
+              return selectedArray.join(', ');
+            }
+          }}
+          value={filters.status}
+          onChange={(e) => {
+            const value = e.target.value;
+            setFilters({
+              ...filters,
+              status: typeof value === 'string' ? value.split(',') : value
+            });
+          }}
+          sx={{
+            minWidth: '120px',
+            '& .MuiInputBase-root': {
+              background: '#ffffff',
+              height: '40px',
+              borderRadius: '999px',
+              fontSize: '14px',
+              fontFamily: '"Inter", sans-serif !important',
+              boxShadow:
+                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+            },
+            '& .MuiOutlinedInput-notchedOutline': {
+              border: 'none'
+            },
+            '& .MuiSelect-select': {
+              padding: '0 12px',
+              color: filters.status.length > 0 ? '#000' : '#aaa'
+            }
+          }}
+        >
+          <MenuItem value="Active">
+            <Checkbox checked={filters.status.indexOf('Active') > -1} />
+            Active
+          </MenuItem>
+          <MenuItem value="Inactive">
+            <Checkbox checked={filters.status.indexOf('Inactive') > -1} />
+            Inactive
+          </MenuItem>
+        </TextField>
+
+        <TextField
+          select
+          SelectProps={{
+            multiple: true,
+            displayEmpty: true,
+            renderValue: (selected: unknown) => {
+              const selectedArray = selected as string[];
+              if (selectedArray.length === 0) return 'Signup';
+              return selectedArray.join(', ');
+            }
+          }}
+          value={filters.signup}
+          onChange={(e) => {
+            const value = e.target.value;
+            setFilters({
+              ...filters,
+              signup: typeof value === 'string' ? value.split(',') : value
+            });
+          }}
+          sx={{
+            minWidth: '120px',
+            '& .MuiInputBase-root': {
+              background: '#ffffff',
+              height: '40px',
+              borderRadius: '999px',
+              fontSize: '14px',
+              fontFamily: '"Inter", sans-serif !important',
+              boxShadow:
+                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+            },
+            '& .MuiOutlinedInput-notchedOutline': {
+              border: 'none'
+            },
+            '& .MuiSelect-select': {
+              padding: '0 12px',
+              color: filters.signup.length > 0 ? '#000' : '#aaa'
+            }
+          }}
+        >
+          <MenuItem value="23.09.2025">
+            <Checkbox checked={filters.signup.indexOf('23.09.2025') > -1} />
+            23.09.2025
+          </MenuItem>
+        </TextField>
+
+        <TextField
+          select
+          SelectProps={{
+            multiple: true,
+            displayEmpty: true,
+            renderValue: (selected: unknown) => {
+              const selectedArray = selected as string[];
+              if (selectedArray.length === 0) return 'Steps';
+              return selectedArray.join(', ');
+            }
+          }}
+          value={filters.steps}
+          onChange={(e) => {
+            const value = e.target.value;
+            setFilters({
+              ...filters,
+              steps: typeof value === 'string' ? value.split(',') : value
+            });
+          }}
+          sx={{
+            minWidth: '120px',
+            '& .MuiInputBase-root': {
+              background: '#ffffff',
+              height: '40px',
+              borderRadius: '999px',
+              fontSize: '14px',
+              fontFamily: '"Inter", sans-serif !important',
+              boxShadow:
+                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+            },
+            '& .MuiOutlinedInput-notchedOutline': {
+              border: 'none'
+            },
+            '& .MuiSelect-select': {
+              padding: '0 12px',
+              color: filters.steps.length > 0 ? '#000' : '#aaa'
+            }
+          }}
+        >
+          <MenuItem value="1">
+            <Checkbox checked={filters.steps.indexOf('1') > -1} />1
+          </MenuItem>
+          <MenuItem value="2">
+            <Checkbox checked={filters.steps.indexOf('2') > -1} />2
+          </MenuItem>
+          <MenuItem value="3">
+            <Checkbox checked={filters.steps.indexOf('3') > -1} />3
+          </MenuItem>
+          <MenuItem value="4">
+            <Checkbox checked={filters.steps.indexOf('4') > -1} />4
+          </MenuItem>
+          <MenuItem value="5">
+            <Checkbox checked={filters.steps.indexOf('5') > -1} />5
+          </MenuItem>
+          <MenuItem value="6">
+            <Checkbox checked={filters.steps.indexOf('6') > -1} />6
+          </MenuItem>
+          <MenuItem value="7">
+            <Checkbox checked={filters.steps.indexOf('7') > -1} />7
+          </MenuItem>
+          <MenuItem value="8">
+            <Checkbox checked={filters.steps.indexOf('8') > -1} />8
+          </MenuItem>
+        </TextField>
+      </Box>
+
+      {/* Table Container */}
+      <Box
+        sx={{
+          width: 'max-content',
+          minWidth: '100%',
+          overflow: 'visible'
+        }}
+      >
+        <Table
+          sx={{
+            minWidth: '1400px',
+            width: 'max-content',
+            tableLayout: 'auto',
+            borderCollapse: 'separate',
+            borderSpacing: '0 8px'
+          }}
+        >
+          {/* Table Header */}
+          <TableHead>
+            <TableRow
+              sx={{
+                background: 'rgb(67, 83, 125)',
+                borderRadius: '8px',
+                height: '42px',
+                '& th': {
+                  color: '#ffffff',
+                  fontWeight: 500,
+                  fontSize: '14px',
+                  fontFamily: '"Inter", sans-serif !important',
+                  padding: '12px 16px',
+                  textAlign: 'left',
+                  border: 'none',
+                  whiteSpace: 'nowrap',
+                  height: '42px',
+                  '&:first-of-type': {
+                    borderTopLeftRadius: '8px',
+                    borderBottomLeftRadius: '8px'
+                  },
+                  '&:last-of-type': {
+                    borderTopRightRadius: '8px',
+                    borderBottomRightRadius: '8px'
+                  }
+                }
+              }}
+            >
+              <TableCell>Number</TableCell>
+              <TableCell>Name</TableCell>
+              <TableCell>LastName</TableCell>
+              <TableCell>Birthday</TableCell>
+              <TableCell>Email</TableCell>
+              <TableCell>Phone</TableCell>
+              <TableCell>City</TableCell>
+              <TableCell>Class</TableCell>
+              <TableCell>Re</TableCell>
+              <TableCell>School</TableCell>
+              <TableCell>Status</TableCell>
+              <TableCell>Signup</TableCell>
+              <TableCell>Steps</TableCell>
+              <TableCell>Theory</TableCell>
+              <TableCell>Driving</TableCell>
+              <TableCell width={50}></TableCell>
+            </TableRow>
+          </TableHead>
+
+          {/* Table Body */}
+          <TableBody>
+            {paginatedStudents.map((student, index) => (
+              <TableRow
+                key={`${student.number}-${index}`}
+                sx={{
+                  background: '#ffffff',
+                  borderRadius: '8px',
+                  boxShadow: '0px 1px 3px rgba(0, 0, 0, 0.1)',
+                  height: '60px',
+                  '& td': {
+                    border: 'none',
+                    padding: '12px 16px',
+                    textAlign: 'left',
+                    fontSize: '14px',
+                    fontFamily: '"Inter", sans-serif !important',
+                    color: '#000000',
+                    whiteSpace: 'nowrap',
+                    height: '60px',
+                    '&:first-of-type': {
+                      borderTopLeftRadius: '8px',
+                      borderBottomLeftRadius: '8px'
+                    },
+                    '&:last-of-type': {
+                      borderTopRightRadius: '8px',
+                      borderBottomRightRadius: '8px'
+                    }
+                  }
+                }}
+              >
+                <TableCell>{student.number}</TableCell>
+                <TableCell>{student.name}</TableCell>
+                <TableCell>{student.lastName}</TableCell>
+                <TableCell>{student.birthday}</TableCell>
+                <TableCell>{student.email}</TableCell>
+                <TableCell>{student.phone}</TableCell>
+                <TableCell>{student.city}</TableCell>
+                <TableCell>{student.class}</TableCell>
+                <TableCell>{student.rewrite}</TableCell>
+                <TableCell>{student.school}</TableCell>
+                <TableCell>
+                  <Typography
+                    sx={{
+                      color:
+                        student.status === 'Active' ? '#10b981' : '#ef4444',
+                      fontWeight: 500,
+                      fontSize: '14px',
+                      fontFamily: '"Inter", sans-serif !important'
+                    }}
+                  >
+                    {student.status}
+                  </Typography>
+                </TableCell>
+                <TableCell>{student.signup}</TableCell>
+                <TableCell>{student.steps}</TableCell>
+                <TableCell>{student.theory}</TableCell>
+                <TableCell>{student.driving}</TableCell>
+                <TableCell>
+                  <IconButton
+                    size="small"
+                    onClick={(e) => handleMenuOpen(e, startIndex + index)}
+                    sx={{
+                      padding: '4px'
+                    }}
+                  >
+                    <Image
+                      src={arrowDown}
+                      alt="actions"
+                      width={16}
+                      height={16}
+                      style={{transform: 'rotate(0deg)'}}
+                    />
+                  </IconButton>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </Box>
+
+      {/* Pagination */}
+      {totalPages > 1 && (
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: 1,
+            mt: 3,
+            mb: 2
+          }}
+        >
+          <IconButton
+            onClick={() => handlePageChange(1)}
+            disabled={currentPage === 1}
+            sx={{
+              padding: '4px 8px',
+              fontSize: '14px',
+              fontFamily: '"Inter", sans-serif !important',
+              color: currentPage === 1 ? '#ccc' : '#000',
+              '&:disabled': {
+                opacity: 0.5
+              }
+            }}
+          >
+            &lt;&lt;
+          </IconButton>
+          <IconButton
+            onClick={() => handlePageChange(currentPage - 1)}
+            disabled={currentPage === 1}
+            sx={{
+              padding: '4px 8px',
+              fontSize: '14px',
+              fontFamily: '"Inter", sans-serif !important',
+              color: currentPage === 1 ? '#ccc' : '#000',
+              '&:disabled': {
+                opacity: 0.5
+              }
+            }}
+          >
+            &lt;
+          </IconButton>
+          {Array.from({length: totalPages}, (_, i) => i + 1).map((page) => (
+            <IconButton
+              key={page}
+              onClick={() => handlePageChange(page)}
+              sx={{
+                padding: '4px 12px',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important',
+                color: currentPage === page ? '#667eea' : '#000',
+                fontWeight: currentPage === page ? 600 : 400,
+                background:
+                  currentPage === page
+                    ? 'rgba(102, 126, 234, 0.1)'
+                    : 'transparent',
+                borderRadius: '4px',
+                minWidth: '32px'
+              }}
+            >
+              {page}
+            </IconButton>
+          ))}
+          <IconButton
+            onClick={() => handlePageChange(currentPage + 1)}
+            disabled={currentPage === totalPages}
+            sx={{
+              padding: '4px 8px',
+              fontSize: '14px',
+              fontFamily: '"Inter", sans-serif !important',
+              color: currentPage === totalPages ? '#ccc' : '#000',
+              '&:disabled': {
+                opacity: 0.5
+              }
+            }}
+          >
+            &gt;
+          </IconButton>
+          <IconButton
+            onClick={() => handlePageChange(totalPages)}
+            disabled={currentPage === totalPages}
+            sx={{
+              padding: '4px 8px',
+              fontSize: '14px',
+              fontFamily: '"Inter", sans-serif !important',
+              color: currentPage === totalPages ? '#ccc' : '#000',
+              '&:disabled': {
+                opacity: 0.5
+              }
+            }}
+          >
+            &gt;&gt;
+          </IconButton>
+        </Box>
+      )}
+
+      {/* Action Menu */}
+      <Menu
+        anchorEl={anchorEl?.element || null}
+        open={Boolean(anchorEl)}
+        onClose={handleMenuClose}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'right'
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right'
+        }}
+      >
+        <MenuItem
+          onClick={() => anchorEl && handleDelete(anchorEl.index)}
+          sx={{
+            fontSize: '14px',
+            fontFamily: '"Inter", sans-serif !important',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 1
+          }}
+        >
+          <Image src={deleteIcon} alt="delete" width={16} height={16} />
+          Delete
+        </MenuItem>
+        {/* Add more menu items as needed */}
+      </Menu>
     </Box>
   );
 }
