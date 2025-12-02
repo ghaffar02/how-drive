@@ -23,10 +23,10 @@ export default function PopularCitiesCard({schools, students}: PopularCitiesCard
     <Box
       sx={{
         width: '100%',
-        height: '100%',
+        height: '766px',
         border: '1px solid #fff',
         borderRadius: '18px',
-        padding: '24px',
+        padding: '16px',
         background: '#ffffffbf',
         boxShadow:
           '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0,0,0,0.25), 0px 1px 1px 0px rgba(0,0,0,0.25)',

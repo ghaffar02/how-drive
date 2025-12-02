@@ -4,9 +4,8 @@ import React from 'react';
 import {useTranslations} from 'next-intl';
 import StatsCard from './components/StatsCard';
 import Messages from './components/Message';
-import GrowthCard from './components/GrowthCard';
+import TableCard from './components/TableCard';
 import PopularCitiesCard from './components/PopularCitiesCard';
-import BookingsCard from './components/BookingsCard';
 
 // Icons for messages
 import car from '@/assets/svgs/dashboard-student/home/car.svg';
@@ -285,7 +284,13 @@ export default function Home({setActiveKey}: Props) {
               gridColumn: {md: 'span 2'}
             }}
           >
-            <GrowthCard
+            <TableCard
+              title="Growth"
+              columns={[
+                {key: 'stu', label: 'Stu'},
+                {key: 'sch', label: 'Sch'},
+                {key: 'tra', label: 'Tra'}
+              ]}
               monthlyData={growthMonthlyData}
               total={growthTotal}
               lastYear={growthLastYear}
@@ -308,7 +313,14 @@ export default function Home({setActiveKey}: Props) {
               gridColumn: {md: 'span 2'}
             }}
           >
-            <BookingsCard
+            <TableCard
+              title="Bookings"
+              columns={[
+                {key: 'talk', label: 'Talk'},
+                {key: 'theory', label: 'Theory'},
+                {key: 'driving', label: 'Driving'},
+                {key: 'exam', label: 'Exam'}
+              ]}
               monthlyData={bookingsMonthlyData}
               total={bookingsTotal}
               lastYear={bookingsLastYear}
