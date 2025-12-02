@@ -32,6 +32,7 @@ import logoutIconBold from '@/assets/svgs/dashboard-student/logoutIconBold.svg';
 // your independent dropdown
 import ProfileDropdown from '../../student-dashboard/layout/ProfileDropdown';
 import {useTranslations} from 'next-intl';
+import {useRouter} from 'next/navigation';
 type Props = {
   activeKey: string;
   setActiveKey: React.Dispatch<React.SetStateAction<string>>;
@@ -108,6 +109,7 @@ export default function DesktopTabs({
     },
     {id: '7', label: 'Abmelden', menuIcon: login, menuIconHover: logoutIconBold}
   ];
+  const router = useRouter();
   const t = useTranslations('SchoolDashboard.DesktopTabs');
   const data = t.raw('data');
   const ADdata = t.raw('data2');
@@ -144,6 +146,7 @@ export default function DesktopTabs({
         {/* logo */}
         <Box>
           <Box
+            onClick={() => router.push('/')}
             sx={{
               height: '44px',
               width: '44px',
