@@ -3038,7 +3038,7 @@
         "input2": "Different time slot",
         "des2": "The appointment for practical exam will not automatically be reserved for the assigned trainer. Please book the same time slot for the trainer participating the practical exam as well.",
         "btn": "Book",
-        "participants": "participants",
+        "participants": "Participants",
         "cancelAppointment": "Cancel appointment",
         "cancelAppointmentDescribtion": "To cancel the appointment remove all participants from the list and click Save.",
         "cancel": "Cancel",
