@@ -12,7 +12,6 @@ import {
   Typography,
   Menu,
   IconButton,
-  Checkbox,
   InputAdornment
 } from '@mui/material';
 import Image from 'next/image';
@@ -445,6 +444,26 @@ export default function Students() {
               const selectedArray = selected as string[];
               if (selectedArray.length === 0) return 'City';
               return selectedArray.join(', ');
+            },
+            MenuProps: {
+              PaperProps: {
+                sx: {
+                  borderRadius: '12px',
+                  padding: '12px',
+                  boxShadow:
+                    '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+                }
+              },
+              MenuListProps: {
+                sx: {
+                  padding: 0,
+                  '& .MuiMenuItem-root': {
+                    padding: '0px',
+                    gap: '10px',
+                    mb: '12px'
+                  }
+                }
+              }
             }
           }}
           value={filters.city}
@@ -462,7 +481,7 @@ export default function Students() {
               background: '#ffffff',
               height: '40px',
               borderRadius: '999px',
-              fontSize: '14px',
+              fontSize: '13px',
               fontFamily: '"Inter", sans-serif !important',
               boxShadow:
                 '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
@@ -477,8 +496,22 @@ export default function Students() {
           }}
         >
           {uniqueCities.map((city) => (
-            <MenuItem key={city} value={city}>
-              <Checkbox checked={filters.city.indexOf(city) > -1} />
+            <MenuItem
+              key={city}
+              value={city}
+              sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+            >
+              <input
+                type="checkbox"
+                checked={filters.city.indexOf(city) > -1}
+                onChange={() => {}}
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  margin: 0,
+                  cursor: 'pointer'
+                }}
+              />
               {city}
             </MenuItem>
           ))}
@@ -493,6 +526,27 @@ export default function Students() {
               const selectedArray = selected as string[];
               if (selectedArray.length === 0) return 'Class';
               return selectedArray.join(', ');
+            },
+            MenuProps: {
+              PaperProps: {
+                sx: {
+                  borderRadius: '12px',
+                  padding: '12px',
+                  gap: '12px',
+                  boxShadow:
+                    '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+                }
+              },
+              MenuListProps: {
+                sx: {
+                  padding: 0,
+                  '& .MuiMenuItem-root': {
+                    padding: '0px',
+                    gap: '10px',
+                    mb: '12px'
+                  }
+                }
+              }
             }
           }}
           value={filters.class}
@@ -510,7 +564,7 @@ export default function Students() {
               background: '#ffffff',
               height: '40px',
               borderRadius: '999px',
-              fontSize: '14px',
+              fontSize: '13px',
               fontFamily: '"Inter", sans-serif !important',
               boxShadow:
                 '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
@@ -525,8 +579,22 @@ export default function Students() {
           }}
         >
           {uniqueClasses.map((cls) => (
-            <MenuItem key={cls} value={cls}>
-              <Checkbox checked={filters.class.indexOf(cls) > -1} />
+            <MenuItem
+              key={cls}
+              value={cls}
+              sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+            >
+              <input
+                type="checkbox"
+                checked={filters.class.indexOf(cls) > -1}
+                onChange={() => {}}
+                style={{
+                  width: '16px',
+                  height: '16px',
+                  margin: 0,
+                  cursor: 'pointer'
+                }}
+              />
               {cls}
             </MenuItem>
           ))}
@@ -541,6 +609,26 @@ export default function Students() {
               const selectedArray = selected as string[];
               if (selectedArray.length === 0) return 'Rewrite';
               return selectedArray.join(', ');
+            },
+            MenuProps: {
+              PaperProps: {
+                sx: {
+                  borderRadius: '12px',
+                  padding: '12px',
+                  boxShadow:
+                    '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+                }
+              },
+              MenuListProps: {
+                sx: {
+                  padding: 0,
+                  '& .MuiMenuItem-root': {
+                    padding: '0px',
+                    mb: '12px',
+                    gap: '10px'
+                  }
+                }
+              }
             }
           }}
           value={filters.rewrite}
@@ -558,7 +646,7 @@ export default function Students() {
               background: '#ffffff',
               height: '40px',
               borderRadius: '999px',
-              fontSize: '14px',
+              fontSize: '13px',
               fontFamily: '"Inter", sans-serif !important',
               boxShadow:
                 '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
@@ -572,12 +660,38 @@ export default function Students() {
             }
           }}
         >
-          <MenuItem value="Yes">
-            <Checkbox checked={filters.rewrite.indexOf('Yes') > -1} />
+          <MenuItem
+            value="Yes"
+            sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+          >
+            <input
+              type="checkbox"
+              checked={filters.rewrite.indexOf('Yes') > -1}
+              onChange={() => {}}
+              style={{
+                width: '16px',
+                height: '16px',
+                margin: 0,
+                cursor: 'pointer'
+              }}
+            />
             Yes
           </MenuItem>
-          <MenuItem value="No">
-            <Checkbox checked={filters.rewrite.indexOf('No') > -1} />
+          <MenuItem
+            value="No"
+            sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+          >
+            <input
+              type="checkbox"
+              checked={filters.rewrite.indexOf('No') > -1}
+              onChange={() => {}}
+              style={{
+                width: '16px',
+                height: '16px',
+                margin: 0,
+                cursor: 'pointer'
+              }}
+            />
             No
           </MenuItem>
         </TextField>
@@ -608,7 +722,7 @@ export default function Students() {
                 background: '#ffffff',
                 height: '40px',
                 borderRadius: '999px',
-                fontSize: '14px',
+                fontSize: '13px',
                 fontFamily: '"Inter", sans-serif !important',
                 boxShadow:
                   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
@@ -635,19 +749,34 @@ export default function Students() {
             PaperProps={{
               sx: {
                 mt: 1,
-                minWidth: '250px',
+                minWidth: '150px',
+                maxWidth: '150px',
                 maxHeight: '400px',
-                borderRadius: '8px',
+                borderRadius: '12px',
+                padding: '12px',
                 boxShadow:
                   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
               }
             }}
             MenuListProps={{
-              sx: {p: 0}
+              sx: {
+                padding: 0,
+                '& .MuiMenuItem-root': {
+                  padding: '0px',
+                  mb: '12px',
+                  gap: '10px'
+                }
+              }
             }}
           >
             {/* Search Input */}
-            <Box sx={{p: '12px', borderBottom: '1px solid rgba(0, 0, 0, 0.1)'}}>
+            <Box
+              sx={{
+                p: '16px',
+                pb: '12px',
+                borderBottom: '1px solid rgba(0, 0, 0, 0.1)'
+              }}
+            >
               <TextField
                 placeholder="Search"
                 value={schoolSearchQuery}
@@ -692,19 +821,39 @@ export default function Students() {
                     key={school}
                     onClick={() => handleSchoolToggle(school)}
                     sx={{
-                      py: '8px',
-                      px: '12px',
+                      py: '6px',
+                      px: '16px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      gap: '10px',
                       '&:hover': {
                         backgroundColor: 'rgba(0, 0, 0, 0.04)'
                       }
                     }}
                   >
-                    <Checkbox checked={filters.school.indexOf(school) > -1} />
+                    <input
+                      type="checkbox"
+                      checked={filters.school.indexOf(school) > -1}
+                      onChange={() => {}}
+                      style={{
+                        width: '16px',
+                        height: '16px',
+                        margin: 0,
+                        marginTop: '2px',
+                        cursor: 'pointer',
+                        flexShrink: 0
+                      }}
+                    />
                     <Typography
                       sx={{
                         fontSize: '14px',
                         fontFamily: '"Inter", sans-serif !important',
-                        ml: 1
+                        wordBreak: 'break-word',
+                        whiteSpace: 'normal',
+                        lineHeight: '1.4',
+                        flex: 1
                       }}
                     >
                       {school}
@@ -737,6 +886,26 @@ export default function Students() {
               const selectedArray = selected as string[];
               if (selectedArray.length === 0) return 'Status';
               return selectedArray.join(', ');
+            },
+            MenuProps: {
+              PaperProps: {
+                sx: {
+                  borderRadius: '12px',
+                  padding: '12px',
+                  boxShadow:
+                    '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+                }
+              },
+              MenuListProps: {
+                sx: {
+                  padding: 0,
+                  '& .MuiMenuItem-root': {
+                    padding: '0px',
+                    mb: '12px',
+                    gap: '10px'
+                  }
+                }
+              }
             }
           }}
           value={filters.status}
@@ -754,7 +923,7 @@ export default function Students() {
               background: '#ffffff',
               height: '40px',
               borderRadius: '999px',
-              fontSize: '14px',
+              fontSize: '13px',
               fontFamily: '"Inter", sans-serif !important',
               boxShadow:
                 '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
@@ -768,12 +937,38 @@ export default function Students() {
             }
           }}
         >
-          <MenuItem value="Active">
-            <Checkbox checked={filters.status.indexOf('Active') > -1} />
+          <MenuItem
+            value="Active"
+            sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+          >
+            <input
+              type="checkbox"
+              checked={filters.status.indexOf('Active') > -1}
+              onChange={() => {}}
+              style={{
+                width: '16px',
+                height: '16px',
+                margin: 0,
+                cursor: 'pointer'
+              }}
+            />
             Active
           </MenuItem>
-          <MenuItem value="Inactive">
-            <Checkbox checked={filters.status.indexOf('Inactive') > -1} />
+          <MenuItem
+            value="Inactive"
+            sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+          >
+            <input
+              type="checkbox"
+              checked={filters.status.indexOf('Inactive') > -1}
+              onChange={() => {}}
+              style={{
+                width: '16px',
+                height: '16px',
+                margin: 0,
+                cursor: 'pointer'
+              }}
+            />
             Inactive
           </MenuItem>
         </TextField>
@@ -787,6 +982,26 @@ export default function Students() {
               const selectedArray = selected as string[];
               if (selectedArray.length === 0) return 'Signup';
               return selectedArray.join(', ');
+            },
+            MenuProps: {
+              PaperProps: {
+                sx: {
+                  borderRadius: '12px',
+                  padding: '12px',
+                  boxShadow:
+                    '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+                }
+              },
+              MenuListProps: {
+                sx: {
+                  padding: 0,
+                  '& .MuiMenuItem-root': {
+                    padding: '0px',
+                    mb: '12px',
+                    gap: '10px'
+                  }
+                }
+              }
             }
           }}
           value={filters.signup}
@@ -804,7 +1019,7 @@ export default function Students() {
               background: '#ffffff',
               height: '40px',
               borderRadius: '999px',
-              fontSize: '14px',
+              fontSize: '13px',
               fontFamily: '"Inter", sans-serif !important',
               boxShadow:
                 '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
@@ -818,8 +1033,21 @@ export default function Students() {
             }
           }}
         >
-          <MenuItem value="23.09.2025">
-            <Checkbox checked={filters.signup.indexOf('23.09.2025') > -1} />
+          <MenuItem
+            value="23.09.2025"
+            sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+          >
+            <input
+              type="checkbox"
+              checked={filters.signup.indexOf('23.09.2025') > -1}
+              onChange={() => {}}
+              style={{
+                width: '16px',
+                height: '16px',
+                margin: 0,
+                cursor: 'pointer'
+              }}
+            />
             23.09.2025
           </MenuItem>
         </TextField>
@@ -833,6 +1061,26 @@ export default function Students() {
               const selectedArray = selected as string[];
               if (selectedArray.length === 0) return 'Steps';
               return selectedArray.join(', ');
+            },
+            MenuProps: {
+              PaperProps: {
+                sx: {
+                  borderRadius: '12px',
+                  padding: '12px',
+                  boxShadow:
+                    '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+                }
+              },
+              MenuListProps: {
+                sx: {
+                  padding: 0,
+                  '& .MuiMenuItem-root': {
+                    padding: '0px',
+                    mb: '12px',
+                    gap: '10px'
+                  }
+                }
+              }
             }
           }}
           value={filters.steps}
@@ -850,7 +1098,7 @@ export default function Students() {
               background: '#ffffff',
               height: '40px',
               borderRadius: '999px',
-              fontSize: '14px',
+              fontSize: '13px',
               fontFamily: '"Inter", sans-serif !important',
               boxShadow:
                 '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
@@ -864,29 +1112,141 @@ export default function Students() {
             }
           }}
         >
-          <MenuItem value="1">
-            <Checkbox checked={filters.steps.indexOf('1') > -1} />1
+          <MenuItem
+            value="1"
+            sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+          >
+            <input
+              type="checkbox"
+              checked={filters.steps.indexOf('1') > -1}
+              onChange={() => {}}
+              style={{
+                width: '16px',
+                height: '16px',
+                margin: 0,
+                cursor: 'pointer'
+              }}
+            />
+            1
           </MenuItem>
-          <MenuItem value="2">
-            <Checkbox checked={filters.steps.indexOf('2') > -1} />2
+          <MenuItem
+            value="2"
+            sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+          >
+            <input
+              type="checkbox"
+              checked={filters.steps.indexOf('2') > -1}
+              onChange={() => {}}
+              style={{
+                width: '16px',
+                height: '16px',
+                margin: 0,
+                cursor: 'pointer'
+              }}
+            />
+            2
           </MenuItem>
-          <MenuItem value="3">
-            <Checkbox checked={filters.steps.indexOf('3') > -1} />3
+          <MenuItem
+            value="3"
+            sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+          >
+            <input
+              type="checkbox"
+              checked={filters.steps.indexOf('3') > -1}
+              onChange={() => {}}
+              style={{
+                width: '16px',
+                height: '16px',
+                margin: 0,
+                cursor: 'pointer'
+              }}
+            />
+            3
           </MenuItem>
-          <MenuItem value="4">
-            <Checkbox checked={filters.steps.indexOf('4') > -1} />4
+          <MenuItem
+            value="4"
+            sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+          >
+            <input
+              type="checkbox"
+              checked={filters.steps.indexOf('4') > -1}
+              onChange={() => {}}
+              style={{
+                width: '16px',
+                height: '16px',
+                margin: 0,
+                cursor: 'pointer'
+              }}
+            />
+            4
           </MenuItem>
-          <MenuItem value="5">
-            <Checkbox checked={filters.steps.indexOf('5') > -1} />5
+          <MenuItem
+            value="5"
+            sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+          >
+            <input
+              type="checkbox"
+              checked={filters.steps.indexOf('5') > -1}
+              onChange={() => {}}
+              style={{
+                width: '16px',
+                height: '16px',
+                margin: 0,
+                cursor: 'pointer'
+              }}
+            />
+            5
           </MenuItem>
-          <MenuItem value="6">
-            <Checkbox checked={filters.steps.indexOf('6') > -1} />6
+          <MenuItem
+            value="6"
+            sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+          >
+            <input
+              type="checkbox"
+              checked={filters.steps.indexOf('6') > -1}
+              onChange={() => {}}
+              style={{
+                width: '16px',
+                height: '16px',
+                margin: 0,
+                cursor: 'pointer'
+              }}
+            />
+            6
           </MenuItem>
-          <MenuItem value="7">
-            <Checkbox checked={filters.steps.indexOf('7') > -1} />7
+          <MenuItem
+            value="7"
+            sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+          >
+            <input
+              type="checkbox"
+              checked={filters.steps.indexOf('7') > -1}
+              onChange={() => {}}
+              style={{
+                width: '16px',
+                height: '16px',
+                margin: 0,
+                cursor: 'pointer'
+              }}
+            />
+            7
           </MenuItem>
-          <MenuItem value="8">
-            <Checkbox checked={filters.steps.indexOf('8') > -1} />8
+          <MenuItem
+            value="8"
+            sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+          >
+            <input
+              type="checkbox"
+              checked={filters.steps.indexOf('8') > -1}
+              onChange={() => {}}
+              style={{
+                width: '16px',
+                height: '16px',
+                margin: 0,
+                cursor: 'pointer'
+              }}
+            />
+            8
           </MenuItem>
         </TextField>
       </Box>
