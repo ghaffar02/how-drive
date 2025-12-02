@@ -18,6 +18,7 @@ import Students from './students/Students';
 import Drivers from './drivers/Drivers';
 import Message from './messages/Message';
 import {useTranslations} from 'next-intl';
+import Schools from './schools/Schools';
 const data = [
   {id: '5', label: 'Einstellungen', menuIcon: settingsIcon},
   {id: '6', label: 'Support', menuIcon: supportIcon},
@@ -143,7 +144,7 @@ export default function AdminDashboard() {
           {activeKey === '3' && <Calander />}
           {activeKey === '4' && <Message />}
           {activeKey === '7' && <Drivers activeKey={activeKey} />}
-          {activeKey === '9' && <Drivers activeKey={activeKey} />}
+          {activeKey === '9' && <Schools />}
           {activeKey === '5' && <Setting />}
           {activeKey === '6' && <Support />}
         </Box>
