@@ -756,6 +756,7 @@ export default function Students() {
               }}
               sx={{
                 width: '110px',
+
                 minWidth: '110px',
                 '& .MuiInputBase-root': {
                   background: '#ffffff',
@@ -788,11 +789,10 @@ export default function Students() {
               PaperProps={{
                 sx: {
                   mt: 1,
-                  minWidth: '150px',
-                  maxWidth: '150px',
-                  maxHeight: '400px',
-                  borderRadius: '12px',
-                  padding: '12px 12px 0',
+                  // bgcolor: 'red',
+                  maxWidth: '200px',
+                  borderRadius: '10px',
+                  padding: '12px',
                   boxShadow:
                     '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
                 }
@@ -802,17 +802,17 @@ export default function Students() {
                   padding: 0,
                   '& .MuiMenuItem-root': {
                     padding: '0px',
-                    mb: '12px',
+                    // mb: '12px',
                     gap: '10px'
                   }
                 }
               }}
             >
               {/* Search Input */}
-              <Box
+              {/* <Box
                 sx={{
                   p: '16px',
-                  pb: '12px',
+                  // pb: '12px',
                   borderBottom: '1px solid rgba(0, 0, 0, 0.1)'
                 }}
               >
@@ -848,6 +848,49 @@ export default function Students() {
                     '& .MuiInputBase-input': {
                       padding: '0 8px',
                       fontSize: '14px'
+                    }
+                  }}
+                />
+              </Box> */}
+
+              <Box
+                sx={{
+                  width: '100%',
+                  display: 'flex',
+                  gap: '4px',
+
+                  padding: '10px',
+
+                  borderRadius: '999px',
+                  height: '38px',
+                  alignItems: 'center',
+                  background: '#ffffffbf',
+                  boxShadow: '0px 0px 2px 0px #D4D4D8',
+                  mb: '12px'
+                }}
+              >
+                <Box sx={{height: '16px', width: '16px'}}>
+                  <Image
+                    src={searchIcon}
+                    alt="searchIcon"
+                    style={{height: '100%', width: '100%'}}
+                  />
+                </Box>
+                <TextField
+                  placeholder="Search"
+                  variant="outlined"
+                  sx={{
+                    flex: 1,
+                    '& .MuiOutlinedInput-root': {
+                      borderRadius: 0,
+                      '& fieldset': {border: 'none'},
+                      '&:hover fieldset': {border: 'none'},
+                      '&.Mui-focused fieldset': {border: 'none'}
+                    },
+                    '& .MuiInputBase-input': {
+                      fontFamily: '"Inter", sans-serif !important',
+                      height: 'auto',
+                      padding: '0px'
                     }
                   }}
                 />
@@ -888,6 +931,7 @@ export default function Students() {
                       <Typography
                         sx={{
                           fontSize: '14px',
+                          color: '#4A5568',
                           fontFamily: '"Inter", sans-serif !important',
                           wordBreak: 'break-word',
                           whiteSpace: 'normal',
@@ -1296,15 +1340,15 @@ export default function Students() {
             // width: 'max-content',
             width: '50%',
             // minWidth: '100%',
-            overflow: 'visible',
-            bgcolor: 'red'
+            overflow: 'visible'
+            // bgcolor: 'red'
           }}
         >
           <Table
             sx={{
               minWidth: '1400px',
               width: '100%',
-              bgcolor: 'pink',
+              // bgcolor: 'pink',
               tableLayout: 'auto',
               borderCollapse: 'separate',
               borderSpacing: '0 8px'
