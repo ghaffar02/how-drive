@@ -420,7 +420,7 @@ export default function Students() {
         <Box
           sx={{
             width: '100%',
-            maxWidth: '1660px',
+            maxWidth: '1720px',
             display: 'flex',
             gap: 2,
             mb: 3,
@@ -436,7 +436,7 @@ export default function Students() {
               // bgcolor: 'green',
               flex: 1,
               width: '100%',
-              maxWidth: '1660px',
+              maxWidth: '1720px',
               // minWidth: '200px',
               position: 'relative',
               display: 'flex',
@@ -1495,9 +1495,8 @@ export default function Students() {
         {/* Table Container */}
         <Box
           sx={{
-            // width: 'max-content',
-            width: '50%',
-            // minWidth: '100%',
+            width: '100%',
+            maxWidth: '1720px',
             overflow: 'visible'
             // bgcolor: 'red'
           }}
@@ -1697,7 +1696,7 @@ export default function Students() {
           <Box
             sx={{
               width: '100%',
-              maxWidth: '1660px',
+              maxWidth: '1720px',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
