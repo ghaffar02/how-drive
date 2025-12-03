@@ -403,6 +403,7 @@ export default function Students() {
           '&::-webkit-scrollbar': {
             display: 'none'
           },
+          // bgcolor: 'red',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none'
         }}
@@ -411,13 +412,14 @@ export default function Students() {
         <Box
           sx={{
             width: '100%',
+            maxWidth: '1660px',
             display: 'flex',
             gap: 2,
             mb: 3,
-            bgcolor: 'green',
+            // bgcolor: 'green',
             flexWrap: 'wrap',
-            alignItems: 'center'
-            // minWidth: 'max-content'
+            alignItems: 'center',
+            minWidth: 'max-content'
           }}
         >
           {/* Search Bar */}
@@ -426,7 +428,7 @@ export default function Students() {
               // bgcolor: 'green',
               flex: 1,
               width: '100%',
-              maxWidth: '1900px',
+              maxWidth: '1660px',
               // minWidth: '200px',
               position: 'relative',
               display: 'flex',
@@ -1486,6 +1488,8 @@ export default function Students() {
         {totalPages > 1 && (
           <Box
             sx={{
+              width: '100%',
+              maxWidth: '1660px',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center',
