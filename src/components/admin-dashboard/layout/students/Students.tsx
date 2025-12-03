@@ -17,6 +17,10 @@ import {
   DialogContent,
   Button
 } from '@mui/material';
+import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
+import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs';
+import {DatePicker} from '@mui/x-date-pickers/DatePicker';
+import dayjs, {Dayjs} from 'dayjs';
 import Image from 'next/image';
 import searchIcon from '@/assets/svgs/dashboard-student/searchIcon.svg';
 import arrowDown from '@/assets/svgs/dashboard-student/arrow.svg';
@@ -252,6 +256,8 @@ const sampleStudents: Student[] = [
 export default function Students() {
   const [searchQuery, setSearchQuery] = useState('');
   const [schoolSearchQuery, setSchoolSearchQuery] = useState('');
+  const [citySearchQuery, setCitySearchQuery] = useState('');
+  const [signupSearchQuery, setSignupSearchQuery] = useState('');
   const [filters, setFilters] = useState({
     city: [] as string[],
     class: [] as string[],
@@ -269,6 +275,7 @@ export default function Students() {
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
   const [openDeleteConfirm, setOpenDeleteConfirm] = useState(false);
+  const [birthdayDate, setBirthdayDate] = useState<Dayjs | null>(null);
   const rowsPerPage = 10;
 
   // Filter and paginate students
@@ -317,12 +324,21 @@ export default function Students() {
 
   const handleOpenDialog = (student: Student) => {
     setSelectedStudent(student);
+    // Parse birthday string (DD.MM.YYYY) to dayjs object
+    if (student.birthday) {
+      const [day, month, year] = student.birthday.split('.');
+      const date = dayjs(`${year}-${month}-${day}`);
+      setBirthdayDate(date.isValid() ? date : null);
+    } else {
+      setBirthdayDate(null);
+    }
     setOpenDialog(true);
   };
 
   const handleCloseDialog = () => {
     setOpenDialog(false);
     setSelectedStudent(null);
+    setBirthdayDate(null);
   };
 
   const handleDelete = (index: number) => {
@@ -351,10 +367,23 @@ export default function Students() {
   const uniqueSchools = Array.from(
     new Set(sampleStudents.map((s) => s.school))
   );
+  const uniqueSignups = Array.from(
+    new Set(sampleStudents.map((s) => s.signup))
+  );
 
   // Filter schools based on search query
   const filteredSchools = uniqueSchools.filter((school) =>
     school.toLowerCase().includes(schoolSearchQuery.toLowerCase())
+  );
+
+  // Filter cities based on search query
+  const filteredCities = uniqueCities.filter((city) =>
+    city.toLowerCase().includes(citySearchQuery.toLowerCase())
+  );
+
+  // Filter signups based on search query
+  const filteredSignups = uniqueSignups.filter((signup) =>
+    signup.toLowerCase().includes(signupSearchQuery.toLowerCase())
   );
 
   return (
@@ -427,13 +456,13 @@ export default function Students() {
               }}
             />
             <TextField
-              placeholder="Q Search"
+              placeholder="Search"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               sx={{
                 width: '100%',
                 '& .MuiInputBase-root': {
-                  background: '#ffffff',
+                  background: 'rgba(255, 255, 255, 0.75)',
                   height: '40px',
                   borderRadius: '999px',
                   paddingLeft: '40px',
@@ -466,8 +495,11 @@ export default function Students() {
               MenuProps: {
                 PaperProps: {
                   sx: {
-                    borderRadius: '12px',
-                    padding: '12px 12px 0',
+                    mt: 1,
+                    maxWidth: '200px',
+                    borderRadius: '10px',
+                    padding: '12px',
+
                     boxShadow:
                       '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
                   }
@@ -477,8 +509,7 @@ export default function Students() {
                     padding: 0,
                     '& .MuiMenuItem-root': {
                       padding: '0px',
-                      gap: '10px',
-                      mb: '12px'
+                      gap: '10px'
                     }
                   }
                 }
@@ -493,13 +524,13 @@ export default function Students() {
               });
             }}
             sx={{
-              width: '70px',
-              minWidth: '70px',
+              width: '80px',
+              minWidth: '80px',
               '& .MuiInputBase-root': {
-                background: '#ffffff',
+                background: 'rgba(255, 255, 255, 0.75)',
                 height: '40px',
                 borderRadius: '999px',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontFamily: '"Inter", sans-serif !important',
                 boxShadow:
                   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
@@ -509,30 +540,122 @@ export default function Students() {
               },
               '& .MuiSelect-select': {
                 padding: '0 12px',
-                color: filters.city.length > 0 ? '#000' : '#4A5568'
+                color: filters.city.length > 0 ? '#000' : '#4A5568',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
               }
             }}
           >
-            {uniqueCities.map((city) => (
-              <MenuItem
-                key={city}
-                value={city}
-                sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+            <Box
+              sx={{
+                position: 'sticky',
+                top: 0,
+                zIndex: 1,
+                background: '#fff',
+                padding: '12px',
+                borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+                mb: '8px'
+              }}
+            >
+              <Box
+                sx={{
+                  width: '100%',
+                  display: 'flex',
+                  gap: '4px',
+                  padding: '10px',
+                  borderRadius: '999px',
+                  height: '38px',
+                  alignItems: 'center',
+                  background: '#ffffffbf',
+                  boxShadow: '0px 0px 2px 0px #D4D4D8'
+                }}
               >
-                <input
-                  type="checkbox"
-                  checked={filters.city.indexOf(city) > -1}
-                  onChange={() => {}}
-                  style={{
-                    width: '16px',
-                    height: '16px',
-                    margin: 0,
-                    cursor: 'pointer'
+                <Box sx={{height: '16px', width: '16px'}}>
+                  <Image
+                    src={searchIcon}
+                    alt="searchIcon"
+                    style={{height: '100%', width: '100%'}}
+                  />
+                </Box>
+                <TextField
+                  placeholder="Search"
+                  variant="outlined"
+                  value={citySearchQuery}
+                  onChange={(e) => setCitySearchQuery(e.target.value)}
+                  onClick={(e) => e.stopPropagation()}
+                  sx={{
+                    flex: 1,
+                    '& .MuiOutlinedInput-root': {
+                      borderRadius: 0,
+                      '& fieldset': {border: 'none'},
+                      '&:hover fieldset': {border: 'none'},
+                      '&.Mui-focused fieldset': {border: 'none'}
+                    },
+                    '& .MuiInputBase-input': {
+                      fontFamily: '"Inter", sans-serif !important',
+                      height: 'auto',
+                      padding: '0px'
+                    }
                   }}
                 />
-                {city}
+              </Box>
+            </Box>
+            {filteredCities.length > 0 ? (
+              filteredCities.map((city) => (
+                <MenuItem
+                  key={city}
+                  value={city}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '10px',
+                    py: '6px',
+                    px: '16px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word'
+                  }}
+                >
+                  <input
+                    type="checkbox"
+                    checked={filters.city.indexOf(city) > -1}
+                    onChange={() => {}}
+                    style={{
+                      width: '16px',
+                      height: '16px',
+                      margin: 0,
+                      marginTop: '2px',
+                      cursor: 'pointer',
+                      flexShrink: 0
+                    }}
+                  />
+                  <Typography
+                    sx={{
+                      fontSize: '14px',
+                      color: '#4A5568',
+                      fontFamily: '"Inter", sans-serif !important',
+                      wordBreak: 'break-word',
+                      whiteSpace: 'normal',
+                      lineHeight: '1.4',
+                      flex: 1
+                    }}
+                  >
+                    {city}
+                  </Typography>
+                </MenuItem>
+              ))
+            ) : (
+              <MenuItem disabled>
+                <Typography
+                  sx={{
+                    fontSize: '14px',
+                    fontFamily: '"Inter", sans-serif !important',
+                    color: '#aaa'
+                  }}
+                >
+                  No cities found
+                </Typography>
               </MenuItem>
-            ))}
+            )}
           </TextField>
 
           <TextField
@@ -582,7 +705,7 @@ export default function Students() {
                 background: '#ffffff',
                 height: '40px',
                 borderRadius: '999px',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontFamily: '"Inter", sans-serif !important',
                 boxShadow:
                   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
@@ -592,7 +715,9 @@ export default function Students() {
               },
               '& .MuiSelect-select': {
                 padding: '0 12px',
-                color: filters.class.length > 0 ? '#000' : '#4A5568'
+                color: filters.class.length > 0 ? '#000' : '#4A5568',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
               }
             }}
           >
@@ -661,10 +786,10 @@ export default function Students() {
               width: '100px',
               minWidth: '100px',
               '& .MuiInputBase-root': {
-                background: '#ffffff',
+                background: 'rgba(255, 255, 255, 0.75)',
                 height: '40px',
                 borderRadius: '999px',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontFamily: '"Inter", sans-serif !important',
                 boxShadow:
                   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
@@ -674,7 +799,9 @@ export default function Students() {
               },
               '& .MuiSelect-select': {
                 padding: '0 12px',
-                color: filters.rewrite.length > 0 ? '#000' : '#4A5568'
+                color: filters.rewrite.length > 0 ? '#000' : '#4A5568',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
               }
             }}
           >
@@ -760,10 +887,10 @@ export default function Students() {
               width: '110px',
               minWidth: '110px',
               '& .MuiInputBase-root': {
-                background: '#ffffff',
+                background: 'rgba(255, 255, 255, 0.75)',
                 height: '40px',
                 borderRadius: '999px',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontFamily: '"Inter", sans-serif !important',
                 boxShadow:
                   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
@@ -773,7 +900,9 @@ export default function Students() {
               },
               '& .MuiSelect-select': {
                 padding: '0 12px',
-                color: filters.school.length > 0 ? '#000' : '#4A5568'
+                color: filters.school.length > 0 ? '#000' : '#4A5568',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
               }
             }}
           >
@@ -932,10 +1061,10 @@ export default function Students() {
               width: '90px',
               minWidth: '90px',
               '& .MuiInputBase-root': {
-                background: '#ffffff',
+                background: 'rgba(255, 255, 255, 0.75)',
                 height: '40px',
                 borderRadius: '999px',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontFamily: '"Inter", sans-serif !important',
                 boxShadow:
                   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
@@ -945,7 +1074,9 @@ export default function Students() {
               },
               '& .MuiSelect-select': {
                 padding: '0 12px',
-                color: filters.status.length > 0 ? '#000' : '#4A5568'
+                color: filters.status.length > 0 ? '#000' : '#4A5568',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
               }
             }}
           >
@@ -998,8 +1129,10 @@ export default function Students() {
               MenuProps: {
                 PaperProps: {
                   sx: {
-                    borderRadius: '12px',
-                    padding: '12px 12px 0',
+                    mt: 1,
+                    maxWidth: '200px',
+                    borderRadius: '10px',
+                    padding: '12px',
                     boxShadow:
                       '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
                   }
@@ -1009,7 +1142,6 @@ export default function Students() {
                     padding: 0,
                     '& .MuiMenuItem-root': {
                       padding: '0px',
-                      mb: '12px',
                       gap: '10px'
                     }
                   }
@@ -1025,13 +1157,13 @@ export default function Students() {
               });
             }}
             sx={{
-              width: '90px',
-              minWidth: '90px',
+              width: '100px',
+              minWidth: '100px',
               '& .MuiInputBase-root': {
-                background: '#ffffff',
+                background: 'rgba(255, 255, 255, 0.75)',
                 height: '40px',
                 borderRadius: '999px',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontFamily: '"Inter", sans-serif !important',
                 boxShadow:
                   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
@@ -1041,27 +1173,122 @@ export default function Students() {
               },
               '& .MuiSelect-select': {
                 padding: '0 12px',
-                color: filters.signup.length > 0 ? '#000' : '#4A5568'
+                color: filters.signup.length > 0 ? '#000' : '#4A5568',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
               }
             }}
           >
-            <MenuItem
-              value="23.09.2025"
-              sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+            <Box
+              sx={{
+                position: 'sticky',
+                top: 0,
+                zIndex: 1,
+                background: '#fff',
+                padding: '12px',
+                borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+                mb: '8px'
+              }}
             >
-              <input
-                type="checkbox"
-                checked={filters.signup.indexOf('23.09.2025') > -1}
-                onChange={() => {}}
-                style={{
-                  width: '16px',
-                  height: '16px',
-                  margin: 0,
-                  cursor: 'pointer'
+              <Box
+                sx={{
+                  width: '100%',
+                  display: 'flex',
+                  gap: '4px',
+                  padding: '10px',
+                  borderRadius: '999px',
+                  height: '38px',
+                  alignItems: 'center',
+                  background: '#ffffffbf',
+                  boxShadow: '0px 0px 2px 0px #D4D4D8'
                 }}
-              />
-              23.09.2025
-            </MenuItem>
+              >
+                <Box sx={{height: '16px', width: '16px'}}>
+                  <Image
+                    src={searchIcon}
+                    alt="searchIcon"
+                    style={{height: '100%', width: '100%'}}
+                  />
+                </Box>
+                <TextField
+                  placeholder="Search"
+                  variant="outlined"
+                  value={signupSearchQuery}
+                  onChange={(e) => setSignupSearchQuery(e.target.value)}
+                  onClick={(e) => e.stopPropagation()}
+                  sx={{
+                    flex: 1,
+                    '& .MuiOutlinedInput-root': {
+                      borderRadius: 0,
+                      '& fieldset': {border: 'none'},
+                      '&:hover fieldset': {border: 'none'},
+                      '&.Mui-focused fieldset': {border: 'none'}
+                    },
+                    '& .MuiInputBase-input': {
+                      fontFamily: '"Inter", sans-serif !important',
+                      height: 'auto',
+                      padding: '0px'
+                    }
+                  }}
+                />
+              </Box>
+            </Box>
+            {filteredSignups.length > 0 ? (
+              filteredSignups.map((signup) => (
+                <MenuItem
+                  key={signup}
+                  value={signup}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '10px',
+                    py: '6px',
+                    px: '16px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word'
+                  }}
+                >
+                  <input
+                    type="checkbox"
+                    checked={filters.signup.indexOf(signup) > -1}
+                    onChange={() => {}}
+                    style={{
+                      width: '16px',
+                      height: '16px',
+                      margin: 0,
+                      marginTop: '2px',
+                      cursor: 'pointer',
+                      flexShrink: 0
+                    }}
+                  />
+                  <Typography
+                    sx={{
+                      fontSize: '14px',
+                      color: '#4A5568',
+                      fontFamily: '"Inter", sans-serif !important',
+                      wordBreak: 'break-word',
+                      whiteSpace: 'normal',
+                      lineHeight: '1.4',
+                      flex: 1
+                    }}
+                  >
+                    {signup}
+                  </Typography>
+                </MenuItem>
+              ))
+            ) : (
+              <MenuItem disabled>
+                <Typography
+                  sx={{
+                    fontSize: '14px',
+                    fontFamily: '"Inter", sans-serif !important',
+                    color: '#aaa'
+                  }}
+                >
+                  No signups found
+                </Typography>
+              </MenuItem>
+            )}
           </TextField>
 
           <TextField
@@ -1107,10 +1334,10 @@ export default function Students() {
               width: '90px',
               minWidth: '90px',
               '& .MuiInputBase-root': {
-                background: '#ffffff',
+                background: 'rgba(255, 255, 255, 0.75)',
                 height: '40px',
                 borderRadius: '999px',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontFamily: '"Inter", sans-serif !important',
                 boxShadow:
                   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
@@ -1120,7 +1347,9 @@ export default function Students() {
               },
               '& .MuiSelect-select': {
                 padding: '0 12px',
-                color: filters.steps.length > 0 ? '#000' : '#4A5568'
+                color: filters.steps.length > 0 ? '#000' : '#4A5568',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
               }
             }}
           >
@@ -1361,7 +1590,7 @@ export default function Students() {
                 <TableRow
                   key={`${student.number}-${index}`}
                   sx={{
-                    background: '#ffffff',
+                    background: 'rgba(255, 255, 255, 0.65)',
                     borderRadius: '8px',
                     boxShadow: '0px 1px 3px rgba(0, 0, 0, 0.1)',
                     height: 'auto',
@@ -1705,27 +1934,25 @@ export default function Students() {
                   />
                 </Box>
                 <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
-                  <TextField
-                    label="Birthday"
-                    fullWidth
-                    placeholder="dd/mm/yyyy"
-                    defaultValue={selectedStudent.birthday}
-                    InputProps={{
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <IconButton edge="end" sx={{padding: '4px'}}>
-                            📅
-                          </IconButton>
-                        </InputAdornment>
-                      )
-                    }}
-                    sx={{
-                      '& .MuiInputBase-root': {
-                        background: '#ffffff',
-                        borderRadius: '8px'
-                      }
-                    }}
-                  />
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DatePicker
+                      label="Birthday"
+                      value={birthdayDate}
+                      onChange={(newValue) => setBirthdayDate(newValue)}
+                      format="DD.MM.YYYY"
+                      slotProps={{
+                        textField: {
+                          fullWidth: true,
+                          sx: {
+                            '& .MuiInputBase-root': {
+                              background: '#ffffff',
+                              borderRadius: '8px'
+                            }
+                          }
+                        }
+                      }}
+                    />
+                  </LocalizationProvider>
                 </Box>
                 <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
                   <TextField
@@ -1756,9 +1983,11 @@ export default function Students() {
                       }
                     }}
                   >
-                    <MenuItem value={selectedStudent.class}>
-                      {selectedStudent.class}
-                    </MenuItem>
+                    {uniqueClasses.map((cls) => (
+                      <MenuItem key={cls} value={cls}>
+                        {cls}
+                      </MenuItem>
+                    ))}
                   </TextField>
                 </Box>
               </Box>
