@@ -1933,7 +1933,14 @@ export default function Students() {
                     }}
                   />
                 </Box>
-                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
+                <Box
+                  sx={{
+                    flex: '1 1 calc(25% - 18px)',
+                    minWidth: '200px',
+                    bgcolor: '#fff',
+                    borderRadius: '8px'
+                  }}
+                >
                   <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DatePicker
                       label="Birthday"
@@ -1942,13 +1949,7 @@ export default function Students() {
                       format="DD.MM.YYYY"
                       slotProps={{
                         textField: {
-                          fullWidth: true,
-                          sx: {
-                            '& .MuiInputBase-root': {
-                              background: '#ffffff',
-                              borderRadius: '8px'
-                            }
-                          }
+                          fullWidth: true
                         }
                       }}
                     />
