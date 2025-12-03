@@ -1300,6 +1300,7 @@ export default function Students() {
                     border: 'none',
                     whiteSpace: 'nowrap',
                     height: '42px',
+                    verticalAlign: 'middle',
                     '&:first-of-type': {
                       borderTopLeftRadius: '8px',
                       borderBottomLeftRadius: '8px'
@@ -1308,6 +1309,10 @@ export default function Students() {
                       borderTopRightRadius: '8px',
                       borderBottomRightRadius: '8px'
                     }
+                  },
+                  '& th:nth-of-type(5), & th:nth-of-type(10)': {
+                    whiteSpace: 'normal',
+                    verticalAlign: 'middle'
                   }
                 }}
               >
@@ -1369,7 +1374,7 @@ export default function Students() {
                       color: '#000000',
                       whiteSpace: 'nowrap',
                       minHeight: '60px',
-                      verticalAlign: 'top',
+                      verticalAlign: 'middle',
                       '&:first-of-type': {
                         borderTopLeftRadius: '8px',
                         borderBottomLeftRadius: '8px'
@@ -1381,7 +1386,8 @@ export default function Students() {
                     },
                     '& td:nth-of-type(5), & td:nth-of-type(10)': {
                       whiteSpace: 'normal',
-                      wordBreak: 'break-word'
+                      wordBreak: 'break-word',
+                      verticalAlign: 'middle'
                     }
                   }}
                 >
@@ -1758,7 +1764,7 @@ export default function Students() {
               </Box>
 
               {/* Action Buttons */}
-              <Box sx={{display: 'flex', gap: 2, justifyContent: 'flex-start'}}>
+              <Box sx={{display: 'flex', gap: 2, justifyContent: 'center'}}>
                 <Button
                   variant="contained"
                   startIcon={
