@@ -191,8 +191,9 @@ export default function Home({setActiveKey}: Props) {
           scrollbarWidth: 'none'
         }}
       >
+        Home
         {/* First Row: Students, Schools, Trainers (md: 3 cols, lg: 3 cols + Messages 2 cols) */}
-        <Grid
+        {/* <Grid
           container
           spacing={3}
           sx={{
@@ -261,10 +262,9 @@ export default function Home({setActiveKey}: Props) {
           >
             <Messages setActiveKey={setActiveKey} messages={messages} />
           </Grid>
-        </Grid>
-
+        </Grid> */}
         {/* Second Row: Messages (md only), Growth */}
-        <Grid
+        {/* <Grid
           container
           spacing={3}
           sx={{
@@ -300,10 +300,9 @@ export default function Home({setActiveKey}: Props) {
               lastYear={growthLastYear}
             />
           </Grid>
-        </Grid>
-
+        </Grid> */}
         {/* Third Row: Growth (lg only), Popular Cities, Bookings */}
-        <Grid
+        {/* <Grid
           container
           spacing={3}
           sx={{
@@ -363,7 +362,7 @@ export default function Home({setActiveKey}: Props) {
               lastYear={bookingsLastYear}
             />
           </Grid>
-        </Grid>
+        </Grid> */}
       </Box>
     </>
   );
