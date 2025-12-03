@@ -5,13 +5,21 @@ import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/Footer';
 import TrustServiceSection from '@/components/home/TrustServiceSection';
 
-import {useTranslations} from 'next-intl';
 import FahrschuleMustermann from '@/components/driving-schools/FahrschuleMustermann';
 import ClassGrid from '@/components/driving-schools/ClassGrid';
+import {useRef} from 'react';
 
 export default function Page() {
   // const t = useTranslations('AboutUs');
-  const t = useTranslations('licenseLT');
+  const classGridRef = useRef<HTMLDivElement | null>(null);
+
+  // 👉 scroll function
+  const scrollToClassGrid = () => {
+    classGridRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    });
+  };
 
   return (
     <>
@@ -31,8 +39,12 @@ export default function Page() {
           <Navbar />
         </Box>
         {/* <HeroAboutus title={t('Title2')} description={t('heroDes2')} /> */}
-        <FahrschuleMustermann />
-        <ClassGrid />
+        <FahrschuleMustermann onGoToClasses={scrollToClassGrid} />
+
+        {/* 👉 Wrap ClassGrid inside ref */}
+        <Box ref={classGridRef}>
+          <ClassGrid />
+        </Box>
         <TrustServiceSection />
         <Footer />
       </Box>

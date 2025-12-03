@@ -14,7 +14,6 @@ type CardProps = {
 };
 
 export default function BgCard({
-  row = true,
   icon,
   bgImage,
   title,
@@ -65,10 +64,14 @@ export default function BgCard({
               sx={{
                 textAlign: 'center',
 
-                fontSize: {xs: '20px', sm: '22px', lg: '24px'},
+                fontSize: des
+                  ? {xs: '18px', sm: '20px', md: '22px'}
+                  : {xs: '20px', sm: '22px', lg: '24px'},
                 color: '#fff',
                 fontWeight: '600',
-                fontFamily: '"Inter", sans-serif !important'
+                fontFamily: des
+                  ? '"Inter", sans-serif !important'
+                  : 'Satoshi !important'
               }}
               dangerouslySetInnerHTML={{__html: title ?? ''}}
             />

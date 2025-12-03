@@ -31,142 +31,173 @@ export default function ClassGrid() {
         }}
       >
         {/* <Grid spacing={2} container> */}
-        <Grid
-          width="100%"
-          container
-          mb={2}
-          spacing={2}
-          display={{xs: 'none', md: 'flex', lg: 'none'}}
-          direction="row"
+        <Box
+          sx={{
+            maxWidth: '1064px',
+            width: '100%',
+            margin: 'auto',
+            padding: '8px'
+          }}
         >
-          <Grid size={6}>
-            {' '}
-            <TextCard
-              heading={t('openingHours')}
-              data={timings}
-              icon={time}
-              headingSize={false}
-              background="#edf0ff"
-            />
-          </Grid>
-          <Grid size={6}>
-            <Grid container spacing={2} direction="column">
-              <Grid size={12}>
-                <BgCard
-                  icon={laptop}
-                  bgImage={ImageBGridInfo2School.src}
-                  title="Klassen"
-                  heading="A, B"
-                />
-              </Grid>
-              <Grid size={12}>
-                <BgCard
-                  icon={map}
-                  bgImage={ImageBGridInfo5School.src}
-                  title="Sprachen"
-                  heading="Deutsch, Englisch, Türkisch"
-                />
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid container spacing={2}>
           <Grid
-            size={{xs: 12, lg: 6}}
-            display={{xs: 'grid', md: 'none', lg: 'grid'}}
+            width="100%"
+            container
+            mb={2}
+            spacing={2}
+            display={{xs: 'none', md: 'flex', lg: 'none'}}
+            direction="row"
           >
-            <Grid
-              container
-              spacing={2}
-              direction={{xs: 'column-reverse', md: 'row', lg: 'row'}}
-            >
-              <Grid size={{xs: 12, md: 6, lg: 12}}>
-                {' '}
-                <TextCard
-                  heading={t('openingHours')}
-                  icon={time}
-                  data={timings}
-                  headingSize={false}
-                  background="#edf0ff"
-                />
-              </Grid>
-              <Grid
-                size={{xs: 12, md: 6, lg: 12}}
-                display={{xs: 'none', lg: 'block'}}
-              >
-                <BgCard
-                  icon={map}
-                  bgImage={ImageBGridInfo5School.src}
-                  title="Sprachen"
-                  heading="Deutsch, Englisch, Türkisch"
-                />
+            <Grid size={6}>
+              {' '}
+              <TextCard
+                heading={t('openingHours')}
+                data={timings}
+                icon={time}
+                headingSize={false}
+                background="#edf0ff"
+              />
+            </Grid>
+            <Grid size={6}>
+              <Grid container spacing={2} direction="column">
+                <Grid size={12}>
+                  <BgCard
+                    icon={laptop}
+                    bgImage={ImageBGridInfo2School.src}
+                    title={t('classesHeading')}
+                    heading={t('classesList')}
+                  />
+                </Grid>
+                <Grid size={12}>
+                  <BgCard
+                    icon={map}
+                    bgImage={ImageBGridInfo5School.src}
+                    title={t('languagesHeading')}
+                    heading={t('languages')}
+                  />
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
-          <Grid size={{xs: 12, lg: 6}}>
+          <Grid container spacing={2}>
             <Grid
-              container
-              spacing={2}
-              direction={{xs: 'column-reverse', md: 'row-reverse', lg: 'row'}}
+              size={{xs: 12, lg: 6}}
+              display={{xs: 'grid', md: 'none', lg: 'grid'}}
             >
               <Grid
-                size={{xs: 12, md: 6, lg: 12}}
-                display={{xs: 'none', md: 'none', lg: 'grid'}}
+                container
+                spacing={2}
+                direction={{xs: 'column-reverse', md: 'row', lg: 'row'}}
               >
-                <BgCard
-                  bgImage={ImageBGridInfo2School.src}
-                  icon={laptop}
-                  title="Klassen"
-                  heading="A, B"
-                />
+                <Grid size={{xs: 12, md: 6, lg: 12}}>
+                  {' '}
+                  <TextCard
+                    heading={t('openingHours')}
+                    icon={time}
+                    data={timings}
+                    headingSize={false}
+                    background="#edf0ff"
+                  />
+                </Grid>
+                <Grid
+                  size={{xs: 12, md: 6, lg: 12}}
+                  display={{xs: 'none', lg: 'block'}}
+                >
+                  <BgCard
+                    icon={map}
+                    bgImage={ImageBGridInfo5School.src}
+                    title={t('languagesHeading')}
+                    heading={t('languages')}
+                  />
+                </Grid>
+                <Grid
+                  size={{xs: 12, md: 6, lg: 12}}
+                  display={{xs: 'block', lg: 'none'}}
+                >
+                  <BgCard
+                    icon={laptop}
+                    bgImage={ImageBGridInfo2School.src}
+                    title={t('classesHeading')}
+                    heading={t('classesList')}
+                  />
+                </Grid>
               </Grid>
-              <Grid size={{xs: 12}}>
-                <Grid container spacing={2}>
-                  <Grid size={{xs: 12, md: 6, lg: 6}}>
-                    {' '}
-                    <TextCard
-                      heading={t('addressHeading')}
-                      icon={location}
-                      description={t('address')}
-                      headingSize={false}
-                      background="#f2f2f2"
-                    />
-                  </Grid>
-                  <Grid size={{xs: 12, md: 6, lg: 6}}>
-                    {' '}
-                    <TextCard
-                      heading={t('telephoneHeading')}
-                      icon={phone}
-                      description={t('telephone')}
-                      headingSize={false}
-                      background="#edf0ff"
-                    />
-                  </Grid>
-                  <Grid size={{xs: 12, md: 6, lg: 6}}>
-                    {' '}
-                    <TextCard
-                      heading={t('emailHeading')}
-                      icon={email}
-                      description={t('email')}
-                      headingSize={false}
-                      background="#edf0ff"
-                    />
-                  </Grid>
-                  <Grid size={{xs: 12, md: 6, lg: 6}}>
-                    {' '}
-                    <TextCard
-                      heading={t('websiteHeading')}
-                      icon={website}
-                      description={t('website')}
-                      headingSize={false}
-                      background="#f2f2f2"
-                    />
+            </Grid>
+            <Grid size={{xs: 12, lg: 6}}>
+              <Grid
+                container
+                spacing={2}
+                direction={{xs: 'column-reverse', md: 'row-reverse', lg: 'row'}}
+              >
+                <Grid
+                  size={{xs: 12, md: 6, lg: 12}}
+                  display={{xs: 'none', md: 'none', lg: 'grid'}}
+                >
+                  <BgCard
+                    icon={laptop}
+                    bgImage={ImageBGridInfo2School.src}
+                    title={t('classesHeading')}
+                    heading={t('classesList')}
+                  />
+                </Grid>
+                <Grid
+                  size={{xs: 12, md: 6, lg: 12}}
+                  display={{xs: 'grid', md: 'none', lg: 'none'}}
+                >
+                  <BgCard
+                    icon={map}
+                    bgImage={ImageBGridInfo5School.src}
+                    title={t('languagesHeading')}
+                    heading={t('languages')}
+                  />
+                </Grid>
+                <Grid size={{xs: 12}}>
+                  <Grid container spacing={2}>
+                    <Grid size={{xs: 12, md: 6, lg: 6}}>
+                      {' '}
+                      <TextCard
+                        heading={t('addressHeading')}
+                        icon={location}
+                        description={t('address')}
+                        headingSize={false}
+                        background="#f2f2f2"
+                      />
+                    </Grid>
+                    <Grid size={{xs: 12, md: 6, lg: 6}}>
+                      {' '}
+                      <TextCard
+                        heading={t('telephoneHeading')}
+                        icon={phone}
+                        description={t('telephone')}
+                        headingSize={false}
+                        background="#edf0ff"
+                      />
+                    </Grid>
+                    <Grid size={{xs: 12, md: 6, lg: 6}}>
+                      {' '}
+                      <TextCard
+                        heading={t('emailHeading')}
+                        icon={email}
+                        description={t('email')}
+                        headingSize={false}
+                        background="#edf0ff"
+                      />
+                    </Grid>
+                    <Grid size={{xs: 12, md: 6, lg: 6}}>
+                      {' '}
+                      <TextCard
+                        heading={t('websiteHeading')}
+                        icon={website}
+                        description={t('website')}
+                        headingSize={false}
+                        background="#f2f2f2"
+                      />
+                    </Grid>
                   </Grid>
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
-        </Grid>
+        </Box>
         {/* </Grid> */}
       </Box>
     </Box>

@@ -16,7 +16,11 @@ import Image from 'next/image';
 import localFont from '@/utils/themes';
 import CustomButton from '../school-dashboard/CustomButton';
 import {useTranslations} from 'next-intl';
-export default function FahrschuleMustermann() {
+interface FahrschuleProps {
+  onGoToClasses?: () => void;
+}
+
+export default function FahrschuleMustermann({onGoToClasses}: FahrschuleProps) {
   const t = useTranslations('DrivingSchools.Hamburg');
 
   const heading = `
@@ -45,9 +49,9 @@ Moderne Ausbildung: Unser moderner Fuhrpark besteht aus einer vielfältigen Ausw
         <Box
           sx={{
             padding: {
-              xs: '120px 16px',
-              sm: '120px 24px',
-              lg: '120px 24px'
+              xs: 'calc(120px + 82px) 16px 120px ',
+              sm: 'calc(120px + 82px) 24px 120px ',
+              lg: 'calc(120px + 82px) 24px 120px'
             },
             width: '100%',
             maxWidth: '1400px',
@@ -114,8 +118,8 @@ Moderne Ausbildung: Unser moderner Fuhrpark besteht aus einer vielfältigen Ausw
                     ...localFont.h2,
                     textAlign: 'center',
                     color: '#000',
-                    fontWeight: '600',
-                    fontFamily: '"Inter", sans-serif !important'
+                    fontWeight: '700',
+                    fontFamily: 'Satoshi700 !important'
                   }}
                 >
                   {' '}
@@ -205,6 +209,7 @@ Moderne Ausbildung: Unser moderner Fuhrpark besteht aus einer vielfältigen Ausw
                 bgColor="#fff"
                 hoverColor="#fff"
                 activeColor="#fff"
+                onClick={onGoToClasses}
                 sx={{
                   maxWidth: '360px',
                   width: '100%',

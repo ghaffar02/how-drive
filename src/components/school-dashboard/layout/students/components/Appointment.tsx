@@ -16,6 +16,18 @@ export default function Appointment() {
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
+      const target = event.target as HTMLElement;
+
+      // Ignore clicks on MUI portal elements (Select menu, Popover, Modal, etc.)
+      if (
+        target.closest('.MuiPopover-root') ||
+        target.closest('.MuiMenu-root') ||
+        target.closest('.MuiModal-root') ||
+        target.closest('.MuiPickersPopper-root')
+      ) {
+        return;
+      }
+
       if (
         dropdownRef.current &&
         dropdownRef.current.contains(event.target as Node)
@@ -251,6 +263,18 @@ function Card({name, barColor, date, time}: CardProps) {
   const iconRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
+      const target = event.target as HTMLElement;
+
+      // Ignore clicks on MUI portal elements (Select menu, Popover, Modal, etc.)
+      if (
+        target.closest('.MuiPopover-root') ||
+        target.closest('.MuiMenu-root') ||
+        target.closest('.MuiModal-root') ||
+        target.closest('.MuiPickersPopper-root')
+      ) {
+        return;
+      }
+
       if (
         dropdownRef.current &&
         dropdownRef.current.contains(event.target as Node)
