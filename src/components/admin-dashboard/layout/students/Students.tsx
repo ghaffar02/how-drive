@@ -252,9 +252,6 @@ const sampleStudents: Student[] = [
 export default function Students() {
   const [searchQuery, setSearchQuery] = useState('');
   const [schoolSearchQuery, setSchoolSearchQuery] = useState('');
-  const [schoolMenuAnchor, setSchoolMenuAnchor] = useState<HTMLElement | null>(
-    null
-  );
   const [filters, setFilters] = useState({
     city: [] as string[],
     class: [] as string[],
@@ -359,24 +356,6 @@ export default function Students() {
   const filteredSchools = uniqueSchools.filter((school) =>
     school.toLowerCase().includes(schoolSearchQuery.toLowerCase())
   );
-
-  const handleSchoolMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setSchoolMenuAnchor(event.currentTarget);
-  };
-
-  const handleSchoolMenuClose = () => {
-    setSchoolMenuAnchor(null);
-    setSchoolSearchQuery('');
-  };
-
-  const handleSchoolToggle = (school: string) => {
-    setFilters({
-      ...filters,
-      school: filters.school.includes(school)
-        ? filters.school.filter((s) => s !== school)
-        : [...filters.school, school]
-    });
-  };
 
   return (
     <Box
@@ -735,138 +714,91 @@ export default function Students() {
             </MenuItem>
           </TextField>
 
-          <Box>
-            <TextField
-              onClick={handleSchoolMenuOpen}
-              value={filters.school.length > 0 ? filters.school.join(', ') : ''}
-              placeholder="School"
-              InputProps={{
-                readOnly: true,
-                endAdornment: (
-                  <InputAdornment position="end">
-                    <Image
-                      src={arrowDown}
-                      alt="dropdown"
-                      width={16}
-                      height={16}
-                      style={{transform: 'rotate(0deg)'}}
-                    />
-                  </InputAdornment>
-                )
-              }}
+          <TextField
+            select
+            SelectProps={{
+              multiple: true,
+              displayEmpty: true,
+              renderValue: (selected: unknown) => {
+                const selectedArray = selected as string[];
+                if (selectedArray.length === 0) return 'School';
+                return selectedArray.join(', ');
+              },
+              MenuProps: {
+                PaperProps: {
+                  sx: {
+                    mt: 1,
+                    // bgcolor: 'red',
+                    maxWidth: '200px',
+                    borderRadius: '10px',
+                    padding: '12px',
+                    boxShadow:
+                      '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+                  }
+                },
+                MenuListProps: {
+                  sx: {
+                    padding: 0,
+                    '& .MuiMenuItem-root': {
+                      padding: '0px',
+                      // mb: '12px',
+                      gap: '10px'
+                    }
+                  }
+                }
+              }
+            }}
+            value={filters.school}
+            onChange={(e) => {
+              const value = e.target.value;
+              setFilters({
+                ...filters,
+                school: typeof value === 'string' ? value.split(',') : value
+              });
+            }}
+            sx={{
+              width: '110px',
+              minWidth: '110px',
+              '& .MuiInputBase-root': {
+                background: '#ffffff',
+                height: '40px',
+                borderRadius: '999px',
+                fontSize: '13px',
+                fontFamily: '"Inter", sans-serif !important',
+                boxShadow:
+                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+              },
+              '& .MuiOutlinedInput-notchedOutline': {
+                border: 'none'
+              },
+              '& .MuiSelect-select': {
+                padding: '0 12px',
+                color: filters.school.length > 0 ? '#000' : '#4A5568'
+              }
+            }}
+          >
+            <Box
               sx={{
-                width: '110px',
-
-                minWidth: '110px',
-                '& .MuiInputBase-root': {
-                  background: '#ffffff',
-                  height: '40px',
-                  borderRadius: '999px',
-                  fontSize: '13px',
-                  fontFamily: '"Inter", sans-serif !important',
-                  boxShadow:
-                    '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
-                  cursor: 'pointer'
-                },
-                '& .MuiOutlinedInput-notchedOutline': {
-                  border: 'none'
-                },
-                '& .MuiInputBase-input': {
-                  padding: '0 12px',
-                  color: filters.school.length > 0 ? '#000' : '#4A5568',
-                  cursor: 'pointer',
-                  '&::placeholder': {
-                    color: '#4A5568',
-                    opacity: 1
-                  }
-                }
-              }}
-            />
-            <Menu
-              anchorEl={schoolMenuAnchor}
-              open={Boolean(schoolMenuAnchor)}
-              onClose={handleSchoolMenuClose}
-              PaperProps={{
-                sx: {
-                  mt: 1,
-                  // bgcolor: 'red',
-                  maxWidth: '200px',
-                  borderRadius: '10px',
-                  padding: '12px',
-                  boxShadow:
-                    '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
-                }
-              }}
-              MenuListProps={{
-                sx: {
-                  padding: 0,
-                  '& .MuiMenuItem-root': {
-                    padding: '0px',
-                    // mb: '12px',
-                    gap: '10px'
-                  }
-                }
+                position: 'sticky',
+                top: 0,
+                zIndex: 1,
+                background: '#fff',
+                padding: '12px',
+                borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+                mb: '8px'
               }}
             >
-              {/* Search Input */}
-              {/* <Box
-                sx={{
-                  p: '16px',
-                  // pb: '12px',
-                  borderBottom: '1px solid rgba(0, 0, 0, 0.1)'
-                }}
-              >
-                <TextField
-                  placeholder="Search"
-                  value={schoolSearchQuery}
-                  onChange={(e) => setSchoolSearchQuery(e.target.value)}
-                  onClick={(e) => e.stopPropagation()}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <Image
-                          src={searchIcon}
-                          alt="search"
-                          width={16}
-                          height={16}
-                        />
-                      </InputAdornment>
-                    )
-                  }}
-                  sx={{
-                    width: '100%',
-                    '& .MuiInputBase-root': {
-                      background: '#ffffff',
-                      height: '36px',
-                      borderRadius: '8px',
-                      fontSize: '14px',
-                      fontFamily: '"Inter", sans-serif !important'
-                    },
-                    '& .MuiOutlinedInput-notchedOutline': {
-                      border: '1px solid rgba(0, 0, 0, 0.1)'
-                    },
-                    '& .MuiInputBase-input': {
-                      padding: '0 8px',
-                      fontSize: '14px'
-                    }
-                  }}
-                />
-              </Box> */}
-
               <Box
                 sx={{
                   width: '100%',
                   display: 'flex',
                   gap: '4px',
-
                   padding: '10px',
-
                   borderRadius: '999px',
                   height: '38px',
                   alignItems: 'center',
                   background: '#ffffffbf',
-                  boxShadow: '0px 0px 2px 0px #D4D4D8',
-                  mb: '12px'
+                  boxShadow: '0px 0px 2px 0px #D4D4D8'
                 }}
               >
                 <Box sx={{height: '16px', width: '16px'}}>
@@ -879,6 +811,9 @@ export default function Students() {
                 <TextField
                   placeholder="Search"
                   variant="outlined"
+                  value={schoolSearchQuery}
+                  onChange={(e) => setSchoolSearchQuery(e.target.value)}
+                  onClick={(e) => e.stopPropagation()}
                   sx={{
                     flex: 1,
                     '& .MuiOutlinedInput-root': {
@@ -895,70 +830,64 @@ export default function Students() {
                   }}
                 />
               </Box>
-              {/* School List */}
-              <Box sx={{maxHeight: '300px', overflowY: 'auto'}}>
-                {filteredSchools.length > 0 ? (
-                  filteredSchools.map((school) => (
-                    <MenuItem
-                      key={school}
-                      onClick={() => handleSchoolToggle(school)}
-                      sx={{
-                        py: '6px',
-                        px: '16px',
-                        whiteSpace: 'normal',
-                        wordBreak: 'break-word',
-                        display: 'flex',
-                        alignItems: 'flex-start',
-                        gap: '10px',
-                        '&:hover': {
-                          backgroundColor: 'rgba(0, 0, 0, 0.04)'
-                        }
-                      }}
-                    >
-                      <input
-                        type="checkbox"
-                        checked={filters.school.indexOf(school) > -1}
-                        onChange={() => {}}
-                        style={{
-                          width: '16px',
-                          height: '16px',
-                          margin: 0,
-                          marginTop: '2px',
-                          cursor: 'pointer',
-                          flexShrink: 0
-                        }}
-                      />
-                      <Typography
-                        sx={{
-                          fontSize: '14px',
-                          color: '#4A5568',
-                          fontFamily: '"Inter", sans-serif !important',
-                          wordBreak: 'break-word',
-                          whiteSpace: 'normal',
-                          lineHeight: '1.4',
-                          flex: 1
-                        }}
-                      >
-                        {school}
-                      </Typography>
-                    </MenuItem>
-                  ))
-                ) : (
-                  <MenuItem disabled>
-                    <Typography
-                      sx={{
-                        fontSize: '14px',
-                        fontFamily: '"Inter", sans-serif !important',
-                        color: '#aaa'
-                      }}
-                    >
-                      No schools found
-                    </Typography>
-                  </MenuItem>
-                )}
-              </Box>
-            </Menu>
-          </Box>
+            </Box>
+            {filteredSchools.length > 0 ? (
+              filteredSchools.map((school) => (
+                <MenuItem
+                  key={school}
+                  value={school}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '10px',
+                    py: '6px',
+                    px: '16px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word'
+                  }}
+                >
+                  <input
+                    type="checkbox"
+                    checked={filters.school.indexOf(school) > -1}
+                    onChange={() => {}}
+                    style={{
+                      width: '16px',
+                      height: '16px',
+                      margin: 0,
+                      marginTop: '2px',
+                      cursor: 'pointer',
+                      flexShrink: 0
+                    }}
+                  />
+                  <Typography
+                    sx={{
+                      fontSize: '14px',
+                      color: '#4A5568',
+                      fontFamily: '"Inter", sans-serif !important',
+                      wordBreak: 'break-word',
+                      whiteSpace: 'normal',
+                      lineHeight: '1.4',
+                      flex: 1
+                    }}
+                  >
+                    {school}
+                  </Typography>
+                </MenuItem>
+              ))
+            ) : (
+              <MenuItem disabled>
+                <Typography
+                  sx={{
+                    fontSize: '14px',
+                    fontFamily: '"Inter", sans-serif !important',
+                    color: '#aaa'
+                  }}
+                >
+                  No schools found
+                </Typography>
+              </MenuItem>
+            )}
+          </TextField>
 
           <TextField
             select
