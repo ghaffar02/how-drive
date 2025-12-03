@@ -1,4 +1,3 @@
-import localFont from '@/utils/themes';
 import {Box, Button, ButtonProps} from '@mui/material';
 import {SxProps, Theme} from '@mui/material/styles';
 import Image, {StaticImageData} from 'next/image';
@@ -22,6 +21,7 @@ export default function CustomButton({
   hoverColor = '#300ca8',
   activeColor = '#1A065C',
   hoverTextcolor = '#fff',
+
   imgSrc,
   btnSx = {},
   hoverImgSrc, // new,
@@ -35,6 +35,7 @@ export default function CustomButton({
       disableRipple
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      {...rest}
       sx={{
         fontSize: {xs: '12px', md: '13px', lg: '14px'},
         lineHeight: '1.5em',
