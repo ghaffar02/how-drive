@@ -355,7 +355,8 @@ export default function Students() {
   return (
     <Box
       sx={{
-        width: '100vw',
+        width: '100%',
+        // width: 'calc(100vw - 128px)',
         position: 'relative',
         height: {xs: '100%', md: '100%'},
         padding: {xs: '16px', md: '24px'},
@@ -365,33 +366,42 @@ export default function Students() {
         border: '2px solid #fff',
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
         display: 'flex',
-        flexDirection: 'column',
-        overflowX: 'auto',
-        overflowY: 'visible',
-        '&::-webkit-scrollbar': {
-          display: 'none'
-        },
-        scrollbarWidth: 'none',
-        msOverflowStyle: 'none'
+        flexDirection: 'column'
       }}
     >
-      <Box>
+      <Box
+        sx={{
+          width: {xs: 'calc(100vw - 68px)', md: 'calc(100vw - 202px)'},
+          overflowX: 'auto',
+          overflowY: 'visible',
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          },
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none'
+        }}
+      >
         {/* Search and Filters Section */}
         <Box
           sx={{
+            width: '100%',
             display: 'flex',
             gap: 2,
             mb: 3,
+            bgcolor: 'green',
             flexWrap: 'wrap',
-            alignItems: 'center',
-            minWidth: 'max-content'
+            alignItems: 'center'
+            // minWidth: 'max-content'
           }}
         >
           {/* Search Bar */}
           <Box
             sx={{
+              // bgcolor: 'green',
               flex: 1,
-              minWidth: '200px',
+              width: '100%',
+              maxWidth: '1900px',
+              // minWidth: '200px',
               position: 'relative',
               display: 'flex',
               alignItems: 'center'
