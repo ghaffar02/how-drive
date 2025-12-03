@@ -12,7 +12,10 @@ import {
   Typography,
   Menu,
   IconButton,
-  InputAdornment
+  InputAdornment,
+  Dialog,
+  DialogContent,
+  Button
 } from '@mui/material';
 import Image from 'next/image';
 import searchIcon from '@/assets/svgs/dashboard-student/searchIcon.svg';
@@ -266,6 +269,9 @@ export default function Students() {
     element: HTMLElement;
     index: number;
   } | null>(null);
+  const [openDialog, setOpenDialog] = useState(false);
+  const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
+  const [openDeleteConfirm, setOpenDeleteConfirm] = useState(false);
   const rowsPerPage = 10;
 
   // Filter and paginate students
@@ -312,10 +318,30 @@ export default function Students() {
     setAnchorEl(null);
   };
 
+  const handleOpenDialog = (student: Student) => {
+    setSelectedStudent(student);
+    setOpenDialog(true);
+  };
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+    setSelectedStudent(null);
+  };
+
   const handleDelete = (index: number) => {
     // Handle delete action
     console.log('Delete student at index:', index);
     handleMenuClose();
+    setOpenDeleteConfirm(false);
+    setOpenDialog(false);
+  };
+
+  const handleDeleteClick = () => {
+    setOpenDeleteConfirm(true);
+  };
+
+  const handleDeleteCancel = () => {
+    setOpenDeleteConfirm(false);
   };
 
   const handlePageChange = (page: number) => {
@@ -1256,7 +1282,7 @@ export default function Students() {
         <Box
           sx={{
             // width: 'max-content',
-            width: '100%',
+            width: '50%',
             // minWidth: '100%',
             overflow: 'visible',
             bgcolor: 'red'
@@ -1426,7 +1452,7 @@ export default function Students() {
                   <TableCell>
                     <IconButton
                       size="small"
-                      onClick={(e) => handleMenuOpen(e, startIndex + index)}
+                      onClick={() => handleOpenDialog(student)}
                       sx={{
                         padding: '4px'
                       }}
@@ -1572,6 +1598,401 @@ export default function Students() {
         </MenuItem>
         {/* Add more menu items as needed */}
       </Menu>
+
+      {/* Student Edit Dialog */}
+      <Dialog
+        open={openDialog}
+        onClose={handleCloseDialog}
+        maxWidth={false}
+        PaperProps={{
+          sx: {
+            width: {sm: 'calc(100vw - 250px)', xs: '95%'},
+            maxWidth: '100vw',
+            margin: 0,
+            borderRadius: '24px',
+            background: 'rgba(248, 250, 252, 0.3)',
+            backdropFilter: 'blur(15px)',
+            boxShadow:
+              '0px 0px 0px 1px rgb(255, 255, 255), 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)',
+            border: '2px solid #fff'
+          }
+        }}
+      >
+        <DialogContent
+          sx={{
+            padding: '32px',
+            background: 'rgba(248, 250, 252, 0.3)'
+          }}
+        >
+          {selectedStudent && (
+            <Box>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: 3,
+                  mb: 3
+                }}
+              >
+                {/* First Row */}
+                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
+                  <TextField
+                    label="First name"
+                    fullWidth
+                    defaultValue={selectedStudent.name}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        background: '#ffffff',
+                        borderRadius: '8px'
+                      }
+                    }}
+                  />
+                </Box>
+                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
+                  <TextField
+                    label="Last name"
+                    fullWidth
+                    defaultValue={selectedStudent.lastName}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        background: '#ffffff',
+                        borderRadius: '8px'
+                      }
+                    }}
+                  />
+                </Box>
+                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
+                  <TextField
+                    label="Email"
+                    fullWidth
+                    defaultValue={selectedStudent.email}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        background: '#ffffff',
+                        borderRadius: '8px'
+                      }
+                    }}
+                  />
+                </Box>
+                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
+                  <TextField
+                    label="Phone number"
+                    fullWidth
+                    defaultValue={selectedStudent.phone}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        background: '#ffffff',
+                        borderRadius: '8px'
+                      }
+                    }}
+                  />
+                </Box>
+              </Box>
+
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: 3,
+                  mb: 4
+                }}
+              >
+                {/* Second Row */}
+                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
+                  <TextField
+                    label="City"
+                    fullWidth
+                    defaultValue={selectedStudent.city}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        background: '#ffffff',
+                        borderRadius: '8px'
+                      }
+                    }}
+                  />
+                </Box>
+                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
+                  <TextField
+                    label="Birthday"
+                    fullWidth
+                    placeholder="dd/mm/yyyy"
+                    defaultValue={selectedStudent.birthday}
+                    InputProps={{
+                      endAdornment: (
+                        <InputAdornment position="end">
+                          <IconButton edge="end" sx={{padding: '4px'}}>
+                            📅
+                          </IconButton>
+                        </InputAdornment>
+                      )
+                    }}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        background: '#ffffff',
+                        borderRadius: '8px'
+                      }
+                    }}
+                  />
+                </Box>
+                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
+                  <TextField
+                    label="Driving school"
+                    fullWidth
+                    defaultValue={selectedStudent.school}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        background: '#ffffff',
+                        borderRadius: '8px'
+                      }
+                    }}
+                  />
+                </Box>
+                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
+                  <TextField
+                    select
+                    label="Driving license class"
+                    fullWidth
+                    defaultValue={selectedStudent.class}
+                    SelectProps={{
+                      displayEmpty: true
+                    }}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        background: '#ffffff',
+                        borderRadius: '8px'
+                      }
+                    }}
+                  >
+                    <MenuItem value={selectedStudent.class}>
+                      {selectedStudent.class}
+                    </MenuItem>
+                  </TextField>
+                </Box>
+              </Box>
+
+              {/* Action Buttons */}
+              <Box sx={{display: 'flex', gap: 2, justifyContent: 'flex-start'}}>
+                <Button
+                  variant="contained"
+                  startIcon={
+                    <Box
+                      sx={{
+                        width: '16px',
+                        height: '16px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#fff',
+                        fontSize: '14px',
+                        fontWeight: 'bold'
+                      }}
+                    >
+                      ✓
+                    </Box>
+                  }
+                  sx={{
+                    background: '#10B981',
+                    color: '#fff',
+                    borderRadius: '8px',
+                    padding: '10px 20px',
+                    textTransform: 'none',
+                    fontSize: '14px',
+                    fontFamily: '"Inter", sans-serif !important',
+                    '&:hover': {
+                      background: '#059669'
+                    }
+                  }}
+                >
+                  Save
+                </Button>
+                <Button
+                  variant="contained"
+                  startIcon={
+                    <Box
+                      sx={{
+                        width: '16px',
+                        height: '16px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#fff',
+                        fontSize: '14px',
+                        fontWeight: 'bold'
+                      }}
+                    >
+                      −
+                    </Box>
+                  }
+                  sx={{
+                    background: '#3B82F6',
+                    color: '#fff',
+                    borderRadius: '8px',
+                    padding: '10px 20px',
+                    textTransform: 'none',
+                    fontSize: '14px',
+                    fontFamily: '"Inter", sans-serif !important',
+                    '&:hover': {
+                      background: '#2563EB'
+                    }
+                  }}
+                >
+                  Deactivate
+                </Button>
+                <Button
+                  variant="contained"
+                  startIcon={
+                    <Box
+                      sx={{
+                        width: '16px',
+                        height: '16px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        color: '#fff',
+                        fontSize: '14px',
+                        fontWeight: 'bold'
+                      }}
+                    >
+                      ×
+                    </Box>
+                  }
+                  sx={{
+                    background: '#EF4444',
+                    color: '#fff',
+                    borderRadius: '8px',
+                    padding: '10px 20px',
+                    textTransform: 'none',
+                    fontSize: '14px',
+                    fontFamily: '"Inter", sans-serif !important',
+                    '&:hover': {
+                      background: '#DC2626'
+                    }
+                  }}
+                  onClick={handleDeleteClick}
+                >
+                  Delete
+                </Button>
+              </Box>
+            </Box>
+          )}
+        </DialogContent>
+      </Dialog>
+
+      {/* Delete Confirmation Dialog */}
+      <Dialog
+        open={openDeleteConfirm}
+        onClose={handleDeleteCancel}
+        PaperProps={{
+          sx: {
+            borderRadius: '12px',
+            padding: '24px',
+            minWidth: '300px',
+            boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.15)',
+            background: '#ffffff'
+          }
+        }}
+      >
+        <DialogContent
+          sx={{
+            padding: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: 3
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: '18px',
+              fontFamily: '"Inter", sans-serif !important',
+              fontWeight: 500,
+              color: '#3f3f46',
+              textAlign: 'center'
+            }}
+          >
+            Are you sure?
+          </Typography>
+          <Box sx={{display: 'flex', gap: 2, justifyContent: 'center'}}>
+            <Button
+              variant="contained"
+              startIcon={
+                <Box
+                  sx={{
+                    width: '16px',
+                    height: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#fff',
+                    fontSize: '14px',
+                    fontWeight: 'bold'
+                  }}
+                >
+                  ×
+                </Box>
+              }
+              onClick={handleDeleteCancel}
+              sx={{
+                background: '#EF4444',
+                color: '#fff',
+                borderRadius: '8px',
+                padding: '10px 20px',
+                textTransform: 'none',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important',
+                '&:hover': {
+                  background: '#DC2626'
+                }
+              }}
+            >
+              No
+            </Button>
+            <Button
+              variant="contained"
+              startIcon={
+                <Box
+                  sx={{
+                    width: '16px',
+                    height: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    color: '#fff',
+                    fontSize: '14px',
+                    fontWeight: 'bold'
+                  }}
+                >
+                  ✓
+                </Box>
+              }
+              onClick={() => {
+                if (selectedStudent) {
+                  const studentIndex = sampleStudents.findIndex(
+                    (s) => s.number === selectedStudent.number
+                  );
+                  if (studentIndex !== -1) {
+                    handleDelete(studentIndex);
+                  }
+                }
+              }}
+              sx={{
+                background: '#10B981',
+                color: '#fff',
+                borderRadius: '8px',
+                padding: '10px 20px',
+                textTransform: 'none',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important',
+                '&:hover': {
+                  background: '#059669'
+                }
+              }}
+            >
+              Yes
+            </Button>
+          </Box>
+        </DialogContent>
+      </Dialog>
     </Box>
   );
 }
