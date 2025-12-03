@@ -44,6 +44,9 @@ export const routing = defineRouting({
     '/rewrite-of-driving-licenses': {
       de: '/umschreiben-der-fuehrerscheine'
     },
+    '/driving-schools': {
+      de: '/fahrschulen'
+    },
     '/help': {
       de: '/hilfe'
     },
