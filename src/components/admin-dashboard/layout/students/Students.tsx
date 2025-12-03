@@ -449,7 +449,7 @@ export default function Students() {
               PaperProps: {
                 sx: {
                   borderRadius: '12px',
-                  padding: '12px',
+                  padding: '12px 12px 0',
                   boxShadow:
                     '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
                 }
@@ -531,7 +531,7 @@ export default function Students() {
               PaperProps: {
                 sx: {
                   borderRadius: '12px',
-                  padding: '12px',
+                  padding: '12px 12px 0',
                   gap: '12px',
                   boxShadow:
                     '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
@@ -614,7 +614,7 @@ export default function Students() {
               PaperProps: {
                 sx: {
                   borderRadius: '12px',
-                  padding: '12px',
+                  padding: '12px 12px 0',
                   boxShadow:
                     '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
                 }
@@ -753,7 +753,7 @@ export default function Students() {
                 maxWidth: '150px',
                 maxHeight: '400px',
                 borderRadius: '12px',
-                padding: '12px',
+                padding: '12px 12px 0',
                 boxShadow:
                   '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
               }
@@ -891,7 +891,7 @@ export default function Students() {
               PaperProps: {
                 sx: {
                   borderRadius: '12px',
-                  padding: '12px',
+                  padding: '12px 12px 0',
                   boxShadow:
                     '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
                 }
@@ -987,7 +987,7 @@ export default function Students() {
               PaperProps: {
                 sx: {
                   borderRadius: '12px',
-                  padding: '12px',
+                  padding: '12px 12px 0',
                   boxShadow:
                     '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
                 }
@@ -1066,7 +1066,7 @@ export default function Students() {
               PaperProps: {
                 sx: {
                   borderRadius: '12px',
-                  padding: '12px',
+                  padding: '12px 12px 0',
                   boxShadow:
                     '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
                 }
