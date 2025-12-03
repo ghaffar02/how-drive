@@ -71,7 +71,7 @@ export default function BgCard({
                 fontWeight: '600',
                 fontFamily: des
                   ? '"Inter", sans-serif !important'
-                  : 'Satoshi !important'
+                  : 'Satoshi700 !important'
               }}
               dangerouslySetInnerHTML={{__html: title ?? ''}}
             />
