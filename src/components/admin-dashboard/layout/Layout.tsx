@@ -142,7 +142,7 @@ export default function AdminDashboard() {
           {activeKey === '2' && <Students />}
           {activeKey === '3' && <Calander />}
           {activeKey === '4' && <Message />}
-          {activeKey === '7' && <Drivers activeKey={activeKey} />}
+          {activeKey === '7' && <Drivers />}
           {activeKey === '9' && <Schools />}
           {activeKey === '5' && <Setting />}
           {activeKey === '6' && <Support />}

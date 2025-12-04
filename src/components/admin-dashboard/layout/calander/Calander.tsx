@@ -10,22 +10,14 @@ import {
   TableHead,
   TableRow,
   Typography,
-  Menu,
   IconButton,
-  InputAdornment,
   Dialog,
   DialogContent,
   Button
 } from '@mui/material';
-import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
-import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs';
-import {DatePicker} from '@mui/x-date-pickers/DatePicker';
-import dayjs, {Dayjs} from 'dayjs';
 import Image from 'next/image';
 import searchIcon from '@/assets/svgs/dashboard-student/searchIcon.svg';
-import arrowDown from '@/assets/svgs/dashboard-student/arrow.svg';
 import deleteIcon from '@/assets/svgs/dashboard-student/deleteIcon.svg';
-import localFont from '@/utils/themes';
 
 interface Appointment {
   number: string;
