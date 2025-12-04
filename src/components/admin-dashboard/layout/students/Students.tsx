@@ -118,7 +118,7 @@ const sampleStudents: Student[] = [
   {
     number: 'stu-000015',
     name: 'Sebastian',
-    lastName: 'Mustermann',
+    lastName: 'Mustermann mushba dahnd uasda',
     birthday: '10.10.1998',
     email: 'mustremann@gmail.com',
     phone: '015712345678',
@@ -1506,7 +1506,7 @@ export default function Students() {
               minWidth: '1400px',
               width: '100%',
               // bgcolor: 'pink',
-              tableLayout: 'auto',
+              tableLayout: 'fixed',
               borderCollapse: 'separate',
               borderSpacing: '0 8px'
             }}
@@ -1544,42 +1544,223 @@ export default function Students() {
                   }
                 }}
               >
-                <TableCell>Number</TableCell>
-                <TableCell>Name</TableCell>
-                <TableCell>LastName</TableCell>
-                <TableCell>Birthday</TableCell>
                 <TableCell
                   sx={{
+                    width: '120px',
+                    minWidth: '120px',
+                    maxWidth: '120px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Number
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '120px',
+                    minWidth: '120px',
+                    maxWidth: '120px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Name
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '120px',
+                    minWidth: '120px',
+                    maxWidth: '120px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  LastName
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '120px',
+                    minWidth: '120px',
+                    maxWidth: '120px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Birthday
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '156px',
                     minWidth: '156px',
                     maxWidth: '156px',
                     whiteSpace: 'normal',
                     wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
                     textAlign: 'left'
                   }}
                 >
                   Email
                 </TableCell>
-                <TableCell>Phone</TableCell>
-                <TableCell>City</TableCell>
-                <TableCell>Class</TableCell>
-                <TableCell>Re</TableCell>
                 <TableCell
                   sx={{
+                    width: '130px',
+                    minWidth: '130px',
+                    maxWidth: '130px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Phone
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '130px',
+                    minWidth: '130px',
+                    maxWidth: '100px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  City
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '80px',
+                    minWidth: '80px',
+                    maxWidth: '80px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Class
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '60px',
+                    minWidth: '60px',
+                    maxWidth: '60px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Re
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '195px',
                     minWidth: '195px',
                     maxWidth: '195px',
                     whiteSpace: 'normal',
                     wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
                     textAlign: 'left'
                   }}
                 >
                   School
                 </TableCell>
-                <TableCell>Status</TableCell>
-                <TableCell>Signup</TableCell>
-                <TableCell>Steps</TableCell>
-                <TableCell>Theory</TableCell>
-                <TableCell>Driving</TableCell>
-                <TableCell width={50}></TableCell>
+                <TableCell
+                  sx={{
+                    width: '100px',
+                    minWidth: '100px',
+                    maxWidth: '100px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Status
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '120px',
+                    minWidth: '120px',
+                    maxWidth: '120px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Signup
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '130px',
+                    minWidth: '130px',
+                    maxWidth: '100px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Steps
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '80px',
+                    minWidth: '80px',
+                    maxWidth: '80px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Theory
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '80px',
+                    minWidth: '80px',
+                    maxWidth: '80px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Driving
+                </TableCell>
+                <TableCell
+                  sx={{
+                    minWidth: '50px',
+                    maxWidth: '50px',
+                    width: '50px'
+                  }}
+                ></TableCell>
               </TableRow>
             </TableHead>
 
@@ -1600,9 +1781,11 @@ export default function Students() {
                       fontSize: '14px',
                       fontFamily: '"Inter", sans-serif !important',
                       color: '#000000',
-                      whiteSpace: 'nowrap',
                       minHeight: '60px',
                       verticalAlign: 'middle',
+                      overflow: 'hidden',
+                      overflowWrap: 'break-word',
+                      wordWrap: 'break-word',
                       '&:first-of-type': {
                         borderTopLeftRadius: '8px',
                         borderBottomLeftRadius: '8px'
@@ -1619,39 +1802,169 @@ export default function Students() {
                     }
                   }}
                 >
-                  <TableCell>{student.number}</TableCell>
-                  <TableCell>{student.name}</TableCell>
-                  <TableCell>{student.lastName}</TableCell>
-                  <TableCell>{student.birthday}</TableCell>
                   <TableCell
                     sx={{
+                      width: '120px',
+                      minWidth: '120px',
+                      maxWidth: '120px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {student.number}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '120px',
+                      minWidth: '120px',
+                      maxWidth: '120px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {student.name}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '120px',
+                      minWidth: '120px',
+                      maxWidth: '120px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {student.lastName}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '120px',
+                      minWidth: '120px',
+                      maxWidth: '120px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {student.birthday}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '156px',
                       maxWidth: '156px',
                       minWidth: '156px',
                       whiteSpace: 'normal',
                       wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
                       textAlign: 'left',
                       padding: '12px 16px'
                     }}
                   >
                     {student.email}
                   </TableCell>
-                  <TableCell>{student.phone}</TableCell>
-                  <TableCell>{student.city}</TableCell>
-                  <TableCell>{student.class}</TableCell>
-                  <TableCell>{student.rewrite}</TableCell>
                   <TableCell
                     sx={{
+                      width: '130px',
+                      minWidth: '130px',
+                      maxWidth: '130px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {student.phone}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '100px',
+                      minWidth: '100px',
+                      maxWidth: '100px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {student.city}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '80px',
+                      minWidth: '80px',
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {student.class}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '60px',
+                      minWidth: '60px',
+                      maxWidth: '60px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {student.rewrite}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '195px',
                       maxWidth: '195px',
                       minWidth: '195px',
                       whiteSpace: 'normal',
                       wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
                       textAlign: 'left',
                       padding: '12px 16px'
                     }}
                   >
                     {student.school}
                   </TableCell>
-                  <TableCell>
+                  <TableCell
+                    sx={{
+                      width: '100px',
+                      minWidth: '100px',
+                      maxWidth: '100px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
                     <Typography
                       sx={{
                         color:
@@ -1664,11 +1977,74 @@ export default function Students() {
                       {student.status}
                     </Typography>
                   </TableCell>
-                  <TableCell>{student.signup}</TableCell>
-                  <TableCell>{student.steps}</TableCell>
-                  <TableCell>{student.theory}</TableCell>
-                  <TableCell>{student.driving}</TableCell>
-                  <TableCell>
+                  <TableCell
+                    sx={{
+                      width: '120px',
+                      minWidth: '120px',
+                      maxWidth: '120px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {student.signup}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '100px',
+                      minWidth: '100px',
+                      maxWidth: '100px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {student.steps}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '80px',
+                      minWidth: '80px',
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {student.theory}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '80px',
+                      minWidth: '80px',
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {student.driving}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      minWidth: '50px',
+                      maxWidth: '50px',
+                      width: '50px',
+                      padding: '12px 16px'
+                    }}
+                  >
                     <IconButton
                       size="small"
                       onClick={() => handleOpenDialog(student)}
