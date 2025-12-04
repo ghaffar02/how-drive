@@ -20,6 +20,7 @@ import message_black from '@/assets/svgs/dashboard-student/message_black.svg';
 import message_bold from '@/assets/svgs/messagehover.svg';
 import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
 import driver_black from '@/assets/svgs/dashboard-student/driver_black.svg';
+import schoolblue from '@/assets/svgs/dashboard-student/schoolblue.svg';
 import driver_blue from '@/assets/svgs/dashboard-student/driver_blue.svg';
 import driver_bold from '@/assets/svgs/dashboard-student/driver_bold.svg';
 
@@ -74,7 +75,7 @@ export default function DesktopTabs({
       key: '9',
       label: 'Schools',
       iconBlack: school_black,
-      iconBlue: driver_blue,
+      iconBlue: schoolblue,
       iconHover: school_bold
     },
 
