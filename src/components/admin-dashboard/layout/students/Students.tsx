@@ -118,7 +118,7 @@ const sampleStudents: Student[] = [
   {
     number: 'stu-000015',
     name: 'Sebastian',
-    lastName: 'Mustermann mushba dahnd uasda',
+    lastName: 'Mustermann',
     birthday: '10.10.1998',
     email: 'mustremann@gmail.com',
     phone: '015712345678',
@@ -1630,8 +1630,8 @@ export default function Students() {
                 </TableCell>
                 <TableCell
                   sx={{
-                    width: '130px',
-                    minWidth: '130px',
+                    width: '100px',
+                    minWidth: '100px',
                     maxWidth: '100px',
                     whiteSpace: 'normal',
                     wordBreak: 'break-word',
@@ -1686,8 +1686,8 @@ export default function Students() {
                 </TableCell>
                 <TableCell
                   sx={{
-                    width: '100px',
-                    minWidth: '100px',
+                    width: '85px',
+                    minWidth: '85px',
                     maxWidth: '100px',
                     whiteSpace: 'normal',
                     wordBreak: 'break-word',
@@ -1714,8 +1714,8 @@ export default function Students() {
                 </TableCell>
                 <TableCell
                   sx={{
-                    width: '130px',
-                    minWidth: '130px',
+                    width: '100px',
+                    minWidth: '100px',
                     maxWidth: '100px',
                     whiteSpace: 'normal',
                     wordBreak: 'break-word',
