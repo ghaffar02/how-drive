@@ -1686,9 +1686,9 @@ export default function Students() {
                 </TableCell>
                 <TableCell
                   sx={{
-                    width: '85px',
-                    minWidth: '85px',
-                    maxWidth: '100px',
+                    width: '95px',
+                    minWidth: '95px',
+                    maxWidth: '110px',
                     whiteSpace: 'normal',
                     wordBreak: 'break-word',
                     overflowWrap: 'break-word',
@@ -1714,9 +1714,9 @@ export default function Students() {
                 </TableCell>
                 <TableCell
                   sx={{
-                    width: '100px',
-                    minWidth: '100px',
-                    maxWidth: '100px',
+                    width: '90px',
+                    minWidth: '90px',
+                    maxWidth: '90px',
                     whiteSpace: 'normal',
                     wordBreak: 'break-word',
                     overflowWrap: 'break-word',
@@ -1954,9 +1954,9 @@ export default function Students() {
                   </TableCell>
                   <TableCell
                     sx={{
-                      width: '100px',
-                      minWidth: '100px',
-                      maxWidth: '100px',
+                      width: '120px',
+                      minWidth: '120px',
+                      maxWidth: '120px',
                       whiteSpace: 'normal',
                       wordBreak: 'break-word',
                       overflowWrap: 'break-word',
@@ -1994,9 +1994,10 @@ export default function Students() {
                   </TableCell>
                   <TableCell
                     sx={{
-                      width: '100px',
-                      minWidth: '100px',
-                      maxWidth: '100px',
+                      width: '90px',
+                      minWidth: '90px',
+                      // maxWidth: '1
+                      // 00px',
                       whiteSpace: 'normal',
                       wordBreak: 'break-word',
                       overflowWrap: 'break-word',
