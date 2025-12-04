@@ -1,12 +1,14 @@
 'use client';
 import AdminDashboard from '@/components/admin-dashboard/layout/Layout';
 import {Box} from '@mui/material';
+import DashAdBG from '@/assets/svgs/dashboard-student/DashAdBG.svg';
 
 export default function Admin() {
   return (
     <Box
       sx={{
-        backgroundImage: "url('/bgStudentDashboard.svg')",
+        backgroundImage: `url(${DashAdBG.src})`,
+
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
