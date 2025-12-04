@@ -15,7 +15,9 @@ import {
   InputAdornment,
   Dialog,
   DialogContent,
-  Button
+  Button,
+  FormControlLabel,
+  Checkbox
 } from '@mui/material';
 import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
 import {AdapterDayjs} from '@mui/x-date-pickers/AdapterDayjs';
@@ -279,6 +281,8 @@ export default function Schools() {
   const [openDialog, setOpenDialog] = useState(false);
   const [selectedSchool, setSelectedSchool] = useState<School | null>(null);
   const [openDeleteConfirm, setOpenDeleteConfirm] = useState(false);
+  const [licenseClassA, setLicenseClassA] = useState(false);
+  const [licenseClassB, setLicenseClassB] = useState(false);
   const rowsPerPage = 10;
 
   // Filter and paginate schools
@@ -322,12 +326,18 @@ export default function Schools() {
 
   const handleOpenDialog = (school: School) => {
     setSelectedSchool(school);
+    // Parse class string to checkboxes (e.g., "A,B" or "A" or "B")
+    const classes = school.class.split(',');
+    setLicenseClassA(classes.includes('A'));
+    setLicenseClassB(classes.includes('B'));
     setOpenDialog(true);
   };
 
   const handleCloseDialog = () => {
     setOpenDialog(false);
     setSelectedSchool(null);
+    setLicenseClassA(false);
+    setLicenseClassB(false);
   };
 
   const handleDelete = (index: number) => {
@@ -703,7 +713,7 @@ export default function Schools() {
               width: '90px',
               minWidth: '90px',
               '& .MuiInputBase-root': {
-                background: '#ffffff',
+                background: 'rgba(255, 255, 255, 0.75)',
                 height: '40px',
                 borderRadius: '999px',
                 fontSize: '14px',
@@ -2380,7 +2390,7 @@ export default function Schools() {
                 {/* First Row */}
                 <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
                   <TextField
-                    label="School Name"
+                    label="Name"
                     fullWidth
                     defaultValue={selectedSchool.school}
                     sx={{
@@ -2406,9 +2416,9 @@ export default function Schools() {
                 </Box>
                 <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
                   <TextField
-                    label="Phone number"
+                    label="City"
                     fullWidth
-                    defaultValue={selectedSchool.phone}
+                    defaultValue={selectedSchool.city}
                     sx={{
                       '& .MuiInputBase-root': {
                         background: '#ffffff',
@@ -2419,9 +2429,9 @@ export default function Schools() {
                 </Box>
                 <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
                   <TextField
-                    label="City"
+                    label="Phone number"
                     fullWidth
-                    defaultValue={selectedSchool.city}
+                    defaultValue={selectedSchool.phone}
                     sx={{
                       '& .MuiInputBase-root': {
                         background: '#ffffff',
@@ -2437,16 +2447,65 @@ export default function Schools() {
                   display: 'flex',
                   flexWrap: 'wrap',
                   gap: 3,
-                  mb: 4
+                  mb: 4,
+                  alignItems: 'flex-start'
                 }}
               >
                 {/* Second Row */}
                 <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={licenseClassA}
+                        onChange={(e) => setLicenseClassA(e.target.checked)}
+                        sx={{
+                          color: '#667eea',
+                          '&.Mui-checked': {
+                            color: '#667eea'
+                          }
+                        }}
+                      />
+                    }
+                    label="Driving license class A"
+                    sx={{
+                      '& .MuiFormControlLabel-label': {
+                        fontSize: '14px',
+                        fontFamily: '"Inter", sans-serif !important',
+                        color: '#000'
+                      }
+                    }}
+                  />
+                </Box>
+                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
+                  <FormControlLabel
+                    control={
+                      <Checkbox
+                        checked={licenseClassB}
+                        onChange={(e) => setLicenseClassB(e.target.checked)}
+                        sx={{
+                          color: '#667eea',
+                          '&.Mui-checked': {
+                            color: '#667eea'
+                          }
+                        }}
+                      />
+                    }
+                    label="Driving license class B"
+                    sx={{
+                      '& .MuiFormControlLabel-label': {
+                        fontSize: '14px',
+                        fontFamily: '"Inter", sans-serif !important',
+                        color: '#000'
+                      }
+                    }}
+                  />
+                </Box>
+                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
                   <TextField
                     select
-                    label="Class"
+                    label="Plan"
                     fullWidth
-                    defaultValue={selectedSchool.class}
+                    defaultValue={selectedSchool.plan}
                     SelectProps={{
                       displayEmpty: true
                     }}
@@ -2457,38 +2516,12 @@ export default function Schools() {
                       }
                     }}
                   >
-                    {uniqueClasses.map((cls) => (
-                      <MenuItem key={cls} value={cls}>
-                        {cls}
+                    {uniquePlans.map((plan) => (
+                      <MenuItem key={plan} value={plan}>
+                        {plan}
                       </MenuItem>
                     ))}
                   </TextField>
-                </Box>
-                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
-                  <TextField
-                    label="Plan"
-                    fullWidth
-                    defaultValue={selectedSchool.plan}
-                    sx={{
-                      '& .MuiInputBase-root': {
-                        background: '#ffffff',
-                        borderRadius: '8px'
-                      }
-                    }}
-                  />
-                </Box>
-                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
-                  <TextField
-                    label="Plan Date"
-                    fullWidth
-                    defaultValue={selectedSchool.planDate}
-                    sx={{
-                      '& .MuiInputBase-root': {
-                        background: '#ffffff',
-                        borderRadius: '8px'
-                      }
-                    }}
-                  />
                 </Box>
                 <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
                   <TextField

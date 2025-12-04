@@ -702,7 +702,7 @@ export default function Students() {
               width: '90px',
               minWidth: '90px',
               '& .MuiInputBase-root': {
-                background: '#ffffff',
+                background: 'rgba(255, 255, 255, 0.75)',
                 height: '40px',
                 borderRadius: '999px',
                 fontSize: '14px',
