@@ -2179,14 +2179,27 @@ export default function Schools() {
                       padding: '12px 16px'
                     }}
                   >
-                    {school.license}
-                    {/* <Image
-                      src={arrowDown}
-                      alt="download"
-                      width={16}
-                      height={16}
-                      style={{marginLeft: '4px', display: 'inline-block'}}
-                    /> */}
+                    <Typography
+                      onClick={() => {
+                        // Handle download action here
+                        console.log('Download license for:', school.number);
+                      }}
+                      sx={{
+                        color: '#667eea',
+                        cursor: 'pointer',
+                        fontSize: '14px',
+                        fontFamily: '"Inter", sans-serif !important',
+                        fontWeight: 500,
+                        display: 'inline-block',
+                        transition: 'all 0.2s ease',
+                        '&:hover': {
+                          color: '#5568d3',
+                          textDecoration: 'underline'
+                        }
+                      }}
+                    >
+                      {school.license}
+                    </Typography>
                   </TableCell>
                   <TableCell
                     sx={{
