@@ -577,8 +577,7 @@ export default function Bookings() {
                 top: 0,
                 zIndex: 1,
                 background: '#fff',
-                padding: '12px',
-                borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+                paddingBottom: '12px',
                 mb: '8px'
               }}
             >
@@ -754,8 +753,7 @@ export default function Bookings() {
                 top: 0,
                 zIndex: 1,
                 background: '#fff',
-                padding: '12px',
-                borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+                paddingBottom: '12px',
                 mb: '8px'
               }}
             >
@@ -930,8 +928,7 @@ export default function Bookings() {
                 top: 0,
                 zIndex: 1,
                 background: '#fff',
-                padding: '12px',
-                borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+                paddingBottom: '12px',
                 mb: '8px'
               }}
             >
@@ -1106,8 +1103,7 @@ export default function Bookings() {
                 top: 0,
                 zIndex: 1,
                 background: '#fff',
-                padding: '12px',
-                borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+                paddingBottom: '12px',
                 mb: '8px'
               }}
             >
@@ -1282,8 +1278,7 @@ export default function Bookings() {
                 top: 0,
                 zIndex: 1,
                 background: '#fff',
-                padding: '12px',
-                borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+                paddingBottom: '12px',
                 mb: '8px'
               }}
             >
@@ -1458,8 +1453,7 @@ export default function Bookings() {
                 top: 0,
                 zIndex: 1,
                 background: '#fff',
-                padding: '12px',
-                borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+                paddingBottom: '12px',
                 mb: '8px'
               }}
             >
