@@ -272,7 +272,7 @@ export default function AppointmentsDropDown({
           justifyContent: 'space-between'
         }}
       >
-        {activeIndex < 3 ? (
+        {activeIndex < 1 ? (
           <MiniFramerCalendar
             datesArray={[
               '2025-11-16',
@@ -287,7 +287,7 @@ export default function AppointmentsDropDown({
         )}
       </Box>
 
-      {activeIndex < 3 && (
+      {activeIndex < 1 && (
         <Box sx={{width: '100%', textAlign: 'center'}}>
           <Typography
             sx={{
@@ -311,7 +311,7 @@ export default function AppointmentsDropDown({
         </Box>
       )}
 
-      {activeIndex < 3 && (
+      {activeIndex < 1 && (
         <Box
           sx={{
             display: 'flex',
@@ -425,7 +425,7 @@ export default function AppointmentsDropDown({
         </Box>
       </Box>
 
-      {activeIndex === 3 && (
+      {activeIndex === 1 && (
         <Typography
           sx={{
             ...localFont.inter14,
