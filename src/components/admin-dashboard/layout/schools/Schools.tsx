@@ -2189,7 +2189,6 @@ export default function Schools() {
                         cursor: 'pointer',
                         fontSize: '14px',
                         fontFamily: '"Inter", sans-serif !important',
-                        fontWeight: 500,
                         display: 'inline-block',
                         transition: 'all 0.2s ease',
                         '&:hover': {
