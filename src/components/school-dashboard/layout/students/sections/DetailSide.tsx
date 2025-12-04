@@ -206,6 +206,7 @@ export default function DetailSide({display = 'none', setOpenStudents}: Prop) {
             height: '38px',
             alignItems: 'center',
             background: '#ffffffbf',
+            border: '2px solid transparent',
             boxShadow: '0px 0px 2px 0px #D4D4D8',
             transition: 'all 0.2s ease',
 
