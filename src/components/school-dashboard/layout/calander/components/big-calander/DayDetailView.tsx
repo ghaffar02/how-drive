@@ -78,12 +78,13 @@ export function DayDetailView({
     function handleClickOutside(event: MouseEvent) {
       const target = event.target as HTMLElement;
 
-      // Ignore clicks on MUI portal elements (Select menu, Popover, Modal, etc.)
+      // Ignore clicks on MUI portal elements (Select menu, Popover, Modal, TimePicker, etc.)
       if (
         target.closest('.MuiPopover-root') ||
         target.closest('.MuiMenu-root') ||
         target.closest('.MuiModal-root') ||
-        target.closest('.MuiPickersPopper-root')
+        target.closest('.MuiPopper-root') ||
+        target.closest('.MuiDialog-root')
       ) {
         return;
       }

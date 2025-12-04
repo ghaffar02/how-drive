@@ -100,6 +100,24 @@ export default function Home({setActiveKey}: Props) {
       hour: 9,
       duration: 1,
       title: 'Theoriestunde'
+    },
+    {
+      id: 6,
+      category: 'cyan',
+      startTime: '09:00',
+      endTime: '10:00',
+      hour: 9,
+      duration: 1,
+      title: 'Fahrstunde'
+    },
+    {
+      id: 7,
+      category: 'red',
+      startTime: '09:00',
+      endTime: '10:00',
+      hour: 9,
+      duration: 1,
+      title: 'Fahrstunde'
     }
   ];
 

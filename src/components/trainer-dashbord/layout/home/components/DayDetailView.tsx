@@ -1,6 +1,8 @@
 'use client';
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Box, Typography} from '@mui/material';
+import {AnimatePresence, motion} from 'framer-motion';
+import EditappointmentDropDown from '../../students/components/EditappointmentDropDown';
 
 interface Appointment {
   id: number;
@@ -31,28 +33,129 @@ export function DayDetailView({
     {
       key: 'purple',
       label: 'Gespräch',
-      borderColor: 'rgb(147, 51, 234)',
-      backgroundColor: 'rgb(237, 225, 250)'
+      borderColor: '#9333ea',
+      backgroundColor: '#ede1fa'
     },
     {
       key: 'blue',
       label: 'Theoriestunden',
-      borderColor: 'rgb(37, 99, 235)',
-      backgroundColor: 'rgb(227, 236, 255)'
+      borderColor: '#2563eb',
+      backgroundColor: '#e3ecff'
     },
     {
       key: 'cyan',
       label: 'Fahrstunden',
-      borderColor: 'rgb(8, 145, 178)',
-      backgroundColor: 'rgb(222, 248, 250)'
+      borderColor: '#0891b2',
+      backgroundColor: '#def8fa'
     },
     {
       key: 'red',
       label: 'Prüfungen',
-      borderColor: 'rgb(220, 38, 38)',
-      backgroundColor: 'rgb(250, 222, 222)'
+      borderColor: '#dc2626',
+      backgroundColor: '#fadede'
     }
   ];
+
+  // 🔹 popup state
+  const [openDropdown, setOpenDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const iconRef = useRef<HTMLElement | null>(null);
+  const [barColor, setBarColor] = useState<string>('#9333ea');
+  const [selectedEvent, setSelectedEvent] = useState<Appointment | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [popupPosition, setPopupPosition] = useState<{
+    top: number;
+    left: number;
+  }>({
+    top: 0,
+    left: 0
+  });
+
+  // 🔹 click outside handling
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      const target = event.target as HTMLElement;
+
+      // Ignore clicks on MUI portal elements (Select menu, Popover, Modal, TimePicker, etc.)
+      if (
+        target.closest('.MuiPopover-root') ||
+        target.closest('.MuiMenu-root') ||
+        target.closest('.MuiModal-root') ||
+        target.closest('.MuiPopper-root') ||
+        target.closest('.MuiDialog-root')
+      ) {
+        return;
+      }
+
+      if (
+        dropdownRef.current &&
+        dropdownRef.current.contains(event.target as Node)
+      ) {
+        return;
+      }
+      if (iconRef.current && iconRef.current.contains(event.target as Node)) {
+        return;
+      }
+
+      setOpenDropdown(false);
+    }
+
+    if (openDropdown) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [openDropdown]);
+
+  // 🔹 when an event box is clicked
+  const handleEventClick = (
+    event: React.MouseEvent<HTMLElement>,
+    appt: Appointment,
+    color: string
+  ) => {
+    iconRef.current = event.currentTarget;
+    setSelectedEvent(appt);
+    setBarColor(color);
+
+    const container = containerRef.current;
+    const targetElement = event.currentTarget as HTMLElement;
+
+    if (container && targetElement) {
+      const containerRect = container.getBoundingClientRect();
+      const targetRect = targetElement.getBoundingClientRect();
+
+      const gap = 8;
+      const popupWidth = 300;
+      const popupHeight = 600;
+
+      let top = targetRect.bottom - containerRect.top + gap;
+      let left = targetRect.right - containerRect.left + gap;
+
+      if (top + popupHeight > containerRect.height) {
+        top = targetRect.top - containerRect.top - popupHeight - gap;
+        if (top < 0) {
+          top = containerRect.height - popupHeight - gap;
+          if (top < 0) {
+            top = 0;
+          }
+        }
+      }
+
+      if (left + popupWidth > containerRect.width) {
+        left = targetRect.left - containerRect.left - popupWidth - gap;
+        if (left < 0) {
+          left = containerRect.width - popupWidth - gap;
+          if (left < 0) {
+            left = 0;
+          }
+        }
+      }
+
+      setPopupPosition({top, left});
+    }
+
+    setOpenDropdown(true);
+  };
 
   // translateY based on start minute (with special rule)
   const getTranslateForStartTime = (start: string, end: string) => {
@@ -114,11 +217,13 @@ export function DayDetailView({
 
   return (
     <Box
+      ref={containerRef}
       sx={{
         padding: 2,
         minHeight: '100%',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        position: 'relative'
       }}
     >
       {/* Header */}
@@ -288,6 +393,11 @@ export function DayDetailView({
                         {eventsInGroup.map((e) => (
                           <Box
                             key={e.id}
+                            onClick={(ev) => {
+                              if (cat.borderColor === '#0891b2') {
+                                handleEventClick(ev, e, cat.borderColor);
+                              }
+                            }}
                             sx={{
                               background: cat.backgroundColor,
                               border: `1px solid ${cat.borderColor}`,
@@ -305,7 +415,8 @@ export function DayDetailView({
                                 md: '13px',
                                 lg: '14px'
                               },
-                              overflow: 'hidden'
+                              overflow: 'hidden',
+                              cursor: 'pointer'
                             }}
                           >
                             <Box
@@ -350,6 +461,91 @@ export function DayDetailView({
           );
         })}
       </Box>
+
+      {/* 🔻 POPUP 🔻 */}
+      <AnimatePresence>
+        {openDropdown && (
+          <Box
+            ref={dropdownRef}
+            component={motion.div}
+            onClick={(e) => e.stopPropagation()}
+            initial={{
+              opacity: 0,
+              scale: 0.5,
+              y: -20,
+              x: 20,
+              originX: 1,
+              originY: 0
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+              x: 0,
+              originX: 1,
+              originY: 0
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.5,
+              y: -20,
+              x: 20,
+              originX: 1,
+              originY: 0
+            }}
+            transition={{
+              duration: 0.5,
+              type: 'spring',
+              stiffness: 300,
+              damping: 25
+            }}
+            sx={{
+              position: 'absolute',
+              zIndex: 99999999,
+              top: popupPosition.top,
+              left: popupPosition.left,
+              mb: '8px',
+              width: {xs: '300px'},
+              height: '600px',
+              overflow: 'auto',
+              border: '1px solid rgb(255, 255, 255)',
+              backgroundColor: '#f0f0fa99',
+              backdropFilter: 'blur(8px)',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              '&::-webkit-scrollbar': {
+                display: 'none'
+              },
+              boxShadow: `
+                0px 0px 0px 1px rgb(255, 255, 255),
+                0px 1px 0px 0px rgba(0, 0, 0, 0.25),
+                0px 1px 1px 0px rgba(0, 0, 0, 0.25)
+              `,
+              borderRadius: '12px',
+              transformOrigin: 'top right'
+            }}
+          >
+            <EditappointmentDropDown
+              title="Edit appointment"
+              driverLabel="Driver"
+              dayLabel="Day"
+              beginLabel="Begin"
+              endLabel="End"
+              participantsLabel="Participants"
+              participantName="Daniel Mustermann 1"
+              cancelHeading="Cancel appointment"
+              cancelDescription="To cancel the appointment remove all participants from the list and click Save."
+              cancelBtnLabel="Cancel"
+              saveBtnLabel="Save"
+              dropdownOptions={[
+                {value: 'malfunction', label: 'Malfunction'},
+                {value: 'question', label: 'Question'}
+              ]}
+              barColor={barColor}
+            />
+          </Box>
+        )}
+      </AnimatePresence>
     </Box>
   );
 }
