@@ -529,8 +529,10 @@ export default function Bookings() {
               MenuProps: {
                 PaperProps: {
                   sx: {
-                    borderRadius: '12px',
-                    padding: '12px 12px 0',
+                    mt: 1,
+                    maxWidth: '200px',
+                    borderRadius: '10px',
+                    padding: '12px',
                     boxShadow:
                       '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
                   }
@@ -540,7 +542,6 @@ export default function Bookings() {
                     padding: 0,
                     '& .MuiMenuItem-root': {
                       padding: '0px',
-                      mb: '12px',
                       gap: '10px'
                     }
                   }
@@ -881,8 +882,10 @@ export default function Bookings() {
               MenuProps: {
                 PaperProps: {
                   sx: {
-                    borderRadius: '12px',
-                    padding: '12px 12px 0',
+                    mt: 1,
+                    maxWidth: '200px',
+                    borderRadius: '10px',
+                    padding: '12px',
                     boxShadow:
                       '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
                   }
@@ -892,7 +895,6 @@ export default function Bookings() {
                     padding: 0,
                     '& .MuiMenuItem-root': {
                       padding: '0px',
-                      mb: '12px',
                       gap: '10px'
                     }
                   }
@@ -1260,8 +1262,8 @@ export default function Bookings() {
               });
             }}
             sx={{
-              width: '90px',
-              minWidth: '90px',
+              width: '100px',
+              minWidth: '100px',
               '& .MuiInputBase-root': {
                 background: 'rgba(255, 255, 255, 0.75)',
                 height: '40px',
@@ -1436,8 +1438,8 @@ export default function Bookings() {
               });
             }}
             sx={{
-              width: '90px',
-              minWidth: '90px',
+              width: '100px',
+              minWidth: '100px',
               '& .MuiInputBase-root': {
                 background: 'rgba(255, 255, 255, 0.75)',
                 height: '40px',
@@ -2006,11 +2008,10 @@ export default function Bookings() {
                       }}
                     >
                       <Image
-                        src={arrowDown}
-                        alt="actions"
+                        src={deleteIcon}
+                        alt="delete"
                         width={16}
                         height={16}
-                        style={{transform: 'rotate(0deg)'}}
                       />
                     </IconButton>
                   </TableCell>
@@ -2151,7 +2152,7 @@ export default function Bookings() {
               textAlign: 'center'
             }}
           >
-            Are you sure?
+            Are you sure you want to delete this?
           </Typography>
           <Box sx={{display: 'flex', gap: 2, justifyContent: 'center'}}>
             <Button
