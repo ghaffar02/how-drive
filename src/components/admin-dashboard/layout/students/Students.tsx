@@ -1780,7 +1780,7 @@ export default function Students() {
                       textAlign: 'left',
                       fontSize: '14px',
                       fontFamily: '"Inter", sans-serif !important',
-                      color: '#000000',
+                      color: '#4a5568',
                       minHeight: '60px',
                       verticalAlign: 'middle',
                       overflow: 'hidden',

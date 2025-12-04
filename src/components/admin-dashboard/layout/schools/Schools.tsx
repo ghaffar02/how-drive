@@ -27,245 +27,249 @@ import arrowDown from '@/assets/svgs/dashboard-student/arrow.svg';
 import deleteIcon from '@/assets/svgs/dashboard-student/deleteIcon.svg';
 import localFont from '@/utils/themes';
 
-interface Student {
+interface School {
   number: string;
-  name: string;
-  lastName: string;
-  birthday: string;
+  school: string;
   email: string;
   phone: string;
   city: string;
   class: string;
-  rewrite: string;
-  school: string;
-  status: 'Active' | 'Inactive';
+  stu: string;
+  perc: string;
+  tra: string;
+  appt: string;
+  plan: string;
+  planDate: string;
+  status: 'Verified' | 'Non';
   signup: string;
-  steps: string;
-  theory: string;
-  driving: string;
+  license: string;
 }
 
 // Sample data - replace with actual data
-const sampleStudents: Student[] = [
+const sampleSchools: School[] = [
   {
-    number: 'stu-000015',
-    name: 'Sebastian',
-    lastName: 'Mustermann',
-    birthday: '10.10.1998',
-    email: 'mustremann@gmail.com',
-    phone: '015712345678',
-    city: 'Hamburg',
-    class: 'B17',
-    rewrite: 'No',
+    number: 'sch-0015',
     school: 'Fahrschule Mustermann Hamburg',
-    status: 'Active',
-    signup: '23.09.2025',
-    steps: '1,2,3,4,5,6,7,8',
-    theory: '80%',
-    driving: '30%'
-  },
-  {
-    number: 'stu-000015',
-    name: 'Sebastian',
-    lastName: 'Mustermann',
-    birthday: '10.10.1998',
     email: 'mustremann@gmail.com',
     phone: '015712345678',
     city: 'Hamburg',
     class: 'B',
-    rewrite: 'Yes',
-    school: 'Fahrschule Mustermann Hamburg',
-    status: 'Active',
+    stu: '164',
+    perc: '43%',
+    tra: '5',
+    appt: '158',
+    plan: 'Basic',
+    planDate: '01.01.2026',
+    status: 'Verified',
     signup: '23.09.2025',
-    steps: '1,2,3,4,5,6,7,8',
-    theory: '80%',
-    driving: '30%'
+    license: 'Download'
   },
   {
-    number: 'stu-000015',
-    name: 'Sebastian',
-    lastName: 'Mustermann',
-    birthday: '10.10.1998',
-    email: 'mustremann@gmail.com',
-    phone: '015712345678',
-    city: 'Hamburg',
-    class: 'BE',
-    rewrite: 'No',
+    number: 'sch-0015',
     school: 'Fahrschule Mustermann Hamburg',
-    status: 'Active',
-    signup: '23.09.2025',
-    steps: '1,2,3,4,5,6,7,8',
-    theory: '80%',
-    driving: '30%'
-  },
-  {
-    number: 'stu-000015',
-    name: 'Sebastian',
-    lastName: 'Mustermann',
-    birthday: '10.10.1998',
-    email: 'mustremann@gmail.com',
-    phone: '015712345678',
-    city: 'Hamburg',
-    class: 'B96',
-    rewrite: 'Yes',
-    school: 'Fahrschule Mustermann Hamburg',
-    status: 'Active',
-    signup: '23.09.2025',
-    steps: '1,2,3,4,5,6,7,8',
-    theory: '80%',
-    driving: '30%'
-  },
-  {
-    number: 'stu-000015',
-    name: 'Sebastian',
-    lastName: 'Mustermann',
-    birthday: '10.10.1998',
     email: 'mustremann@gmail.com',
     phone: '015712345678',
     city: 'Hamburg',
     class: 'A',
-    rewrite: 'No',
-    school: 'Fahrschule Mustermann Hamburg',
-    status: 'Active',
+    stu: '164',
+    perc: '43%',
+    tra: '5',
+    appt: '158',
+    plan: 'Standard',
+    planDate: '01.01.2026',
+    status: 'Verified',
     signup: '23.09.2025',
-    steps: '1,2,3,4,5,6,7,8',
-    theory: '80%',
-    driving: '30%'
+    license: 'Download'
   },
   {
-    number: 'stu-000015',
-    name: 'Sebastian',
-    lastName: 'Mustermann',
-    birthday: '10.10.1998',
+    number: 'sch-0015',
+    school: 'Fahrschule Mustermann Hamburg',
     email: 'mustremann@gmail.com',
     phone: '015712345678',
     city: 'Hamburg',
-    class: 'A2',
-    rewrite: 'No',
-    school: 'Fahrschule Mustermann Hamburg',
-    status: 'Active',
+    class: 'A,B',
+    stu: '164',
+    perc: '43%',
+    tra: '5',
+    appt: '158',
+    plan: 'Premium',
+    planDate: '01.01.2026',
+    status: 'Non',
     signup: '23.09.2025',
-    steps: '1,2,3,4,5,6,7,8',
-    theory: '80%',
-    driving: '30%'
+    license: 'Download'
   },
   {
-    number: 'stu-000015',
-    name: 'Sebastian',
-    lastName: 'Mustermann',
-    birthday: '10.10.1998',
-    email: 'mustremann@gmail.com',
-    phone: '015712345678',
-    city: 'Hamburg',
-    class: 'A1',
-    rewrite: 'Yes',
+    number: 'sch-0015',
     school: 'Fahrschule Mustermann Hamburg',
-    status: 'Active',
-    signup: '23.09.2025',
-    steps: '1,2,3,4,5,6,7,8',
-    theory: '80%',
-    driving: '30%'
-  },
-  {
-    number: 'stu-000015',
-    name: 'Sebastian',
-    lastName: 'Mustermann',
-    birthday: '10.10.1998',
-    email: 'mustremann@gmail.com',
-    phone: '015712345678',
-    city: 'Hamburg',
-    class: 'AM',
-    rewrite: 'No',
-    school: 'Fahrschule Mustermann Hamburg',
-    status: 'Active',
-    signup: '23.09.2025',
-    steps: '1,2,3,4,5,6,7,8',
-    theory: '80%',
-    driving: '30%'
-  },
-  {
-    number: 'stu-000015',
-    name: 'Sebastian',
-    lastName: 'Mustermann',
-    birthday: '10.10.1998',
     email: 'mustremann@gmail.com',
     phone: '015712345678',
     city: 'Hamburg',
     class: 'B',
-    rewrite: 'No',
-    school: 'Fahrschule Mustermann Hamburg',
-    status: 'Inactive',
+    stu: '164',
+    perc: '43%',
+    tra: '5',
+    appt: '158',
+    plan: 'Basic',
+    planDate: '01.01.2026',
+    status: 'Verified',
     signup: '23.09.2025',
-    steps: '1,2,3,4,5,6,7,8',
-    theory: '80%',
-    driving: '30%'
+    license: 'Download'
   },
   {
-    number: 'stu-000015',
-    name: 'Sebastian',
-    lastName: 'Mustermann',
-    birthday: '10.10.1998',
-    email: 'mustremann@gmail.com',
-    phone: '015712345678',
-    city: 'Hamburg',
-    class: 'B17',
-    rewrite: 'Yes',
+    number: 'sch-0015',
     school: 'Fahrschule Mustermann Hamburg',
-    status: 'Active',
-    signup: '23.09.2025',
-    steps: '1,2,3,4,5,6,7,8',
-    theory: '80%',
-    driving: '30%'
-  },
-  {
-    number: 'stu-000015',
-    name: 'Sebastian',
-    lastName: 'Mustermann',
-    birthday: '10.10.1998',
-    email: 'mustremann@gmail.com',
-    phone: '015712345678',
-    city: 'Hamburg',
-    class: 'BE',
-    rewrite: 'No',
-    school: 'Fahrschule Mustermann Hamburg',
-    status: 'Active',
-    signup: '23.09.2025',
-    steps: '1,2,3,4,5,6,7,8',
-    theory: '80%',
-    driving: '30%'
-  },
-  {
-    number: 'stu-000015',
-    name: 'Sebastian',
-    lastName: 'Mustermann',
-    birthday: '10.10.1998',
     email: 'mustremann@gmail.com',
     phone: '015712345678',
     city: 'Hamburg',
     class: 'A',
-    rewrite: 'Yes',
-    school: 'Fahrschule Mustermann Hamburg',
-    status: 'Active',
+    stu: '164',
+    perc: '43%',
+    tra: '5',
+    appt: '158',
+    plan: 'Standard',
+    planDate: '01.01.2026',
+    status: 'Verified',
     signup: '23.09.2025',
-    steps: '1,2,3,4,5,6,7,8',
-    theory: '80%',
-    driving: '30%'
+    license: 'Download'
+  },
+  {
+    number: 'sch-0015',
+    school: 'Fahrschule Mustermann Hamburg',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'B',
+    stu: '164',
+    perc: '43%',
+    tra: '5',
+    appt: '158',
+    plan: 'Premium',
+    planDate: '01.01.2026',
+    status: 'Verified',
+    signup: '23.09.2025',
+    license: 'Download'
+  },
+  {
+    number: 'sch-0015',
+    school: 'Fahrschule Mustermann Hamburg',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'A,B',
+    stu: '164',
+    perc: '43%',
+    tra: '5',
+    appt: '158',
+    plan: 'Basic',
+    planDate: '01.01.2026',
+    status: 'Verified',
+    signup: '23.09.2025',
+    license: 'Download'
+  },
+  {
+    number: 'sch-0015',
+    school: 'Fahrschule Mustermann Hamburg',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'A',
+    stu: '164',
+    perc: '43%',
+    tra: '5',
+    appt: '158',
+    plan: 'Standard',
+    planDate: '01.01.2026',
+    status: 'Verified',
+    signup: '23.09.2025',
+    license: 'Download'
+  },
+  {
+    number: 'sch-0015',
+    school: 'Fahrschule Mustermann Hamburg',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'B',
+    stu: '164',
+    perc: '43%',
+    tra: '5',
+    appt: '158',
+    plan: 'Premium',
+    planDate: '01.01.2026',
+    status: 'Verified',
+    signup: '23.09.2025',
+    license: 'Download'
+  },
+  {
+    number: 'sch-0015',
+    school: 'Fahrschule Mustermann Hamburg',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'A,B',
+    stu: '164',
+    perc: '43%',
+    tra: '5',
+    appt: '158',
+    plan: 'Basic',
+    planDate: '01.01.2026',
+    status: 'Verified',
+    signup: '23.09.2025',
+    license: 'Download'
+  },
+  {
+    number: 'sch-0015',
+    school: 'Fahrschule Mustermann Hamburg',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'A',
+    stu: '164',
+    perc: '43%',
+    tra: '5',
+    appt: '158',
+    plan: 'Standard',
+    planDate: '01.01.2026',
+    status: 'Verified',
+    signup: '23.09.2025',
+    license: 'Download'
+  },
+  {
+    number: 'sch-0015',
+    school: 'Fahrschule Mustermann Hamburg',
+    email: 'mustremann@gmail.com',
+    phone: '015712345678',
+    city: 'Hamburg',
+    class: 'B',
+    stu: '164',
+    perc: '43%',
+    tra: '5',
+    appt: '158',
+    plan: 'Premium',
+    planDate: '01.01.2026',
+    status: 'Verified',
+    signup: '23.09.2025',
+    license: 'Download'
   }
 ];
 
 export default function Schools() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [schoolSearchQuery, setSchoolSearchQuery] = useState('');
   const [citySearchQuery, setCitySearchQuery] = useState('');
+  const [stuSearchQuery, setStuSearchQuery] = useState('');
+  const [traSearchQuery, setTraSearchQuery] = useState('');
+  const [apptSearchQuery, setApptSearchQuery] = useState('');
   const [signupSearchQuery, setSignupSearchQuery] = useState('');
+  const [schoolSearchQuery, setSchoolSearchQuery] = useState('');
   const [filters, setFilters] = useState({
     city: [] as string[],
     class: [] as string[],
-    rewrite: [] as string[],
-    school: [] as string[],
+    stu: [] as string[],
+    tra: [] as string[],
+    appt: [] as string[],
+    plan: [] as string[],
     status: [] as string[],
-    signup: [] as string[],
-    steps: [] as string[]
+    signup: [] as string[]
   });
   const [currentPage, setCurrentPage] = useState(1);
   const [anchorEl, setAnchorEl] = useState<{
@@ -273,40 +277,34 @@ export default function Schools() {
     index: number;
   } | null>(null);
   const [openDialog, setOpenDialog] = useState(false);
-  const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
+  const [selectedSchool, setSelectedSchool] = useState<School | null>(null);
   const [openDeleteConfirm, setOpenDeleteConfirm] = useState(false);
-  const [birthdayDate, setBirthdayDate] = useState<Dayjs | null>(null);
   const rowsPerPage = 10;
 
-  // Filter and paginate students
-  const filteredStudents = sampleStudents.filter((student) => {
+  // Filter and paginate schools
+  const filteredSchools = sampleSchools.filter((school) => {
     const matchesSearch =
       searchQuery === '' ||
-      student.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      student.lastName.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      student.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      student.number.toLowerCase().includes(searchQuery.toLowerCase());
+      school.school.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      school.email.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      school.number.toLowerCase().includes(searchQuery.toLowerCase());
 
     const matchesFilters =
-      (filters.city.length === 0 || filters.city.includes(student.city)) &&
-      (filters.class.length === 0 || filters.class.includes(student.class)) &&
-      (filters.rewrite.length === 0 ||
-        filters.rewrite.includes(student.rewrite)) &&
-      (filters.school.length === 0 ||
-        filters.school.includes(student.school)) &&
-      (filters.status.length === 0 ||
-        filters.status.includes(student.status)) &&
-      (filters.signup.length === 0 ||
-        filters.signup.includes(student.signup)) &&
-      (filters.steps.length === 0 ||
-        filters.steps.some((step) => student.steps.includes(step)));
+      (filters.city.length === 0 || filters.city.includes(school.city)) &&
+      (filters.class.length === 0 || filters.class.includes(school.class)) &&
+      (filters.stu.length === 0 || filters.stu.includes(school.stu)) &&
+      (filters.tra.length === 0 || filters.tra.includes(school.tra)) &&
+      (filters.appt.length === 0 || filters.appt.includes(school.appt)) &&
+      (filters.plan.length === 0 || filters.plan.includes(school.plan)) &&
+      (filters.status.length === 0 || filters.status.includes(school.status)) &&
+      (filters.signup.length === 0 || filters.signup.includes(school.signup));
 
     return matchesSearch && matchesFilters;
   });
 
-  const totalPages = Math.ceil(filteredStudents.length / rowsPerPage);
+  const totalPages = Math.ceil(filteredSchools.length / rowsPerPage);
   const startIndex = (currentPage - 1) * rowsPerPage;
-  const paginatedStudents = filteredStudents.slice(
+  const paginatedSchools = filteredSchools.slice(
     startIndex,
     startIndex + rowsPerPage
   );
@@ -322,23 +320,14 @@ export default function Schools() {
     setAnchorEl(null);
   };
 
-  const handleOpenDialog = (student: Student) => {
-    setSelectedStudent(student);
-    // Parse birthday string (DD.MM.YYYY) to dayjs object
-    if (student.birthday) {
-      const [day, month, year] = student.birthday.split('.');
-      const date = dayjs(`${year}-${month}-${day}`);
-      setBirthdayDate(date.isValid() ? date : null);
-    } else {
-      setBirthdayDate(null);
-    }
+  const handleOpenDialog = (school: School) => {
+    setSelectedSchool(school);
     setOpenDialog(true);
   };
 
   const handleCloseDialog = () => {
     setOpenDialog(false);
-    setSelectedStudent(null);
-    setBirthdayDate(null);
+    setSelectedSchool(null);
   };
 
   const handleDelete = (index: number) => {
@@ -362,23 +351,35 @@ export default function Schools() {
   };
 
   // Get unique values for filter dropdowns
-  const uniqueCities = Array.from(new Set(sampleStudents.map((s) => s.city)));
-  const uniqueClasses = Array.from(new Set(sampleStudents.map((s) => s.class)));
-  const uniqueSchools = Array.from(
-    new Set(sampleStudents.map((s) => s.school))
+  const uniqueCities = Array.from(new Set(sampleSchools.map((s) => s.city)));
+  const uniqueClasses = Array.from(new Set(sampleSchools.map((s) => s.class)));
+  const uniqueStu = Array.from(new Set(sampleSchools.map((s) => s.stu)));
+  const uniqueTra = Array.from(new Set(sampleSchools.map((s) => s.tra)));
+  const uniqueAppt = Array.from(new Set(sampleSchools.map((s) => s.appt)));
+  const uniquePlans = Array.from(new Set(sampleSchools.map((s) => s.plan)));
+  const uniqueStatuses = Array.from(
+    new Set(sampleSchools.map((s) => s.status))
   );
-  const uniqueSignups = Array.from(
-    new Set(sampleStudents.map((s) => s.signup))
-  );
-
-  // Filter schools based on search query
-  const filteredSchools = uniqueSchools.filter((school) =>
-    school.toLowerCase().includes(schoolSearchQuery.toLowerCase())
-  );
+  const uniqueSignups = Array.from(new Set(sampleSchools.map((s) => s.signup)));
 
   // Filter cities based on search query
   const filteredCities = uniqueCities.filter((city) =>
     city.toLowerCase().includes(citySearchQuery.toLowerCase())
+  );
+
+  // Filter stu based on search query
+  const filteredStu = uniqueStu.filter((stu) =>
+    stu.toLowerCase().includes(stuSearchQuery.toLowerCase())
+  );
+
+  // Filter tra based on search query
+  const filteredTra = uniqueTra.filter((tra) =>
+    tra.toLowerCase().includes(traSearchQuery.toLowerCase())
+  );
+
+  // Filter appt based on search query
+  const filteredAppt = uniqueAppt.filter((appt) =>
+    appt.toLowerCase().includes(apptSearchQuery.toLowerCase())
   );
 
   // Filter signups based on search query
@@ -743,6 +744,7 @@ export default function Schools() {
             ))}
           </TextField>
 
+          {/* Stu Filter with Search */}
           <TextField
             select
             SelectProps={{
@@ -750,112 +752,13 @@ export default function Schools() {
               displayEmpty: true,
               renderValue: (selected: unknown) => {
                 const selectedArray = selected as string[];
-                if (selectedArray.length === 0) return 'Rewrite';
-                return selectedArray.join(', ');
-              },
-              MenuProps: {
-                PaperProps: {
-                  sx: {
-                    borderRadius: '12px',
-                    padding: '12px 12px 0',
-                    boxShadow:
-                      '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
-                  }
-                },
-                MenuListProps: {
-                  sx: {
-                    padding: 0,
-                    '& .MuiMenuItem-root': {
-                      padding: '0px',
-                      mb: '12px',
-                      gap: '10px'
-                    }
-                  }
-                }
-              }
-            }}
-            value={filters.rewrite}
-            onChange={(e) => {
-              const value = e.target.value;
-              setFilters({
-                ...filters,
-                rewrite: typeof value === 'string' ? value.split(',') : value
-              });
-            }}
-            sx={{
-              width: '100px',
-              minWidth: '100px',
-              '& .MuiInputBase-root': {
-                background: 'rgba(255, 255, 255, 0.75)',
-                height: '40px',
-                borderRadius: '999px',
-                fontSize: '14px',
-                fontFamily: '"Inter", sans-serif !important',
-                boxShadow:
-                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
-              },
-              '& .MuiOutlinedInput-notchedOutline': {
-                border: 'none'
-              },
-              '& .MuiSelect-select': {
-                padding: '0 12px',
-                color: filters.rewrite.length > 0 ? '#000' : '#4A5568',
-                fontSize: '14px',
-                fontFamily: '"Inter", sans-serif !important'
-              }
-            }}
-          >
-            <MenuItem
-              value="Yes"
-              sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
-            >
-              <input
-                type="checkbox"
-                checked={filters.rewrite.indexOf('Yes') > -1}
-                onChange={() => {}}
-                style={{
-                  width: '16px',
-                  height: '16px',
-                  margin: 0,
-                  cursor: 'pointer'
-                }}
-              />
-              Yes
-            </MenuItem>
-            <MenuItem
-              value="No"
-              sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
-            >
-              <input
-                type="checkbox"
-                checked={filters.rewrite.indexOf('No') > -1}
-                onChange={() => {}}
-                style={{
-                  width: '16px',
-                  height: '16px',
-                  margin: 0,
-                  cursor: 'pointer'
-                }}
-              />
-              No
-            </MenuItem>
-          </TextField>
-
-          <TextField
-            select
-            SelectProps={{
-              multiple: true,
-              displayEmpty: true,
-              renderValue: (selected: unknown) => {
-                const selectedArray = selected as string[];
-                if (selectedArray.length === 0) return 'School';
+                if (selectedArray.length === 0) return 'Stu';
                 return selectedArray.join(', ');
               },
               MenuProps: {
                 PaperProps: {
                   sx: {
                     mt: 1,
-                    // bgcolor: 'red',
                     maxWidth: '200px',
                     borderRadius: '10px',
                     padding: '12px',
@@ -868,24 +771,23 @@ export default function Schools() {
                     padding: 0,
                     '& .MuiMenuItem-root': {
                       padding: '0px',
-                      // mb: '12px',
                       gap: '10px'
                     }
                   }
                 }
               }
             }}
-            value={filters.school}
+            value={filters.stu}
             onChange={(e) => {
               const value = e.target.value;
               setFilters({
                 ...filters,
-                school: typeof value === 'string' ? value.split(',') : value
+                stu: typeof value === 'string' ? value.split(',') : value
               });
             }}
             sx={{
-              width: '110px',
-              minWidth: '110px',
+              width: '90px',
+              minWidth: '90px',
               '& .MuiInputBase-root': {
                 background: 'rgba(255, 255, 255, 0.75)',
                 height: '40px',
@@ -900,7 +802,7 @@ export default function Schools() {
               },
               '& .MuiSelect-select': {
                 padding: '0 12px',
-                color: filters.school.length > 0 ? '#000' : '#4A5568',
+                color: filters.stu.length > 0 ? '#000' : '#4A5568',
                 fontSize: '14px',
                 fontFamily: '"Inter", sans-serif !important'
               }
@@ -940,8 +842,8 @@ export default function Schools() {
                 <TextField
                   placeholder="Search"
                   variant="outlined"
-                  value={schoolSearchQuery}
-                  onChange={(e) => setSchoolSearchQuery(e.target.value)}
+                  value={stuSearchQuery}
+                  onChange={(e) => setStuSearchQuery(e.target.value)}
                   onClick={(e) => e.stopPropagation()}
                   sx={{
                     flex: 1,
@@ -960,11 +862,11 @@ export default function Schools() {
                 />
               </Box>
             </Box>
-            {filteredSchools.length > 0 ? (
-              filteredSchools.map((school) => (
+            {filteredStu.length > 0 ? (
+              filteredStu.map((stu) => (
                 <MenuItem
-                  key={school}
-                  value={school}
+                  key={stu}
+                  value={stu}
                   sx={{
                     display: 'flex',
                     alignItems: 'flex-start',
@@ -977,7 +879,7 @@ export default function Schools() {
                 >
                   <input
                     type="checkbox"
-                    checked={filters.school.indexOf(school) > -1}
+                    checked={filters.stu.indexOf(stu) > -1}
                     onChange={() => {}}
                     style={{
                       width: '16px',
@@ -999,7 +901,7 @@ export default function Schools() {
                       flex: 1
                     }}
                   >
-                    {school}
+                    {stu}
                   </Typography>
                 </MenuItem>
               ))
@@ -1012,10 +914,447 @@ export default function Schools() {
                     color: '#aaa'
                   }}
                 >
-                  No schools found
+                  No results found
                 </Typography>
               </MenuItem>
             )}
+          </TextField>
+
+          {/* Tra Filter with Search */}
+          <TextField
+            select
+            SelectProps={{
+              multiple: true,
+              displayEmpty: true,
+              renderValue: (selected: unknown) => {
+                const selectedArray = selected as string[];
+                if (selectedArray.length === 0) return 'Tra';
+                return selectedArray.join(', ');
+              },
+              MenuProps: {
+                PaperProps: {
+                  sx: {
+                    mt: 1,
+                    maxWidth: '200px',
+                    borderRadius: '10px',
+                    padding: '12px',
+                    boxShadow:
+                      '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+                  }
+                },
+                MenuListProps: {
+                  sx: {
+                    padding: 0,
+                    '& .MuiMenuItem-root': {
+                      padding: '0px',
+                      gap: '10px'
+                    }
+                  }
+                }
+              }
+            }}
+            value={filters.tra}
+            onChange={(e) => {
+              const value = e.target.value;
+              setFilters({
+                ...filters,
+                tra: typeof value === 'string' ? value.split(',') : value
+              });
+            }}
+            sx={{
+              width: '90px',
+              minWidth: '90px',
+              '& .MuiInputBase-root': {
+                background: 'rgba(255, 255, 255, 0.75)',
+                height: '40px',
+                borderRadius: '999px',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important',
+                boxShadow:
+                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+              },
+              '& .MuiOutlinedInput-notchedOutline': {
+                border: 'none'
+              },
+              '& .MuiSelect-select': {
+                padding: '0 12px',
+                color: filters.tra.length > 0 ? '#000' : '#4A5568',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
+              }
+            }}
+          >
+            <Box
+              sx={{
+                position: 'sticky',
+                top: 0,
+                zIndex: 1,
+                background: '#fff',
+                padding: '12px',
+                borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+                mb: '8px'
+              }}
+            >
+              <Box
+                sx={{
+                  width: '100%',
+                  display: 'flex',
+                  gap: '4px',
+                  padding: '10px',
+                  borderRadius: '999px',
+                  height: '38px',
+                  alignItems: 'center',
+                  background: '#ffffffbf',
+                  boxShadow: '0px 0px 2px 0px #D4D4D8'
+                }}
+              >
+                <Box sx={{height: '16px', width: '16px'}}>
+                  <Image
+                    src={searchIcon}
+                    alt="searchIcon"
+                    style={{height: '100%', width: '100%'}}
+                  />
+                </Box>
+                <TextField
+                  placeholder="Search"
+                  variant="outlined"
+                  value={traSearchQuery}
+                  onChange={(e) => setTraSearchQuery(e.target.value)}
+                  onClick={(e) => e.stopPropagation()}
+                  sx={{
+                    flex: 1,
+                    '& .MuiOutlinedInput-root': {
+                      borderRadius: 0,
+                      '& fieldset': {border: 'none'},
+                      '&:hover fieldset': {border: 'none'},
+                      '&.Mui-focused fieldset': {border: 'none'}
+                    },
+                    '& .MuiInputBase-input': {
+                      fontFamily: '"Inter", sans-serif !important',
+                      height: 'auto',
+                      padding: '0px'
+                    }
+                  }}
+                />
+              </Box>
+            </Box>
+            {filteredTra.length > 0 ? (
+              filteredTra.map((tra) => (
+                <MenuItem
+                  key={tra}
+                  value={tra}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '10px',
+                    py: '6px',
+                    px: '16px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word'
+                  }}
+                >
+                  <input
+                    type="checkbox"
+                    checked={filters.tra.indexOf(tra) > -1}
+                    onChange={() => {}}
+                    style={{
+                      width: '16px',
+                      height: '16px',
+                      margin: 0,
+                      marginTop: '2px',
+                      cursor: 'pointer',
+                      flexShrink: 0
+                    }}
+                  />
+                  <Typography
+                    sx={{
+                      fontSize: '14px',
+                      color: '#4A5568',
+                      fontFamily: '"Inter", sans-serif !important',
+                      wordBreak: 'break-word',
+                      whiteSpace: 'normal',
+                      lineHeight: '1.4',
+                      flex: 1
+                    }}
+                  >
+                    {tra}
+                  </Typography>
+                </MenuItem>
+              ))
+            ) : (
+              <MenuItem disabled>
+                <Typography
+                  sx={{
+                    fontSize: '14px',
+                    fontFamily: '"Inter", sans-serif !important',
+                    color: '#aaa'
+                  }}
+                >
+                  No results found
+                </Typography>
+              </MenuItem>
+            )}
+          </TextField>
+
+          {/* Appt. Filter with Search */}
+          <TextField
+            select
+            SelectProps={{
+              multiple: true,
+              displayEmpty: true,
+              renderValue: (selected: unknown) => {
+                const selectedArray = selected as string[];
+                if (selectedArray.length === 0) return 'Appt.';
+                return selectedArray.join(', ');
+              },
+              MenuProps: {
+                PaperProps: {
+                  sx: {
+                    mt: 1,
+                    maxWidth: '200px',
+                    borderRadius: '10px',
+                    padding: '12px',
+                    boxShadow:
+                      '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+                  }
+                },
+                MenuListProps: {
+                  sx: {
+                    padding: 0,
+                    '& .MuiMenuItem-root': {
+                      padding: '0px',
+                      gap: '10px'
+                    }
+                  }
+                }
+              }
+            }}
+            value={filters.appt}
+            onChange={(e) => {
+              const value = e.target.value;
+              setFilters({
+                ...filters,
+                appt: typeof value === 'string' ? value.split(',') : value
+              });
+            }}
+            sx={{
+              width: '90px',
+              minWidth: '90px',
+              '& .MuiInputBase-root': {
+                background: 'rgba(255, 255, 255, 0.75)',
+                height: '40px',
+                borderRadius: '999px',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important',
+                boxShadow:
+                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+              },
+              '& .MuiOutlinedInput-notchedOutline': {
+                border: 'none'
+              },
+              '& .MuiSelect-select': {
+                padding: '0 12px',
+                color: filters.appt.length > 0 ? '#000' : '#4A5568',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
+              }
+            }}
+          >
+            <Box
+              sx={{
+                position: 'sticky',
+                top: 0,
+                zIndex: 1,
+                background: '#fff',
+                padding: '12px',
+                borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+                mb: '8px'
+              }}
+            >
+              <Box
+                sx={{
+                  width: '100%',
+                  display: 'flex',
+                  gap: '4px',
+                  padding: '10px',
+                  borderRadius: '999px',
+                  height: '38px',
+                  alignItems: 'center',
+                  background: '#ffffffbf',
+                  boxShadow: '0px 0px 2px 0px #D4D4D8'
+                }}
+              >
+                <Box sx={{height: '16px', width: '16px'}}>
+                  <Image
+                    src={searchIcon}
+                    alt="searchIcon"
+                    style={{height: '100%', width: '100%'}}
+                  />
+                </Box>
+                <TextField
+                  placeholder="Search"
+                  variant="outlined"
+                  value={apptSearchQuery}
+                  onChange={(e) => setApptSearchQuery(e.target.value)}
+                  onClick={(e) => e.stopPropagation()}
+                  sx={{
+                    flex: 1,
+                    '& .MuiOutlinedInput-root': {
+                      borderRadius: 0,
+                      '& fieldset': {border: 'none'},
+                      '&:hover fieldset': {border: 'none'},
+                      '&.Mui-focused fieldset': {border: 'none'}
+                    },
+                    '& .MuiInputBase-input': {
+                      fontFamily: '"Inter", sans-serif !important',
+                      height: 'auto',
+                      padding: '0px'
+                    }
+                  }}
+                />
+              </Box>
+            </Box>
+            {filteredAppt.length > 0 ? (
+              filteredAppt.map((appt) => (
+                <MenuItem
+                  key={appt}
+                  value={appt}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    gap: '10px',
+                    py: '6px',
+                    px: '16px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word'
+                  }}
+                >
+                  <input
+                    type="checkbox"
+                    checked={filters.appt.indexOf(appt) > -1}
+                    onChange={() => {}}
+                    style={{
+                      width: '16px',
+                      height: '16px',
+                      margin: 0,
+                      marginTop: '2px',
+                      cursor: 'pointer',
+                      flexShrink: 0
+                    }}
+                  />
+                  <Typography
+                    sx={{
+                      fontSize: '14px',
+                      color: '#4A5568',
+                      fontFamily: '"Inter", sans-serif !important',
+                      wordBreak: 'break-word',
+                      whiteSpace: 'normal',
+                      lineHeight: '1.4',
+                      flex: 1
+                    }}
+                  >
+                    {appt}
+                  </Typography>
+                </MenuItem>
+              ))
+            ) : (
+              <MenuItem disabled>
+                <Typography
+                  sx={{
+                    fontSize: '14px',
+                    fontFamily: '"Inter", sans-serif !important',
+                    color: '#aaa'
+                  }}
+                >
+                  No results found
+                </Typography>
+              </MenuItem>
+            )}
+          </TextField>
+
+          {/* Plan Filter without Search */}
+          <TextField
+            select
+            SelectProps={{
+              multiple: true,
+              displayEmpty: true,
+              renderValue: (selected: unknown) => {
+                const selectedArray = selected as string[];
+                if (selectedArray.length === 0) return 'Plan';
+                return selectedArray.join(', ');
+              },
+              MenuProps: {
+                PaperProps: {
+                  sx: {
+                    borderRadius: '12px',
+                    padding: '12px 12px 0',
+                    boxShadow:
+                      '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+                  }
+                },
+                MenuListProps: {
+                  sx: {
+                    padding: 0,
+                    '& .MuiMenuItem-root': {
+                      padding: '0px',
+                      mb: '12px',
+                      gap: '10px'
+                    }
+                  }
+                }
+              }
+            }}
+            value={filters.plan}
+            onChange={(e) => {
+              const value = e.target.value;
+              setFilters({
+                ...filters,
+                plan: typeof value === 'string' ? value.split(',') : value
+              });
+            }}
+            sx={{
+              width: '90px',
+              minWidth: '90px',
+              '& .MuiInputBase-root': {
+                background: 'rgba(255, 255, 255, 0.75)',
+                height: '40px',
+                borderRadius: '999px',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important',
+                boxShadow:
+                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
+              },
+              '& .MuiOutlinedInput-notchedOutline': {
+                border: 'none'
+              },
+              '& .MuiSelect-select': {
+                padding: '0 12px',
+                color: filters.plan.length > 0 ? '#000' : '#4A5568',
+                fontSize: '14px',
+                fontFamily: '"Inter", sans-serif !important'
+              }
+            }}
+          >
+            {uniquePlans.map((plan) => (
+              <MenuItem
+                key={plan}
+                value={plan}
+                sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
+              >
+                <input
+                  type="checkbox"
+                  checked={filters.plan.indexOf(plan) > -1}
+                  onChange={() => {}}
+                  style={{
+                    width: '16px',
+                    height: '16px',
+                    margin: 0,
+                    cursor: 'pointer'
+                  }}
+                />
+                {plan}
+              </MenuItem>
+            ))}
           </TextField>
 
           <TextField
@@ -1081,12 +1420,12 @@ export default function Schools() {
             }}
           >
             <MenuItem
-              value="Active"
+              value="Verified"
               sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
             >
               <input
                 type="checkbox"
-                checked={filters.status.indexOf('Active') > -1}
+                checked={filters.status.indexOf('Verified') > -1}
                 onChange={() => {}}
                 style={{
                   width: '16px',
@@ -1095,15 +1434,15 @@ export default function Schools() {
                   cursor: 'pointer'
                 }}
               />
-              Active
+              Verified
             </MenuItem>
             <MenuItem
-              value="Inactive"
+              value="Non"
               sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
             >
               <input
                 type="checkbox"
-                checked={filters.status.indexOf('Inactive') > -1}
+                checked={filters.status.indexOf('Non') > -1}
                 onChange={() => {}}
                 style={{
                   width: '16px',
@@ -1112,7 +1451,7 @@ export default function Schools() {
                   cursor: 'pointer'
                 }}
               />
-              Inactive
+              Non
             </MenuItem>
           </TextField>
 
@@ -1290,206 +1629,6 @@ export default function Schools() {
               </MenuItem>
             )}
           </TextField>
-
-          <TextField
-            select
-            SelectProps={{
-              multiple: true,
-              displayEmpty: true,
-              renderValue: (selected: unknown) => {
-                const selectedArray = selected as string[];
-                if (selectedArray.length === 0) return 'Steps';
-                return selectedArray.join(', ');
-              },
-              MenuProps: {
-                PaperProps: {
-                  sx: {
-                    borderRadius: '12px',
-                    padding: '12px 12px 0',
-                    boxShadow:
-                      '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
-                  }
-                },
-                MenuListProps: {
-                  sx: {
-                    padding: 0,
-                    '& .MuiMenuItem-root': {
-                      padding: '0px',
-                      mb: '12px',
-                      gap: '10px'
-                    }
-                  }
-                }
-              }
-            }}
-            value={filters.steps}
-            onChange={(e) => {
-              const value = e.target.value;
-              setFilters({
-                ...filters,
-                steps: typeof value === 'string' ? value.split(',') : value
-              });
-            }}
-            sx={{
-              width: '90px',
-              minWidth: '90px',
-              '& .MuiInputBase-root': {
-                background: 'rgba(255, 255, 255, 0.75)',
-                height: '40px',
-                borderRadius: '999px',
-                fontSize: '14px',
-                fontFamily: '"Inter", sans-serif !important',
-                boxShadow:
-                  '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)'
-              },
-              '& .MuiOutlinedInput-notchedOutline': {
-                border: 'none'
-              },
-              '& .MuiSelect-select': {
-                padding: '0 12px',
-                color: filters.steps.length > 0 ? '#000' : '#4A5568',
-                fontSize: '14px',
-                fontFamily: '"Inter", sans-serif !important'
-              }
-            }}
-          >
-            <MenuItem
-              value="1"
-              sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
-            >
-              <input
-                type="checkbox"
-                checked={filters.steps.indexOf('1') > -1}
-                onChange={() => {}}
-                style={{
-                  width: '16px',
-                  height: '16px',
-                  margin: 0,
-                  cursor: 'pointer'
-                }}
-              />
-              1
-            </MenuItem>
-            <MenuItem
-              value="2"
-              sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
-            >
-              <input
-                type="checkbox"
-                checked={filters.steps.indexOf('2') > -1}
-                onChange={() => {}}
-                style={{
-                  width: '16px',
-                  height: '16px',
-                  margin: 0,
-                  cursor: 'pointer'
-                }}
-              />
-              2
-            </MenuItem>
-            <MenuItem
-              value="3"
-              sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
-            >
-              <input
-                type="checkbox"
-                checked={filters.steps.indexOf('3') > -1}
-                onChange={() => {}}
-                style={{
-                  width: '16px',
-                  height: '16px',
-                  margin: 0,
-                  cursor: 'pointer'
-                }}
-              />
-              3
-            </MenuItem>
-            <MenuItem
-              value="4"
-              sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
-            >
-              <input
-                type="checkbox"
-                checked={filters.steps.indexOf('4') > -1}
-                onChange={() => {}}
-                style={{
-                  width: '16px',
-                  height: '16px',
-                  margin: 0,
-                  cursor: 'pointer'
-                }}
-              />
-              4
-            </MenuItem>
-            <MenuItem
-              value="5"
-              sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
-            >
-              <input
-                type="checkbox"
-                checked={filters.steps.indexOf('5') > -1}
-                onChange={() => {}}
-                style={{
-                  width: '16px',
-                  height: '16px',
-                  margin: 0,
-                  cursor: 'pointer'
-                }}
-              />
-              5
-            </MenuItem>
-            <MenuItem
-              value="6"
-              sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
-            >
-              <input
-                type="checkbox"
-                checked={filters.steps.indexOf('6') > -1}
-                onChange={() => {}}
-                style={{
-                  width: '16px',
-                  height: '16px',
-                  margin: 0,
-                  cursor: 'pointer'
-                }}
-              />
-              6
-            </MenuItem>
-            <MenuItem
-              value="7"
-              sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
-            >
-              <input
-                type="checkbox"
-                checked={filters.steps.indexOf('7') > -1}
-                onChange={() => {}}
-                style={{
-                  width: '16px',
-                  height: '16px',
-                  margin: 0,
-                  cursor: 'pointer'
-                }}
-              />
-              7
-            </MenuItem>
-            <MenuItem
-              value="8"
-              sx={{display: 'flex', alignItems: 'center', gap: '10px'}}
-            >
-              <input
-                type="checkbox"
-                checked={filters.steps.indexOf('8') > -1}
-                onChange={() => {}}
-                style={{
-                  width: '16px',
-                  height: '16px',
-                  margin: 0,
-                  cursor: 'pointer'
-                }}
-              />
-              8
-            </MenuItem>
-          </TextField>
         </Box>
 
         {/* Table Container */}
@@ -1506,7 +1645,7 @@ export default function Schools() {
               minWidth: '1400px',
               width: '100%',
               // bgcolor: 'pink',
-              tableLayout: 'auto',
+              tableLayout: 'fixed',
               borderCollapse: 'separate',
               borderSpacing: '0 8px'
             }}
@@ -1544,50 +1683,231 @@ export default function Schools() {
                   }
                 }}
               >
-                <TableCell>Number</TableCell>
-                <TableCell>Name</TableCell>
-                <TableCell>LastName</TableCell>
-                <TableCell>Birthday</TableCell>
                 <TableCell
                   sx={{
-                    minWidth: '156px',
-                    maxWidth: '156px',
+                    width: '120px',
+                    minWidth: '120px',
+                    maxWidth: '120px',
                     whiteSpace: 'normal',
                     wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
                     textAlign: 'left'
                   }}
                 >
-                  Email
+                  Number
                 </TableCell>
-                <TableCell>Phone</TableCell>
-                <TableCell>City</TableCell>
-                <TableCell>Class</TableCell>
-                <TableCell>Re</TableCell>
                 <TableCell
                   sx={{
+                    width: '195px',
                     minWidth: '195px',
                     maxWidth: '195px',
                     whiteSpace: 'normal',
                     wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
                     textAlign: 'left'
                   }}
                 >
                   School
                 </TableCell>
-                <TableCell>Status</TableCell>
-                <TableCell>Signup</TableCell>
-                <TableCell>Steps</TableCell>
-                <TableCell>Theory</TableCell>
-                <TableCell>Driving</TableCell>
-                <TableCell width={50}></TableCell>
+                <TableCell
+                  sx={{
+                    width: '156px',
+                    minWidth: '156px',
+                    maxWidth: '156px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Email
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '130px',
+                    minWidth: '130px',
+                    maxWidth: '130px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Phone
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '100px',
+                    minWidth: '100px',
+                    maxWidth: '100px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  City
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '80px',
+                    minWidth: '80px',
+                    maxWidth: '80px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Class
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '60px',
+                    minWidth: '60px',
+                    maxWidth: '60px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Stu
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '70px',
+                    minWidth: '70px',
+                    maxWidth: '70px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Perc.
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '50px',
+                    minWidth: '50px',
+                    maxWidth: '50px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Tra
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '70px',
+                    minWidth: '70px',
+                    maxWidth: '70px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Appt.
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '90px',
+                    minWidth: '90px',
+                    maxWidth: '90px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Plan
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '120px',
+                    minWidth: '120px',
+                    maxWidth: '120px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Plan Date
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '100px',
+                    minWidth: '100px',
+                    maxWidth: '100px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Status
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '120px',
+                    minWidth: '120px',
+                    maxWidth: '120px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  Signup
+                </TableCell>
+                <TableCell
+                  sx={{
+                    width: '100px',
+                    minWidth: '100px',
+                    maxWidth: '100px',
+                    whiteSpace: 'normal',
+                    wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    overflow: 'hidden',
+                    textAlign: 'left'
+                  }}
+                >
+                  License
+                </TableCell>
+                <TableCell
+                  sx={{
+                    minWidth: '50px',
+                    maxWidth: '50px',
+                    width: '50px'
+                  }}
+                ></TableCell>
               </TableRow>
             </TableHead>
 
             {/* Table Body */}
             <TableBody>
-              {paginatedStudents.map((student, index) => (
+              {paginatedSchools.map((school, index) => (
                 <TableRow
-                  key={`${student.number}-${index}`}
+                  key={`${school.number}-${index}`}
                   sx={{
                     background: 'rgba(255, 255, 255, 0.65)',
                     borderRadius: '8px',
@@ -1599,10 +1919,12 @@ export default function Schools() {
                       textAlign: 'left',
                       fontSize: '14px',
                       fontFamily: '"Inter", sans-serif !important',
-                      color: '#000000',
-                      whiteSpace: 'nowrap',
+                      color: '#4a5568',
                       minHeight: '60px',
                       verticalAlign: 'middle',
+                      overflow: 'hidden',
+                      overflowWrap: 'break-word',
+                      wordWrap: 'break-word',
                       '&:first-of-type': {
                         borderTopLeftRadius: '8px',
                         borderBottomLeftRadius: '8px'
@@ -1619,59 +1941,259 @@ export default function Schools() {
                     }
                   }}
                 >
-                  <TableCell>{student.number}</TableCell>
-                  <TableCell>{student.name}</TableCell>
-                  <TableCell>{student.lastName}</TableCell>
-                  <TableCell>{student.birthday}</TableCell>
                   <TableCell
                     sx={{
-                      maxWidth: '156px',
-                      minWidth: '156px',
+                      width: '120px',
+                      minWidth: '120px',
+                      maxWidth: '120px',
                       whiteSpace: 'normal',
                       wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
                       textAlign: 'left',
                       padding: '12px 16px'
                     }}
                   >
-                    {student.email}
+                    {school.number}
                   </TableCell>
-                  <TableCell>{student.phone}</TableCell>
-                  <TableCell>{student.city}</TableCell>
-                  <TableCell>{student.class}</TableCell>
-                  <TableCell>{student.rewrite}</TableCell>
                   <TableCell
                     sx={{
+                      width: '195px',
                       maxWidth: '195px',
                       minWidth: '195px',
                       whiteSpace: 'normal',
                       wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
                       textAlign: 'left',
                       padding: '12px 16px'
                     }}
                   >
-                    {student.school}
+                    {school.school}
                   </TableCell>
-                  <TableCell>
+                  <TableCell
+                    sx={{
+                      width: '156px',
+                      maxWidth: '156px',
+                      minWidth: '156px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {school.email}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '130px',
+                      minWidth: '130px',
+                      maxWidth: '130px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {school.phone}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '100px',
+                      minWidth: '100px',
+                      maxWidth: '100px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {school.city}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '80px',
+                      minWidth: '80px',
+                      maxWidth: '80px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {school.class}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '60px',
+                      minWidth: '60px',
+                      maxWidth: '60px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {school.stu}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '70px',
+                      minWidth: '70px',
+                      maxWidth: '70px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {school.perc}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '50px',
+                      minWidth: '50px',
+                      maxWidth: '50px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {school.tra}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '70px',
+                      minWidth: '70px',
+                      maxWidth: '70px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {school.appt}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '90px',
+                      minWidth: '90px',
+                      maxWidth: '90px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {school.plan}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '120px',
+                      minWidth: '120px',
+                      maxWidth: '120px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {school.planDate}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '100px',
+                      minWidth: '100px',
+                      maxWidth: '100px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
                     <Typography
                       sx={{
                         color:
-                          student.status === 'Active' ? '#10b981' : '#ef4444',
+                          school.status === 'Verified' ? '#10b981' : '#ef4444',
                         fontWeight: 500,
                         fontSize: '14px',
                         fontFamily: '"Inter", sans-serif !important'
                       }}
                     >
-                      {student.status}
+                      {school.status}
                     </Typography>
                   </TableCell>
-                  <TableCell>{student.signup}</TableCell>
-                  <TableCell>{student.steps}</TableCell>
-                  <TableCell>{student.theory}</TableCell>
-                  <TableCell>{student.driving}</TableCell>
-                  <TableCell>
+                  <TableCell
+                    sx={{
+                      width: '120px',
+                      minWidth: '120px',
+                      maxWidth: '120px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {school.signup}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      width: '100px',
+                      minWidth: '100px',
+                      maxWidth: '100px',
+                      whiteSpace: 'normal',
+                      wordBreak: 'break-word',
+                      overflowWrap: 'break-word',
+                      overflow: 'hidden',
+                      textAlign: 'left',
+                      padding: '12px 16px'
+                    }}
+                  >
+                    {school.license}
+                    {/* <Image
+                      src={arrowDown}
+                      alt="download"
+                      width={16}
+                      height={16}
+                      style={{marginLeft: '4px', display: 'inline-block'}}
+                    /> */}
+                  </TableCell>
+                  <TableCell
+                    sx={{
+                      minWidth: '50px',
+                      maxWidth: '50px',
+                      width: '50px',
+                      padding: '12px 16px'
+                    }}
+                  >
                     <IconButton
                       size="small"
-                      onClick={() => handleOpenDialog(student)}
+                      onClick={() => handleOpenDialog(school)}
                       sx={{
                         padding: '4px'
                       }}
@@ -1845,7 +2367,7 @@ export default function Schools() {
             background: 'rgba(248, 250, 252, 0.3)'
           }}
         >
-          {selectedStudent && (
+          {selectedSchool && (
             <Box>
               <Box
                 sx={{
@@ -1858,22 +2380,9 @@ export default function Schools() {
                 {/* First Row */}
                 <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
                   <TextField
-                    label="First name"
+                    label="School Name"
                     fullWidth
-                    defaultValue={selectedStudent.name}
-                    sx={{
-                      '& .MuiInputBase-root': {
-                        background: '#ffffff',
-                        borderRadius: '8px'
-                      }
-                    }}
-                  />
-                </Box>
-                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
-                  <TextField
-                    label="Last name"
-                    fullWidth
-                    defaultValue={selectedStudent.lastName}
+                    defaultValue={selectedSchool.school}
                     sx={{
                       '& .MuiInputBase-root': {
                         background: '#ffffff',
@@ -1886,7 +2395,7 @@ export default function Schools() {
                   <TextField
                     label="Email"
                     fullWidth
-                    defaultValue={selectedStudent.email}
+                    defaultValue={selectedSchool.email}
                     sx={{
                       '& .MuiInputBase-root': {
                         background: '#ffffff',
@@ -1899,7 +2408,20 @@ export default function Schools() {
                   <TextField
                     label="Phone number"
                     fullWidth
-                    defaultValue={selectedStudent.phone}
+                    defaultValue={selectedSchool.phone}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        background: '#ffffff',
+                        borderRadius: '8px'
+                      }
+                    }}
+                  />
+                </Box>
+                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
+                  <TextField
+                    label="City"
+                    fullWidth
+                    defaultValue={selectedSchool.city}
                     sx={{
                       '& .MuiInputBase-root': {
                         background: '#ffffff',
@@ -1921,58 +2443,10 @@ export default function Schools() {
                 {/* Second Row */}
                 <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
                   <TextField
-                    label="City"
-                    fullWidth
-                    defaultValue={selectedStudent.city}
-                    sx={{
-                      '& .MuiInputBase-root': {
-                        background: '#ffffff',
-                        borderRadius: '8px'
-                      }
-                    }}
-                  />
-                </Box>
-                <Box
-                  sx={{
-                    flex: '1 1 calc(25% - 18px)',
-                    minWidth: '200px',
-                    bgcolor: '#fff',
-                    borderRadius: '8px'
-                  }}
-                >
-                  <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DatePicker
-                      label="Birthday"
-                      value={birthdayDate}
-                      onChange={(newValue) => setBirthdayDate(newValue)}
-                      format="DD.MM.YYYY"
-                      slotProps={{
-                        textField: {
-                          fullWidth: true
-                        }
-                      }}
-                    />
-                  </LocalizationProvider>
-                </Box>
-                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
-                  <TextField
-                    label="Driving school"
-                    fullWidth
-                    defaultValue={selectedStudent.school}
-                    sx={{
-                      '& .MuiInputBase-root': {
-                        background: '#ffffff',
-                        borderRadius: '8px'
-                      }
-                    }}
-                  />
-                </Box>
-                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
-                  <TextField
                     select
-                    label="Driving license class"
+                    label="Class"
                     fullWidth
-                    defaultValue={selectedStudent.class}
+                    defaultValue={selectedSchool.class}
                     SelectProps={{
                       displayEmpty: true
                     }}
@@ -1988,6 +2462,52 @@ export default function Schools() {
                         {cls}
                       </MenuItem>
                     ))}
+                  </TextField>
+                </Box>
+                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
+                  <TextField
+                    label="Plan"
+                    fullWidth
+                    defaultValue={selectedSchool.plan}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        background: '#ffffff',
+                        borderRadius: '8px'
+                      }
+                    }}
+                  />
+                </Box>
+                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
+                  <TextField
+                    label="Plan Date"
+                    fullWidth
+                    defaultValue={selectedSchool.planDate}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        background: '#ffffff',
+                        borderRadius: '8px'
+                      }
+                    }}
+                  />
+                </Box>
+                <Box sx={{flex: '1 1 calc(25% - 18px)', minWidth: '200px'}}>
+                  <TextField
+                    select
+                    label="Status"
+                    fullWidth
+                    defaultValue={selectedSchool.status}
+                    SelectProps={{
+                      displayEmpty: true
+                    }}
+                    sx={{
+                      '& .MuiInputBase-root': {
+                        background: '#ffffff',
+                        borderRadius: '8px'
+                      }
+                    }}
+                  >
+                    <MenuItem value="Verified">Verified</MenuItem>
+                    <MenuItem value="Non">Non</MenuItem>
                   </TextField>
                 </Box>
               </Box>
@@ -2188,12 +2708,12 @@ export default function Schools() {
                 </Box>
               }
               onClick={() => {
-                if (selectedStudent) {
-                  const studentIndex = sampleStudents.findIndex(
-                    (s) => s.number === selectedStudent.number
+                if (selectedSchool) {
+                  const schoolIndex = sampleSchools.findIndex(
+                    (s) => s.number === selectedSchool.number
                   );
-                  if (studentIndex !== -1) {
-                    handleDelete(studentIndex);
+                  if (schoolIndex !== -1) {
+                    handleDelete(schoolIndex);
                   }
                 }
               }}
