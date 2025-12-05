@@ -61,7 +61,7 @@ export default function Account() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'space-around',
+        // justifyContent: 'space-around'
         gap: '24px'
         // overflow: 'hidden'
         // bgcolor: '#ffffffbf'
@@ -118,7 +118,6 @@ export default function Account() {
           <CustomButton label="Save" sx={{}} />
         </Box>
       </Box>
-      <GradientDivider />
       <GradientDivider />
       <Box sx={{width: '100%'}}>
         {/* <Typography
