@@ -30,6 +30,7 @@ import logoutIconBold from '@/assets/svgs/dashboard-student/logoutIconBold.svg';
 // import ProfileDropdown from './ProfileDropdown';
 import {useTranslations} from 'next-intl';
 import ProfileDropdown from '@/components/student-dashboard/layout/ProfileDropdown';
+import {useRouter} from '@/i18n/navigation';
 type Props = {
   activeKey: string;
   setActiveKey: React.Dispatch<React.SetStateAction<string>>;
@@ -114,6 +115,7 @@ export default function DesktopTabs({
 
   // ✅ Apply translation to menu items
   console.log('updated data array: ', updatedData);
+  const router = useRouter();
   return (
     <>
       <Box
@@ -135,6 +137,7 @@ export default function DesktopTabs({
         {/* logo */}
         <Box>
           <Box
+            onClick={() => router.push('/')}
             sx={{
               height: '44px',
               width: '44px',
