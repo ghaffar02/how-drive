@@ -2,19 +2,14 @@
 import React, {useState} from 'react';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import {Box, MenuItem, Popover, TextField, Typography} from '@mui/material';
-import MiniFramerCalendar from '../MiniFramerCalendar';
 import localFont from '@/utils/themes';
 import Image from 'next/image';
-// import TimePickerValue from '../../../profile-setting/components/TimePicker';
 import CustomButton from '@/components/school-dashboard/CustomButton';
 import arrow from '@/assets/svgs/dashboard-student/arrowsetting.svg';
 import whiteArrow from '@/assets/svgs/whiteArrow.svg';
-import CustomTextField from '@/components/school-dashboard/InputField';
-import crossCircle from '@/assets/svgs/dashboard-student/crosscircle.svg';
-import {motion} from 'framer-motion';
 import {useTranslations} from 'next-intl';
-import TimePickerValue from '@/components/school-dashboard/layout/profile-setting/components/TimePicker';
-// 🔹 Subcomponent
+import MiniFramerCalendar from '@/components/school-dashboard/layout/calander/components/MiniFramerCalendar';
+
 type EventAddPopoverProps = {
   open: boolean;
   anchorEl: HTMLElement | null;
@@ -89,7 +84,6 @@ export default function EventAddPopover({
   anchorEl,
   onClose
 }: EventAddPopoverProps) {
-  // const [activeIndex, setActiveIndex] = React.useState(0);
   const t = useTranslations('SchoolDashboard.Calendar.popup');
   const tabs = t.raw('tabs');
   const tabOptions = t.raw('tabsOptions.options');
@@ -160,70 +154,13 @@ export default function EventAddPopover({
             textAlign: 'center'
           }}
         >
-          {t('title')}
+          {t('title3')}
         </Typography>
-
-        <Box sx={{width: '100%'}}>
-          <Typography
-            sx={{
-              ...localFont.inter14,
-              fontFamily: '"Inter", sans-serif !important',
-              mb: '6px',
-              mt: '16px'
-            }}
-          >
-            {t('input1')}
-          </Typography>
-          <CustomTextField />
-          <Box
-            sx={{
-              mt: '16px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              width: '100%',
-              maxHeight: '36px'
-            }}
-          >
-            <Typography
-              sx={{
-                ...localFont.inter14,
-                fontFamily: '"Inter", sans-serif !important'
-              }}
-            >
-              Daniel Mustermann 1
-            </Typography>
-            <Box
-              sx={{
-                height: '36px',
-                width: 'min-content',
-                padding: '8px',
-                cursor: 'pointer',
-                borderRadius: '50%',
-                '&:hover': {
-                  background: 'rgba(48,88,255,0.1)'
-                }
-              }}
-            >
-              <Image src={crossCircle} alt="cancel" height={20} width={20} />
-            </Box>
-          </Box>
-        </Box>
 
         {/* Area for the tab */}
 
         <Box
-          // component={motion.div}
-          // initial={{y: 50, opacity: 0}}
-          // animate={{y: 0, opacity: 1}}
-          // transition={{
-          //   duration: 0.2,
-          //   ease: 'easeOut',
-          //   delay: 0.1
-          // }}
-          // viewport={{once: true}}
           sx={{
-            // bgcolor: '#000',
             width: '100%',
             mt: '16px',
             display: 'flex',
@@ -236,7 +173,6 @@ export default function EventAddPopover({
           <Box
             sx={{
               width: '100%',
-              // maxWidth: '828px',
               bgcolor: '#ffffff',
               display: 'flex',
               alignItems: 'center',
@@ -256,7 +192,7 @@ export default function EventAddPopover({
                 top: 4,
                 bottom: 4,
                 // left: 4,
-                width: `calc((100% - 8px ) / 4)`,
+                width: `calc((100% - 8px ) / 3)`,
                 borderRadius: '999px',
                 background: '#4611F5',
                 // boxShadow: '0px 2px 6px 0px #fe0909ff',
@@ -275,8 +211,9 @@ export default function EventAddPopover({
                   textAlign: 'center',
                   p: '4px 0px',
                   cursor: 'pointer',
-                  zIndex: 2
-                  // background: 'red'
+                  zIndex: 2,
+                  display:
+                    item === 'Exam' || item === 'Prüfung' ? 'none' : 'block'
                 }}
               >
                 <Typography
@@ -368,14 +305,6 @@ export default function EventAddPopover({
         {/* </motion.div> */}
       </Box>
       <Box
-        // component={motion.div}
-        // initial={{y: 50, opacity: 0}}
-        // whileInView={{y: 0, opacity: 1}}
-        // transition={{
-        //   duration: 0.2,
-        //   ease: 'easeOut',
-        //   delay: 0.3
-        // }}
         sx={{
           width: '100%',
           display: 'flex',
@@ -400,39 +329,6 @@ export default function EventAddPopover({
         )}
       </Box>
 
-      {activeIndex < 3 && (
-        <Box
-          // component={motion.div}
-          // initial={{y: 50, opacity: 0}}
-          // whileInView={{y: 0, opacity: 1}}
-          // transition={{
-          //   duration: 0.2,
-          //   ease: 'easeOut',
-          //   delay: 0.4
-          // }}
-          sx={{width: '100%', textAlign: 'center'}}
-        >
-          <Typography
-            sx={{
-              ...localFont.inter16,
-              fontFamily: '"Inter", sans-serif !important',
-              mb: '10px',
-              fontWeight: 400
-            }}
-          >
-            {t('title1')}
-          </Typography>
-          <Typography
-            sx={{
-              ...localFont.inter14,
-              fontFamily: '"Inter", sans-serif !important',
-              fontWeight: 300
-            }}
-          >
-            {t('des1')}
-          </Typography>
-        </Box>
-      )}
       {activeIndex < 3 && (
         <Box
           sx={{
@@ -509,43 +405,6 @@ export default function EventAddPopover({
           ))}
         </Box>
       )}
-      <Box sx={{width: '100%'}}>
-        <Typography
-          sx={{
-            ...localFont.inter14,
-            fontFamily: '"Inter", sans-serif !important'
-          }}
-        >
-          {t('input2')}
-        </Typography>
-        <Box sx={{display: 'flex', gap: '4px', alignItems: 'center'}}>
-          <TimePickerValue
-            sx={{
-              ...(updateTime !== 0 && {
-                opacity: 0.5,
-                pointerEvents: 'none',
-                userSelect: 'none'
-              })
-            }}
-          />
-          <Image
-            src={arrow}
-            alt="arrow"
-            height={14}
-            width={14}
-            style={{marginTop: '8px'}}
-          />
-          <TimePickerValue
-            sx={{
-              ...(updateTime !== 0 && {
-                opacity: 0.5,
-                pointerEvents: 'none',
-                userSelect: 'none'
-              })
-            }}
-          />
-        </Box>
-      </Box>
 
       {activeIndex === 3 && (
         <Typography
