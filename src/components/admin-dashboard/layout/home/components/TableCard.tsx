@@ -49,7 +49,7 @@ export default function TableCard({
           '0px 0px 0px 1px #ffffff, 0px 1px 0px 0px rgba(0,0,0,0.25), 0px 1px 1px 0px rgba(0,0,0,0.25)',
         display: 'flex',
         flexDirection: 'column',
-        gap: ' 8px',
+        gap: '12px',
         overflow: 'hidden'
       }}
     >
@@ -100,7 +100,7 @@ export default function TableCard({
             {monthlyData.map((row, index) => (
               <TableRow
                 key={index}
-                sx={{'& td': {paddingTop: ' 8px', paddingBottom: ' 8px'}}}
+                sx={{'& td': {paddingTop: '10px', paddingBottom: '10px'}}}
               >
                 <TableCell
                   sx={{

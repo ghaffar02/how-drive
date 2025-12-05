@@ -27,8 +27,8 @@ function MetricItem({value, label, showDivider = true}: MetricItemProps) {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          gap: '4px',
-          mb: '24px',
+          gap: '10px',
+          mb: '25px',
           textAlign: 'center',
           alignItems: 'center'
         }}

@@ -9,10 +9,7 @@ import steering from '@/assets/svgs/steering.svg';
 import logo from '@/assets/pngs/logo.avif';
 import {useTranslations} from 'next-intl';
 
-import {motion} from 'framer-motion';
 import {StaticImageData} from 'next/image';
-
-const MotionBox = motion(Box);
 
 export type MessageItem = {
   icon: StaticImageData | string;
@@ -68,7 +65,7 @@ export default function Messages({setActiveKey, messages}: Props) {
       >
         {t('Messages')}
       </Typography>
-      <MotionBox
+      <Box
         sx={{
           overflowY: 'auto',
           overflowX: 'hidden',
@@ -80,10 +77,6 @@ export default function Messages({setActiveKey, messages}: Props) {
           msOverflowStyle: 'none',
           scrollbarWidth: 'none'
         }}
-        initial={{opacity: 0}}
-        animate={{opacity: 1}}
-        transition={{duration: 0.4, delay: 0.4, ease: 'easeInOut'}}
-        viewport={{once: true}}
       >
         <Box
           sx={{
@@ -211,7 +204,7 @@ export default function Messages({setActiveKey, messages}: Props) {
             );
           })}
         </Box>
-      </MotionBox>
+      </Box>
     </Box>
   );
 }
