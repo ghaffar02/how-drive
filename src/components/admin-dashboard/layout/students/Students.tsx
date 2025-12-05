@@ -25,6 +25,7 @@ import Image from 'next/image';
 import searchIcon from '@/assets/svgs/dashboard-student/searchIcon.svg';
 import arrowDown from '@/assets/svgs/dashboard-student/arrow.svg';
 import deleteIcon from '@/assets/svgs/dashboard-student/deleteIcon.svg';
+import downloadIcon from '@/assets/svgs/downloadIcon.svg';
 import localFont from '@/utils/themes';
 
 interface Student {
@@ -385,6 +386,65 @@ export default function Students() {
   const filteredSignups = uniqueSignups.filter((signup) =>
     signup.toLowerCase().includes(signupSearchQuery.toLowerCase())
   );
+
+  // CSV Export function
+  const handleExportCSV = () => {
+    const headers = [
+      'Number',
+      'Name',
+      'LastName',
+      'Birthday',
+      'Email',
+      'Phone',
+      'City',
+      'Class',
+      'Rewrite',
+      'School',
+      'Status',
+      'Signup',
+      'Steps',
+      'Theory',
+      'Driving'
+    ];
+
+    const csvContent = [
+      headers.join(','),
+      ...filteredStudents.map((student) =>
+        [
+          student.number,
+          student.name,
+          student.lastName,
+          student.birthday,
+          student.email,
+          student.phone,
+          student.city,
+          student.class,
+          student.rewrite,
+          student.school,
+          student.status,
+          student.signup,
+          student.steps,
+          student.theory,
+          student.driving
+        ]
+          .map((field) => `"${String(field).replace(/"/g, '""')}"`)
+          .join(',')
+      )
+    ].join('\n');
+
+    const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    link.setAttribute('href', url);
+    link.setAttribute(
+      'download',
+      `students_${new Date().toISOString().split('T')[0]}.csv`
+    );
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <Box
@@ -1487,6 +1547,41 @@ export default function Students() {
               8
             </MenuItem>
           </TextField>
+
+          {/* Download Button */}
+          <IconButton
+            onClick={handleExportCSV}
+            sx={{
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              background: 'rgba(255, 255, 255, 0.75)',
+              boxShadow:
+                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
+              '&:hover': {
+                background: 'rgba(255, 255, 255, 0.9)'
+              },
+              flexShrink: 0
+            }}
+          >
+            <Box
+              sx={{
+                width: '20px',
+                height: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                position: 'relative',
+                '& img': {
+                  filter:
+                    'brightness(0) saturate(100%) invert(29%) sepia(7%) saturate(2000%) hue-rotate(200deg) brightness(95%) contrast(90%)',
+                  opacity: 1
+                }
+              }}
+            >
+              <Image src={downloadIcon} alt="download" width={20} height={20} />
+            </Box>
+          </IconButton>
         </Box>
 
         {/* Table Container */}
@@ -2400,6 +2495,32 @@ export default function Students() {
                   }}
                 >
                   Save
+                </Button>
+                <Button
+                  variant="contained"
+                  startIcon={
+                    <Image
+                      src={downloadIcon}
+                      alt="export"
+                      width={16}
+                      height={16}
+                      style={{filter: 'brightness(0) invert(1)'}}
+                    />
+                  }
+                  sx={{
+                    background: '#4611f5',
+                    color: '#fff',
+                    borderRadius: '8px',
+                    padding: '10px 20px',
+                    textTransform: 'none',
+                    fontSize: '14px',
+                    fontFamily: '"Inter", sans-serif !important',
+                    '&:hover': {
+                      background: '#300ca8'
+                    }
+                  }}
+                >
+                  Export
                 </Button>
                 <Button
                   variant="contained"

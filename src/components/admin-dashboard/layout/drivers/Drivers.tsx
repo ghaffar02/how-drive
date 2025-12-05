@@ -27,6 +27,7 @@ import Image from 'next/image';
 import searchIcon from '@/assets/svgs/dashboard-student/searchIcon.svg';
 import arrowDown from '@/assets/svgs/dashboard-student/arrow.svg';
 import deleteIcon from '@/assets/svgs/dashboard-student/deleteIcon.svg';
+import downloadIcon from '@/assets/svgs/downloadIcon.svg';
 import localFont from '@/utils/themes';
 
 interface Driver {
@@ -285,6 +286,50 @@ export default function Drivers() {
   const filteredSignups = uniqueSignups.filter((signup) =>
     signup.toLowerCase().includes(signupSearchQuery.toLowerCase())
   );
+
+  // CSV Export function
+  const handleExportCSV = () => {
+    const headers = [
+      'Number',
+      'Name',
+      'LastName',
+      'Email',
+      'Phone',
+      'Class',
+      'School',
+      'Status',
+      'Signup'
+    ];
+
+    const csvContent = [
+      headers.join(','),
+      ...filteredDrivers.map((driver) =>
+        [
+          driver.number,
+          driver.name,
+          driver.lastName,
+          driver.email,
+          driver.phone,
+          driver.class,
+          driver.school,
+          driver.status,
+          driver.signup
+        ]
+          .map((field) => `"${String(field).replace(/"/g, '""')}"`)
+          .join(',')
+      )
+    ].join('\n');
+
+    const blob = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(blob);
+    link.setAttribute('href', url);
+    link.setAttribute('download', `trainers_${new Date().toISOString().split('T')[0]}.csv`);
+    link.style.visibility = 'hidden';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <Box
@@ -914,6 +959,43 @@ export default function Drivers() {
               </MenuItem>
             )}
           </TextField>
+
+          {/* Download Button */}
+          <IconButton
+            onClick={handleExportCSV}
+            sx={{
+              width: '40px',
+              height: '40px',
+              borderRadius: '50%',
+              background: 'rgba(255, 255, 255, 0.75)',
+              boxShadow:
+                '0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 1px 0px 0px rgba(0, 0, 0, 0.05), 0px 2px 4px 0px rgba(0, 0, 0, 0.08)',
+              '&:hover': {
+                background: 'rgba(255, 255, 255, 0.9)'
+              },
+              flexShrink: 0
+            }}
+          >
+            <Box
+              sx={{
+                width: '20px',
+                height: '20px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                '& img': {
+                  filter: 'brightness(0) saturate(100%) invert(29%) sepia(7%) saturate(2000%) hue-rotate(200deg) brightness(95%) contrast(90%)'
+                }
+              }}
+            >
+              <Image
+                src={downloadIcon}
+                alt="download"
+                width={20}
+                height={20}
+              />
+            </Box>
+          </IconButton>
         </Box>
 
         {/* Table Container */}
@@ -1656,6 +1738,32 @@ export default function Drivers() {
                   }}
                 >
                   Save
+                </Button>
+                <Button
+                  variant="contained"
+                  startIcon={
+                    <Image
+                      src={downloadIcon}
+                      alt="export"
+                      width={16}
+                      height={16}
+                      style={{filter: 'brightness(0) invert(1)'}}
+                    />
+                  }
+                  sx={{
+                    background: '#4611f5',
+                    color: '#fff',
+                    borderRadius: '8px',
+                    padding: '10px 20px',
+                    textTransform: 'none',
+                    fontSize: '14px',
+                    fontFamily: '"Inter", sans-serif !important',
+                    '&:hover': {
+                      background: '#300ca8'
+                    }
+                  }}
+                >
+                  Export
                 </Button>
                 <Button
                   variant="contained"
