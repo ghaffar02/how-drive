@@ -237,7 +237,7 @@ export default function Inbox() {
             minHeight: '24px',
             width: '100%',
             borderRadius: '18px',
-            background: '#ffffffbf',
+            // background: '#ffffffbf',
             display: {xs: 'flex', md: 'none'},
             p: '2px',
             alignItems: 'center',
@@ -270,9 +270,10 @@ export default function Inbox() {
             padding: {xs: '16px', md: '24px'},
             border: '2px solid #fff',
             borderRadius: '18px',
-            background: '#FAF8FE',
+            background: '#ffffffbf',
             display: 'flex',
             gap: '16px'
+            // bgcolor: 'red'
             // height: '84px'
           }}
         >

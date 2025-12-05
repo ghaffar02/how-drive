@@ -270,7 +270,8 @@ export default function Inbox() {
             padding: {xs: '16px', md: '24px'},
             border: '2px solid #fff',
             borderRadius: '18px',
-            background: '#FAF8FE',
+            // background: '#FAF8FE',
+            background: '#ffffffbf',
             display: 'flex',
             gap: '16px'
             // height: '84px'
