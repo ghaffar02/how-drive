@@ -4,35 +4,104 @@ import FAQHeader from './components/FAQHeader';
 import FAQList from './components/FAQList';
 import FAQForm from './components/FAQForm';
 
+interface FAQItem {
+  id: number;
+  germanQuestion: string;
+  germanAnswer: string;
+  englishQuestion: string;
+  englishAnswer: string;
+}
+
 export default function Support() {
-  const [activeTab, setActiveTab] = useState('Help Articles');
-  
+  const [activeTab, setActiveTab] = useState('FAQ Homepage');
+  const [selectedFAQ, setSelectedFAQ] = useState<FAQItem | null>(null);
+
   return (
     <Box
       sx={{
-        // background: 'transparent',
         border: '2px solid #fff',
         borderRadius: {xs: '24px', md: '0px 24px 24px 0px'},
-        
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
         gap: '24px',
-        justifyContent: {md: 'flex-start'},
         padding: {xs: '20px', md: '24px'},
         height: {xs: 'calc(100vh - 194px)', md: '100%'},
-        overflow: 'auto',
-        scrollbarWidth: 'none',
-        msOverflowStyle: 'none',
-        '&::-webkit-scrollbar': {
-          display: 'none'
-        }
+        overflow: 'hidden'
       }}
     >
-      <FAQHeader activeTab={activeTab} onTabChange={setActiveTab} />
-      <FAQList />
-      
+      {/* Header Section - Stays at top */}
+      <Box
+        sx={{
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center'
+        }}
+      >
+        <FAQHeader
+          activeTab={activeTab}
+          onTabChange={(tab) => {
+            setActiveTab(tab);
+            setSelectedFAQ(null); // Clear selection when tab changes
+          }}
+        />
+      </Box>
+
+      {/* Content Section - Left (FAQ List) and Right (FAQ Form) */}
+      <Box
+        sx={{
+          width: '100%',
+          display: 'flex',
+          flexDirection: {xs: 'column', md: 'row'},
+          gap: '24px',
+          flex: 1,
+          overflow: 'hidden',
+          minHeight: 0
+        }}
+      >
+        {/* Left Side - FAQ List */}
+        <Box
+          sx={{
+            flex: {xs: '1 1 auto', md: '1 1 60%'},
+            minWidth: 0,
+            overflow: 'auto',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+            '&::-webkit-scrollbar': {
+              display: 'none'
+            }
+          }}
+        >
+          <FAQList
+            onEdit={(item) => setSelectedFAQ(item)}
+            selectedFAQId={selectedFAQ?.id}
+            activeTab={activeTab}
+          />
+        </Box>
+
+        {/* Right Side - FAQ Form */}
+        <Box
+          sx={{
+            flex: {xs: '1 1 auto', md: '1 1 40%'},
+            minWidth: 0,
+            display: 'flex',
+            flexDirection: 'column'
+          }}
+        >
+          <FAQForm
+            activeTab={activeTab}
+            initialData={selectedFAQ || undefined}
+            onSave={(data) => {
+              console.log('Save data:', data);
+              // Reset selection after save
+              setSelectedFAQ(null);
+            }}
+            onAddNew={() => {
+              setSelectedFAQ(null);
+            }}
+          />
+        </Box>
+      </Box>
     </Box>
   );
 }
