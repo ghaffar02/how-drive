@@ -11,7 +11,7 @@ const tabs = [
   'FAQ Students',
   'FAQ Schools',
   'FAQ Trainers',
-  'Help Articles'
+  'Emails'
 ];
 
 export default function FAQHeader({activeTab, onTabChange}: FAQHeaderProps) {

@@ -344,88 +344,15 @@ const faqDataByCategory: Record<string, FAQItem[]> = {
         'Go to "Calendar" and select appointment scheduling. The system automatically updates your schedule. Driving schools can also view and update your appointment scheduling. These changes will also be displayed to you.'
     }
   ],
-  'Help Articles': [
+  'Emails': [
     {
       id: 1,
-      germanQuestion: 'Was ist WieFührerschein?',
+      germanQuestion: 'Setzen Sie Ihr Passwort zurück',
       germanAnswer:
-        'WieFührerschein ist ein Service, um Fahrschüler und Fahrschulen auf einer zentralen Plattform zu verbinden. Fahrschüler können hier ihren Lernfortschritt verfolgen, Termine buchen und mit ihrer Fahrschule kommunizieren. Fahrschulen nutzen unsere Plattform, um ihre Schüler zu verwalten, Termine zu koordinieren und ihre Kommunikation zu optimieren.',
-      englishQuestion: 'What is WieFührerschein?',
+        'Hallo [User\'s First Name],\n\nWir haben eine Anfrage erhalten, Ihr Passwort auf [Your Website Name] zurückzusetzen. Wenn Sie diese Anfrage nicht gestellt haben, können Sie diese E-Mail einfach ignorieren. Ihr Konto ist sicher.\n\nUm Ihr Passwort zurückzusetzen, klicken Sie bitte auf den folgenden Link:\n[Passwort zurücksetzen Link]\n\nDieser Link ist aus Sicherheitsgründen [Zeitlimit, z. B. 30 Minuten] gültig. Wenn Sie das Passwort nicht innerhalb dieses Zeitrahmens zurücksetzen, müssen Sie eine neue Anfrage für das Zurücksetzen des Passworts stellen.\n\nBei Fragen oder Problemen können Sie sich gerne an unser Support-Team unter [Support E-Mail] wenden.\n\nMit freundlichen Grüßen,\nDas Team von [Your Website Name]',
+      englishQuestion: 'Reset Your Password',
       englishAnswer:
-        'WieFührerschein is a service that connects driving students and driving schools on a central platform. Students can track their learning progress, book appointments, and communicate with their driving school. Driving schools use our platform to manage their students, coordinate appointments, and optimize their communication.'
-    },
-    {
-      id: 2,
-      germanQuestion: 'Wo muss ich hin um meinen Führerschein zu beantragen?',
-      germanAnswer:
-        'Den Antrag reichst du bei der für deinen Wohnsitz zuständigen Fahrerlaubnisbehörde ein. Bei Eingabe deines Wohnsitzes zeigen wir dir, welche Behörde für dich zuständig ist. Außerdem kann deine Fahrschule dich bei diesem Schritt oft unterstützen.',
-      englishQuestion: "What do I need to apply for a driver's license?",
-      englishAnswer:
-        "To apply for a driver's license, you will generally need the following documents: • Identity card or passport • Biometric passport photo • Eye test certificate (not older than two years) • Proof of participation in a first aid course • If applicable, registration confirmation from your driving school"
-    },
-    {
-      id: 3,
-      germanQuestion: 'Was brauche ich um den Führerschein zu beantragen?',
-      germanAnswer:
-        'Um einen Führerschein zu beantragen, benötigst du in der Regel folgende Unterlagen: • Personalausweis oder Reisepass • Biometrisches Passfoto • Sehtestbescheinigung (nicht älter als zwei Jahre) • Nachweis über die Teilnahme an einem Erste-Hilfe-Kurs • ggf. die Anmeldebestätigung deiner Fahrschule',
-      englishQuestion:
-        "Where do I have to go to apply for my driver's license?",
-      englishAnswer:
-        "You submit the application to the driver's license authority responsible for your place of residence. When you enter your place of residence, we will show you which authority is responsible for you. Your driving school can often also assist you with this step."
-    },
-    {
-      id: 4,
-      germanQuestion: 'Welche Auto Führerschein Klassen gibt es?',
-      germanAnswer:
-        'Es gibt sechs Führerscheinklassen, nämlich A, B, C, D, l und T. Die gängigsten Autoführerscheine sind die Klassen B und BF17. • Klasse B: Damit darfst du Kraftfahrzeuge bis 3,5 Tonnen Gesamtmasse fahren. Das Mindestalter beträgt 18 Jahre. • Klasse BF17: Das ist das „Begleitete Fahren ab 17". Hier gelten die gleichen Bedingungen wie bei Klasse B, aber du darfst nur in Begleitung einer eingetragenen Person fahren. Auf unserer Website im Bereich Führerscheinklassen kannst du alle Klassen und ihre Unterschiede sehen.',
-      englishQuestion: 'What driving license classes are there?',
-      englishAnswer:
-        "There are six driver's license classes: A, B, C, D, I, and T. The most common car driver's licenses are classes B and BF17. • Class B: This allows you to drive motor vehicles with a gross vehicle weight of up to 3.5 tons. The minimum age is 18. • Class BF17: This is \"accompanied driving from 17.\" The same conditions apply as for class B, but you may only drive if accompanied by a registered adult. You can see all the classes and their differences on our website in the driver's license classes section."
-    },
-    {
-      id: 5,
-      germanQuestion: 'Wie viele Theoriestunden muss man machen?',
-      germanAnswer:
-        'Die Anzahl der Theoriestunden hängt von der Führerscheinklasse ab. Für die Klassen A und B sind 12 Doppelstunden Grundstoff und 2 Doppelstunden klassenspezifischer Unterricht vorgeschrieben. Bei einer Erweiterung (z. B. wenn du bereits einen Führerschein haben) reduziert sich die Anzahl der Gesamtstunden auf 8. Die Gesamtstunden für die Klasse C beträgt 18 und für die Klasse D 20 Stunden.',
-      englishQuestion: 'How many theory lessons do you have to take?',
-      englishAnswer:
-        "The number of theory lessons depends on the driver's license class. For classes A and B, 12 double lessons of basic theory and two double lessons of class-specific instruction are required. If you extend your license (e.g., if you already have a driver's license), the total number of lessons is reduced to 8. The total number of lessons for class C is 18, and for class D, 20."
-    },
-    {
-      id: 6,
-      germanQuestion: 'Wie viele Fahrstunden muss man machen?',
-      germanAnswer:
-        'Es gibt keine Mindestanzahl an normalen Übungsstunden – diese richtet sich nach deinem Lernfortschritt und dein Fahrlehrer entscheidet, wann du bereit für die Prüfung bist. Zusätzlich sind folgende Sonderfahrten gesetzlich vorgeschrieben: • Klasse A: 12 Sonderfahrten • Klasse b: 12 Sonderfahrten • Klasse C: 10 Sonderfahrten • Klasse D: 10 Sonderfahrten',
-      englishQuestion: 'How many driving lessons do you have to take?',
-      englishAnswer:
-        'There is no minimum number of regular practice sessions – this depends on your learning progress, and your driving instructor will decide when you are ready for the test. In addition, the following special driving lessons are required by law: • Class A: 12 special driving lessons • Class B: 12 special driving lessons • Class C: 10 special driving lessons • Class D: 10 special driving lessons'
-    },
-    {
-      id: 7,
-      germanQuestion: 'Wie bekomme ich meinen Führerschein nach der Prüfung?',
-      germanAnswer:
-        'Nach bestandener Praxisprüfung bekommst du deinen Führerschein entweder direkt vom Prüfer oder einige Tage später per Post oder Abholung bei der Fahrerlaubnisbehörde – je nach Region unterschiedlich.',
-      englishQuestion: "How do I get my driver's license after the test?",
-      englishAnswer:
-        'After passing the practical test, you will receive your driving license either directly from the examiner or a few days later by mail or by picking it up from the driving license authority – this varies depending on the region.'
-    },
-    {
-      id: 8,
-      germanQuestion: 'Wann muss mein Führerschein umgetauscht werden?',
-      germanAnswer:
-        'Alle Führerscheine, die vor dem 19. Januar 2013 ausgestellt wurden, müssen stufenweise in den neuen EU-Kartenführerschein umgetauscht werden. Die Fristen sind nach Ihrem Geburtsjahr oder dem Ausstellungsdatum des Führerscheins gestaffelt. In der Regel muss der neue Führerschein alle 15 Jahre erneuert werden, wobei die Fahrerlaubnis selbst unbefristet bleibt.',
-      englishQuestion: "When does my driver's license need to be exchanged?",
-      englishAnswer:
-        'All driving licenses issued before January 19, 2013, must be gradually exchanged for the new EU card-based driving license. The deadlines are staggered according to your year of birth or the date the driving license was issued. As a general rule, the new driving license must be renewed every 15 years, although the driving license itself remains valid for an unlimited period.'
-    },
-    {
-      id: 9,
-      germanQuestion: 'Wie schreibt man einen Führerschein um?',
-      germanAnswer:
-        'Ein ausländischer Führerschein ist in Deutschland nur für eine begrenzte Zeit gültig (meist 6 Monate nach Wohnsitznahme). Je nach Herkunftsland deines Führerscheins kann eine theoretische und/oder praktische Prüfung erforderlich sein. Es gibt Ausnahmen, wenn zwischen Deutschland und dem Ausstellerstaat ein Abkommen über die gegenseitige Anerkennung besteht. Für die Umschreibung muss du bei der zuständigen Führerscheinstelle deines Wohnorts einen Antrag auf Umschreibung stellen. Wir begleiten dich Schritt für Schritt durch diesen Prozess bei der Anmeldung in unserer Website.',
-      englishQuestion: "How do you rewrite/convert a driver's license?",
-      englishAnswer:
-        "A foreign driver's license is only valid in Germany for a limited period of time (usually six months after taking up residence). Depending on the country of origin of your driver's license, a theory and/or practical test may be required. Exceptions apply if a mutual recognition agreement exists between Germany and the issuing country. To convert your license, you must submit an application to the relevant driver's license office in your place of residence. We will guide you step by step through this process during the registration process on our website."
+        'Hello [User\'s First Name],\n\nWe\'ve received a request to reset the password for your account on [Your Website Name]. If you didn\'t request this, please ignore this email. Your account is safe.\n\nTo reset your password, click the link below:\n[Reset Password Link]\n\nThis link will expire in [Time Limit, e.g., 30 minutes] for your security. If you don\'t reset your password within this time frame, you\'ll need to request a new password reset.\n\nIf you have any questions or need further assistance, feel free to reach out to our support team at [Support Email].\n\nBest regards,\nThe [Your Website Name] Team'
     }
   ]
 };
@@ -579,7 +506,8 @@ export default function FAQList({
                       fontWeight: 400,
                       color: '#2D3748',
                       fontFamily: '"Inter", sans-serif',
-                      lineHeight: '1.6'
+                      lineHeight: '1.6',
+                      whiteSpace: 'pre-line'
                     }}
                   >
                     {item.germanAnswer}
@@ -614,7 +542,8 @@ export default function FAQList({
                       fontWeight: 400,
                       color: '#2D3748',
                       fontFamily: '"Inter", sans-serif',
-                      lineHeight: '1.6'
+                      lineHeight: '1.6',
+                      whiteSpace: 'pre-line'
                     }}
                   >
                     {item.englishAnswer}
