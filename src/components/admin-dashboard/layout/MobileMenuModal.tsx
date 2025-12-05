@@ -4,7 +4,7 @@ import {Box} from '@mui/material';
 import Image from 'next/image';
 import cross from '@/assets/svgs/dashboard-student/cross.svg';
 import logo from '@/assets/pngs/logo.png';
-import ProfileDropdown from '../../student-dashboard/layout/ProfileDropdown';
+// import ProfileDropdown from '../../student-dashboard/layout/ProfileDropdown';
 // dropdown icons
 import setting from '@/assets/svgs/dashboard-student/setting.svg';
 import settingsIconBold from '@/assets/svgs/dashboard-student/settingsIconBold.svg';
@@ -12,7 +12,8 @@ import email from '@/assets/svgs/dashboard-student/email.svg';
 import supportIconBold from '@/assets/svgs/dashboard-student/supportIconBold.svg';
 import login from '@/assets/svgs/dashboard-student/login.svg';
 import logoutIconBold from '@/assets/svgs/dashboard-student/logoutIconBold.svg';
-import {useTranslations} from 'next-intl';
+import ProfileDropdown from './ProfileDropdown';
+// import {useTranslations} from 'next-intl';
 
 type Props = {
   onClose: () => void;
@@ -21,25 +22,25 @@ type Props = {
 const Azdata = [
   {
     id: '',
-    label: 'Einstellungen',
+    label: 'Settings',
     menuIcon: setting,
     iconHover: settingsIconBold
   },
   {id: '', label: 'Support', menuIcon: email, iconHover: supportIconBold},
-  {id: '', label: 'Abmelden', menuIcon: login, iconHover: logoutIconBold}
+  {id: '', label: 'Logout', menuIcon: login, iconHover: logoutIconBold}
 ];
 export default function MobileMenuModal({onClose}: Props) {
   // dropdown state + ref
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLDivElement>(null!);
-  const initials = 'Hans zustermann';
+  const initials = 'Admin';
 
-  const t = useTranslations('Dashboard.DesktopTabs');
-  const ADdata = t.raw('data2');
-  const profileData = Azdata.map((item, index) => ({
-    ...item,
-    label: ADdata[index]?.label || item.label
-  }));
+  // const t = useTranslations('Dashboard.DesktopTabs');
+  // const ADdata = t.raw('data2');
+  // const profileData = Azdata.map((item, index) => ({
+  //   ...item,
+  //   label: ADdata[index]?.label || item.label
+  // }));
   return (
     <>
       <Box
@@ -74,7 +75,7 @@ export default function MobileMenuModal({onClose}: Props) {
           <Box sx={{height: '40px', width: '40px'}}>
             <ProfileDropdown
               fullName={initials}
-              items={profileData}
+              items={Azdata}
               open={open}
               setOpen={setOpen}
               anchorRef={anchorRef}

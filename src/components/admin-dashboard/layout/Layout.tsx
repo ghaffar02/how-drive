@@ -5,7 +5,7 @@ import TabStudentLayout from './DesktopTabs';
 import TabStudentLayoutMobile from './MobileTabs';
 import Home from './home/Home';
 import localFont from '@/utils/themes';
-import ProfileDropdown from '../../student-dashboard/layout/ProfileDropdown';
+// import ProfileDropdown from '../../student-dashboard/layout/ProfileDropdown';
 // ProfileDropdown relative icons
 import settingsIcon from '@/assets/svgs/dashboard-student/setting.svg';
 import supportIcon from '@/assets/svgs/dashboard-student/email.svg';
@@ -19,10 +19,11 @@ import Drivers from './drivers/Drivers';
 import Message from './messages/Message';
 import {useTranslations} from 'next-intl';
 import Schools from './schools/Schools';
+import ProfileDropdown from './ProfileDropdown';
 const data = [
-  {id: '5', label: 'Einstellungen', menuIcon: settingsIcon},
+  {id: '5', label: 'Settings', menuIcon: settingsIcon},
   {id: '6', label: 'Support', menuIcon: supportIcon},
-  {id: '8', label: 'Abmelden', menuIcon: logoutIcon}
+  {id: '8', label: 'Logout', menuIcon: logoutIcon}
 ];
 
 export default function AdminDashboard() {
@@ -171,12 +172,12 @@ function MobileHeader({
   setActiveKey
 }: MobileHeaderProps) {
   const t = useTranslations('Dashboard.DesktopTabs');
-  const ADdata = t.raw('data2');
+  // const ADdata = t.raw('data2');
 
-  const profileData = data.map((item, index) => ({
-    ...item,
-    label: ADdata[index]?.label || item.label
-  }));
+  // const profileData = data.map((item, index) => ({
+  //   ...item,
+  //   label: ADdata[index]?.label || item.label
+  // }));
   return (
     <>
       {/* the profile tab for mobile  */}
@@ -216,8 +217,8 @@ function MobileHeader({
         <Box sx={{width: 'fit-content'}}>
           <ProfileDropdown
             anchorRef={anchorRef}
-            fullName="Daniel Mustermann"
-            items={profileData}
+            fullName="Admin"
+            items={data}
             open={open}
             setOpen={setOpen}
             positionSx={{

@@ -20,11 +20,13 @@ import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
 import driver_black from '@/assets/svgs/dashboard-student/driver_black.svg';
 import driver_blue from '@/assets/svgs/dashboard-student/driver_blue.svg';
 import driver_bold from '@/assets/svgs/dashboard-student/driver_bold.svg';
+import school_black from '@/assets/svgs/dashboard-student/school-black.svg';
+import school_bold from '@/assets/svgs/dashboard-student/school-bold.svg';
+import schoolblue from '@/assets/svgs/dashboard-student/schoolblue.svg';
 
 // import menu from '@/assets/svgs/dashboard-student/menu.svg';
 
 import InfoMenuModal from './InfoMenuModal';
-import {useTranslations} from 'next-intl';
 
 type Props = {
   activeKey: string;
@@ -51,14 +53,29 @@ const navItems: NavItem[] = [
   },
   {
     key: '2',
-    label: 'timer',
+    label: 'Students',
     iconBlack: timer_black,
     iconBlue: timer_blue,
     iconHover: timer_bold
   },
   {
+    key: '9',
+    label: 'Schools',
+    iconBlack: school_black,
+    iconBlue: schoolblue,
+    iconHover: school_bold
+  },
+
+  {
+    key: '7',
+    label: 'Trainer',
+    iconBlack: driver_black,
+    iconBlue: driver_blue,
+    iconHover: driver_bold
+  },
+  {
     key: '3',
-    label: 'calendar',
+    label: 'bookings',
     iconBlack: calander_black,
     iconBlue: calander_blue,
     iconHover: calander_bold
@@ -69,20 +86,6 @@ const navItems: NavItem[] = [
     iconBlack: message_black,
     iconBlue: message_blue,
     iconHover: message_bold
-  },
-  // {
-  //   key: '5',
-  //   label: 'Infos',
-  //   iconBlack: infos_black,
-  //   iconBlue: infos_black,
-  //   iconHover: infos_black
-  // },
-  {
-    key: '7',
-    label: 'Trainer',
-    iconBlack: driver_black,
-    iconBlue: driver_blue,
-    iconHover: driver_bold
   }
 ];
 export default function MobileTabs({
@@ -92,13 +95,13 @@ export default function MobileTabs({
   setHoverKey
 }: Props) {
   const [menuOpen, setMenuOpen] = useState(false);
-  const t = useTranslations('SchoolDashboard.DesktopTabs');
-  const data = t.raw('data');
+  // const t = useTranslations('SchoolDashboard.DesktopTabs');
+  // const data = t.raw('data');
 
-  const updateItems = navItems.map((item, index) => ({
-    ...item,
-    label: data[index]?.label || item.label
-  }));
+  // const updateItems = navItems.map((item, index) => ({
+  //   ...item,
+  //   label: data[index]?.label || item.label
+  // }));
 
   return (
     <>
@@ -128,7 +131,7 @@ export default function MobileTabs({
             display: 'flex'
           }}
         >
-          {updateItems.map((item) => {
+          {navItems.map((item) => {
             const isActive = activeKey === item.key;
             const isHover = hoverKey === item.key;
             const iconSrc = isActive

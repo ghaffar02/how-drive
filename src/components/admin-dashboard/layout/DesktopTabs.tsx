@@ -8,10 +8,11 @@ import logo from '@/assets/pngs/logo.svg';
 import home_black from '@/assets/svgs/dashboard-student/home_black.svg';
 import home_bold from '@/assets/svgs/dashboard-student/home_bold.svg';
 import home_blue from '@/assets/svgs/dashboard-student/home_blue.svg';
+import timer_bold from '@/assets/svgs/users-bold.svg';
 import timer_black from '@/assets/svgs/stdIcon.svg';
 import school_black from '@/assets/svgs/dashboard-student/school-black.svg';
-import timer_bold from '@/assets/svgs/users-bold.svg';
 import school_bold from '@/assets/svgs/dashboard-student/school-bold.svg';
+import schoolblue from '@/assets/svgs/dashboard-student/schoolblue.svg';
 import timer_blue from '@/assets/svgs/activeStdIcon.svg';
 import calander_black from '@/assets/svgs/dashboard-student/calander_black.svg';
 import calander_bold from '@/assets/svgs/dashboard-student/calander_bold.svg';
@@ -20,7 +21,6 @@ import message_black from '@/assets/svgs/dashboard-student/message_black.svg';
 import message_bold from '@/assets/svgs/messagehover.svg';
 import message_blue from '@/assets/svgs/dashboard-student/message_blue.svg';
 import driver_black from '@/assets/svgs/dashboard-student/driver_black.svg';
-import schoolblue from '@/assets/svgs/dashboard-student/schoolblue.svg';
 import driver_blue from '@/assets/svgs/dashboard-student/driver_blue.svg';
 import driver_bold from '@/assets/svgs/dashboard-student/driver_bold.svg';
 
@@ -31,10 +31,11 @@ import email from '@/assets/svgs/dashboard-student/email.svg';
 import supportIconBold from '@/assets/svgs/dashboard-student/supportIconBold.svg';
 import login from '@/assets/svgs/dashboard-student/login.svg';
 import logoutIconBold from '@/assets/svgs/dashboard-student/logoutIconBold.svg';
+import ProfileDropdown from './ProfileDropdown';
 
 // your independent dropdown
-import ProfileDropdown from '../../student-dashboard/layout/ProfileDropdown';
-import {useTranslations} from 'next-intl';
+// import ProfileDropdown from '../../student-dashboard/layout/ProfileDropdown';
+// import {useTranslations} from 'next-intl';
 type Props = {
   activeKey: string;
   setActiveKey: React.Dispatch<React.SetStateAction<string>>;
@@ -103,11 +104,11 @@ export default function DesktopTabs({
   ];
 
   // profile initials
-  const initials = 'aohn zoe example';
+  const initials = 'Admin';
   const Azdata = [
     {
       id: '5',
-      label: 'Einstellungen',
+      label: 'Settings',
       menuIcon: setting,
       menuIconHover: settingsIconBold
     },
@@ -117,7 +118,7 @@ export default function DesktopTabs({
       menuIcon: email,
       menuIconHover: supportIconBold
     },
-    {id: '7', label: 'Abmelden', menuIcon: login, menuIconHover: logoutIconBold}
+    {id: '7', label: 'Logout', menuIcon: login, menuIconHover: logoutIconBold}
   ];
   // const t = useTranslations('SchoolDashboard.DesktopTabs');
   // const data = t.raw('data');
