@@ -19,7 +19,7 @@
     "date-fns": "^4.1.0",
     "dayjs": "^1.11.18",
     "framer-motion": "^12.23.12",
-    "next": "^15.5.0",
+    "next": "^16.0.7",
     "next-intl": "^4.0.0",
     "react": "^19.0.0",
     "react-big-calendar": "^1.19.4",
