@@ -2874,6 +2874,377 @@
           }
         ]
       }
+    ],
+    "forTrainersData": [
+      {
+        "title": "Overview",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "paragraph",
+            "content": "trainers do not create their own accounts."
+          },
+          {
+            "type": "paragraph",
+            "content": " Your driving school creates an account for you and assigns you to students."
+          },
+          {
+            "type": "heading",
+            "content": "Overview"
+          },
+          {
+            "type": "paragraph",
+            "content": "Your trainer dashboard gives you access to your students, appointments, availability, and messaging."
+          },
+          {
+            "type": "heading",
+            "content": "Dashboard sections"
+          },
+          {
+            "type": "heading",
+            "content": "1. Sidebar"
+          },
+          {
+            "type": "paragraph",
+            "content": "Shows access to:"
+          },
+          {
+            "type": "unorderedList",
+            "content": ["home", "students", "calendar", "message"]
+          }
+        ]
+      },
+      {
+        "title": "Top navigation bar",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "2. Home widgets"
+          },
+          {
+            "type": "paragraph",
+            "content": "The homepage shows key information:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "number of active and inactive students",
+              "profile of students",
+              "upcoming appointments",
+              "messages"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Overview widgets",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "3. Managing students"
+          },
+          {
+            "type": "paragraph",
+            "content": "You can quickly:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "add or accept a new student",
+              "view and edit their profile",
+              "track their progress"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "4. Calendar preview"
+          },
+          {
+            "type": "paragraph",
+            "content": "You can see appointments and set availability here."
+          },
+          {
+            "type": "heading",
+            "content": "5. Messages"
+          },
+          {
+            "type": "paragraph",
+            "content": "Shows all messages including unread ones from your school or students."
+          },
+          {
+            "type": "heading",
+            "content": "Managing Students"
+          },
+          {
+            "type": "paragraph",
+            "content": "Trainers can view the full lifecycle of each student and take some changes: inviting new students, editing profiles, tracking progress, and archiving completed students."
+          },
+          {
+            "type": "heading",
+            "content": "How to manage students"
+          },
+          {
+            "type": "heading",
+            "content": "1. Open the Students section"
+          },
+          {
+            "type": "heading",
+            "content": "Inviting students"
+          },
+          {
+            "type": "orderedList",
+            "content": [
+              "click on Plus icon above the student list",
+              "enter the email address of the student",
+              "click Send Invitation"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": "The invitation needs to be confirmed by the student. After confirmation, the student will be first appeared in the list of your driving school."
+          }
+        ]
+      },
+      {
+        "title": "Student invitation form",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "Viewing student profiles"
+          },
+          {
+            "type": "paragraph",
+            "content": "You can view:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "personal information",
+              "progress status",
+              "upcoming appointments",
+              "messages",
+              "completed theory and driving sessions"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "Tracking progress"
+          },
+          {
+            "type": "paragraph",
+            "content": "Schools can update steps such as:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "some steps for getting driving license",
+              "completed driving hours"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "Archiving students"
+          },
+          {
+            "type": "paragraph",
+            "content": "Use archiving when a student gets his/her driving license or leaves the school."
+          },
+          {
+            "type": "orderedList",
+            "content": [
+              "open the student profile",
+              "click on the toggle at the top-right corner"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "Scheduling Appointments"
+          },
+          {
+            "type": "paragraph",
+            "content": "Trainers can manage their personal availability and view all appointments assigned to them."
+          },
+          {
+            "type": "heading",
+            "content": "Setting your availability"
+          },
+          {
+            "type": "orderedList",
+            "content": [
+              "Go to Calendar section",
+              "Begin with the left side",
+              {
+                "text": "Select:",
+                "type": "dottedList",
+                "subItems": [
+                  "duration",
+                  "days of the week and time slots",
+                  "time of booking",
+                  "cancelation limit"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "School calendar",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "View appointments"
+          },
+          {
+            "type": "paragraph",
+            "content": "You can view all the appointments booked for you and edit your own driving sessions. Click on each day of the calendar to view the list of booked appointments on that specific day. Click on your driving-session-appointments to be able to edit the day or time of the appointment (available for the Premium pricing plan)."
+          }
+        ]
+      },
+      {
+        "title": "Cancel button",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "How to cancel a driving session"
+          },
+          {
+            "type": "orderedList",
+            "content": [
+              "Click on each appointment",
+              "Remove the name of the student from the list of participants",
+              "Click Save"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Cancel button",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "Book an appointment for a student"
+          },
+          {
+            "type": "paragraph",
+            "content": "Once availability has been determined, your students can book appointments with your driving school. You also have the option of booking appointments for your students yourself."
+          },
+          {
+            "type": "heading",
+            "content": "How to book an appointment"
+          },
+          {
+            "type": "heading",
+            "content": "1. Search for the name of the student in the student list and select the student"
+          },
+          {
+            "type": "heading",
+            "content": "2. Click on the Plus icon at the top-right of the appointments section"
+          }
+        ]
+      },
+      {
+        "title": "Teacher selection",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "3. Choose the type of appointment"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Driving (for driving lessons, shown with cyan in calendar)",
+              "Exam (for practical exam, shown with red in calendar)"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "4. Choose a date and time"
+          },
+          {
+            "type": "paragraph",
+            "content": "You will see all available slots."
+          }
+        ]
+      },
+      {
+        "title": "Send Messages",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "5. Confirm your booking"
+          },
+          {
+            "type": "paragraph",
+            "content": "Click Book."
+          },
+          {
+            "type": "heading",
+            "content": "Messaging"
+          },
+          {
+            "type": "paragraph",
+            "content": "The messaging system allows you to communicate directly with your students and driving school. Please note that the system is not a live chat."
+          },
+          {
+            "type": "heading",
+            "content": "How to send a message"
+          },
+          {
+            "type": "heading",
+            "content": "1. Go to the Messages tab"
+          },
+          {
+            "type": "heading",
+            "content": "2. Choose the conversation or click on Plus icon"
+          },
+          {
+            "type": "paragraph",
+            "content": "When clicking on Plus icon:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Select to whom you want to send the message",
+              "Add the topic of the message",
+              "Write your message",
+              "Add a file if you want"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Conversation list",
+        "content": [
+          {
+            "type": "heading",
+            "content": "3. Type your message"
+          },
+          {
+            "type": "paragraph",
+            "content": "Use the input field at the bottom."
+          },
+          {
+            "type": "heading",
+            "content": "4. Send your message"
+          },
+          {
+            "type": "paragraph",
+            "content": "Click Send."
+          },
+          {
+            "type": "paragraph",
+            "content": "Notifications will appear in your dashboard."
+          }
+        ]
+      }
     ]
   },
   "AboutUs": {
