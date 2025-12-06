@@ -50,6 +50,24 @@ export const routing = defineRouting({
     '/help': {
       de: '/hilfe'
     },
+    '/help/getting-started': {
+      de: '/hilfe/erste-schritte'
+    },
+    '/help/for-students': {
+      de: '/hilfe/fuer-fahrschueler'
+    },
+    '/help/for-schools': {
+      de: '/hilfe/fuer-fahrschulen'
+    },
+    '/help/for-trainers': {
+      de: '/hilfe/fuer-fahrlehrer'
+    },
+    '/help/data-policies': {
+      de: '/hilfe/datenrichtlinien'
+    },
+    '/help/troubleshooting': {
+      de: '/hilfe/fehlerbehebung'
+    },
     '/imprint': {
       de: '/impressum'
     },
