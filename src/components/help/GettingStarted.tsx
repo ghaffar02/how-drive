@@ -180,8 +180,11 @@ export default function GettingStarted({data, headerTitle = 'Getting Started'}: 
           >
             <Typography
               sx={{
-                ...localFont.h6,
-                fontFamily: 'Satoshi700 !important',
+                ...localFont.inter22,
+                fontWeight: 700,
+                textTransform: 'capitalize',
+                color: '#1A202C',
+                fontFamily: '"Inter", sans-serif !important',
                 textAlign: 'center'
               }}
             >
@@ -221,6 +224,7 @@ export default function GettingStarted({data, headerTitle = 'Getting Started'}: 
               }}
             >
               {/* Image Section */}
+              {item.image && (
               <Box
                 sx={{
                     
@@ -255,7 +259,7 @@ export default function GettingStarted({data, headerTitle = 'Getting Started'}: 
                   unoptimized={typeof item.image === 'string'}
                 />
               </Box>
-
+              )}
               {/* Text Section */}
               <Box
                 sx={{

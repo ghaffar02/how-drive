@@ -380,7 +380,7 @@ export default function Page() {
         </Box>
         <Box sx={{paddingTop: '80px'}}>
           <GettingStarted
-            headerTitle="Getting Started"
+            headerTitle="For students"
             data={gettingStartedData}
           />
         </Box>
