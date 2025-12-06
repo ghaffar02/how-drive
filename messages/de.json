@@ -2227,6 +2227,461 @@
           }
         ]
       }
+    ],
+    "forSchoolsData": [
+      {
+        "title": "Fahrschulprofil",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "Überblick"},
+          {
+            "type": "paragraph",
+            "content": "In den Einstellungen kannst du das Profil deiner Fahrschule bearbeiten, dein Logo hochladen und die Öffnungszeiten festlegen."
+          },
+          {
+            "type": "heading",
+            "content": "So bearbeitest du dein Fahrschulprofil"
+          },
+          {"type": "heading", "content": "1. Gehe zu „Einstellungen“"},
+          {
+            "type": "paragraph",
+            "content": "Wähle Fahrschulprofil im Bereich Einstellungen."
+          },
+          {"type": "heading", "content": "2. Bearbeite dein Schulprofil"},
+          {
+            "type": "paragraph",
+            "content": "Du kannst folgende Angaben ändern:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Name der Fahrschule",
+              "Adresse",
+              "Kontaktinformationen",
+              "Sprachen",
+              "Führerscheinklassen",
+              "Beschreibung"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Fahrschulprofil-Formular",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "3. Lade dein Logo hoch"},
+          {
+            "type": "paragraph",
+            "content": "Klicke auf „Logo hochladen“ und wähle ein Bild von deinem Gerät."
+          },
+          {"type": "heading", "content": "4. Lege deine Öffnungszeiten fest"},
+          {
+            "type": "paragraph",
+            "content": "Bestimme die Wochentage und Zeiten, an denen deine Schule geöffnet ist."
+          },
+          {"type": "heading", "content": "5. Speichere die Änderungen"},
+          {"type": "paragraph", "content": "Klicke auf „Speichern“."},
+          {"type": "heading", "content": ""},
+          {"type": "heading", "content": ""},
+          {"type": "heading", "content": "Dashboard-Überblick"},
+          {
+            "type": "paragraph",
+            "content": "Das Dashboard deiner Fahrschule ist das zentrale Verwaltungszentrum für Schüler, Fahrlehrer, Termine, Nachrichten und Abrechnung. Dieser Artikel erklärt alle Bereiche des Dashboards."
+          },
+          {"type": "heading", "content": "Bereiche des Dashboards"},
+          {"type": "heading", "content": "1. Seitenleiste"},
+          {"type": "paragraph", "content": "Hier findest du:"},
+          {
+            "type": "unorderedList",
+            "content": ["Home", "Schüler", "Kalender", "Nachrichten", "Lehrer"]
+          }
+        ]
+      },
+      {
+        "title": "Obere Navigationsleiste",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "2. Startseiten-Widgets"},
+          {
+            "type": "paragraph",
+            "content": "Auf der Startseite siehst du wichtige Informationen:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Anzahl aktiver und inaktiver Schüler",
+              "Profile der Fahrlehrer",
+              "kommende Termine",
+              "Nachrichten"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Obere Navigationsleiste",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "3. Schülerverwaltung"},
+          {"type": "paragraph", "content": "Hier kannst du direkt:"},
+          {
+            "type": "unorderedList",
+            "content": [
+              "neue Schüler hinzufügen oder annehmen",
+              "Profile ansehen und bearbeiten",
+              "Fortschritte verfolgen",
+              "Termine verwalten"
+            ]
+          },
+          {"type": "heading", "content": "4. Kalender-Vorschau"},
+          {
+            "type": "paragraph",
+            "content": "Hier siehst du Termine und kannst Verfügbarkeiten festlegen."
+          },
+          {"type": "heading", "content": "5. Nachrichten"},
+          {
+            "type": "paragraph",
+            "content": "Hier siehst du alle Nachrichten, einschließlich ungelesener Nachrichten, von deiner Fahrschule oder deinen Fahrlehrern."
+          },
+          {"type": "heading", "content": "6. Lehrerverwaltung"},
+          {"type": "paragraph", "content": "Hier kannst du direkt:"},
+          {
+            "type": "unorderedList",
+            "content": [
+              "neue Lehrer hinzufügen",
+              "Profile ansehen und bearbeiten",
+              "deren Termine verfolgen"
+            ]
+          },
+          {"type": "heading", "content": "Schülerverwaltung"},
+          {
+            "type": "paragraph",
+            "content": "Fahrschulen können den gesamten Lebenszyklus eines Schülers verwalten: neue Anfragen annehmen, Schüler einladen, Profile bearbeiten, Fortschritt verfolgen und Schüler archivieren."
+          },
+          {"type": "heading", "content": "So verwaltest du Schüler"},
+          {"type": "heading", "content": "1. Öffne den Bereich „Schüler“"},
+          {"type": "heading", "content": "Schüler hinzufügen oder annehmen"},
+          {"type": "paragraph", "content": "A. neue Schüleranfrage annehmen"},
+          {
+            "type": "orderedList",
+            "content": [
+              "Neue Anfragen werden in der Schülerliste farblich hervorgehoben",
+              "Klicke auf jede neue Anfrage",
+              "Klicke im angezeigten Popup auf „Bestätigen“, um den Schüler anzunehmen",
+              "Oder klicke auf „Ablehnen“, um die Anfrage abzulehnen und zu entfernen"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Übersichts-Widgets",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "B. neuen Schüler einladen"},
+          {
+            "type": "orderedList",
+            "content": [
+              "Klicke auf das Plus-Symbol über der Schülerliste",
+              "Gib die E-Mail-Adresse des Schülers ein",
+              "Klicke auf „Einladung senden“"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": "Die Einladung muss vom Schüler bestätigt werden."
+          }
+        ]
+      },
+      {
+        "title": "Anfrage annehmen",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "Schülerprofile ansehen"},
+          {"type": "paragraph", "content": "Du kannst einsehen:"},
+          {
+            "type": "unorderedList",
+            "content": [
+              "persönliche Daten",
+              "Fortschrittsstand",
+              "kommende Termine",
+              "Nachrichten",
+              "absolvierte Theorie- und Fahrstunden"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Schülereinladungsformular",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "Fortschritt verfolgen"},
+          {
+            "type": "paragraph",
+            "content": "Du kannst Schritte aktualisieren wie:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "erledigte Schritte zum Führerscheinerwerb",
+              "absolvierte Theoriestunden",
+              "Anzahl der Fahrstunden"
+            ]
+          },
+          {"type": "heading", "content": "Schüler archivieren"},
+          {
+            "type": "paragraph",
+            "content": "Die Archivierungsfunktion sollte aktiviert werden, wenn ein Schüler/eine Schülerin den Führerschein erhält oder die Schule verlässt."
+          },
+          {
+            "type": "orderedList",
+            "content": [
+              "Öffne das Schülerprofil",
+              "Klicke auf den Schalter oben rechts"
+            ]
+          },
+          {"type": "heading", "content": ""},
+          {"type": "heading", "content": ""},
+          {"type": "heading", "content": "Lehrerverwaltung"},
+          {
+            "type": "paragraph",
+            "content": "Fahrschulen verwalten alle Fahrlehrer. Fahrlehrer erstellen kein eigenes Konto. Du kannst Lehrer hinzufügen, archivieren und Schülern zuweisen (verfügbar für Standard- und Premium-Preispläne)."
+          },
+          {"type": "heading", "content": "Fahrlehrer hinzufügen"},
+          {"type": "heading", "content": "1. Öffne den Bereich „Lehrer“"},
+          {
+            "type": "heading",
+            "content": "2. Klicke auf das Plus-Symbol oben in der Liste der Fahrlehrer"
+          },
+          {"type": "paragraph", "content": "Gib ein:"},
+          {
+            "type": "unorderedList",
+            "content": [
+              "Name",
+              "E-Mail",
+              "Telefonnummer",
+              "Führerscheinklassen",
+              "Passwort (wird für das Fahrlehrer-Dashboard verwendet.)"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Fahrlehrer-hinzufügen-Formular",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "Schüler einem Fahrlehrer zuweisen"},
+          {
+            "type": "orderedList",
+            "content": [
+              "Öffne das Fahrlehrerprofil",
+              "Klicke auf das Plus-Symbol in der rechten Ecke der Schülerliste",
+              "Suche den Namen eines Schülers in deiner Schülerliste",
+              "Wähle den gewünschten Schüler aus"
+            ]
+          },
+          {"type": "heading", "content": "Fahrlehrer archivieren"},
+          {
+            "type": "orderedList",
+            "content": [
+              "Öffne das Lehrerprofil",
+              "Klicke auf den Schalter oben rechts"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Fahrlehrer archivieren",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "Terminplanung"},
+          {
+            "type": "paragraph",
+            "content": "Fahrschulen können Verfügbarkeiten, allgemeine Schultermine und fahrlehrerspezifische Kalender verwalten."
+          },
+          {"type": "heading", "content": "Verfügbarkeiten festlegen"},
+          {
+            "type": "orderedList",
+            "content": [
+              "Gehe zum Kalender-Bereich",
+              {
+                "text": "Wähle die Terminart",
+                "type": "dotList",
+                "subItems": [
+                  "Gespräch (für allgemeine Gespräche, im Kalender lila dargestellt)",
+                  "Theorie (für Theoriestunden, im Kalender blau dargestellt)",
+                  "Fahren (für Fahrstunden, im Kalender cyan dargestellt)"
+                ]
+              },
+              "Wähle für jede Terminart „Kategorie“, „Gruppe“ oder „Fahrlehrer“",
+              {
+                "text": "Wähle:",
+                "type": "dottedList",
+                "subItems": [
+                  "Kapazität (für mehr als eine Person nur bei Theoriestunden möglich.)",
+                  "Dauer",
+                  "Wochentage und Uhrzeiten",
+                  "Buchungszeitpunkt",
+                  "Stornierungslimit"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Verfügbarkeits-Editor",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "Schulweite Termine verwalten"},
+          {
+            "type": "paragraph",
+            "content": "Du kannst alle für deine Fahrschule gebuchten Termine einsehen und bearbeiten. Klicke auf den jeweiligen Kalendertag, um die Liste der an diesem Tag gebuchten Termine anzuzeigen. Klicke auf den jeweiligen Termin, um Tag oder Uhrzeit des Termins zu bearbeiten (verfügbar für den Premium-Preisplan)."
+          }
+        ]
+      },
+      {
+        "title": "Schulkalender",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "So stornierst du einen Termin"},
+          {
+            "type": "orderedList",
+            "content": [
+              "Klicke auf den gewünschten Termin",
+              "Entferne den Namen des Schülers aus der Teilnehmerliste",
+              "Klicke auf „Speichern“"
+            ]
+          },
+          {"type": "heading", "content": "Termin für einen Schüler buchen"},
+          {
+            "type": "paragraph",
+            "content": "Nachdem die Verfügbarkeit festgelegt wurde, können deine Schüler Termine bei deiner Fahrschule buchen. Du hast außerdem die Möglichkeit, selbst Termine für deine Schüler zu buchen."
+          },
+          {"type": "heading", "content": "So buchst du einen Termin"},
+          {
+            "type": "heading",
+            "content": "1. Klicke auf das Plus-Symbol oben rechts"
+          },
+          {
+            "type": "heading",
+            "content": "2. Suche nach dem Namen des Schülers und wähle ihn aus"
+          }
+        ]
+      },
+      {
+        "title": "Lehrerauswahl",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "3. Wähle die Terminart"},
+          {
+            "type": "unorderedList",
+            "content": [
+              "Gespräch (für allgemeine Gespräche, im Kalender lila dargestellt)",
+              "Theorie (für Theoriestunden, im Kalender blau dargestellt)",
+              "Fahren (für Fahrstunden, im Kalender cyan dargestellt)"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "4. Wähle die passende Kategorie, Gruppe oder den Fahrlehrer aus"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Kategorie (für allgemeine Gespräche)",
+              "Gruppe (für Theoriestunden)",
+              "Fahrlehrer (für Fahrstunden)"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": "Es werden nur verfügbare Zeiten nach dieser Auswahl angezeigt."
+          }
+        ]
+      },
+      {
+        "title": "Nachrichten senden",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "5. Wähle Datum und Uhrzeit"},
+          {
+            "type": "paragraph",
+            "content": "Alle freien Slots werden angezeigt."
+          },
+          {"type": "heading", "content": "6. Bestätige die Buchung"},
+          {"type": "paragraph", "content": "Klicke auf „Buchen“."},
+          {"type": "heading", "content": "Nachrichten senden"},
+          {"type": "heading", "content": "Überblick"},
+          {
+            "type": "paragraph",
+            "content": "Über das Nachrichtensystem kannst du direkt mit deinen Fahrschülern und Fahrlehrern chatten. Bitte beachte, dass es sich bei dem System nicht um einen Live-Chat handelt."
+          },
+          {"type": "heading", "content": "So sendest du eine Nachricht"},
+          {"type": "heading", "content": "1. Gehe zum Bereich „Nachrichten“"},
+          {
+            "type": "heading",
+            "content": "2. Wähle die Unterhaltung aus oder klicke auf das Plus-Symbol"
+          },
+          {"type": "paragraph", "content": "Beim Klicken auf das Plus-Symbol:"},
+          {
+            "type": "unorderedList",
+            "content": [
+              "Wähle den Empfänger der Nachricht aus",
+              "Gib den Betreff der Nachricht ein",
+              "Schreibe deine Nachricht",
+              "Füge optional eine Datei hinzu"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Unterhaltungsliste",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "3. Schreibe deine Nachricht"},
+          {"type": "paragraph", "content": "Nutze das Eingabefeld unten."},
+          {"type": "heading", "content": "4. Sende die Nachricht"},
+          {"type": "paragraph", "content": "Klicke auf „Senden“."},
+          {
+            "type": "paragraph",
+            "content": "Benachrichtigungen erscheinen später in deinem Dashboard."
+          },
+          {"type": "paragraph", "content": ""},
+          {"type": "paragraph", "content": ""},
+          {"type": "heading", "content": "Abrechnung & Abos"},
+          {
+            "type": "paragraph",
+            "content": "Fahrschulen können Rechnungen einsehen, Zahlungsmethoden verwalten und ihr Abonnement ändern."
+          },
+          {"type": "heading", "content": "So erreichst du die Abrechnung"},
+          {
+            "type": "paragraph",
+            "content": "Gehe zu „Zahlung“ im Bereich Einstellungen"
+          },
+          {"type": "heading", "content": "Rechnungen ansehen"},
+          {
+            "type": "paragraph",
+            "content": "Du kannst alle Rechnungen einsehen und bei Bedarf herunterladen."
+          },
+          {"type": "heading", "content": "Zahlungsmethoden verwalten"},
+          {
+            "type": "orderedList",
+            "content": [
+              "Öffne „Zahlungsmethoden“",
+              "Aktualisiere oder ändere deine Zahlungsmethoden"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Abrechnung & Abos",
+        "content": [
+          {"type": "heading", "content": "Abo upgraden"},
+          {
+            "type": "paragraph",
+            "content": "Klicke auf das jeweilige Preis-Paket, um deinen aktuellen Plan zu ändern."
+          }
+        ]
+      }
     ]
   },
   "AboutUs": {
