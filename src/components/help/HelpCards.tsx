@@ -2,11 +2,13 @@ import {Box, Grid, Typography} from '@mui/material';
 import Image, {StaticImageData} from 'next/image';
 import React from 'react';
 import localFont from '@/utils/themes';
+import {useRouter} from '@/i18n/navigation';
 
 type HelpItem = {
   image: StaticImageData;
   title: string;
   desc: string;
+  href?: string;
 };
 
 type HelpCardProps = {
@@ -14,6 +16,7 @@ type HelpCardProps = {
 };
 
 export default function HelpCard({data}: HelpCardProps) {
+  const router = useRouter();
   return (
     <Box
       sx={{
@@ -27,7 +30,13 @@ export default function HelpCard({data}: HelpCardProps) {
         {data?.map((item, i) => (
           <Grid key={i} size={{xs: 12, sm: 6, lg: 4}}>
             <Box
+              onClick={() => {
+                if (item.href) {
+                  router.push(item.href as Parameters<typeof router.push>[0]);
+                }
+              }}
               sx={{
+                cursor: 'pointer',
                 // maxWidth: '333px',
                 width: '100%',
                 background: '#f2f2f2',
@@ -46,7 +55,12 @@ export default function HelpCard({data}: HelpCardProps) {
               </Box>
               <Box>
                 <Typography
-                  sx={{...localFont.h3, textAlign: 'center', mb: '16px'}}
+                  sx={{
+                    ...localFont.h3,
+                    fontWeight: 500,
+                    textAlign: 'center',
+                    mb: '16px'
+                  }}
                 >
                   {item.title}
                 </Typography>
