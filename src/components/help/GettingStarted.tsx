@@ -48,13 +48,14 @@ function renderContent(content: ContentBlock[]) {
               fontWeight: 700,
               marginBottom: isLastBlock ? '0px' : '20px'
             }}
-          >
-            {typeof block.content === 'string'
-              ? block.content
-              : Array.isArray(block.content)
-                ? block.content.map((item) => typeof item === 'string' ? item : item.text).join(' ')
-                : ''}
-          </Typography>
+            dangerouslySetInnerHTML={{
+              __html: typeof block.content === 'string'
+                ? block.content
+                : Array.isArray(block.content)
+                  ? block.content.map((item) => typeof item === 'string' ? item : item.text).join(' ')
+                  : ''
+            }}
+          />
         );
 
       case 'paragraph':
@@ -66,13 +67,14 @@ function renderContent(content: ContentBlock[]) {
               ...baseStyles,
               marginBottom: isLastBlock ? '0px' : '20px'
             }}
-          >
-            {typeof block.content === 'string'
-              ? block.content
-              : Array.isArray(block.content)
-                ? block.content.map((item) => typeof item === 'string' ? item : item.text).join(' ')
-                : ''}
-          </Typography>
+            dangerouslySetInnerHTML={{
+              __html: typeof block.content === 'string'
+                ? block.content
+                : Array.isArray(block.content)
+                  ? block.content.map((item) => typeof item === 'string' ? item : item.text).join(' ')
+                  : ''
+            }}
+          />
         );
 
       case 'orderedList':
@@ -100,9 +102,8 @@ function renderContent(content: ContentBlock[]) {
                           fontFamily: '"Inter", sans-serif !important',
                           color: '#2d3748'
                         }}
-                      >
-                        {nestedItem.text}
-                      </Typography>
+                        dangerouslySetInnerHTML={{__html: nestedItem.text ?? ''}}
+                      />
                       {nestedItem.subItems && nestedItem.subItems.length > 0 && (
                         <Box
                           component={
@@ -128,9 +129,8 @@ function renderContent(content: ContentBlock[]) {
                                 fontFamily: '"Inter", sans-serif !important',
                                 color: '#2d3748'
                               }}
-                            >
-                              {subItem}
-                            </Typography>
+                              dangerouslySetInnerHTML={{__html: subItem ?? ''}}
+                            />
                           ))}
                         </Box>
                       )}
@@ -138,6 +138,7 @@ function renderContent(content: ContentBlock[]) {
                   );
                 }
                 // Regular string item
+                const textContent = typeof item === 'string' ? item : '';
                 return (
                   <Typography
                     key={itemIndex}
@@ -147,9 +148,8 @@ function renderContent(content: ContentBlock[]) {
                       fontFamily: '"Inter", sans-serif !important',
                       color: '#2d3748'
                     }}
-                  >
-                    {item}
-                  </Typography>
+                    dangerouslySetInnerHTML={{__html: textContent}}
+                  />
                 );
               })}
           </Box>
@@ -182,9 +182,8 @@ function renderContent(content: ContentBlock[]) {
                           fontWeight: 400,
                           color: '#2d3748'
                         }}
-                      >
-                        {nestedItem.text}
-                      </Typography>
+                        dangerouslySetInnerHTML={{__html: nestedItem.text ?? ''}}
+                      />
                       {nestedItem.subItems && nestedItem.subItems.length > 0 && (
                         <Box
                           component={
@@ -211,9 +210,8 @@ function renderContent(content: ContentBlock[]) {
                                 fontWeight: 400,
                                 color: '#2d3748'
                               }}
-                            >
-                              {subItem}
-                            </Typography>
+                              dangerouslySetInnerHTML={{__html: subItem ?? ''}}
+                            />
                           ))}
                         </Box>
                       )}
@@ -221,6 +219,7 @@ function renderContent(content: ContentBlock[]) {
                   );
                 }
                 // Regular string item
+                const textContent = typeof item === 'string' ? item : '';
                 return (
                   <Typography
                     key={itemIndex}
@@ -231,9 +230,8 @@ function renderContent(content: ContentBlock[]) {
                       fontWeight: 400,
                       color: '#2d3748'
                     }}
-                  >
-                    {item}
-                  </Typography>
+                    dangerouslySetInnerHTML={{__html: textContent}}
+                  />
                 );
               })}
           </Box>
@@ -292,9 +290,8 @@ export default function GettingStarted({
                 fontFamily: '"Inter", sans-serif !important',
                 textAlign: 'center'
               }}
-            >
-              {headerTitle}
-            </Typography>
+              dangerouslySetInnerHTML={{__html: headerTitle ?? ''}}
+            />
           </Box>
 
           {/* Content Sections */}
