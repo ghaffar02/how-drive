@@ -49,11 +49,16 @@ function renderContent(content: ContentBlock[]) {
               marginBottom: isLastBlock ? '0px' : '20px'
             }}
             dangerouslySetInnerHTML={{
-              __html: typeof block.content === 'string'
-                ? block.content
-                : Array.isArray(block.content)
-                  ? block.content.map((item) => typeof item === 'string' ? item : item.text).join(' ')
-                  : ''
+              __html:
+                typeof block.content === 'string'
+                  ? block.content
+                  : Array.isArray(block.content)
+                    ? block.content
+                        .map((item) =>
+                          typeof item === 'string' ? item : item.text
+                        )
+                        .join(' ')
+                    : ''
             }}
           />
         );
@@ -68,11 +73,16 @@ function renderContent(content: ContentBlock[]) {
               marginBottom: isLastBlock ? '0px' : '20px'
             }}
             dangerouslySetInnerHTML={{
-              __html: typeof block.content === 'string'
-                ? block.content
-                : Array.isArray(block.content)
-                  ? block.content.map((item) => typeof item === 'string' ? item : item.text).join(' ')
-                  : ''
+              __html:
+                typeof block.content === 'string'
+                  ? block.content
+                  : Array.isArray(block.content)
+                    ? block.content
+                        .map((item) =>
+                          typeof item === 'string' ? item : item.text
+                        )
+                        .join(' ')
+                    : ''
             }}
           />
         );
@@ -94,7 +104,11 @@ function renderContent(content: ContentBlock[]) {
                 if (typeof item === 'object' && 'text' in item) {
                   const nestedItem = item as NestedListItem;
                   return (
-                    <Box key={itemIndex} component="li" sx={{marginBottom: '8px'}}>
+                    <Box
+                      key={itemIndex}
+                      component="li"
+                      sx={{marginBottom: '8px'}}
+                    >
                       <Typography
                         component="span"
                         sx={{
@@ -102,38 +116,41 @@ function renderContent(content: ContentBlock[]) {
                           fontFamily: '"Inter", sans-serif !important',
                           color: '#2d3748'
                         }}
-                        dangerouslySetInnerHTML={{__html: nestedItem.text ?? ''}}
+                        dangerouslySetInnerHTML={{
+                          __html: nestedItem.text ?? ''
+                        }}
                       />
-                      {nestedItem.subItems && nestedItem.subItems.length > 0 && (
-                        <Box
-                          component={
-                            nestedItem.type === 'orderedList' 
-                              ? 'ol' 
-                              : 'ul'
-                          }
-                          sx={{
-                            paddingLeft: '24px',
-                            marginTop: '8px',
-                            marginBottom: '0px',
-                            '& li::marker': {
-                              color: '#000000'
+                      {nestedItem.subItems &&
+                        nestedItem.subItems.length > 0 && (
+                          <Box
+                            component={
+                              nestedItem.type === 'orderedList' ? 'ol' : 'ul'
                             }
-                          }}
-                        >
-                          {nestedItem.subItems.map((subItem, subIndex) => (
-                            <Typography
-                              key={subIndex}
-                              component="li"
-                              sx={{
-                                ...localFont.inter16,
-                                fontFamily: '"Inter", sans-serif !important',
-                                color: '#2d3748'
-                              }}
-                              dangerouslySetInnerHTML={{__html: subItem ?? ''}}
-                            />
-                          ))}
-                        </Box>
-                      )}
+                            sx={{
+                              paddingLeft: '24px',
+                              marginTop: '8px',
+                              marginBottom: '0px',
+                              '& li::marker': {
+                                color: '#000000'
+                              }
+                            }}
+                          >
+                            {nestedItem.subItems.map((subItem, subIndex) => (
+                              <Typography
+                                key={subIndex}
+                                component="li"
+                                sx={{
+                                  ...localFont.inter16,
+                                  fontFamily: '"Inter", sans-serif !important',
+                                  color: '#2d3748'
+                                }}
+                                dangerouslySetInnerHTML={{
+                                  __html: subItem ?? ''
+                                }}
+                              />
+                            ))}
+                          </Box>
+                        )}
                     </Box>
                   );
                 }
@@ -173,7 +190,11 @@ function renderContent(content: ContentBlock[]) {
                 if (typeof item === 'object' && 'text' in item) {
                   const nestedItem = item as NestedListItem;
                   return (
-                    <Box key={itemIndex} component="li" sx={{marginBottom: '8px'}}>
+                    <Box
+                      key={itemIndex}
+                      component="li"
+                      sx={{marginBottom: '8px'}}
+                    >
                       <Typography
                         component="span"
                         sx={{
@@ -182,39 +203,42 @@ function renderContent(content: ContentBlock[]) {
                           fontWeight: 400,
                           color: '#2d3748'
                         }}
-                        dangerouslySetInnerHTML={{__html: nestedItem.text ?? ''}}
+                        dangerouslySetInnerHTML={{
+                          __html: nestedItem.text ?? ''
+                        }}
                       />
-                      {nestedItem.subItems && nestedItem.subItems.length > 0 && (
-                        <Box
-                          component={
-                            nestedItem.type === 'orderedList' 
-                              ? 'ol' 
-                              : 'ul'
-                          }
-                          sx={{
-                            paddingLeft: '24px',
-                            marginTop: '8px',
-                            marginBottom: '0px',
-                            '& li::marker': {
-                              color: '#000000'
+                      {nestedItem.subItems &&
+                        nestedItem.subItems.length > 0 && (
+                          <Box
+                            component={
+                              nestedItem.type === 'orderedList' ? 'ol' : 'ul'
                             }
-                          }}
-                        >
-                          {nestedItem.subItems.map((subItem, subIndex) => (
-                            <Typography
-                              key={subIndex}
-                              component="li"
-                              sx={{
-                                ...localFont.inter16,
-                                fontFamily: '"Inter", sans-serif !important',
-                                fontWeight: 400,
-                                color: '#2d3748'
-                              }}
-                              dangerouslySetInnerHTML={{__html: subItem ?? ''}}
-                            />
-                          ))}
-                        </Box>
-                      )}
+                            sx={{
+                              paddingLeft: '24px',
+                              marginTop: '8px',
+                              marginBottom: '0px',
+                              '& li::marker': {
+                                color: '#000000'
+                              }
+                            }}
+                          >
+                            {nestedItem.subItems.map((subItem, subIndex) => (
+                              <Typography
+                                key={subIndex}
+                                component="li"
+                                sx={{
+                                  ...localFont.inter16,
+                                  fontFamily: '"Inter", sans-serif !important',
+                                  fontWeight: 400,
+                                  color: '#2d3748'
+                                }}
+                                dangerouslySetInnerHTML={{
+                                  __html: subItem ?? ''
+                                }}
+                              />
+                            ))}
+                          </Box>
+                        )}
                     </Box>
                   );
                 }
@@ -330,15 +354,19 @@ export default function GettingStarted({
                 {item.image && (
                   <Box
                     sx={{
-                      width: '100%',
+                      width: {
+                        xs: '100%',
+                        md: '100%',
+                        lg: '100%'
+                      },
                       maxWidth: {
-                        xs: '295px',
-                        md: '699px',
+                        xs: '100%',
+                        md: '100%',
                         lg: '1041px'
                       },
                       height: {
-                        xs: '196px',
-                        md: '466px',
+                        xs: 'auto',
+                        md: 'auto',
                         lg: '694px'
                       },
                       position: 'relative',
@@ -353,8 +381,11 @@ export default function GettingStarted({
                     <Image
                       src={item.image ?? ''}
                       alt={item.title ?? ''}
-                      fill
+                      width={1041}
+                      height={694}
                       style={{
+                        width: '100%',
+                        height: 'auto',
                         objectFit: 'cover'
                       }}
                       unoptimized={typeof item.image === 'string'}
