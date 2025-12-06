@@ -4,19 +4,20 @@ import Image, {StaticImageData} from 'next/image';
 import localFont from '@/utils/themes';
 
 type ContentBlock = {
-  type: 'heading' | 'paragraph' | 'orderedList' | 'unorderedList';
-  content: string | string[];
+  type?: 'heading' | 'paragraph' | 'orderedList' | 'unorderedList';
+  content?: string | string[];
   bold?: boolean;
 };
 
 type GettingStartedItem = {
-  title: string;
-  content: ContentBlock[];
-  image: StaticImageData | string;
+  title?: string;
+  content?: ContentBlock[];
+  image?: StaticImageData | string;
 };
 
 type GettingStartedProps = {
-  data: GettingStartedItem[];
+  data?: GettingStartedItem[];
+  headerTitle?: string;
 };
 
 function renderContent(content: ContentBlock[]) {
@@ -56,7 +57,11 @@ function renderContent(content: ContentBlock[]) {
               marginBottom: isLastBlock ? '0px' : '20px'
             }}
           >
-            {typeof block.content === 'string' ? block.content : block.content.join(' ')}
+            {typeof block.content === 'string'
+              ? block.content
+              : Array.isArray(block.content)
+                ? block.content.join(' ')
+                : ''}
           </Typography>
         );
 
@@ -138,7 +143,7 @@ function renderContent(content: ContentBlock[]) {
   });
 }
 
-export default function GettingStarted({data}: GettingStartedProps) {
+export default function GettingStarted({data, headerTitle = 'Getting Started'}: GettingStartedProps) {
   return (
     <Box
       sx={{
@@ -180,7 +185,7 @@ export default function GettingStarted({data}: GettingStartedProps) {
                 textAlign: 'center'
               }}
             >
-              Getting Started
+              {headerTitle}
             </Typography>
           </Box>
 
@@ -241,8 +246,8 @@ export default function GettingStarted({data}: GettingStartedProps) {
                 }}
               >
                 <Image
-                  src={item.image}
-                  alt={item.title}
+                  src={item.image ?? ""}
+                  alt={item.title ?? ""}
                   fill
                   style={{
                     objectFit: 'cover'
@@ -259,7 +264,7 @@ export default function GettingStarted({data}: GettingStartedProps) {
                   flex: 1
                 }}
               >
-                {renderContent(item.content)}
+                {renderContent(item.content ?? [])}
               </Box>
             </Box>
           ))}
