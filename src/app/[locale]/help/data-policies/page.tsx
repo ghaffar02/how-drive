@@ -29,684 +29,173 @@ export default function Page() {
   // Data array for Getting Started sections
   const gettingStartedData: GettingStartedItem[] = [
     {
-      title: 'Driving School Profile',
+      title: 'Deleting Account',
       content: [
         {
           type: 'heading' as const,
-          content: '3.1 Driving School Profile'
-        },
-        {
-          type: 'heading' as const,
-          content: 'Overview'
+          content: 'Deleting Account'
         },
         {
           type: 'paragraph' as const,
-          content:
-            'In the school settings, you can edit your school profile, upload your logo, and set your opening hours.'
-        },
-        {
-          type: 'heading' as const,
-          content: 'How to edit school profile'
-        },
-        {
-          type: 'heading' as const,
-          content: '1. Go to Settings'
+          content: 'You can delete your account at any time.'
         },
         {
           type: 'paragraph' as const,
-          content: 'Navigate to Business profile in the settings area.'
+          content: 'Account deletion is permanent and cannot be undone.'
         },
         {
           type: 'heading' as const,
-          content: '2. Update your school profile'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'You can edit:'
+          content: 'What happens after deletion?'
         },
         {
           type: 'unorderedList' as const,
           content: [
-            'school name',
-            'address',
-            'contact information',
-            'languages',
-            'driving license classes',
-            'description'
+            'All your personal data will be deleted.',
+            'All your booked driving lessons and appointments will be removed. You must cancel or resolve any outstanding bookings or contracts with driving schools yourself beforehand.',
+            'All chats and messages with driving schools or other users will be deleted.',
+            'You will lose access to your dashboard and all platform features.',
+            'All profile data and driving school profile pages on the website, as well as all invoices, will be deleted.',
+            'Schools cannot delete trainers manually; instead, they archive them.'
           ]
+        },
+        {
+          type: 'heading' as const,
+          content: 'How to delete your account'
+        },
+        {
+          type: 'heading' as const,
+          content: '1. Open Settings'
+        },
+        {
+          type: 'heading' as const,
+          content: '2. Go to "Account"'
+        },
+        {
+          type: 'paragraph' as const,
+          content: 'Click on "Delete account" and confirm your decision.'
         }
       ],
       image: image
     },
     {
-      title: 'School profile form',
+      title: 'Delete account section',
       content: [
         {
           type: 'heading' as const,
-          content: '3. Upload your logo'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'Click Upload Logo and select an image from your device.'
-        },
-        {
-          type: 'heading' as const,
-          content: '4. Set opening hours'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'Choose the days and times your school is open.'
-        },
-        {
-          type: 'heading' as const,
-          content: '5. Save changes'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'Click Save to apply updates.'
-        },
-        {
-          type: 'heading' as const,
-          content: ''
-        },
-        {
-          type: 'heading' as const,
-          content: ''
-        },
-        {
-          type: 'heading' as const,
-          content: 'Dashboard Walkthrough'
+          content: '3. Confirm deletion'
         },
         {
           type: 'paragraph' as const,
           content:
-            'The school dashboard is your central hub for managing students, trainers, schedules, messages, and billing. This guide shows you how each part of the dashboard works.'
+            'You will receive an email at your registered address to confirm the deletion process. This is for your security. After confirmation, your account will be permanently deleted within 30 days. During this time, you can cancel the deletion process at any time by logging in again.'
         },
         {
           type: 'heading' as const,
-          content: 'Dashboard sections'
-        },
-        {
-          type: 'heading' as const,
-          content: '1. Sidebar'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'Shows access to:'
+          content: 'Important hints'
         },
         {
           type: 'unorderedList' as const,
-          content: ['home', 'students', 'calendar', 'message', 'trainers']
+          content: [
+            'Irrevocable: Once deleted, your data cannot be recovered. You will need to re-register if you wish to use the platform again later.',
+            'GDPR: Your data will be deleted in accordance with the General Data Protection Regulation (GDPR). You can find more information in our privacy policy.',
+            'Retention obligations: For legal reasons (e.g., tax law), some data may be archived for a limited period.',
+            'Outstanding bookings: Ensure that all pending exams or payments are completed. Outstanding contracts or payment obligations remain in effect even after deletion.',
+            'Student information for driving schools: Inform your students in a timely manner if you are leaving the platform to avoid misunderstandings.'
+          ]
+        },
+
+        {
+          type: 'heading' as const,
+          content: "What doesn't happen?"
+        },
+        {
+          type: 'paragraph' as const,
+          content: [
+            'For driving students: Your data will not be deleted by the driving schools themselves. Please contact the respective driving school directly if you wish to delete your data there as well.',
+            'External services: If you have logged in with external accounts (e.g., Google, Facebook), you must disconnect them separately.'
+          ]
+        },
+        {
+          type: 'heading' as const,
+          content: 'Exporting Data'
+        },
+        {
+          type: 'paragraph' as const,
+          content:
+            'You can export certain types of data depending on your user role.'
+        },
+        {
+          type: 'paragraph' as const,
+          content: 'Export is available for:'
+        },
+        {
+          type: 'unorderedList' as const,
+          content: [
+            'students: personal data, progress, appointments, messages',
+            'schools: student lists, trainer lists, appointments, messages, invoices',
+            'trainers: assigned student lists, appointments, messages'
+          ]
+        },
+        {
+          type: 'heading' as const,
+          content: 'How to export your data'
+        },
+        {
+          type: 'heading' as const,
+          content: '1. Open Settings'
+        },
+        {
+          type: 'heading' as const,
+          content: '2. Go to "Privacy" section'
+        },
+        {
+          type: 'paragraph' as const,
+          content: 'Click on "Export data" and confirm your decision.'
         }
       ],
       image: image
     },
 
     {
-      title: 'Top navigation bar',
+      title: 'What can you do with your data',
       content: [
         {
           type: 'heading' as const,
-          content: '2. Home widgets'
+          content: '3. Download the file'
         },
         {
           type: 'paragraph' as const,
-          content: 'The homepage shows key information:'
+          content:
+            'You will receive an email with a secure download link. The link is valid for 7 days. Download the data within this period.'
+        },
+        {
+          type: 'heading' as const,
+          content: 'What can you do with your data?'
         },
         {
           type: 'unorderedList' as const,
           content: [
-            'number of active and inactive students',
-            'profile of trainers',
-            'upcoming appointments',
-            'messages'
+            'You can save your data locally to use it later if you switch accounts or as a backup.',
+            'If you switch to another platform, you may be able to import your data there.',
+            'You can check what information we have stored about you.'
           ]
-        }
-      ],
-      image: image
-    },
-    {
-      title: 'Top navigation bar',
-      content: [
-        {
-          type: 'heading' as const,
-          content: '3. Managing students'
         },
         {
           type: 'paragraph' as const,
-          content: 'You can quickly:'
+          content:
+            'Attention: This data is for your internal use only. Disclosure to third parties is subject to data protection regulations.'
+        },
+        {
+          type: 'heading' as const,
+          content: 'Legal notice'
         },
         {
           type: 'unorderedList' as const,
           content: [
-            'add or accept a new student',
-            'view and edit their profile',
-            'track their progress',
-            'manage their appointments'
+            'Data export is carried out in accordance with Article 15 of the GDPR. You have the right to request one free export per month.',
+            'Your data is transmitted in encrypted form and is only accessible to you.',
+            'For technical or legal reasons, certain data (e.g., log data) cannot be exported.'
           ]
-        },
-        {
-          type: 'heading' as const,
-          content: '4. Calendar preview'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'You can see appointments and set availability here.'
-        },
-        {
-          type: 'heading' as const,
-          content: '5. Messages'
-        },
-        {
-          type: 'paragraph' as const,
-          content:
-            'Shows all messages including unread ones from your school or trainers.'
-        },
-        {
-          type: 'heading' as const,
-          content: '6. Managing trainers'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'You can quickly:'
-        },
-        {
-          type: 'unorderedList' as const,
-          content: [
-            'add a new trainer',
-            'view and edit their profile',
-            'track their appointments'
-          ]
-        },
-        {
-          type: 'heading' as const,
-          content: 'Managing Students'
-        },
-        {
-          type: 'paragraph' as const,
-          content:
-            'Schools can manage the full lifecycle of each student: accepting new requests, inviting new students, editing profiles, tracking progress, and archiving completed students.'
-        },
-        {
-          type: 'heading' as const,
-          content: 'How to manage students'
-        },
-        {
-          type: 'heading' as const,
-          content: '1. Open the Students section'
-        },
-        {
-          type: 'heading' as const,
-          content: 'Adding or accepting students'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'A. accept a new student request'
-        },
-        {
-          type: 'orderedList' as const,
-          content: [
-            'new requests are highlighted with different colors in the student list',
-            'click on each of the new requests',
-            'click on Confirm in the shown popup to accept the student',
-            'or click on Reject to reject and remove the request'
-          ]
-        }
-      ],
-      image: image
-    },
-    {
-      title: 'Overview widgets',
-      content: [
-        {
-          type: 'heading' as const,
-          content: 'B. invite a new student'
-        },
-        {
-          type: 'orderedList' as const,
-          content: [
-            'click on Plus icon above the student list',
-            'enter the email address of the student',
-            'click Send Invitation'
-          ]
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'The invitation needs to be confirmed by the student.'
-        }
-      ],
-      image: image
-    },
-    {
-      title: 'Accept request',
-      content: [
-        {
-          type: 'heading' as const,
-          content: 'Viewing student profiles'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'You can view:'
-        },
-        {
-          type: 'unorderedList' as const,
-          content: [
-            'personal information',
-            'progress status',
-            'upcoming appointments',
-            'messages',
-            'completed theory and driving sessions'
-          ]
-        }
-      ],
-      image: image
-    },
-    {
-      title: 'Student invitation form',
-      content: [
-        {
-          type: 'heading' as const,
-          content: 'Tracking progress'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'Schools can update steps such as:'
-        },
-        {
-          type: 'unorderedList' as const,
-          content: [
-            'completed steps for getting driving license',
-            'completed theory hours',
-            'completed driving hours'
-          ]
-        },
-        {
-          type: 'heading' as const,
-          content: 'Archiving students'
-        },
-        {
-          type: 'paragraph' as const,
-          content:
-            'Use archiving when a student gets his/her driving license or leaves the school.'
-        },
-        {
-          type: 'orderedList' as const,
-          content: [
-            'open the student profile',
-            'click on the toggle at the top-right corner'
-          ]
-        },
-
-        {
-          type: 'heading' as const,
-          content: ''
-        },
-        {
-          type: 'heading' as const,
-          content: ''
-        },
-        {
-          type: 'heading' as const,
-          content: 'Managing Trainers'
-        },
-        {
-          type: 'paragraph' as const,
-          content:
-            'Schools manage all trainers. Trainers do not sign up themselves. You can add new trainers, archive them, and assign them to students (available for Standard and Premium pricing plans).'
-        },
-        {
-          type: 'heading' as const,
-          content: 'Adding a trainer'
-        },
-        {
-          type: 'heading' as const,
-          content: '1. Open the Trainers section'
-        },
-        {
-          type: 'heading' as const,
-          content: '2. Click the "Plus" icon at the top of the trainers list'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'Enter:'
-        },
-        {
-          type: 'unorderedList' as const,
-          content: [
-            'name',
-            'email',
-            'phone',
-            'driving license classes',
-            "password (will be used for trainer's dashboard)"
-          ]
-        }
-      ],
-      image: image
-    },
-
-    {
-      title: 'Add trainer form',
-      content: [
-        {
-          type: 'heading' as const,
-          content: 'Assigning students to trainers'
-        },
-        {
-          type: 'orderedList' as const,
-          content: [
-            'Open the trainer profile',
-            'Click on the plus icon at the right corner of students list',
-            'Search for the name of a student from your students list',
-            'Select the desired student'
-          ]
-        },
-        {
-          type: 'heading' as const,
-          content: 'Archiving a trainer'
-        },
-        {
-          type: 'orderedList' as const,
-          content: [
-            'open the trainer profile',
-            'click on the toggle at the top-right corner'
-          ]
-        }
-      ],
-      image: image
-    },
-    {
-      title: 'Archive trainer',
-      content: [
-        {
-          type: 'heading' as const,
-          content: 'Scheduling Appointments'
-        },
-        {
-          type: 'paragraph' as const,
-          content:
-            'Schools can manage availability, school-wide schedules, and trainer-specific calendars.'
-        },
-        {
-          type: 'heading' as const,
-          content: 'Setting availability'
-        },
-        {
-          type: 'orderedList' as const,
-          content: [
-            'Go to Calendar section',            
-            {
-              text: 'Choose the type of scheduling',
-              type: 'dotList' as const,
-              subItems: [
-                'Talk (for general meetings, shown with purple in calendar)',
-                'Theory (for theory lessons, shown with blue in calendar)',
-                'Driving (for driving lessons, shown with cyan in calendar)'
-              ]
-            },
-
-            'Select "Category", "Group", or "Trainer" for each of the scheduling types',
-            {
-              text: 'Select:',
-              type: 'dottedList' as const,
-              subItems: [
-                'capacity (The capacity of more than one person is only available for Theory sessions.)',
-                'duration',
-                'days of the week and time slots',
-                'time of booking',
-                'cancelation limit'
-              ]
-            }
-
-
-          ] as (string | NestedListItem)[]
-        },
-        // {
-        //   type: 'paragraph' as const,
-        //   content: ' 4 .Select:'
-        // },
-        // {
-        //   type: 'unorderedList' as const,
-        //   content: [
-        //     'capacity (The capacity of more than one person is only available for Theory sessions.)',
-        //     'duration',
-        //     'days of the week and time slots',
-        //     'time of booking',
-        //     'cancelation limit'
-        //   ]
-        // }
-      ],
-      image: image
-    },
-    {
-      title: 'Availability editor',
-      content: [
-        {
-          type: 'heading' as const,
-          content: 'Managing school-wide appointments'
-        },
-        {
-          type: 'paragraph' as const,
-          content:
-            'You can view and edit all the appointments booked for your driving school. Click on each day of the calendar to view the list of booked appointments on that specific day. Click on each appointment to be able to edit the day or time of the appointment (available for the Premium pricing plan).'
-        }
-      ],
-      image: image
-    },
-    {
-      title: 'School calendar',
-      content: [
-        {
-          type: 'heading' as const,
-          content: 'How to cancel an appointment'
-        },
-        {
-          type: 'orderedList' as const,
-          content: [
-            'Click on each appointment',
-            'Remove the name of the student from the list of participants',
-            'Click Save'
-          ]
-        },
-        {
-          type: 'heading' as const,
-          content: 'Book an appointment for a student'
-        },
-        {
-          type: 'paragraph' as const,
-          content:
-            'Once availability has been determined, your students can book appointments with your driving school. You also have the option of booking appointments for your students yourself.'
-        },
-        {
-          type: 'heading' as const,
-          content: 'How to book an appointment'
-        },
-        {
-          type: 'heading' as const,
-          content: '1. Click on the Plus icon at the top-right of the calendar'
-        },
-        {
-          type: 'heading' as const,
-          content:
-            '2. Search for the name of the student and select the student'
-        }
-      ],
-      image: image
-    },
-    {
-      title: 'Teacher selection',
-      content: [
-        {
-          type: 'heading' as const,
-          content: '3. Choose the type of appointment'
-        },
-        {
-          type: 'unorderedList' as const,
-          content: [
-            'Talk (for general meetings, shown with purple in calendar)',
-            'Theory (for theory lessons, shown with blue in calendar)',
-            'Driving (for driving lessons, shown with cyan in calendar)'
-          ]
-        },
-        {
-          type: 'heading' as const,
-          content: '4. Select the appropriate category, group, or trainer'
-        },
-        {
-          type: 'unorderedList' as const,
-          content: [
-            'Category (for general meetings)',
-            'Group (for theory lessons)',
-            'Trainer (for driving lessons)'
-          ]
-        },
-        {
-          type: 'paragraph' as const,
-          content:
-            'Only available time slots will be shown after choosing one of these.'
-        }
-      ],
-      image: image
-    },
-    {
-      title: 'Send Messages',
-      content: [
-        {
-          type: 'heading' as const,
-          content: '5. Choose a date and time'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'You will see all available slots.'
-        },
-        {
-          type: 'heading' as const,
-          content: '6. Confirm your booking'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'Click Book.'
-        },
-        {
-          type: 'heading' as const,
-          content: 'Send Messages'
-        },
-        {
-          type: 'heading' as const,
-          content: 'Overview'
-        },
-        {
-          type: 'paragraph' as const,
-          content:
-            'The messaging system allows you to communicate directly with your students and trainers. Please note that the system is not a live chat.'
-        },
-        {
-          type: 'heading' as const,
-          content: 'How to send a message'
-        },
-        {
-          type: 'heading' as const,
-          content: '1. Go to the Messages tab'
-        },
-        {
-          type: 'heading' as const,
-          content: '2. Choose the conversation or click on Plus icon'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'When clicking on Plus icon:'
-        },
-        {
-          type: 'unorderedList' as const,
-          content: [
-            'Select to whom you want to send the message',
-            'Add the topic of the message',
-            'Write your message',
-            'Add a file if you want'
-          ]
-        }
-      ],
-      image: image
-    },
-    {
-      title: 'Conversation list',
-      content: [
-        {
-          type: 'heading' as const,
-          content: '3. Type your message'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'Use the input field at the bottom.'
-        },
-        {
-          type: 'heading' as const,
-          content: '4. Send your message'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'Click Send.'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'Notifications will appear in your dashboard.'
-        },
-        {
-          type: 'paragraph' as const,
-          content: ''
-        },
-        {
-          type: 'paragraph' as const,
-          content: ''
-        },
-        {
-          type: 'heading' as const,
-          content: 'Billing & Subscriptions'
-        },
-        {
-          type: 'paragraph' as const,
-          content:
-            'Schools can view invoices, manage payment methods, and upgrade their subscription plan.'
-        },
-        {
-          type: 'heading' as const,
-          content: 'How to access billing'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'Go to Payment in settings'
-        },
-        {
-          type: 'heading' as const,
-          content: 'Viewing invoices'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'You can view all invoices and download them if needed.'
-        },
-        {
-          type: 'heading' as const,
-          content: 'Managing payment methods'
-        },
-        {
-          type: 'orderedList' as const,
-          content: [
-            'Open Payment Methods',
-            'Update or change your payment methods'
-          ]
-        }
-      ],
-      image: image
-    },
-    {
-      title: 'Billing & Subscriptions',
-      content: [
-        {
-          type: 'heading' as const,
-          content: 'Upgrading your plan'
-        },
-        {
-          type: 'paragraph' as const,
-          content: 'Click on each Price Plan to change your current plan.'
         }
       ],
       image: ''
@@ -731,7 +220,10 @@ export default function Page() {
           <Navbar />
         </Box>
         <Box sx={{paddingTop: '80px'}}>
-          <GettingStarted headerTitle="For Schools" data={gettingStartedData} />
+          <GettingStarted
+            headerTitle="Data Policies"
+            data={gettingStartedData}
+          />
         </Box>
         <Footer />
       </Box>
