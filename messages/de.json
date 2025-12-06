@@ -1897,6 +1897,336 @@
           }
         ]
       }
+    ],
+    "forStudentsData": [
+      {
+        "title": "Überblick",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "Überblick"
+          },
+          {
+            "type": "paragraph",
+            "content": "Über die Plattform kannst du ganz einfach Fahrschulen finden, vergleichen und die passende auswählen."
+          },
+          {
+            "type": "heading",
+            "content": "So findest du eine Fahrschule"
+          },
+          {
+            "type": "heading",
+            "content": "1. Gehe zur Seite „Fahrschule finden“"
+          },
+          {
+            "type": "paragraph",
+            "content": "Du erreichst sie direkt über die Navigationsleiste."
+          },
+          {
+            "type": "heading",
+            "content": "2. Nutze die Suchleiste"
+          },
+          {
+            "type": "paragraph",
+            "content": "Gib deine Stadt oder den Namen einer Fahrschule ein."
+          }
+        ]
+      },
+      {
+        "title": "Suchleiste",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "3. Sieh dir die Details der Fahrschule an"
+          },
+          {
+            "type": "paragraph",
+            "content": "Klicke auf eine Fahrschule, um Folgendes zu sehen:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Profilinformationen",
+              "Öffnungszeiten",
+              "Unterstützte Führerscheinklassen",
+              "Gesprochene Sprachen",
+              "Kontaktinformationen"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Fahrschul-Profilseite",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "4. Wähle deine Fahrschule aus"
+          },
+          {
+            "type": "paragraph",
+            "content": "Klicke auf „Verbinden“, um dich mit der Fahrschule zu verbinden."
+          },
+          {
+            "type": "paragraph",
+            "content": "Deine Anfrage muss zunächst von der Schule bestätigt werden."
+          },
+          {
+            "type": "heading",
+            "content": "Dashboard-Überblick"
+          },
+          {
+            "type": "paragraph",
+            "content": "Dein Dashboard ist dein persönliches Kontrollzentrum. Hier findest du deinen Fortschritt, Termine, Nachrichten und Informationen zu deiner Fahrschule."
+          },
+          {
+            "type": "heading",
+            "content": "Bereiche des Dashboards"
+          },
+          {
+            "type": "heading",
+            "content": "1. Seitenleiste"
+          },
+          {
+            "type": "paragraph",
+            "content": "Hier findest du:"
+          },
+          {
+            "type": "unorderedList",
+            "content": ["Home", "Verlauf", "Kalender", "Nachrichten"]
+          }
+        ]
+      },
+      {
+        "title": "Obere Navigation",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "2. Startseiten-Widgets"
+          },
+          {
+            "type": "paragraph",
+            "content": "Ein schneller Überblick über deinen aktuellen Stand im Führerscheinerwerb, absolvierte Theorie- und Fahrstunden sowie deine Termine und Nachrichten."
+          }
+        ]
+      },
+      {
+        "title": "Fortschritts-Widget",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "3. Fortschrittsverfolgung"
+          },
+          {
+            "type": "paragraph",
+            "content": "Beinhaltet:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "alle Schritte zum Erwerb des Führerscheins mit detaillierten Informationen",
+              "deine Führerscheinklasse und dein Wohnort",
+              "Informationen zu den zuständigen Behörden und deiner gewählten Fahrschule"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Fahrschul-Infokarte",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "4. Bevorstehende Termine"
+          },
+          {
+            "type": "paragraph",
+            "content": "Hier erscheinen alle geplanten Termine:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Allgemeine Gesprächstermine",
+              "Theoriestunden",
+              "Fahrstunden",
+              "Prüfungstermine"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Bevorstehende Termine",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "5. Nachrichten"
+          },
+          {
+            "type": "paragraph",
+            "content": "Hier siehst du alle Nachrichten, einschließlich ungelesener Nachrichten, von deiner Fahrschule oder deinem Fahrlehrer."
+          }
+        ]
+      },
+      {
+        "title": "Nachrichten-Vorschau",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "Termine buchen"
+          },
+          {
+            "type": "paragraph",
+            "content": "Du kannst Termine für allgemeine Gespräche sowie Theorie- und Fahrstunden direkt über dein Dashboard buchen."
+          },
+          {
+            "type": "heading",
+            "content": "So buchst du einen Termin"
+          },
+          {
+            "type": "heading",
+            "content": "1. Öffne den Bereich „Kalender“ und klicke auf das Plus-Symbol"
+          },
+          {
+            "type": "heading",
+            "content": "2. Wähle die Terminart"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Gespräch (für allgemeine Gespräche, im Kalender lila dargestellt)",
+              "Theorie (für Theoriestunden, im Kalender blau dargestellt)",
+              "Fahren (für Fahrstunden, im Kalender cyan dargestellt)"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Auswahl der Terminart",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "3. Wähle die passende Kategorie, Gruppe oder den Fahrlehrer aus"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Kategorie (für allgemeine Gespräche)",
+              "Gruppe (für Theoriestunden)",
+              "Fahrlehrer (für Fahrstunden)"
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": "Es werden nur verfügbare Zeiten nach dieser Auswahl angezeigt."
+          },
+          {
+            "type": "heading",
+            "content": "4. Wähle Datum und Uhrzeit"
+          },
+          {
+            "type": "paragraph",
+            "content": "Alle freien Slots werden angezeigt."
+          }
+        ]
+      },
+      {
+        "title": "Kalenderauswahl",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "5. Bestätige die Buchung"
+          },
+          {
+            "type": "paragraph",
+            "content": "Klicke auf „Buchen“."
+          },
+          {
+            "type": "heading",
+            "content": "So stornierst du einen Termin"
+          },
+          {
+            "type": "paragraph",
+            "content": "Klicke links oder im Kalender auf den gewünschten Termin"
+          },
+          {
+            "type": "paragraph",
+            "content": "Entferne deinen Namen aus der Teilnehmerliste"
+          },
+          {
+            "type": "paragraph",
+            "content": "Klicke auf Speichern"
+          }
+        ]
+      },
+      {
+        "title": "Abbrechen-Button",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "Nachrichten senden"
+          },
+          {
+            "type": "paragraph",
+            "content": "Über das Nachrichtensystem kannst du direkt mit deiner Fahrschule und deinem Fahrlehrer chatten. Bitte beachte, dass es sich bei dem System nicht um einen Live-Chat handelt."
+          },
+          {
+            "type": "heading",
+            "content": "So sendest du eine Nachricht"
+          },
+          {
+            "type": "heading",
+            "content": "1. Gehe zum Bereich „Nachrichten“"
+          },
+          {
+            "type": "heading",
+            "content": "2. Wähle die Unterhaltung aus oder klicke auf das Plus-Symbol"
+          },
+          {
+            "type": "paragraph",
+            "content": "Beim Klicken auf das Plus-Symbol:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Wähle den Empfänger der Nachricht aus",
+              "Gib den Betreff der Nachricht ein",
+              "Schreibe deine Nachricht",
+              "Füge optional eine Datei hinzu"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Unterhaltungsliste",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "3. Schreibe deine Nachricht"
+          },
+          {
+            "type": "paragraph",
+            "content": "Nutze das Eingabefeld unten."
+          },
+          {
+            "type": "heading",
+            "content": "4. Sende die Nachricht"
+          },
+          {
+            "type": "paragraph",
+            "content": "Klicke auf „Senden“."
+          }
+        ]
+      }
     ]
   },
   "AboutUs": {
