@@ -2207,7 +2207,6 @@
       },
       {
         "title": "Conversation list",
-        "image": "/ImageBGridInfo.jpg",
         "content": [
           {
             "type": "heading",
@@ -3242,6 +3241,527 @@
           {
             "type": "paragraph",
             "content": "Notifications will appear in your dashboard."
+          }
+        ]
+      }
+    ],
+    "dataPoliciesData": [
+      {
+        "title": "Deleting Account",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "Deleting Account"
+          },
+          {
+            "type": "paragraph",
+            "content": "You can delete your account at any time."
+          },
+          {
+            "type": "paragraph",
+            "content": "Account deletion is permanent and cannot be undone."
+          },
+          {
+            "type": "heading",
+            "content": "What happens after deletion?"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "All your personal data will be deleted.",
+              "All your booked driving lessons and appointments will be removed. You must cancel or resolve any outstanding bookings or contracts with driving schools yourself beforehand.",
+              "All chats and messages with driving schools or other users will be deleted.",
+              "You will lose access to your dashboard and all platform features.",
+              "All profile data and driving school profile pages on the website, as well as all invoices, will be deleted.",
+              "Schools cannot delete trainers manually; instead, they archive them."
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "How to delete your account"
+          },
+          {
+            "type": "heading",
+            "content": "1. Open Settings"
+          },
+          {
+            "type": "heading",
+            "content": "2. Go to \"Account\""
+          },
+          {
+            "type": "paragraph",
+            "content": "Click on \"Delete account\" and confirm your decision."
+          }
+        ]
+      },
+      {
+        "title": "Delete account section",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "3. Confirm deletion"
+          },
+          {
+            "type": "paragraph",
+            "content": "You will receive an email at your registered address to confirm the deletion process. This is for your security. After confirmation, your account will be permanently deleted within 30 days. During this time, you can cancel the deletion process at any time by logging in again."
+          },
+          {
+            "type": "heading",
+            "content": "Important hints"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Irrevocable: Once deleted, your data cannot be recovered. You will need to re-register if you wish to use the platform again later.",
+              "GDPR: Your data will be deleted in accordance with the General Data Protection Regulation (GDPR). You can find more information in our privacy policy.",
+              "Retention obligations: For legal reasons (e.g., tax law), some data may be archived for a limited period.",
+              "Outstanding bookings: Ensure that all pending exams or payments are completed. Outstanding contracts or payment obligations remain in effect even after deletion.",
+              "Student information for driving schools: Inform your students in a timely manner if you are leaving the platform to avoid misunderstandings."
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "What doesn't happen?"
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              "For driving students: Your data will not be deleted by the driving schools themselves. Please contact the respective driving school directly if you wish to delete your data there as well.",
+              "External services: If you have logged in with external accounts (e.g., Google, Facebook), you must disconnect them separately."
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "Exporting Data"
+          },
+          {
+            "type": "paragraph",
+            "content": "You can export certain types of data depending on your user role."
+          },
+          {
+            "type": "paragraph",
+            "content": "Export is available for:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "students: personal data, progress, appointments, messages",
+              "schools: student lists, trainer lists, appointments, messages, invoices",
+              "trainers: assigned student lists, appointments, messages"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "How to export your data"
+          },
+          {
+            "type": "heading",
+            "content": "1. Open Settings"
+          },
+          {
+            "type": "heading",
+            "content": "2. Go to \"Privacy\" section"
+          },
+          {
+            "type": "paragraph",
+            "content": "Click on \"Export data\" and confirm your decision."
+          }
+        ]
+      },
+      {
+        "title": "What can you do with your data",
+        "content": [
+          {
+            "type": "heading",
+            "content": "3. Download the file"
+          },
+          {
+            "type": "paragraph",
+            "content": "You will receive an email with a secure download link. The link is valid for 7 days. Download the data within this period."
+          },
+          {
+            "type": "heading",
+            "content": "What can you do with your data?"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "You can save your data locally to use it later if you switch accounts or as a backup.",
+              "If you switch to another platform, you may be able to import your data there.",
+              "You can check what information we have stored about you."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": "Attention: This data is for your internal use only. Disclosure to third parties is subject to data protection regulations."
+          },
+          {
+            "type": "heading",
+            "content": "Legal notice"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Data export is carried out in accordance with Article 15 of the GDPR. You have the right to request one free export per month.",
+              "Your data is transmitted in encrypted form and is only accessible to you.",
+              "For technical or legal reasons, certain data (e.g., log data) cannot be exported."
+            ]
+          }
+        ]
+      }
+    ],
+    "troubleshootingData": [
+      {
+        "title": "Overview",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "Overview"
+          },
+          {
+            "type": "paragraph",
+            "content": "If you cannot log in, the issue is usually related to your password, email verification, browser settings, or school-created account status."
+          },
+          {
+            "type": "heading",
+            "content": "1. Check your email and password"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Make sure your email is correct",
+              "Check for spelling mistakes",
+              "Passwords are case-sensitive"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Reset your password",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "2. Reset your password"
+          },
+          {
+            "type": "orderedList",
+            "content": [
+              "Click Forgot password?",
+              "Enter your email",
+              "Use the link you receive to create a new password"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Confirm your email",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "3. Confirm your email"
+          },
+          {
+            "type": "paragraph",
+            "content": "If your email is not verified, you cannot log in."
+          },
+          {
+            "type": "paragraph",
+            "content": "Check your inbox for the confirmation message."
+          },
+          {
+            "type": "heading",
+            "content": "4. Check browser or device issues"
+          },
+          {
+            "type": "paragraph",
+            "content": "Try:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "refreshing the page",
+              "using another browser",
+              "disabling browser extensions",
+              "clearing cookies"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "5. Trainer accounts: ask your school"
+          },
+          {
+            "type": "paragraph",
+            "content": "trainers cannot create or activate their own accounts."
+          },
+          {
+            "type": "paragraph",
+            "content": "If you are a trainer and cannot log in, the school must verify:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "that your account was created",
+              "that your email is correct",
+              "that your account is active"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "6. Contact support"
+          },
+          {
+            "type": "paragraph",
+            "content": "If everything fails, contact support with:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "your email",
+              "your role (student, school, trainer)",
+              "screenshot of the error"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": "Booking Errors"
+          },
+          {
+            "type": "paragraph",
+            "content": "If you can't book an appointment, it is usually due to availability, missing school approval, or browser issues."
+          },
+          {
+            "type": "heading",
+            "content": "1. Check if your school has approved you"
+          },
+          {
+            "type": "paragraph",
+            "content": "Driving schools must first approve the student before booking is possible. After confirmation, students receive a confirmation email."
+          },
+          {
+            "type": "heading",
+            "content": "2. No availability"
+          },
+          {
+            "type": "paragraph",
+            "content": "If no times appear:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "the trainer may not have set their schedule",
+              "the school may be closed on that day",
+              "slots may already be fully booked (shown as a grey time slot)"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Booking conflicts",
+        "content": [
+          {
+            "type": "heading",
+            "content": "3. Booking conflicts"
+          },
+          {
+            "type": "paragraph",
+            "content": "If you already have an appointment at the same time, you cannot book another."
+          },
+          {
+            "type": "heading",
+            "content": "4. Connection or browser issues"
+          },
+          {
+            "type": "paragraph",
+            "content": "Try:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "refreshing",
+              "switching to another browser",
+              "clearing cache"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "5. School has not offered appointments"
+          },
+          {
+            "type": "paragraph",
+            "content": "If a school does not offer theory or driving sessions on the platform, those options will not appear."
+          },
+          {
+            "type": "heading",
+            "content": "6. Contact your school"
+          },
+          {
+            "type": "paragraph",
+            "content": "They can check:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "your assigned trainer",
+              "availability settings",
+              "booking restrictions"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": "Payment Issues"
+          },
+          {
+            "type": "paragraph",
+            "content": "Payment applies only to schools, not students."
+          },
+          {
+            "type": "paragraph",
+            "content": "If your payments fail or invoices are missing, the cause is usually card issues or expired subscription details."
+          },
+          {
+            "type": "heading",
+            "content": "1. Check your payment method"
+          },
+          {
+            "type": "paragraph",
+            "content": "Go to Billing → Payment Methods."
+          },
+          {
+            "type": "paragraph",
+            "content": "Check your payment methods and their validity."
+          },
+          {
+            "type": "heading",
+            "content": "2. Payment declined"
+          },
+          {
+            "type": "paragraph",
+            "content": "Common reasons:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "bank declined the transaction",
+              "credit limit reached",
+              "card blocked"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "3. Invoice not generated"
+          },
+          {
+            "type": "paragraph",
+            "content": "Invoices are generated monthly."
+          },
+          {
+            "type": "paragraph",
+            "content": "If it is too early in the cycle, it may not appear yet."
+          },
+          {
+            "type": "heading",
+            "content": "4. Subscription not active"
+          },
+          {
+            "type": "paragraph",
+            "content": "If your payment failed multiple times, your subscription may be paused."
+          },
+          {
+            "type": "paragraph",
+            "content": "Update your payment method and retry."
+          },
+          {
+            "type": "heading",
+            "content": "5. Contact support"
+          },
+          {
+            "type": "paragraph",
+            "content": "Send:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "your school name",
+              "invoice number (if available)",
+              "screenshots of the error"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": "Mobile Issues"
+          },
+          {
+            "type": "paragraph",
+            "content": "If the platform does not work properly on your phone, try the steps below."
+          },
+          {
+            "type": "heading",
+            "content": "1. Update your browser"
+          },
+          {
+            "type": "paragraph",
+            "content": "Supported browsers:"
+          },
+          {
+            "type": "unorderedList",
+            "content": ["Chrome", "Safari", "Firefox"]
+          },
+          {
+            "type": "paragraph",
+            "content": "Older versions may cause errors."
+          },
+          {
+            "type": "heading",
+            "content": "2. Clear mobile browser cache"
+          },
+          {
+            "type": "paragraph",
+            "content": "This fixes most loading issues."
+          },
+          {
+            "type": "heading",
+            "content": "3. Enable cookies & JavaScript"
+          },
+          {
+            "type": "paragraph",
+            "content": "The platform requires both to function properly."
+          },
+          {
+            "type": "heading",
+            "content": "4. Check internet connection"
+          },
+          {
+            "type": "paragraph",
+            "content": "Slow networks may cause appointments or messages not to load."
           }
         ]
       }

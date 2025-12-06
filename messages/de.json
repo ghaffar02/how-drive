@@ -2207,7 +2207,6 @@
       },
       {
         "title": "Unterhaltungsliste",
-        "image": "/ImageBGridInfo.jpg",
         "content": [
           {
             "type": "heading",
@@ -2223,7 +2222,7 @@
           },
           {
             "type": "paragraph",
-            "content": "Klicke auf „Senden“."
+            "content": "Klicke auf Senden."
           }
         ]
       }
@@ -3050,6 +3049,425 @@
           {
             "type": "paragraph",
             "content": "Benachrichtigungen erscheinen später in deinem Dashboard."
+          }
+        ]
+      }
+    ],
+    "dataPoliciesData": [
+      {
+        "title": "Konto löschen",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "Konto löschen"
+          },
+          {
+            "type": "paragraph",
+            "content": "Du kannst dein Konto jederzeit löschen."
+          },
+          {
+            "type": "paragraph",
+            "content": "Die Löschung ist dauerhaft und kann nicht rückgängig gemacht werden."
+          },
+          {
+            "type": "heading",
+            "content": "Was passiert nach der Löschung?"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Alle deine persönlichen Daten werden gelöscht.",
+              "Alle deine gebuchten Fahrstunden und Termine werden entfernt. Offene Buchungen oder Verträge mit Fahrschulen musst du vorher selbst stornieren oder klären.",
+              "Alle Chats und Nachrichten mit Fahrschulen oder anderen Nutzern werden gelöscht.",
+              "Du verlierst den Zugang zu deinem Dashboard und allen Funktionen der Plattform.",
+              "Alle Profildaten und Profilseiten von Fahrschulen auf der Website sowie alle Rechnungen werden gelöscht.",
+              "Fahrschulen löschen Fahrlehrer nicht, sondern archivieren sie."
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "So löschst du dein Konto"
+          },
+          {
+            "type": "heading",
+            "content": "1. Öffne die Einstellungen"
+          },
+          {
+            "type": "heading",
+            "content": "2. Gehe zum Bereich „Konto“"
+          },
+          {
+            "type": "paragraph",
+            "content": "Klicke dort auf „Konto löschen“ und bestätige deine Entscheidung."
+          }
+        ]
+      },
+      {
+        "title": "Bereich „Konto löschen“",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "3. Bestätige die Löschung"
+          },
+          {
+            "type": "paragraph",
+            "content": "Du erhältst eine E-Mail an deine hinterlegte Adresse, um den Löschvorgang zu bestätigen. Dies dient deiner Sicherheit. Nach der Bestätigung wird dein Konto innerhalb von 30 Tagen unwiderruflich gelöscht. In dieser Zeit kannst du den Löschvorgang jederzeit abbrechen, indem du dich wieder einloggst."
+          },
+          {
+            "type": "heading",
+            "content": "Wichtige Hinweise"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Unwiderruflich: Nach der Löschung können deine Daten nicht wiederhergestellt werden. Du musst dich neu registrieren, falls du die Plattform später wieder nutzen möchtest.",
+              "DSGVO: Deine Daten werden gemäß der Datenschutz-Grundverordnung (DSGVO) gelöscht. Weitere Informationen findest du in unserer Datenschutzerklärung.",
+              "Aufbewahrungspflichten: Aus gesetzlichen Gründen (z.B. Steuerrecht) können einige Daten für einen begrenzten Zeitraum archiviert bleiben.",
+              "Offene Buchungen: Stelle sicher, dass alle laufenden Prüfungen oder Zahlungen abgeschlossen sind. Offene Verträge oder Zahlungsverpflichtungen bleiben auch nach der Löschung bestehen.",
+              "Schülerinformation für Fahrschulen: Informiere deine Schüler rechtzeitig, falls du die Plattform verlässt, um Missverständnisse zu vermeiden."
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "Was passiert nicht?"
+          },
+          {
+            "type": "paragraph",
+            "content": [
+              "Für Fahrschüler: Deine Daten bei den Fahrschulen selbst werden nicht gelöscht. Wende dich bitte direkt an die jeweilige Fahrschule, falls du auch dort deine Daten löschen möchtest.",
+              "Externe Dienste: Falls du dich mit externen Konten (z.B. Google, Facebook) angemeldet hast, musst du die Verbindung dort separat aufheben."
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "Daten exportieren"
+          },
+          {
+            "type": "paragraph",
+            "content": "Du kannst je nach Benutzerrolle verschiedene Daten exportieren."
+          },
+          {
+            "type": "paragraph",
+            "content": "Exportierbar sind:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Schüler: persönliche Daten, Lernfortschritt, Termine, Nachrichten",
+              "Fahrschulen: Schülerlisten, Fahrlehrerlisten, Termine, Nachrichten, Rechnungen",
+              "Fahrlehrer: zugewiesene Schüler, Termine, Nachrichten"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "So exportierst du deine Daten"
+          },
+          {
+            "type": "heading",
+            "content": "1. Öffne die Einstellungen"
+          },
+          {
+            "type": "heading",
+            "content": "2. Gehe zum Bereich „Datenschutz“"
+          },
+          {
+            "type": "paragraph",
+            "content": "Klicke dort auf „Daten exportieren“ und bestätige deine Entscheidung."
+          }
+        ]
+      },
+      {
+        "title": "Was kannst du mit deinen Daten tun",
+        "content": [
+          {
+            "type": "heading",
+            "content": "3. Lade die Datei herunter"
+          },
+          {
+            "type": "paragraph",
+            "content": "Du erhältst eine E-Mail mit einem sicheren Download-Link. Der Link ist 7 Tage gültig. Lade die Daten innerhalb dieses Zeitraums herunter."
+          },
+          {
+            "type": "heading",
+            "content": "Was kannst du mit deinen Daten tun?"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Du kannst deine Daten lokal speichern, um sie bei einem späteren Kontowechsel oder als Backup zu nutzen.",
+              "Falls du zu einer anderen Plattform wechselst, kannst du deine Daten dort ggf. importieren.",
+              "Du kannst überprüfen, welche Informationen wir über dich gespeichert haben."
+            ]
+          },
+          {
+            "type": "paragraph",
+            "content": "Achtung: Diese Daten sind nur für deinen internen Gebrauch bestimmt. Die Weitergabe an Dritte unterliegt den Datenschutzbestimmungen."
+          },
+          {
+            "type": "heading",
+            "content": "Rechtliche Hinweise"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Der Datenexport erfolgt gemäß Art. 15 DSGVO. Du hast das Recht, einmal pro Monat einen kostenlosen Export anzufordern.",
+              "Deine Daten werden verschlüsselt übertragen und sind nur für dich zugänglich.",
+              "Aus technischen oder rechtlichen Gründen können bestimmte Daten (z.B. Protokolldaten) nicht exportiert werden."
+            ]
+          }
+        ]
+      }
+    ],
+    "troubleshootingData": [
+      {
+        "title": "Überblick",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "Überblick"},
+          {
+            "type": "paragraph",
+            "content": "Wenn du dich nicht einloggen kannst, liegt es meist an Passwortproblemen, fehlender E-Mail-Bestätigung oder Browsereinstellungen."
+          },
+          {"type": "heading", "content": "1. Überprüfe E-Mail und Passwort"},
+          {
+            "type": "unorderedList",
+            "content": [
+              "Stelle sicher, dass die E-Mail stimmt",
+              "Achte auf Tippfehler",
+              "Passwörter unterscheiden zwischen Groß- und Kleinschreibung"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Passwort zurücksetzen",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "2. Passwort zurücksetzen"},
+          {
+            "type": "orderedList",
+            "content": [
+              "Klicke auf „Passwort vergessen?“",
+              "Gib deine E-Mail ein",
+              "Setze über den Link ein neues Passwort"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "E-Mail bestätigen",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {"type": "heading", "content": "3. E-Mail bestätigen"},
+          {
+            "type": "paragraph",
+            "content": "Wenn deine E-Mail nicht bestätigt ist, kannst du dich nicht einloggen."
+          },
+          {
+            "type": "paragraph",
+            "content": "Überprüfe dein Postfach."
+          },
+          {"type": "heading", "content": "4. Browser oder Gerät prüfen"},
+          {"type": "paragraph", "content": "Versuche folgendes:"},
+          {
+            "type": "unorderedList",
+            "content": [
+              "Seite neu laden",
+              "anderen Browser verwenden",
+              "Erweiterungen deaktivieren",
+              "Cookies löschen"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "5. Fahrlehrer: wende dich an die Fahrschule"
+          },
+          {
+            "type": "paragraph",
+            "content": "Fahrlehrer können ihre Konten nicht selbst erstellen oder aktivieren."
+          },
+          {
+            "type": "paragraph",
+            "content": "Die Fahrschule muss prüfen:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "wurde das Konto erstellt?",
+              "ist die E-Mail korrekt?",
+              "ist das Konto aktiv?"
+            ]
+          },
+          {"type": "heading", "content": "6. Support kontaktieren"},
+          {
+            "type": "paragraph",
+            "content": "Wenn nichts hilft, sende dem Support:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "deine E-Mail",
+              "deine Rolle (Fahrschüler, Schule, Fahrlehrer)",
+              "einen Screenshot der Fehlermeldung"
+            ]
+          },
+          {"type": "heading", "content": ""},
+          {"type": "heading", "content": ""},
+          {"type": "heading", "content": "Buchungsfehler"},
+          {
+            "type": "paragraph",
+            "content": "Wenn du keinen Termin buchen kannst, liegt es meist an fehlender Verfügbarkeit, fehlender Schulfreigabe oder Browserproblemen."
+          },
+          {
+            "type": "heading",
+            "content": "1. Prüfe, ob deine Schule dich freigegeben hat"
+          },
+          {
+            "type": "paragraph",
+            "content": "Fahrschulen müssen Schüler zuerst bestätigen. Nach der Bestätigung erhalten Schüler eine Bestätigungsmail."
+          },
+          {"type": "heading", "content": "2. Keine verfügbaren Zeiten"},
+          {
+            "type": "paragraph",
+            "content": "Wenn keine Zeiten angezeigt werden:"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "der Fahrlehrer hat seine Zeiten nicht eingetragen",
+              "die Schule hat an diesem Tag geschlossen",
+              "alle Zeiten sind bereits ausgebucht (wird als graues Zeitfenster dargestellt)"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Terminüberschneidungen",
+        "content": [
+          {"type": "heading", "content": "3. Terminüberschneidung"},
+          {
+            "type": "paragraph",
+            "content": "Wenn du zu dieser Zeit bereits einen Termin hast, kannst du keinen weiteren buchen."
+          },
+          {"type": "heading", "content": "4. Verbindungs- oder Browserfehler"},
+          {"type": "paragraph", "content": "Versuche:"},
+          {
+            "type": "unorderedList",
+            "content": [
+              "Seite neu laden",
+              "anderen Browser verwenden",
+              "Cache löschen"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "5. Schule hat keine Terminarten angeboten"
+          },
+          {
+            "type": "paragraph",
+            "content": "Wenn die Fahrschule keine Theorie- oder Fahrtermine über die Plattform anbietet, werden sie nicht angezeigt."
+          },
+          {"type": "heading", "content": "6. Kontaktiere deine Fahrschule"},
+          {"type": "paragraph", "content": "Sie kann prüfen:"},
+          {
+            "type": "unorderedList",
+            "content": [
+              "zugewiesener Fahrlehrer",
+              "Verfügbarkeiten",
+              "Buchungsregeln"
+            ]
+          },
+          {"type": "heading", "content": ""},
+          {"type": "heading", "content": ""},
+          {"type": "heading", "content": "Zahlungsprobleme"},
+          {
+            "type": "paragraph",
+            "content": "Zahlungen gelten nur für Fahrschulen, nicht für Schüler."
+          },
+          {
+            "type": "paragraph",
+            "content": "Wenn Zahlungen fehlschlagen oder Rechnungen fehlen, liegt das meist an Kartenproblemen oder abgelaufenen Zahlungsdaten."
+          },
+          {"type": "heading", "content": "1. Prüfe deine Zahlungsmethode"},
+          {
+            "type": "paragraph",
+            "content": "Gehe zu Einstellungen → Zahlung."
+          },
+          {
+            "type": "paragraph",
+            "content": "Überprüfe deine Zahlungsmethoden und ihre Gültigkeiten."
+          },
+          {"type": "heading", "content": "2. Zahlung abgelehnt"},
+          {"type": "paragraph", "content": "Häufige Gründe:"},
+          {
+            "type": "unorderedList",
+            "content": [
+              "Bank lehnt Zahlung ab",
+              "Limit erreicht",
+              "Karte blockiert"
+            ]
+          },
+          {"type": "heading", "content": "3. Rechnung wird nicht angezeigt"},
+          {
+            "type": "paragraph",
+            "content": "Rechnungen werden monatlich erstellt."
+          },
+          {
+            "type": "paragraph",
+            "content": "Evtl. ist es noch zu früh im Abrechnungszeitraum."
+          },
+          {"type": "heading", "content": "4. Abo pausiert"},
+          {
+            "type": "paragraph",
+            "content": "Bei mehreren Fehlversuchen wird das Abo ggf. pausiert."
+          },
+          {
+            "type": "paragraph",
+            "content": "Aktualisiere deine Zahlungsdaten und versuche es erneut."
+          },
+          {"type": "heading", "content": "5. Support kontaktieren"},
+          {"type": "paragraph", "content": "Sende:"},
+          {
+            "type": "unorderedList",
+            "content": [
+              "Name der Fahrschule",
+              "Rechnungsnummer (falls vorhanden)",
+              "Screenshot der Fehlermeldung"
+            ]
+          },
+          {"type": "heading", "content": ""},
+          {"type": "heading", "content": ""},
+          {"type": "heading", "content": "Probleme mit Handy"},
+          {
+            "type": "paragraph",
+            "content": "Wenn die Plattform auf deinem Handy nicht richtig funktioniert, helfen diese Schritte."
+          },
+          {"type": "heading", "content": "1. Browser aktualisieren"},
+          {"type": "paragraph", "content": "Unterstützt werden:"},
+          {
+            "type": "unorderedList",
+            "content": ["Chrome", "Safari", "Firefox"]
+          },
+          {
+            "type": "paragraph",
+            "content": "Ältere Versionen können Fehler verursachen."
+          },
+          {"type": "heading", "content": "2. Mobilen Browser-Cache löschen"},
+          {
+            "type": "paragraph",
+            "content": "Dies behebt die meisten Ladeprobleme."
+          },
+          {"type": "heading", "content": "3. Cookies & JavaScript aktivieren"},
+          {
+            "type": "paragraph",
+            "content": "Beides ist notwendig, damit die Plattform funktioniert."
+          },
+          {"type": "heading", "content": "4. Internetverbindung prüfen"},
+          {
+            "type": "paragraph",
+            "content": "Bei schwacher Verbindung laden Termine und Nachrichten manchmal nicht."
           }
         ]
       }
