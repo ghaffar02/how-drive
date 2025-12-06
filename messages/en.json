@@ -1783,7 +1783,121 @@
     "des5": "Read about data and account",
     "title6": "Troubleshooting",
     "href6": "/help/troubleshooting",
-    "des6": "Go through possible issues"
+    "des6": "Go through possible issues",
+    "gettingStartedData": [
+      {
+        "title": "Overview",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "Overview"
+          },
+          {
+            "type": "paragraph",
+            "content": "Our platform connects driving students with driving schools and trainers. Students can find a school, track their progress, book appointments, and communicate directly with their school or trainer.Driving schools can manage students, trainers, appointments, communication, and billing, all in one place.Trainers receive access to a dedicated dashboard created for them by their school."
+          },
+          {
+            "type": "heading",
+            "content": "How the platform works"
+          },
+          {
+            "type": "heading",
+            "content": "For students"
+          },
+          {
+            "type": "orderedList",
+            "content": [
+              "Find your driving school",
+              "Create an account",
+              "Track your progress toward the German driving license step by step",
+              "Book appointments for theory lessons, driving lessons, or general questions",
+              "Message your school or trainer"
+            ]
+          }
+        ]
+      },
+      {
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "For schools"
+          },
+          {
+            "type": "orderedList",
+            "content": [
+              "Manage student profiles and progression",
+              "Add trainers — trainers do not create their own accounts",
+              "Plan schedules and availability, have all the booked appointments in view",
+              "Communicate with students and trainers",
+              "Manage subscription and invoices"
+            ]
+          }
+        ]
+      },
+      {
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "For trainers"
+          },
+          {
+            "type": "orderedList",
+            "content": [
+              "Log in using the account created by the school",
+              "See your assigned students or add them",
+              "Track student progress",
+              "Plan your availability, have all the booked appointments in view",
+              "Message students and your school"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Steps to create an account (Students & Schools)",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "Who can create an account?"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Students → yes",
+              "Schools → yes",
+              "Trainers → no, accounts are created by schools"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "Steps to create an account (Students & Schools)"
+          },
+          {
+            "type": "heading",
+            "content": "1. Go to the signup page"
+          },
+          {
+            "type": "heading",
+            "content": "2. Choose your role"
+          },
+          {
+            "type": "unorderedList",
+            "content": ["student account", "school account"]
+          },
+          {
+            "type": "heading",
+            "content": "3. Fill in your details"
+          },
+          {
+            "type": "unorderedList",
+            "content": ["name", "email", "password"]
+          }
+        ]
+      }
+    ]
   },
   "AboutUs": {
     "Title2": "Find your driving school",
@@ -1933,11 +2047,7 @@
         "title": "Book an appointment with your driving school",
         "title2": "Book an appointment for the student",
         "input1": "Driving student",
-        "tabs": [
-          "Talk",
-          "Theory",
-          "Driving"
-        ],
+        "tabs": ["Talk", "Theory", "Driving"],
         "tabsOptions": {
           "options": [
             [
@@ -2151,11 +2261,7 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": [
-            "Necessary",
-            "Analytics",
-            "Allow all"
-          ]
+          "formFields": ["Necessary", "Analytics", "Allow all"]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2183,14 +2289,8 @@
             "News",
             "Driving license office registered"
           ],
-          "formFieldsOn2": [
-            "Booked appointments",
-            "Messages"
-          ],
-          "formFieldsOff": [
-            "Genereller Newsletter",
-            "Offers and advertising"
-          ]
+          "formFieldsOn2": ["Booked appointments", "Messages"],
+          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
         }
       }
     },
@@ -2585,11 +2685,7 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": [
-            "Necessary",
-            "Analytics",
-            "Allow all"
-          ]
+          "formFields": ["Necessary", "Analytics", "Allow all"]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -2617,19 +2713,13 @@
             "News",
             "New students' request"
           ],
-          "formFieldsOff": [
-            "Genereller Newsletter",
-            "Offers and advertising"
-          ]
+          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
         }
       }
     },
     "leftSideTab": {
       "messageFisrtTime": "The messages are not encrypted.<br/><br/><br/> Select a chat to start messaging <br/>or <br/> click on \"plus\" icon to start a new one.",
-      "textTab": [
-        "Active",
-        "Inactive"
-      ],
+      "textTab": ["Active", "Inactive"],
       "search": "Search",
       "title": "The maximum number of active students is reached. Please upgrade under \"Settings => Payment\" or deactivate a student."
     },
@@ -2805,11 +2895,7 @@
     "Calendar": {
       "Sidebar": {
         "title": "Set appointment schedules",
-        "tabs": [
-          "Talk",
-          "Theory",
-          "Driving"
-        ],
+        "tabs": ["Talk", "Theory", "Driving"],
         "tab1": {
           "title": "Category",
           "title2": "Add category",
@@ -2931,16 +3017,8 @@
         "title2": "Book an appointment for the student",
         "title3": "Book an appointment with your driving school",
         "input1": "Driving student",
-        "tabs": [
-          "Talk",
-          "Theory",
-          "Driving",
-          "Exam"
-        ],
-        "tabs2": [
-          "Driving",
-          "Exam"
-        ],
+        "tabs": ["Talk", "Theory", "Driving", "Exam"],
+        "tabs2": ["Driving", "Exam"],
         "tabsOptions": {
           "options": [
             [

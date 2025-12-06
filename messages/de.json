@@ -1783,7 +1783,121 @@
     "title5": "Datenrichtlinien",
     "des5": "Lies über Daten und Konten",
     "title6": "Fehlerbehebung",
-    "des6": "Geh mögliche Probleme durch"
+    "des6": "Geh mögliche Probleme durch",
+    "gettingStartedData": [
+      {
+        "title": "Überblick",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "Überblick"
+          },
+          {
+            "type": "paragraph",
+            "content": "Unsere Plattform verbindet Fahrschüler mit Fahrschulen und Fahrlehrern. Schüler können eine Fahrschule finden, ihren Führerscheinfortschritt verfolgen, Termine buchen und direkt mit der Fahrschule oder den Fahrlehrern kommunizieren. Fahrschulen können Schüler, Lehrer, Termine, Nachrichten und Abrechnungen verwalten, alles an einem Ort. Fahrlehrer erhalten einen eigenen Zugang, der von der Fahrschule für sie erstellt wird."
+          },
+          {
+            "type": "heading",
+            "content": "So funktioniert die Plattform"
+          },
+          {
+            "type": "heading",
+            "content": "Für Schüler*innen"
+          },
+          {
+            "type": "orderedList",
+            "content": [
+              "Finde deine Fahrschule",
+              "Erstelle ein Konto",
+              "Verfolge deinen Fortschritt zum Führerschein Schritt für Schritt",
+              "Buche Termine für Theorie- und Fahrstunden oder allgemeine Fragen",
+              "Schreibe Nachrichten an deine Schule oder deinen Fahrlehrer"
+            ]
+          }
+        ]
+      },
+      {
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "Für Fahrschulen"
+          },
+          {
+            "type": "orderedList",
+            "content": [
+              "Verwalte Schülerprofile und ihren Fortschritt",
+              "Füge Trainer hinzu — Trainer registrieren sich nicht selbst",
+              "Plane Verfügbarkeiten und Termine",
+              "Kommuniziere mit Schülern und Trainern",
+              "Verwalte Abos und Rechnungen"
+            ]
+          }
+        ]
+      },
+      {
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "Für Fahrlehrer*innen"
+          },
+          {
+            "type": "orderedList",
+            "content": [
+              "Logge dich mit dem Zugang ein, den deine Fahrschule dir erstellt hat",
+              "Sieh deine zugewiesenen Schüler",
+              "Verfolge den Fortschritt deiner Schüler",
+              "Verwalte deine Verfügbarkeiten",
+              "Schreibe Nachrichten an Schüler und Schule"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Schritte zum Erstellen eines Kontos (Schüler & Schulen)",
+        "image": "/ImageBGridInfo.jpg",
+        "content": [
+          {
+            "type": "heading",
+            "content": "Wer kann ein Konto erstellen?"
+          },
+          {
+            "type": "unorderedList",
+            "content": [
+              "Schüler → ja",
+              "Fahrschulen → ja",
+              "Lehrer → nein, Konten werden von der Schule erstellt"
+            ]
+          },
+          {
+            "type": "heading",
+            "content": "Schritte zum Erstellen eines Kontos (Schüler & Schulen)"
+          },
+          {
+            "type": "heading",
+            "content": "1. Gehe zur Registrierungsseite"
+          },
+          {
+            "type": "heading",
+            "content": "2. Wähle deine Rolle"
+          },
+          {
+            "type": "unorderedList",
+            "content": ["Schülerkonto", "Schulkonto"]
+          },
+          {
+            "type": "heading",
+            "content": "3. Gib deine Daten ein"
+          },
+          {
+            "type": "unorderedList",
+            "content": ["Name", "E-Mail", "Passwort"]
+          }
+        ]
+      }
+    ]
   },
   "AboutUs": {
     "Title2": "Finde deine Fahrschule",
@@ -1878,11 +1992,7 @@
         "title": "Termin bei Fahrschule buchen",
         "title2": "Termin für den/die Schüler*in buchen",
         "input1": "Fahrschüler*in",
-        "tabs": [
-          "Gespräch",
-          "Theorie",
-          "Fahren"
-        ],
+        "tabs": ["Gespräch", "Theorie", "Fahren"],
         "tabsOptions": {
           "options": [
             [
@@ -2139,11 +2249,7 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": [
-            "Notwendige",
-            "Analytics",
-            "Alle zulassen"
-          ]
+          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2182,14 +2288,8 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOn2": [
-            "Gebuchte Termine",
-            "Nachrichten"
-          ],
-          "formFieldsOff": [
-            "News und Update",
-            "Angebote und Werbung"
-          ]
+          "formFieldsOn2": ["Gebuchte Termine", "Nachrichten"],
+          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
         }
       }
     },
@@ -2572,11 +2672,7 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": [
-            "Notwendige",
-            "Analytics",
-            "Alle zulassen"
-          ]
+          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
         },
         "Password": {
           "heading1": "Passwort",
@@ -2615,19 +2711,13 @@
             "Nachrichten",
             "Neue Schüler Anfrage"
           ],
-          "formFieldsOff": [
-            "News und Update",
-            "Angebote und Werbung"
-          ]
+          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
         }
       }
     },
     "leftSideTab": {
       "messageFisrtTime": "Die Nachrichten sind nicht verschlüsselt.<br/><br/><br/> Wähle einen Chat aus, um Nachrichten zu senden,<br/> oder<br/> Klicke auf „Plus-Symbol“, um eine neue Nachricht zu erstellen.",
-      "textTab": [
-        "Aktiv",
-        "Inaktiv"
-      ],
+      "textTab": ["Aktiv", "Inaktiv"],
       "search": "Suchen",
       "title": "Die maximal zulässige Anzahl aktiver Fahrschüler ist erreicht. Bitte upgrade deinen Tarif unter \"Einstellungen=>Zahlung\" oder deaktiviere einen Fahrschüler."
     },
@@ -2792,11 +2882,7 @@
     "Calendar": {
       "Sidebar": {
         "title": "Terminpläne festlegen",
-        "tabs": [
-          "Gespräch",
-          "Theorie",
-          "Fahren"
-        ],
+        "tabs": ["Gespräch", "Theorie", "Fahren"],
         "tab1": {
           "title": "Kategorie",
           "title2": "Kategorie hinzufügen",
@@ -2922,16 +3008,8 @@
         "title2": "Termin für den/die Schüler*in buchen",
         "title3": "Termin bei Fahrschule buchen",
         "input1": "Fahrschüler*in",
-        "tabs": [
-          "Gespräch",
-          "Theorie",
-          "Fahren",
-          "Prüfung"
-        ],
-        "tabs2": [
-          "Fahren",
-          "Prüfung"
-        ],
+        "tabs": ["Gespräch", "Theorie", "Fahren", "Prüfung"],
+        "tabs2": ["Fahren", "Prüfung"],
         "tabsOptions": {
           "options": [
             [
