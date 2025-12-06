@@ -144,7 +144,7 @@ export default function Page() {
           <Navbar />
         </Box>
         <Box sx={{paddingTop: '80px'}}>
-          <GettingStarted data={gettingStartedData} />
+          <GettingStarted headerTitle='Getting Started' data={gettingStartedData} />
         </Box>
         <Footer />
       </Box>
