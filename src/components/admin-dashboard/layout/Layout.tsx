@@ -119,21 +119,21 @@ export default function AdminDashboard() {
             setOpen={setOpen}
             title={
               activeKey === '1'
-                ? (tabs[Number(activeKey) - 1]?.label ?? '')
+                ? 'Home'
                 : activeKey === '2'
-                  ? (tabs[Number(activeKey) - 1]?.label ?? '')
+                  ? 'Students'
                   : activeKey === '3'
-                    ? (tabs[Number(activeKey) - 1]?.label ?? '')
+                    ? 'Bookings'
                     : activeKey === '4'
-                      ? (tabs[Number(activeKey) - 1]?.label ?? '')
+                      ? 'Message'
                       : activeKey === '5'
-                        ? (tabs[Number(activeKey)]?.label ?? '')
+                        ? 'Settings'
                         : activeKey === '6'
-                          ? (tabs[Number(activeKey)]?.label ?? '')
+                          ? 'Support'
                           : activeKey === '7'
-                            ? (tabs[Number(activeKey) - 3]?.label ?? '')
+                            ? 'Trainer'
                             : activeKey === '9'
-                              ? (tabs[Number(activeKey) - 3]?.label ?? '')
+                              ? 'Schools'
                               : ''
             }
             activeKey={activeKey}
