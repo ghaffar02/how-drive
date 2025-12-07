@@ -47,6 +47,9 @@ export const routing = defineRouting({
     '/driving-schools': {
       de: '/fahrschulen'
     },
+    '/driving-schools/fahrschule-master': {
+      de: '/fahrschulen/fahrschule-master'
+    },
     '/help': {
       de: '/hilfe'
     },
