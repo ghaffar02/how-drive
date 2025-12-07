@@ -256,7 +256,7 @@ export default function Home({setActiveKey}: Props) {
             size={{xs: 12}}
             sx={{
               gridColumn: {md: 'none', lg: 'span 2'},
-              display: {xs: 'block', md: 'none', lg: 'block'}
+              display: {xs: 'none', md: 'none', lg: 'block'}
             }}
           >
             <Messages setActiveKey={setActiveKey} messages={messages} />
@@ -316,7 +316,7 @@ export default function Home({setActiveKey}: Props) {
             size={{xs: 12}}
             sx={{
               gridColumn: {md: 'none', lg: 'span 2'},
-              display: {xs: 'block', md: 'none', lg: 'block'}
+              display: {xs: 'none', md: 'none', lg: 'block'}
             }}
           >
             <TableCard
