@@ -3,7 +3,6 @@ import React from 'react';
 import Image from 'next/image';
 import editIcon from '@/assets/svgs/editIcon.svg';
 import closeIcon from '@/assets/svgs/closeIcon.svg';
-import FAQForm from './FAQForm';
 
 interface FAQItem {
   id: number;
@@ -136,48 +135,6 @@ export default function FAQList({onEdit, selectedFAQId, activeTab}: FAQListProps
         }
       }}
     >
-      {/* FAQ Form */}
-      <FAQForm
-        onSave={(data) => {
-          console.log('Save data:', data);
-        }}
-        onAddNew={() => {
-          console.log('Add new FAQ');
-        }}
-      />
-
-      {/* FAQ List */}
-      <Box
-        sx={{
-          width: '100%',
-          padding: '24px',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '12px',
-          background: '#ffffff99',
-          boxShadow: `0px 0px 0px 1px rgb(255, 255, 255, rgb(255, 255, 255)), 0px 1px 0px 0px rgba(0, 0, 0, 0.25), 0px 1px 1px 0px rgba(0, 0, 0, 0.25)`,
-          border: '2px solid #fff',
-          borderRadius: {xs: '24px'},
-          backdropFilter: 'blur(15px)',
-          overflowY: 'auto',
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none',
-          '&::-webkit-scrollbar': {
-            width: '8px'
-          },
-          '&::-webkit-scrollbar-track': {
-            background: '#f1f1f1',
-            borderRadius: '4px'
-          },
-          '&::-webkit-scrollbar-thumb': {
-            background: '#888',
-            borderRadius: '4px',
-            '&:hover': {
-              background: '#555'
-            }
-          }
-        }}
-      >
       {faqData.map((item, index) => (
         <React.Fragment key={item.id}>
           <Box
@@ -347,14 +304,12 @@ export default function FAQList({onEdit, selectedFAQId, activeTab}: FAQListProps
           {index < faqData.length - 1 && (
             <Divider
               sx={{
-                borderColor: '#E2E8F0',
-                margin: '0 -24px'
+                borderColor: '#E2E8F0'
               }}
             />
           )}
         </React.Fragment>
       ))}
-      </Box>
     </Box>
   );
 }

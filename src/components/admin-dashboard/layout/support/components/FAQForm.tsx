@@ -1,8 +1,15 @@
-import {Box, Typography, TextField} from '@mui/material';
+import {
+  Box,
+  Typography,
+  TextField,
+  Checkbox,
+  FormControlLabel
+} from '@mui/material';
 import React, {useState, useEffect} from 'react';
 import CustomButton from '@/components/admin-dashboard/CustomButton';
 import checkmarkWhite from '@/assets/svgs/checkmarkWhite.svg';
 import plusWhite from '@/assets/svgs/plusWhite.svg';
+import sendIcon from '@/assets/svgs/dashboard-student/sendIcon.svg';
 
 interface FAQFormProps {
   activeTab?: string;
@@ -30,7 +37,10 @@ export default function FAQForm({
       germanQuestion: initialData?.germanQuestion || '',
       germanAnswer: initialData?.germanAnswer || '',
       englishQuestion: initialData?.englishQuestion || '',
-      englishAnswer: initialData?.englishAnswer || ''
+      englishAnswer: initialData?.englishAnswer || '',
+      stu: false,
+      sch: false,
+      tra: false
     };
   });
 
@@ -41,20 +51,26 @@ export default function FAQForm({
         germanQuestion: initialData.germanQuestion || '',
         germanAnswer: initialData.germanAnswer || '',
         englishQuestion: initialData.englishQuestion || '',
-        englishAnswer: initialData.englishAnswer || ''
+        englishAnswer: initialData.englishAnswer || '',
+        stu: false,
+        sch: false,
+        tra: false
       });
     } else {
       setFormData({
         germanQuestion: '',
         germanAnswer: '',
         englishQuestion: '',
-        englishAnswer: ''
+        englishAnswer: '',
+        stu: false,
+        sch: false,
+        tra: false
       });
     }
   }, [initialData]);
 
-  const handleChange = (field: string, value: string) => {
-    setFormData(prev => ({
+  const handleChange = (field: string, value: string | boolean) => {
+    setFormData((prev) => ({
       ...prev,
       [field]: value
     }));
@@ -68,7 +84,10 @@ export default function FAQForm({
         germanQuestion: '',
         germanAnswer: '',
         englishQuestion: '',
-        englishAnswer: ''
+        englishAnswer: '',
+        stu: false,
+        sch: false,
+        tra: false
       });
     }
   };
@@ -78,7 +97,10 @@ export default function FAQForm({
       germanQuestion: '',
       germanAnswer: '',
       englishQuestion: '',
-      englishAnswer: ''
+      englishAnswer: '',
+      stu: false,
+      sch: false,
+      tra: false
     });
     if (onAddNew) {
       onAddNew();
@@ -123,7 +145,9 @@ export default function FAQForm({
         <TextField
           value={formData.germanQuestion || ''}
           onChange={(e) => handleChange('germanQuestion', e.target.value)}
-          placeholder={isEmails ? 'Enter title in German' : 'Enter question in German'}
+          placeholder={
+            isEmails ? 'Enter title in German' : 'Enter question in German'
+          }
           multiline
           rows={4}
           fullWidth
@@ -169,7 +193,9 @@ export default function FAQForm({
         <TextField
           value={formData.germanAnswer || ''}
           onChange={(e) => handleChange('germanAnswer', e.target.value)}
-          placeholder={isEmails ? 'Enter text in German' : 'Enter answer in German'}
+          placeholder={
+            isEmails ? 'Enter text in German' : 'Enter answer in German'
+          }
           multiline
           rows={6}
           fullWidth
@@ -215,7 +241,9 @@ export default function FAQForm({
         <TextField
           value={formData.englishQuestion || ''}
           onChange={(e) => handleChange('englishQuestion', e.target.value)}
-          placeholder={isEmails ? 'Enter title in English' : 'Enter question in English'}
+          placeholder={
+            isEmails ? 'Enter title in English' : 'Enter question in English'
+          }
           multiline
           rows={4}
           fullWidth
@@ -261,7 +289,9 @@ export default function FAQForm({
         <TextField
           value={formData.englishAnswer || ''}
           onChange={(e) => handleChange('englishAnswer', e.target.value)}
-          placeholder={isEmails ? 'Enter text in English' : 'Enter answer in English'}
+          placeholder={
+            isEmails ? 'Enter text in English' : 'Enter answer in English'
+          }
           multiline
           rows={6}
           fullWidth
@@ -292,6 +322,109 @@ export default function FAQForm({
         />
       </Box>
 
+      {/* Checkboxes - Only for Email tab */}
+      {isEmails && (
+        <Box
+          sx={{
+            display: 'flex',
+            gap: '16px',
+            alignItems: 'center',
+            flexWrap: 'wrap'
+          }}
+        >
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={formData.stu}
+                onChange={(e) => handleChange('stu', e.target.checked)}
+                sx={{
+                  color: '#4611f5',
+                  '&.Mui-checked': {
+                    color: '#4611f5'
+                  },
+                  '& .MuiSvgIcon-root': {
+                    fontSize: 20
+                  }
+                }}
+              />
+            }
+            label={
+              <Typography
+                sx={{
+                  fontSize: '14px',
+                  fontWeight: 400,
+                  color: '#2D3748',
+                  fontFamily: '"Inter", sans-serif'
+                }}
+              >
+                Stu
+              </Typography>
+            }
+            sx={{margin: 0}}
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={formData.sch}
+                onChange={(e) => handleChange('sch', e.target.checked)}
+                sx={{
+                  color: '#4611f5',
+                  '&.Mui-checked': {
+                    color: '#4611f5'
+                  },
+                  '& .MuiSvgIcon-root': {
+                    fontSize: 20
+                  }
+                }}
+              />
+            }
+            label={
+              <Typography
+                sx={{
+                  fontSize: '14px',
+                  fontWeight: 400,
+                  color: '#2D3748',
+                  fontFamily: '"Inter", sans-serif'
+                }}
+              >
+                Sch
+              </Typography>
+            }
+            sx={{margin: 0}}
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                checked={formData.tra}
+                onChange={(e) => handleChange('tra', e.target.checked)}
+                sx={{
+                  color: '#4611f5',
+                  '&.Mui-checked': {
+                    color: '#4611f5'
+                  },
+                  '& .MuiSvgIcon-root': {
+                    fontSize: 20
+                  }
+                }}
+              />
+            }
+            label={
+              <Typography
+                sx={{
+                  fontSize: '14px',
+                  fontWeight: 400,
+                  color: '#2D3748',
+                  fontFamily: '"Inter", sans-serif'
+                }}
+              >
+                Tra
+              </Typography>
+            }
+            sx={{margin: 0}}
+          />
+        </Box>
+      )}
+
       {/* Buttons */}
       <Box
         sx={{
@@ -318,25 +451,49 @@ export default function FAQForm({
             padding: '10px 20px'
           }}
         />
-        <CustomButton
-          label="Add New"
-          bgColor="#4611f5"
-          hoverColor="#300ca8"
-          activeColor="#1A065C"
-          imgSrc={plusWhite}
-          onClick={handleAddNew}
-          btnSx={{
-            minWidth: '24px',
-            maxWidth: '24px',
-            height: '24px'
-          }}
-          sx={{
-            gap: '8px',
-            padding: '10px 20px'
-          }}
-        />
+        {isEmails ? (
+          /* Send Email button - Only for Email tab */
+          <CustomButton
+            label="Send Email"
+            bgColor="#4611f5"
+            hoverColor="#300ca8"
+            activeColor="#1A065C"
+            imgSrc={sendIcon}
+            onClick={handleSave}
+            btnSx={{
+              minWidth: '24px',
+              maxWidth: '24px',
+              height: '24px',
+              filter: 'brightness(0) invert(1)'
+            }}
+            sx={{
+              gap: '8px',
+              padding: '10px 20px'
+            }}
+          />
+        ) : (
+          /* Save and Add New buttons - For other tabs */
+          <>
+            <CustomButton
+              label="Add New"
+              bgColor="#4611f5"
+              hoverColor="#300ca8"
+              activeColor="#1A065C"
+              imgSrc={plusWhite}
+              onClick={handleAddNew}
+              btnSx={{
+                minWidth: '24px',
+                maxWidth: '24px',
+                height: '24px'
+              }}
+              sx={{
+                gap: '8px',
+                padding: '10px 20px'
+              }}
+            />
+          </>
+        )}
       </Box>
     </Box>
   );
 }
-
