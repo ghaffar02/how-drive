@@ -1,5 +1,6 @@
 'use client';
 import {Box} from '@mui/material';
+import {useTranslations} from 'next-intl';
 
 import Hero from '@/components/home/Hero';
 import Navbar from '@/components/navbar/Navbar';
@@ -10,8 +11,78 @@ import Faq from '@/components/home/Faq';
 import Advantages from '@/components/home/Advantages';
 import Pricing from '@/components/prices/Pricing';
 import LicenseSteps from '@/components/home/components/LicenseSteps';
+import uiDesigner from '@/assets/pngs/Tab-Menu/uiDesigner.png';
+import webDesigner from '@/assets/pngs/Tab-Menu/webDesigner.png';
+import seoSpecialist from '@/assets/pngs/Tab-Menu/seoSpecialist.png';
+import guide from '@/assets/pngs/Tab-Menu/guide.png';
+
+type StepFromI18n = {
+  number: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  heading: string;
+};
+
+type Step = {
+  number: string;
+  title: string;
+  heading: string;
+  description: string;
+  image: any;
+};
 
 export default function HomePage() {
+  const t = useTranslations('HowItWorks');
+
+  const learnerImages = [uiDesigner, webDesigner, seoSpecialist, guide];
+  const schoolImages = [uiDesigner, webDesigner, seoSpecialist, guide];
+  const pwaIosImages = [uiDesigner, webDesigner, seoSpecialist, guide];
+  const pwaAndroidImages = [uiDesigner, webDesigner, seoSpecialist, guide];
+
+  const learnerSteps = (t.raw('learner.steps') as StepFromI18n[]).map(
+    (s, i) => ({
+      number: String(s.number),
+      title: s.title,
+      heading: s.heading,
+      description: s.description,
+      image: learnerImages[i]
+    })
+  );
+
+  const schoolSteps = (t.raw('school.steps') as StepFromI18n[]).map((s, i) => ({
+    number: String(s.number),
+    title: s.title,
+    heading: s.heading,
+    description: s.description,
+    image: schoolImages[i]
+  }));
+
+  const pwaIosSteps = (t.raw('pwaIos.steps') as StepFromI18n[]).map((s, i) => ({
+    number: String(s.number),
+    title: s.title,
+    heading: s.heading,
+    description: s.description,
+    image: pwaIosImages[i]
+  }));
+
+  const pwaAndroidSteps = (t.raw('pwaAndroid.steps') as StepFromI18n[]).map(
+    (s, i) => ({
+      number: String(s.number),
+      title: s.title,
+      heading: s.heading,
+      description: s.description,
+      image: pwaAndroidImages[i]
+    })
+  );
+
+  const stepsArray: Step[][] = [
+    learnerSteps,
+    schoolSteps,
+    pwaIosSteps,
+    pwaAndroidSteps
+  ];
+
   return (
     <>
       <Box>
@@ -33,7 +104,7 @@ export default function HomePage() {
           <Hero />
         </Box>
         <LicenseSteps />
-        <HowItWorks />
+        <HowItWorks stepsArray={stepsArray} showTabs={false} />
         <Advantages />
         <Pricing />
         <Faq />
