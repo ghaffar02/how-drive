@@ -34,11 +34,9 @@ type Step = {
 
 export default function HomePage() {
   const t = useTranslations('HowItWorks');
+  const tAdvantages = useTranslations('Advantages');
 
   const learnerImages = [uiDesigner, webDesigner, seoSpecialist, guide];
-  const schoolImages = [uiDesigner, webDesigner, seoSpecialist, guide];
-  const pwaIosImages = [uiDesigner, webDesigner, seoSpecialist, guide];
-  const pwaAndroidImages = [uiDesigner, webDesigner, seoSpecialist, guide];
 
   const learnerSteps = (t.raw('learner.steps') as StepFromI18n[]).map(
     (s, i) => ({
@@ -51,6 +49,13 @@ export default function HomePage() {
   );
 
   const stepsArray: Step[][] = [learnerSteps];
+
+  const driverData = tAdvantages.raw('DriverData') as Array<{
+    title: string;
+    description: string;
+    bgColor: string;
+    color: string;
+  }>;
 
   return (
     <>
@@ -74,7 +79,7 @@ export default function HomePage() {
         </Box>
         <LicenseSteps />
         <HowItWorks stepsArray={stepsArray} showTabs={false} />
-        <Advantages />
+        <Advantages data={driverData} />
         <Pricing />
         <Faq />
         <TrustServiceSection />
