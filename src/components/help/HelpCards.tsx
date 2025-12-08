@@ -134,7 +134,8 @@ export default function HelpCard({data}: HelpCardProps) {
                 <Typography
                   sx={{
                     fontSize: {xs: '16px', sm: '17px', lg: '18px'},
-                    fontFamily: '"Inter", sans-serif',
+                    fontFamily:
+                      '"Inter", "Inter Placeholder", sans-serif !important',
                     color: '#2d3748',
                     letterSpacing: '0.02em',
                     textAlign: 'center'

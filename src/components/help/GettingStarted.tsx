@@ -307,8 +307,8 @@ export default function GettingStarted({
           >
             <Typography
               sx={{
-                ...localFont.inter22,
-                fontWeight: 700,
+                ...localFont.inter20,
+                fontWeight: 600,
                 textTransform: 'capitalize',
                 color: '#1A202C',
                 fontFamily: '"Inter", sans-serif !important',
@@ -362,12 +362,12 @@ export default function GettingStarted({
                       maxWidth: {
                         xs: '100%',
                         md: '100%',
-                        lg: '1041px'
+                        lg: '1080px'
                       },
                       height: {
                         xs: 'auto',
                         md: 'auto',
-                        lg: '694px'
+                        lg: '720px'
                       },
                       position: 'relative',
                       flexShrink: 0,
@@ -385,7 +385,7 @@ export default function GettingStarted({
                       height={694}
                       style={{
                         width: '100%',
-                        height: 'auto',
+                        height: '100%',
                         objectFit: 'cover'
                       }}
                       unoptimized={typeof item.image === 'string'}
