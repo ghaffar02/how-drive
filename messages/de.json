@@ -1795,7 +1795,7 @@
           },
           {
             "type": "paragraph",
-            "content": "Unsere Plattform verbindet Fahrschüler mit Fahrschulen und Fahrlehrern. Schüler können eine Fahrschule finden, ihren Führerscheinfortschritt verfolgen, Termine buchen und direkt mit der Fahrschule oder den Fahrlehrern kommunizieren. Fahrschulen können Schüler, Lehrer, Termine, Nachrichten und Abrechnungen verwalten, alles an einem Ort. Fahrlehrer erhalten einen eigenen Zugang, der von der Fahrschule für sie erstellt wird."
+            "content": "Unsere Plattform verbindet Fahrschüler mit Fahrschulen und Fahrlehrern.<br/>Schüler können eine Fahrschule finden, ihren Führerscheinfortschritt verfolgen, Termine buchen und direkt mit der Fahrschule oder den Fahrlehrern kommunizieren.<br/>Fahrschulen können Schüler, Lehrer, Termine, Nachrichten und Abrechnungen verwalten, alles an einem Ort.<br/>Fahrlehrer erhalten einen eigenen Zugang, der von der Fahrschule für sie erstellt wird."
           },
           {
             "type": "heading",
@@ -1828,7 +1828,7 @@
             "type": "orderedList",
             "content": [
               "Verwalte Schülerprofile und ihren Fortschritt",
-              "Füge Trainer hinzu — Trainer registrieren sich nicht selbst",
+              "Füge Fahrlehrer hinzu — Fahrlehrer registrieren sich nicht selbst",
               "Plane Verfügbarkeiten und Termine",
               "Kommuniziere mit Schülern und Trainern",
               "Verwalte Abos und Rechnungen"
@@ -1885,7 +1885,10 @@
           },
           {
             "type": "unorderedList",
-            "content": ["Schülerkonto", "Schulkonto"]
+            "content": [
+              "Schülerkonto",
+              "Schulkonto"
+            ]
           },
           {
             "type": "heading",
@@ -1893,7 +1896,11 @@
           },
           {
             "type": "unorderedList",
-            "content": ["Name", "E-Mail", "Passwort"]
+            "content": [
+              "Name",
+              "E-Mail",
+              "Passwort"
+            ]
           }
         ]
       }
@@ -1975,6 +1982,14 @@
           },
           {
             "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
             "content": "Dashboard-Überblick"
           },
           {
@@ -1995,7 +2010,12 @@
           },
           {
             "type": "unorderedList",
-            "content": ["Home", "Verlauf", "Kalender", "Nachrichten"]
+            "content": [
+              "Home",
+              "Verlauf",
+              "Kalender",
+              "Nachrichten"
+            ]
           }
         ]
       },
@@ -2149,20 +2169,24 @@
             "content": "Klicke auf „Buchen“."
           },
           {
+            "type": "paragraph",
+            "content": ""
+          },
+          {
+            "type": "paragraph",
+            "content": ""
+          },
+          {
             "type": "heading",
             "content": "So stornierst du einen Termin"
           },
           {
-            "type": "paragraph",
-            "content": "Klicke links oder im Kalender auf den gewünschten Termin"
-          },
-          {
-            "type": "paragraph",
-            "content": "Entferne deinen Namen aus der Teilnehmerliste"
-          },
-          {
-            "type": "paragraph",
-            "content": "Klicke auf Speichern"
+            "type": "orderedList",
+            "content": [
+              "Klicke links oder im Kalender auf den gewünschten Termin",
+              "Entferne deinen Namen aus der Teilnehmerliste",
+              "Klicke auf Speichern"
+            ]
           }
         ]
       },
@@ -2232,7 +2256,10 @@
         "title": "Fahrschulprofil",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "Überblick"},
+          {
+            "type": "heading",
+            "content": "Überblick"
+          },
           {
             "type": "paragraph",
             "content": "In den Einstellungen kannst du das Profil deiner Fahrschule bearbeiten, dein Logo hochladen und die Öffnungszeiten festlegen."
@@ -2241,12 +2268,18 @@
             "type": "heading",
             "content": "So bearbeitest du dein Fahrschulprofil"
           },
-          {"type": "heading", "content": "1. Gehe zu „Einstellungen“"},
+          {
+            "type": "heading",
+            "content": "1. Gehe zu „Einstellungen“"
+          },
           {
             "type": "paragraph",
             "content": "Wähle Fahrschulprofil im Bereich Einstellungen."
           },
-          {"type": "heading", "content": "2. Bearbeite dein Schulprofil"},
+          {
+            "type": "heading",
+            "content": "2. Bearbeite dein Schulprofil"
+          },
           {
             "type": "paragraph",
             "content": "Du kannst folgende Angaben ändern:"
@@ -2268,31 +2301,67 @@
         "title": "Fahrschulprofil-Formular",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "3. Lade dein Logo hoch"},
+          {
+            "type": "heading",
+            "content": "3. Lade dein Logo hoch"
+          },
           {
             "type": "paragraph",
             "content": "Klicke auf „Logo hochladen“ und wähle ein Bild von deinem Gerät."
           },
-          {"type": "heading", "content": "4. Lege deine Öffnungszeiten fest"},
+          {
+            "type": "heading",
+            "content": "4. Lege deine Öffnungszeiten fest"
+          },
           {
             "type": "paragraph",
             "content": "Bestimme die Wochentage und Zeiten, an denen deine Schule geöffnet ist."
           },
-          {"type": "heading", "content": "5. Speichere die Änderungen"},
-          {"type": "paragraph", "content": "Klicke auf „Speichern“."},
-          {"type": "heading", "content": ""},
-          {"type": "heading", "content": ""},
-          {"type": "heading", "content": "Dashboard-Überblick"},
+          {
+            "type": "heading",
+            "content": "5. Speichere die Änderungen"
+          },
+          {
+            "type": "paragraph",
+            "content": "Klicke auf „Speichern“."
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": "Dashboard-Überblick"
+          },
           {
             "type": "paragraph",
             "content": "Das Dashboard deiner Fahrschule ist das zentrale Verwaltungszentrum für Schüler, Fahrlehrer, Termine, Nachrichten und Abrechnung. Dieser Artikel erklärt alle Bereiche des Dashboards."
           },
-          {"type": "heading", "content": "Bereiche des Dashboards"},
-          {"type": "heading", "content": "1. Seitenleiste"},
-          {"type": "paragraph", "content": "Hier findest du:"},
+          {
+            "type": "heading",
+            "content": "Bereiche des Dashboards"
+          },
+          {
+            "type": "heading",
+            "content": "1. Seitenleiste"
+          },
+          {
+            "type": "paragraph",
+            "content": "Hier findest du:"
+          },
           {
             "type": "unorderedList",
-            "content": ["Home", "Schüler", "Kalender", "Nachrichten", "Lehrer"]
+            "content": [
+              "Home",
+              "Schüler",
+              "Kalender",
+              "Nachrichten",
+              "Lehrer"
+            ]
           }
         ]
       },
@@ -2300,7 +2369,10 @@
         "title": "Obere Navigationsleiste",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "2. Startseiten-Widgets"},
+          {
+            "type": "heading",
+            "content": "2. Startseiten-Widgets"
+          },
           {
             "type": "paragraph",
             "content": "Auf der Startseite siehst du wichtige Informationen:"
@@ -2320,46 +2392,79 @@
         "title": "Obere Navigationsleiste",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "3. Schülerverwaltung"},
-          {"type": "paragraph", "content": "Hier kannst du direkt:"},
+          {
+            "type": "heading",
+            "content": "3. Schülerverwaltung"
+          },
+          {
+            "type": "paragraph",
+            "content": "Hier kannst du direkt:"
+          },
           {
             "type": "unorderedList",
             "content": [
-              "neue Schüler hinzufügen oder annehmen",
-              "Profile ansehen und bearbeiten",
-              "Fortschritte verfolgen",
-              "Termine verwalten"
+              "Neue Schüler hinzufügen oder annehmen",
+              "deren Profil ansehen und bearbeiten",
+              "deren Fortschritte verfolgen",
+              "deren Termine verwalten"
             ]
           },
-          {"type": "heading", "content": "4. Kalender-Vorschau"},
+          {
+            "type": "heading",
+            "content": "4. Kalender-Vorschau"
+          },
           {
             "type": "paragraph",
             "content": "Hier siehst du Termine und kannst Verfügbarkeiten festlegen."
           },
-          {"type": "heading", "content": "5. Nachrichten"},
+          {
+            "type": "heading",
+            "content": "5. Nachrichten"
+          },
           {
             "type": "paragraph",
             "content": "Hier siehst du alle Nachrichten, einschließlich ungelesener Nachrichten, von deiner Fahrschule oder deinen Fahrlehrern."
           },
-          {"type": "heading", "content": "6. Lehrerverwaltung"},
-          {"type": "paragraph", "content": "Hier kannst du direkt:"},
+          {
+            "type": "heading",
+            "content": "6. Lehrerverwaltung"
+          },
+          {
+            "type": "paragraph",
+            "content": "Hier kannst du direkt:"
+          },
           {
             "type": "unorderedList",
             "content": [
-              "neue Lehrer hinzufügen",
-              "Profile ansehen und bearbeiten",
+              "Neue Lehrer hinzufügen",
+              "deren Profil ansehen und bearbeiten",
               "deren Termine verfolgen"
             ]
           },
-          {"type": "heading", "content": "Schülerverwaltung"},
+          {
+            "type": "heading",
+            "content": "Schülerverwaltung"
+          },
           {
             "type": "paragraph",
             "content": "Fahrschulen können den gesamten Lebenszyklus eines Schülers verwalten: neue Anfragen annehmen, Schüler einladen, Profile bearbeiten, Fortschritt verfolgen und Schüler archivieren."
           },
-          {"type": "heading", "content": "So verwaltest du Schüler"},
-          {"type": "heading", "content": "1. Öffne den Bereich „Schüler“"},
-          {"type": "heading", "content": "Schüler hinzufügen oder annehmen"},
-          {"type": "paragraph", "content": "A. neue Schüleranfrage annehmen"},
+          {
+            "type": "heading",
+            "content": "So verwaltest du Schüler"
+          },
+          {
+            "type": "heading",
+            "content": "1. Öffne den Bereich „Schüler“"
+          },
+          {
+            "type": "heading",
+            "content": "Schüler hinzufügen oder annehmen"
+          },
+          {
+            "type": "heading",
+            "content": "A. neue Schüleranfrage annehmen"
+          },
           {
             "type": "orderedList",
             "content": [
@@ -2375,18 +2480,17 @@
         "title": "Übersichts-Widgets",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "B. neuen Schüler einladen"},
+          {
+            "type": "heading",
+            "content": "B. neuen Schüler einladen"
+          },
           {
             "type": "orderedList",
             "content": [
               "Klicke auf das Plus-Symbol über der Schülerliste",
               "Gib die E-Mail-Adresse des Schülers ein",
-              "Klicke auf „Einladung senden“"
+              "Klicke auf „Einladung senden“<br/>Die Einladung muss vom Schüler bestätigt werden."
             ]
-          },
-          {
-            "type": "paragraph",
-            "content": "Die Einladung muss vom Schüler bestätigt werden."
           }
         ]
       },
@@ -2394,8 +2498,14 @@
         "title": "Anfrage annehmen",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "Schülerprofile ansehen"},
-          {"type": "paragraph", "content": "Du kannst einsehen:"},
+          {
+            "type": "heading",
+            "content": "Schülerprofile ansehen"
+          },
+          {
+            "type": "paragraph",
+            "content": "Du kannst einsehen:"
+          },
           {
             "type": "unorderedList",
             "content": [
@@ -2412,7 +2522,10 @@
         "title": "Schülereinladungsformular",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "Fortschritt verfolgen"},
+          {
+            "type": "heading",
+            "content": "Fortschritt verfolgen"
+          },
           {
             "type": "paragraph",
             "content": "Du kannst Schritte aktualisieren wie:"
@@ -2425,7 +2538,10 @@
               "Anzahl der Fahrstunden"
             ]
           },
-          {"type": "heading", "content": "Schüler archivieren"},
+          {
+            "type": "heading",
+            "content": "Schüler archivieren"
+          },
           {
             "type": "paragraph",
             "content": "Die Archivierungsfunktion sollte aktiviert werden, wenn ein Schüler/eine Schülerin den Führerschein erhält oder die Schule verlässt."
@@ -2437,20 +2553,38 @@
               "Klicke auf den Schalter oben rechts"
             ]
           },
-          {"type": "heading", "content": ""},
-          {"type": "heading", "content": ""},
-          {"type": "heading", "content": "Lehrerverwaltung"},
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": "Lehrerverwaltung"
+          },
           {
             "type": "paragraph",
             "content": "Fahrschulen verwalten alle Fahrlehrer. Fahrlehrer erstellen kein eigenes Konto. Du kannst Lehrer hinzufügen, archivieren und Schülern zuweisen (verfügbar für Standard- und Premium-Preispläne)."
           },
-          {"type": "heading", "content": "Fahrlehrer hinzufügen"},
-          {"type": "heading", "content": "1. Öffne den Bereich „Lehrer“"},
+          {
+            "type": "heading",
+            "content": "Fahrlehrer hinzufügen"
+          },
+          {
+            "type": "heading",
+            "content": "1. Öffne den Bereich „Lehrer“"
+          },
           {
             "type": "heading",
             "content": "2. Klicke auf das Plus-Symbol oben in der Liste der Fahrlehrer"
           },
-          {"type": "paragraph", "content": "Gib ein:"},
+          {
+            "type": "paragraph",
+            "content": "Gib ein:"
+          },
           {
             "type": "unorderedList",
             "content": [
@@ -2467,7 +2601,10 @@
         "title": "Fahrlehrer-hinzufügen-Formular",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "Schüler einem Fahrlehrer zuweisen"},
+          {
+            "type": "heading",
+            "content": "Schüler einem Fahrlehrer zuweisen"
+          },
           {
             "type": "orderedList",
             "content": [
@@ -2477,7 +2614,10 @@
               "Wähle den gewünschten Schüler aus"
             ]
           },
-          {"type": "heading", "content": "Fahrlehrer archivieren"},
+          {
+            "type": "heading",
+            "content": "Fahrlehrer archivieren"
+          },
           {
             "type": "orderedList",
             "content": [
@@ -2491,12 +2631,18 @@
         "title": "Fahrlehrer archivieren",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "Terminplanung"},
+          {
+            "type": "heading",
+            "content": "Terminplanung"
+          },
           {
             "type": "paragraph",
             "content": "Fahrschulen können Verfügbarkeiten, allgemeine Schultermine und fahrlehrerspezifische Kalender verwalten."
           },
-          {"type": "heading", "content": "Verfügbarkeiten festlegen"},
+          {
+            "type": "heading",
+            "content": "Verfügbarkeiten festlegen"
+          },
           {
             "type": "orderedList",
             "content": [
@@ -2530,7 +2676,10 @@
         "title": "Verfügbarkeits-Editor",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "Schulweite Termine verwalten"},
+          {
+            "type": "heading",
+            "content": "Schulweite Termine verwalten"
+          },
           {
             "type": "paragraph",
             "content": "Du kannst alle für deine Fahrschule gebuchten Termine einsehen und bearbeiten. Klicke auf den jeweiligen Kalendertag, um die Liste der an diesem Tag gebuchten Termine anzuzeigen. Klicke auf den jeweiligen Termin, um Tag oder Uhrzeit des Termins zu bearbeiten (verfügbar für den Premium-Preisplan)."
@@ -2541,7 +2690,10 @@
         "title": "Schulkalender",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "So stornierst du einen Termin"},
+          {
+            "type": "heading",
+            "content": "So stornierst du einen Termin"
+          },
           {
             "type": "orderedList",
             "content": [
@@ -2550,12 +2702,18 @@
               "Klicke auf „Speichern“"
             ]
           },
-          {"type": "heading", "content": "Termin für einen Schüler buchen"},
+          {
+            "type": "heading",
+            "content": "Termine für einen/eine Schüler/in buchen"
+          },
           {
             "type": "paragraph",
             "content": "Nachdem die Verfügbarkeit festgelegt wurde, können deine Schüler Termine bei deiner Fahrschule buchen. Du hast außerdem die Möglichkeit, selbst Termine für deine Schüler zu buchen."
           },
-          {"type": "heading", "content": "So buchst du einen Termin"},
+          {
+            "type": "heading",
+            "content": "So buchst du einen Termin"
+          },
           {
             "type": "heading",
             "content": "1. Klicke auf das Plus-Symbol oben rechts"
@@ -2570,7 +2728,10 @@
         "title": "Lehrerauswahl",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "3. Wähle die Terminart"},
+          {
+            "type": "heading",
+            "content": "3. Wähle die Terminart"
+          },
           {
             "type": "unorderedList",
             "content": [
@@ -2601,26 +2762,50 @@
         "title": "Nachrichten senden",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "5. Wähle Datum und Uhrzeit"},
+          {
+            "type": "heading",
+            "content": "5. Wähle Datum und Uhrzeit"
+          },
           {
             "type": "paragraph",
             "content": "Alle freien Slots werden angezeigt."
           },
-          {"type": "heading", "content": "6. Bestätige die Buchung"},
-          {"type": "paragraph", "content": "Klicke auf „Buchen“."},
-          {"type": "heading", "content": "Nachrichten senden"},
-          {"type": "heading", "content": "Überblick"},
+          {
+            "type": "heading",
+            "content": "6. Bestätige die Buchung"
+          },
+          {
+            "type": "paragraph",
+            "content": "Klicke auf „Buchen“."
+          },
+          {
+            "type": "heading",
+            "content": "Nachrichten senden"
+          },
+          {
+            "type": "heading",
+            "content": "Überblick"
+          },
           {
             "type": "paragraph",
             "content": "Über das Nachrichtensystem kannst du direkt mit deinen Fahrschülern und Fahrlehrern chatten. Bitte beachte, dass es sich bei dem System nicht um einen Live-Chat handelt."
           },
-          {"type": "heading", "content": "So sendest du eine Nachricht"},
-          {"type": "heading", "content": "1. Gehe zum Bereich „Nachrichten“"},
+          {
+            "type": "heading",
+            "content": "So sendest du eine Nachricht"
+          },
+          {
+            "type": "heading",
+            "content": "1. Gehe zum Bereich „Nachrichten“"
+          },
           {
             "type": "heading",
             "content": "2. Wähle die Unterhaltung aus oder klicke auf das Plus-Symbol"
           },
-          {"type": "paragraph", "content": "Beim Klicken auf das Plus-Symbol:"},
+          {
+            "type": "paragraph",
+            "content": "Beim Klicken auf das Plus-Symbol:"
+          },
           {
             "type": "unorderedList",
             "content": [
@@ -2636,32 +2821,62 @@
         "title": "Unterhaltungsliste",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "3. Schreibe deine Nachricht"},
-          {"type": "paragraph", "content": "Nutze das Eingabefeld unten."},
-          {"type": "heading", "content": "4. Sende die Nachricht"},
-          {"type": "paragraph", "content": "Klicke auf „Senden“."},
+          {
+            "type": "heading",
+            "content": "3. Schreibe deine Nachricht"
+          },
+          {
+            "type": "paragraph",
+            "content": "Nutze das Eingabefeld unten."
+          },
+          {
+            "type": "heading",
+            "content": "4. Sende die Nachricht"
+          },
+          {
+            "type": "paragraph",
+            "content": "Klicke auf „Senden“."
+          },
           {
             "type": "paragraph",
             "content": "Benachrichtigungen erscheinen später in deinem Dashboard."
           },
-          {"type": "paragraph", "content": ""},
-          {"type": "paragraph", "content": ""},
-          {"type": "heading", "content": "Abrechnung & Abos"},
+          {
+            "type": "paragraph",
+            "content": ""
+          },
+          {
+            "type": "paragraph",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": "Abrechnung & Abos"
+          },
           {
             "type": "paragraph",
             "content": "Fahrschulen können Rechnungen einsehen, Zahlungsmethoden verwalten und ihr Abonnement ändern."
           },
-          {"type": "heading", "content": "So erreichst du die Abrechnung"},
+          {
+            "type": "heading",
+            "content": "So erreichst du die Abrechnung"
+          },
           {
             "type": "paragraph",
             "content": "Gehe zu „Zahlung“ im Bereich Einstellungen"
           },
-          {"type": "heading", "content": "Rechnungen ansehen"},
+          {
+            "type": "heading",
+            "content": "Rechnungen ansehen"
+          },
           {
             "type": "paragraph",
             "content": "Du kannst alle Rechnungen einsehen und bei Bedarf herunterladen."
           },
-          {"type": "heading", "content": "Zahlungsmethoden verwalten"},
+          {
+            "type": "heading",
+            "content": "Zahlungsmethoden verwalten"
+          },
           {
             "type": "orderedList",
             "content": [
@@ -2674,7 +2889,10 @@
       {
         "title": "Abrechnung & Abos",
         "content": [
-          {"type": "heading", "content": "Abo upgraden"},
+          {
+            "type": "heading",
+            "content": "Abo upgraden"
+          },
           {
             "type": "paragraph",
             "content": "Klicke auf das jeweilige Preis-Paket, um deinen aktuellen Plan zu ändern."
@@ -2689,11 +2907,7 @@
         "content": [
           {
             "type": "paragraph",
-            "content": "Fahrlehrer erstellen kein eigenes Konto."
-          },
-          {
-            "type": "paragraph",
-            "content": "Deine Fahrschule erstellt ein Konto für dich und weist dir Schüler zu."
+            "content": "Fahrlehrer erstellen kein eigenes Konto.<br/>Deine Fahrschule erstellt ein Konto für dich und weist dir Schüler zu."
           },
           {
             "type": "heading",
@@ -2717,7 +2931,12 @@
           },
           {
             "type": "unorderedList",
-            "content": ["Home", "Schüler", "Kalender", "Nachrichten"]
+            "content": [
+              "Home",
+              "Schüler",
+              "Kalender",
+              "Nachrichten"
+            ]
           }
         ]
       },
@@ -2782,6 +3001,14 @@
           },
           {
             "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
             "content": "Fahrschülerverwaltung"
           },
           {
@@ -2805,12 +3032,8 @@
             "content": [
               "Klicke auf das Plus-Symbol über der Schülerliste",
               "Gib die E-Mail-Adresse des Schülers ein",
-              "Klicke auf „Einladung senden“"
+              "Klicke auf „Einladung senden“ <br/>Die Einladung muss vom Schüler bestätigt werden. Nach der Bestätigung erscheint der Schüler zuerst in der Liste deiner Fahrschule."
             ]
-          },
-          {
-            "type": "paragraph",
-            "content": "Die Einladung muss vom Schüler bestätigt werden. Nach der Bestätigung erscheint der Schüler zuerst in der Liste deiner Fahrschule."
           }
         ]
       },
@@ -2865,6 +3088,14 @@
               "Öffne das Schülerprofil",
               "Klicke auf den Schalter oben rechts"
             ]
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
           },
           {
             "type": "heading",
@@ -2935,7 +3166,7 @@
         "content": [
           {
             "type": "heading",
-            "content": "Termin für einen Schüler buchen"
+            "content": "Termine für einen/eine Schüler/in buchen"
           },
           {
             "type": "paragraph",
@@ -2991,6 +3222,14 @@
           {
             "type": "paragraph",
             "content": "Klicke auf „Buchen“."
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
           },
           {
             "type": "heading",
@@ -3064,11 +3303,7 @@
           },
           {
             "type": "paragraph",
-            "content": "Du kannst dein Konto jederzeit löschen."
-          },
-          {
-            "type": "paragraph",
-            "content": "Die Löschung ist dauerhaft und kann nicht rückgängig gemacht werden."
+            "content": "Du kannst dein Konto jederzeit löschen.<br/>Die Löschung ist dauerhaft und kann nicht rückgängig gemacht werden."
           },
           {
             "type": "heading",
@@ -3081,9 +3316,12 @@
               "Alle deine gebuchten Fahrstunden und Termine werden entfernt. Offene Buchungen oder Verträge mit Fahrschulen musst du vorher selbst stornieren oder klären.",
               "Alle Chats und Nachrichten mit Fahrschulen oder anderen Nutzern werden gelöscht.",
               "Du verlierst den Zugang zu deinem Dashboard und allen Funktionen der Plattform.",
-              "Alle Profildaten und Profilseiten von Fahrschulen auf der Website sowie alle Rechnungen werden gelöscht.",
-              "Fahrschulen löschen Fahrlehrer nicht, sondern archivieren sie."
+              "Alle Profildaten und Profilseiten von Fahrschulen auf der Website sowie alle Rechnungen werden gelöscht."
             ]
+          },
+          {
+            "type": "paragraph",
+            "content": " Fahrschulen löschen Fahrlehrer nicht, sondern archivieren sie."
           },
           {
             "type": "heading",
@@ -3134,11 +3372,19 @@
             "content": "Was passiert nicht?"
           },
           {
-            "type": "paragraph",
+            "type": "unorderedList",
             "content": [
               "Für Fahrschüler: Deine Daten bei den Fahrschulen selbst werden nicht gelöscht. Wende dich bitte direkt an die jeweilige Fahrschule, falls du auch dort deine Daten löschen möchtest.",
               "Externe Dienste: Falls du dich mit externen Konten (z.B. Google, Facebook) angemeldet hast, musst du die Verbindung dort separat aufheben."
             ]
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
           },
           {
             "type": "heading",
@@ -3225,12 +3471,18 @@
         "title": "Überblick",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "Überblick"},
+          {
+            "type": "heading",
+            "content": "Überblick"
+          },
           {
             "type": "paragraph",
             "content": "Wenn du dich nicht einloggen kannst, liegt es meist an Passwortproblemen, fehlender E-Mail-Bestätigung oder Browsereinstellungen."
           },
-          {"type": "heading", "content": "1. Überprüfe E-Mail und Passwort"},
+          {
+            "type": "heading",
+            "content": "1. Überprüfe E-Mail und Passwort"
+          },
           {
             "type": "unorderedList",
             "content": [
@@ -3245,7 +3497,10 @@
         "title": "Passwort zurücksetzen",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "2. Passwort zurücksetzen"},
+          {
+            "type": "heading",
+            "content": "2. Passwort zurücksetzen"
+          },
           {
             "type": "orderedList",
             "content": [
@@ -3260,17 +3515,22 @@
         "title": "E-Mail bestätigen",
         "image": "/ImageBGridInfo.jpg",
         "content": [
-          {"type": "heading", "content": "3. E-Mail bestätigen"},
           {
-            "type": "paragraph",
-            "content": "Wenn deine E-Mail nicht bestätigt ist, kannst du dich nicht einloggen."
+            "type": "heading",
+            "content": "3. E-Mail bestätigen"
           },
           {
             "type": "paragraph",
-            "content": "Überprüfe dein Postfach."
+            "content": "Wenn deine E-Mail nicht bestätigt ist, kannst du dich nicht einloggen.<br/>Überprüfe dein Postfach."
           },
-          {"type": "heading", "content": "4. Browser oder Gerät prüfen"},
-          {"type": "paragraph", "content": "Versuche folgendes:"},
+          {
+            "type": "heading",
+            "content": "4. Browser oder Gerät prüfen"
+          },
+          {
+            "type": "paragraph",
+            "content": "Versuche folgendes:"
+          },
           {
             "type": "unorderedList",
             "content": [
@@ -3300,7 +3560,10 @@
               "ist das Konto aktiv?"
             ]
           },
-          {"type": "heading", "content": "6. Support kontaktieren"},
+          {
+            "type": "heading",
+            "content": "6. Support kontaktieren"
+          },
           {
             "type": "paragraph",
             "content": "Wenn nichts hilft, sende dem Support:"
@@ -3313,9 +3576,18 @@
               "einen Screenshot der Fehlermeldung"
             ]
           },
-          {"type": "heading", "content": ""},
-          {"type": "heading", "content": ""},
-          {"type": "heading", "content": "Buchungsfehler"},
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": "Buchungsfehler"
+          },
           {
             "type": "paragraph",
             "content": "Wenn du keinen Termin buchen kannst, liegt es meist an fehlender Verfügbarkeit, fehlender Schulfreigabe oder Browserproblemen."
@@ -3328,7 +3600,10 @@
             "type": "paragraph",
             "content": "Fahrschulen müssen Schüler zuerst bestätigen. Nach der Bestätigung erhalten Schüler eine Bestätigungsmail."
           },
-          {"type": "heading", "content": "2. Keine verfügbaren Zeiten"},
+          {
+            "type": "heading",
+            "content": "2. Keine verfügbaren Zeiten"
+          },
           {
             "type": "paragraph",
             "content": "Wenn keine Zeiten angezeigt werden:"
@@ -3346,13 +3621,22 @@
       {
         "title": "Terminüberschneidungen",
         "content": [
-          {"type": "heading", "content": "3. Terminüberschneidung"},
+          {
+            "type": "heading",
+            "content": "3. Terminüberschneidung"
+          },
           {
             "type": "paragraph",
             "content": "Wenn du zu dieser Zeit bereits einen Termin hast, kannst du keinen weiteren buchen."
           },
-          {"type": "heading", "content": "4. Verbindungs- oder Browserfehler"},
-          {"type": "paragraph", "content": "Versuche:"},
+          {
+            "type": "heading",
+            "content": "4. Verbindungs- oder Browserfehler"
+          },
+          {
+            "type": "paragraph",
+            "content": "Versuche:"
+          },
           {
             "type": "unorderedList",
             "content": [
@@ -3369,8 +3653,14 @@
             "type": "paragraph",
             "content": "Wenn die Fahrschule keine Theorie- oder Fahrtermine über die Plattform anbietet, werden sie nicht angezeigt."
           },
-          {"type": "heading", "content": "6. Kontaktiere deine Fahrschule"},
-          {"type": "paragraph", "content": "Sie kann prüfen:"},
+          {
+            "type": "heading",
+            "content": "6. Kontaktiere deine Fahrschule"
+          },
+          {
+            "type": "paragraph",
+            "content": "Sie kann prüfen:"
+          },
           {
             "type": "unorderedList",
             "content": [
@@ -3379,9 +3669,18 @@
               "Buchungsregeln"
             ]
           },
-          {"type": "heading", "content": ""},
-          {"type": "heading", "content": ""},
-          {"type": "heading", "content": "Zahlungsprobleme"},
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": "Zahlungsprobleme"
+          },
           {
             "type": "paragraph",
             "content": "Zahlungen gelten nur für Fahrschulen, nicht für Schüler."
@@ -3390,7 +3689,10 @@
             "type": "paragraph",
             "content": "Wenn Zahlungen fehlschlagen oder Rechnungen fehlen, liegt das meist an Kartenproblemen oder abgelaufenen Zahlungsdaten."
           },
-          {"type": "heading", "content": "1. Prüfe deine Zahlungsmethode"},
+          {
+            "type": "heading",
+            "content": "1. Prüfe deine Zahlungsmethode"
+          },
           {
             "type": "paragraph",
             "content": "Gehe zu Einstellungen → Zahlung."
@@ -3399,8 +3701,14 @@
             "type": "paragraph",
             "content": "Überprüfe deine Zahlungsmethoden und ihre Gültigkeiten."
           },
-          {"type": "heading", "content": "2. Zahlung abgelehnt"},
-          {"type": "paragraph", "content": "Häufige Gründe:"},
+          {
+            "type": "heading",
+            "content": "2. Zahlung abgelehnt"
+          },
+          {
+            "type": "paragraph",
+            "content": "Häufige Gründe:"
+          },
           {
             "type": "unorderedList",
             "content": [
@@ -3409,7 +3717,10 @@
               "Karte blockiert"
             ]
           },
-          {"type": "heading", "content": "3. Rechnung wird nicht angezeigt"},
+          {
+            "type": "heading",
+            "content": "3. Rechnung wird nicht angezeigt"
+          },
           {
             "type": "paragraph",
             "content": "Rechnungen werden monatlich erstellt."
@@ -3418,7 +3729,10 @@
             "type": "paragraph",
             "content": "Evtl. ist es noch zu früh im Abrechnungszeitraum."
           },
-          {"type": "heading", "content": "4. Abo pausiert"},
+          {
+            "type": "heading",
+            "content": "4. Abo pausiert"
+          },
           {
             "type": "paragraph",
             "content": "Bei mehreren Fehlversuchen wird das Abo ggf. pausiert."
@@ -3427,8 +3741,14 @@
             "type": "paragraph",
             "content": "Aktualisiere deine Zahlungsdaten und versuche es erneut."
           },
-          {"type": "heading", "content": "5. Support kontaktieren"},
-          {"type": "paragraph", "content": "Sende:"},
+          {
+            "type": "heading",
+            "content": "5. Support kontaktieren"
+          },
+          {
+            "type": "paragraph",
+            "content": "Sende:"
+          },
           {
             "type": "unorderedList",
             "content": [
@@ -3437,34 +3757,62 @@
               "Screenshot der Fehlermeldung"
             ]
           },
-          {"type": "heading", "content": ""},
-          {"type": "heading", "content": ""},
-          {"type": "heading", "content": "Probleme mit Handy"},
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": "Probleme mit Handy"
+          },
           {
             "type": "paragraph",
             "content": "Wenn die Plattform auf deinem Handy nicht richtig funktioniert, helfen diese Schritte."
           },
-          {"type": "heading", "content": "1. Browser aktualisieren"},
-          {"type": "paragraph", "content": "Unterstützt werden:"},
+          {
+            "type": "heading",
+            "content": "1. Browser aktualisieren"
+          },
+          {
+            "type": "paragraph",
+            "content": "Unterstützt werden:"
+          },
           {
             "type": "unorderedList",
-            "content": ["Chrome", "Safari", "Firefox"]
+            "content": [
+              "Chrome",
+              "Safari",
+              "Firefox"
+            ]
           },
           {
             "type": "paragraph",
             "content": "Ältere Versionen können Fehler verursachen."
           },
-          {"type": "heading", "content": "2. Mobilen Browser-Cache löschen"},
+          {
+            "type": "heading",
+            "content": "2. Mobilen Browser-Cache löschen"
+          },
           {
             "type": "paragraph",
             "content": "Dies behebt die meisten Ladeprobleme."
           },
-          {"type": "heading", "content": "3. Cookies & JavaScript aktivieren"},
+          {
+            "type": "heading",
+            "content": "3. Cookies & JavaScript aktivieren"
+          },
           {
             "type": "paragraph",
             "content": "Beides ist notwendig, damit die Plattform funktioniert."
           },
-          {"type": "heading", "content": "4. Internetverbindung prüfen"},
+          {
+            "type": "heading",
+            "content": "4. Internetverbindung prüfen"
+          },
           {
             "type": "paragraph",
             "content": "Bei schwacher Verbindung laden Termine und Nachrichten manchmal nicht."
@@ -3566,7 +3914,11 @@
         "title": "Termin bei Fahrschule buchen",
         "title2": "Termin für den/die Schüler*in buchen",
         "input1": "Fahrschüler*in",
-        "tabs": ["Gespräch", "Theorie", "Fahren"],
+        "tabs": [
+          "Gespräch",
+          "Theorie",
+          "Fahren"
+        ],
         "tabsOptions": {
           "options": [
             [
@@ -3823,7 +4175,11 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
+          "formFields": [
+            "Notwendige",
+            "Analytics",
+            "Alle zulassen"
+          ]
         },
         "Password": {
           "heading1": "Passwort",
@@ -3862,8 +4218,14 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOn2": ["Gebuchte Termine", "Nachrichten"],
-          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
+          "formFieldsOn2": [
+            "Gebuchte Termine",
+            "Nachrichten"
+          ],
+          "formFieldsOff": [
+            "News und Update",
+            "Angebote und Werbung"
+          ]
         }
       }
     },
@@ -4246,7 +4608,11 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
+          "formFields": [
+            "Notwendige",
+            "Analytics",
+            "Alle zulassen"
+          ]
         },
         "Password": {
           "heading1": "Passwort",
@@ -4285,13 +4651,19 @@
             "Nachrichten",
             "Neue Schüler Anfrage"
           ],
-          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
+          "formFieldsOff": [
+            "News und Update",
+            "Angebote und Werbung"
+          ]
         }
       }
     },
     "leftSideTab": {
       "messageFisrtTime": "Die Nachrichten sind nicht verschlüsselt.<br/><br/><br/> Wähle einen Chat aus, um Nachrichten zu senden,<br/> oder<br/> Klicke auf „Plus-Symbol“, um eine neue Nachricht zu erstellen.",
-      "textTab": ["Aktiv", "Inaktiv"],
+      "textTab": [
+        "Aktiv",
+        "Inaktiv"
+      ],
       "search": "Suchen",
       "title": "Die maximal zulässige Anzahl aktiver Fahrschüler ist erreicht. Bitte upgrade deinen Tarif unter \"Einstellungen=>Zahlung\" oder deaktiviere einen Fahrschüler."
     },
@@ -4456,7 +4828,11 @@
     "Calendar": {
       "Sidebar": {
         "title": "Terminpläne festlegen",
-        "tabs": ["Gespräch", "Theorie", "Fahren"],
+        "tabs": [
+          "Gespräch",
+          "Theorie",
+          "Fahren"
+        ],
         "tab1": {
           "title": "Kategorie",
           "title2": "Kategorie hinzufügen",
@@ -4582,8 +4958,16 @@
         "title2": "Termin für den/die Schüler*in buchen",
         "title3": "Termin bei Fahrschule buchen",
         "input1": "Fahrschüler*in",
-        "tabs": ["Gespräch", "Theorie", "Fahren", "Prüfung"],
-        "tabs2": ["Fahren", "Prüfung"],
+        "tabs": [
+          "Gespräch",
+          "Theorie",
+          "Fahren",
+          "Prüfung"
+        ],
+        "tabs2": [
+          "Fahren",
+          "Prüfung"
+        ],
         "tabsOptions": {
           "options": [
             [

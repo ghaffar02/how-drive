@@ -1795,7 +1795,7 @@
           },
           {
             "type": "paragraph",
-            "content": "Our platform connects driving students with driving schools and trainers. Students can find a school, track their progress, book appointments, and communicate directly with their school or trainer.Driving schools can manage students, trainers, appointments, communication, and billing, all in one place.Trainers receive access to a dedicated dashboard created for them by their school."
+            "content": "Our platform connects driving students with driving schools and trainers. <br/>Students can find a school, track their progress, book appointments, and communicate directly with their school or trainer.<br/>Driving schools can manage students, trainers, appointments, communication, and billing, all in one place.<br/>Trainers receive access to a dedicated dashboard created for them by their school."
           },
           {
             "type": "heading",
@@ -1885,7 +1885,10 @@
           },
           {
             "type": "unorderedList",
-            "content": ["student account", "school account"]
+            "content": [
+              "student account",
+              "school account"
+            ]
           },
           {
             "type": "heading",
@@ -1893,7 +1896,11 @@
           },
           {
             "type": "unorderedList",
-            "content": ["name", "email", "password"]
+            "content": [
+              "name",
+              "email",
+              "password"
+            ]
           }
         ]
       }
@@ -1975,6 +1982,14 @@
           },
           {
             "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
             "content": "Dashboard Walkthrough"
           },
           {
@@ -1995,7 +2010,12 @@
           },
           {
             "type": "unorderedList",
-            "content": ["home", "process", "calendar", "message"]
+            "content": [
+              "home",
+              "process",
+              "calendar",
+              "message"
+            ]
           }
         ]
       },
@@ -2150,19 +2170,23 @@
           },
           {
             "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
             "content": "How to cancel an appointment"
           },
           {
-            "type": "paragraph",
-            "content": "Click on the appointment on the left or in the calendar"
-          },
-          {
-            "type": "paragraph",
-            "content": "Remove your name from the list of participants"
-          },
-          {
-            "type": "paragraph",
-            "content": "Click Save"
+            "type": "orderedList",
+            "content": [
+              "Click on the appointment on the left or in the calendar",
+              "Remove your name from the list of participants",
+              "Click Save"
+            ]
           }
         ]
       },
@@ -2331,7 +2355,13 @@
           },
           {
             "type": "unorderedList",
-            "content": ["home", "students", "calendar", "message", "trainers"]
+            "content": [
+              "home",
+              "students",
+              "calendar",
+              "message",
+              "trainers"
+            ]
           }
         ]
       },
@@ -2432,7 +2462,7 @@
             "content": "Adding or accepting students"
           },
           {
-            "type": "paragraph",
+            "type": "heading",
             "content": "A. accept a new student request"
           },
           {
@@ -2459,12 +2489,8 @@
             "content": [
               "click on Plus icon above the student list",
               "enter the email address of the student",
-              "click Send Invitation"
+              "click Send Invitation <br/>The invitation needs to be confirmed by the student."
             ]
-          },
-          {
-            "type": "paragraph",
-            "content": "The invitation needs to be confirmed by the student."
           }
         ]
       },
@@ -2881,11 +2907,7 @@
         "content": [
           {
             "type": "paragraph",
-            "content": "trainers do not create their own accounts."
-          },
-          {
-            "type": "paragraph",
-            "content": " Your driving school creates an account for you and assigns you to students."
+            "content": "Trainers do not create their own accounts.<br/>Your driving school creates an account for you and assigns you to students"
           },
           {
             "type": "heading",
@@ -2909,7 +2931,12 @@
           },
           {
             "type": "unorderedList",
-            "content": ["home", "students", "calendar", "message"]
+            "content": [
+              "home",
+              "students",
+              "calendar",
+              "message"
+            ]
           }
         ]
       },
@@ -2974,6 +3001,14 @@
           },
           {
             "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
             "content": "Managing Students"
           },
           {
@@ -2997,12 +3032,8 @@
             "content": [
               "click on Plus icon above the student list",
               "enter the email address of the student",
-              "click Send Invitation"
+              "click Send Invitation <br/>The invitation needs to be confirmed by the student. After confirmation, the student will be first appeared in the list of your driving school."
             ]
-          },
-          {
-            "type": "paragraph",
-            "content": "The invitation needs to be confirmed by the student. After confirmation, the student will be first appeared in the list of your driving school."
           }
         ]
       },
@@ -3057,6 +3088,14 @@
               "open the student profile",
               "click on the toggle at the top-right corner"
             ]
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
           },
           {
             "type": "heading",
@@ -3186,6 +3225,14 @@
           },
           {
             "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
             "content": "Messaging"
           },
           {
@@ -3256,11 +3303,7 @@
           },
           {
             "type": "paragraph",
-            "content": "You can delete your account at any time."
-          },
-          {
-            "type": "paragraph",
-            "content": "Account deletion is permanent and cannot be undone."
+            "content": "You can delete your account at any time.<br/>Account deletion is permanent and cannot be undone."
           },
           {
             "type": "heading",
@@ -3273,9 +3316,12 @@
               "All your booked driving lessons and appointments will be removed. You must cancel or resolve any outstanding bookings or contracts with driving schools yourself beforehand.",
               "All chats and messages with driving schools or other users will be deleted.",
               "You will lose access to your dashboard and all platform features.",
-              "All profile data and driving school profile pages on the website, as well as all invoices, will be deleted.",
-              "Schools cannot delete trainers manually; instead, they archive them."
+              "All profile data and driving school profile pages on the website, as well as all invoices, will be deleted."
             ]
+          },
+          {
+            "type": "paragraph",
+            "content": "Schools cannot delete trainers manually; instead, they archive them."
           },
           {
             "type": "heading",
@@ -3326,11 +3372,19 @@
             "content": "What doesn't happen?"
           },
           {
-            "type": "paragraph",
+            "type": "unorderedList",
             "content": [
               "For driving students: Your data will not be deleted by the driving schools themselves. Please contact the respective driving school directly if you wish to delete your data there as well.",
               "External services: If you have logged in with external accounts (e.g., Google, Facebook), you must disconnect them separately."
             ]
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
           },
           {
             "type": "heading",
@@ -3467,11 +3521,7 @@
           },
           {
             "type": "paragraph",
-            "content": "If your email is not verified, you cannot log in."
-          },
-          {
-            "type": "paragraph",
-            "content": "Check your inbox for the confirmation message."
+            "content": "If your email is not verified, you cannot log in.<br/>Check your inbox for the confirmation message."
           },
           {
             "type": "heading",
@@ -3496,7 +3546,7 @@
           },
           {
             "type": "paragraph",
-            "content": "trainers cannot create or activate their own accounts."
+            "content": "Trainers cannot create or activate their own accounts."
           },
           {
             "type": "paragraph",
@@ -3733,7 +3783,11 @@
           },
           {
             "type": "unorderedList",
-            "content": ["Chrome", "Safari", "Firefox"]
+            "content": [
+              "Chrome",
+              "Safari",
+              "Firefox"
+            ]
           },
           {
             "type": "paragraph",
@@ -3915,7 +3969,11 @@
         "title": "Book an appointment with your driving school",
         "title2": "Book an appointment for the student",
         "input1": "Driving student",
-        "tabs": ["Talk", "Theory", "Driving"],
+        "tabs": [
+          "Talk",
+          "Theory",
+          "Driving"
+        ],
         "tabsOptions": {
           "options": [
             [
@@ -4129,7 +4187,11 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": ["Necessary", "Analytics", "Allow all"]
+          "formFields": [
+            "Necessary",
+            "Analytics",
+            "Allow all"
+          ]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -4157,8 +4219,14 @@
             "News",
             "Driving license office registered"
           ],
-          "formFieldsOn2": ["Booked appointments", "Messages"],
-          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
+          "formFieldsOn2": [
+            "Booked appointments",
+            "Messages"
+          ],
+          "formFieldsOff": [
+            "Genereller Newsletter",
+            "Offers and advertising"
+          ]
         }
       }
     },
@@ -4553,7 +4621,11 @@
           "btn3": "Export data",
           "btn4": "Learn more",
           "dropDown": "Would you like to download your personal data?",
-          "formFields": ["Necessary", "Analytics", "Allow all"]
+          "formFields": [
+            "Necessary",
+            "Analytics",
+            "Allow all"
+          ]
         },
         "Preferen": {
           "heading1": "Preferences",
@@ -4581,13 +4653,19 @@
             "News",
             "New students' request"
           ],
-          "formFieldsOff": ["Genereller Newsletter", "Offers and advertising"]
+          "formFieldsOff": [
+            "Genereller Newsletter",
+            "Offers and advertising"
+          ]
         }
       }
     },
     "leftSideTab": {
       "messageFisrtTime": "The messages are not encrypted.<br/><br/><br/> Select a chat to start messaging <br/>or <br/> click on \"plus\" icon to start a new one.",
-      "textTab": ["Active", "Inactive"],
+      "textTab": [
+        "Active",
+        "Inactive"
+      ],
       "search": "Search",
       "title": "The maximum number of active students is reached. Please upgrade under \"Settings => Payment\" or deactivate a student."
     },
@@ -4763,7 +4841,11 @@
     "Calendar": {
       "Sidebar": {
         "title": "Set appointment schedules",
-        "tabs": ["Talk", "Theory", "Driving"],
+        "tabs": [
+          "Talk",
+          "Theory",
+          "Driving"
+        ],
         "tab1": {
           "title": "Category",
           "title2": "Add category",
@@ -4885,8 +4967,16 @@
         "title2": "Book an appointment for the student",
         "title3": "Book an appointment with your driving school",
         "input1": "Driving student",
-        "tabs": ["Talk", "Theory", "Driving", "Exam"],
-        "tabs2": ["Driving", "Exam"],
+        "tabs": [
+          "Talk",
+          "Theory",
+          "Driving",
+          "Exam"
+        ],
+        "tabs2": [
+          "Driving",
+          "Exam"
+        ],
         "tabsOptions": {
           "options": [
             [
