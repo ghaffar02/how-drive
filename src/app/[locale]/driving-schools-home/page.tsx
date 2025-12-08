@@ -40,17 +40,15 @@ export default function HomePage() {
   const pwaIosImages = [uiDesigner, webDesigner, seoSpecialist, guide];
   const pwaAndroidImages = [uiDesigner, webDesigner, seoSpecialist, guide];
 
-  const learnerSteps = (t.raw('learner.steps') as StepFromI18n[]).map(
-    (s, i) => ({
-      number: String(s.number),
-      title: s.title,
-      heading: s.heading,
-      description: s.description,
-      image: learnerImages[i]
-    })
-  );
+  const schoolSteps = (t.raw('school.steps') as StepFromI18n[]).map((s, i) => ({
+    number: String(s.number),
+    title: s.title,
+    heading: s.heading,
+    description: s.description,
+    image: schoolImages[i]
+  }));
 
-  const stepsArray: Step[][] = [learnerSteps];
+  const stepsArray: Step[][] = [schoolSteps];
 
   return (
     <>
