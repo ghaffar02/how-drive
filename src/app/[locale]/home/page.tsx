@@ -75,7 +75,7 @@ export default function HomePage() {
           <Navbar />
         </Box>
         <Box sx={{marginTop: '82px'}}>
-          <Hero />
+          <Hero activeTab={0} />
         </Box>
         <LicenseSteps />
         <HowItWorks stepsArray={stepsArray} showTabs={false} />
