@@ -7,7 +7,7 @@ import heroImage from '@/assets/pngs/heroimage.jpeg';
 import TabSwitcher from '../TabSwitcher';
 import {useRouter} from 'next/navigation';
 
-export default function Hero({activeTab}) {
+export default function Hero({activeTab}: {activeTab: number}) {
   const t = useTranslations('Hero');
   const text = t('title');
 
@@ -89,8 +89,8 @@ export default function Hero({activeTab}) {
         >
           {/* Tab Section */}
           <TabSwitcher
-            tab1Label={t('tabValue1')}
-            tab2Label={t('tabValue2')}
+            tab1Label={'Driving students'}
+            tab2Label={'Driving schools'}
             activeTab={activeTab}
             onTab1Click={() => router.push('/')}
             onTab2Click={() => router.push('/driving-schools-home')}
