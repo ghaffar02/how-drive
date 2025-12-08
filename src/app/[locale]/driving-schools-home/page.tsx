@@ -36,21 +36,19 @@ export default function HomePage() {
   const t = useTranslations('HowItWorks');
   const tAdvantages = useTranslations('Advantages');
 
-  const learnerImages = [uiDesigner, webDesigner, seoSpecialist, guide];
+  const schoolImages = [uiDesigner, webDesigner, seoSpecialist, guide];
 
-  const learnerSteps = (t.raw('learner.steps') as StepFromI18n[]).map(
-    (s, i) => ({
-      number: String(s.number),
-      title: s.title,
-      heading: s.heading,
-      description: s.description,
-      image: learnerImages[i]
-    })
-  );
+  const schoolSteps = (t.raw('school.steps') as StepFromI18n[]).map((s, i) => ({
+    number: String(s.number),
+    title: s.title,
+    heading: s.heading,
+    description: s.description,
+    image: schoolImages[i]
+  }));
 
-  const stepsArray: Step[][] = [learnerSteps];
+  const stepsArray: Step[][] = [schoolSteps];
 
-  const driverData = tAdvantages.raw('DriverData') as Array<{
+  const schoolsData = tAdvantages.raw('SchoolsData') as Array<{
     title: string;
     description: string;
     bgColor: string;
@@ -75,11 +73,11 @@ export default function HomePage() {
           <Navbar />
         </Box>
         <Box sx={{marginTop: '82px'}}>
-          <Hero activeTab={0} />
+          <Hero activeTab={1} />
         </Box>
         <LicenseSteps />
         <HowItWorks stepsArray={stepsArray} showTabs={false} />
-        <Advantages data={driverData} />
+        <Advantages data={schoolsData} />
         <Pricing />
         <Faq />
         <TrustServiceSection />

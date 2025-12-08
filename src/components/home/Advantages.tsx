@@ -3,26 +3,25 @@
 import {Box, Button, Typography, useTheme, useMediaQuery} from '@mui/material';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 import React, {useEffect, useRef, useState} from 'react';
 import {motion} from 'framer-motion';
 
-import User from '@/assets/svgs/user.svg';
-import Car from '@/assets/svgs/car.svg';
+export type AdvantageCardData = {
+  title: string;
+  description: string;
+  bgColor: string;
+  color: string;
+};
 
-export default function Advantages() {
-  const [value, setValue] = useState('fahrschuler');
+interface AdvantagesProps {
+  data: AdvantageCardData[];
+}
+
+export default function Advantages({data}: AdvantagesProps) {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const t = useTranslations('Advantages');
-  const DriverData = t.raw('DriverData');
-  const SchoolsData = t.raw('SchoolsData');
-
-  function tabSwitch(val: string) {
-    setValue(val);
-    console.log(value);
-  }
 
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -84,109 +83,6 @@ export default function Advantages() {
           }}
         >
           <Box sx={{padding: '8px'}}>
-            <Box
-              sx={{
-                width: 'fit-content',
-                border: '1px solid rgb(212,212,212)',
-                padding: '8px',
-                backgroundColor: '#FAFAFA',
-                borderRadius: '99px',
-                boxShadow: 'rgba(0,0,0,0.25) 0px 1px 2px 0px',
-                display: 'flex',
-                gap: '16px',
-                marginBottom: '24px'
-              }}
-            >
-              <Box
-                onClick={() => tabSwitch('fahrschuler')}
-                sx={{
-                  maxWidth: value === 'fahrschuler' ? '158px' : '145px',
-                  width: '100%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  padding: value === 'fahrschuler' ? '8px 16px' : '8px',
-                  backgroundColor:
-                    value === 'fahrschuler' ? '#fff' : 'transparent',
-                  borderRadius: value === 'fahrschuler' ? '99px' : 'none',
-                  boxShadow:
-                    value === 'fahrschuler'
-                      ? 'rgba(0,0,0,0.15) 0px 2px 8px 0px'
-                      : 'none',
-                  transition: 'all 0.3s ease-in-out',
-                  cursor: 'pointer',
-                  ...(value !== 'fahrschuler' && {
-                    '&:hover': {
-                      backgroundColor: '#fff',
-                      borderRadius: '99px',
-                      boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.25)'
-                    }
-                  })
-                }}
-              >
-                <Box sx={{width: '30px', height: '30px'}}>
-                  <Image
-                    src={User}
-                    alt="image"
-                    style={{height: '100%', width: '100%'}}
-                  />
-                </Box>
-                <Typography
-                  sx={{
-                    fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                    fontFamily: 'Inter, sans-serif !important',
-                    color: '#2d3748'
-                  }}
-                >
-                  {t('driverTab')}
-                </Typography>
-              </Box>
-              {/* Second Button */}
-              <Box
-                onClick={() => tabSwitch('fahrschulen')}
-                sx={{
-                  width: 'fit-content',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '10px',
-                  padding: value === 'fahrschulen' ? '8px 16px' : '8px',
-                  backgroundColor:
-                    value === 'fahrschulen' ? '#fff' : 'transparent',
-                  borderRadius: value === 'fahrschulen' ? '99px' : 'none',
-                  boxShadow:
-                    value === 'fahrschulen'
-                      ? 'rgba(0,0,0,0.15) 0px 2px 8px 0px'
-                      : 'none',
-                  transition: 'all 0.3s ease-in-out',
-                  cursor: 'pointer',
-                  ...(value !== 'fahrschulen' && {
-                    '&:hover': {
-                      backgroundColor: '#fff',
-                      borderRadius: '99px',
-                      boxShadow: '0px 1px 2px 0px rgba(0,0,0,0.25)'
-                    }
-                  })
-                }}
-              >
-                <Box sx={{width: '30px', height: '30px'}}>
-                  <Image
-                    src={Car}
-                    alt="image"
-                    style={{height: '100%', width: '100%'}}
-                  />
-                </Box>
-                <Typography
-                  sx={{
-                    fontSize: {xs: '14px', md: '15px', lg: '16px'},
-                    fontFamily: 'Inter, sans-serif !important',
-                    color: '#2d3748',
-                    textWrap: 'nowrap'
-                  }}
-                >
-                  {t('schoolTab')}
-                </Typography>
-              </Box>
-            </Box>
             <Box sx={{position: 'relative', width: '100%'}}>
               {showLeft && (
                 <Button
@@ -223,50 +119,27 @@ export default function Advantages() {
                   }
                 }}
               >
-                {value === 'fahrschuler'
-                  ? DriverData.map((data: any, i: number) => (
-                      <motion.div
-                        key={data.title}
-                        initial={{y: 80, opacity: 0}}
-                        whileInView={{y: 0, opacity: 1}}
-                        viewport={{once: true}}
-                        transition={{
-                          duration: 0.5,
-                          ease: 'easeOut',
-                          delay: i * 0.25
-                        }}
-                        style={{flexShrink: 0}}
-                      >
-                        <CardComponent
-                          bgColor={data.bgColor}
-                          color={data.color}
-                          title={data.title}
-                          description={data.description}
-                        />
-                      </motion.div>
-                    ))
-                  : SchoolsData.map((data: any, i: number) => (
-                      <motion.div
-                        key={data.title}
-                        initial={{y: 80, opacity: 0}}
-                        whileInView={{y: 0, opacity: [0, 0.5, 1]}}
-                        viewport={{once: true}}
-                        transition={{
-                          duration: 0.5,
-                          ease: 'easeOut',
-                          delay: i * 0.25,
-                          times: [0, 0.5, 1]
-                        }}
-                        style={{flexShrink: 0}}
-                      >
-                        <CardComponent
-                          bgColor={data.bgColor}
-                          color={data.color}
-                          title={data.title}
-                          description={data.description}
-                        />
-                      </motion.div>
-                    ))}
+                {data.map((cardData: AdvantageCardData, i: number) => (
+                  <motion.div
+                    key={cardData.title}
+                    initial={{y: 80, opacity: 0}}
+                    whileInView={{y: 0, opacity: 1}}
+                    viewport={{once: true}}
+                    transition={{
+                      duration: 0.5,
+                      ease: 'easeOut',
+                      delay: i * 0.25
+                    }}
+                    style={{flexShrink: 0}}
+                  >
+                    <CardComponent
+                      bgColor={cardData.bgColor}
+                      color={cardData.color}
+                      title={cardData.title}
+                      description={cardData.description}
+                    />
+                  </motion.div>
+                ))}
               </Box>
               <Button
                 onClick={() => scroll('right')}

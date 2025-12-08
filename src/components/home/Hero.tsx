@@ -4,8 +4,10 @@ import {Box, Button, Typography} from '@mui/material';
 import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 import heroImage from '@/assets/pngs/heroimage.jpeg';
+import TabSwitcher from '../TabSwitcher';
+import {useRouter} from 'next/navigation';
 
-export default function Hero() {
+export default function Hero({activeTab}: {activeTab: number}) {
   const t = useTranslations('Hero');
   const text = t('title');
 
@@ -60,6 +62,7 @@ export default function Hero() {
 
   const rotateX = useTransform(scrollY, [0, 150], [15, 0]);
   const y = useTransform(scrollY, [0, 150], [20, 0]);
+  const router = useRouter();
 
   return (
     <>
@@ -84,6 +87,15 @@ export default function Hero() {
             justifyContent: 'center'
           }}
         >
+          {/* Tab Section */}
+          <TabSwitcher
+            tab1Label={'Driving students'}
+            tab2Label={'Driving schools'}
+            activeTab={activeTab}
+            onTab1Click={() => router.push('/')}
+            onTab2Click={() => router.push('/driving-schools-home')}
+          />
+
           <>
             <style>
               {`
@@ -109,14 +121,14 @@ export default function Hero() {
                 paddingBottom: '32px',
                 lineHeight: {xs: '58px', md: '100%'},
                 perspective: '1000px',
-                fontFamily: 'Satoshi700 !important'
+                fontFamily: 'Satoshi700 !important',
+                mt: '50px'
               }}
             >
               {splitText(text)}
             </Typography>
           </>
           {/* </Box> */}
-
           <Typography
             component={motion.p}
             initial={{opacity: 0, scale: 0.92}}

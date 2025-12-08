@@ -16,6 +16,7 @@ import {AnimatePresence, motion} from 'framer-motion';
 import registerImage from '@/assets/svgs/registerImage.svg';
 import {useTranslations} from 'next-intl';
 import {useRegister} from '@/hooks/useRegister';
+import TabSwitcher from '@/components/TabSwitcher';
 
 export default function RegisterPage() {
   const [tabValue, setTabValue] = useState(0);
@@ -100,64 +101,13 @@ export default function RegisterPage() {
           }}
         >
           {/* Tab Section */}
-          <Box
-            sx={{
-              display: 'flex',
-              width: 'fit-content',
-              margin: 'auto',
-              background: '#F8FAFC',
-              borderRadius: '10px',
-              padding: '6px',
-              gap: '10px',
-              boxShadow:
-                '0px 0px 0px 1px rgba(26, 32, 44, 0.1), 0px 1px 0px 0px rgba(26, 32, 44, 0.2), 0px 2px 4px 0px rgba(26, 32, 44, 0.5)'
-            }}
-          >
-            <Button
-              onClick={() => setTabValue(0)}
-              sx={{
-                // flex: 1,
-                background: tabValue === 0 ? '#000' : 'transparent',
-                color: tabValue === 0 ? '#fff' : '#000',
-                textTransform: 'none',
-                borderRadius: '8px',
-                padding: '8px 30px',
-                fontSize: '16px',
-                fontWeight: 500,
-                fontFamily: '"Inter", sans-serif !important',
-                letterSpacing: '0.01em',
-                '&:hover': {
-                  background: tabValue === 0 ? '#000' : '#fff',
-                  boxShadow:
-                    '0px 0px 0px 1px rgba(26, 32, 44, 0.1), 0px 1px 0px 0px rgba(26, 32, 44, 0.2), 0px 2px 4px 0px rgba(26, 32, 44, 0.5)'
-                }
-              }}
-            >
-              {t('tabValue1')}
-            </Button>
-            <Button
-              onClick={() => setTabValue(1)}
-              sx={{
-                // flex: 1,
-                background: tabValue === 1 ? '#000' : 'transparent',
-                color: tabValue === 1 ? '#fff' : '#000',
-                textTransform: 'none',
-                borderRadius: '8px',
-                padding: '8px 30px',
-                fontSize: '16px',
-                fontWeight: 500,
-                fontFamily: '"Inter", sans-serif !important',
-                letterSpacing: '0.01em',
-                '&:hover': {
-                  background: tabValue === 1 ? '#000' : '#fff',
-                  boxShadow:
-                    '0px 0px 0px 1px rgba(26, 32, 44, 0.1), 0px 1px 0px 0px rgba(26, 32, 44, 0.2), 0px 2px 4px 0px rgba(26, 32, 44, 0.5)'
-                }
-              }}
-            >
-              {t('tabValue2')}
-            </Button>
-          </Box>
+          <TabSwitcher
+            tab1Label={t('tabValue1')}
+            tab2Label={t('tabValue2')}
+            activeTab={tabValue}
+            onTab1Click={() => setTabValue(0)}
+            onTab2Click={() => setTabValue(1)}
+          />
 
           <Box
             component="form"
