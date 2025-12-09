@@ -7,6 +7,8 @@ export interface FeatureItem {
 }
 
 export interface PlanData {
+  recommendedText: ReactNode;
+  usageHeader: string;
   name: string;
   price: {
     amount: string;

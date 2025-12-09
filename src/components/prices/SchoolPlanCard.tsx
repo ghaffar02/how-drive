@@ -70,7 +70,7 @@ export default function SchoolPlanCard({plan, cardSx}: SchoolPlanCardProps) {
             fontFamily: '"Inter", sans-serif'
           }}
         >
-          recommended
+           {plan.recommendedText}
         </Box>
       )}
 
@@ -148,8 +148,8 @@ export default function SchoolPlanCard({plan, cardSx}: SchoolPlanCardProps) {
         </Typography>
 
         <Button
-          component={Link}
-          href={plan.buttonLink}
+          // component={Link}
+          // href={plan.buttonLink}
           disableRipple
           sx={{
             width: '100%',
@@ -205,7 +205,7 @@ export default function SchoolPlanCard({plan, cardSx}: SchoolPlanCardProps) {
               mb: '10px'
             }}
           >
-            Usage:
+              {plan.usageHeader || 'Usage:'}
           </Typography>
           {plan.usage.map((item, index) => (
             <Box

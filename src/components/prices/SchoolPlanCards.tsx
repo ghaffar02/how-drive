@@ -1,12 +1,18 @@
 import {Box, Grid, SxProps, Theme} from '@mui/material';
 import SchoolPlanCard from './SchoolPlanCard';
 import {schoolPlansData} from './pricingData';
+import { PlanData } from './types';
+import { Key } from 'react';
+import { useTranslations } from 'next-intl';
 
 interface SchoolPlanCardsProps {
   cardSx?: SxProps<Theme>;
 }
 
 export default function SchoolPlanCards({cardSx}: SchoolPlanCardsProps) {
+  const t = useTranslations('Pricing');
+  const data = t.raw('data');
+  const schoolSection = data.schoolSection;
   return (
     <Box
       sx={{
@@ -19,7 +25,7 @@ export default function SchoolPlanCards({cardSx}: SchoolPlanCardsProps) {
       }}
     >
       <Grid container spacing={6}>
-        {schoolPlansData.map((plan, index) => (
+        {schoolSection.plans.map((plan: PlanData, index: Key | null | undefined) => (
           <Grid
             size={{xs: 12, lg: 4}}
             key={index}

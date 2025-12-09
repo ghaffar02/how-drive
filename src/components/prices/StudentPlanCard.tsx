@@ -6,6 +6,7 @@ import Image from 'next/image';
 import localFont from '@/utils/themes';
 import {PlanData} from './types';
 import {useTranslations} from 'next-intl';
+import {ReactNode} from 'react';
 
 interface StudentPlanCardProps {
   plan?: PlanData;
@@ -43,7 +44,9 @@ export default function StudentPlanCard({plan, cardSx}: StudentPlanCardProps) {
       buttonLink: studentPlanData.buttonLink || '/pricing/student',
       usage: studentPlanData.usage || [],
       featuresHeader: studentPlanData.featuresHeader || 'Features include:',
-      features: studentPlanData.features || []
+      features: studentPlanData.features || [],
+      recommendedText: (studentPlanData.recommendedText as ReactNode) || '',
+      usageHeader: studentPlanData.usageHeader || 'Usage:'
     } as PlanData;
   } else {
     cardPlan = {
@@ -54,7 +57,9 @@ export default function StudentPlanCard({plan, cardSx}: StudentPlanCardProps) {
       buttonLink: '/pricing/student',
       usage: [],
       featuresHeader: 'Features include:',
-      features: []
+      features: [],
+      recommendedText: '' as ReactNode,
+      usageHeader: 'Usage:'
     };
   }
   return (
@@ -92,7 +97,7 @@ export default function StudentPlanCard({plan, cardSx}: StudentPlanCardProps) {
             fontFamily: '"Inter", sans-serif'
           }}
         >
-          recommended
+          {cardPlan.recommendedText}
         </Box>
       )}
 
