@@ -5,6 +5,7 @@ import Navbar from '@/components/navbar/Navbar';
 import Footer from '@/components/Footer';
 import HeroAboutus from '@/components/about-us/Hero';
 import Pricing from '@/components/prices/Pricing';
+import DetailedPricing from '@/components/prices/DetailedPricing';
 
 import {useTranslations} from 'next-intl';
 // import HeroClass from '@/components/driving-license/HeroClasses';
@@ -33,7 +34,9 @@ export default function Page() {
           <Navbar />
         </Box>
         <HeroAboutus title={t('heroTitle')} description={t('heroDes')} />
-        <Pricing title={false} />
+        {/* <Pricing title={false} /> */}
+        {/* <Pricing title={false} /> */}
+        <DetailedPricing />
         <Footer />
       </Box>
     </>
