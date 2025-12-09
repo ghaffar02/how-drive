@@ -1,6 +1,7 @@
 'use client';
 import {Box} from '@mui/material';
 import {useTranslations} from 'next-intl';
+import {useParams} from 'next/navigation';
 
 import Hero from '@/components/home/Hero';
 import Navbar from '@/components/navbar/Navbar';
@@ -15,6 +16,7 @@ import uiDesigner from '@/assets/pngs/Tab-Menu/uiDesigner.png';
 import webDesigner from '@/assets/pngs/Tab-Menu/webDesigner.png';
 import seoSpecialist from '@/assets/pngs/Tab-Menu/seoSpecialist.png';
 import guide from '@/assets/pngs/Tab-Menu/guide.png';
+import heroImage from '@/assets/pngs/heroimage.jpeg';
 
 type StepFromI18n = {
   number: number;
@@ -35,6 +37,8 @@ type Step = {
 export default function HomePage() {
   const t = useTranslations('HowItWorks');
   const tAdvantages = useTranslations('Advantages');
+  const params = useParams();
+  const locale = (params?.locale as string) || 'en';
 
   const schoolImages = [uiDesigner, webDesigner, seoSpecialist, guide];
 
@@ -55,6 +59,26 @@ export default function HomePage() {
     color: string;
   }>;
 
+  // Hero data for driving schools home page - passed directly from parent
+  const heroData = {
+    en: {
+      title: 'The way to increase your efficiency',
+      description:
+        'Manage your driving school more efficiently through digital records, along with a booking system and messaging, all in one place.',
+      buttonText: 'Start for free',
+      buttonHref: '/register'
+    },
+    de: {
+      title: 'Der Weg zur Effizienz',
+      description:
+        'Verwalte deine Fahrschule effizienter durch digitale Akten, zusammen mit Buchungssystem und Messaging, alles zentral.',
+      buttonText: 'Kostenlos starten',
+      buttonHref: '/register'
+    }
+  };
+
+  const heroContent = heroData[locale as keyof typeof heroData] || heroData.en;
+
   return (
     <>
       <Box>
@@ -73,7 +97,15 @@ export default function HomePage() {
           <Navbar />
         </Box>
         <Box sx={{marginTop: '82px'}}>
-          <Hero activeTab={1} />
+          <Hero
+            title={heroContent.title}
+            description={heroContent.description}
+            buttonText={heroContent.buttonText}
+            buttonHref={heroContent.buttonHref}
+            imagePath={heroImage}
+            showTabs={false}
+            activeTab={1}
+          />
         </Box>
         <LicenseSteps />
         <HowItWorks stepsArray={stepsArray} showTabs={false} />

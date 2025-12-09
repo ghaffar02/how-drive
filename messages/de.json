@@ -48,6 +48,11 @@
     "description": "Behalte jeden Schritt und deine Fortschritte immer im Blick, sowie Termine buchen und Nachrichten senden, alles aus einer Hand.",
     "button": "Kostenlos starten"
   },
+  "HeroSchool": {
+    "title": "Der Weg zur Effizienz",
+    "description": "Verwalte deine Fahrschule effizienter durch digitale Akten, zusammen mit Buchungssystem und Messaging, alles zentral.",
+    "button": "Kostenlos starten"
+  },
   "Advantages": {
     "title": "Ihre Vorteile mit WieFührerschein",
     "driverTab": "Fahrschüler",
@@ -162,14 +167,16 @@
           "usage": [],
           "featuresHeader": "Funktionen umfassen:",
           "features": [
-            { "text": "Infos über benötigte Unterlagen und zuständige Behörden" },
-            { "text": "Fortschrittsanzeige zum Erwerb des Führerscheins" },
-            { "text": "Kalender- und Buchungssystem für Theorie- und Fahrstunden" },
-            { "text": "Terminstornierung" },
-            { "text": "Terminbestätigungen (wenn von Fahrschule angeboten)" },
-            { "text": "Terminerinnerungen (wenn von Fahrschule angeboten)" },
-            { "text": "Messaging-Funktion mit Fahrschulen und Fahrlehrern" },
-            { "text": "Keine versteckten Kosten" }
+            {"text": "Infos über benötigte Unterlagen und zuständige Behörden"},
+            {"text": "Fortschrittsanzeige zum Erwerb des Führerscheins"},
+            {
+              "text": "Kalender- und Buchungssystem für Theorie- und Fahrstunden"
+            },
+            {"text": "Terminstornierung"},
+            {"text": "Terminbestätigungen (wenn von Fahrschule angeboten)"},
+            {"text": "Terminerinnerungen (wenn von Fahrschule angeboten)"},
+            {"text": "Messaging-Funktion mit Fahrschulen und Fahrlehrern"},
+            {"text": "Keine versteckten Kosten"}
           ]
         }
       },
@@ -187,19 +194,19 @@
             "buttonText": "Kostenlos starten",
             "usageHeader": "Verwendung:",
             "usage": [
-              { "text": "10 aktive Fahrschüler" },
-              { "text": "1 aktive Fahrlehrer" }
+              {"text": "10 aktive Fahrschüler"},
+              {"text": "1 aktive Fahrlehrer"}
             ],
             "featuresHeader": "Funktionen umfassen:",
             "features": [
-              { "text": "Öffentliches Fahrschulprofil" },
-              { "text": "Schülerverwaltung" },
-              { "text": "Schüler-Fortschrittsanzeige" },
-              { "text": "Kalender- und Buchungssystem" },
-              { "text": "Terminstornierung" },
-              { "text": "Messaging-Funktion" },
-              { "text": "Monatlich kündbar" },
-              { "text": "Keine versteckten Kosten" }
+              {"text": "Öffentliches Fahrschulprofil"},
+              {"text": "Schülerverwaltung"},
+              {"text": "Schüler-Fortschrittsanzeige"},
+              {"text": "Kalender- und Buchungssystem"},
+              {"text": "Terminstornierung"},
+              {"text": "Messaging-Funktion"},
+              {"text": "Monatlich kündbar"},
+              {"text": "Keine versteckten Kosten"}
             ]
           },
           {
@@ -215,16 +222,16 @@
             "buttonText": "Kostenlos starten",
             "usageHeader": "Verwendung:",
             "usage": [
-              { "text": "30 aktive Fahrschüler" },
-              { "text": "4 aktive Fahrlehrer" }
+              {"text": "30 aktive Fahrschüler"},
+              {"text": "4 aktive Fahrlehrer"}
             ],
             "featuresHeader": "Alles aus Basic plus:",
             "features": [
-              { "text": "Fahrlehrerverwaltung" },
-              { "text": "Fahrlehrerkalender" },
-              { "text": "Messaging mit Fahrlehrern" },
-              { "text": "Fahrlehrern zugewiesene Schülerliste" },
-              { "text": "Fahrlehrerzugriff auf das eigene Dashboard" }
+              {"text": "Fahrlehrerverwaltung"},
+              {"text": "Fahrlehrerkalender"},
+              {"text": "Messaging mit Fahrlehrern"},
+              {"text": "Fahrlehrern zugewiesene Schülerliste"},
+              {"text": "Fahrlehrerzugriff auf das eigene Dashboard"}
             ]
           },
           {
@@ -238,20 +245,19 @@
             "buttonText": "Kostenlos starten",
             "usageHeader": "Verwendung:",
             "usage": [
-              { "text": "unbegrenzte Fahrschüler" },
-              { "text": "unbegrenzte Fahrlehrer" }
+              {"text": "unbegrenzte Fahrschüler"},
+              {"text": "unbegrenzte Fahrlehrer"}
             ],
             "featuresHeader": "Alles aus Standard plus:",
             "features": [
-              { "text": "Terminverwaltung" },
-              { "text": "Terminbestätigung per E-Mail" },
-              { "text": "Terminerinnerungen per E-Mail" }
+              {"text": "Terminverwaltung"},
+              {"text": "Terminbestätigung per E-Mail"},
+              {"text": "Terminerinnerungen per E-Mail"}
             ]
           }
         ]
       }
     }
-    
   },
   "Faq": {
     "title": "Häufig gestellte Fragen",
@@ -1957,10 +1963,7 @@
           },
           {
             "type": "unorderedList",
-            "content": [
-              "Schülerkonto",
-              "Schulkonto"
-            ]
+            "content": ["Schülerkonto", "Schulkonto"]
           },
           {
             "type": "heading",
@@ -1968,11 +1971,7 @@
           },
           {
             "type": "unorderedList",
-            "content": [
-              "Name",
-              "E-Mail",
-              "Passwort"
-            ]
+            "content": ["Name", "E-Mail", "Passwort"]
           }
         ]
       }
@@ -2082,12 +2081,7 @@
           },
           {
             "type": "unorderedList",
-            "content": [
-              "Home",
-              "Verlauf",
-              "Kalender",
-              "Nachrichten"
-            ]
+            "content": ["Home", "Verlauf", "Kalender", "Nachrichten"]
           }
         ]
       },
@@ -2427,13 +2421,7 @@
           },
           {
             "type": "unorderedList",
-            "content": [
-              "Home",
-              "Schüler",
-              "Kalender",
-              "Nachrichten",
-              "Lehrer"
-            ]
+            "content": ["Home", "Schüler", "Kalender", "Nachrichten", "Lehrer"]
           }
         ]
       },
@@ -3003,12 +2991,7 @@
           },
           {
             "type": "unorderedList",
-            "content": [
-              "Home",
-              "Schüler",
-              "Kalender",
-              "Nachrichten"
-            ]
+            "content": ["Home", "Schüler", "Kalender", "Nachrichten"]
           }
         ]
       },
@@ -3855,11 +3838,7 @@
           },
           {
             "type": "unorderedList",
-            "content": [
-              "Chrome",
-              "Safari",
-              "Firefox"
-            ]
+            "content": ["Chrome", "Safari", "Firefox"]
           },
           {
             "type": "paragraph",
@@ -3986,11 +3965,7 @@
         "title": "Termin bei Fahrschule buchen",
         "title2": "Termin für den/die Schüler*in buchen",
         "input1": "Fahrschüler*in",
-        "tabs": [
-          "Gespräch",
-          "Theorie",
-          "Fahren"
-        ],
+        "tabs": ["Gespräch", "Theorie", "Fahren"],
         "tabsOptions": {
           "options": [
             [
@@ -4247,11 +4222,7 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": [
-            "Notwendige",
-            "Analytics",
-            "Alle zulassen"
-          ]
+          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
         },
         "Password": {
           "heading1": "Passwort",
@@ -4290,14 +4261,8 @@
             "Nachrichten",
             "Führerscheinstelle angemeldet"
           ],
-          "formFieldsOn2": [
-            "Gebuchte Termine",
-            "Nachrichten"
-          ],
-          "formFieldsOff": [
-            "News und Update",
-            "Angebote und Werbung"
-          ]
+          "formFieldsOn2": ["Gebuchte Termine", "Nachrichten"],
+          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
         }
       }
     },
@@ -4680,11 +4645,7 @@
           "btn3": "Daten exportieren",
           "btn4": "Mehr erfahren",
           "dropDown": "Möchtest du deine persönlichen Daten herunterladen?",
-          "formFields": [
-            "Notwendige",
-            "Analytics",
-            "Alle zulassen"
-          ]
+          "formFields": ["Notwendige", "Analytics", "Alle zulassen"]
         },
         "Password": {
           "heading1": "Passwort",
@@ -4723,19 +4684,13 @@
             "Nachrichten",
             "Neue Schüler Anfrage"
           ],
-          "formFieldsOff": [
-            "News und Update",
-            "Angebote und Werbung"
-          ]
+          "formFieldsOff": ["News und Update", "Angebote und Werbung"]
         }
       }
     },
     "leftSideTab": {
       "messageFisrtTime": "Die Nachrichten sind nicht verschlüsselt.<br/><br/><br/> Wähle einen Chat aus, um Nachrichten zu senden,<br/> oder<br/> Klicke auf „Plus-Symbol“, um eine neue Nachricht zu erstellen.",
-      "textTab": [
-        "Aktiv",
-        "Inaktiv"
-      ],
+      "textTab": ["Aktiv", "Inaktiv"],
       "search": "Suchen",
       "title": "Die maximal zulässige Anzahl aktiver Fahrschüler ist erreicht. Bitte upgrade deinen Tarif unter \"Einstellungen=>Zahlung\" oder deaktiviere einen Fahrschüler."
     },
@@ -4900,11 +4855,7 @@
     "Calendar": {
       "Sidebar": {
         "title": "Terminpläne festlegen",
-        "tabs": [
-          "Gespräch",
-          "Theorie",
-          "Fahren"
-        ],
+        "tabs": ["Gespräch", "Theorie", "Fahren"],
         "tab1": {
           "title": "Kategorie",
           "title2": "Kategorie hinzufügen",
@@ -5030,16 +4981,8 @@
         "title2": "Termin für den/die Schüler*in buchen",
         "title3": "Termin bei Fahrschule buchen",
         "input1": "Fahrschüler*in",
-        "tabs": [
-          "Gespräch",
-          "Theorie",
-          "Fahren",
-          "Prüfung"
-        ],
-        "tabs2": [
-          "Fahren",
-          "Prüfung"
-        ],
+        "tabs": ["Gespräch", "Theorie", "Fahren", "Prüfung"],
+        "tabs2": ["Fahren", "Prüfung"],
         "tabsOptions": {
           "options": [
             [

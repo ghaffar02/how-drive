@@ -15,6 +15,7 @@ import uiDesigner from '@/assets/pngs/Tab-Menu/uiDesigner.png';
 import webDesigner from '@/assets/pngs/Tab-Menu/webDesigner.png';
 import seoSpecialist from '@/assets/pngs/Tab-Menu/seoSpecialist.png';
 import guide from '@/assets/pngs/Tab-Menu/guide.png';
+import heroImage from '@/assets/pngs/heroimage.jpeg';
 
 type StepFromI18n = {
   number: number;
@@ -35,6 +36,7 @@ type Step = {
 export default function HomePage() {
   const t = useTranslations('HowItWorks');
   const tAdvantages = useTranslations('Advantages');
+  const tHero = useTranslations('Hero');
 
   const learnerImages = [uiDesigner, webDesigner, seoSpecialist, guide];
 
@@ -75,7 +77,15 @@ export default function HomePage() {
           <Navbar />
         </Box>
         <Box sx={{marginTop: '82px'}}>
-          <Hero activeTab={0} />
+          <Hero
+            title={tHero('title')}
+            description={tHero('description')}
+            buttonText={tHero('button')}
+            buttonHref="/register"
+            imagePath={heroImage}
+            activeTab={0}
+            showTabs={true}
+          />
         </Box>
         <LicenseSteps />
         <HowItWorks stepsArray={stepsArray} showTabs={false} />

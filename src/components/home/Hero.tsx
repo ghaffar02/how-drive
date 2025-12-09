@@ -2,14 +2,31 @@
 import {motion, useScroll, useTransform} from 'framer-motion';
 import {Box, Button, Typography} from '@mui/material';
 import Image from 'next/image';
-import {useTranslations} from 'next-intl';
+import Link from 'next/link';
 import heroImage from '@/assets/pngs/heroimage.jpeg';
 import TabSwitcher from '../TabSwitcher';
 import {useRouter} from 'next/navigation';
 
-export default function Hero({activeTab}: {activeTab: number}) {
-  const t = useTranslations('Hero');
-  const text = t('title');
+interface HeroProps {
+  title: string;
+  description: string;
+  buttonText: string;
+  buttonHref: string;
+  imagePath?: string | any;
+  activeTab?: number;
+  showTabs?: boolean;
+}
+
+export default function Hero({
+  title,
+  description,
+  buttonText,
+  buttonHref,
+  imagePath = heroImage,
+  activeTab,
+  showTabs = false
+}: HeroProps) {
+  const text = title;
 
   // const text = 'Der Weg zum Führerschein';
 
@@ -88,6 +105,7 @@ export default function Hero({activeTab}: {activeTab: number}) {
           }}
         >
           {/* Tab Section */}
+
           <TabSwitcher
             tab1Label={'Driving students'}
             tab2Label={'Driving schools'}
@@ -144,7 +162,7 @@ export default function Hero({activeTab}: {activeTab: number}) {
               lineHeight: '1.35em'
             }}
           >
-            {t('description')}
+            {description}
           </Typography>
           <Box
             component={motion.p}
@@ -158,6 +176,8 @@ export default function Hero({activeTab}: {activeTab: number}) {
             }}
           >
             <Button
+              component={Link}
+              href={buttonHref}
               disableRipple
               sx={{
                 width: 'fit-content',
@@ -186,7 +206,7 @@ export default function Hero({activeTab}: {activeTab: number}) {
                 }
               }}
             >
-              {t('button')}
+              {buttonText}
             </Button>
             {/* </Box> */}
           </Box>
@@ -248,7 +268,7 @@ export default function Hero({activeTab}: {activeTab: number}) {
                   }}
                 >
                   <Image
-                    src={heroImage}
+                    src={imagePath}
                     alt="heroImage"
                     style={{width: '100%', height: '100%'}}
                     quality={85}

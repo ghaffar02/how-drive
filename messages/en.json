@@ -48,6 +48,11 @@
     "description": "Keep track of your every step and progress, as well as book appointments and send messages, all in one place.",
     "button": "Start for free"
   },
+  "HeroSchool": {
+    "title": "The way to increase your efficiency",
+    "description": "Manage your driving school more efficiently through digital records, along with a booking system and messaging, all in one place.",
+    "button": "Start for free"
+  },
   "Advantages": {
     "title": "Your Advantages with WieFührerschein",
     "driverTab": "Students",
