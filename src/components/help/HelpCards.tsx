@@ -29,7 +29,8 @@ export default function HelpCard({data}: HelpCardProps) {
         padding: {xs: '56px 16px', sm: '64px 24px', lg: '80px 48px'}
       }}
     >
-      <Box sx={{maxWidth: '800px', width: '100%', m: 'auto', mb: '80px'}}>
+      {/* Search */}
+      {/* <Box sx={{maxWidth: '800px', width: '100%', m: 'auto', mb: '80px'}}>
         <Box
           sx={{
             width: '100%',
@@ -46,7 +47,6 @@ export default function HelpCard({data}: HelpCardProps) {
               'rgba(0, 0, 0, 0.21) 0px 0.48175px 2.02335px -1.5px, rgba(0, 0, 0, 0.18) 0px 1.83083px 7.68947px -3px, rgba(0, 0, 0, 0.02) 0px 8px 33.6px -4.5px'
           }}
         >
-          {/* Search Icon */}
           <Box sx={{height: '24px', width: '24px'}}>
             {' '}
             <Image
@@ -56,7 +56,6 @@ export default function HelpCard({data}: HelpCardProps) {
             />{' '}
           </Box>
 
-          {/* Input */}
           <TextField
             placeholder={t('search')}
             sx={{
@@ -83,7 +82,7 @@ export default function HelpCard({data}: HelpCardProps) {
             }}
           />
         </Box>
-      </Box>
+      </Box> */}
       <Grid
         container
         spacing={3}
