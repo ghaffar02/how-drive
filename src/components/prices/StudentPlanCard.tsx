@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import {Box, Button, Typography, SxProps, Theme} from '@mui/material';
 import tick from '@/assets/svgs/tick.svg';
@@ -13,39 +14,49 @@ interface StudentPlanCardProps {
 
 export default function StudentPlanCard({plan, cardSx}: StudentPlanCardProps) {
   const t = useTranslations('Pricing');
-  const PricingData = t.raw('PricingData') as Array<{
-    title: string;
-    price: {
-      amount: string;
-      duration?: string;
-      note?: string;
+  
+  // Get student plan data from translations if plan is not provided
+  // Access nested translation data correctly
+  let studentPlanData: Partial<PlanData> | undefined;
+  try {
+    const pricingData = t.raw('data') as {
+      studentSection?: {
+        plan?: Partial<PlanData>;
+      };
     };
-    features: string[];
-    button: string;
-  }>;
+    studentPlanData = pricingData?.studentSection?.plan;
+  } catch (error) {
+    console.error('Error loading translation data:', error);
+  }
 
-  // Get student data from translations if plan is not provided
-  const studentData =
-    PricingData.find((item) => item.title === 'Students') || PricingData[0];
-
-  // Use provided plan or create from translations
-  const cardPlan: PlanData =
-    plan ||
-    ({
-      name: studentData.title,
-      price: {
-        amount: studentData.price.amount,
-        duration: studentData.price.duration || '',
-        note: studentData.price.note || ''
-      },
-      description:
-        "Use all the features of our service without worry. It's completely free for driving students. It's important that your account is linked to your driving school's account.",
-      buttonText: studentData.button,
+  // Use provided plan or use data from translations, ensuring all required fields are set
+  let cardPlan: PlanData;
+  
+  if (plan) {
+    cardPlan = plan;
+  } else if (studentPlanData) {
+    cardPlan = {
+      name: studentPlanData.name || 'Students',
+      price: studentPlanData.price || {amount: 'Free', duration: '', note: ''},
+      description: studentPlanData.description || '',
+      buttonText: studentPlanData.buttonText || 'Sign up',
+      buttonLink: studentPlanData.buttonLink || '/pricing/student',
+      usage: studentPlanData.usage || [],
+      featuresHeader: studentPlanData.featuresHeader || 'Features include:',
+      features: studentPlanData.features || []
+    } as PlanData;
+  } else {
+    cardPlan = {
+      name: 'Students',
+      price: {amount: 'Free', duration: '', note: ''},
+      description: "Use all the features of our service without worry. It's completely free for driving students. It's important that your account is linked to your driving school's account.",
+      buttonText: 'Sign up',
       buttonLink: '/pricing/student',
       usage: [],
       featuresHeader: 'Features include:',
-      features: studentData.features.map((feature) => ({text: feature}))
-    } as PlanData);
+      features: []
+    };
+  }
   return (
     <Box
       sx={{

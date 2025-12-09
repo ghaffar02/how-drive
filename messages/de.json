@@ -157,6 +157,7 @@
           },
           "description": "Nutze alle Funktionen unseres Services sorglos. Für Fahrschüler ist es völlig kostenlos. Wichtig ist, dass dein Konto mit dem Konto deiner Fahrschule verknüpft ist.",
           "buttonText": "Registrieren",
+          "buttonLink": "/pricing/student",
           "usageHeader": "",
           "usage": [],
           "featuresHeader": "Funktionen umfassen:",
