@@ -298,6 +298,40 @@
         "title": "Wie schreibt man einen Führerschein um?",
         "content": "Ein ausländischer Führerschein ist in Deutschland nur für eine begrenzte Zeit gültig (meist 6 Monate nach Wohnsitznahme). Je nach Herkunftsland deines Führerscheins kann eine theoretische und/oder praktische Prüfung erforderlich sein. Es gibt Ausnahmen, wenn zwischen Deutschland und dem Ausstellerstaat ein Abkommen über die gegenseitige Anerkennung besteht. Für die Umschreibung musst du bei der zuständigen Führerscheinstelle deines Wohnorts einen Antrag auf Umschreibung stellen. Wir begleiten dich Schritt für Schritt durch diesen Prozess bei der Anmeldung auf unserer Website."
       }
+    ],
+    "FaqDataSchool": [
+      {
+        "title": "Wie registriere ich meine Fahrschule?",
+        "content": "Die Registrierung dauert nur wenige Minuten. Klicke auf \"Registrieren\" und gib eine E-Mail-Adresse und ein Passwort ein. Nach der Registrierung hast du die Möglichkeit, dein Fahrschulprofil zu vervollständigen."
+      },
+      {
+        "title": "Fallen Kosten für die Nutzung der Plattform an?",
+        "content": "Ja. Wir bieten flexible Abonnements, die sich nach Größe und Bedarf deiner Fahrschule richten. Alle Pakete enthalten die wichtigsten Kernfunktionen wie Schülerverwaltung, Terminplanung und Messaging. Die Registrierung ist kostenlos, plus ein Monat Probephase."
+      },
+      {
+        "title": "Können Fahrschüler meine Fahrschule über die Website finden?",
+        "content": "Ja. Jede Fahrschule erhält eine eigene Profilseite, die in den Suchergebnissen der Schüler erscheint. So können Interessenten deine Angebote entdecken und deine Fahrschule direkt kontaktieren."
+      },
+      {
+        "title": "Wie funktioniert das Buchungssystem?",
+        "content": "Du legst die Verfügbarkeiten deiner Fahrlehrer fest, und die Schüler können Besprechungen, Theorie- und Fahrstunden online buchen. Alle Termine erscheinen automatisch im Kalender und können von dir oder deinen Mitarbeitern verwaltet werden."
+      },
+      {
+        "title": "Kann ich meine Verfügbarkeit und die Art der Fahrstunden anpassen?",
+        "content": "Ja, du kannst deine verfügbaren Zeitfenster, die Dauer der Termine und die eigene Stornierungslimit selbst festlegen."
+      },
+      {
+        "title": "Können mehrere Fahrlehrer auf das System zugreifen?",
+        "content": "Ja. Du kannst Fahrlehrer zu deinem Konto hinzufügen. Die Hinzufügung von mehr als ein Fahrlehrer ist erst in den Standard und Premium Pakete möglich."
+      },
+      {
+        "title": "Ist die Plattform auch für kleine Fahrschulen geeignet?",
+        "content": "Auf jeden Fall. Egal ob Ein-Mann-Fahrschule oder großer Betrieb mit mehreren Fahrlehrern – die Plattform passt sich flexibel an und erleichtert die gesamte Verwaltung."
+      },
+      {
+        "title": "Kann ich mehrere Standorte verwalten?",
+        "content": "Nein. Zurzeit ist es leider nicht möglich, mehrere Filialen innerhalb eines Kontos zu verwalten. Jede Filiale benötigt ihr eigenen Konto."
+      }
     ]
   },
   "LicenseSteps": {

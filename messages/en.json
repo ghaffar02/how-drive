@@ -301,6 +301,40 @@
         "title": "How do you convert a driver's license?",
         "content": "A foreign driver's license is only valid in Germany for a limited time (usually 6 months after taking up residence). Depending on the country where your license was issued, a theoretical and/or practical test may be required. There are exceptions if there is an agreement on mutual recognition between Germany and the issuing country. To convert your license, you must apply for conversion at the responsible driver's license authority in your place of residence. We will guide you step by step through this process when you register on our website."
       }
+    ],
+    "FaqDataSchool": [
+      {
+        "title": "How do I register my driving school?",
+        "content": "Registration only takes a few minutes. Click on \"Signup\" and enter an email address and password. After registering, you will have the opportunity to complete your driving school profile."
+      },
+      {
+        "title": "Are there any costs associated with using the platform?",
+        "content": "Yes. We offer flexible subscriptions tailored to the size and needs of your driving school. All packages include essential core features such as student management, scheduling, and messaging. Registration is free, plus a one-month trial."
+      },
+      {
+        "title": "Can driving students find my driving school via the website?",
+        "content": "Yes. Every driving school gets its own profile page, which appears in student search results. This allows prospective students to discover your driving school and contact you directly."
+      },
+      {
+        "title": "How does the booking system work?",
+        "content": "You set the availability of your driving instructors, and students can book meetings, theory lessons, and driving lessons online. All appointments automatically appear in the calendar and can be managed by you or your staff."
+      },
+      {
+        "title": "Can I adjust my availability and the type of driving lessons?",
+        "content": "Yes, you can set your own available time slots, appointment duration, and cancellation limit."
+      },
+      {
+        "title": "Can multiple driving instructors access the system?",
+        "content": "Yes. You can add driving instructors to your account. Adding more than one driving instructor is only possible with the Standard and Premium packages."
+      },
+      {
+        "title": "Is the platform also suitable for small driving schools?",
+        "content": "Absolutely. Whether it's a one-man driving school or a large company with multiple driving instructors – the platform adapts flexibly and simplifies the entire administration."
+      },
+      {
+        "title": "Can I manage multiple locations?",
+        "content": "No. Unfortunately, it is currently not possible to manage multiple branches within one account. Each branch requires its own account."
+      }
     ]
   },
   "LicenseSteps": {

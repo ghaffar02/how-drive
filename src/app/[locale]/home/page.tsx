@@ -91,7 +91,7 @@ export default function HomePage() {
         <HowItWorks stepsArray={stepsArray} showTabs={false} />
         <Advantages data={driverData} />
         <Pricing mode="student" />
-        <Faq />
+        <Faq type="student" />
         <TrustServiceSection />
         <Footer />
       </Box>

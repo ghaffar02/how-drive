@@ -12,10 +12,15 @@ import {useTranslations} from 'next-intl';
 import Image from 'next/image';
 import addicon from '@/assets/svgs/plus-icon.svg';
 
-const Faq = () => {
+interface FaqProps {
+  type?: 'student' | 'school';
+}
+
+const Faq = ({type = 'student'}: FaqProps) => {
   const [expanded, setExpanded] = useState<number[]>([]);
   const t = useTranslations('Faq');
-  const PricingData = t.raw('FaqData');
+  const faqDataKey = type === 'school' ? 'FaqDataSchool' : 'FaqData';
+  const PricingData = t.raw(faqDataKey);
 
   const handleChange =
     (panel: number) => (event: React.SyntheticEvent, isExpanded: boolean) => {

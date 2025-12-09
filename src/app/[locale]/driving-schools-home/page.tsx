@@ -111,7 +111,7 @@ export default function HomePage() {
         <HowItWorks stepsArray={stepsArray} showTabs={false} />
         <Advantages data={schoolsData} />
         <Pricing mode="school" />
-        <Faq />
+        <Faq type="school" />
         <TrustServiceSection />
         <Footer />
       </Box>
