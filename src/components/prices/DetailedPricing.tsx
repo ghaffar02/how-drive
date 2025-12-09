@@ -3,6 +3,7 @@ import {Box, Button, Typography, SxProps, Theme, Grid} from '@mui/material';
 import tick from '@/assets/svgs/tick.svg';
 import Image from 'next/image';
 import localFont from '@/utils/themes';
+import { useTranslations } from 'next-intl';
 
 interface UsageItem {
   text: string;
@@ -13,6 +14,7 @@ interface FeatureItem {
 }
 
 interface PlanData {
+  usageHeader?: string;
   name: string;
   price: {
     amount: string;
@@ -22,10 +24,11 @@ interface PlanData {
   description: string;
   buttonText: string;
   buttonLink: string;
-  usage?: UsageItem[];
+  usage?: UsageItem[];  
   features: FeatureItem[];
   featuresHeader?: string;
   recommended?: boolean;
+  recommendedText?: string;
 }
 
 interface DetailedPricingData {
@@ -39,147 +42,15 @@ interface DetailedPricingData {
   };
 }
 
-const data: DetailedPricingData = {
-  studentSection: {
-    title: 'Our prices for driving students',
-    plan: {
-      name: 'Students',
-      price: {
-        amount: 'Free',
-        duration: '',
-        note: ''
-      },
-      description:
-        "Use all the features of our service without worry. It's completely free for driving students. It's important that your account is linked to your driving school's account.",
-      buttonText: 'Sign up',
-      buttonLink: '/pricing/student',
-  
-      usage: [],
-  
-      featuresHeader: 'Features include:',
-      features: [
-        { text: 'Information about required documents and responsible authorities' },
-        { text: 'Progress indicator for obtaining a driving license' },
-        { text: 'Calendar and booking system for theory and driving lessons' },
-        { text: 'Appointment cancellation' },
-        { text: 'Appointment confirmations (if offered by the driving school)' },
-        { text: 'Appointment reminders (if offered by the driving school)' },
-        { text: 'Messaging function with driving schools and driving trainers' },
-        { text: 'No hidden costs' }
-      ]
-    }
-  }
-  ,  
-  schoolSection: {
-    title: 'Our prices for driving schools ',
-    plans: [
-      {
-        name: 'Basic',
-        price: {
-          amount: '29,95 €',
-          duration: '/month',
-          note: '(incl. VAT)'
-        },
-        description: 'One month Premium trial',
-        buttonText: 'Start for free',
-        buttonLink: '/pricing/school/basic',
-        usage: [
-          { text: '10 active students' },
-          { text: '1 active trainers' }
-        ],
-        featuresHeader: 'Features include:',
-        features: [
-          { text: 'Public driving school profile' },
-          { text: 'Student management' },
-          { text: 'Student progress indicator' },
-          { text: 'Calendar and booking system' },
-          { text: 'Appointment cancellation' },
-          { text: 'Messaging function' },
-          { text: 'Can be canceled monthly' },
-          { text: 'No hidden costs' }
-        ]
-      },
-  
-      {
-        name: 'Standard',
-        price: {
-          amount: '44,95 €',
-          duration: '/month',
-          note: '(incl. VAT)'
-        },
-        description: 'One month Premium trial',
-        buttonText: 'Start for free',
-        buttonLink: '/pricing/school/standard',
-        recommended: true,
-        usage: [
-          { text: '30 active students' },
-          { text: '4 active trainers' }
-        ],
-        featuresHeader: 'Everything in Basic, plus:',
-        features: [
-          { text: 'Trainers management' },
-          { text: 'Trainers calendar' },
-          { text: 'Messaging with trainers' },
-          { text: 'Student list assigned to trainers' },
-          { text: 'Trainers access to their own dashboard' }
-        ]
-      },
-  
-      {
-        name: 'Premium',
-        price: {
-          amount: '69,95 €',
-          duration: '/month',
-          note: '(incl. VAT)'
-        },
-        description: 'One month Premium trial',
-        buttonText: 'Start for free',
-        buttonLink: '/pricing/school/premium',
-        usage: [
-          { text: 'Unlimited students' },
-          { text: 'Unlimited trainers' }
-        ],
-        featuresHeader: 'Everything in Standard, plus:',
-        features: [
-          { text: 'Appointment management' },
-          { text: 'Appointment confirmation by email' },
-          { text: 'Appointment reminders by email' }
-        ]
-      }
-    ]
-  }
-  
-};
-
 interface DetailedPricingProps {
   cardSx?: SxProps<Theme>;
 }
 
 export default function DetailedPricing({cardSx}: DetailedPricingProps) {
+  const t = useTranslations('Pricing');
+const data = t.raw('data');
 
-  const CheckIcon = () => (
-    <Box
-      sx={{
-        width: '24px',
-        height: '24px',
-        flexShrink: 0,
-        color: '#4611F5'
-      }}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        style={{width: '100%', height: '100%'}}
-      >
-        <path
-          fillRule="evenodd"
-          d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z"
-          clipRule="evenodd"
-        />
-      </svg>
-    </Box>
-  );
+
 
   const DashIcon = () => (
     <Box
@@ -241,7 +112,7 @@ export default function DetailedPricing({cardSx}: DetailedPricingProps) {
             fontFamily: '"Inter", sans-serif',
           }}
         >
-          recommended
+          {plan.recommendedText || 'Recommended'}
         </Box>
       )}
 
@@ -323,8 +194,8 @@ export default function DetailedPricing({cardSx}: DetailedPricingProps) {
 
 
         <Button
-          component={Link}
-          href={plan.buttonLink}
+          // component={Link}
+          // href={plan.buttonLink}
           disableRipple
           sx={{
             width: '100%',
@@ -371,7 +242,7 @@ export default function DetailedPricing({cardSx}: DetailedPricingProps) {
 
       {plan.usage && plan.usage.length > 0 && (
         <Box>
-          <Typography
+         {plan.usageHeader && <Typography
             sx={{
              ...localFont.inter16,
               fontFamily: '"Inter", sans-serif !important',
@@ -380,8 +251,8 @@ export default function DetailedPricing({cardSx}: DetailedPricingProps) {
               mb: '10px'
             }}
           >
-            Usage:
-          </Typography>
+           {plan.usageHeader || 'Usage:'}
+          </Typography>}
           {plan.usage.map((item, index) => (
             <Box
               key={index}
@@ -524,7 +395,7 @@ export default function DetailedPricing({cardSx}: DetailedPricingProps) {
           </Typography>
 
           <Grid container spacing={6}>  
-            {data.schoolSection.plans.map((plan, index) => (
+            {data.schoolSection.plans.map((plan: PlanData, index: number) => (
               <Grid size={{xs: 12,  lg: 4}} key={index} justifyContent="center" alignItems="center">
                 <PlanCard plan={plan} cardSx={{ width: '100%', maxWidth: {xs:"440px",lg:"429px"},height:{xs:"776px",lg:"796px"},margin: 'auto'}} />
               </Grid>

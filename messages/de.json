@@ -145,41 +145,112 @@
     "heroTitle": "Unsere Preise",
     "heroDes": "Die Nutzung unserer Plattform ist kostenlos für Fahrschüler. Fahrschulen haben die Möglichkeit, die Plattform im ersten Monat kostenlos zu probieren.",
     "title": "Unsere Preise für Fahrschüler und Fahrschulen",
-    "PricingData": [
-      {
-        "title": "Fahrschüler",
-        "price": {
-          "amount": "Kostenlos"
-        },
-        "features": [
-          "Alle Funktionen inklusive",
-          "Infos über benötigte Unterlagen",
-          "Zuständige Behörden",
-          "Prozessleitfaden",
-          "Terminbuchung",
-          "Nachrichten senden",
-          "Keine versteckten Kosten"
-        ],
-        "button": "Starten"
+    "data": {
+      "studentSection": {
+        "title": "Unsere Preise für Fahrschüler",
+        "plan": {
+          "name": "Fahrschüler",
+          "price": {
+            "amount": "Kostenlos",
+            "duration": "",
+            "note": ""
+          },
+          "description": "Nutze alle Funktionen unseres Services sorglos. Für Fahrschüler ist es völlig kostenlos. Wichtig ist, dass dein Konto mit dem Konto deiner Fahrschule verknüpft ist.",
+          "buttonText": "Registrieren",
+          "usageHeader": "",
+          "usage": [],
+          "featuresHeader": "Funktionen umfassen:",
+          "features": [
+            { "text": "Infos über benötigte Unterlagen und zuständige Behörden" },
+            { "text": "Fortschrittsanzeige zum Erwerb des Führerscheins" },
+            { "text": "Kalender- und Buchungssystem für Theorie- und Fahrstunden" },
+            { "text": "Terminstornierung" },
+            { "text": "Terminbestätigungen (wenn von Fahrschule angeboten)" },
+            { "text": "Terminerinnerungen (wenn von Fahrschule angeboten)" },
+            { "text": "Messaging-Funktion mit Fahrschulen und Fahrlehrern" },
+            { "text": "Keine versteckten Kosten" }
+          ]
+        }
       },
-      {
-        "title": "Fahrschulen",
-        "price": {
-          "amount": "29,95 €",
-          "duration": "/Monat",
-          "note": "(inkl. MwSt.)"
-        },
-        "features": [
-          "Kostenlose Registrierung",
-          "Einen kostenlosen Probemonat",
-          "Terminverwaltung",
-          "Digitale Kommunikation",
-          "Keine Einrichtungsgebühr",
-          "Monatlich kündbar"
-        ],
-        "button": "Registrieren"
+      "schoolSection": {
+        "title": "Unsere Preise für Fahrschulen",
+        "plans": [
+          {
+            "name": "Basic",
+            "price": {
+              "amount": "29,95 €",
+              "duration": "/Monat",
+              "note": "(inkl. MwSt.)"
+            },
+            "description": "Einen Monat Premium-Test",
+            "buttonText": "Kostenlos starten",
+            "usageHeader": "Verwendung:",
+            "usage": [
+              { "text": "10 aktive Fahrschüler" },
+              { "text": "1 aktive Fahrlehrer" }
+            ],
+            "featuresHeader": "Funktionen umfassen:",
+            "features": [
+              { "text": "Öffentliches Fahrschulprofil" },
+              { "text": "Schülerverwaltung" },
+              { "text": "Schüler-Fortschrittsanzeige" },
+              { "text": "Kalender- und Buchungssystem" },
+              { "text": "Terminstornierung" },
+              { "text": "Messaging-Funktion" },
+              { "text": "Monatlich kündbar" },
+              { "text": "Keine versteckten Kosten" }
+            ]
+          },
+          {
+            "name": "Standard",
+            "recommended": true,
+            "recommendedText": "empfohlen",
+            "price": {
+              "amount": "44,95 €",
+              "duration": "/Monat",
+              "note": "(inkl. MwSt.)"
+            },
+            "description": "Einen Monat Premium-Test",
+            "buttonText": "Kostenlos starten",
+            "usageHeader": "Verwendung:",
+            "usage": [
+              { "text": "30 aktive Fahrschüler" },
+              { "text": "4 aktive Fahrlehrer" }
+            ],
+            "featuresHeader": "Alles aus Basic plus:",
+            "features": [
+              { "text": "Fahrlehrerverwaltung" },
+              { "text": "Fahrlehrerkalender" },
+              { "text": "Messaging mit Fahrlehrern" },
+              { "text": "Fahrlehrern zugewiesene Schülerliste" },
+              { "text": "Fahrlehrerzugriff auf das eigene Dashboard" }
+            ]
+          },
+          {
+            "name": "Premium",
+            "price": {
+              "amount": "69,95 €",
+              "duration": "/Monat",
+              "note": "(inkl. MwSt.)"
+            },
+            "description": "Einen Monat Premium-Test",
+            "buttonText": "Kostenlos starten",
+            "usageHeader": "Verwendung:",
+            "usage": [
+              { "text": "unbegrenzte Fahrschüler" },
+              { "text": "unbegrenzte Fahrlehrer" }
+            ],
+            "featuresHeader": "Alles aus Standard plus:",
+            "features": [
+              { "text": "Terminverwaltung" },
+              { "text": "Terminbestätigung per E-Mail" },
+              { "text": "Terminerinnerungen per E-Mail" }
+            ]
+          }
+        ]
       }
-    ]
+    }
+    
   },
   "Faq": {
     "title": "Häufig gestellte Fragen",
