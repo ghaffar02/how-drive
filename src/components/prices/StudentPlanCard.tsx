@@ -1,0 +1,214 @@
+import Link from 'next/link';
+import {Box, Button, Typography, SxProps, Theme} from '@mui/material';
+import tick from '@/assets/svgs/tick.svg';
+import Image from 'next/image';
+import localFont from '@/utils/themes';
+import {PlanData} from './types';
+
+interface StudentPlanCardProps {
+  plan: PlanData;
+  cardSx?: SxProps<Theme>;
+}
+
+export default function StudentPlanCard({plan, cardSx}: StudentPlanCardProps) {
+  return (
+    <Box
+      sx={{
+        position: 'relative',
+        flexShrink: 0,
+        width: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '32px',
+        p: '32px',
+        bgcolor: '#fff',
+        borderRadius: '15px',
+        border: plan.recommended ? '2px solid rgb(70, 17, 245)' : 'none',
+        boxShadow: plan.recommended
+          ? 'rgba(0, 0, 0, 0.13) 0px 0.602187px 1.80656px -0.833333px, rgba(0, 0, 0, 0.13) 0px 2.28853px 6.8656px -1.66667px, rgba(0, 0, 0, 0.13) 0px 10px 30px -2.5px'
+          : '0px 0.7961918735236395px 2.3885756205709185px -0.625px rgba(0, 0, 0, 0.13), 0px 2.414506143104518px 7.2435184293135535px -1.25px rgba(0, 0, 0, 0.13), 0px 6.382653521484461px 19.147960564453385px -1.875px rgba(0, 0, 0, 0.13), 0px 20px 60px -2.5px rgba(0, 0, 0, 0.13)',
+        ...cardSx
+      }}
+    >
+      {plan.recommended && (
+        <Box
+          sx={{
+            ...localFont.inter16,
+            position: 'absolute',
+            lineHeight: '1.3',
+            top: '16px',
+            right: '16px',
+            bgcolor: '#4611F5',
+            color: '#fff',
+            borderRadius: '999px',
+            px: '16px',
+            py: '8px',
+            fontFamily: '"Inter", sans-serif'
+          }}
+        >
+          recommended
+        </Box>
+      )}
+
+      <Typography
+        sx={{
+          fontSize: {xs: '18px', md: '20px', lg: '22px'},
+          fontFamily: '"Inter", sans-serif !important',
+          color: '#1A202C',
+          fontWeight: '400'
+        }}
+      >
+        {plan.name}
+      </Typography>
+
+      <Box>
+        <Box
+          sx={{
+            display: 'flex',
+            maxWidth: '376px',
+            width: '100%',
+            gap: '10px',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            flexWrap: 'nowrap'
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: {xs: '32px', md: '36px', lg: '48px'},
+              fontFamily: 'Satoshi700 !important',
+              textWrap: 'nowrap',
+              color: '#000'
+            }}
+          >
+            {plan.price.amount}
+          </Typography>
+          {plan.price.duration && (
+            <Box sx={{width: '100%'}}>
+              <Typography
+                sx={{
+                  fontSize: {xs: '16px', md: '18px', lg: '20px'},
+                  fontFamily: '"Inter", sans-serif  !important',
+                  color: '#000',
+                  fontWeight: '400'
+                }}
+              >
+                {plan.price.duration}
+              </Typography>
+              {plan.price.note && (
+                <Typography
+                  sx={{
+                    fontSize: {xs: '12px', md: '13px', lg: '14px'},
+                    fontFamily: '"Inter", sans-serif  !important',
+                    color: '#000',
+                    fontWeight: '400'
+                  }}
+                >
+                  {plan.price.note}
+                </Typography>
+              )}
+            </Box>
+          )}
+        </Box>
+
+        <Typography
+          sx={{
+            ...localFont.inter14,
+            fontFamily: '"Inter", sans-serif !important',
+            color: '#4A5568',
+            fontWeight: '300',
+            mb: '16px'
+          }}
+        >
+          {plan.description}
+        </Typography>
+
+        <Button
+          component={Link}
+          href={plan.buttonLink}
+          disableRipple
+          sx={{
+            width: '100%',
+            fontSize: {xs: '14px', md: '15px', lg: '16px'},
+            fontFamily: '"Inter", sans-serif  !important',
+            fontWeight: '400',
+            display: 'flex',
+            lineHeight: {xs: '19px', md: '20px', lg: '22px'},
+            justifyContent: 'center',
+            alignItems: 'center',
+            padding: '8px 16px',
+            textTransform: 'none',
+            alignContent: 'center',
+            borderRadius: '10px',
+            border: '1px solid #4611f5',
+            bgcolor: '#4611F5',
+            color: '#fff',
+            transition: 'background-color 0.3s ease',
+            '&:hover': {
+              backgroundColor: '#300ca8',
+              color: '#fff'
+            },
+            '&:active': {
+              backgroundColor: '#1A065C !important',
+              color: '#fff'
+            }
+          }}
+        >
+          {plan.buttonText}
+        </Button>
+      </Box>
+
+      <Box
+        sx={{
+          background:
+            'linear-gradient(90deg, rgba(30, 245, 255, 0.1) 0%, rgba(70, 17, 245, 0.15) 50.4505%, rgba(30, 245, 255, 0.1) 100%)',
+          flex: '0 0 auto',
+          height: '1px',
+          overflow: 'hidden',
+          position: 'relative',
+          width: '100%'
+        }}
+      />
+
+      <Box>
+        <Typography
+          sx={{
+            ...localFont.inter16,
+            fontFamily: '"Inter", sans-serif !important',
+            color: '#000',
+            fontWeight: '600',
+            mb: '10px'
+          }}
+        >
+          {plan.featuresHeader || 'Features include:'}
+        </Typography>
+        {plan.features.map((feature, index) => (
+          <Box
+            key={index}
+            sx={{
+              width: '100%',
+              display: 'flex',
+              gap: '7px',
+              mb: '10px'
+            }}
+          >
+            <Image
+              src={tick}
+              alt="tickImage"
+              style={{width: '25px', height: '25px'}}
+            />
+            <Typography
+              sx={{
+                fontSize: {xs: '14px', md: '15px', lg: '16px'},
+                color: '#2D3748'
+              }}
+            >
+              {feature.text}
+            </Typography>
+          </Box>
+        ))}
+      </Box>
+    </Box>
+  );
+}
+
