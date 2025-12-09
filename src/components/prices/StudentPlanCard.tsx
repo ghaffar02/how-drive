@@ -4,13 +4,48 @@ import tick from '@/assets/svgs/tick.svg';
 import Image from 'next/image';
 import localFont from '@/utils/themes';
 import {PlanData} from './types';
+import {useTranslations} from 'next-intl';
 
 interface StudentPlanCardProps {
-  plan: PlanData;
+  plan?: PlanData;
   cardSx?: SxProps<Theme>;
 }
 
 export default function StudentPlanCard({plan, cardSx}: StudentPlanCardProps) {
+  const t = useTranslations('Pricing');
+  const PricingData = t.raw('PricingData') as Array<{
+    title: string;
+    price: {
+      amount: string;
+      duration?: string;
+      note?: string;
+    };
+    features: string[];
+    button: string;
+  }>;
+
+  // Get student data from translations if plan is not provided
+  const studentData =
+    PricingData.find((item) => item.title === 'Students') || PricingData[0];
+
+  // Use provided plan or create from translations
+  const cardPlan: PlanData =
+    plan ||
+    ({
+      name: studentData.title,
+      price: {
+        amount: studentData.price.amount,
+        duration: studentData.price.duration || '',
+        note: studentData.price.note || ''
+      },
+      description:
+        "Use all the features of our service without worry. It's completely free for driving students. It's important that your account is linked to your driving school's account.",
+      buttonText: studentData.button,
+      buttonLink: '/pricing/student',
+      usage: [],
+      featuresHeader: 'Features include:',
+      features: studentData.features.map((feature) => ({text: feature}))
+    } as PlanData);
   return (
     <Box
       sx={{
@@ -23,14 +58,14 @@ export default function StudentPlanCard({plan, cardSx}: StudentPlanCardProps) {
         p: '32px',
         bgcolor: '#fff',
         borderRadius: '15px',
-        border: plan.recommended ? '2px solid rgb(70, 17, 245)' : 'none',
-        boxShadow: plan.recommended
+        border: cardPlan.recommended ? '2px solid rgb(70, 17, 245)' : 'none',
+        boxShadow: cardPlan.recommended
           ? 'rgba(0, 0, 0, 0.13) 0px 0.602187px 1.80656px -0.833333px, rgba(0, 0, 0, 0.13) 0px 2.28853px 6.8656px -1.66667px, rgba(0, 0, 0, 0.13) 0px 10px 30px -2.5px'
           : '0px 0.7961918735236395px 2.3885756205709185px -0.625px rgba(0, 0, 0, 0.13), 0px 2.414506143104518px 7.2435184293135535px -1.25px rgba(0, 0, 0, 0.13), 0px 6.382653521484461px 19.147960564453385px -1.875px rgba(0, 0, 0, 0.13), 0px 20px 60px -2.5px rgba(0, 0, 0, 0.13)',
         ...cardSx
       }}
     >
-      {plan.recommended && (
+      {cardPlan.recommended && (
         <Box
           sx={{
             ...localFont.inter16,
@@ -58,7 +93,7 @@ export default function StudentPlanCard({plan, cardSx}: StudentPlanCardProps) {
           fontWeight: '400'
         }}
       >
-        {plan.name}
+        {cardPlan.name}
       </Typography>
 
       <Box>
@@ -81,9 +116,9 @@ export default function StudentPlanCard({plan, cardSx}: StudentPlanCardProps) {
               color: '#000'
             }}
           >
-            {plan.price.amount}
+            {cardPlan.price.amount}
           </Typography>
-          {plan.price.duration && (
+          {cardPlan.price.duration && (
             <Box sx={{width: '100%'}}>
               <Typography
                 sx={{
@@ -93,9 +128,9 @@ export default function StudentPlanCard({plan, cardSx}: StudentPlanCardProps) {
                   fontWeight: '400'
                 }}
               >
-                {plan.price.duration}
+                {cardPlan.price.duration}
               </Typography>
-              {plan.price.note && (
+              {cardPlan.price.note && (
                 <Typography
                   sx={{
                     fontSize: {xs: '12px', md: '13px', lg: '14px'},
@@ -104,7 +139,7 @@ export default function StudentPlanCard({plan, cardSx}: StudentPlanCardProps) {
                     fontWeight: '400'
                   }}
                 >
-                  {plan.price.note}
+                  {cardPlan.price.note}
                 </Typography>
               )}
             </Box>
@@ -120,12 +155,12 @@ export default function StudentPlanCard({plan, cardSx}: StudentPlanCardProps) {
             mb: '16px'
           }}
         >
-          {plan.description}
+          {cardPlan.description}
         </Typography>
 
         <Button
           component={Link}
-          href={plan.buttonLink}
+          href={cardPlan.buttonLink}
           disableRipple
           sx={{
             width: '100%',
@@ -154,7 +189,7 @@ export default function StudentPlanCard({plan, cardSx}: StudentPlanCardProps) {
             }
           }}
         >
-          {plan.buttonText}
+          {cardPlan.buttonText}
         </Button>
       </Box>
 
@@ -180,9 +215,9 @@ export default function StudentPlanCard({plan, cardSx}: StudentPlanCardProps) {
             mb: '10px'
           }}
         >
-          {plan.featuresHeader || 'Features include:'}
+          {cardPlan.featuresHeader || 'Features include:'}
         </Typography>
-        {plan.features.map((feature, index) => (
+        {cardPlan.features.map((feature, index) => (
           <Box
             key={index}
             sx={{
