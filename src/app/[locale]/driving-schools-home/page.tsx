@@ -78,7 +78,7 @@ export default function HomePage() {
         <LicenseSteps />
         <HowItWorks stepsArray={stepsArray} showTabs={false} />
         <Advantages data={schoolsData} />
-        <Pricing />
+        <Pricing mode="school" />
         <Faq />
         <TrustServiceSection />
         <Footer />

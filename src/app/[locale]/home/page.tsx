@@ -80,7 +80,7 @@ export default function HomePage() {
         <LicenseSteps />
         <HowItWorks stepsArray={stepsArray} showTabs={false} />
         <Advantages data={driverData} />
-        <Pricing />
+        <Pricing mode="student" />
         <Faq />
         <TrustServiceSection />
         <Footer />
