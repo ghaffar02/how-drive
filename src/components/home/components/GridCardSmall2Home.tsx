@@ -1,8 +1,8 @@
-import React from 'react';
-import {Box, Typography, Link, Grid} from '@mui/material';
+import React, {useState} from 'react';
+import {Box, Typography, Link, Grid, IconButton} from '@mui/material';
 import Add from '@/assets/svgs/lincense-steps/addIcon.svg';
 import Image from 'next/image';
-import {motion} from 'framer-motion';
+import {motion, AnimatePresence} from 'framer-motion';
 import {useTranslations} from 'next-intl';
 import featureIcon1 from '@/assets/svgs/features/feature-icon-1.svg';
 import featureIcon2 from '@/assets/svgs/features/feature-icon-2.svg';
@@ -11,12 +11,14 @@ import featureIcon4 from '@/assets/svgs/features/feature-icon-4.svg';
 import featureIcon5 from '@/assets/svgs/features/feature-icon-5.svg';
 import featureIcon6 from '@/assets/svgs/features/feature-icon-6.svg';
 import BgImage from '@/assets/svgs/lincense-steps/backgroundFeature.svg';
+import BgImage1 from '@/assets/svgs/dashboard-student/DashAdBG.svg';
 
 type CardProps = {
   img: string;
   title: string;
   description: string;
   href: string;
+  onCardClick?: () => void;
 };
 
 type FeatureItem = {
@@ -36,12 +38,20 @@ export default function GridCardSmall2Home({
   img,
   title,
   description,
-  href
+  href,
+  onCardClick
 }: CardProps) {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (onCardClick) {
+      onCardClick();
+    }
+  };
+
   return (
-    <Link sx={{textDecoration: 'none'}} href={href}>
+    <Link sx={{textDecoration: 'none'}} href={href} onClick={handleClick}>
       <MotionBox
-        initial={{opacity: 0, y: 10}}
+        initial={{opacity: 0, y: 5}}
         whileInView={{opacity: 1, y: 0}}
         viewport={{once: true, amount: 0.3}}
         transition={{duration: 0.6, ease: 'easeInOut'}}
@@ -55,7 +65,8 @@ export default function GridCardSmall2Home({
           gap: '24px',
           borderRadius: '15px',
           backgroundColor: 'rgba(255,255,255,0.9)',
-          boxShadow: 'rgba(0,0,0,0.25) 0px 0px 16px 0px'
+          boxShadow: 'rgba(0,0,0,0.25) 0px 0px 16px 0px',
+          cursor: 'pointer'
         }}
         whileHover={{
           y: -10,
@@ -136,10 +147,209 @@ export default function GridCardSmall2Home({
   );
 }
 
+// Modal Component
+type FeatureModalProps = {
+  open: boolean;
+  onClose: () => void;
+  img: string;
+  title: string;
+  description: string;
+};
+
+function FeatureModal({
+  open,
+  onClose,
+  img,
+  title,
+  description
+}: FeatureModalProps) {
+  return (
+    <AnimatePresence>
+      {open && (
+        <>
+          {/* Backdrop with blur */}
+          <MotionBox
+            initial={{opacity: 0, y: 10}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+            transition={{duration: 0.3, ease: 'easeInOut'}}
+            onClick={onClose}
+            sx={{
+              position: 'fixed',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              backdropFilter: 'blur(8px)',
+              zIndex: 9998,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: {xs: '16px', sm: '24px', md: '32px'}
+            }}
+          />
+          {/* Modal Content */}
+          <Box
+            sx={{
+              position: 'fixed',
+              top: '50%',
+              left: '50%',
+              // bottom: '0%',
+              // transform: 'translate(-50%, -50%)',
+              transform: {xs: 'translate(-50%, -35%)', md: 'translate(-50%, -50%)'},
+              zIndex: 9999,
+              // width: {xs: '90%', sm: '80%', md: '70%', lg: '60%'},
+              width: '100%',
+              maxWidth: '916px',
+              maxHeight: '90vh',
+              pointerEvents: 'auto'
+            }}
+          >
+            <MotionBox
+              initial={{opacity: 0, scale: 0.8, y: 120}}
+              animate={{opacity: 1, scale: 1, y: 0}}
+              exit={{opacity: 0, scale: 0.8, y: 20}}
+              transition={{duration: 0.4, ease: 'easeInOut'}}
+              onClick={(e) => e.stopPropagation()}
+              sx={{
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                // backgroundColor: 'rgb(255, 255, 255 )',
+                backgroundColor: '#ffffff',
+                p: '32px',
+                gap: '32px',
+                borderRadius: '20px',
+                boxShadow: 'rgba(0, 0, 0, 0.3) 0px 0px 40px 10px',
+                overflow: 'hidden'
+              }}
+            >
+              {/* Image Container */}
+              <Box
+                sx={{
+                  width: '100%',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '16px'
+                }}
+              >
+                {/* Text Content */}
+                <Box
+                  sx={{
+                    // padding: {xs: '24px', sm: '32px'},
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                    // flexDirection: '',
+                    gap: '16px'
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: {xs: '24px', sm: '28px', md: '32px'},
+                      color: '#1a202c',
+                      fontFamily: 'Satoshi700 !important',
+                      fontWeight: 'bold'
+                    }}
+                  >
+                    {title}
+                  </Typography>
+
+                  {/* Close Button */}
+                  <Box
+                    sx={
+                      {
+                        // position: 'absolute',
+                        // top: '16px',
+                        // right: '16px ',
+                        // zIndex: 10000
+                      }
+                    }
+                  >
+                    <IconButton
+                      onClick={onClose}
+                      sx={{
+                        width: '40px',
+                        height: '40px',
+                        // backgroundColor: 'rgba(0, 0, 0, 0.05)',
+                        borderRadius: '50%',
+                        '&:hover': {
+                          backgroundColor: 'rgba(0, 0, 0, 0.1)'
+                        },
+                        transition: 'all 0.2s ease-in-out'
+                      }}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 256 256"
+                        style={{
+                          width: '24px',
+                          height: '24px',
+                          fill: 'rgb(0, 0, 0)'
+                        }}
+                      >
+                        <path d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z" />
+                      </svg>
+                    </IconButton>
+                  </Box>
+                </Box>
+                <Typography
+                  sx={{
+                    color: '#2d3748',
+                    fontSize: {xs: '14px', sm: '16px', md: '18px'},
+                    fontFamily: '"Inter", sans-serif !important',
+                    fontWeight: '300',
+                    lineHeight: '1.6em'
+                  }}
+                >
+                  {description}
+                </Typography>
+              </Box>
+
+              <Box
+                sx={{
+                  width: '100%',
+                  padding: '24px',
+                  maxWidth: '916px',
+                  // height: '524px',
+                  height: {xs: '250px', sm: '300px', md: '400px',lg: '524px'},
+                  position: 'relative',
+                  backgroundColor:
+                    'linear-gradient(125deg, rgba(70, 17, 245, 0.15) 0%, rgba(255, 165, 0, 0.1) 50%, rgba(235, 0, 255, 0.15) 100%)',
+                  boxShadow:
+                    'rgba(0, 0, 0, 0.13) 0px 0.602187px 2.52919px -0.833333px, rgba(0, 0, 0, 0.13) 0px 2.28853px 9.61184px -1.66667px, rgba(0, 0, 0, 0.13) 0px 10px 42px -2.5px',
+                  borderRadius: {xs: '16px'},
+                  overflow: 'hidden'
+                }}
+              >
+                <Image
+                  src={BgImage1}
+                  alt={title}
+                  fill
+                  style={{
+                    objectFit: 'cover',
+                    borderRadius: '20px 20px 0 0'
+                  }}
+                />
+              </Box>
+            </MotionBox>
+          </Box>
+        </>
+      )}
+    </AnimatePresence>
+  );
+}
+
 // New component for mapping features from JSON
 export function FeaturesGrid({}: FeaturesGridProps) {
   const t = useTranslations('SchoolDashboard.Features');
   const t2 = useTranslations('pageRoutes');
+  const [selectedFeature, setSelectedFeature] = useState<FeatureItem | null>(
+    null
+  );
 
   // Icons imported from assets
   const defaultIcons = {
@@ -223,10 +433,7 @@ export function FeaturesGrid({}: FeaturesGridProps) {
         container
         spacing={3}
         sx={{
-          // display: 'grid',
-          // gridTemplateColumns: 'repeat(12, 1fr)',
-          // gridAutoRows: 'calc(245px)',
-          // gap: 3,
+         
           maxWidth: '1400px',
           width: '100%',
           margin: 'auto',
@@ -237,29 +444,26 @@ export function FeaturesGrid({}: FeaturesGridProps) {
           <Grid
             key={index}
             size={{xs: 12, md: 6, lg: 4}}
-
-            // sx={{
-            //   gridColumn: {
-            //     xs: 'span 12',
-            //     sm: feature.gridColumn || 'span 6',
-            //     lg: feature.gridColumn || 'span 4'
-            //   },
-            //   gridRow: {
-            //     xs: 'span 1',
-            //     sm: feature.gridRow || 'span 1',
-            //     lg: feature.gridRow || 'span 1'
-            //   }
-            // }}
           >
             <GridCardSmall2Home
               img={feature.img}
               title={feature.title}
               description={feature.description}
               href={feature.href}
+              onCardClick={() => setSelectedFeature(feature)}
             />
           </Grid>
         ))}
       </Grid>
+
+      {/* Modal */}
+      <FeatureModal
+        open={selectedFeature !== null}
+        onClose={() => setSelectedFeature(null)}
+        img={selectedFeature?.img || ''}
+        title={selectedFeature?.title || ''}
+        description={selectedFeature?.description || ''}
+      />
     </Box>
   );
 }
