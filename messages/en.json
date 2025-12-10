@@ -167,14 +167,30 @@
           "usage": [],
           "featuresHeader": "Features include:",
           "features": [
-            { "text": "Information about required documents and responsible authorities" },
-            { "text": "Progress indicator for obtaining a driving license" },
-            { "text": "Calendar and booking system for theory and driving lessons" },
-            { "text": "Appointment cancellation" },
-            { "text": "Appointment confirmations (if offered by the driving school)" },
-            { "text": "Appointment reminders (if offered by the driving school)" },
-            { "text": "Messaging function with driving schools and driving trainers" },
-            { "text": "No hidden costs" }
+            {
+              "text": "Information about required documents and responsible authorities"
+            },
+            {
+              "text": "Progress indicator for obtaining a driving license"
+            },
+            {
+              "text": "Calendar and booking system for theory and driving lessons"
+            },
+            {
+              "text": "Appointment cancellation"
+            },
+            {
+              "text": "Appointment confirmations (if offered by the driving school)"
+            },
+            {
+              "text": "Appointment reminders (if offered by the driving school)"
+            },
+            {
+              "text": "Messaging function with driving schools and driving trainers"
+            },
+            {
+              "text": "No hidden costs"
+            }
           ]
         }
       },
@@ -192,21 +208,40 @@
             "buttonText": "Start for free",
             "buttonLink": "/pricing/school/basic",
             "usageHeader": "Usage:",
-           
             "usage": [
-              { "text": "10 active students" },
-              { "text": "1 active trainers" }
+              {
+                "text": "10 active students"
+              },
+              {
+                "text": "1 active trainers"
+              }
             ],
             "featuresHeader": "Features include:",
             "features": [
-              { "text": "Public driving school profile" },
-              { "text": "Student management" },
-              { "text": "Student progress indicator" },
-              { "text": "Calendar and booking system" },
-              { "text": "Appointment cancellation" },
-              { "text": "Messaging function" },
-              { "text": "Can be canceled monthly" },
-              { "text": "No hidden costs" }
+              {
+                "text": "Public driving school profile"
+              },
+              {
+                "text": "Student management"
+              },
+              {
+                "text": "Student progress indicator"
+              },
+              {
+                "text": "Calendar and booking system"
+              },
+              {
+                "text": "Appointment cancellation"
+              },
+              {
+                "text": "Messaging function"
+              },
+              {
+                "text": "Can be canceled monthly"
+              },
+              {
+                "text": "No hidden costs"
+              }
             ]
           },
           {
@@ -220,19 +255,32 @@
             "buttonText": "Start for free",
             "buttonLink": "/pricing/school/standard",
             "recommended": true,
-           
             "recommendedText": "recommended",
             "usage": [
-              { "text": "30 active students" },
-              { "text": "4 active trainers" }
+              {
+                "text": "30 active students"
+              },
+              {
+                "text": "4 active trainers"
+              }
             ],
             "featuresHeader": "Everything in Basic, plus:",
             "features": [
-              { "text": "Trainers management" },
-              { "text": "Trainers calendar" },
-              { "text": "Messaging with trainers" },
-              { "text": "Student list assigned to trainers" },
-              { "text": "Trainers access to their own dashboard" }
+              {
+                "text": "Trainers management"
+              },
+              {
+                "text": "Trainers calendar"
+              },
+              {
+                "text": "Messaging with trainers"
+              },
+              {
+                "text": "Student list assigned to trainers"
+              },
+              {
+                "text": "Trainers access to their own dashboard"
+              }
             ]
           },
           {
@@ -247,20 +295,29 @@
             "buttonLink": "/pricing/school/premium",
             "usageHeader": "Usage:",
             "usage": [
-              { "text": "Unlimited students" },
-              { "text": "Unlimited trainers" }
+              {
+                "text": "Unlimited students"
+              },
+              {
+                "text": "Unlimited trainers"
+              }
             ],
             "featuresHeader": "Everything in Standard, plus:",
             "features": [
-              { "text": "Appointment management" },
-              { "text": "Appointment confirmation by email" },
-              { "text": "Appointment reminders by email" }
+              {
+                "text": "Appointment management"
+              },
+              {
+                "text": "Appointment confirmation by email"
+              },
+              {
+                "text": "Appointment reminders by email"
+              }
             ]
           }
         ]
       }
     }
-    
   },
   "Faq": {
     "title": "Frequently asked questions",
@@ -4519,6 +4576,33 @@
     }
   },
   "SchoolDashboard": {
+    "Features": {
+      "title": "Discover the core functions of an efficient system",
+      "profile": {
+        "title": "Driving School Profile",
+        "description": "Showcase your driving school on our Website. A complete profile helps students discover your school and get in touch instantly."
+      },
+      "dashboard": {
+        "title": "Everything at a Glance",
+        "description": "The dashboard provides a real-time overview of bookings, students, and important notifications, so you’re always in control."
+      },
+      "students": {
+        "title": "Students Management",
+        "description": "Organize student records, track progress, and manage driving sessions, all in one place. Say goodbye to paperwork and hello to efficiency."
+      },
+      "appointments": {
+        "title": "Scheduling",
+        "description": "Plan driving sessions, manage availability, and enable online bookings with ease, all integrated into your workflow."
+      },
+      "messaging": {
+        "title": "Messaging",
+        "description": "Send and receive messages in one place to answer questions quickly. Communicate directly with students and instructors — no more lost emails."
+      },
+      "trainers": {
+        "title": "Trainers Management",
+        "description": "Assign driving sessions, track availability, and monitor performance, all from one central hub. Keep your team organized and productive."
+      }
+    },
     "DesktopTabs": {
       "data": [
         {
