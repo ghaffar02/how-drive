@@ -2615,6 +2615,14 @@
           },
           {
             "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
             "content": "Managing Students"
           },
           {
@@ -2949,6 +2957,14 @@
           {
             "type": "paragraph",
             "content": "Click Book."
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
           },
           {
             "type": "heading",

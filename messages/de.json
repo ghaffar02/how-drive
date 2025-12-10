@@ -2611,6 +2611,15 @@
               "deren Termine verfolgen"
             ]
           },
+
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
           {
             "type": "heading",
             "content": "Schülerverwaltung"
@@ -2948,6 +2957,16 @@
             "type": "paragraph",
             "content": "Klicke auf „Buchen“."
           },
+
+          {
+            "type": "heading",
+            "content": ""
+          },
+          {
+            "type": "heading",
+            "content": ""
+          },
+         
           {
             "type": "heading",
             "content": "Nachrichten senden"

@@ -307,7 +307,7 @@ export default function GettingStarted({
           >
             <Typography
               sx={{
-                ...localFont.inter20,
+                ...localFont.inter22,
                 fontWeight: 600,
                 textTransform: 'capitalize',
                 color: '#1A202C',
