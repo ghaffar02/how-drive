@@ -50,6 +50,7 @@ export default function TabMenu({
   return (
     <Box sx={{paddingX: '8px', backgroundColor: '#FAFAFA', paddingTop: '16px'}}>
       <Box sx={{maxWidth: '1400px', m: 'auto', display: 'flex', gap: '18px'}}>
+        {/* Side bar animation with number  */}
         <Box
           sx={{
             width: {xs: '45px !important', sm: '77px !important'},
@@ -108,7 +109,7 @@ export default function TabMenu({
           />
         </Box>
 
-        <Box>
+        <Box sx={{bgcolor: '', width: '100%'}}>
           <Typography
             sx={{
               color: '#2D3748',
@@ -127,9 +128,12 @@ export default function TabMenu({
               display: 'flex',
               gap: '48px',
               justifyContent: 'space-between',
+              width: '100%',
+              bgcolor: '',
               flexDirection: {xs: 'column', lg: 'row'}
             }}
           >
+            {/* Left side content (title + description ) */}
             <Box sx={{width: {lg: '50%'}}}>
               <Typography
                 sx={{
@@ -154,7 +158,7 @@ export default function TabMenu({
                 {description}
               </Typography>
             </Box>
-
+            {/* Right side image  */}
             <MotionBox
               key={index}
               initial={{x: 80, opacity: 0}}

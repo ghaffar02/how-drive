@@ -68,7 +68,7 @@ const navItems: NavItem[] = [
 
   {
     key: '7',
-    label: 'Trainer',
+    label: 'Trainers',
     iconBlack: driver_black,
     iconBlue: driver_blue,
     iconHover: driver_bold

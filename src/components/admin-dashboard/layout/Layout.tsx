@@ -131,7 +131,7 @@ export default function AdminDashboard() {
                         : activeKey === '6'
                           ? 'Support'
                           : activeKey === '7'
-                            ? 'Trainer'
+                            ? 'Trainers'
                             : activeKey === '9'
                               ? 'Schools'
                               : ''
