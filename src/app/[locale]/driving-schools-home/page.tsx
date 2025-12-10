@@ -11,12 +11,12 @@ import HowItWorks from '@/components/home/HowItWorks';
 import Faq from '@/components/home/Faq';
 import Advantages from '@/components/home/Advantages';
 import Pricing from '@/components/prices/Pricing';
-import LicenseSteps from '@/components/home/components/LicenseSteps';
 import uiDesigner from '@/assets/pngs/Tab-Menu/uiDesigner.png';
 import webDesigner from '@/assets/pngs/Tab-Menu/webDesigner.png';
 import seoSpecialist from '@/assets/pngs/Tab-Menu/seoSpecialist.png';
 import guide from '@/assets/pngs/Tab-Menu/guide.png';
 import heroImage from '@/assets/pngs/heroimage.jpeg';
+import {FeaturesGrid} from '@/components/home/components/GridCardSmall2Home';
 
 type StepFromI18n = {
   number: number;
@@ -107,7 +107,10 @@ export default function HomePage() {
             activeTab={1}
           />
         </Box>
-        <LicenseSteps />
+        <FeaturesGrid />
+        {/* <LicenseSteps /> */}
+        {/* <LicenseSteps /> */}
+
         <HowItWorks stepsArray={stepsArray} showTabs={false} />
         <Advantages data={schoolsData} />
         <Pricing mode="school" />
