@@ -12,6 +12,7 @@ import featureIcon5 from '@/assets/svgs/features/feature-icon-5.svg';
 import featureIcon6 from '@/assets/svgs/features/feature-icon-6.svg';
 import BgImage from '@/assets/svgs/lincense-steps/backgroundFeature.svg';
 import BgImage1 from '@/assets/svgs/dashboard-student/DashAdBG.svg';
+import localFont from '@/utils/themes';
 
 type CardProps = {
   img: string;
@@ -65,12 +66,12 @@ export default function GridCardSmall2Home({
           gap: '24px',
           borderRadius: '15px',
           backgroundColor: 'rgba(255,255,255,0.9)',
-          boxShadow: 'rgba(0,0,0,0.25) 0px 0px 16px 0px',
+          boxShadow: '0px 0px 16px 0px rgba(0, 0, 0, 0.25)',
           cursor: 'pointer'
         }}
         whileHover={{
-          y: -10,
-          boxShadow: 'rgba(0,0,0,0.25) 0px 0px 16px 10px',
+          y: -8,
+          boxShadow: 'rgba(0,0,0,0.25) 0px 0px 16px 8px',
           transition: {duration: 0.3, ease: 'easeInOut'}
         }}
         whileTap={{
@@ -97,7 +98,7 @@ export default function GridCardSmall2Home({
           <Typography
             sx={{
               fontSize: {xs: '20px', sm: '22px', lg: '24px'},
-              color: '#1a202c',
+              color: '#333845',
               fontFamily: 'Satoshi700 !important'
             }}
           >
@@ -107,7 +108,7 @@ export default function GridCardSmall2Home({
             sx={{
               width: '100%',
               minHeight: {xs: '84px', md: '90px', lg: '120px'},
-              color: '#2d3748',
+              color: '#434b5d',
               fontSize: {xs: '14px', sm: '15px', lg: '16px'},
               fontFamily: '"Inter", sans-serif !important',
               fontWeight: '300',
@@ -181,7 +182,8 @@ function FeatureModal({
               right: 0,
               bottom: 0,
               backgroundColor: 'rgba(0, 0, 0, 0.5)',
-              backdropFilter: 'blur(8px)',
+              // backdropFilter: 'blur(8px)
+              opacity: 1,
               zIndex: 9998,
               display: 'flex',
               alignItems: 'center',
@@ -197,7 +199,10 @@ function FeatureModal({
               left: '50%',
               // bottom: '0%',
               // transform: 'translate(-50%, -50%)',
-              transform: {xs: 'translate(-50%, -35%)', md: 'translate(-50%, -50%)'},
+              transform: {
+                xs: 'translate(-50%, -35%)',
+                md: 'translate(-50%, -50%)'
+              },
               zIndex: 9999,
               // width: {xs: '90%', sm: '80%', md: '70%', lg: '60%'},
               width: '100%',
@@ -249,7 +254,7 @@ function FeatureModal({
                 >
                   <Typography
                     sx={{
-                      fontSize: {xs: '24px', sm: '28px', md: '32px'},
+                      ...localFont.inter24,
                       color: '#1a202c',
                       fontFamily: 'Satoshi700 !important',
                       fontWeight: 'bold'
@@ -298,8 +303,8 @@ function FeatureModal({
                 </Box>
                 <Typography
                   sx={{
+                    ...localFont.inter16,
                     color: '#2d3748',
-                    fontSize: {xs: '14px', sm: '16px', md: '18px'},
                     fontFamily: '"Inter", sans-serif !important',
                     fontWeight: '300',
                     lineHeight: '1.6em'
@@ -315,7 +320,7 @@ function FeatureModal({
                   padding: '24px',
                   maxWidth: '916px',
                   // height: '524px',
-                  height: {xs: '250px', sm: '300px', md: '400px',lg: '524px'},
+                  height: {xs: '250px', sm: '300px', md: '400px', lg: '524px'},
                   position: 'relative',
                   backgroundColor:
                     'linear-gradient(125deg, rgba(70, 17, 245, 0.15) 0%, rgba(255, 165, 0, 0.1) 50%, rgba(235, 0, 255, 0.15) 100%)',
@@ -433,7 +438,6 @@ export function FeaturesGrid({}: FeaturesGridProps) {
         container
         spacing={3}
         sx={{
-         
           maxWidth: '1400px',
           width: '100%',
           margin: 'auto',
@@ -441,10 +445,7 @@ export function FeaturesGrid({}: FeaturesGridProps) {
         }}
       >
         {features.map((feature, index) => (
-          <Grid
-            key={index}
-            size={{xs: 12, md: 6, lg: 4}}
-          >
+          <Grid key={index} size={{xs: 12, md: 6, lg: 4}}>
             <GridCardSmall2Home
               img={feature.img}
               title={feature.title}
