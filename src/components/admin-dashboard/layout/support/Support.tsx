@@ -35,6 +35,7 @@ export default function Support() {
         sx={{
           width: '100%',
           display: 'flex',
+          maxWidth: '1720px',
           justifyContent: 'center'
         }}
       >
@@ -56,19 +57,31 @@ export default function Support() {
           gap: '24px',
           flex: 1,
           overflow: 'hidden',
+          maxWidth: '1720px',
           minHeight: 0
         }}
       >
         {/* Left Side - FAQ List */}
         <Box
           sx={{
-            flex: {xs: '1 1 auto', md: '1 1 60%'},
+            flex: {xs: '1 1 auto', md: '1 1 50%'},
             minWidth: 0,
             overflow: 'auto',
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
+            scrollbarWidth: 'thin',
+            msOverflowStyle: 'auto',
             '&::-webkit-scrollbar': {
-              display: 'none'
+              height: '8px'
+            },
+            '&::-webkit-scrollbar-track': {
+              background: '#f1f1f1',
+              borderRadius: '4px'
+            },
+            '&::-webkit-scrollbar-thumb': {
+              background: '#888',
+              borderRadius: '4px',
+              '&:hover': {
+                background: '#555'
+              }
             }
           }}
         >
@@ -82,7 +95,7 @@ export default function Support() {
         {/* Right Side - FAQ Form */}
         <Box
           sx={{
-            flex: {xs: '1 1 auto', md: '1 1 40%'},
+            flex: {xs: '1 1 auto', md: '1 1 50%'},
             minWidth: 0,
             display: 'flex',
             flexDirection: 'column'
