@@ -78,8 +78,8 @@ export default function Advantages({data}: AdvantagesProps) {
         <Box
           sx={{
             width: '100%',
-            maxWidth: '1400px',
-            margin: 'auto'
+            // maxWidth: '1400px',
+            margin: 'auto',
           }}
         >
           <Box sx={{padding: '8px'}}>
@@ -182,6 +182,7 @@ function CardComponent({bgColor, title, description, color}: CardProps) {
           padding: '16px',
           height: '700px',
           backgroundColor: bgColor,
+// bgcolor:'rgba(235, 7, 7, 0.9)',
           borderRadius: '25px',
           flexShrink: 0
         }}

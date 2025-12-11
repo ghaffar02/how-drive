@@ -10,7 +10,7 @@ import featureIcon3 from '@/assets/svgs/features/feature-icon-3.svg';
 import featureIcon4 from '@/assets/svgs/features/feature-icon-4.svg';
 import featureIcon5 from '@/assets/svgs/features/feature-icon-5.svg';
 import featureIcon6 from '@/assets/svgs/features/feature-icon-6.svg';
-import BgImage from '@/assets/svgs/lincense-steps/backgroundFeature.svg';
+import BgImage from '@/assets/svgs/lincense-steps/FeatureBG.svg';
 import BgImage1 from '@/assets/svgs/dashboard-student/DashAdBG.svg';
 import localFont from '@/utils/themes';
 

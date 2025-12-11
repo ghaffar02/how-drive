@@ -56,7 +56,7 @@
     "button": "Kostenlos starten"
   },
   "Advantages": {
-    "title": "Ihre Vorteile mit WieFührerschein",
+    "title": "Deine Vorteile mit Fahrly",
     "driverTab": "Fahrschüler",
     "schoolTab": "Fahrschulen",
     "DriverData": [
@@ -433,7 +433,7 @@
           "number": 2,
           "title": "Wohnort",
           "heading": "Trage ein, wo du wohnst",
-          "description": "Weder Fahrerlaubnisbehörde oder TÜV, bei Eingabe des Wohnortes werden die zu dir passenden Behörden und ihre Kontaktadressen in deinem Konto angezeigt."
+          "description": "Entweder  Fahrerlaubnisbehörde oder TÜV, bei Eingabe des Wohnortes werden die zu dir passenden Behörden und ihre Kontaktadressen in deinem Konto angezeigt."
         },
         {
           "number": 3,

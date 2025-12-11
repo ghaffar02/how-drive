@@ -1,7 +1,7 @@
 'use client';
 import React, {useState} from 'react';
 import {motion} from 'framer-motion';
-import BgImage from '@/assets/svgs/lincense-steps/backgroundFeature.svg';
+import BgImage from '@/assets/svgs/lincense-steps/FAQBG.svg';
 import {
   Accordion,
   AccordionSummary,
