@@ -195,13 +195,13 @@ function FeatureModal({
           <Box
             sx={{
               position: 'fixed',
-              top: '50%',
+              // top: '50%',
               left: '50%',
-              // bottom: '0%',
+              bottom: '-10%',
               // transform: 'translate(-50%, -50%)',
               transform: {
                 xs: 'translate(-50%, -35%)',
-                md: 'translate(-50%, -50%)'
+                md: 'translate(-50%, -10%)'
               },
               zIndex: 9999,
               // width: {xs: '90%', sm: '80%', md: '70%', lg: '60%'},
@@ -212,7 +212,7 @@ function FeatureModal({
             }}
           >
             <MotionBox
-              initial={{opacity: 0, scale: 0.8, y: 120}}
+              initial={{opacity: 0, scale: 0.8, y: 320}}
               animate={{opacity: 1, scale: 1, y: 0}}
               exit={{opacity: 0, scale: 0.8, y: 20}}
               transition={{duration: 0.4, ease: 'easeInOut'}}

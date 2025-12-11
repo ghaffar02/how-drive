@@ -78,6 +78,7 @@ export default function Advantages({data}: AdvantagesProps) {
         <Box
           sx={{
             width: '100%',
+           
             // maxWidth: '1400px',
             margin: 'auto',
           }}
@@ -109,7 +110,7 @@ export default function Advantages({data}: AdvantagesProps) {
                 sx={{
                   display: 'flex',
                   gap: '28px',
-                  padding: '10px 10px 10px 0',
+                  padding: '10px 10px 10px 8px',
                   overflowX: 'auto',
                   overflowY: 'hidden',
                   scrollbarWidth: 'none',
