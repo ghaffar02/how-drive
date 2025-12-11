@@ -43,7 +43,8 @@ export default function Pricing({title = true, mode = 'student'}: Pricing) {
                 fontWeight: '700'
               }}
             >
-              {t('title')}
+                {/* {mode === 'student' ? t('title') : t('titleSchool')} */}
+                {mode === 'student' ? t('title') : t('titleSchool')}
             </Typography>
           )}
 

@@ -151,7 +151,8 @@
   "Pricing": {
     "heroTitle": "Our prices",
     "heroDes": "Using our platform is free for driving students. Driving schools have the opportunity to try the platform for free for the first month.",
-    "title": "Our prices for driving students and schools",
+    "title": "Our prices for driving students",
+      "titleSchool": "Our prices for driving schools",
     "data": {
       "studentSection": {
         "title": "Our prices for driving students",
