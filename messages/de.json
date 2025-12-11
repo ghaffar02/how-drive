@@ -1939,6 +1939,8 @@
   "helpPage": {
     "pageTitle": "Help Center!",
     "pageDes": "Finde die Antwort deiner Fragen in unserem Help Center.",
+    "pwaInstallationTitle": "Installation auf dem Handy",
+    "pwaInstallationDes": "Erfahren Sie, wie Sie unsere Website und Webanwendung auf Tablets und Smartphones mit iOS oder Android installieren",
     "title1": "Erste Schritte",
     "href1": "/hilfe/erste-schritte",
     "href2": "/hilfe/fuer-fahrschueler",

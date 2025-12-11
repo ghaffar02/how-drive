@@ -1941,6 +1941,8 @@
   "helpPage": {
     "pageTitle": "Help Center!",
     "pageDes": "Find the answer to your questions in our Help Center.",
+    "pwaInstallationTitle": "Installation on phone",
+    "pwaInstallationDes": "Learn how to install our website and web application on tablets and smartphones with iOS or Android",
     "title1": "Getting Started",
     "href1": "/help/getting-started",
     "des1": "Learn the basics",

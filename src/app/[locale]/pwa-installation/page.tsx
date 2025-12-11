@@ -81,7 +81,7 @@ export default function Page() {
         >
           <Navbar />
         </Box>
-        <HeroAboutus title={t('pageTitle')} description={t('pageDes')} />
+        <HeroAboutus title={t('pwaInstallationTitle')} description={t('pwaInstallationDes')} />
         <Box bgcolor={'#fafafa'}>
           <HowItWorks
             stepsArray={stepsArray}
