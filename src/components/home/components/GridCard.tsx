@@ -24,6 +24,7 @@ export default function GridCard({
   width,
   href
 }: CardProps) {
+  console.log('img',img);
   return (
     <Link href={href}>
       <MotionBox
@@ -70,8 +71,9 @@ export default function GridCard({
       >
         <Box
           sx={{
-            width: '183px',
-            height: '136px',
+            maxWidth:{xs:flexdir ? '349px' : '306px',lg:flexdir ? '285px' : '245px'},
+            width: '100%',
+            height: {xs:flexdir ? '138px' : '97px',lg:flexdir ? '125px' : '135px'},
             alignSelf: 'center'
           }}
         >

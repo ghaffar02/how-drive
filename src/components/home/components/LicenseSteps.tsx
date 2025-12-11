@@ -5,12 +5,12 @@ import {useTranslations} from 'next-intl';
 import GridCard from './GridCard';
 import GridCardSmall from './GridCardSmall';
 
-import bike from '@/assets/svgs/lincense-steps/bike.svg';
-import car from '@/assets/svgs/lincense-steps/car.svg';
+import bike from '@/assets/svgs/lincense-steps/IconMotorcycle.svg';
+import car from '@/assets/svgs/lincense-steps/IconCar.svg';
 import truck from '@/assets/svgs/lincense-steps/truck.svg';
 import bus from '@/assets/svgs/lincense-steps/bus.svg';
 import tractor from '@/assets/svgs/lincense-steps/tractor.svg';
-import arrow from '@/assets/svgs/lincense-steps/arrow.svg';
+import arrow from '@/assets/svgs/lincense-steps/IconRewrite.svg';
 import BgImage from '@/assets/svgs/lincense-steps/backgroundFeature.svg';
 
 export default function LicenseSteps() {
@@ -68,6 +68,7 @@ export default function LicenseSteps() {
             title={t('classA')}
             description={t('dataA')}
             img={bike}
+           
           />
         </Box>
 
@@ -158,6 +159,7 @@ export default function LicenseSteps() {
         >
           <GridCard
             href={t2('drivingLicenseClassB')}
+            title={t('classB')}
             description={t('dataB')}
             img={car}
             flexdir={true}
@@ -167,6 +169,7 @@ export default function LicenseSteps() {
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 2'}}>
           <GridCard
             href={t2('rewriteOfDrivingLicenses')}
+            title={t('rewrite')}
             description={t('dataRewrite')}
             img={arrow}
             width="720px"
@@ -228,20 +231,24 @@ export default function LicenseSteps() {
           />
         </Box>
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 4'}}>
+
+
+          
           <GridCard
-            href={t2('rewriteOfDrivingLicenses')}
-            title={t('rewrite')}
-            description={t('dataRewrite')}
-            img={arrow}
+          href={t2('drivingLicenseClassA')}
+          title={t('classA')}
+          description={t('dataA')}
+          img={bike}
+           
           />
         </Box>
 
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 2'}}>
           <GridCardSmall
-            href={t2('drivingLicenseClassA')}
-            title={t('classA')}
-            description={t('dataA')}
-            img={bike}
+             href={t2('rewriteOfDrivingLicenses')}
+             title={t('rewrite')}
+             description={t('dataRewrite')}
+             img={arrow}
           />
         </Box>
 
