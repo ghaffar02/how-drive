@@ -52,7 +52,7 @@ export default function GridCardSmall2Home({
   return (
     <Link sx={{textDecoration: 'none'}} href={href} onClick={handleClick}>
       <MotionBox
-        initial={{opacity: 0, y: 5}}
+        initial={{opacity: 0, y: 75}}
         whileInView={{opacity: 1, y: 0}}
         viewport={{once: true, amount: 0.3}}
         transition={{duration: 0.6, ease: 'easeInOut'}}
@@ -254,10 +254,9 @@ function FeatureModal({
                 >
                   <Typography
                     sx={{
-                      ...localFont.inter24,
-                      color: '#1a202c',
-                      fontFamily: 'Satoshi700 !important',
-                      fontWeight: 'bold'
+                      fontSize: {xs: '20px', sm: '22px', lg: '24px'},
+                      color: '#333845',
+                      fontFamily: 'Satoshi700 !important'
                     }}
                   >
                     {title}
