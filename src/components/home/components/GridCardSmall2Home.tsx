@@ -170,7 +170,7 @@ function FeatureModal({
         <>
           {/* Backdrop with blur */}
           <MotionBox
-            initial={{opacity: 0, y: 10}}
+            initial={{opacity: 0, y: 81}}
             animate={{opacity: 1}}
             exit={{opacity: 0}}
             transition={{duration: 0.3, ease: 'easeInOut'}}
