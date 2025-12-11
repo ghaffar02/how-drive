@@ -6,6 +6,7 @@ import Link from 'next/link';
 import heroImage from '@/assets/pngs/heroimage.jpeg';
 import TabSwitcher from '../TabSwitcher';
 import {useRouter} from 'next/navigation';
+import {useTranslations} from 'next-intl';
 
 interface HeroProps {
   title: string;
@@ -80,6 +81,7 @@ export default function Hero({
   const rotateX = useTransform(scrollY, [0, 150], [15, 0]);
   const y = useTransform(scrollY, [0, 150], [20, 0]);
   const router = useRouter();
+  const t = useTranslations('Hero');
 
   return (
     <>
@@ -107,9 +109,9 @@ export default function Hero({
           {/* Tab Section */}
 
           <TabSwitcher
-            tab1Label={'Driving students'}
-            tab2Label={'Driving schools'}
-            activeTab={activeTab}
+            tab1Label={t('tab1Label')}
+            tab2Label={t('tab2Label')}
+            activeTab={activeTab ?? 0}
             onTab1Click={() => router.push('/')}
             onTab2Click={() => router.push('/driving-schools-home')}
           />
@@ -168,7 +170,7 @@ export default function Hero({
             component={motion.p}
             initial={{opacity: 0, scale: 0.92}}
             whileInView={{opacity: 1, scale: 1}}
-            viewport={{once: true, amount: 0.6}}
+            animate={{opacity: 1, scale: 1}}
             transition={{duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.5}}
             sx={{
               width: '100%',

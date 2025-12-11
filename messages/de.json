@@ -46,7 +46,9 @@
   "Hero": {
     "title": "Der Weg zum Führerschein",
     "description": "Behalte jeden Schritt und deine Fortschritte immer im Blick, sowie Termine buchen und Nachrichten senden, alles aus einer Hand.",
-    "button": "Kostenlos starten"
+    "button": "Kostenlos starten",
+    "tab1Label": "Fahrschüler",
+    "tab2Label": "Fahrschulen"
   },
   "HeroSchool": {
     "title": "Der Weg zur Effizienz",

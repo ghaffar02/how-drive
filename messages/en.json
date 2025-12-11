@@ -46,7 +46,9 @@
   "Hero": {
     "title": "The way to get your driving license",
     "description": "Keep track of your every step and progress, as well as book appointments and send messages, all in one place.",
-    "button": "Start for free"
+    "button": "Start for free",
+    "tab1Label": "Driving students",
+    "tab2Label": "Driving schools"
   },
   "HeroSchool": {
     "title": "The way to increase your efficiency",
