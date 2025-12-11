@@ -214,7 +214,7 @@ export default function Hero({
             component={motion.div}
             initial={{opacity: 0, scale: 0.92}}
             whileInView={{opacity: 1, scale: 1}}
-            viewport={{once: true, amount: 0.6}}
+            animate={{opacity: 1, scale: 1}}
             transition={{duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.8}}
             sx={{
               perspective: '1000px',
