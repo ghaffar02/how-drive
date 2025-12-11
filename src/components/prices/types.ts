@@ -1,3 +1,5 @@
+import {ReactNode} from 'react';
+
 export interface UsageItem {
   text: string;
 }
@@ -23,4 +25,3 @@ export interface PlanData {
   featuresHeader?: string;
   recommended?: boolean;
 }
-

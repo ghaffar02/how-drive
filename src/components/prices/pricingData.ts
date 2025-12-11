@@ -1,3 +1,4 @@
+import {ReactNode} from 'react';
 import {PlanData} from './types';
 
 // School plans data
@@ -12,6 +13,8 @@ export const schoolPlansData: PlanData[] = [
     description: 'One month Premium trial',
     buttonText: 'Start for free',
     buttonLink: '/pricing/school/basic',
+    recommendedText: '' as ReactNode,
+    usageHeader: 'Usage limits:',
     usage: [{text: '10 active students'}, {text: '1 active trainers'}],
     featuresHeader: 'Features include:',
     features: [
@@ -36,6 +39,8 @@ export const schoolPlansData: PlanData[] = [
     buttonText: 'Start for free',
     buttonLink: '/pricing/school/standard',
     recommended: true,
+    recommendedText: '' as ReactNode,
+    usageHeader: 'Usage limits:',
     usage: [{text: '30 active students'}, {text: '4 active trainers'}],
     featuresHeader: 'Everything in Basic, plus:',
     features: [
@@ -56,6 +61,8 @@ export const schoolPlansData: PlanData[] = [
     description: 'One month Premium trial',
     buttonText: 'Start for free',
     buttonLink: '/pricing/school/premium',
+    recommendedText: '' as ReactNode,
+    usageHeader: 'Usage limits:',
     usage: [{text: 'Unlimited students'}, {text: 'Unlimited trainers'}],
     featuresHeader: 'Everything in Standard, plus:',
     features: [
@@ -65,4 +72,3 @@ export const schoolPlansData: PlanData[] = [
     ]
   }
 ];
-
