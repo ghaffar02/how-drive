@@ -110,7 +110,7 @@ export default function Advantages({data}: AdvantagesProps) {
                 sx={{
                   display: 'flex',
                   gap: '28px',
-                  padding: '10px 10px 10px 8px',
+                  padding: '10px 10px 10px 0px',
                   overflowX: 'auto',
                   overflowY: 'hidden',
                   scrollbarWidth: 'none',

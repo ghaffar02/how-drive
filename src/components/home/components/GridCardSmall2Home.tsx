@@ -176,6 +176,8 @@ function FeatureModal({
             transition={{duration: 0.3, ease: 'easeInOut'}}
             onClick={onClose}
             sx={{
+             
+              width: '100%',
               position: 'fixed',
               top: 0,
               left: 0,
@@ -194,27 +196,31 @@ function FeatureModal({
           {/* Modal Content */}
           <Box
             sx={{
+              padding: {
+                xs: '56px 16px 48px 16px',
+                sm: '64px 24px 48px 24px',
+               md:'unset'
+              },
               position: 'fixed',
-              // top: '50%',
               left: '50%',
               bottom: '-10%',
-              // transform: 'translate(-50%, -50%)',
               transform: {
-                xs: 'translate(-50%, -35%)',
-                md: 'translate(-50%, -10%)'
+               xs:'translate(-50%, -5%)',
+                md: 'translate(-50%, -10%)',
+                // lg: 'translate(-50%, -10%)'
               },
               zIndex: 9999,
-              // width: {xs: '90%', sm: '80%', md: '70%', lg: '60%'},
               width: '100%',
-              maxWidth: '916px',
-              maxHeight: '90vh',
+              maxWidth: '980px',
+              maxHeight: '720px',
+          
               pointerEvents: 'auto'
             }}
           >
             <MotionBox
-              initial={{opacity: 0, scale: 0.8, y: 320}}
-              animate={{opacity: 1, scale: 1, y: 0}}
-              exit={{opacity: 0, scale: 0.8, y: 20}}
+              initial={{opacity: 0,y: 320}}
+              animate={{opacity: 1, y: 0}}
+              exit={{opacity: 0,  y: 20}}
               transition={{duration: 0.4, ease: 'easeInOut'}}
               onClick={(e) => e.stopPropagation()}
               sx={{
@@ -226,7 +232,7 @@ function FeatureModal({
                 backgroundColor: '#ffffff',
                 p: '32px',
                 gap: '32px',
-                borderRadius: '20px',
+                borderRadius: '24px 24px 0 0',
                 boxShadow: 'rgba(0, 0, 0, 0.3) 0px 0px 40px 10px',
                 overflow: 'hidden'
               }}
@@ -319,7 +325,8 @@ function FeatureModal({
                   padding: '24px',
                   maxWidth: '916px',
                   // height: '524px',
-                  height: {xs: '250px', sm: '300px', md: '400px', lg: '524px'},
+                  // height:'100%',
+                  height: {xs: '250px', sm: '300px', md: '414px', lg: '517px'},
                   position: 'relative',
                   backgroundColor:
                     'linear-gradient(125deg, rgba(70, 17, 245, 0.15) 0%, rgba(255, 165, 0, 0.1) 50%, rgba(235, 0, 255, 0.15) 100%)',
