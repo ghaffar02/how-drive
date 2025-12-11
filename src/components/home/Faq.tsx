@@ -1,6 +1,7 @@
 'use client';
 import React, {useState} from 'react';
 import {motion} from 'framer-motion';
+import BgImage from '@/assets/svgs/lincense-steps/backgroundFeature.svg';
 import {
   Accordion,
   AccordionSummary,
@@ -34,6 +35,19 @@ const Faq = ({type = 'student'}: FaqProps) => {
   return (
     <Box
       sx={{
+
+
+        backgroundImage: `url(${BgImage.src})`,
+        width: '100%',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        // padding: {
+        //   xs: '56px 16px 48px 16px',
+        //   sm: '64px 24px 48px 24px',
+        //   lg: '80px 48px 48px 48px'
+        // },
+        overflow: 'hidden',
         bgcolor: '#FAFAFA',
         p: {xs: '48px 16px', sm: '48px 24px', lg: '48px'}
       }}
