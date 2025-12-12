@@ -6,7 +6,7 @@ import Image from 'next/image';
 import MenuDropdown from './MenuDropdown';
 import LanguageDropdown from './LanguageDropdown';
 import MobileMenu from './MobileMenu';
-import Logo from '@/assets/pngs/logo.png';
+import Logo from '@/assets/pngs/logo.avif';
 import profile from '@/assets/svgs/profile.svg';
 import hamburger from '@/assets/svgs/hamburger.svg';
 import {useTranslations} from 'next-intl';

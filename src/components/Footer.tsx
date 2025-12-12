@@ -3,7 +3,7 @@
 import {Box, Typography, Link} from '@mui/material';
 import {useTranslations} from 'next-intl';
 
-import Logo from '@/assets/pngs/logo.png';
+import Logo from '@/assets/pngs/logo.avif';
 import Image from 'next/image';
 import facebook from '@/assets/svgs/facebook.svg';
 import instagram from '@/assets/svgs/instagram.svg';
