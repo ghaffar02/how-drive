@@ -74,6 +74,9 @@ export const routing = defineRouting({
     '/imprint': {
       de: '/impressum'
     },
+    '/pwa-installation': {
+      de: '/pwa-installation'
+    },
     '/privacy': {
       de: '/datenschutz'
     },

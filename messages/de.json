@@ -30,20 +30,20 @@
     "aboutus": {
       "text": "Über uns",
       "item1": "Wer wir sind",
-      "href1": "/ueber-uns/wer-wir-sind",
+      "href1": "/ueber-uns",
       "item2": "Unsere Mission",
-      "href2": "/ueber-uns/unsere-mission",
+      "href2": "/ueber-uns",
       "item3": "Was wir bieten",
-      "href3": "/ueber-uns/was-wir-bieten"
+      "href3": "/ueber-uns"
     },
     "features": {
       "text": "Funktion",
       "item1": "Fahrschulen finden",
-      "href1": "/funktion/fuer-fahrschueler",
-      "item2": "Hilfezentrum",
-      "href2": "/funktion/fuer-fahrschulen",
+      "href1": "/fahrschulen",
+      "item2": "Hilfezentrum", 
+      "href2": "/hilfe",
       "item3": "Installation auf Handy",
-      "href3": "/funktion/installation-auf-handy"
+      "href3": "/pwa-installation"
     },
     "pricing": "Preise",
     "contact": "Kontakt",

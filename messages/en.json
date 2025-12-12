@@ -30,22 +30,23 @@
     "aboutus": {
       "text": "About Us",
       "item1": "Who We Are",
-      "href1": "/en/about-us/who-we-are",
+      "href1": "/about-us",
       "item2": "Our mission",
-      "href2": "/en/about-us/our-mission",
+      "href2": "/about-us",
       "item3": "What We Offer",
-      "href3": "/en/about-us/what-we-offer"
+      "href3": "/about-us"
     },
     "features": {
       "text": "Function",
       "item1": "For driving schools",
-      "href1": "/en/features/for-students",
+      "href1": "/driving-schools",
       "item2": "Help Center",
-      "href2": "/en/features/for-schools",
+      "href2": "/help",
       "item3": "Install on phone",
-      "href3": "/en/features/install-on-phone"
+      "href3": "/pwa-installation"
     },
     "pricing": "Pricing",
+    
     "contact": "Contact",
     "login": "Login"
   },
