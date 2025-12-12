@@ -30,14 +30,20 @@
     "aboutus": {
       "text": "About Us",
       "item1": "Who We Are",
+      "href1": "/en/about-us/who-we-are",
       "item2": "Our Mission",
-      "item3": "What We Offer"
+      "href2": "/en/about-us/our-mission",
+      "item3": "What We Offer",
+      "href3": "/en/about-us/what-we-offer"
     },
     "features": {
       "text": "Function",
       "item1": "For Students",
+      "href1": "/en/features/for-students",
       "item2": "For Schools",
-      "item3": "Install on phone"
+      "href2": "/en/features/for-schools",
+      "item3": "Install on phone",
+      "href3": "/en/features/install-on-phone"
     },
     "pricing": "Pricing",
     "contact": "Contact",

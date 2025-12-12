@@ -121,9 +121,9 @@ export default function Navbar() {
                 //   t('aboutus.item3')
                 // ]}
                 items={[
-                  {text: t('aboutus.item1'), href: t2('contact')},
-                  {text: t('aboutus.item2'), href: t2('contact')},
-                  {text: t('aboutus.item3'), href: t2('contact')}
+                  {text: t('aboutus.item1'), href: t('aboutus.href1')},
+                  {text: t('aboutus.item2'), href: t('aboutus.href2')},
+                  {text: t('aboutus.item3'), href: t('aboutus.href3')}
                 ]}
               />
               <MenuDropdown
@@ -134,9 +134,9 @@ export default function Navbar() {
                 //   t('features.item3')
                 // ]}
                 items={[
-                  {text: t('features.item1'), href: ''},
-                  {text: t('features.item2'), href: ''},
-                  {text: t('features.item3'), href: ''}
+                  {text: t('features.item1'), href: t('features.href1')},
+                  {text: t('features.item2'), href: t('features.href2')},
+                  {text: t('features.item3'), href: t('features.href3')}
                 ]}
               />
               <Link sx={{textDecoration: 'none'}} href={t2('pricing')}>
