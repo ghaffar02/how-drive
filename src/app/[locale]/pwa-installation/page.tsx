@@ -89,7 +89,9 @@ export default function Page() {
             tabsData={tabsData}
           />
         </Box>
-        <Footer />
+        <Box sx={{pt:{xs:"35px",sm:'60px',lg:'80px',xl:'100px'}}}>
+          <Footer />
+        </Box>
       </Box>
     </>
   );

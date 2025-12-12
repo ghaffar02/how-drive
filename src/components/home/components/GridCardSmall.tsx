@@ -25,7 +25,7 @@ export default function GridCardSmall({
         initial={{opacity: 0, y: 75}}
         whileInView={{opacity: 1, y: 0}}
         viewport={{once: true, amount: 0.3}}
-        transition={{duration: 0.6, ease: 'easeInOut'}}
+        transition={{duration: 0.3, ease: 'easeInOut'}}
         sx={{
           height: '100%',
           position: 'relative',
