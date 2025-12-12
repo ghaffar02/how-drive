@@ -20,6 +20,8 @@
     "drivingLicenseClassLAndT": "/fuehrerscheinklasse-l-und-t",
     "rewriteOfDrivingLicenses": "/umschreiben-der-fuehrerscheine",
     "help": "/hilfe",
+    "findSchools": "/fahrschulen",
+    "pwa": "/pwa",
     "imprint": "/impressum",
     "privacy": "/datenschutz",
     "terms": "/agb",
@@ -547,16 +549,16 @@
       "heading": "Funktionen",
       "items": [
         {
-          "text": "Fahrschüler",
-          "href": ""
-        },
-        {
           "text": "Fahrschulen",
-          "href": ""
+          "href": "/fahrschulen"
         },
         {
-          "text": "Installation",
-          "href": ""
+          "text": "Hilfe",
+          "href": "/hilfe"
+        },
+        {
+          "text": "PWA",
+          "href": "/pwa-installation"
         }
       ]
     },
@@ -565,19 +567,15 @@
       "items": [
         {
           "text": "Über uns",
-          "href": "/en/about-us"
+          "href": "/ueber-uns"
         },
         {
           "text": "Preise",
-          "href": "/en/pricing"
+          "href": "/preis"
         },
         {
           "text": "Kontakt",
-          "href": "/en/contact"
-        },
-        {
-          "text": "Hilfe",
-          "href": "/en/help"
+          "href": "/kontakt"
         }
       ]
     },
@@ -586,19 +584,19 @@
       "items": [
         {
           "text": "Impressum",
-          "href": "/en/imprint"
+          "href": "/impressum"
         },
         {
           "text": "Datenschutz",
-          "href": "/en/privacy"
+          "href": "/datenschutz"
         },
         {
           "text": "AGB",
-          "href": "/en/terms"
+            "href": "/agb"
         },
         {
           "text": "Cookie",
-          "href": "/en/cookies"
+          "href": "/cookies"
         }
       ]
     }

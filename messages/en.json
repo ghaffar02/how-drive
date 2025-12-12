@@ -550,16 +550,16 @@
       "heading": "Function",
       "items": [
         {
-          "text": "Students",
-          "href": ""
+          "text": "Find schools",
+          "href": "/en/driving-schools"
         },
         {
-          "text": "Schools",
-          "href": ""
+          "text": "Help",
+          "href": "/en/help"
         },
         {
-          "text": "Installation",
-          "href": ""
+          "text": "PWA",
+          "href": "/en/pwa-installation"
         }
       ]
     },
@@ -567,7 +567,7 @@
       "heading": "Service",
       "items": [
         {
-          "text": "About Us",
+          "text": "About us",
           "href": "/en/about-us"
         },
         {
@@ -577,10 +577,6 @@
         {
           "text": "Contact",
           "href": "/en/contact"
-        },
-        {
-          "text": "Help",
-          "href": "/en/help"
         }
       ]
     },
@@ -592,7 +588,7 @@
           "href": "/en/imprint"
         },
         {
-          "text": "Privacy Policy",
+          "text": "Privacy",
           "href": "/en/privacy"
         },
         {
@@ -600,7 +596,7 @@
           "href": "/en/terms"
         },
         {
-          "text": "Cookie",
+          "text": "Cookies",
           "href": "/en/cookies"
         }
       ]

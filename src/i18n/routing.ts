@@ -80,6 +80,7 @@ export const routing = defineRouting({
     '/privacy': {
       de: '/datenschutz'
     },
+   
     '/terms': {
       de: '/agb'
     },
