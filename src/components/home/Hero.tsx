@@ -113,7 +113,7 @@ export default function Hero({
             tab2Label={t('tab2Label')}
             activeTab={activeTab ?? 0}
             onTab1Click={() => router.push('/')}
-            onTab2Click={() => router.push('/driving-schools-home')}
+            onTab2Click={() => router.push(t('tab2Labelhrf'))}
           />
 
           <>

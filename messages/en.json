@@ -46,7 +46,6 @@
       "href3": "/pwa-installation"
     },
     "pricing": "Pricing",
-    
     "contact": "Contact",
     "login": "Login"
   },
@@ -55,7 +54,8 @@
     "description": "Keep track of your every step and progress, as well as book appointments and send messages, all in one place.",
     "button": "Start for free",
     "tab1Label": "Driving students",
-    "tab2Label": "Driving schools"
+    "tab2Label": "Driving schools",
+    "tab2Labelhrf": "/driving-schools-home"
   },
   "HeroSchool": {
     "title": "The way to increase your efficiency",
@@ -159,7 +159,7 @@
     "heroTitle": "Our prices",
     "heroDes": "Using our platform is free for driving students. Driving schools have the opportunity to try the platform for free for the first month.",
     "title": "Our prices for driving students",
-      "titleSchool": "Our prices for driving schools",
+    "titleSchool": "Our prices for driving schools",
     "data": {
       "studentSection": {
         "title": "Our prices for driving students",

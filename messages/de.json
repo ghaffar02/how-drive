@@ -42,7 +42,7 @@
       "text": "Funktion",
       "item1": "Fahrschulen finden",
       "href1": "/fahrschulen",
-      "item2": "Hilfezentrum", 
+      "item2": "Hilfezentrum",
       "href2": "/hilfe",
       "item3": "Installation auf Handy",
       "href3": "/pwa-installation"
@@ -56,7 +56,8 @@
     "description": "Behalte jeden Schritt und deine Fortschritte immer im Blick, sowie Termine buchen und Nachrichten senden, alles aus einer Hand.",
     "button": "Kostenlos starten",
     "tab1Label": "Fahrschüler",
-    "tab2Label": "Fahrschulen"
+    "tab2Label": "Fahrschulen",
+    "tab2Labelhrf": "/fahrschulen-home"
   },
   "HeroSchool": {
     "title": "Der Weg zur Effizienz",
@@ -592,7 +593,7 @@
         },
         {
           "text": "AGB",
-            "href": "/agb"
+          "href": "/agb"
         },
         {
           "text": "Cookie",
@@ -2620,7 +2621,6 @@
               "deren Termine verfolgen"
             ]
           },
-
           {
             "type": "heading",
             "content": ""
@@ -2966,7 +2966,6 @@
             "type": "paragraph",
             "content": "Klicke auf „Buchen“."
           },
-
           {
             "type": "heading",
             "content": ""
@@ -2975,7 +2974,6 @@
             "type": "heading",
             "content": ""
           },
-         
           {
             "type": "heading",
             "content": "Nachrichten senden"

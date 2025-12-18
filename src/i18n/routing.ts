@@ -26,6 +26,9 @@ export const routing = defineRouting({
     '/contact': {
       de: '/kontakt'
     },
+    '/driving-schools-home': {
+      de: '/fahrschulen-home'
+    },
     '/driving-license-class-a': {
       de: '/fuehrerscheinklasse-a'
     },
@@ -80,7 +83,7 @@ export const routing = defineRouting({
     '/privacy': {
       de: '/datenschutz'
     },
-   
+
     '/terms': {
       de: '/agb'
     },
