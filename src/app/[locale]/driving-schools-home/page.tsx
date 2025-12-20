@@ -91,7 +91,7 @@ export default function HomePage() {
             backdropFilter: 'blur(15px)',
             WebkitBackdropFilter: 'blur(15px)',
             top: 0,
-            zIndex: 1000
+            zIndex: 100000000
           }}
         >
           <Navbar />
