@@ -173,10 +173,9 @@ function FeatureModal({
             initial={{opacity: 0, y: 81}}
             animate={{opacity: 1}}
             exit={{opacity: 0}}
-            transition={{duration: 0.3, ease: 'easeInOut'}}
+            transition={{duration: 0.2, ease: 'easeInOut'}}
             onClick={onClose}
             sx={{
-             
               width: '100%',
               position: 'fixed',
               top: 0,
@@ -197,31 +196,31 @@ function FeatureModal({
           <Box
             sx={{
               padding: {
-                xs: '56px 16px 48px 16px',
-                sm: '64px 24px 48px 24px',
-               md:'unset'
+                xs: '0px 16px 0px 16px',
+                sm: '0px 24px 0px 24px',
+                md: 'unset'
               },
               position: 'fixed',
               left: '50%',
-              bottom: '-10%',
+              bottom: '0%',
               transform: {
-               xs:'translate(-50%, -5%)',
-                md: 'translate(-50%, -10%)',
+                xs: 'translate(-50%, 0%)',
+                md: 'translate(-50%, 0%)'
                 // lg: 'translate(-50%, -10%)'
               },
               zIndex: 9999,
               width: '100%',
               maxWidth: '980px',
-              maxHeight: '720px',
-          
+              maxHeight: {xs: '400px', md: '720px'},
+
               pointerEvents: 'auto'
             }}
           >
             <MotionBox
-              initial={{opacity: 0,y: 320}}
+              initial={{opacity: 0, y: 320}}
               animate={{opacity: 1, y: 0}}
-              exit={{opacity: 0,  y: 20}}
-              transition={{duration: 0.4, ease: 'easeInOut'}}
+              exit={{opacity: 0, y: 20}}
+              transition={{duration: 0.2, ease: 'easeInOut'}}
               onClick={(e) => e.stopPropagation()}
               sx={{
                 width: '100%',
@@ -326,7 +325,7 @@ function FeatureModal({
                   maxWidth: '916px',
                   // height: '524px',
                   // height:'100%',
-                  height: {xs: '250px', sm: '300px', md: '414px', lg: '517px'},
+                  height: {xs: '204px', md: '414px', lg: '517px'},
                   position: 'relative',
                   backgroundColor:
                     'linear-gradient(125deg, rgba(70, 17, 245, 0.15) 0%, rgba(255, 165, 0, 0.1) 50%, rgba(235, 0, 255, 0.15) 100%)',
