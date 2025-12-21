@@ -371,8 +371,8 @@ a {
 
 /* Inter font weight fixes - ensures all weights work properly */
 /* This ensures Inter font can override the global Satoshi font */
-*[style*="Inter"],
-*[style*="Inter"] * {
+*[style*='Inter'],
+*[style*='Inter'] * {
   font-family: 'Inter', sans-serif !important;
 }
 
@@ -425,4 +425,19 @@ a {
 }
 .BigCalander_calendarWrapper__ZFuic .rbc-button-link {
   font-weight: 400 !important;
+}
+
+/* big calander issued fixed there  */
+.BigCalander-module__o0kNCG__calendarWrapper .rbc-toolbar {
+  justify-content: flex-end !important;
+}
+
+/* small calanderr issue fixed there  */
+.rdp-day_button {
+  height: 33px !important;
+  width: 33px !important;
+}
+
+.BigCalander-module__lrBC0a__calendarWrapper .rbc-toolbar {
+  justify-content: flex-end !important;
 }
