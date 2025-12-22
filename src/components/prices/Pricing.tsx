@@ -39,12 +39,11 @@ export default function Pricing({title = true, mode = 'student'}: Pricing) {
                 fontFamily: 'Satoshi500 !important',
                 padding: '16px',
                 textAlign: 'center',
-                color: '#000',
-                fontWeight: '700'
+                color: '#000'
               }}
             >
-                {/* {mode === 'student' ? t('title') : t('titleSchool')} */}
-                {mode === 'student' ? t('title') : t('titleSchool')}
+              {/* {mode === 'student' ? t('title') : t('titleSchool')} */}
+              {mode === 'student' ? t('title') : t('titleSchool')}
             </Typography>
           )}
 

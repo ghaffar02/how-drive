@@ -6,7 +6,7 @@ import Image from 'next/image';
 import MenuDropdown from './MenuDropdown';
 import LanguageDropdown from './LanguageDropdown';
 import MobileMenu from './MobileMenu';
-import Logo from '@/assets/pngs/logo.avif';
+import Logo from '@/assets/pngs/LogoType.svg';
 import profile from '@/assets/svgs/profile.svg';
 import hamburger from '@/assets/svgs/hamburger.svg';
 import {useTranslations} from 'next-intl';
@@ -39,7 +39,7 @@ export default function Navbar() {
             justifyContent: 'space-between'
           }}
         >
-          <Box
+          {/* <Box
             sx={{
               width: 'auto',
               display: 'flex',
@@ -47,9 +47,10 @@ export default function Navbar() {
               justifyContent: 'space-between',
               gap: '6px'
             }}
-          >
-            <Image src={Logo} alt="logo" height={50} width={50} />
-            <Typography
+          > */}
+
+          <Image src={Logo} alt="logo" height={50} style={{width: 'auto'}} />
+          {/* <Typography
               sx={{
                 fontSize: '28px',
                 lineHeight: '28px',
@@ -68,8 +69,8 @@ export default function Navbar() {
               >
                 Führerschein
               </span>
-            </Typography>
-          </Box>
+            </Typography> */}
+          {/* </Box> */}
           {/* the hamburger  */}
 
           <Box sx={{display: {lg: 'none'}, cursor: 'pointer'}}>

@@ -38,11 +38,11 @@
     },
     "features": {
       "text": "Function",
-      "item1": "For driving schools",
+      "item1": "Find driving schools",
       "href1": "/driving-schools",
       "item2": "Help Center",
       "href2": "/help",
-      "item3": "Install on phone",
+      "item3": "Installation on phone",
       "href3": "/pwa-installation"
     },
     "pricing": "Pricing",

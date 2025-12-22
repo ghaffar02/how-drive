@@ -3,7 +3,7 @@
 import {Box, Typography, Link} from '@mui/material';
 import {useTranslations} from 'next-intl';
 
-import Logo from '@/assets/pngs/logo.avif';
+import Logo from '@/assets/pngs/LogoType.svg';
 import Image from 'next/image';
 import facebook from '@/assets/svgs/facebook.svg';
 import instagram from '@/assets/svgs/instagram.svg';
@@ -53,7 +53,7 @@ export default function Footer() {
         >
           {/* Logo + Description + Socials */}
           <Box sx={{maxWidth: '350px'}}>
-            <Box
+            {/* <Box
               sx={{
                 width: 'fit-content',
                 display: 'flex',
@@ -62,9 +62,9 @@ export default function Footer() {
                 gap: '6px',
                 cursor: 'pointer'
               }}
-            >
-              <Image src={Logo} alt="logo" height={50} width={50} />
-              <Typography
+            > */}
+            <Image src={Logo} alt="logo" height={50} style={{width: 'auto'}} />
+            {/* <Typography
                 sx={{
                   fontSize: '28px',
                   lineHeight: '28px',
@@ -83,8 +83,8 @@ export default function Footer() {
                 >
                   Führerschein
                 </span>
-              </Typography>
-            </Box>
+              </Typography> */}
+            {/* </Box> */}
             <Typography
               sx={{
                 color: '#2D3748',

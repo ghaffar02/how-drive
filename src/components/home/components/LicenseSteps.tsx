@@ -11,7 +11,8 @@ import truck from '@/assets/svgs/lincense-steps/truck.svg';
 import bus from '@/assets/svgs/lincense-steps/bus.svg';
 import tractor from '@/assets/svgs/lincense-steps/tractor.svg';
 import arrow from '@/assets/svgs/lincense-steps/IconRewrite.svg';
-import BgImage from '@/assets/svgs/lincense-steps/backgroundFeature.svg';
+// import BgImage from '@/assets/svgs/lincense-steps/backgroundFeature.svg';
+import BgImage from '@/assets/svgs/lincense-steps/FeatureBG.svg';
 
 export default function LicenseSteps() {
   const t = useTranslations('LicenseSteps');
@@ -68,7 +69,6 @@ export default function LicenseSteps() {
             title={t('classA')}
             description={t('dataA')}
             img={bike}
-           
           />
         </Box>
 
@@ -231,24 +231,20 @@ export default function LicenseSteps() {
           />
         </Box>
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 4'}}>
-
-
-          
           <GridCard
-          href={t2('drivingLicenseClassA')}
-          title={t('classA')}
-          description={t('dataA')}
-          img={bike}
-           
+            href={t2('drivingLicenseClassA')}
+            title={t('classA')}
+            description={t('dataA')}
+            img={bike}
           />
         </Box>
 
         <Box sx={{gridColumn: 'span 12', gridRow: 'span 2'}}>
           <GridCardSmall
-             href={t2('rewriteOfDrivingLicenses')}
-             title={t('rewrite')}
-             description={t('dataRewrite')}
-             img={arrow}
+            href={t2('rewriteOfDrivingLicenses')}
+            title={t('rewrite')}
+            description={t('dataRewrite')}
+            img={arrow}
           />
         </Box>
 
