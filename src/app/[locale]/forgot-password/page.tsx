@@ -2,7 +2,7 @@
 import {Box, Button, TextField, Typography} from '@mui/material';
 import Logo from '@/assets/pngs/logo.png';
 import Image from 'next/image';
-import registerImage from '@/assets/svgs/registerImage.svg';
+import registerImage from '@/assets/svgs/ImagePasswordReset.svg';
 import {useTranslations} from 'next-intl';
 import Link from 'next/link';
 import api from '@/lib/axios';

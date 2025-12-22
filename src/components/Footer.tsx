@@ -63,7 +63,12 @@ export default function Footer() {
                 cursor: 'pointer'
               }}
             > */}
-            <Image src={Logo} alt="logo" height={50} style={{width: 'auto'}} />
+            <Image
+              src={Logo}
+              alt="logo"
+              height={50}
+              style={{width: 'auto', cursor: 'pointer'}}
+            />
             {/* <Typography
                 sx={{
                   fontSize: '28px',
