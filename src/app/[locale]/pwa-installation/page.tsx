@@ -81,7 +81,10 @@ export default function Page() {
         >
           <Navbar />
         </Box>
-        <HeroAboutus title={t('pwaInstallationTitle')} description={t('pwaInstallationDes')} />
+        <HeroAboutus
+          title={t('pwaInstallationTitle')}
+          description={t('pwaInstallationDes')}
+        />
         <Box bgcolor={'#fafafa'}>
           <HowItWorks
             stepsArray={stepsArray}
@@ -89,7 +92,7 @@ export default function Page() {
             tabsData={tabsData}
           />
         </Box>
-        <Box sx={{pt:{xs:"35px",sm:'60px',lg:'80px',xl:'100px'}}}>
+        <Box sx={{pt: {xs: '40px', sm: '65px', lg: '90px', xl: '110px'}}}>
           <Footer />
         </Box>
       </Box>
