@@ -42,7 +42,7 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
           left: 0,
           bottom: 0,
           right: '0',
-          bgcolor: 'rgba(0, 0, 0, 0.3)',
+          bgcolor: 'rgba(0, 0, 0, 0.7)',
           opacity: open ? 1 : 0,
           transition: 'opacity .2s',
           height: '100vh',
@@ -62,8 +62,9 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
             flexDirection: 'column',
             p: '16px',
             justifyContent: 'space-between',
-            backdropFilter: 'blur(15px)',
-            WebkitBackdropFilter: 'blur(15px)',
+            backdropFilter: 'blur(40px)',
+            WebkitBackdropFilter: 'blur(40px)',
+            zIndex: 1300,
             boxShadow:
               'rgba(0, 0, 0, 0.13) 0px 0.796192px 2.38858px -0.625px, ' +
               'rgba(0, 0, 0, 0.13) 0px 2.41451px 7.24352px -1.25px, ' +
