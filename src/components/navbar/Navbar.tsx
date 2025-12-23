@@ -89,17 +89,17 @@ export default function Navbar() {
               {
                 title: t('aboutus.text'),
                 items: [
-                  t('aboutus.item1'),
-                  t('aboutus.item2'),
-                  t('aboutus.item3')
+                  {text: t('aboutus.item1'), href: t('aboutus.href1')},
+                  {text: t('aboutus.item2'), href: t('aboutus.href2')},
+                  {text: t('aboutus.item3'), href: t('aboutus.href3')}
                 ]
               },
               {
                 title: t('features.text'),
                 items: [
-                  t('features.item1'),
-                  t('features.item2'),
-                  t('features.item3')
+                  {text: t('features.item1'), href: t('features.href1')},
+                  {text: t('features.item2'), href: t('features.href2')},
+                  {text: t('features.item3'), href: t('features.href3')}
                 ]
               }
             ]}

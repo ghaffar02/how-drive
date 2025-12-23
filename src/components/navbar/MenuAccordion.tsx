@@ -7,16 +7,17 @@ import {
   AccordionDetails,
   Typography,
   List,
-  ListItemButton
+  ListItemButton,
+  Link
 } from '@mui/material';
 import ExpandMoreRounded from '@mui/icons-material/ExpandMoreRounded';
 
 type Props = {
   title: string;
-  items: string[];
+  items: {text: string; href: string}[];
   expanded: boolean;
   onChange: (expanded: boolean) => void;
-  onItemClick: (value: string) => void;
+  onItemClick: () => void;
 };
 
 export default function MenuAccordion({
@@ -83,16 +84,19 @@ export default function MenuAccordion({
             flexDirection: 'column'
           }}
         >
-          {items.map((it) => (
+          {items.map((item) => (
             <ListItemButton
-              key={it}
-              onClick={() => onItemClick(it)}
+              key={item.text}
+              onClick={onItemClick}
+              component={Link}
+              href={item.href}
               sx={{
                 transition: 'all 0.3s ease-in-out',
                 px: '0',
                 color: '#000',
                 fontFamily: '"Inter", sans-serif !important',
                 fontWeight: '400',
+                textDecoration: 'none',
                 '&:hover': {
                   paddingLeft: '8px',
                   bgcolor: 'rgba(48, 88, 255, 0.1)',
@@ -101,7 +105,7 @@ export default function MenuAccordion({
                 }
               }}
             >
-              {it}
+              {item.text}
             </ListItemButton>
           ))}
         </List>

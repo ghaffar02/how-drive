@@ -1,14 +1,17 @@
 'use client';
 
 import * as React from 'react';
-import {Box, Typography, Divider, Slide, Button} from '@mui/material';
+import {Box, Typography, Divider, Slide, Button, Link} from '@mui/material';
 import MenuAccordion from './MenuAccordion';
 import LanguageDropdown from './LanguageDropdown';
 import Image from 'next/image';
 import {useTranslations} from 'next-intl';
 import profile from '@/assets/svgs/profile.svg';
 
-type Section = {title: string; items: string[]};
+type Section = {
+  title: string;
+  items: {text: string; href: string}[];
+};
 type MobileMenuProps = {
   open: boolean;
   onClose: () => void;
@@ -19,6 +22,7 @@ type MobileMenuProps = {
 export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
   const [expandedKey, setExpandedKey] = React.useState<string | false>(false);
   const t = useTranslations('Navbar');
+  const t2 = useTranslations('pageRoutes');
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
     window.addEventListener('keydown', onKey);
@@ -86,29 +90,43 @@ export default function MobileMenu({open, onClose, sections}: MobileMenuProps) {
               ))}
             </Box>
             <Box sx={{p: '14px 8px 14px 8px'}}>
+            <Link sx={{textDecoration: 'none'}} href={t2('pricing')}>
               <Typography
                 sx={{
                   fontSize: {xs: 16, sm: 18},
                   fontWeight: 300,
                   cursor: 'pointer',
-                  fontFamily: '"Inter", sans-serif !important'
+                  fontFamily: '"Inter", sans-serif !important',
+
+
+
+
+                 
+                    color: '#000000',
+                  
+                   
+                    
+                  
                 }}
               >
                 {t('pricing')}
               </Typography>
+              </Link>
             </Box>
             <Divider sx={{borderColor: '#c7c7c7'}} />
             <Box sx={{p: '14px 8px 15px 8px'}}>
+              <Link sx={{textDecoration: 'none'}} href={t2('contact')}>
               <Typography
                 sx={{
                   fontSize: {xs: 16, sm: 18},
                   fontWeight: 300,
                   cursor: 'pointer',
-                  fontFamily: '"Inter", sans-serif !important'
+                  fontFamily: '"Inter", sans-serif !important',  color: '#000000',
                 }}
               >
                 {t('contact')}
               </Typography>
+              </Link>
             </Box>
             <Divider sx={{borderColor: '#c7c7c7'}} />
           </Box>
