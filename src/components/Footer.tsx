@@ -2,6 +2,7 @@
 
 import {Box, Typography, Link} from '@mui/material';
 import {useTranslations} from 'next-intl';
+import {useRouter} from '@/i18n/navigation';
 
 import Logo from '@/assets/pngs/LogoType.svg';
 import Image from 'next/image';
@@ -26,6 +27,7 @@ type FooterData = {
 
 export default function Footer() {
   const t = useTranslations();
+  const router = useRouter();
   const footerData = t.raw('Footer') as FooterData;
   const {description, ...sections} = footerData;
 
@@ -68,6 +70,7 @@ export default function Footer() {
               alt="logo"
               height={50}
               style={{width: 'auto', cursor: 'pointer'}}
+              onClick={() => router.push('/')}
             />
             {/* <Typography
                 sx={{

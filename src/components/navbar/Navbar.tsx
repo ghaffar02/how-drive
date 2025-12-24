@@ -10,7 +10,7 @@ import Logo from '@/assets/pngs/LogoType.svg';
 import profile from '@/assets/svgs/profile.svg';
 import hamburger from '@/assets/svgs/hamburger.svg';
 import {useTranslations} from 'next-intl';
-import {useRouter} from 'next/navigation';
+import {useRouter} from '@/i18n/navigation';
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -49,7 +49,13 @@ export default function Navbar() {
             }}
           > */}
 
-          <Image src={Logo} alt="logo" height={50} style={{width: 'auto'}} />
+          <Image 
+            src={Logo} 
+            alt="logo" 
+            height={50} 
+            style={{width: 'auto', cursor: 'pointer'}}
+            onClick={() => router.push('/')}
+          />
           {/* <Typography
               sx={{
                 fontSize: '28px',
