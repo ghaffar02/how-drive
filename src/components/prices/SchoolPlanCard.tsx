@@ -1,4 +1,5 @@
-import Link from 'next/link';
+'use client';
+import {Link} from '@/i18n/navigation';
 import {Box, Button, Typography, SxProps, Theme} from '@mui/material';
 import tick from '@/assets/svgs/tick.svg';
 import Image from 'next/image';
@@ -148,8 +149,8 @@ export default function SchoolPlanCard({plan, cardSx}: SchoolPlanCardProps) {
         </Typography>
 
         <Button
-          // component={Link}
-          // href={plan.buttonLink}
+          component={Link}
+          href={plan.buttonLink || '/register'}
           disableRipple
           sx={{
             width: '100%',

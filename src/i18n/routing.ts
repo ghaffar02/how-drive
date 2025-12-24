@@ -8,7 +8,10 @@ export const routing = defineRouting({
     '/login': {
       de: '/anmelden'
     },
-    '/signup': {
+    // '/signup': {
+    //   de: '/registrieren'
+    // },
+    '/register': {
       de: '/registrieren'
     },
     '/forgot-password': {

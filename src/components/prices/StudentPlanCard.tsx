@@ -1,5 +1,5 @@
 'use client';
-import Link from 'next/link';
+import {Link} from '@/i18n/navigation';
 import {Box, Button, Typography, SxProps, Theme} from '@mui/material';
 import tick from '@/assets/svgs/tick.svg';
 import Image from 'next/image';
@@ -41,7 +41,7 @@ export default function StudentPlanCard({plan, cardSx}: StudentPlanCardProps) {
       price: studentPlanData.price || {amount: 'Free', duration: '', note: ''},
       description: studentPlanData.description || '',
       buttonText: studentPlanData.buttonText || 'Sign up',
-      buttonLink: studentPlanData.buttonLink || '/pricing/student',
+      buttonLink: studentPlanData.buttonLink || '/register',
       usage: studentPlanData.usage || [],
       featuresHeader: studentPlanData.featuresHeader || 'Features include:',
       features: studentPlanData.features || [],
@@ -54,7 +54,7 @@ export default function StudentPlanCard({plan, cardSx}: StudentPlanCardProps) {
       price: {amount: 'Free', duration: '', note: ''},
       description: "Use all the features of our service without worry. It's completely free for driving students. It's important that your account is linked to your driving school's account.",
       buttonText: 'Sign up',
-      buttonLink: '/pricing/student',
+      buttonLink: '/register',
       usage: [],
       featuresHeader: 'Features include:',
       features: [],

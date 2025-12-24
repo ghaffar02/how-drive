@@ -173,7 +173,7 @@
           },
           "description": "Use all the features of our service without worry. It's completely free for driving students. It's important that your account is linked to your driving school's account.",
           "buttonText": "Sign up",
-          "buttonLink": "/pricing/student",
+          "buttonLink": "/register",
           "usage": [],
           "featuresHeader": "Features include:",
           "features": [
@@ -216,7 +216,7 @@
             },
             "description": "One month Premium trial",
             "buttonText": "Start for free",
-            "buttonLink": "/pricing/school/basic",
+            "buttonLink": "/register",
             "usageHeader": "Usage:",
             "usage": [
               {
@@ -263,7 +263,7 @@
             },
             "description": "One month Premium trial",
             "buttonText": "Start for free",
-            "buttonLink": "/pricing/school/standard",
+            "buttonLink": "/register",
             "recommended": true,
             "recommendedText": "recommended",
             "usage": [
@@ -302,7 +302,7 @@
             },
             "description": "One month Premium trial",
             "buttonText": "Start for free",
-            "buttonLink": "/pricing/school/premium",
+            "buttonLink": "/register",
             "usageHeader": "Usage:",
             "usage": [
               {

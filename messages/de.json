@@ -174,7 +174,7 @@
           },
           "description": "Nutze alle Funktionen unseres Services sorglos. Für Fahrschüler ist es völlig kostenlos. Wichtig ist, dass dein Konto mit dem Konto deiner Fahrschule verknüpft ist.",
           "buttonText": "Registrieren",
-          "buttonLink": "/pricing/student",
+          "buttonLink": "/registrieren",
           "usageHeader": "",
           "usage": [],
           "featuresHeader": "Funktionen umfassen:",
@@ -218,6 +218,7 @@
             },
             "description": "Einen Monat Premium-Test",
             "buttonText": "Kostenlos starten",
+            "buttonLink": "/registrieren",
             "usageHeader": "Verwendung:",
             "usage": [
               {
@@ -266,6 +267,7 @@
             },
             "description": "Einen Monat Premium-Test",
             "buttonText": "Kostenlos starten",
+            "buttonLink": "/register",
             "usageHeader": "Verwendung:",
             "usage": [
               {
@@ -303,6 +305,7 @@
             },
             "description": "Einen Monat Premium-Test",
             "buttonText": "Kostenlos starten",
+            "buttonLink": "/register",
             "usageHeader": "Verwendung:",
             "usage": [
               {
