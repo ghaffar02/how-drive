@@ -53,7 +53,7 @@ export default function Messages() {
     },
     {
       icon: logo,
-      sender: 'WieFührerschein',
+      sender: 'Fahrly',
       date: '20.05.2025',
       subject: 'Das ist das Thema der Email.',
       bgcolor: 'rgba(234, 0, 255, 0.08)'
@@ -88,7 +88,7 @@ export default function Messages() {
     },
     {
       icon: logo,
-      sender: 'WieFührerschein',
+      sender: 'Fahrly',
       date: '20.05.2025',
       subject: 'Das ist das Thema der Email.',
       bgcolor: 'rgba(234, 0, 255, 0.08)'

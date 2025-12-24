@@ -333,8 +333,8 @@
     "title": "Frequently asked questions",
     "FaqData": [
       {
-        "title": "What is WieFührerschein?",
-        "content": "WieFührerschein is a service that connects driving students and driving schools on a central platform. Students can track their learning progress, book appointments, and communicate with their driving school. Driving schools use our platform to manage their students, coordinate appointments, and optimize their communication."
+        "title": "What is Fahrly?",
+        "content": "Fahrly is a service that connects driving students and driving schools on a central platform. Students can track their learning progress, book appointments, and communicate with their driving school. Driving schools use our platform to manage their students, coordinate appointments, and optimize their communication."
       },
       {
         "title": "What do I need to apply for a driver's license?",
@@ -4020,7 +4020,7 @@
   "AboutUs": {
     "Title2": "Find your driving school",
     "heroDes2": "Start your journey to getting your driving license by linking your account to your preferred driving school. Search for the name of your chosen driving school below.",
-    "heroTitle": "About WieFührerschein",
+    "heroTitle": "About Fahrly",
     "Title": "What we offer",
     "heroDes": "Simplify the process of obtaining a driving license for drivering students and enable more efficient administration for driving schools",
     "contantTitle1": "Who we are",

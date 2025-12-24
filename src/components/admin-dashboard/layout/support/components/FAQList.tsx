@@ -22,12 +22,12 @@ interface FAQListProps {
 const faqDataHomepage: FAQItem[] = [
   {
     id: 1,
-    germanQuestion: 'Was ist WieFührerschein?',
+    germanQuestion: 'Was ist Fahrly?',
     germanAnswer:
-      'WieFührerschein ist ein Service, um Fahrschüler und Fahrschulen auf einer zentralen Plattform zu verbinden. Fahrschüler können hier ihren Lernfortschritt verfolgen, Termine buchen und mit ihrer Fahrschule kommunizieren. Fahrschulen nutzen unsere Plattform, um ihre Schüler zu verwalten, Termine zu koordinieren und ihre Kommunikation zu optimieren.',
-    englishQuestion: 'What is WieFührerschein?',
+      'Fahrly ist ein Service, um Fahrschüler und Fahrschulen auf einer zentralen Plattform zu verbinden. Fahrschüler können hier ihren Lernfortschritt verfolgen, Termine buchen und mit ihrer Fahrschule kommunizieren. Fahrschulen nutzen unsere Plattform, um ihre Schüler zu verwalten, Termine zu koordinieren und ihre Kommunikation zu optimieren.',
+    englishQuestion: 'What is Fahrly?',
     englishAnswer:
-      'WieFührerschein is a service that connects driving students and driving schools on a central platform. Students can track their learning progress, book appointments, and communicate with their driving school. Driving schools use our platform to manage their students, coordinate appointments, and optimize their communication.'
+      'Fahrly is a service that connects driving students and driving schools on a central platform. Students can track their learning progress, book appointments, and communicate with their driving school. Driving schools use our platform to manage their students, coordinate appointments, and optimize their communication.'
   },
   {
     id: 2,

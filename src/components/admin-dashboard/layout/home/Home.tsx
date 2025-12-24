@@ -47,7 +47,7 @@ export default function Home({setActiveKey}: Props) {
       icon: car
     },
     {
-      sender: 'WieFührerschein',
+      sender: 'Fahrly',
       subject: 'Das ist das Thema der Email...',
       date: '20.05.2025',
       icon: logo
@@ -77,7 +77,7 @@ export default function Home({setActiveKey}: Props) {
       icon: car
     },
     {
-      sender: 'WieFührerschein',
+      sender: 'Fahrly',
       subject: 'Das ist das Thema der Email...',
       date: '20.05.2025',
       icon: logo
@@ -101,7 +101,7 @@ export default function Home({setActiveKey}: Props) {
       icon: car
     },
     {
-      sender: 'WieFührerschein',
+      sender: 'Fahrly',
       subject: 'Das ist das Thema der Email...',
       date: '20.05.2025',
       icon: logo
