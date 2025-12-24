@@ -1,5 +1,6 @@
 'use client';
 
+import { Link } from '@/i18n/navigation';
 import {Box, Button, Typography} from '@mui/material';
 import {useTranslations} from 'next-intl';
 
@@ -69,6 +70,8 @@ export default function TrustServiceSection() {
               }}
             >
               <Button
+                component={Link}
+                href={t('buttonLink')}
                 disableRipple
                 sx={{
                   color: '#fff',
@@ -94,6 +97,8 @@ export default function TrustServiceSection() {
                 {t('btn1')}
               </Button>
               <Button
+               component={Link}
+               href={t('buttonLink')}
                 disableRipple
                 sx={{
                   color: '#fff',

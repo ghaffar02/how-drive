@@ -423,7 +423,8 @@
     "title": "Start now. It's free!",
     "des": "Find out for yourself how our service works",
     "btn1": "Start as driving student",
-    "btn2": "Start as driving school"
+    "btn2": "Start as driving school",
+     "buttonLink": "/register"
   },
   "HowItWorks": {
     "title": "How it works",

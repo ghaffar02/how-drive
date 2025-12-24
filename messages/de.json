@@ -426,7 +426,9 @@
     "title": "Vertraue unseres Service",
     "des": "Erfahre selbst, wie unseres Service funktioniert",
     "btn1": "Als Fahrschuler starten",
-    "btn2": "Als Fahrschule starten"
+    "btn2": "Als Fahrschule starten",
+    "buttonLink": "/registrieren"
+
   },
   "HowItWorks": {
     "title": "So funktioniert’s",
