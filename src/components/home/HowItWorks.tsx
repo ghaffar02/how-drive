@@ -131,11 +131,11 @@ export default function HowItWorks({
           }}
         >
           {showTabs && (
-            <motion.div
-              variants={tabsMount}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{once: true, amount: 0.25}}
+            <Box
+              // variants={tabsMount}
+              // initial="hidden"
+              // whileInView="visible"
+              // viewport={{once: true, amount: 0.25}}
             >
               <Tabs
                 value={value}
@@ -225,7 +225,7 @@ export default function HowItWorks({
                   );
                 })}
               </Tabs>
-            </motion.div>
+            </Box>
           )}
 
           {showTabs ? (
