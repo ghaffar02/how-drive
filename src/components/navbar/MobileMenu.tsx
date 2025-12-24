@@ -10,7 +10,7 @@ import profile from '@/assets/svgs/profile.svg';
 
 type Section = {
   title: string;
-  items: {text: string; href: string}[];
+  items: {text: string; href: string; scrollTo?: string}[];
 };
 type MobileMenuProps = {
   open: boolean;

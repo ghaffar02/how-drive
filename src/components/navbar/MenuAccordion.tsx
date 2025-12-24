@@ -11,10 +11,11 @@ import {
   Link
 } from '@mui/material';
 import ExpandMoreRounded from '@mui/icons-material/ExpandMoreRounded';
+import {useRouter, usePathname} from 'next/navigation';
 
 type Props = {
   title: string;
-  items: {text: string; href: string}[];
+  items: {text: string; href: string; scrollTo?: string}[];
   expanded: boolean;
   onChange: (expanded: boolean) => void;
   onItemClick: () => void;
@@ -27,6 +28,30 @@ export default function MenuAccordion({
   onChange,
   onItemClick
 }: Props) {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const handleItemClick = (href: string, scrollTo?: string) => {
+    onItemClick();
+    
+    if (scrollTo) {
+      // Check if we're already on the about-us page
+      if (pathname?.includes('/about-us') || pathname?.includes('/ueber-uns')) {
+        // Scroll to section
+        const element = document.getElementById(scrollTo);
+        if (element) {
+          element.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+      } else {
+        // Store scroll target and navigate
+        sessionStorage.setItem('scrollTo', scrollTo);
+        router.push(href);
+      }
+    } else {
+      router.push(href);
+    }
+  };
+
   return (
     <Accordion
       elevation={0}
@@ -87,9 +112,7 @@ export default function MenuAccordion({
           {items.map((item) => (
             <ListItemButton
               key={item.text}
-              onClick={onItemClick}
-              component={Link}
-              href={item.href}
+              onClick={() => handleItemClick(item.href, item.scrollTo)}
               sx={{
                 transition: 'all 0.3s ease-in-out',
                 px: '0',

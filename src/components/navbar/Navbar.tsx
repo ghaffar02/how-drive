@@ -95,10 +95,10 @@ export default function Navbar() {
               {
                 title: t('aboutus.text'),
                 items: [
-                  {text: t('aboutus.item1'), href: t('aboutus.href1')},
-                  {text: t('aboutus.item2'), href: t('aboutus.href2')},
-                  {text: t('aboutus.item3'), href: t('aboutus.href3')}
-                ]
+                  {text: t('aboutus.item1'), href: t('aboutus.href1'), scrollTo: 'who-we-are'},
+                  {text: t('aboutus.item2'), href: t('aboutus.href2'), scrollTo: 'our-mission'},
+                  {text: t('aboutus.item3'), href: t('aboutus.href3'), scrollTo: 'what-we-offer'}
+                ] as {text: string; href: string; scrollTo?: string}[]
               },
               {
                 title: t('features.text'),
@@ -128,9 +128,9 @@ export default function Navbar() {
                 //   t('aboutus.item3')
                 // ]}
                 items={[
-                  {text: t('aboutus.item1'), href: t('aboutus.href1')},
-                  {text: t('aboutus.item2'), href: t('aboutus.href2')},
-                  {text: t('aboutus.item3'), href: t('aboutus.href3')}
+                  {text: t('aboutus.item1'), href: t('aboutus.href1'), scrollTo: 'who-we-are'},
+                  {text: t('aboutus.item2'), href: t('aboutus.href2'), scrollTo: 'our-mission'},
+                  {text: t('aboutus.item3'), href: t('aboutus.href3'), scrollTo: 'what-we-offer'}
                 ]}
               />
               <MenuDropdown

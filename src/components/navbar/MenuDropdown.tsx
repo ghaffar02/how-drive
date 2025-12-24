@@ -3,12 +3,14 @@
 import * as React from 'react';
 import {Box, Typography, Paper, Popper, Grow, Link} from '@mui/material';
 import KeyboardArrowDownRounded from '@mui/icons-material/KeyboardArrowDownRounded';
+import {useRouter, usePathname} from 'next/navigation';
 
 type Props = {
   label: string;
   items: {
     text: string;
     href: string;
+    scrollTo?: string;
   }[];
 };
 
@@ -22,9 +24,33 @@ export default function MenuDropdown({label, items}: Props) {
   };
   const [open, setOpen] = React.useState(false);
   const anchorRef = React.useRef<HTMLDivElement | null>(null);
+  const router = useRouter();
+  const pathname = usePathname();
 
   const enter = () => setOpen(true);
   const leave = () => setOpen(false);
+
+  const handleItemClick = (e: React.MouseEvent, href: string, scrollTo?: string) => {
+    e.preventDefault();
+    
+    if (scrollTo) {
+      // Check if we're already on the about-us page
+      if (pathname?.includes('/about-us') || pathname?.includes('/ueber-uns')) {
+        // Scroll to section
+        const element = document.getElementById(scrollTo);
+        if (element) {
+          element.scrollIntoView({behavior: 'smooth', block: 'start'});
+        }
+      } else {
+        // Store scroll target and navigate
+        sessionStorage.setItem('scrollTo', scrollTo);
+        router.push(href);
+      }
+    } else {
+      router.push(href);
+    }
+    setOpen(false);
+  };
 
   return (
     <>
@@ -83,9 +109,10 @@ export default function MenuDropdown({label, items}: Props) {
                 flexDirection: 'column'
               }}
             >
-              {items.map(({text, href}) => (
+              {items.map(({text, href, scrollTo}) => (
                 <Box
                   key={text}
+                  onClick={(e) => handleItemClick(e, href, scrollTo)}
                   sx={{
                     borderRadius: '4px',
                     cursor: 'pointer',
@@ -104,6 +131,7 @@ export default function MenuDropdown({label, items}: Props) {
                     href={href}
                     underline="none"
                     sx={{width: '100%', display: 'block'}}
+                    onClick={(e) => e.preventDefault()}
                   >
                     <Typography
                       sx={{

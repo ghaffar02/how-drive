@@ -10,12 +10,13 @@ type Whatweoffer = {
 type WhatweofferProps = {
   Whatweoffer: Whatweoffer[];
   heading: string;
+  id?: string;
 };
 
-export default function Whatweoffer({Whatweoffer, heading}: WhatweofferProps) {
+export default function Whatweoffer({Whatweoffer, heading, id}: WhatweofferProps) {
   const MotionBox = motion(Box);
   return (
-    <Box sx={{bgcolor: '#FAFAFA'}}>
+    <Box id={id} sx={{bgcolor: '#FAFAFA'}}>
       <Box
         sx={{
           maxWidth: '1380px',

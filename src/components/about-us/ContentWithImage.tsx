@@ -25,7 +25,8 @@ const ContentWithImage: React.FC<ContentWithImageProps> = ({
           xs: '56px 16px 60px',
           md: '64px 24px 60px',
           lg: '120px  48px 60px'
-        }
+        },
+        scrollMarginTop: {xs: '80px', md: '100px'}
       }}
     >
       <Box
