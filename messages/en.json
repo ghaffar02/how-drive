@@ -409,7 +409,7 @@
     "classA": "Class A",
     "dataA": "Motorcycles in four categories, from light mopeds to larger motorcycles.",
     "classB": "Class B",
-    "dataB": "Passenger cars and light commercial vehicles, excluding motorcycles.",
+    "dataB": "Passenger cars, light commercial vehicles, motor homes and other vehicles, excluding motorcycles",
     "classC": "Class C",
     "dataC": "Trucks and motor vehicles with a maximum permissible mass of more than 3,500 kg.",
     "classD": "Class D",

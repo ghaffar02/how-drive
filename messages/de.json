@@ -412,7 +412,7 @@
     "classA": "Klasse A",
     "dataA": "Krafträder in vier Kategorien, von leichten Kleinkrafträdern (Mopeds) bis größere Motorräder.",
     "classB": "Klasse B",
-    "dataB": "Pkw und leichte Nutzfahrzeuge, ausgenommen von Krafträder.",
+    "dataB": "Pkw, leichte Nutzfahrzeuge, Wohnmobile und andere Fahrzeuge, ausgenommen von Krafträder.",
     "classC": "Klasse C",
     "dataC": "Lkw und Kraftfahrzeuge mit einer zulässigen Gesamtmasse von mehr als 3.500 kg.",
     "classD": "Klasse D",
