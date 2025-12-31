@@ -13,7 +13,10 @@ export default function TimePickerValue({sx = {}}: Props) {
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DemoContainer components={['TimePicker']}>
+      <DemoContainer 
+        components={['TimePicker']}
+        sx={{width: '100%', '& > div': {width: '100%'}}}
+      >
         <TimePicker
           ampm={false}
           minutesStep={15}

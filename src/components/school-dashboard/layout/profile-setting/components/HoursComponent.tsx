@@ -51,6 +51,7 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
         display: 'flex',
         maxWidth: {xs: '100%', lg: '425px'},
         width: '100%',
+        // maxWidth: '100%',
         flexDirection: 'column',
         gap: '8px'
       }}
@@ -103,19 +104,19 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
             key={row.id}
             sx={{
               width: '100%',
-              // bgcolor: 'red',
+              maxWidth: '100%',
               display: 'flex',
               gap: '10px',
-              alignItems: 'center'
-              // justifyContent: index > 0 ? 'flex-start' : 'flex-start'
+              alignItems: 'center',
+              minWidth: 0
             }}
           >
             {/* Show 'Mo' only in the first row */}
             <Typography
               sx={{
                 ...localFont.inter14,
-                width: '100%',
-                maxWidth: '30px',
+                width: '30px',
+                flexShrink: 0,
                 visibility: index === 0 ? 'visible' : 'hidden'
               }}
             >
@@ -130,18 +131,29 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
                 alignItems: 'center',
                 gap: '4px',
                 width: '100%',
-                maxWidth: {xs: '100%', lg: '311px'}
+                maxWidth: '100%',
+                flex: 1,
+                minWidth: 0
               }}
             >
-              {/* <CustomTextField type="time" /> */}
-              <TimePickerValue sx={{}} />
+              <Box sx={{flex: 1, minWidth: 0}}>
+                <TimePickerValue />
+              </Box>
 
-              <Image src={arrowIcon} alt="arrowIcon" height={14} width={14} />
-              <TimePickerValue sx={{}} />
+              <Image 
+                src={arrowIcon} 
+                alt="arrowIcon" 
+                height={14} 
+                width={14}
+                style={{flexShrink: 0}}
+              />
+              <Box sx={{flex: 1, minWidth: 0}}>
+                <TimePickerValue />
+              </Box>
             </Box>
 
             {/* Action icons */}
-            <Box sx={{display: 'flex'}}>
+            <Box sx={{display: 'flex', flexShrink: 0}}>
               <Image
                 src={circleCross}
                 alt="cross"
