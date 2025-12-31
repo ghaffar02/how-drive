@@ -522,7 +522,7 @@ export function DayDetailView({
               top: popupPosition.top,
               left: popupPosition.left,
               mb: '8px',
-              width: {xs: '300px'},
+              width: '320px',
               height: '600px',
               overflow: 'auto',
               border: '1px solid rgb(255, 255, 255)',

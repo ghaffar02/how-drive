@@ -1,5 +1,5 @@
 .calendarWrapper {
-  background: linear-gradient(180deg, #f5f4ff 0%, #ebeafc 100%);
+  background: rgba(248, 250, 252, 0.5);
   border-radius: 20px;
   padding: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
