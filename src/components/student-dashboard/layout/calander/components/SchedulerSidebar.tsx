@@ -157,7 +157,6 @@ function AppointmentCard({color, title, time, date}: AppointmentCardProps) {
         padding: '7px 8px 4px 8px',
         borderRadius: '8px',
         backgroundColor: 'rgba(255, 255, 255, 0.60)',
-
         boxShadow:
           '0px 0px 2px 0px var(--token-46fa6e04-aa50-4324-8a35-fd1170036322, rgb(212,212,216))',
         width: '100%',

@@ -4,10 +4,7 @@ import Image from 'next/image';
 import {Box, Typography} from '@mui/material';
 import {AnimatePresence, motion} from 'framer-motion';
 import cross from '@/assets/svgs/dashboard-student/crossicon.svg';
-import {CancelAppointmentDropDown} from '../SchedulerSidebar';
-// import EditappointmentDropDown from '@/components/school-dashboard/layout/students/components/EditappointmentDropDown';
-// import EditappointmentDropDown from '../../../students/components/EditappointmentDropDown';
-// import {CancelAppointmentDropDown} from './CancelAppointmentDropDown';
+import EditappointmentDropDown from '@/components/school-dashboard/layout/students/components/EditappointmentDropDown';
 
 interface Appointment {
   id: number;
@@ -79,6 +76,19 @@ export function DayDetailView({
   // 🔹 click outside handling (same pattern as Appointment component)
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
+      const target = event.target as HTMLElement;
+
+      // Ignore clicks on MUI portal elements (Select menu, Popover, Modal, TimePicker, etc.)
+      if (
+        target.closest('.MuiPopover-root') ||
+        target.closest('.MuiMenu-root') ||
+        target.closest('.MuiModal-root') ||
+        target.closest('.MuiPopper-root') ||
+        target.closest('.MuiDialog-root')
+      ) {
+        return;
+      }
+
       if (
         dropdownRef.current &&
         dropdownRef.current.contains(event.target as Node)
@@ -505,6 +515,7 @@ export function DayDetailView({
               left: popupPosition.left,
               mb: '8px',
               width: {xs: '300px'},
+              height: '600px',
               overflow: 'auto',
               border: '1px solid rgb(255, 255, 255)',
               backgroundColor: '#f0f0fa99',
@@ -523,7 +534,7 @@ export function DayDetailView({
               transformOrigin: 'top right'
             }}
           >
-            <CancelAppointmentDropDown
+            <EditappointmentDropDown
               title="Edit appointment"
               driverLabel="Driver"
               dayLabel="Day"
