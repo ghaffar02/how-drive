@@ -141,10 +141,10 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
                 <TimePickerValue />
               </Box>
 
-              <Image 
-                src={arrowIcon} 
-                alt="arrowIcon" 
-                height={14} 
+              <Image
+                src={arrowIcon}
+                alt="arrowIcon"
+                height={14}
                 width={14}
                 style={{flexShrink: 0}}
               />
