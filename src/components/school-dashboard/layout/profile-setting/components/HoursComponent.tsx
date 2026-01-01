@@ -91,7 +91,7 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
               margin: '4px',
               cursor: 'pointer',
               textAlign: 'end',
-              marginLeft: '36px'
+              marginLeft: '32px'
             }}
             onClick={handleUnavailableAdd}
           />
@@ -133,10 +133,11 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
                 width: '100%',
                 maxWidth: '100%',
                 flex: 1,
-                minWidth: 0
+                minWidth: 0,
+                overflow: 'hidden'
               }}
             >
-              <Box sx={{flex: 1, minWidth: 0}}>
+              <Box sx={{flex: 1, minWidth: 0, width: 0, overflow: 'hidden'}}>
                 <TimePickerValue />
               </Box>
 
@@ -147,7 +148,7 @@ export default function HoursComponent({unavailable = false, day}: HourProps) {
                 width={14}
                 style={{flexShrink: 0}}
               />
-              <Box sx={{flex: 1, minWidth: 0}}>
+              <Box sx={{flex: 1, minWidth: 0, width: 0, overflow: 'hidden'}}>
                 <TimePickerValue />
               </Box>
             </Box>
